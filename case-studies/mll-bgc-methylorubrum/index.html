@@ -1,0 +1,3159 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LinkML schemas for JGI and KBase genomics lakehouses">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../kbase/kbase_ke_pangenome/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>mll BGC (M. extorquens) - Bridge Schemas</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#case-study-mll-bgc-methylolanthanin-in-methylorubrum-extorquens-am1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Bridge Schemas" class="md-header__button md-logo" aria-label="Bridge Schemas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bridge Schemas
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              mll BGC (M. extorquens)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cmungall/bridge-schemas" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Bridge Schemas" class="md-nav__button md-logo" aria-label="Bridge Schemas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bridge Schemas
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cmungall/bridge-schemas" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cross-database-joins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Database Joins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Studies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Case Studies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mll BGC (M. extorquens)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mll BGC (M. extorquens)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-mll-gene-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The mll Gene Cluster
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Queries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-kbase-pangenome-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. KBase Pangenome Database
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. KBase Pangenome Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-find-the-genome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Find the genome
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-check-available-genes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Check available genes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-attempt-to-find-mll-genes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Attempt to find mll genes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-check-eggnog-functional-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Check EggNOG functional annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-jgi-gold-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. JGI GOLD Database
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. JGI GOLD Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-find-organism-via-ncbi-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Find organism via NCBI Assembly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-get-taxonomy-lineage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Get taxonomy lineage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-jgi-img-core-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. JGI IMG Core Database
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. JGI IMG Core Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-find-taxon_oid-for-organism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Find taxon_oid for organism
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-query-biosynthetic-gene-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Query biosynthetic gene clusters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-get-genes-in-bcg-regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Get genes in BCG regions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-get-scaffoldcontig-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Get scaffold/contig mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-img-functional-annotations-for-mll-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 IMG Functional Annotations for mll Cluster
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-mibig-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. MIBiG Database
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. MIBiG Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-search-for-organism-bgcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Search for organism BGCs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ncbi-direct-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. NCBI Direct Access
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. NCBI Direct Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-nucleotide-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Nucleotide database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-gene-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Gene database
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#join-points-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Join Points Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-availability-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Availability Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-query-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Query Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Query Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-start-with-ncbi-authoritative-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Start with NCBI (authoritative source)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-query-img-for-functional-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Query IMG for functional annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-cross-reference-with-kbase-for-pangenome-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Cross-reference with KBase (for pangenome context)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lessons Learned
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KBase/BERDL Schemas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    KBase/BERDL Schemas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_ke_pangenome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pangenome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/nmdc_core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NMDC Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_genomes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Genomes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/gapmind_pathways/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GapMind Pathways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/enigma_coral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENIGMA CoRAL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/phagefoundry_genome_browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PhageFoundry Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/phagefoundry_strain_modelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PhageFoundry Modelling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_uniprot_archaea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniProt Archaea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_uniprot_bacteria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniProt Bacteria
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_uniref50/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniRef50
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_uniref90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniRef90
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_uniref100/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniRef100
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_phenotype/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phenotype
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_msd_biochemistry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSD Biochemistry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_ontology_source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ontology Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_refseq_taxon_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RefSeq Taxon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JGI Lakehouse Schemas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    JGI Lakehouse Schemas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/gold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOLD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_core_v400/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Extended
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_gold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG GOLD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_sat_v450/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Satellite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_sub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Submission
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/imgsg_dev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_i_taxon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_methylome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Methylome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_proteome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Proteome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_rnaseq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG RNAseq
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_mysql_abc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL ABC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_mysql_img/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_mysql_imgvr_prod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG/VR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_mysql_mbin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL MBin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_mysql_misi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL MISI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/phytozome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phytozome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/mycocosm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MycoCosm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/gcs_citation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citation Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/jgi_portal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JGI Portal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/sdm_metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDM Metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/smc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SMC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-mll-gene-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The mll Gene Cluster
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Queries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-kbase-pangenome-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. KBase Pangenome Database
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. KBase Pangenome Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-find-the-genome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Find the genome
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-check-available-genes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Check available genes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-attempt-to-find-mll-genes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Attempt to find mll genes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-check-eggnog-functional-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Check EggNOG functional annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-jgi-gold-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. JGI GOLD Database
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. JGI GOLD Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-find-organism-via-ncbi-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Find organism via NCBI Assembly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-get-taxonomy-lineage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Get taxonomy lineage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-jgi-img-core-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. JGI IMG Core Database
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. JGI IMG Core Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-find-taxon_oid-for-organism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Find taxon_oid for organism
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-query-biosynthetic-gene-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Query biosynthetic gene clusters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-get-genes-in-bcg-regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Get genes in BCG regions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-get-scaffoldcontig-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Get scaffold/contig mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-img-functional-annotations-for-mll-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 IMG Functional Annotations for mll Cluster
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-mibig-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. MIBiG Database
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. MIBiG Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-search-for-organism-bgcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Search for organism BGCs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ncbi-direct-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. NCBI Direct Access
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. NCBI Direct Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-nucleotide-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Nucleotide database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-gene-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Gene database
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#join-points-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Join Points Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-availability-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Availability Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-query-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Query Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Query Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-start-with-ncbi-authoritative-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Start with NCBI (authoritative source)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-query-img-for-functional-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Query IMG for functional annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-cross-reference-with-kbase-for-pangenome-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Cross-reference with KBase (for pangenome context)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lessons Learned
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="case-study-mll-bgc-methylolanthanin-in-methylorubrum-extorquens-am1">Case Study: mll BGC (Methylolanthanin) in <em>Methylorubrum extorquens</em> AM1</h1>
+<p>This case study demonstrates how to query the mll biosynthetic gene cluster across
+multiple genomics databases, identifying join points and data gaps.</p>
+<h2 id="background">Background</h2>
+<p>The <strong>mll</strong> (methylolanthanin) biosynthetic gene cluster produces a lanthanide-chelating
+metallophore in <em>Methylorubrum extorquens</em> AM1. This is a well-characterized system
+described in <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11317620/">Zytnick et al. 2024 (PNAS)</a>.</p>
+<p><strong>Key identifiers:</strong>
+- Organism: <em>Methylorubrum extorquens</em> AM1 (formerly <em>Methylobacterium extorquens</em>)
+- NCBI Taxonomy ID: 272630
+- RefSeq Assembly: GCF_000018845.1
+- Megaplasmid: NC_012811.1 (contains mll cluster)
+- Gene locus tags: META1p4129-META1p4138</p>
+<h2 id="the-mll-gene-cluster">The mll Gene Cluster</h2>
+<table>
+<thead>
+<tr>
+<th>Locus Tag</th>
+<th>Gene</th>
+<th>Product</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>META1p4129</td>
+<td>mluA</td>
+<td>TonB-dependent receptor</td>
+<td>Metallophore uptake</td>
+</tr>
+<tr>
+<td>META1p4130</td>
+<td>mluR</td>
+<td>Anti-sigma factor</td>
+<td>Regulation</td>
+</tr>
+<tr>
+<td>META1p4131</td>
+<td>mluI</td>
+<td>ECF sigma factor</td>
+<td>Regulation</td>
+</tr>
+<tr>
+<td>META1p4132</td>
+<td>mllA</td>
+<td>IucA/IucC family</td>
+<td>Siderophore biosynthesis</td>
+</tr>
+<tr>
+<td>META1p4133</td>
+<td>mllBC</td>
+<td>Fused biosynthesis</td>
+<td>Siderophore biosynthesis</td>
+</tr>
+<tr>
+<td>META1p4134</td>
+<td>mllDE</td>
+<td>Fused biosynthesis</td>
+<td>Siderophore biosynthesis</td>
+</tr>
+<tr>
+<td>META1p4135</td>
+<td>mllF</td>
+<td>3,4-DHB synthesis</td>
+<td>Siderophore biosynthesis</td>
+</tr>
+<tr>
+<td>META1p4136</td>
+<td>mllG</td>
+<td>DUF2218</td>
+<td>Regulation/transport</td>
+</tr>
+<tr>
+<td>META1p4137</td>
+<td>mllH</td>
+<td>Acetyltransferase</td>
+<td>Linker modification</td>
+</tr>
+<tr>
+<td>META1p4138</td>
+<td>mllJ</td>
+<td>DUF4142 ferritin-like</td>
+<td>Periplasmic export</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="database-queries">Database Queries</h2>
+<h3 id="1-kbase-pangenome-database">1. KBase Pangenome Database</h3>
+<h4 id="11-find-the-genome">1.1 Find the genome</h4>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Query: Find M. extorquens genomes in KBase</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">genome_id</span><span class="p">,</span><span class="w"> </span><span class="n">gtdb_species_clade_id</span><span class="p">,</span><span class="w"> </span><span class="n">ncbi_biosample_id</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">kbase_ke_pangenome</span><span class="p">.</span><span class="n">genome</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">gtdb_species_clade_id</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%Methylobacterium_extorquens%&#39;</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div>
+<p><strong>Result:</strong>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;genome_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RS_GCF_000018845.1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;gtdb_species_clade_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;s__Methylobacterium_extorquens--RS_GCF_900234795.1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ncbi_biosample_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SAMN00000030&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// ... 26 total genomes</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Join point identified:</strong>
+- <code>genome_id</code>: <code>RS_GCF_000018845.1</code> → Strip <code>RS_</code> prefix → <code>GCF_000018845.1</code> (NCBI Assembly)
+- <code>ncbi_biosample_id</code>: <code>SAMN00000030</code> → Direct link to NCBI BioSample</p>
+<h4 id="12-check-available-genes">1.2 Check available genes</h4>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Query: What nucleotide accessions are in KBase for this genome?</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="k">SUBSTRING</span><span class="p">(</span><span class="n">gene_id</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">accession_prefix</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">cnt</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">kbase_ke_pangenome</span><span class="p">.</span><span class="n">gene</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">genome_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;RS_GCF_000018845.1&#39;</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">SUBSTRING</span><span class="p">(</span><span class="n">gene_id</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Result:</strong>
+<div class="highlight"><pre><span></span><code>NC_010172.1 - 4,983 genes (plasmid pMETA1 only)
+</code></pre></div></p>
+<p><strong>⚠️ DATA GAP IDENTIFIED:</strong></p>
+<p>KBase pangenome is <strong>missing</strong> genes from:
+- <code>NC_012808.1</code> - Main chromosome
+- <code>NC_012811.1</code> - Megaplasmid (where mll cluster resides!)</p>
+<h4 id="13-attempt-to-find-mll-genes">1.3 Attempt to find mll genes</h4>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Query: Search for megaplasmid genes (expected to fail)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">gene_count</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">kbase_ke_pangenome</span><span class="p">.</span><span class="n">gene</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">genome_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;RS_GCF_000018845.1&#39;</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">gene_id</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;NC_012811%&#39;</span>
+</code></pre></div>
+<p><strong>Result:</strong> <code>0</code> genes found</p>
+<p><strong>Conclusion:</strong> Cannot query mll cluster in KBase pangenome.</p>
+<h4 id="14-check-eggnog-functional-annotations">1.4 Check EggNOG functional annotations</h4>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Query: Get functional annotations for available genes</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">query_name</span><span class="p">,</span><span class="w"> </span><span class="n">Description</span><span class="p">,</span><span class="w"> </span><span class="n">Preferred_name</span><span class="p">,</span><span class="w"> </span><span class="n">COG_category</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">kbase_ke_pangenome</span><span class="p">.</span><span class="n">eggnog_mapper_annotations</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">query_name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;NC_012808%&#39;</span><span class="w">  </span><span class="c1">-- chromosome</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">20</span>
+</code></pre></div>
+<p><strong>Result:</strong> Returns functional annotations with COG categories, gene names, etc.
+But megaplasmid genes are not present.</p>
+<hr />
+<h3 id="2-jgi-gold-database">2. JGI GOLD Database</h3>
+<h4 id="21-find-organism-via-ncbi-assembly">2.1 Find organism via NCBI Assembly</h4>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Query: Find M. extorquens AM1 in GOLD via assembly accession</span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="n">assembly_accession</span><span class="p">,</span>
+<span class="w">    </span><span class="n">taxid</span><span class="p">,</span>
+<span class="w">    </span><span class="n">organism_name</span><span class="p">,</span>
+<span class="w">    </span><span class="n">biosample</span><span class="p">,</span>
+<span class="w">    </span><span class="n">refseq_category</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;gold-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">ncbi_assembly</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">assembly_accession</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;GCF_000018845.1&#39;</span>
+<span class="w">   </span><span class="k">OR</span><span class="w"> </span><span class="n">organism_name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%Methylorubrum extorquens AM1%&#39;</span>
+</code></pre></div>
+<p><strong>Join point:</strong>
+- <code>assembly_accession</code>: <code>GCF_000018845.1</code> ← matches KBase <code>genome_id</code> (after stripping RS_)
+- <code>taxid</code>: Links to <code>ncbi_taxonomy</code> table
+- <code>biosample</code>: Links to sample metadata</p>
+<h4 id="22-get-taxonomy-lineage">2.2 Get taxonomy lineage</h4>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Query: Full taxonomy for the organism</span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="n">ncbi_tax_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">scientific_name</span><span class="p">,</span>
+<span class="w">    </span><span class="n">phylum</span><span class="p">,</span>
+<span class="w">    </span><span class="k">class</span><span class="p">,</span>
+<span class="w">    </span><span class="ss">&quot;order&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">family</span><span class="p">,</span>
+<span class="w">    </span><span class="n">genus</span><span class="p">,</span>
+<span class="w">    </span><span class="n">species</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;gold-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">ncbi_taxonomy</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">ncbi_tax_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">272630</span><span class="w">  </span><span class="c1">-- M. extorquens AM1</span>
+</code></pre></div>
+<hr />
+<h3 id="3-jgi-img-core-database">3. JGI IMG Core Database</h3>
+<h4 id="31-find-taxon_oid-for-organism">3.1 Find taxon_oid for organism</h4>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Query: Get IMG taxon identifier</span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="n">taxon_oid</span><span class="p">,</span>
+<span class="w">    </span><span class="n">taxon_display_name</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ncbi_taxon_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">genome_type</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">taxon</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">ncbi_taxon_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">272630</span>
+<span class="w">   </span><span class="k">OR</span><span class="w"> </span><span class="n">taxon_display_name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%Methylorubrum extorquens AM1%&#39;</span>
+</code></pre></div>
+<p><strong>Join point:</strong>
+- <code>taxon_oid</code>: IMG internal identifier → links to all IMG gene tables
+- <code>ncbi_taxon_id</code>: <code>272630</code> → links to GOLD/NCBI</p>
+<h4 id="32-query-biosynthetic-gene-clusters">3.2 Query biosynthetic gene clusters</h4>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Query: Find BCG regions for this organism</span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="n">region_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">taxon_oid</span><span class="p">,</span>
+<span class="w">    </span><span class="n">start_coord</span><span class="p">,</span>
+<span class="w">    </span><span class="n">end_coord</span><span class="p">,</span>
+<span class="w">    </span><span class="n">bcg_type</span><span class="p">,</span>
+<span class="w">    </span><span class="n">scaffold_oid</span><span class="p">,</span>
+<span class="w">    </span><span class="n">bcg_method</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_mysql_abc</span><span class="p">.</span><span class="n">bcg_region</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">taxon_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">taxon_oid</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">taxon</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ncbi_taxon_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">272630</span>
+<span class="p">)</span>
+</code></pre></div>
+<h4 id="33-get-genes-in-bcg-regions">3.3 Get genes in BCG regions</h4>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Query: Get genes within identified BCG regions</span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="n">rg</span><span class="p">.</span><span class="n">region_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">rg</span><span class="p">.</span><span class="n">gene_oid</span><span class="p">,</span>
+<span class="w">    </span><span class="n">rg</span><span class="p">.</span><span class="n">bcg_gene_type</span><span class="p">,</span>
+<span class="w">    </span><span class="n">rg</span><span class="p">.</span><span class="n">gene_functions</span><span class="p">,</span>
+<span class="w">    </span><span class="k">g</span><span class="p">.</span><span class="n">locus_tag</span><span class="p">,</span>
+<span class="w">    </span><span class="k">g</span><span class="p">.</span><span class="n">gene_display_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_mysql_abc</span><span class="p">.</span><span class="n">bcg_region_genes</span><span class="w"> </span><span class="n">rg</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene</span><span class="w"> </span><span class="k">g</span>
+<span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">rg</span><span class="p">.</span><span class="n">gene_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">rg</span><span class="p">.</span><span class="n">region_id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="c1">-- BCG region IDs from previous query</span>
+<span class="p">)</span>
+</code></pre></div>
+<h4 id="34-get-scaffoldcontig-mapping">3.4 Get scaffold/contig mapping</h4>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Query: Map scaffold_oid to NCBI accessions</span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="n">scaffold_oid</span><span class="p">,</span>
+<span class="w">    </span><span class="n">scaffold_name</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ext_accession</span><span class="p">,</span>
+<span class="w">    </span><span class="n">taxon_oid</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">scaffold</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">taxon_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">taxon_oid</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">taxon</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ncbi_taxon_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">272630</span>
+<span class="p">)</span>
+</code></pre></div>
+<p><strong>Join point:</strong>
+- <code>scaffold_name</code> or <code>ext_accession</code> may contain <code>NC_012811</code> (megaplasmid accession)
+- Links IMG scaffold_oid → NCBI nucleotide accession</p>
+<h4 id="35-img-functional-annotations-for-mll-cluster">3.5 IMG Functional Annotations for mll Cluster</h4>
+<p>Using the taxon_oid (644736386) and locus tag pattern <code>MexAM1_META1p*</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Query: Get gene product names for mll cluster</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">gene_oid</span><span class="p">,</span><span class="w"> </span><span class="n">locus_tag</span><span class="p">,</span><span class="w"> </span><span class="n">product_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">taxon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">644736386</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">locus_tag</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;MexAM1_META1p413%&#39;</span>
+<span class="w">  </span><span class="k">OR</span><span class="w"> </span><span class="n">locus_tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;MexAM1_META1p4129&#39;</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">locus_tag</span>
+</code></pre></div>
+<p><strong>Result - Product Names:</strong></p>
+<table>
+<thead>
+<tr>
+<th>gene_oid</th>
+<th>locus_tag</th>
+<th>product_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>644814096</td>
+<td>MexAM1_META1p4129</td>
+<td>iron complex outermembrane recepter protein</td>
+</tr>
+<tr>
+<td>644814097</td>
+<td>MexAM1_META1p4130</td>
+<td>anti-sigma-factor antagonist</td>
+</tr>
+<tr>
+<td>644814098</td>
+<td>MexAM1_META1p4131</td>
+<td>RNA polymerase sigma factor</td>
+</tr>
+<tr>
+<td>644814099</td>
+<td>MexAM1_META1p4132</td>
+<td>spermidine-citrate ligase</td>
+</tr>
+<tr>
+<td>644814100</td>
+<td>MexAM1_META1p4133</td>
+<td>3,4-dihydroxybenzoyl-citryl-spermidine/N-citryl-spermidine--spermidine ligase</td>
+</tr>
+<tr>
+<td>644814101</td>
+<td>MexAM1_META1p4134</td>
+<td>3,4-dihydroxybenzoyl-citryl-spermidine/N-citryl-spermidine--spermidine ligase</td>
+</tr>
+<tr>
+<td>644814102</td>
+<td>MexAM1_META1p4135</td>
+<td>isochorismatase family protein</td>
+</tr>
+<tr>
+<td>644814103</td>
+<td>MexAM1_META1p4136</td>
+<td>hypothetical protein</td>
+</tr>
+<tr>
+<td>644814104</td>
+<td>MexAM1_META1p4137</td>
+<td>hypothetical protein</td>
+</tr>
+<tr>
+<td>644814105</td>
+<td>MexAM1_META1p4138</td>
+<td>MMPL family transporter</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> IMG uses locus tag format <code>MexAM1_META1p4129</code> vs NCBI's <code>META1p4129</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Query: Get COG annotations for mll cluster genes</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">locus_tag</span><span class="p">,</span><span class="w"> </span><span class="n">gc</span><span class="p">.</span><span class="n">cog</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene</span><span class="w"> </span><span class="k">g</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene_cog_groups</span><span class="w"> </span><span class="n">gc</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gc</span><span class="p">.</span><span class="n">gene_oid</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">644736386</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="k">g</span><span class="p">.</span><span class="n">locus_tag</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;MexAM1_META1p413%&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">locus_tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;MexAM1_META1p4129&#39;</span><span class="p">)</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">locus_tag</span>
+</code></pre></div>
+<p><strong>Result - COG Annotations:</strong></p>
+<table>
+<thead>
+<tr>
+<th>locus_tag</th>
+<th>cog</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MexAM1_META1p4129</td>
+<td>COG4774</td>
+<td>Outer membrane receptor for ferric coprogen and ferric-rhodotorulic acid</td>
+</tr>
+<tr>
+<td>MexAM1_META1p4130</td>
+<td>COG3712</td>
+<td>Anti-sigma factor antagonist</td>
+</tr>
+<tr>
+<td>MexAM1_META1p4131</td>
+<td>COG1595</td>
+<td>DNA-directed RNA polymerase sigma subunit</td>
+</tr>
+<tr>
+<td>MexAM1_META1p4132</td>
+<td>COG4264</td>
+<td>IucA/IucC family siderophore biosynthesis</td>
+</tr>
+<tr>
+<td>MexAM1_META1p4133</td>
+<td>COG4264</td>
+<td>IucA/IucC family siderophore biosynthesis</td>
+</tr>
+<tr>
+<td>MexAM1_META1p4134</td>
+<td>COG4264</td>
+<td>IucA/IucC family siderophore biosynthesis</td>
+</tr>
+<tr>
+<td>MexAM1_META1p4135</td>
+<td>COG1535</td>
+<td>Isochorismatase</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Query: Get PFAM annotations for mll cluster genes</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">locus_tag</span><span class="p">,</span><span class="w"> </span><span class="n">gp</span><span class="p">.</span><span class="n">pfam_family</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene</span><span class="w"> </span><span class="k">g</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene_pfam_families</span><span class="w"> </span><span class="n">gp</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gp</span><span class="p">.</span><span class="n">gene_oid</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">644736386</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="k">g</span><span class="p">.</span><span class="n">locus_tag</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;MexAM1_META1p413%&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">locus_tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;MexAM1_META1p4129&#39;</span><span class="p">)</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">locus_tag</span><span class="p">,</span><span class="w"> </span><span class="n">gp</span><span class="p">.</span><span class="n">pfam_family</span>
+</code></pre></div>
+<p><strong>Result - PFAM Annotations:</strong></p>
+<table>
+<thead>
+<tr>
+<th>locus_tag</th>
+<th>pfam_family</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MexAM1_META1p4129</td>
+<td>pfam00593</td>
+<td>TonB-dependent receptor</td>
+</tr>
+<tr>
+<td>MexAM1_META1p4129</td>
+<td>pfam07715</td>
+<td>TonB-dependent receptor plug domain</td>
+</tr>
+<tr>
+<td>MexAM1_META1p4132</td>
+<td>pfam04183</td>
+<td><strong>IucA/IucC family</strong> (siderophore synthetase)</td>
+</tr>
+<tr>
+<td>MexAM1_META1p4132</td>
+<td>pfam06276</td>
+<td>Ferric iron reductase FhuF-like transporter</td>
+</tr>
+<tr>
+<td>MexAM1_META1p4133</td>
+<td>pfam00501</td>
+<td>AMP-binding enzyme</td>
+</tr>
+<tr>
+<td>MexAM1_META1p4133</td>
+<td>pfam04183</td>
+<td><strong>IucA/IucC family</strong></td>
+</tr>
+<tr>
+<td>MexAM1_META1p4133</td>
+<td>pfam06276</td>
+<td>Ferric iron reductase FhuF-like transporter</td>
+</tr>
+<tr>
+<td>MexAM1_META1p4133</td>
+<td>pfam13193</td>
+<td>AMP-binding enzyme C-terminal domain</td>
+</tr>
+<tr>
+<td>MexAM1_META1p4135</td>
+<td>pfam01261</td>
+<td>Xylose isomerase-like TIM barrel</td>
+</tr>
+<tr>
+<td>MexAM1_META1p4138</td>
+<td>pfam13628</td>
+<td>Predicted permease</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key finding:</strong> The <strong>pfam04183 (IucA/IucC)</strong> domain is characteristic of siderophore biosynthesis
+enzymes. This domain is present in mllA (META1p4132) and mllBC (META1p4133), confirming their
+role in metallophore biosynthesis as described in Zytnick et al. 2024.</p>
+<hr />
+<h3 id="4-mibig-database">4. MIBiG Database</h3>
+<h4 id="41-search-for-organism-bgcs">4.1 Search for organism BGCs</h4>
+<p>URL: <code>https://mibig.secondarymetabolites.org/repository</code></p>
+<p>Search: "Methylorubrum extorquens AM1"</p>
+<p><strong>Result:</strong>
+- <a href="https://mibig.secondarymetabolites.org/go/BGC0001991">BGC0001991</a> - <strong>Toblerol</strong> cluster (different BGC!)
+- ❌ mll cluster is NOT in MIBiG</p>
+<p><strong>BGC0001991 (Toblerol) details:</strong>
+- Accession: NC_012811.1 (same megaplasmid as mll)
+- Coordinates: 7,676–32,884 bp
+- Genes: MEXAM1_RS33125 through MEXAM1_RS25440</p>
+<p><strong>Note:</strong> The toblerol cluster uses different locus tag format (MEXAM1_RS<em>) vs mll cluster (META1p</em>).</p>
+<hr />
+<h3 id="5-ncbi-direct-access">5. NCBI Direct Access</h3>
+<h4 id="51-nucleotide-database">5.1 Nucleotide database</h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Fetch megaplasmid sequence info</span>
+curl<span class="w"> </span><span class="s2">&quot;https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?\</span>
+<span class="s2">db=nuccore&amp;id=NC_012811.1&amp;rettype=gb&amp;retmode=text&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-100
+</code></pre></div>
+<h4 id="52-gene-database">5.2 Gene database</h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Search for mll genes by locus tag</span>
+curl<span class="w"> </span><span class="s2">&quot;https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?\</span>
+<span class="s2">db=gene&amp;term=META1p4129[locus_tag]+OR+META1p4132[locus_tag]&quot;</span>
+</code></pre></div>
+<hr />
+<h2 id="join-points-summary">Join Points Summary</h2>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────────────┐
+│                         IDENTIFIER MAPPING                          │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  KBase Pangenome                    JGI GOLD                        │
+│  ════════════════                   ════════                        │
+│  genome_id: RS_GCF_000018845.1  ──► assembly_accession: GCF_000018845.1
+│  ncbi_biosample_id: SAMN00000030 ─► biosample: SAMN00000030         │
+│  gene_id: NC_010172.1_123       ──► (nucleotide accession)          │
+│                                                                     │
+│  JGI GOLD                           JGI IMG                         │
+│  ════════                           ═══════                         │
+│  taxid: 272630                  ──► ncbi_taxon_id: 272630           │
+│  assembly_accession             ──► (via scaffold.ext_accession)    │
+│                                                                     │
+│  JGI IMG                            NCBI                            │
+│  ═══════                            ════                            │
+│  taxon_oid: 644736386           ──► ncbi_taxon_id: 272630           │
+│  scaffold.ext_accession         ──► NC_012811.1 (megaplasmid)       │
+│  gene.locus_tag: MexAM1_META1p* ──► META1p4129 (mll genes)          │
+│  gene_oid: 644814096-644814105  ──► mll cluster genes               │
+│                                                                     │
+│  MIBiG                              NCBI                            │
+│  ═════                              ════                            │
+│  Accession: NC_012811.1         ──► Nucleotide accession            │
+│  Locus tags: MEXAM1_RS*         ──► RefSeq locus tag format         │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<hr />
+<h2 id="data-availability-matrix">Data Availability Matrix</h2>
+<table>
+<thead>
+<tr>
+<th>Data Element</th>
+<th>KBase</th>
+<th>GOLD</th>
+<th>IMG</th>
+<th>MIBiG</th>
+<th>NCBI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Genome assembly</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>-</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Taxonomy</td>
+<td>✅ (GTDB)</td>
+<td>✅</td>
+<td>✅</td>
+<td>-</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Chromosome genes</td>
+<td>❌</td>
+<td>-</td>
+<td>✅</td>
+<td>-</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Megaplasmid genes</td>
+<td>❌</td>
+<td>-</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>mll cluster</strong></td>
+<td>❌</td>
+<td>-</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Toblerol cluster</td>
+<td>❌</td>
+<td>-</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>COG annotations</td>
+<td>⚠️ partial</td>
+<td>-</td>
+<td>✅</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>PFAM annotations</td>
+<td>❌</td>
+<td>-</td>
+<td>✅</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Functional annotations</td>
+<td>⚠️ partial</td>
+<td>-</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>BioSample metadata</td>
+<td>✅</td>
+<td>✅</td>
+<td>-</td>
+<td>-</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="recommended-query-strategy">Recommended Query Strategy</h2>
+<p>To get comprehensive mll cluster data:</p>
+<h3 id="step-1-start-with-ncbi-authoritative-source">Step 1: Start with NCBI (authoritative source)</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Get megaplasmid GenBank record with all gene annotations</span>
+efetch<span class="w"> </span>-db<span class="w"> </span>nuccore<span class="w"> </span>-id<span class="w"> </span>NC_012811.1<span class="w"> </span>-format<span class="w"> </span>gbwithparts<span class="w"> </span>&gt;<span class="w"> </span>NC_012811.gbk
+</code></pre></div>
+<h3 id="step-2-query-img-for-functional-annotations">Step 2: Query IMG for functional annotations</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Get IMG taxon_oid first</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">taxon_oid</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ncbi_taxon_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">272630</span><span class="p">;</span>
+
+<span class="c1">-- Then get all genes on megaplasmid scaffold</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span><span class="p">,</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">locus_tag</span><span class="p">,</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">product_name</span><span class="p">,</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">cog_id</span><span class="p">,</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">pfam_id</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene</span><span class="w"> </span><span class="k">g</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">scaffold</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">scaffold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">scaffold_oid</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">ext_accession</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;NC_012811.1&#39;</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">start_coord</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">4500000</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="mi">4520000</span><span class="w">  </span><span class="c1">-- approximate mll region</span>
+</code></pre></div>
+<h3 id="step-3-cross-reference-with-kbase-for-pangenome-context">Step 3: Cross-reference with KBase (for pangenome context)</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Get species-level pangenome statistics</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">kbase_ke_pangenome</span><span class="p">.</span><span class="n">pangenome</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">gtdb_species_clade_id</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%Methylobacterium_extorquens%&#39;</span>
+
+<span class="c1">-- Get ortholog clusters for comparison (note: mll genes not available)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">gc</span><span class="p">.</span><span class="n">gene_cluster_id</span><span class="p">,</span><span class="w"> </span><span class="n">gc</span><span class="p">.</span><span class="n">is_core</span><span class="p">,</span><span class="w"> </span><span class="n">gc</span><span class="p">.</span><span class="n">is_auxiliary</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">kbase_ke_pangenome</span><span class="p">.</span><span class="n">gene_cluster</span><span class="w"> </span><span class="n">gc</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">gc</span><span class="p">.</span><span class="n">gtdb_species_clade_id</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%Methylobacterium_extorquens%&#39;</span>
+</code></pre></div>
+<hr />
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ol>
+<li>
+<p><strong>KBase pangenome has gaps</strong>: Not all replicons (chromosomes, plasmids, megaplasmids)
+   are included for every genome. Always verify which sequences are present.</p>
+</li>
+<li>
+<p><strong>Locus tag formats vary across databases</strong>:</p>
+</li>
+<li>NCBI original: <code>META1p4129</code></li>
+<li>NCBI RefSeq: <code>MEXAM1_RS25400</code> (used in MIBiG)</li>
+<li>IMG format: <code>MexAM1_META1p4129</code> (genome prefix + original tag)</li>
+<li>
+<p>All refer to same genes but require format-aware matching</p>
+</li>
+<li>
+<p><strong>MIBiG is curated but incomplete</strong>: Has toblerol cluster but not mll cluster,
+   despite both being characterized in the literature.</p>
+</li>
+<li>
+<p><strong>IMG is most comprehensive for JGI organisms</strong>: Has complete functional
+   annotations (COG, PFAM), BCG predictions, and scaffold-level mappings.
+   The <code>pfam04183</code> (IucA/IucC) domain is diagnostic for siderophore biosynthesis.</p>
+</li>
+<li>
+<p><strong>Assembly accession is best join key</strong>: <code>GCF_000018845.1</code> works across
+   KBase (with RS_ prefix), GOLD, and NCBI.</p>
+</li>
+<li>
+<p><strong>IMG taxon_oid enables rich queries</strong>: Once you have the taxon_oid (644736386
+   for M. extorquens AM1), you can efficiently join to gene, scaffold, and
+   functional annotation tables.</p>
+</li>
+</ol>
+<hr />
+<h2 id="references">References</h2>
+<ul>
+<li>
+<p>Zytnick AM, et al. (2024) "Identification and characterization of a small-molecule
+  metallophore involved in lanthanide metabolism" <em>PNAS</em> 121(32):e2322096121.
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11317620/">PMC11317620</a></p>
+</li>
+<li>
+<p>Ueoka R, et al. (2018) "Metabolic and evolutionary origin of actin-binding polyketides
+  from diverse organisms" <em>Angew Chem Int Ed</em> PMID:29112783
+  <a href="https://mibig.secondarymetabolites.org/go/BGC0001991">MIBiG BGC0001991</a></p>
+</li>
+<li>
+<p>NCBI Reference Sequences:</p>
+</li>
+<li><a href="https://www.ncbi.nlm.nih.gov/nuccore/NC_012808.1">NC_012808.1</a> - Chromosome</li>
+<li><a href="https://www.ncbi.nlm.nih.gov/nuccore/NC_012811.1">NC_012811.1</a> - Megaplasmid (contains mll)</li>
+<li><a href="https://www.ncbi.nlm.nih.gov/nuccore/NC_010172.1">NC_010172.1</a> - Plasmid pMETA1</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

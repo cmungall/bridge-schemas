@@ -1,0 +1,4880 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LinkML schemas for JGI and KBase genomics lakehouses">
+      
+      
+      
+      
+        <link rel="prev" href="../../kbase/kbase_refseq_taxon_api/">
+      
+      
+        <link rel="next" href="../img_core_v400/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>GOLD - Bridge Schemas</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gold" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Bridge Schemas" class="md-header__button md-logo" aria-label="Bridge Schemas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bridge Schemas
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GOLD
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cmungall/bridge-schemas" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Bridge Schemas" class="md-nav__button md-logo" aria-label="Bridge Schemas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bridge Schemas
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cmungall/bridge-schemas" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cross-database-joins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Database Joins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Studies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Case Studies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../case-studies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../case-studies/mll-bgc-methylorubrum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mll BGC (M. extorquens)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KBase/BERDL Schemas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    KBase/BERDL Schemas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_ke_pangenome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pangenome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/nmdc_core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NMDC Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_genomes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Genomes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/gapmind_pathways/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GapMind Pathways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/enigma_coral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENIGMA CoRAL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/phagefoundry_genome_browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PhageFoundry Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/phagefoundry_strain_modelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PhageFoundry Modelling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_uniprot_archaea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniProt Archaea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_uniprot_bacteria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniProt Bacteria
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_uniref50/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniRef50
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_uniref90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniRef90
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_uniref100/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniRef100
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_phenotype/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phenotype
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_msd_biochemistry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSD Biochemistry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_ontology_source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ontology Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_refseq_taxon_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RefSeq Taxon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JGI Lakehouse Schemas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    JGI Lakehouse Schemas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOLD
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOLD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subsets
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_core_v400/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Extended
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_gold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG GOLD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_sat_v450/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Satellite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_sub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Submission
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../imgsg_dev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_i_taxon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_methylome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Methylome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_proteome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Proteome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_rnaseq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG RNAseq
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_mysql_abc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL ABC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_mysql_img/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_mysql_imgvr_prod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG/VR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_mysql_mbin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL MBin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_mysql_misi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL MISI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phytozome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phytozome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mycocosm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MycoCosm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gcs_citation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citation Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi_portal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JGI Portal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdm_metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDM Metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SMC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subsets
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="gold">gold</h1>
+<p>URI: https://w3id.org/jgi/gold</p>
+<p>Name: gold</p>
+<h2 id="classes">Classes</h2>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="AnalysisProject/">AnalysisProject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="AnalysisProjectPublication/">AnalysisProjectPublication</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="AnalysisProjectSraRunV2/">AnalysisProjectSraRunV2</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ApiUser/">ApiUser</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Assembly/">Assembly</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="AssemblyLibrary/">AssemblyLibrary</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="AssemblyMethod/">AssemblyMethod</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="AssemblyMethodMapping/">AssemblyMethodMapping</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="AuditLog/">AuditLog</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Bacdive/">Bacdive</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Biosample/">Biosample</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="BiosampleDisease/">BiosampleDisease</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="CvaerospaceStruc/">CvaerospaceStruc</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="CvapStatus/">CvapStatus</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Cvcolor/">Cvcolor</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Cvdisease/">Cvdisease</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="CvdoorTypeWood/">CvdoorTypeWood</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Cvhabitat/">Cvhabitat</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Cvmodel/">Cvmodel</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="CvorganismType/">CvorganismType</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="DwAnalysisProject/">DwAnalysisProject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="DwSamples/">DwSamples</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="DwSequencingProduct/">DwSequencingProduct</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="DwSequencingProject/">DwSequencingProject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Excel/">Excel</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="GoldMasterSequencingMethod/">GoldMasterSequencingMethod</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="NcbiAssembly/">NcbiAssembly</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="NcbiGenbank/">NcbiGenbank</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="NcbiRawSraRun/">NcbiRawSraRun</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="NcbiTaxonomy/">NcbiTaxonomy</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="OrganismCellArrangement/">OrganismCellArrangement</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="OrganismMetabolism/">OrganismMetabolism</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="OrganismV2/">OrganismV2</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="PackageSoil/">PackageSoil</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Project/">Project</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ProjectAnalysisProject/">ProjectAnalysisProject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Ror/">Ror</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="SequencingMethod/">SequencingMethod</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="SigsView/">SigsView</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="SraExperimentV2/">SraExperimentV2</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="SraSampleV2/">SraSampleV2</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Study/">Study</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Slot</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="absorbance_260_230/">absorbance_260_230</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="absorbance_260_280/">absorbance_260_280</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="active/">active</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="actual_sequencing_product_id/">actual_sequencing_product_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="adapters/">adapters</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="add_date/">add_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="added_by/">added_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="admin_ap_count/">admin_ap_count</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="admin_biosample_count/">admin_biosample_count</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="admin_dap_count/">admin_dap_count</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="admin_sp_count/">admin_sp_count</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="alias/">alias</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="altitude/">altitude</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="altitude2/">altitude2</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="analysis_product_id/">analysis_product_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="analysis_project_id/">analysis_project_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="analysis_project_name/">analysis_project_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="analysis_project_name_full/">analysis_project_name_full</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="analysis_project_type/">analysis_project_type</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="analysis_system/">analysis_system</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="analyst_name/">analyst_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="annotation_date/">annotation_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="annotation_name/">annotation_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="annotation_provider/">annotation_provider</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="annotator_comments/">annotator_comments</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ap_for_nonowner/">ap_for_nonowner</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="api_user_id/">api_user_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="appended_ap_name/">appended_ap_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="asm_name/">asm_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="asm_not_live_date/">asm_not_live_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="asm_submitter/">asm_submitter</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="assemblers/">assemblers</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="assembly_accession/">assembly_accession</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="assembly_accession_no_version/">assembly_accession_no_version</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="assembly_id/">assembly_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="assembly_level/">assembly_level</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="assembly_method/">assembly_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="assembly_method_id/">assembly_method_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="assembly_type/">assembly_type</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="audit_log_id/">audit_log_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="author_names/">author_names</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="availability_date/">availability_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="bacdive_id/">bacdive_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="bacdive_json/">bacdive_json</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="bicarbonate_millimol/">bicarbonate_millimol</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="bin_param/">bin_param</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="binning_method/">binning_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biogas_acetic_acid/">biogas_acetic_acid</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biogas_ammonium_nh4/">biogas_ammonium_nh4</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biogas_butanol/">biogas_butanol</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biogas_butyl_acid/">biogas_butyl_acid</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biogas_ethanol/">biogas_ethanol</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biogas_fed_substrates/">biogas_fed_substrates</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biogas_iso_butyl_acid/">biogas_iso_butyl_acid</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biogas_iso_valeric_acid/">biogas_iso_valeric_acid</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biogas_methane_pct/">biogas_methane_pct</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biogas_methanol/">biogas_methanol</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biogas_propanol/">biogas_propanol</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biogas_propionic_acid/">biogas_propionic_acid</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biogas_retention_time/">biogas_retention_time</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biogas_temperature/">biogas_temperature</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biogas_total_inorganic_carbon/">biogas_total_inorganic_carbon</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biogas_valeric_acid/">biogas_valeric_acid</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biogas_voa_tic/">biogas_voa_tic</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biogas_volatile_organic_acids/">biogas_volatile_organic_acids</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biogas_yield/">biogas_yield</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="bioproject/">bioproject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biosafety_level/">biosafety_level</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biosample/">biosample</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biosample_id/">biosample_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biosample_name/">biosample_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="biotic_relationship/">biotic_relationship</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="carbon_source/">carbon_source</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="cell_arrangement_id/">cell_arrangement_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="cell_diameter/">cell_diameter</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="cell_length/">cell_length</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="cell_shape/">cell_shape</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="chlorophyll_concentration/">chlorophyll_concentration</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="chromosome_count/">chromosome_count</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="clade/">clade</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="collabor_concentration_ngul/">collabor_concentration_ngul</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="collabor_volume_ul/">collabor_volume_ul</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="collection_altit_depth_meters/">collection_altit_depth_meters</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="collection_date/">collection_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="collection_latitude/">collection_latitude</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="collection_longitude/">collection_longitude</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="collection_site_growth/">collection_site_growth</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="collection_time/">collection_time</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="color/">color</a></td>
+<td>Foreign key to cvcolor</td>
+</tr>
+<tr>
+<td><a href="comments/">comments</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="commercial/">commercial</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="commercial_comments/">commercial_comments</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="common_name/">common_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="community/">community</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="compl_appr/">compl_appr</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="completeness_percentage/">completeness_percentage</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="completion/">completion</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="completion_date/">completion_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="contact_id/">contact_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="contam_screen_input/">contam_screen_input</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="contamination_percentage/">contamination_percentage</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="contig_count/">contig_count</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="country/">country</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="created_by_id/">created_by_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="created_by_name/">created_by_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="cruise_line_name/">cruise_line_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="culture_collection/">culture_collection</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="culture_collection_id/">culture_collection_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="culture_strain_pure_descr/">culture_strain_pure_descr</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="culture_type/">culture_type</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="cultured/">cultured</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="curated_id/">curated_id</a></td>
+<td>Foreign key to assembly_method</td>
+</tr>
+<tr>
+<td><a href="current_concentration_ngul/">current_concentration_ngul</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="current_status/">current_status</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="current_status_id/">current_status_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="current_volume_ul/">current_volume_ul</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="date_created/">date_created</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="decontamination_method/">decontamination_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="default_account_id/">default_account_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="deleted/">deleted</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="depth/">depth</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="depth2/">depth2</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="description/">description</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="developmental_stage_age/">developmental_stage_age</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dir_num/">dir_num</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="disease_id/">disease_id</a></td>
+<td>Foreign key to cvdisease</td>
+</tr>
+<tr>
+<td><a href="diseases/">diseases</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dna_isolation_method/">dna_isolation_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="dna_treated/">dna_treated</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="domain/">domain</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ecosystem/">ecosystem</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ecosystem_category/">ecosystem_category</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ecosystem_path_id/">ecosystem_path_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ecosystem_subtype/">ecosystem_subtype</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ecosystem_type/">ecosystem_type</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ecotype/">ecotype</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="elevation/">elevation</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="elevation2/">elevation2</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="eligible_public_release/">eligible_public_release</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="email/">email</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="embargo_days/">embargo_days</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="embargo_start_date/">embargo_start_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="encoded_traits/">encoded_traits</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="entity_id/">entity_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="entity_name/">entity_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="env_broad_scale/">env_broad_scale</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="env_local_scale/">env_local_scale</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="env_medium/">env_medium</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="est_count/">est_count</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="est_size/">est_size</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="excluded_from_refseq/">excluded_from_refseq</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="exemplar_doi/">exemplar_doi</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="exemplar_name/">exemplar_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="expected_final_version/">expected_final_version</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="expected_num_samples/">expected_num_samples</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="experimental_conditions/">experimental_conditions</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="external_id/">external_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="feature/">feature</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="field_name/">field_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="file1/">file1</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="filename/">filename</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="final_deliv_project_id/">final_deliv_project_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="finishing_goal_id/">finishing_goal_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="finishing_quality/">finishing_quality</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="fold_coverage/">fold_coverage</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ftp_path/">ftp_path</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="funding_program/">funding_program</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="funding_year/">funding_year</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gbrs_paired_asm/">gbrs_paired_asm</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gc_percent/">gc_percent</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="genbank_16s_id/">genbank_16s_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="genbank_accession/">genbank_accession</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="genbank_accession_no_version/">genbank_accession_no_version</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="genbank_id/">genbank_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="genbank_json/">genbank_json</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="genbank_low_quality_annotation/">genbank_low_quality_annotation</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gene_calling_method/">gene_calling_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gene_count/">gene_count</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="genome_coverage/">genome_coverage</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="genome_rep/">genome_rep</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="genome_size/">genome_size</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="genome_size_ungapped/">genome_size_ungapped</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="genome_type/">genome_type</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="genomic_resources/">genomic_resources</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="genus/">genus</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="genus_synonyms/">genus_synonyms</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="geo_location/">geo_location</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="geographic_location/">geographic_location</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="global_package_id/">global_package_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gls_sample_id/">gls_sample_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gls_sequencing_project_id/">gls_sequencing_project_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gold_analysis_project_id/">gold_analysis_project_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gold_biosample_id/">gold_biosample_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gold_class/">gold_class</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gold_family/">gold_family</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gold_id/">gold_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gold_order/">gold_order</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gold_phylogeny/">gold_phylogeny</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gold_sequencing_project_id/">gold_sequencing_project_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gold_study_id/">gold_study_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gold_study_name/">gold_study_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gpts_disambiguator/">gpts_disambiguator</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gpts_proposal_id/">gpts_proposal_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gpts_sample_id/">gpts_sample_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gram_stain/">gram_stain</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="group_/">group_</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="group_name/">group_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="growth_conditions/">growth_conditions</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="growth_temperature/">growth_temperature</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="growth_temperature2/">growth_temperature2</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gtdb_class/">gtdb_class</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gtdb_family/">gtdb_family</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gtdb_genus/">gtdb_genus</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gtdb_order/">gtdb_order</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gtdb_phylum/">gtdb_phylum</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gtdb_species/">gtdb_species</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gtdb_superkingdom/">gtdb_superkingdom</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gtdb_taxonomy_lineage/">gtdb_taxonomy_lineage</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="gtdb_version_id/">gtdb_version_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="h2s_millimol/">h2s_millimol</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="h2s_present/">h2s_present</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="habitat/">habitat</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="health_disease_stat/">health_disease_stat</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="host_age/">host_age</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="host_body_product/">host_body_product</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="host_body_product_id/">host_body_product_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="host_body_site/">host_body_site</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="host_body_site_id/">host_body_site_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="host_body_subsite/">host_body_subsite</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="host_body_subsite_id/">host_body_subsite_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="host_comments/">host_comments</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="host_gender/">host_gender</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="host_health_condition/">host_health_condition</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="host_medication/">host_medication</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="host_name/">host_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="host_race/">host_race</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="host_specificity/">host_specificity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="host_taxonomy_id/">host_taxonomy_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="hydrocarbon_core_package_id/">hydrocarbon_core_package_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="hydrocarbon_fs_package_id/">hydrocarbon_fs_package_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="id/">id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="identifier/">identifier</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="img_analysis_complete/">img_analysis_complete</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="img_annotation_version/">img_annotation_version</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="img_bin_count/">img_bin_count</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="img_breadth_calc/">img_breadth_calc</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="img_dataset_id/">img_dataset_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="img_predicted_plasmid_contigs/">img_predicted_plasmid_contigs</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="img_predicted_viral_contigs/">img_predicted_viral_contigs</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="img_rnaseq_id/">img_rnaseq_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="img_submission_prority/">img_submission_prority</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="img_taxon_id/">img_taxon_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="img_use/">img_use</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="in_vivo_conditions/">in_vivo_conditions</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="infraspecific_name/">infraspecific_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="irradiance/">irradiance</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="is_approved/">is_approved</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="is_assembled_deleted/">is_assembled_deleted</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="is_curated/">is_curated</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="is_decontamination/">is_decontamination</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="is_draft/">is_draft</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="is_geba/">is_geba</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="is_hmp/">is_hmp</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="is_img_annotation/">is_img_annotation</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="is_jgi/">is_jgi</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="is_locked/">is_locked</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="is_primary/">is_primary</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="is_public/">is_public</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="is_single_cell_material/">is_single_cell_material</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="is_test/">is_test</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="is_virocell/">is_virocell</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="isolate/">isolate</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="isolation_publication_id/">isolation_publication_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="isolation_pubmed_id/">isolation_pubmed_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="its_analysis_project_id/">its_analysis_project_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="its_analysis_project_name/">its_analysis_project_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="its_annotation_at_id/">its_annotation_at_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="its_assembly_at_type/">its_assembly_at_type</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="its_concentration_ng_ul/">its_concentration_ng_ul</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="its_data_utilization_status/">its_data_utilization_status</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="its_density_g_ml/">its_density_g_ml</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="its_growth_conditions/">its_growth_conditions</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="its_isotope_label/">its_isotope_label</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="its_ncbi_tax_id/">its_ncbi_tax_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="its_product_name/">its_product_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="its_project_name/">its_project_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="its_proposal_id/">its_proposal_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="its_sample_group_name/">its_sample_group_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="its_sample_id/">its_sample_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="its_sample_name/">its_sample_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="its_sequencing_product_name/">its_sequencing_product_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="its_source_sample_pid/">its_source_sample_pid</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="its_spid/">its_spid</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="its_version_number/">its_version_number</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="its_volume_ul/">its_volume_ul</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="jpa_entity/">jpa_entity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="keycloak_id/">keycloak_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="known_non_hosts/">known_non_hosts</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="last_mod_by/">last_mod_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="last_updated/">last_updated</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="last_updated_by_id/">last_updated_by_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="last_updated_by_name/">last_updated_by_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="lat_long_inferred/">lat_long_inferred</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="latitude/">latitude</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="latitude_test/">latitude_test</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="legacy_depth_data/">legacy_depth_data</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="legacy_gold_id/">legacy_gold_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="libraries/">libraries</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="library_id/">library_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="library_instrument/">library_instrument</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="library_layout/">library_layout</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="library_method/">library_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="library_name/">library_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="library_screen/">library_screen</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="library_selection/">library_selection</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="library_source/">library_source</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="library_strategy/">library_strategy</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="lineage/">lineage</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="lineage_with_ranks/">lineage_with_ranks</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="literature_references/">literature_references</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="location/">location</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="locus_tag/">locus_tag</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="longhurst_code/">longhurst_code</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="longitude/">longitude</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="longitude_test/">longitude_test</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="low_quality_genome/">low_quality_genome</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mag_cov_software/">mag_cov_software</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="master_group_id/">master_group_id</a></td>
+<td>Foreign key to organism_v2</td>
+</tr>
+<tr>
+<td><a href="master_study_id/">master_study_id</a></td>
+<td>Foreign key to study</td>
+</tr>
+<tr>
+<td><a href="material/">material</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="material_type/">material_type</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="max_depth_meters/">max_depth_meters</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="max_elevation_meters/">max_elevation_meters</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="max_insert_size_kb/">max_insert_size_kb</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="metabolism_id/">metabolism_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="metagenomic/">metagenomic</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="methane_conc_millimol/">methane_conc_millimol</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="method/">method</a></td>
+<td>Foreign key to assembly_method</td>
+</tr>
+<tr>
+<td><a href="method_generated/">method_generated</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="microbial_mat_package_id/">microbial_mat_package_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="min_depth_meters/">min_depth_meters</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="min_elevation_meters/">min_elevation_meters</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mod_by/">mod_by</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mod_date/">mod_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="modified/">modified</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="motility/">motility</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="mrn/">mrn</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="multiplex_identifiers/">multiplex_identifiers</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="name/">name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ncbi_assembly_id/">ncbi_assembly_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ncbi_bioproject_accession/">ncbi_bioproject_accession</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ncbi_bioproject_id/">ncbi_bioproject_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ncbi_biosample_accession/">ncbi_biosample_accession</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ncbi_biosample_id/">ncbi_biosample_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ncbi_class/">ncbi_class</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ncbi_family/">ncbi_family</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ncbi_genbank_id/">ncbi_genbank_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ncbi_genus/">ncbi_genus</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ncbi_kingdom/">ncbi_kingdom</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ncbi_locus_tag/">ncbi_locus_tag</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ncbi_order/">ncbi_order</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ncbi_phylum/">ncbi_phylum</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ncbi_project_name/">ncbi_project_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ncbi_species/">ncbi_species</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ncbi_sra_id/">ncbi_sra_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ncbi_superkingdom/">ncbi_superkingdom</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ncbi_tax_id/">ncbi_tax_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ncbi_taxonomy_id/">ncbi_taxonomy_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ncbi_taxonomy_lineage/">ncbi_taxonomy_lineage</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ncbi_taxonomy_name/">ncbi_taxonomy_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="new_value/">new_value</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="nitrate_concentration/">nitrate_concentration</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="non_coding_gene_count/">non_coding_gene_count</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="notes/">notes</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="nucl_acid_amp_lit/">nucl_acid_amp_lit</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="nucl_acid_ext_lit/">nucl_acid_ext_lit</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="nucleic_acid/">nucleic_acid</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="nucleic_acid_id/">nucleic_acid_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="number_tubes_plates/">number_tubes_plates</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="old_legacy_gold_id/">old_legacy_gold_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="old_value/">old_value</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="organism_id/">organism_id</a></td>
+<td>Foreign key to organism_v2</td>
+</tr>
+<tr>
+<td><a href="organism_name/">organism_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="organism_type/">organism_type</a></td>
+<td>Foreign key to cvorganism_type</td>
+</tr>
+<tr>
+<td><a href="other_ecosystem/">other_ecosystem</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="other_groups_info/">other_groups_info</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="other_hosts/">other_hosts</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="other_names/">other_names</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="other_project_names/">other_project_names</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="owner_id/">owner_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="oxygen_concentration/">oxygen_concentration</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="oxygen_presence/">oxygen_presence</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="oxygen_requirement/">oxygen_requirement</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="package_built_environment_id/">package_built_environment_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="package_host_associated_id/">package_host_associated_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="package_human_associated_id/">package_human_associated_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="package_version_id/">package_version_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="package_wastewater_id/">package_wastewater_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="paired_asm_comp/">paired_asm_comp</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="parent_ncbi_tax_id/">parent_ncbi_tax_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="pathogenicity/">pathogenicity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="patient_visit_number/">patient_visit_number</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="pcr_cond/">pcr_cond</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="pcr_primers/">pcr_primers</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ph/">ph</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ph1/">ph1</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ph2/">ph2</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="phylogeny_suggestion/">phylogeny_suggestion</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="phylum/">phylum</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="pi_id/">pi_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="pi_name/">pi_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="pipeline_annotation_method/">pipeline_annotation_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="plant_package_id/">plant_package_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="plasmid_count/">plasmid_count</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="plate_location/">plate_location</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ploidy/">ploidy</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="pmo_project_id/">pmo_project_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="pressure/">pressure</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="project_comments/">project_comments</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="project_id/">project_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="project_manager_id/">project_manager_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="project_name/">project_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="project_oid/">project_oid</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="project_status/">project_status</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="project_subtype/">project_subtype</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="propagation/">propagation</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="proport_isolation/">proport_isolation</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="proport_ocean/">proport_ocean</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="proport_station/">proport_station</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="proport_woa_dissolved_oxygen/">proport_woa_dissolved_oxygen</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="proport_woa_nitrate/">proport_woa_nitrate</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="proport_woa_phosphate/">proport_woa_phosphate</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="proport_woa_salinity/">proport_woa_salinity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="proport_woa_silicate/">proport_woa_silicate</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="proport_woa_temperature/">proport_woa_temperature</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="protein_coding_gene_count/">protein_coding_gene_count</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="public_ap_count/">public_ap_count</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="public_biosample_count/">public_biosample_count</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="public_dap_count/">public_dap_count</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="public_sp_count/">public_sp_count</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="publication_date/">publication_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="publication_id/">publication_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="pubmed_id/">pubmed_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="qc_report_location/">qc_report_location</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="qc_status/">qc_status</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="qc_total_mass_ng/">qc_total_mass_ng</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="rank/">rank</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="read_count/">read_count</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="read_size/">read_size</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="reassembly_bin/">reassembly_bin</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="recover_16s/">recover_16s</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="recover_16s_software/">recover_16s_software</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ref_genome/">ref_genome</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ref_genome_type/">ref_genome_type</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="reference_ap_id/">reference_ap_id</a></td>
+<td>Foreign key to analysis_project</td>
+</tr>
+<tr>
+<td><a href="refseq_assembly_accession/">refseq_assembly_accession</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="refseq_category/">refseq_category</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="rejection_reasons/">rejection_reasons</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="relation_to_type_material/">relation_to_type_material</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="relationship/">relationship</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="release_date/">release_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="release_type/">release_type</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="relevance/">relevance</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="replacement_ncbi_tax_id/">replacement_ncbi_tax_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="replaces_ap_id/">replaces_ap_id</a></td>
+<td>Foreign key to analysis_project</td>
+</tr>
+<tr>
+<td><a href="replicate_number/">replicate_number</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="replicon_count/">replicon_count</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="review_status/">review_status</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="rework_of_ap_id/">rework_of_ap_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="risk_group_level/">risk_group_level</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ror_id/">ror_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="rqc_assembly_id/">rqc_assembly_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="run_bases/">run_bases</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="run_size/">run_size</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="run_spots/">run_spots</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="salinity/">salinity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="salinity_concentration/">salinity_concentration</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_biomass/">sample_biomass</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_collection_day/">sample_collection_day</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_collection_hour/">sample_collection_hour</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_collection_minute/">sample_collection_minute</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_collection_month/">sample_collection_month</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_collection_site/">sample_collection_site</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_collection_temperature/">sample_collection_temperature</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_collection_temperature2/">sample_collection_temperature2</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_collection_year/">sample_collection_year</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_conductivity/">sample_conductivity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_contact_email/">sample_contact_email</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_contact_id/">sample_contact_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_contact_name/">sample_contact_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_format/">sample_format</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_group_name/">sample_group_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_id/">sample_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_isolated_from/">sample_isolated_from</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_isolation_comments/">sample_isolation_comments</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_isolation_country_id/">sample_isolation_country_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_name/">sample_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_oid/">sample_oid</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_tube_barcode/">sample_tube_barcode</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_vol_we_dna_ext/">sample_vol_we_dna_ext</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_volume/">sample_volume</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sample_weight_dna_ext/">sample_weight_dna_ext</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sampling_strategy/">sampling_strategy</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="scaffold_count/">scaffold_count</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="scientific_name/">scientific_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="screening_method/">screening_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sediment_package_id/">sediment_package_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="seq_proj_manager_name/">seq_proj_manager_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="seq_rel_date/">seq_rel_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sequence/">sequence</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sequencing_comments/">sequencing_comments</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sequencing_depth/">sequencing_depth</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sequencing_method_id/">sequencing_method_id</a></td>
+<td>Foreign key to sequencing_method</td>
+</tr>
+<tr>
+<td><a href="sequencing_platforms/">sequencing_platforms</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sequencing_product_id/">sequencing_product_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sequencing_product_name/">sequencing_product_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sequencing_product_type/">sequencing_product_type</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sequencing_product_type_id/">sequencing_product_type_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sequencing_project_comments/">sequencing_project_comments</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sequencing_project_contact_id/">sequencing_project_contact_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sequencing_project_id/">sequencing_project_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sequencing_project_manager_id/">sequencing_project_manager_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sequencing_project_name/">sequencing_project_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sequencing_quality_id/">sequencing_quality_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sequencing_status_id/">sequencing_status_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sequencing_strategy/">sequencing_strategy</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sequencing_strategy_full/">sequencing_strategy_full</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sequencing_strategy_id/">sequencing_strategy_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sequencing_technology/">sequencing_technology</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="serovar/">serovar</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sex/">sex</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="shipment_storage_comments/">shipment_storage_comments</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sim_search_meth/">sim_search_meth</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="single_cell_lysis_appr/">single_cell_lysis_appr</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="single_cell_lysis_prot/">single_cell_lysis_prot</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="size_fraction/">size_fraction</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_agrochem_addition/">soil_agrochem_addition</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_aluminium_sat/">soil_aluminium_sat</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_aluminium_sat_method/">soil_aluminium_sat_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_crop_rotation/">soil_crop_rotation</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_curr_land_use/">soil_curr_land_use</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_curr_vegetation/">soil_curr_vegetation</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_curr_vegetation_method/">soil_curr_vegetation_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_depth/">soil_depth</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_depth2/">soil_depth2</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_drainage_class/">soil_drainage_class</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_elevation/">soil_elevation</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_elevation2/">soil_elevation2</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_extreme_event/">soil_extreme_event</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_fao_class/">soil_fao_class</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_fire/">soil_fire</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_flooding/">soil_flooding</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_heavy_metals/">soil_heavy_metals</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_heavy_metals_method/">soil_heavy_metals_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_horizon/">soil_horizon</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_horizon_method/">soil_horizon_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_link_addit_analys/">soil_link_addit_analys</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_link_class_info/">soil_link_class_info</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_link_climate_info/">soil_link_climate_info</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_local_class/">soil_local_class</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_local_class_method/">soil_local_class_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_mean_annual_precpt/">soil_mean_annual_precpt</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_mean_annual_temp/">soil_mean_annual_temp</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_mean_seasonal_precpt/">soil_mean_seasonal_precpt</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_mean_seasonal_temp/">soil_mean_seasonal_temp</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_microbial_biomass/">soil_microbial_biomass</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_microbial_biomass_method/">soil_microbial_biomass_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_misc_param/">soil_misc_param</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_package_id/">soil_package_id</a></td>
+<td>Foreign key to package_soil</td>
+</tr>
+<tr>
+<td><a href="soil_ph/">soil_ph</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_ph2/">soil_ph2</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_ph_method/">soil_ph_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_pool_dna_extracts/">soil_pool_dna_extracts</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_prev_land_use/">soil_prev_land_use</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_prev_land_use_meth/">soil_prev_land_use_meth</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_profile_position/">soil_profile_position</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_salinity/">soil_salinity</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_salinity_method/">soil_salinity_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_sample_biomass/">soil_sample_biomass</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_sample_volume/">soil_sample_volume</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_sieving/">soil_sieving</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_slope_aspect/">soil_slope_aspect</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_slope_gradient/">soil_slope_gradient</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_storage_condition/">soil_storage_condition</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_texture/">soil_texture</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_texture_method/">soil_texture_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_tillage/">soil_tillage</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_tot_n_method/">soil_tot_n_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_tot_org_c_method/">soil_tot_org_c_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_type/">soil_type</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_type_method/">soil_type_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_water_content/">soil_water_content</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soil_water_content_soil_meth/">soil_water_content_soil_meth</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="soluble_iron_micromol/">soluble_iron_micromol</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sort_tech/">sort_tech</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="source/">source</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="source_analysis_project_id/">source_analysis_project_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="source_sample_pid/">source_sample_pid</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sp_project_visibility/">sp_project_visibility</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sp_visibility/">sp_visibility</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="species/">species</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="species_synonyms/">species_synonyms</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="species_taxid/">species_taxid</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="specific_ecosystem/">specific_ecosystem</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="specimen/">specimen</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="specimen_id/">specimen_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sporulation/">sporulation</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="spot_length/">spot_length</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sra_experiment_id/">sra_experiment_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sra_id/">sra_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sra_ncbi_id/">sra_ncbi_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sra_run_id/">sra_run_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sra_sample_id/">sra_sample_id</a></td>
+<td>Foreign key to sra_sample_v2</td>
+</tr>
+<tr>
+<td><a href="sra_srs_accession/">sra_srs_accession</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sra_srx_accession/">sra_srx_accession</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="sra_study_id/">sra_study_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="starting_culture_pure/">starting_culture_pure</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="status_comments/">status_comments</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="status_date/">status_date</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="status_id/">status_id</a></td>
+<td>Foreign key to cvap_status</td>
+</tr>
+<tr>
+<td><a href="storage_solution/">storage_solution</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="strain/">strain</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="strain_info_id/">strain_info_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="straininfo_group_id/">straininfo_group_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="study_id/">study_id</a></td>
+<td>Foreign key to study</td>
+</tr>
+<tr>
+<td><a href="study_name/">study_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="study_type_id/">study_type_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="submission_comments/">submission_comments</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="submission_id/">submission_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="submission_status_id/">submission_status_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="submission_status_name/">submission_status_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="submit_biosample_name/">submit_biosample_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="submit_organism_name/">submit_organism_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="submitter_id/">submitter_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="subspecies/">subspecies</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="subsurface_depth/">subsurface_depth</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="subsurface_depth1/">subsurface_depth1</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="subsurface_depth2/">subsurface_depth2</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="suggest_img_annotation_version/">suggest_img_annotation_version</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="symbiont_name/">symbiont_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="symbiont_taxon_id/">symbiont_taxon_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="symbiotic_physical_interaction/">symbiotic_physical_interaction</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="symbiotic_relationship/">symbiotic_relationship</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="target_gene/">target_gene</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="target_subfragment/">target_subfragment</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="tax_class_method/">tax_class_method</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="tax_ident/">tax_ident</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="taxid/">taxid</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="taxon_doi/">taxon_doi</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="taxonomy_info_id/">taxonomy_info_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="taxonomy_status/">taxonomy_status</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="temperature_range/">temperature_range</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="term/">term</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="tissue_organ_source/">tissue_organ_source</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="title/">title</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="tot_nitrogen/">tot_nitrogen</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="tot_org_carbon/">tot_org_carbon</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="total_gene_count/">total_gene_count</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="trna_pred_software/">trna_pred_software</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="trnas/">trnas</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="tube_plate_label/">tube_plate_label</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="type/">type</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="type_strain/">type_strain</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="uncultured_type/">uncultured_type</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="uncurated_id/">uncurated_id</a></td>
+<td>Foreign key to assembly_method</td>
+</tr>
+<tr>
+<td><a href="url/">url</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="url_other_resources/">url_other_resources</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="user_id/">user_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="vector/">vector</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="vector_name/">vector_name</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="version_number/">version_number</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="version_status/">version_status</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="viral_group/">viral_group</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="viral_subgroup/">viral_subgroup</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="virus_enrich_appr/">virus_enrich_appr</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="water_package_id/">water_package_id</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="wga_amp_appr/">wga_amp_appr</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="wga_amp_kit/">wga_amp_kit</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="wgs_master/">wgs_master</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="xml_body/">xml_body</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="enumerations">Enumerations</h2>
+<table>
+<thead>
+<tr>
+<th>Enumeration</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="types">Types</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Boolean/">Boolean</a></td>
+<td>A binary (true or false) value</td>
+</tr>
+<tr>
+<td><a href="Curie/">Curie</a></td>
+<td>a compact URI</td>
+</tr>
+<tr>
+<td><a href="Date/">Date</a></td>
+<td>a date (year, month and day) in an idealized calendar</td>
+</tr>
+<tr>
+<td><a href="DateOrDatetime/">DateOrDatetime</a></td>
+<td>Either a date or a datetime</td>
+</tr>
+<tr>
+<td><a href="Datetime/">Datetime</a></td>
+<td>The combination of a date and time</td>
+</tr>
+<tr>
+<td><a href="Decimal/">Decimal</a></td>
+<td>A real number with arbitrary precision that conforms to the xsd:decimal speci...</td>
+</tr>
+<tr>
+<td><a href="Double/">Double</a></td>
+<td>A real number that conforms to the xsd:double specification</td>
+</tr>
+<tr>
+<td><a href="Float/">Float</a></td>
+<td>A real number that conforms to the xsd:float specification</td>
+</tr>
+<tr>
+<td><a href="Integer/">Integer</a></td>
+<td>An integer</td>
+</tr>
+<tr>
+<td><a href="Jsonpath/">Jsonpath</a></td>
+<td>A string encoding a JSON Path</td>
+</tr>
+<tr>
+<td><a href="Jsonpointer/">Jsonpointer</a></td>
+<td>A string encoding a JSON Pointer</td>
+</tr>
+<tr>
+<td><a href="Ncname/">Ncname</a></td>
+<td>Prefix part of CURIE</td>
+</tr>
+<tr>
+<td><a href="Nodeidentifier/">Nodeidentifier</a></td>
+<td>A URI, CURIE or BNODE that represents a node in a model</td>
+</tr>
+<tr>
+<td><a href="Objectidentifier/">Objectidentifier</a></td>
+<td>A URI or CURIE that represents an object in the model</td>
+</tr>
+<tr>
+<td><a href="Sparqlpath/">Sparqlpath</a></td>
+<td>A string encoding a SPARQL Property Path</td>
+</tr>
+<tr>
+<td><a href="String/">String</a></td>
+<td>A character string</td>
+</tr>
+<tr>
+<td><a href="Time/">Time</a></td>
+<td>A time object represents a (local) time of day, independent of any particular...</td>
+</tr>
+<tr>
+<td><a href="Uri/">Uri</a></td>
+<td>a complete URI</td>
+</tr>
+<tr>
+<td><a href="Uriorcurie/">Uriorcurie</a></td>
+<td>a URI or a CURIE</td>
+</tr>
+</tbody>
+</table>
+<h2 id="subsets">Subsets</h2>
+<table>
+<thead>
+<tr>
+<th>Subset</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
