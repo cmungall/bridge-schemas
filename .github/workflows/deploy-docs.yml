@@ -6,7 +6,8 @@ on:
     branches: [ main ]
 
     paths:
-    - 'docs/*/*.md'
+    - 'docs/**/*.md'
+    - 'mkdocs.yml'
 
 jobs:
   build-docs:
@@ -35,8 +36,7 @@ jobs:
     - name: Setup Just
       uses: extractions/setup-just@v3
 
-    - name: Create local docs and deploy to GitHub Pages
+    - name: Deploy to GitHub Pages
       run: |
         touch docs/.nojekyll
-        just gendoc
         just deploy
