@@ -1,0 +1,453 @@
+id: https://w3id.org/jgi/mycocosm
+name: mycocosm
+title: JGI MycoCosm Fungal Genomics Database
+description: >-
+  MycoCosm fungal comparative genomics database.
+  Each fungal genome has its own schema with a common table structure
+  for gene models, annotations, and comparative genomics.
+
+  DATABASE: myco-db-1/2/3 mysql.*
+  SCHEMA PATTERN: Each genome gets its own schema (e.g., Abobi1, Agaarg1)
+  TABLES PER GENOME: ~100-250
+
+  KEY FUNCTIONALITY:
+  - Gene models (FilteredModels, GeneCatalog)
+  - Gene predictions (Genemark, Genewise)
+  - Functional annotations (blastp, InterPro)
+  - Secondary metabolites (SM_cluster, SM_class)
+  - Repeat masking (RepeatMasker)
+  - EST alignments (BlatESTclusters)
+  - CEGMA completeness assessment
+
+  EXAMPLE GENOMES:
+  - Abobi1: Agaricus bisporus
+  - Agaarg1: Agaricus species
+  - Copci1: Coprinopsis cinerea
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
+
+default_range: string
+imports:
+  - linkml:types
+
+classes:
+  # Gene Models
+  FilteredModels:
+    description: >-
+      Curated/filtered gene models - the primary gene set.
+    annotations:
+      source_table: FilteredModels1
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+        description: Gene model name/ID
+      scaffold:
+        range: string
+      start:
+        range: integer
+      end:
+        range: integer
+      strand:
+        range: string
+      exon_count:
+        range: integer
+
+  FilteredModelsBase:
+    description: >-
+      Base information for filtered models.
+    annotations:
+      source_table: FilteredModels1Base
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      protein_id:
+        range: string
+      transcript_id:
+        range: string
+
+  GeneCatalog:
+    description: >-
+      Complete gene catalog for the genome.
+    annotations:
+      source_table: GeneCatalog
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+      description:
+        range: string
+
+  # Gene Predictions
+  GenemarkPrediction:
+    description: >-
+      GeneMark ab initio gene prediction.
+    annotations:
+      source_table: Genemark1
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      scaffold:
+        range: string
+      start:
+        range: integer
+      end:
+        range: integer
+      strand:
+        range: string
+      score:
+        range: float
+
+  GenewisePrediction:
+    description: >-
+      GeneWise homology-based gene prediction.
+    annotations:
+      source_table: Genewise1
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      scaffold:
+        range: string
+      start:
+        range: integer
+      end:
+        range: integer
+      strand:
+        range: string
+      score:
+        range: float
+
+  # Annotations
+  BlastpHit:
+    description: >-
+      BLASTP similarity search hit.
+    annotations:
+      source_table: blastp
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      query_id:
+        range: string
+      subject_id:
+        range: string
+      percent_identity:
+        range: float
+      alignment_length:
+        range: integer
+      evalue:
+        range: float
+      bitscore:
+        range: float
+
+  AllModels:
+    description: >-
+      All gene models (filtered + unfiltered).
+    annotations:
+      source_table: allmodels
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+      model_type:
+        range: string
+
+  # EST/Transcript Evidence
+  BlatESTCluster:
+    description: >-
+      EST cluster from BLAT alignments.
+    annotations:
+      source_table: BlatESTclusters
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      cluster_id:
+        range: string
+      scaffold:
+        range: string
+      start:
+        range: integer
+      end:
+        range: integer
+
+  BlatESTClusterHit:
+    description: >-
+      Individual EST hit within a cluster.
+    annotations:
+      source_table: BlatESTclustersHit
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      cluster_id:
+        range: integer
+        comments:
+          - "Foreign key to BlatESTCluster.id"
+      est_id:
+        range: string
+
+  # Secondary Metabolites
+  SMCluster:
+    description: >-
+      Secondary metabolite biosynthetic cluster.
+    annotations:
+      source_table: SM_cluster
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+      scaffold:
+        range: string
+      start:
+        range: integer
+      end:
+        range: integer
+      cluster_type:
+        range: string
+        description: Type of SM cluster (NRPS, PKS, etc.)
+
+  SMClass:
+    description: >-
+      Secondary metabolite class.
+    annotations:
+      source_table: SM_class
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+      description:
+        range: string
+
+  SMClusterMember:
+    description: >-
+      Gene member of an SM cluster.
+    annotations:
+      source_table: SM_cluster_member
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      cluster_id:
+        range: integer
+        comments:
+          - "Foreign key to SMCluster.id"
+      gene_id:
+        range: integer
+
+  # Repeats
+  RepeatMaskerHit:
+    description: >-
+      RepeatMasker repeat element hit.
+    annotations:
+      source_table: RepeatMasker
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      scaffold:
+        range: string
+      start:
+        range: integer
+      end:
+        range: integer
+      repeat_class:
+        range: string
+      repeat_family:
+        range: string
+      score:
+        range: float
+
+  RepeatMaskerSimple:
+    description: >-
+      Simple repeat from RepeatMasker.
+    annotations:
+      source_table: RepeatMaskerSimple
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      scaffold:
+        range: string
+      start:
+        range: integer
+      end:
+        range: integer
+      repeat_unit:
+        range: string
+
+  # Transposable Elements
+  TransposableElement:
+    description: >-
+      Transposable element annotation.
+    annotations:
+      source_table: FM_TEs
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      scaffold:
+        range: string
+      start:
+        range: integer
+      end:
+        range: integer
+      te_class:
+        range: string
+      te_family:
+        range: string
+
+  # Quality Assessment
+  CEGMACompleteness:
+    description: >-
+      CEGMA genome completeness assessment.
+    annotations:
+      source_table: CEGMA_completeness_summaries
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      complete_percent:
+        range: float
+        description: Percent of complete CEGs found
+      partial_percent:
+        range: float
+        description: Percent of partial CEGs found
+      total_cegs:
+        range: integer
+
+  CEGMACompletenessDetail:
+    description: >-
+      Detailed CEGMA results per conserved gene.
+    annotations:
+      source_table: CEGMA_completeness_details
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      ceg_id:
+        range: string
+      status:
+        range: string
+        description: complete, partial, missing
+
+  # Chromosome/Scaffold Info
+  ChromInfo:
+    description: >-
+      Chromosome/scaffold information.
+    annotations:
+      source_table: chromInfo
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+      length:
+        range: integer
+
+  # Annotation Management
+  AnnotationState:
+    description: >-
+      Current annotation state/version.
+    annotations:
+      source_table: annotation_state
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      state_name:
+        range: string
+      timestamp:
+        range: datetime
+
+  AnnotationPriority:
+    description: >-
+      Annotation priority settings.
+    annotations:
+      source_table: annotation_priority
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      source:
+        range: string
+      priority:
+        range: integer
+
+  # User Annotations
+  UserModel:
+    description: >-
+      User-submitted gene model (JAM system).
+    annotations:
+      source_table: JAM_UserModels
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      user_id:
+        range: string
+      model_name:
+        range: string
+      scaffold:
+        range: string
+      start:
+        range: integer
+      end:
+        range: integer
+      status:
+        range: string
+
+  # Portal Management Annotations
+  PMAnnotationGroup:
+    description: >-
+      Portal management annotation group.
+    annotations:
+      source_table: PMAnnotGroups
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+
+  PMAnnotationStatus:
+    description: >-
+      Annotation status in portal.
+    annotations:
+      source_table: PMAnnotationStatus
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      status:
+        range: string
+
+  PMAnnotator:
+    description: >-
+      Annotator information.
+    annotations:
+      source_table: PMAnnotator
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+      email:
+        range: string

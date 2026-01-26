@@ -1,0 +1,376 @@
+name: img_rnaseq
+id: https://w3id.org/jgi/img_rnaseq
+imports:
+- linkml:types
+prefixes:
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  img_rnaseq:
+    prefix_prefix: img_rnaseq
+    prefix_reference: https://w3id.org/jgi/img_rnaseq/
+default_prefix: img_rnaseq
+default_range: string
+classes:
+  rnaseq_dataset:
+    name: rnaseq_dataset
+    attributes:
+      dataset_oid:
+        name: dataset_oid
+        range: float
+        required: false
+      sample_oid:
+        name: sample_oid
+        range: string
+        required: false
+      reference_taxon_oid:
+        name: reference_taxon_oid
+        range: float
+        required: false
+      notes:
+        name: notes
+        range: string
+        required: false
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      er_project_id:
+        name: er_project_id
+        range: float
+        required: false
+      er_sample_id:
+        name: er_sample_id
+        range: float
+        required: false
+      analysis_project_id:
+        name: analysis_project_id
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+      submission_id:
+        name: submission_id
+        range: float
+        required: false
+      in_file:
+        name: in_file
+        range: string
+        required: false
+      obsolete_flag:
+        name: obsolete_flag
+        range: string
+        required: false
+      dataset_type:
+        name: dataset_type
+        range: string
+        required: false
+      release_date:
+        name: release_date
+        range: datetime
+        required: false
+      jgi_rnd_flag:
+        name: jgi_rnd_flag
+        range: string
+        required: false
+      its_ap_id:
+        name: its_ap_id
+        range: float
+        required: false
+      its_sp_id:
+        name: its_sp_id
+        range: float
+        required: false
+      combined_assembly_flag:
+        name: combined_assembly_flag
+        range: string
+        required: false
+      intergenic_flag:
+        name: intergenic_flag
+        range: string
+        required: false
+      quality:
+        name: quality
+        range: string
+        required: false
+      pem_value:
+        name: pem_value
+        range: float
+        required: false
+      as_read_count:
+        name: as_read_count
+        range: integer
+        required: false
+  rnaseq_dataset_stats:
+    name: rnaseq_dataset_stats
+    attributes:
+      dataset_oid:
+        name: dataset_oid
+        description: Foreign key to rnaseq_dataset
+        range: rnaseq_dataset
+        required: false
+      gene_count:
+        name: gene_count
+        range: float
+        required: false
+      total_reads_count:
+        name: total_reads_count
+        range: float
+        required: false
+      avg_reads_count:
+        name: avg_reads_count
+        range: float
+        required: false
+  rnaseq_experiment:
+    name: rnaseq_experiment
+    attributes:
+      exp_oid:
+        name: exp_oid
+        range: integer
+        required: false
+      project_name:
+        name: project_name
+        range: string
+        required: false
+      exp_name:
+        name: exp_name
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      ext_accession:
+        name: ext_accession
+        range: string
+        required: false
+      exp_date:
+        name: exp_date
+        range: string
+        required: false
+      exp_contact:
+        name: exp_contact
+        range: string
+        required: false
+      method_type:
+        name: method_type
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      notes:
+        name: notes
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      in_file:
+        name: in_file
+        range: string
+        required: false
+  rnaseq_experiment_ext_links:
+    name: rnaseq_experiment_ext_links
+    attributes:
+      exp_oid:
+        name: exp_oid
+        description: Foreign key to rnaseq_experiment
+        range: rnaseq_experiment
+        required: false
+      db_name:
+        name: db_name
+        range: string
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+      custom_url:
+        name: custom_url
+        range: string
+        required: false
+  rnaseq_experiment_pubs:
+    name: rnaseq_experiment_pubs
+    attributes:
+      exp_oid:
+        name: exp_oid
+        description: Foreign key to rnaseq_experiment
+        range: rnaseq_experiment
+        required: false
+      pubs:
+        name: pubs
+        range: string
+        required: false
+  rnaseq_experiment_sop:
+    name: rnaseq_experiment_sop
+    attributes:
+      exp_oid:
+        name: exp_oid
+        description: Foreign key to rnaseq_experiment
+        range: rnaseq_experiment
+        required: false
+      tag:
+        name: tag
+        range: string
+        required: false
+      value:
+        name: value
+        range: string
+        required: false
+  rnaseq_experiment_stats:
+    name: rnaseq_experiment_stats
+    attributes:
+      exp_oid:
+        name: exp_oid
+        description: Foreign key to rnaseq_experiment
+        range: rnaseq_experiment
+        required: false
+      num_samples:
+        name: num_samples
+        range: integer
+        required: false
+      gene_count:
+        name: gene_count
+        range: integer
+        required: false
+  rnaseq_sample:
+    name: rnaseq_sample
+    attributes:
+      sample_oid:
+        name: sample_oid
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      sample_origin:
+        name: sample_origin
+        range: string
+        required: false
+      ncbi_taxon_id:
+        name: ncbi_taxon_id
+        range: integer
+        required: false
+      organism_name:
+        name: organism_name
+        range: string
+        required: false
+      img_taxon_oid:
+        name: img_taxon_oid
+        range: integer
+        required: false
+      experiment:
+        name: experiment
+        range: integer
+        required: false
+      notes:
+        name: notes
+        range: string
+        required: false
+      experiment_date:
+        name: experiment_date
+        range: string
+        required: false
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      project_sample_id:
+        name: project_sample_id
+        range: float
+        required: false
+      er_project_id:
+        name: er_project_id
+        range: float
+        required: false
+      er_sample_id:
+        name: er_sample_id
+        range: float
+        required: false
+      analysis_project_id:
+        name: analysis_project_id
+        range: float
+        required: false
+      dataset_oid:
+        name: dataset_oid
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      in_file:
+        name: in_file
+        range: string
+        required: false
+      obsolete_flag:
+        name: obsolete_flag
+        range: string
+        required: false
+  rnaseq_sample_ext_links:
+    name: rnaseq_sample_ext_links
+    attributes:
+      sample_oid:
+        name: sample_oid
+        range: string
+        required: false
+      db_name:
+        name: db_name
+        range: string
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+      custom_url:
+        name: custom_url
+        range: string
+        required: false
+  rnaseq_sample_sop:
+    name: rnaseq_sample_sop
+    attributes:
+      sample_oid:
+        name: sample_oid
+        range: string
+        required: false
+      tag:
+        name: tag
+        range: string
+        required: false
+      value:
+        name: value
+        range: string
+        required: false
+  usermaster:
+    name: usermaster
+    attributes:
+      user_id:
+        name: user_id
+        range: float
+        required: false
+      id_type:
+        name: id_type
+        range: string
+        required: false

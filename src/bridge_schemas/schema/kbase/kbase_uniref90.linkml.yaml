@@ -1,0 +1,171 @@
+id: https://w3id.org/kbase/kbase_uniref90
+name: kbase_uniref90
+title: UniRef90 Sequence Clusters
+description: >-
+  UniRef90 clustered protein sequences at 90% sequence identity threshold.
+  Part of the UniProt Reference Clusters (UniRef) providing clustered sets
+  of sequences from UniProt and selected UniParc records.
+
+  DATABASE STATISTICS:
+  - 100,000+ clusters
+  - 100,000+ entities
+  - Cross-references to UniProt entries
+
+  CLUSTERING:
+  UniRef90 clusters sequences at 90% identity and 80% coverage thresholds,
+  providing a balance between redundancy reduction and functional diversity.
+
+  USAGE:
+  Join with kbase_ke_pangenome or other genome databases to find protein
+  cluster memberships and functional annotations.
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  UniRef: https://www.uniprot.org/uniref/
+
+default_range: string
+imports:
+  - linkml:types
+
+classes:
+  Cluster:
+    description: >-
+      UniRef90 protein sequence cluster. Groups proteins with ≥90% sequence
+      identity and ≥80% coverage to a representative sequence.
+
+      EXAMPLE CLUSTERS:
+      - "Cluster: LysM peptidoglycan-binding domain-containing protein"
+      - "Cluster: mucin-6"
+      - "Cluster: SDR family NAD(P)-dependent oxidoreductase"
+    annotations:
+      source_table: cluster
+    attributes:
+      cluster_id:
+        identifier: true
+        range: string
+        description: Unique cluster identifier (CDM UUID)
+        examples:
+          - value: "CDM:c811d1d9-3235-4b7a-9012-9387f87a1188"
+
+      name:
+        range: string
+        description: Cluster name with representative protein description
+        examples:
+          - value: "Cluster: LysM peptidoglycan-binding domain-containing protein"
+          - value: "Cluster: mucin-6"
+
+      entity_type:
+        range: string
+        description: Type of entity (protein)
+        examples:
+          - value: "protein"
+
+      description:
+        range: string
+        description: Additional cluster description (optional)
+
+      protocol_id:
+        range: string
+        description: Clustering protocol identifier
+        examples:
+          - value: "UniRef 100"
+
+  ClusterMember:
+    description: >-
+      Member of a UniRef90 cluster. Links individual protein entities
+      to their parent clusters with membership metadata.
+    annotations:
+      source_table: clustermember
+    attributes:
+      cluster_id:
+        range: string
+        description: Parent cluster identifier
+        comments:
+          - "Foreign key to Cluster.cluster_id"
+
+      entity_id:
+        range: string
+        description: Member entity identifier
+        comments:
+          - "Foreign key to Entity.entity_id"
+
+      is_representative:
+        range: boolean
+        description: Whether this member is the cluster representative
+
+      is_seed:
+        range: boolean
+        description: Whether this member was used as clustering seed
+
+      score:
+        range: float
+        description: Membership score/similarity to representative
+
+  CrossReference:
+    description: >-
+      External database cross-reference for entities.
+      Links UniRef entries to UniProt, NCBI, and other databases.
+    annotations:
+      source_table: crossreference
+    attributes:
+      entity_id:
+        range: string
+        description: Entity being cross-referenced
+        comments:
+          - "Foreign key to Entity.entity_id"
+
+      xref_type:
+        range: string
+        description: Type of cross-reference (UniProt, NCBI, etc.)
+
+      xref_value:
+        range: string
+        description: Cross-reference identifier value
+
+  Entity:
+    description: >-
+      Protein entity in the UniRef90 database.
+      Represents individual protein sequences that are members of clusters.
+
+      EXAMPLE ENTITIES:
+      - UniRef90_A0A8C8D229: A cluster entity
+      - UniRef90_A0A060WBS1: Another cluster entity
+    annotations:
+      source_table: entity
+    attributes:
+      entity_id:
+        identifier: true
+        range: string
+        description: Unique entity identifier (CDM UUID)
+        examples:
+          - value: "CDM:7164e39a-9980-46e6-a422-fe28ecc96442"
+
+      data_source_entity_id:
+        range: string
+        description: Original UniRef90 identifier
+        pattern: "UniRef90_[A-Z0-9]+"
+        examples:
+          - value: "UniRef90_A0A8C8D229"
+          - value: "UniRef90_A0A060WBS1"
+
+      entity_type:
+        range: string
+        description: Type of entity
+        examples:
+          - value: "Cluster"
+
+      data_source:
+        range: string
+        description: Source database
+        examples:
+          - value: "UniRef 100"
+
+      updated:
+        range: datetime
+        description: Last update timestamp
+        examples:
+          - value: "2025-11-24T15:59:26"
+
+      created:
+        range: datetime
+        description: Creation timestamp

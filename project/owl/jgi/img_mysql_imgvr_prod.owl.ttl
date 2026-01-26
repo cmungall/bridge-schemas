@@ -1,0 +1,661 @@
+@prefix img_mysql_imgvr_prod: <https://w3id.org/jgi/img_mysql_imgvr_prod/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/jgi/img_mysql_imgvr_prod.owl.ttl> a owl:Ontology ;
+    rdfs:label "img_mysql_imgvr_prod" .
+
+img_mysql_imgvr_prod:Uvig a owl:Class ;
+    rdfs:label "uvig" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_imgvr_prod:estimated_completeness ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:confidence_tier ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:uvig_discovery ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:confidence_tier ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:source ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:high_confidence ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:estimated_contamination ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_imgvr_prod:genetic_code ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:estimated_contamination ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_imgvr_prod:uvig_length ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_imgvr_prod:uvig_total_gene_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:source ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig_cds_gene_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig_topology ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:uvig ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig_discovery ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:uvig_topology ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:viral_otus ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:viral_otus ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:genetic_code ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_imgvr_prod:estimated_contamination ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig_length ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:uvig_discovery_doi ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_imgvr_prod:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig_total_gene_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_imgvr_prod:genomad_score ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:high_confidence ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig_total_gene_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:estimated_completeness ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:genomad_score ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:high_confidence ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:confidence_tier ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig_topology ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:estimated_completeness ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:source ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig_trna_gene_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig_discovery_doi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig_trna_gene_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig_discovery ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:genetic_code ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig_length ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:genomad_score ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_imgvr_prod:uvig_cds_gene_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:viral_otus ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_imgvr_prod:uvig_trna_gene_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig_discovery_doi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig_cds_gene_count ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:UvigDomain a owl:Class ;
+    rdfs:label "uvig_domain" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:db ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:gene ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:gene ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:domain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:db ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:db ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:uvig ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:domain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:domain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:gene ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:UvigHosts a owl:Class ;
+    rdfs:label "uvig_hosts" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:uvig ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:host_species ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:host_species ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:host_order ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:host_phylum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:method ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:host_class ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:host_species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:host_domain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:method ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:host_phylum ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:host_genus ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:host_class ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:host_family ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:host_class ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:host_phylum ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:host_domain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:host_genus ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:host_family ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:method ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:host_domain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:host_genus ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:host_order ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:host_family ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:host_order ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:UvigLineage a owl:Class ;
+    rdfs:label "uvig_lineage" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:method ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:species ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:method ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:ir_order ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:phylum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:realm ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:family ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:genus ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:family ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:family ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:genus ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:realm ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:domain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:domain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:phylum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:method ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:species ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:ir_order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:uvig ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:realm ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:ir_class ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:phylum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:ir_class ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:ir_order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:domain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:genus ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:species ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:ir_class ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:UvigPfams a owl:Class ;
+    rdfs:label "uvig_pfams" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_imgvr_prod:pfam_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:pfam ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:uvig ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:pfam_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:pfam ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:pfam ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:pfam_count ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:UvigScaffolds a owl:Class ;
+    rdfs:label "uvig_scaffolds" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_imgvr_prod:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:scaffold_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:start_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:end_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_imgvr_prod:start_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:scaffold_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_imgvr_prod:end_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:end_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:start_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:uvig ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:uvig ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:scaffold_id ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:ViralSpacer a owl:Class ;
+    rdfs:label "viral_spacer" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:spacer_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:spacer_seq ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:spacer_seq ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:spacer_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:spacer_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:spacer_seq ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_imgvr_prod:alt_short_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_imgvr_prod:alt_short_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_imgvr_prod:alt_short_id ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:alt_short_id a owl:DatatypeProperty ;
+    rdfs:label "alt_short_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:confidence_tier a owl:DatatypeProperty ;
+    rdfs:label "confidence_tier" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:db a owl:DatatypeProperty ;
+    rdfs:label "db" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:end_coord a owl:DatatypeProperty ;
+    rdfs:label "end_coord" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:estimated_completeness a owl:DatatypeProperty ;
+    rdfs:label "estimated_completeness" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:estimated_contamination a owl:DatatypeProperty ;
+    rdfs:label "estimated_contamination" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:family a owl:DatatypeProperty ;
+    rdfs:label "family" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:gene a owl:DatatypeProperty ;
+    rdfs:label "gene" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:genetic_code a owl:DatatypeProperty ;
+    rdfs:label "genetic_code" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:genomad_score a owl:DatatypeProperty ;
+    rdfs:label "genomad_score" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:genus a owl:DatatypeProperty ;
+    rdfs:label "genus" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:high_confidence a owl:DatatypeProperty ;
+    rdfs:label "high_confidence" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:host_class a owl:DatatypeProperty ;
+    rdfs:label "host_class" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:host_domain a owl:DatatypeProperty ;
+    rdfs:label "host_domain" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:host_family a owl:DatatypeProperty ;
+    rdfs:label "host_family" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:host_genus a owl:DatatypeProperty ;
+    rdfs:label "host_genus" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:host_order a owl:DatatypeProperty ;
+    rdfs:label "host_order" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:host_phylum a owl:DatatypeProperty ;
+    rdfs:label "host_phylum" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:host_species a owl:DatatypeProperty ;
+    rdfs:label "host_species" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:ir_class a owl:DatatypeProperty ;
+    rdfs:label "ir_class" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:ir_order a owl:DatatypeProperty ;
+    rdfs:label "ir_order" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:pfam a owl:DatatypeProperty ;
+    rdfs:label "pfam" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:pfam_count a owl:DatatypeProperty ;
+    rdfs:label "pfam_count" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:phylum a owl:DatatypeProperty ;
+    rdfs:label "phylum" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:realm a owl:DatatypeProperty ;
+    rdfs:label "realm" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:scaffold_id a owl:DatatypeProperty ;
+    rdfs:label "scaffold_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:source a owl:DatatypeProperty ;
+    rdfs:label "source" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:spacer_id a owl:DatatypeProperty ;
+    rdfs:label "spacer_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:spacer_seq a owl:DatatypeProperty ;
+    rdfs:label "spacer_seq" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:species a owl:DatatypeProperty ;
+    rdfs:label "species" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:start_coord a owl:DatatypeProperty ;
+    rdfs:label "start_coord" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:uvig_cds_gene_count a owl:DatatypeProperty ;
+    rdfs:label "uvig_cds_gene_count" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:uvig_discovery a owl:DatatypeProperty ;
+    rdfs:label "uvig_discovery" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:uvig_discovery_doi a owl:DatatypeProperty ;
+    rdfs:label "uvig_discovery_doi" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:uvig_length a owl:DatatypeProperty ;
+    rdfs:label "uvig_length" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:uvig_topology a owl:DatatypeProperty ;
+    rdfs:label "uvig_topology" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:uvig_total_gene_count a owl:DatatypeProperty ;
+    rdfs:label "uvig_total_gene_count" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:uvig_trna_gene_count a owl:DatatypeProperty ;
+    rdfs:label "uvig_trna_gene_count" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:viral_otus a owl:DatatypeProperty ;
+    rdfs:label "viral_otus" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_imgvr_prod> .
+
+img_mysql_imgvr_prod:domain a owl:DatatypeProperty .
+
+img_mysql_imgvr_prod:method a owl:DatatypeProperty .
+
+img_mysql_imgvr_prod:taxon_oid a owl:DatatypeProperty .
+
+img_mysql_imgvr_prod:uvig a owl:DatatypeProperty .
+
+

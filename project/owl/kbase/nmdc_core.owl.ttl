@@ -1,0 +1,1159 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <https://w3id.org/kbase/nmdc_core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/kbase/nmdc_core.owl.ttl> a owl:Ontology ;
+    rdfs:label "nmdc_core" ;
+    dcterms:title "NMDC Core Database" ;
+    skos:definition "National Microbiome Data Collaborative (NMDC) core data including samples, studies, omics data, annotations, and embeddings. Contains data from GOLD, metabolomics, metagenomics, and other microbiome sources." .
+
+ns1:AbioticEmbeddings a owl:Class ;
+    rdfs:label "AbioticEmbeddings" ;
+    skos:definition "Abiotic factor embeddings" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "abiotic_embeddings" .
+
+ns1:AbioticFeatures a owl:Class ;
+    rdfs:label "AbioticFeatures" ;
+    skos:definition "Abiotic environmental features" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "abiotic_features" .
+
+ns1:AnnotationCrossrefs a owl:Class ;
+    rdfs:label "AnnotationCrossrefs" ;
+    skos:definition "Cross-references between annotation databases" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "annotation_crossrefs" .
+
+ns1:AnnotationHierarchiesUnified a owl:Class ;
+    rdfs:label "AnnotationHierarchiesUnified" ;
+    skos:definition "Unified annotation hierarchies" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "annotation_hierarchies_unified" .
+
+ns1:AnnotationTermsUnified a owl:Class ;
+    rdfs:label "AnnotationTermsUnified" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:is_obsolete ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty ns1:is_obsolete ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:namespace ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:is_obsolete ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:term_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:term_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:namespace ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:source ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ns1:term_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:namespace ] ;
+    skos:definition "Unified annotation terms across sources (GO, KEGG, EC, COG, etc.)" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "annotation_terms_unified" .
+
+ns1:BiochemicalEmbeddings a owl:Class ;
+    rdfs:label "BiochemicalEmbeddings" ;
+    skos:definition "Biochemical feature embeddings" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "biochemical_embeddings" .
+
+ns1:BiochemicalFeatures a owl:Class ;
+    rdfs:label "BiochemicalFeatures" ;
+    skos:definition "Biochemical features" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "biochemical_features" .
+
+ns1:CentrifugeGold a owl:Class ;
+    rdfs:label "CentrifugeGold" ;
+    skos:definition "Centrifuge taxonomic classifications for GOLD samples" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "centrifuge_gold" .
+
+ns1:CogCategories a owl:Class ;
+    rdfs:label "CogCategories" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:category_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:category_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ns1:category_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:description ] ;
+    skos:definition "COG functional categories" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "cog_categories" .
+
+ns1:ContigTaxonomy a owl:Class ;
+    rdfs:label "ContigTaxonomy" ;
+    skos:definition "Contig-level taxonomic assignments" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "contig_taxonomy" .
+
+ns1:EcTerms a owl:Class ;
+    rdfs:label "EcTerms" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:ec_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ns1:ec_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:ec_id ] ;
+    skos:definition "Enzyme Commission (EC) number terms" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "ec_terms" .
+
+ns1:EmbeddingsV1 a owl:Class ;
+    rdfs:label "EmbeddingsV1" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:model_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:embedding ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:entity_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:model_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:entity_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:entity_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:embedding ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:model_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:embedding ] ;
+    skos:definition "Vector embeddings version 1" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "embeddings_v1" .
+
+ns1:GoHierarchyFlat a owl:Class ;
+    rdfs:label "GoHierarchyFlat" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ns1:distance ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:descendant_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:distance ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:descendant_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:ancestor_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:descendant_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:distance ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:ancestor_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:ancestor_id ] ;
+    skos:definition "Flattened GO hierarchy for efficient querying" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "go_hierarchy_flat" .
+
+ns1:GoTerms a owl:Class ;
+    rdfs:label "GoTerms" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty ns1:is_obsolete ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:synonyms ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ns1:go_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:synonyms ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:definition ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:namespace ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:go_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:is_obsolete ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:synonyms ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:namespace ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:definition ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:namespace ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:definition ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:is_obsolete ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:go_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:name ] ;
+    skos:definition "Gene Ontology terms" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "go_terms" .
+
+ns1:GottchaGold a owl:Class ;
+    rdfs:label "GottchaGold" ;
+    skos:definition "GOTTCHA taxonomic classifications for GOLD samples" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "gottcha_gold" .
+
+ns1:KeggKoTerms a owl:Class ;
+    rdfs:label "KeggKoTerms" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:ko_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:ko_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:definition ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ns1:ko_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:definition ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:definition ] ;
+    skos:definition "KEGG Orthology (KO) terms" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "kegg_ko_terms" .
+
+ns1:KeggPathwayTerms a owl:Class ;
+    rdfs:label "KeggPathwayTerms" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:category ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:category ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:category ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ns1:pathway_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:pathway_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:pathway_id ] ;
+    skos:definition "KEGG pathway definitions" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "kegg_pathway_terms" .
+
+ns1:KrakenGold a owl:Class ;
+    rdfs:label "KrakenGold" ;
+    skos:definition "Kraken taxonomic classifications for GOLD samples" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "kraken_gold" .
+
+ns1:LipidomicsGold a owl:Class ;
+    rdfs:label "LipidomicsGold" ;
+    skos:definition "Lipidomics data linked to GOLD" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "lipidomics_gold" .
+
+ns1:MetabolomicsGold a owl:Class ;
+    rdfs:label "MetabolomicsGold" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:inchikey ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:kegg ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:file_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:Molecular_Formula ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:Molecular_Formula ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:file_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:inchi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:chebi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:inchi ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:file_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:Retention_Time_\(min\) ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/kbase/nmdc_core/m/z> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:smiles ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ns1:Intensity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:inchikey ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:inchi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:file_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:chebi ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/kbase/nmdc_core/m/z> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:Molecular_Formula ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ns1:Retention_Time_\(min\) ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:inchikey ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:chebi ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:feature_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:Intensity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:Intensity ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:feature_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:smiles ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:file_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty <https://w3id.org/kbase/nmdc_core/m/z> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:kegg ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:feature_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:file_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:smiles ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:kegg ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:Retention_Time_\(min\) ] ;
+    skos:definition "Metabolomics data linked to GOLD" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "metabolomics_gold" .
+
+ns1:MetacycPathwayReactions a owl:Class ;
+    rdfs:label "MetacycPathwayReactions" ;
+    skos:definition "Reactions within MetaCyc pathways" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "metacyc_pathway_reactions" .
+
+ns1:MetacycPathways a owl:Class ;
+    rdfs:label "MetacycPathways" ;
+    skos:definition "MetaCyc metabolic pathways" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "metacyc_pathways" .
+
+ns1:MetatranscriptomicsGold a owl:Class ;
+    rdfs:label "MetatranscriptomicsGold" ;
+    skos:definition "Metatranscriptomics data linked to GOLD" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "metatranscriptomics_gold" .
+
+ns1:NomFeatureMetadata a owl:Class ;
+    rdfs:label "NomFeatureMetadata" ;
+    skos:definition "NOM feature metadata" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "nom_feature_metadata" .
+
+ns1:NomGold a owl:Class ;
+    rdfs:label "NomGold" ;
+    skos:definition "Natural organic matter data linked to GOLD" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "nom_gold" .
+
+ns1:NomMatrixOptimized a owl:Class ;
+    rdfs:label "NomMatrixOptimized" ;
+    skos:definition "Optimized NOM feature matrix" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "nom_matrix_optimized" .
+
+ns1:OmicsFilesTable a owl:Class ;
+    rdfs:label "OmicsFilesTable" ;
+    skos:definition "Omics data file inventory" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "omics_files_table" .
+
+ns1:ProteomicsGold a owl:Class ;
+    rdfs:label "ProteomicsGold" ;
+    skos:definition "Proteomics data linked to GOLD" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "proteomics_gold" .
+
+ns1:RheaCrossrefs a owl:Class ;
+    rdfs:label "RheaCrossrefs" ;
+    skos:definition "Rhea cross-references" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "rhea_crossrefs" .
+
+ns1:RheaReactions a owl:Class ;
+    rdfs:label "RheaReactions" ;
+    skos:definition "Rhea biochemical reactions" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "rhea_reactions" .
+
+ns1:SampleFileLookup a owl:Class ;
+    rdfs:label "SampleFileLookup" ;
+    skos:definition "Sample to file mapping" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "sample_file_lookup" .
+
+ns1:SampleFileSelections a owl:Class ;
+    rdfs:label "SampleFileSelections" ;
+    skos:definition "User file selections per sample" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "sample_file_selections" .
+
+ns1:SampleTokensV1 a owl:Class ;
+    rdfs:label "SampleTokensV1" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:sample_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:modality_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:token_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:modality_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:sample_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:sample_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ns1:token_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ns1:value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:modality_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:token_id ] ;
+    skos:definition "Sample-level token assignments" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "sample_tokens_v1" .
+
+ns1:StudyTable a owl:Class ;
+    rdfs:label "StudyTable" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:ecosystem_subtype ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:associated_dois ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:ecosystem_subtype ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:gold_study_identifiers ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:specific_ecosystem ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:ecosystem_subtype ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:principal_investigator_orcid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:associated_dois ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:principal_investigator_orcid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:websites ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:study_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:study_category ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:principal_investigator_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:principal_investigator_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:ecosystem ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ns1:study_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:ecosystem_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:study_category ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:study_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:principal_investigator_orcid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:funding_sources ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:gold_study_identifiers ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:associated_dois ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:principal_investigator_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:study_category ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:specific_ecosystem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:ecosystem_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:ecosystem ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:ecosystem_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:ecosystem_category ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:gold_study_identifiers ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:funding_sources ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:ecosystem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:websites ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:ecosystem_category ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:ecosystem_category ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:websites ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:funding_sources ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:specific_ecosystem ] ;
+    skos:definition "NMDC research studies" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "study_table" .
+
+ns1:TaxonomyDim a owl:Class ;
+    rdfs:label "TaxonomyDim" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:kingdom ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:genus ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ns1:taxid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:order ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:species ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:genus ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:class ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ns1:taxid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:phylum ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:class ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:phylum ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:genus ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:kingdom ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:phylum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:species ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:taxid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:kingdom ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:family ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:family ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:class ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:family ] ;
+    skos:definition "Taxonomic hierarchy dimension table" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "taxonomy_dim" .
+
+ns1:TaxonomyEmbeddings a owl:Class ;
+    rdfs:label "TaxonomyEmbeddings" ;
+    skos:definition "Taxonomic embeddings" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "taxonomy_embeddings" .
+
+ns1:TaxonomyFeatures a owl:Class ;
+    rdfs:label "TaxonomyFeatures" ;
+    skos:definition "Taxonomy-derived features" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "taxonomy_features" .
+
+ns1:TraitEmbeddings a owl:Class ;
+    rdfs:label "TraitEmbeddings" ;
+    skos:definition "Trait-based embeddings" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "trait_embeddings" .
+
+ns1:TraitFeatures a owl:Class ;
+    rdfs:label "TraitFeatures" ;
+    skos:definition "Trait-derived features" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "trait_features" .
+
+ns1:TraitSources a owl:Class ;
+    rdfs:label "TraitSources" ;
+    skos:definition "Sources for trait data" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "trait_sources" .
+
+ns1:TraitTaxonomyMapping a owl:Class ;
+    rdfs:label "TraitTaxonomyMapping" ;
+    skos:definition "Mapping between traits and taxonomy" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "trait_taxonomy_mapping" .
+
+ns1:TraitUnified a owl:Class ;
+    rdfs:label "TraitUnified" ;
+    skos:definition "Unified trait annotations" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "trait_unified" .
+
+ns1:UnifiedEmbeddings a owl:Class ;
+    rdfs:label "UnifiedEmbeddings" ;
+    skos:definition "Unified multi-modal embeddings" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "unified_embeddings" .
+
+ns1:VocabRegistryV1 a owl:Class ;
+    rdfs:label "VocabRegistryV1" ;
+    skos:definition "Vocabulary registry for tokenization" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> ;
+    ns1:source_table "vocab_registry_v1" .
+
+ns1:Intensity a owl:DatatypeProperty ;
+    rdfs:label "Intensity" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:Molecular_Formula a owl:DatatypeProperty ;
+    rdfs:label "Molecular Formula" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:Retention_Time_\(min\) a owl:DatatypeProperty ;
+    rdfs:label "Retention Time (min)" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:ancestor_id a owl:DatatypeProperty ;
+    rdfs:label "ancestor_id" ;
+    skos:definition "Ancestor GO term" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:associated_dois a owl:DatatypeProperty ;
+    rdfs:label "associated_dois" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:category a owl:DatatypeProperty ;
+    rdfs:label "category" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:category_id a owl:DatatypeProperty ;
+    rdfs:label "category_id" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:chebi a owl:DatatypeProperty ;
+    rdfs:label "chebi" ;
+    skos:definition "ChEBI compound ID" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:class a owl:DatatypeProperty ;
+    rdfs:label "class" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:descendant_id a owl:DatatypeProperty ;
+    rdfs:label "descendant_id" ;
+    skos:definition "Descendant GO term" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:distance a owl:DatatypeProperty ;
+    rdfs:label "distance" ;
+    skos:definition "Path distance" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:ec_id a owl:DatatypeProperty ;
+    rdfs:label "ec_id" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:ecosystem a owl:DatatypeProperty ;
+    rdfs:label "ecosystem" ;
+    skos:definition "Ecosystem type" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:ecosystem_category a owl:DatatypeProperty ;
+    rdfs:label "ecosystem_category" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:ecosystem_subtype a owl:DatatypeProperty ;
+    rdfs:label "ecosystem_subtype" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:ecosystem_type a owl:DatatypeProperty ;
+    rdfs:label "ecosystem_type" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:embedding a owl:DatatypeProperty ;
+    rdfs:label "embedding" ;
+    skos:definition "Vector embedding" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:entity_id a owl:DatatypeProperty ;
+    rdfs:label "entity_id" ;
+    skos:definition "Entity being embedded" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:family a owl:DatatypeProperty ;
+    rdfs:label "family" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:feature_id a owl:DatatypeProperty ;
+    rdfs:label "feature_id" ;
+    skos:definition "Metabolite feature ID" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:file_id a owl:DatatypeProperty ;
+    rdfs:label "file_id" ;
+    skos:definition "Source file ID" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:file_name a owl:DatatypeProperty ;
+    rdfs:label "file_name" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:funding_sources a owl:DatatypeProperty ;
+    rdfs:label "funding_sources" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:genus a owl:DatatypeProperty ;
+    rdfs:label "genus" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:go_id a owl:DatatypeProperty ;
+    rdfs:label "go_id" ;
+    skos:definition "GO term ID (e.g., GO:0008150)" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:gold_study_identifiers a owl:DatatypeProperty ;
+    rdfs:label "gold_study_identifiers" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:inchi a owl:DatatypeProperty ;
+    rdfs:label "inchi" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:inchikey a owl:DatatypeProperty ;
+    rdfs:label "inchikey" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:kegg a owl:DatatypeProperty ;
+    rdfs:label "kegg" ;
+    skos:definition "KEGG compound ID" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:kingdom a owl:DatatypeProperty ;
+    rdfs:label "kingdom" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:ko_id a owl:DatatypeProperty ;
+    rdfs:label "ko_id" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+<https://w3id.org/kbase/nmdc_core/m/z> a owl:DatatypeProperty ;
+    rdfs:label "m/z" ;
+    skos:definition "Mass-to-charge ratio" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:modality_id a owl:DatatypeProperty ;
+    rdfs:label "modality_id" ;
+    skos:definition "Data modality" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:model_id a owl:DatatypeProperty ;
+    rdfs:label "model_id" ;
+    skos:definition "Embedding model used" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:order a owl:DatatypeProperty ;
+    rdfs:label "order" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:pathway_id a owl:DatatypeProperty ;
+    rdfs:label "pathway_id" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:phylum a owl:DatatypeProperty ;
+    rdfs:label "phylum" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:principal_investigator_name a owl:DatatypeProperty ;
+    rdfs:label "principal_investigator_name" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:principal_investigator_orcid a owl:DatatypeProperty ;
+    rdfs:label "principal_investigator_orcid" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:sample_id a owl:DatatypeProperty ;
+    rdfs:label "sample_id" ;
+    skos:definition "Sample identifier" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:smiles a owl:DatatypeProperty ;
+    rdfs:label "smiles" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:source a owl:DatatypeProperty ;
+    rdfs:label "source" ;
+    skos:definition "Source ontology/database (GO, KEGG, EC, etc.)" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:species a owl:DatatypeProperty ;
+    rdfs:label "species" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:specific_ecosystem a owl:DatatypeProperty ;
+    rdfs:label "specific_ecosystem" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:study_category a owl:DatatypeProperty ;
+    rdfs:label "study_category" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:study_id a owl:DatatypeProperty ;
+    rdfs:label "study_id" ;
+    skos:definition "NMDC study identifier" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:synonyms a owl:DatatypeProperty ;
+    rdfs:label "synonyms" ;
+    skos:definition "Term synonyms" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:taxid a owl:DatatypeProperty ;
+    rdfs:label "taxid" ;
+    skos:definition "NCBI taxonomy ID" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:term_id a owl:DatatypeProperty ;
+    rdfs:label "term_id" ;
+    skos:definition "Term identifier" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:title a owl:DatatypeProperty ;
+    rdfs:label "title" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:token_id a owl:DatatypeProperty ;
+    rdfs:label "token_id" ;
+    skos:definition "Vocabulary token ID" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:value a owl:DatatypeProperty ;
+    rdfs:label "value" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:websites a owl:DatatypeProperty ;
+    rdfs:label "websites" ;
+    skos:inScheme <https://w3id.org/kbase/nmdc_core> .
+
+ns1:definition a owl:DatatypeProperty .
+
+ns1:is_obsolete a owl:DatatypeProperty .
+
+ns1:namespace a owl:DatatypeProperty .
+
+ns1:description a owl:DatatypeProperty .
+
+ns1:name a owl:DatatypeProperty .
+
+

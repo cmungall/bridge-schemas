@@ -1,0 +1,666 @@
+@prefix kbase: <https://w3id.org/kbase/kbase_genomes/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/kbase/kbase_genomes.owl.ttl> a owl:Ontology ;
+    rdfs:label "kbase_genomes" .
+
+kbase:Contig a owl:Class ;
+    rdfs:label "Contig" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:hash ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:gc_content ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:gc_content ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:hash ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:length ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty kbase:contig_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:length ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:gc_content ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:contig_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:length ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:hash ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:contig_id ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> ;
+    kbase:source_table "contig" .
+
+kbase:ContigCollection a owl:Class ;
+    rdfs:label "ContigCollection" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:gtdb_taxon_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:contig_collection_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:hash ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:hash ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty kbase:contig_collection_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:contig_bp ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:gtdb_taxon_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:contig_collection_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:gtdb_taxon_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:hash ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:contig_bp ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:contig_bp ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:ncbi_taxon_id ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> ;
+    kbase:source_table "contig_collection" .
+
+kbase:ContigCollectionXEncodedFeature a owl:Class ;
+    rdfs:label "ContigCollectionXEncodedFeature" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:contig_collection_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:encoded_feature_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:encoded_feature_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:contig_collection_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:contig_collection_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:encoded_feature_id ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> ;
+    kbase:source_table "contig_collection_x_encoded_feature" .
+
+kbase:ContigCollectionXFeature a owl:Class ;
+    rdfs:label "ContigCollectionXFeature" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:feature_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:feature_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:contig_collection_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:feature_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:contig_collection_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:contig_collection_id ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> ;
+    kbase:source_table "contig_collection_x_feature" .
+
+kbase:ContigCollectionXProtein a owl:Class ;
+    rdfs:label "ContigCollectionXProtein" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:protein_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:protein_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:contig_collection_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:contig_collection_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:contig_collection_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:protein_id ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> ;
+    kbase:source_table "contig_collection_x_protein" .
+
+kbase:ContigXContigCollection a owl:Class ;
+    rdfs:label "ContigXContigCollection" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:contig_collection_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:contig_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:contig_collection_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:contig_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:contig_collection_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:contig_id ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> ;
+    kbase:source_table "contig_x_contig_collection" .
+
+kbase:ContigXEncodedFeature a owl:Class ;
+    rdfs:label "ContigXEncodedFeature" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:encoded_feature_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:encoded_feature_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:encoded_feature_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:contig_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:contig_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:contig_id ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> ;
+    kbase:source_table "contig_x_encoded_feature" .
+
+kbase:ContigXFeature a owl:Class ;
+    rdfs:label "ContigXFeature" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:contig_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:contig_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:feature_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:contig_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:feature_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:feature_id ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> ;
+    kbase:source_table "contig_x_feature" .
+
+kbase:ContigXProtein a owl:Class ;
+    rdfs:label "ContigXProtein" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:contig_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:protein_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:contig_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:protein_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:protein_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:contig_id ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> ;
+    kbase:source_table "contig_x_protein" .
+
+kbase:EncodedFeature a owl:Class ;
+    rdfs:label "EncodedFeature" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:has_stop_codon ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:encoded_feature_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:has_stop_codon ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:hash ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty kbase:encoded_feature_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:encoded_feature_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:has_stop_codon ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:hash ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:hash ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:type ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> ;
+    kbase:source_table "encoded_feature" .
+
+kbase:EncodedFeatureXFeature a owl:Class ;
+    rdfs:label "EncodedFeatureXFeature" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:feature_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:feature_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:encoded_feature_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:encoded_feature_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:feature_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:encoded_feature_id ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> ;
+    kbase:source_table "encoded_feature_x_feature" .
+
+kbase:EncodedFeatureXProtein a owl:Class ;
+    rdfs:label "EncodedFeatureXProtein" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:protein_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:encoded_feature_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:protein_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:encoded_feature_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:protein_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:encoded_feature_id ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> ;
+    kbase:source_table "encoded_feature_x_protein" .
+
+kbase:Feature a owl:Class ;
+    rdfs:label "Feature" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:hash ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:cds_phase ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:source_database ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:end ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty kbase:feature_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:strand ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:cds_phase ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:strand ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:start ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:end ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:strand ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:e_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:protocol_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:p_value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:source_database ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:hash ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:protocol_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:hash ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:start ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:end ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:p_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:source_database ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:start ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:e_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:feature_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:cds_phase ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:e_value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:protocol_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:p_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:feature_id ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> ;
+    kbase:source_table "feature" .
+
+kbase:FeatureXProtein a owl:Class ;
+    rdfs:label "FeatureXProtein" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:protein_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:protein_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:feature_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:feature_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:feature_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:protein_id ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> ;
+    kbase:source_table "feature_x_protein" .
+
+kbase:Name a owl:Class ;
+    rdfs:label "Name" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:source ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> ;
+    kbase:source_table "name" .
+
+kbase:Protein a owl:Class ;
+    rdfs:label "Protein" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:sequence ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:length ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty kbase:protein_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:sequence ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:sequence ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:length ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:length ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:hash ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:evidence_for_existence ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:hash ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:evidence_for_existence ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:protein_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:evidence_for_existence ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:hash ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:protein_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:description ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> ;
+    kbase:source_table "protein" .
+
+kbase:cds_phase a owl:DatatypeProperty ;
+    rdfs:label "cds_phase" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> .
+
+kbase:contig_bp a owl:DatatypeProperty ;
+    rdfs:label "contig_bp" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> .
+
+kbase:e_value a owl:DatatypeProperty ;
+    rdfs:label "e_value" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> .
+
+kbase:end a owl:DatatypeProperty ;
+    rdfs:label "end" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> .
+
+kbase:entity_id a owl:DatatypeProperty ;
+    rdfs:label "entity_id" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> .
+
+kbase:evidence_for_existence a owl:DatatypeProperty ;
+    rdfs:label "evidence_for_existence" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> .
+
+kbase:gc_content a owl:DatatypeProperty ;
+    rdfs:label "gc_content" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> .
+
+kbase:gtdb_taxon_id a owl:DatatypeProperty ;
+    rdfs:label "gtdb_taxon_id" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> .
+
+kbase:has_stop_codon a owl:DatatypeProperty ;
+    rdfs:label "has_stop_codon" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> .
+
+kbase:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> .
+
+kbase:ncbi_taxon_id a owl:DatatypeProperty ;
+    rdfs:label "ncbi_taxon_id" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> .
+
+kbase:p_value a owl:DatatypeProperty ;
+    rdfs:label "p_value" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> .
+
+kbase:protocol_id a owl:DatatypeProperty ;
+    rdfs:label "protocol_id" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> .
+
+kbase:sequence a owl:DatatypeProperty ;
+    rdfs:label "sequence" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> .
+
+kbase:source a owl:DatatypeProperty ;
+    rdfs:label "source" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> .
+
+kbase:source_database a owl:DatatypeProperty ;
+    rdfs:label "source_database" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> .
+
+kbase:start a owl:DatatypeProperty ;
+    rdfs:label "start" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> .
+
+kbase:strand a owl:DatatypeProperty ;
+    rdfs:label "strand" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_genomes> .
+
+kbase:description a owl:DatatypeProperty .
+
+kbase:length a owl:DatatypeProperty .
+
+kbase:type a owl:DatatypeProperty .
+
+kbase:contig_collection_id a owl:DatatypeProperty .
+
+kbase:contig_id a owl:DatatypeProperty .
+
+kbase:encoded_feature_id a owl:DatatypeProperty .
+
+kbase:feature_id a owl:DatatypeProperty .
+
+kbase:hash a owl:DatatypeProperty .
+
+kbase:protein_id a owl:DatatypeProperty .
+
+

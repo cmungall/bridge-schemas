@@ -1,0 +1,276 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <https://w3id.org/kbase/kbase_uniref100/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/kbase/kbase_uniref100.owl.ttl> a owl:Ontology ;
+    rdfs:label "kbase_uniref100" ;
+    dcterms:title "UniRef100 Protein Clusters" ;
+    skos:definition "UniRef100 clusters containing identical protein sequences from UniProt. 100% sequence identity clusters for protein deduplication." .
+
+ns1:ClusterMember a owl:Class ;
+    rdfs:label "ClusterMember" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty ns1:is_representative ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ns1:Cluster ;
+            owl:onProperty ns1:cluster_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:is_representative ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ns1:score ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:is_seed ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:entity_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:cluster_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ns1:Entity ;
+            owl:onProperty ns1:entity_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:is_representative ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:entity_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:score ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:cluster_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty ns1:is_seed ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:score ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:is_seed ] ;
+    skos:definition "Member sequence in a cluster" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniref100> ;
+    ns1:source_table "clustermember" .
+
+ns1:Crossreference a owl:Class ;
+    rdfs:label "Crossreference" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:xref_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:entity_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:entity_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:xref_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:xref_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:xref_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ns1:Entity ;
+            owl:onProperty ns1:entity_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:xref_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:xref_type ] ;
+    skos:definition "Cross-references to external databases" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniref100> ;
+    ns1:source_table "crossreference" .
+
+ns1:Cluster a owl:Class ;
+    rdfs:label "Cluster" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:protocol_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:entity_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:cluster_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:entity_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:protocol_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:protocol_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:entity_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ns1:cluster_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:cluster_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:name ] ;
+    skos:definition "UniRef100 cluster of identical sequences" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniref100> ;
+    ns1:source_table "cluster" .
+
+ns1:Entity a owl:Class ;
+    rdfs:label "Entity" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:entity_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:entity_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:data_source ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:entity_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:updated ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:data_source_entity_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:data_source ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:updated ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:entity_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:updated ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:entity_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:data_source_entity_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ns1:entity_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:data_source_entity_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:data_source ] ;
+    skos:definition "UniProt entity (protein sequence)" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniref100> ;
+    ns1:source_table "entity" .
+
+ns1:created a owl:DatatypeProperty ;
+    rdfs:label "created" ;
+    skos:definition "Creation timestamp" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniref100> .
+
+ns1:data_source a owl:DatatypeProperty ;
+    rdfs:label "data_source" ;
+    skos:definition "Source database" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniref100> .
+
+ns1:data_source_entity_id a owl:DatatypeProperty ;
+    rdfs:label "data_source_entity_id" ;
+    skos:definition "Original UniProt ID" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniref100> .
+
+ns1:description a owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    skos:definition "Cluster description" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniref100> .
+
+ns1:is_representative a owl:DatatypeProperty ;
+    rdfs:label "is_representative" ;
+    skos:definition "Whether this is the representative sequence" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniref100> .
+
+ns1:is_seed a owl:DatatypeProperty ;
+    rdfs:label "is_seed" ;
+    skos:definition "Whether this is the seed sequence" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniref100> .
+
+ns1:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    skos:definition "Representative sequence name" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniref100> .
+
+ns1:protocol_id a owl:DatatypeProperty ;
+    rdfs:label "protocol_id" ;
+    skos:definition "Clustering protocol ID" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniref100> .
+
+ns1:score a owl:DatatypeProperty ;
+    rdfs:label "score" ;
+    skos:definition "Membership score" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniref100> .
+
+ns1:updated a owl:DatatypeProperty ;
+    rdfs:label "updated" ;
+    skos:definition "Last update timestamp" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniref100> .
+
+ns1:xref_type a owl:DatatypeProperty ;
+    rdfs:label "xref_type" ;
+    skos:definition "Cross-reference database type" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniref100> .
+
+ns1:xref_value a owl:DatatypeProperty ;
+    rdfs:label "xref_value" ;
+    skos:definition "External identifier value" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniref100> .
+
+ns1:cluster_id a owl:DatatypeProperty,
+        owl:ObjectProperty .
+
+ns1:entity_type a owl:DatatypeProperty .
+
+ns1:entity_id a owl:DatatypeProperty,
+        owl:ObjectProperty .
+
+

@@ -1,0 +1,1156 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <https://w3id.org/kbase/kbase_ke_pangenome/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/kbase/kbase_ke_pangenome.owl.ttl> a owl:Ontology ;
+    rdfs:label "kbase_ke_pangenome" ;
+    dcterms:title "KBase Pangenome Database" ;
+    skos:definition "Pangenomic data organized around GTDB species clades. Contains gene clusters, genome metadata, taxonomy, and functional annotations." .
+
+ns1:EggnogMapperAnnotations a owl:Class ;
+    rdfs:label "EggnogMapperAnnotations" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:COG_category ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:KEGG_Pathway ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:Description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:score ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:PFAMs ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:evalue ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:Preferred_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:GOs ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:eggNOG_OGs ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:eggNOG_OGs ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:GOs ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:EC ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:Preferred_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:KEGG_ko ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:EC ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:query_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:GOs ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:PFAMs ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:seed_ortholog ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:KEGG_ko ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:score ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:Description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:Description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ns1:score ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:Preferred_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:eggNOG_OGs ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:seed_ortholog ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ns1:query_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:seed_ortholog ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:PFAMs ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:query_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:COG_category ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:KEGG_Pathway ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:KEGG_ko ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:evalue ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ns1:evalue ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:EC ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:KEGG_Pathway ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:COG_category ] ;
+    skos:definition "EggNOG functional annotations (sparse - 9% coverage)" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> ;
+    ns1:row_count "93558330" ;
+    ns1:source_table "eggnog_mapper_annotations" .
+
+ns1:GapmindPathways a owl:Class ;
+    rdfs:label "GapmindPathways" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:genome_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:genome_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ns1:Genome ;
+            owl:onProperty ns1:genome_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:score ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:pathway ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:score_category ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ns1:score ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:pathway ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:score_category ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:metabolic_category ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:metabolic_category ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:metabolic_category ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:score_category ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:score ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:pathway ] ;
+    skos:definition "GapMind metabolic pathway completeness" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> ;
+    ns1:source_table "gapmind_pathways" .
+
+ns1:GeneGeneclusterJunction a owl:Class ;
+    rdfs:label "GeneGeneclusterJunction" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:gene_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ns1:GeneCluster ;
+            owl:onProperty ns1:gene_cluster_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:gene_cluster_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:gene_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:gene_cluster_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ns1:Gene ;
+            owl:onProperty ns1:gene_id ] ;
+    skos:definition "Many-to-many link between genes and gene clusters" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> ;
+    ns1:row_count "1011650762" ;
+    ns1:source_table "gene_genecluster_junction" .
+
+ns1:GenomeAni a owl:Class ;
+    rdfs:label "GenomeAni" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:ANI ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:genome2_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:AF ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:protocol_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:ANI ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:genome1_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ns1:Genome ;
+            owl:onProperty ns1:genome2_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:AF ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:protocol_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ns1:Genome ;
+            owl:onProperty ns1:genome1_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ns1:AF ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:genome2_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:protocol_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:genome1_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ns1:ANI ] ;
+    skos:definition "Pairwise ANI between genomes" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> ;
+    ns1:source_table "genome_ani" .
+
+ns1:GtdbMetadata a owl:Class ;
+    rdfs:label "GtdbMetadata" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:protein_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:ncbi_biosample ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:accession ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:contig_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:gc_percentage ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:checkm_contamination ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ns1:checkm_completeness ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:ncbi_organism_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:gtdb_taxonomy ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ns1:contig_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:ncbi_taxid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:ncbi_biosample ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ns1:ncbi_taxid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:gtdb_representative ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ns1:accession ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:ncbi_organism_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ns1:protein_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:protein_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:gtdb_taxonomy ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:accession ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:ncbi_organism_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:checkm_completeness ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:gtdb_taxonomy ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:gtdb_representative ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:genome_size ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:ncbi_taxid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ns1:gc_percentage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ns1:genome_size ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:ncbi_biosample ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:checkm_completeness ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:gc_percentage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ns1:checkm_contamination ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty ns1:gtdb_representative ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:checkm_contamination ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:genome_size ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:contig_count ] ;
+    skos:definition "Comprehensive GTDB metadata (114 columns)" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> ;
+    ns1:source_table "gtdb_metadata" .
+
+ns1:GtdbTaxonomyR214v1 a owl:Class ;
+    rdfs:label "GtdbTaxonomyR214v1" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:genome_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:species ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:class ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:genome_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:domain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:gtdb_taxonomy_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:genus ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:family ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:order ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:family ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:class ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:domain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:genus ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:class ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ns1:Genome ;
+            owl:onProperty ns1:genome_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:family ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ns1:gtdb_taxonomy_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:gtdb_taxonomy_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:species ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:species ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:domain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:phylum ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:phylum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:genus ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:phylum ] ;
+    skos:definition "GTDB r214 taxonomy with full lineage" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> ;
+    ns1:source_table "gtdb_taxonomy_r214v1" .
+
+ns1:Pangenome a owl:Class ;
+    rdfs:label "Pangenome" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:no_core ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ns1:no_genomes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:number_of_iterations ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ns1:no_gene_clusters ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ns1:no_singleton_gene_clusters ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ns1:gtdb_species_clade_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:mean_initial_completeness ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:total_sum_of_loglikelihood_ratios ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:protocol_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ns1:GtdbSpeciesClade ;
+            owl:onProperty ns1:gtdb_species_clade_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ns1:corrected_mean_completness ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ns1:total_sum_of_loglikelihood_ratios ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:protocol_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:no_genomes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:corrected_mean_completness ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ns1:no_core ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:no_core ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ns1:no_aux_genome ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:corrected_mean_completness ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:no_gene_clusters ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:no_aux_genome ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:mean_initial_completeness ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:no_gene_clusters ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:number_of_iterations ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:total_sum_of_loglikelihood_ratios ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:no_singleton_gene_clusters ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:no_aux_genome ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ns1:mean_initial_completeness ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:protocol_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ns1:number_of_iterations ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:gtdb_species_clade_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:no_singleton_gene_clusters ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:no_genomes ] ;
+    skos:definition "Summary statistics for a species pangenome" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> ;
+    ns1:source_table "pangenome" .
+
+ns1:Sample a owl:Class ;
+    rdfs:label "Sample" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:ncbi_biosample_accession_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ns1:Genome ;
+            owl:onProperty ns1:genome_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:genome_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:ncbi_bioproject_accession_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:ncbi_biosample_accession_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:ncbi_bioproject_accession_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:ncbi_bioproject_accession_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:ncbi_biosample_accession_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:genome_id ] ;
+    skos:definition "NCBI BioProject/BioSample links" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> ;
+    ns1:source_table "sample" .
+
+ns1:Gene a owl:Class ;
+    rdfs:label "Gene" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:genome_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:genome_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:gene_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ns1:gene_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:gene_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ns1:Genome ;
+            owl:onProperty ns1:genome_id ] ;
+    skos:definition "Gene/CDS within a genome" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> ;
+    ns1:row_count "1011650903" ;
+    ns1:source_table "gene" .
+
+ns1:GeneCluster a owl:Class ;
+    rdfs:label "GeneCluster" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ns1:gene_cluster_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:gtdb_species_clade_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:likelihood ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:is_auxiliary ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:is_core ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:is_core ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:is_singleton ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:gtdb_species_clade_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:is_singleton ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:is_auxiliary ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:gene_cluster_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty ns1:is_auxiliary ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:gene_cluster_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty ns1:is_singleton ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:likelihood ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ns1:likelihood ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ns1:GtdbSpeciesClade ;
+            owl:onProperty ns1:gtdb_species_clade_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty ns1:is_core ] ;
+    skos:definition "Ortholog cluster at species level (core/auxiliary/singleton)" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> ;
+    ns1:row_count "132531501" ;
+    ns1:source_table "gene_cluster" .
+
+ns1:AF a owl:DatatypeProperty ;
+    rdfs:label "AF" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:ANI a owl:DatatypeProperty ;
+    rdfs:label "ANI" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:ANI_circumscription_radius a owl:DatatypeProperty ;
+    rdfs:label "ANI_circumscription_radius" ;
+    skos:definition "ANI threshold for species membership" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:COG_category a owl:DatatypeProperty ;
+    rdfs:label "COG_category" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:Description a owl:DatatypeProperty ;
+    rdfs:label "Description" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:EC a owl:DatatypeProperty ;
+    rdfs:label "EC" ;
+    skos:definition "EC enzyme numbers" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:GOs a owl:DatatypeProperty ;
+    rdfs:label "GOs" ;
+    skos:definition "GO term annotations" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:GTDB_species a owl:DatatypeProperty ;
+    rdfs:label "GTDB_species" ;
+    skos:definition "GTDB species name (e.g., s__Klebsiella_pneumoniae)" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:GTDB_taxonomy a owl:DatatypeProperty ;
+    rdfs:label "GTDB_taxonomy" ;
+    skos:definition "Full GTDB lineage string" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:GtdbSpeciesClade a owl:Class ;
+    rdfs:label "GtdbSpeciesClade" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ns1:mean_intra_species_AF ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:mean_intra_species_ANI ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:mean_intra_species_AF ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:GTDB_species ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:no_clustered_genomes_filtered ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:min_intra_species_AF ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:representative_genome_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ns1:mean_intra_species_ANI ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:min_intra_species_AF ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:representative_genome_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:no_clustered_genomes_unfiltered ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:no_clustered_genomes_unfiltered ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:ANI_circumscription_radius ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:GTDB_taxonomy ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:GTDB_taxonomy ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:gtdb_species_clade_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:GTDB_taxonomy ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:min_intra_species_ANI ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:min_intra_species_ANI ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ns1:ANI_circumscription_radius ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ns1:no_clustered_genomes_unfiltered ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ns1:min_intra_species_AF ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:mean_intra_species_ANI ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:no_clustered_genomes_filtered ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:GTDB_species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ns1:Genome ;
+            owl:onProperty ns1:representative_genome_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:ANI_circumscription_radius ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:GTDB_species ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ns1:gtdb_species_clade_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:gtdb_species_clade_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:mean_intra_species_AF ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty ns1:no_clustered_genomes_filtered ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty ns1:min_intra_species_ANI ] ;
+    skos:definition "GTDB species-level grouping with representative genome" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> ;
+    ns1:source_table "gtdb_species_clade" .
+
+ns1:KEGG_Pathway a owl:DatatypeProperty ;
+    rdfs:label "KEGG_Pathway" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:KEGG_ko a owl:DatatypeProperty ;
+    rdfs:label "KEGG_ko" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:PFAMs a owl:DatatypeProperty ;
+    rdfs:label "PFAMs" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:Preferred_name a owl:DatatypeProperty ;
+    rdfs:label "Preferred_name" ;
+    skos:definition "Gene symbol when available" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:accession a owl:DatatypeProperty ;
+    rdfs:label "accession" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:checkm_completeness a owl:DatatypeProperty ;
+    rdfs:label "checkm_completeness" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:checkm_contamination a owl:DatatypeProperty ;
+    rdfs:label "checkm_contamination" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:class a owl:DatatypeProperty ;
+    rdfs:label "class" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:contig_count a owl:DatatypeProperty ;
+    rdfs:label "contig_count" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:corrected_mean_completness a owl:DatatypeProperty ;
+    rdfs:label "corrected_mean_completness" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:domain a owl:DatatypeProperty ;
+    rdfs:label "domain" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:eggNOG_OGs a owl:DatatypeProperty ;
+    rdfs:label "eggNOG_OGs" ;
+    skos:definition "EggNOG ortholog groups" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:evalue a owl:DatatypeProperty ;
+    rdfs:label "evalue" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:faa_file_path_nersc a owl:DatatypeProperty ;
+    rdfs:label "faa_file_path_nersc" ;
+    skos:definition "Path to protein FASTA at NERSC" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:family a owl:DatatypeProperty ;
+    rdfs:label "family" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:fna_file_path_nersc a owl:DatatypeProperty ;
+    rdfs:label "fna_file_path_nersc" ;
+    skos:definition "Path to nucleotide FASTA at NERSC" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:gc_percentage a owl:DatatypeProperty ;
+    rdfs:label "gc_percentage" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:genome1_id a owl:ObjectProperty ;
+    rdfs:label "genome1_id" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:genome2_id a owl:ObjectProperty ;
+    rdfs:label "genome2_id" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:genome_size a owl:DatatypeProperty ;
+    rdfs:label "genome_size" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:genus a owl:DatatypeProperty ;
+    rdfs:label "genus" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:gtdb_representative a owl:DatatypeProperty ;
+    rdfs:label "gtdb_representative" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:gtdb_taxonomy a owl:DatatypeProperty ;
+    rdfs:label "gtdb_taxonomy" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:is_auxiliary a owl:DatatypeProperty ;
+    rdfs:label "is_auxiliary" ;
+    skos:definition "Present in some but not all genomes" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:is_core a owl:DatatypeProperty ;
+    rdfs:label "is_core" ;
+    skos:definition "Present in all genomes of species" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:is_singleton a owl:DatatypeProperty ;
+    rdfs:label "is_singleton" ;
+    skos:definition "Present in only one genome" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:likelihood a owl:DatatypeProperty ;
+    rdfs:label "likelihood" ;
+    skos:definition "Log-likelihood from pangenome model" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:mean_initial_completeness a owl:DatatypeProperty ;
+    rdfs:label "mean_initial_completeness" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:mean_intra_species_AF a owl:DatatypeProperty ;
+    rdfs:label "mean_intra_species_AF" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:mean_intra_species_ANI a owl:DatatypeProperty ;
+    rdfs:label "mean_intra_species_ANI" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:metabolic_category a owl:DatatypeProperty ;
+    rdfs:label "metabolic_category" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:min_intra_species_AF a owl:DatatypeProperty ;
+    rdfs:label "min_intra_species_AF" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:min_intra_species_ANI a owl:DatatypeProperty ;
+    rdfs:label "min_intra_species_ANI" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:ncbi_bioproject_accession_id a owl:DatatypeProperty ;
+    rdfs:label "ncbi_bioproject_accession_id" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:ncbi_biosample a owl:DatatypeProperty ;
+    rdfs:label "ncbi_biosample" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:ncbi_biosample_accession_id a owl:DatatypeProperty ;
+    rdfs:label "ncbi_biosample_accession_id" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:ncbi_biosample_id a owl:DatatypeProperty ;
+    rdfs:label "ncbi_biosample_id" ;
+    skos:definition "NCBI BioSample accession" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:ncbi_organism_name a owl:DatatypeProperty ;
+    rdfs:label "ncbi_organism_name" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:ncbi_taxid a owl:DatatypeProperty ;
+    rdfs:label "ncbi_taxid" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:no_aux_genome a owl:DatatypeProperty ;
+    rdfs:label "no_aux_genome" ;
+    skos:definition "Number of auxiliary gene clusters" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:no_clustered_genomes_filtered a owl:DatatypeProperty ;
+    rdfs:label "no_clustered_genomes_filtered" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:no_clustered_genomes_unfiltered a owl:DatatypeProperty ;
+    rdfs:label "no_clustered_genomes_unfiltered" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:no_core a owl:DatatypeProperty ;
+    rdfs:label "no_core" ;
+    skos:definition "Number of core gene clusters" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:no_gene_clusters a owl:DatatypeProperty ;
+    rdfs:label "no_gene_clusters" ;
+    skos:definition "Total gene clusters" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:no_genomes a owl:DatatypeProperty ;
+    rdfs:label "no_genomes" ;
+    skos:definition "Number of genomes in pangenome" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:no_singleton_gene_clusters a owl:DatatypeProperty ;
+    rdfs:label "no_singleton_gene_clusters" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:number_of_iterations a owl:DatatypeProperty ;
+    rdfs:label "number_of_iterations" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:order a owl:DatatypeProperty ;
+    rdfs:label "order" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:pathway a owl:DatatypeProperty ;
+    rdfs:label "pathway" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:phylum a owl:DatatypeProperty ;
+    rdfs:label "phylum" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:protein_count a owl:DatatypeProperty ;
+    rdfs:label "protein_count" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:query_name a owl:DatatypeProperty ;
+    rdfs:label "query_name" ;
+    skos:definition "Gene ID (matches gene.gene_id)" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:representative_genome_id a owl:ObjectProperty ;
+    rdfs:label "representative_genome_id" ;
+    skos:definition "Representative genome for this species clade" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:score_category a owl:DatatypeProperty ;
+    rdfs:label "score_category" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:seed_ortholog a owl:DatatypeProperty ;
+    rdfs:label "seed_ortholog" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:species a owl:DatatypeProperty ;
+    rdfs:label "species" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:total_sum_of_loglikelihood_ratios a owl:DatatypeProperty ;
+    rdfs:label "total_sum_of_loglikelihood_ratios" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> .
+
+ns1:gene_cluster_id a owl:DatatypeProperty,
+        owl:ObjectProperty .
+
+ns1:gene_id a owl:DatatypeProperty,
+        owl:ObjectProperty .
+
+ns1:gtdb_taxonomy_id a owl:DatatypeProperty .
+
+ns1:protocol_id a owl:DatatypeProperty .
+
+ns1:score a owl:DatatypeProperty .
+
+ns1:Genome a owl:Class ;
+    rdfs:label "Genome" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:gtdb_taxonomy_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:fna_file_path_nersc ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:gtdb_taxonomy_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ns1:GtdbSpeciesClade ;
+            owl:onProperty ns1:gtdb_species_clade_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:faa_file_path_nersc ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:gtdb_taxonomy_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:ncbi_biosample_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:ncbi_biosample_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ns1:genome_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:fna_file_path_nersc ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:ncbi_biosample_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:faa_file_path_nersc ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:fna_file_path_nersc ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:gtdb_species_clade_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ns1:genome_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:faa_file_path_nersc ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty ns1:genome_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ns1:gtdb_species_clade_id ] ;
+    skos:definition "Individual genome assembly" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ke_pangenome> ;
+    ns1:source_table "genome" .
+
+ns1:gtdb_species_clade_id a owl:DatatypeProperty,
+        owl:ObjectProperty .
+
+ns1:genome_id a owl:DatatypeProperty,
+        owl:ObjectProperty .
+
+

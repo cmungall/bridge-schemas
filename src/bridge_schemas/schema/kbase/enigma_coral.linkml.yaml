@@ -1,0 +1,296 @@
+id: https://w3id.org/kbase/enigma_coral
+name: enigma_coral
+title: ENIGMA CoRAL Groundwater Microbiome Database
+description: >-
+  ENIGMA (Ecosystems and Networks Integrated with Genes and Molecular Assemblies)
+  CoRAL (Collaborative Research for Applied Learning) groundwater microbiome data.
+  Contains samples, taxonomic data, and environmental metadata from groundwater
+  monitoring wells.
+
+  PROJECT CONTEXT:
+  ENIGMA is a DOE Scientific Focus Area studying microbial communities in
+  contaminated groundwater environments, particularly at the Oak Ridge Field
+  Research Center (ORFRC) in Tennessee.
+
+  DATABASE STRUCTURE:
+  - sdt_sample: Environmental samples with location and depth
+  - sdt_location: Sampling sites/wells
+  - sdt_taxon: Taxonomic identifications (linked to NCBI taxonomy)
+  - sdt_asv: Amplicon sequence variants from 16S sequencing
+  - sdt_condition: Experimental conditions
+  - sdt_strain: Cultured isolates
+  - ddt_brick*: Data bricks (array data storage)
+  - sys_*: System/ontology tables
+
+  ONTOLOGY INTEGRATION:
+  Uses ENVO (Environment Ontology) and MIxS (Minimum Information about any
+  Sequence) terms for standardized sample description.
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  enigma: https://enigma.lbl.gov/
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  MIxS: https://w3id.org/mixs/
+  NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
+
+default_range: string
+imports:
+  - linkml:types
+
+classes:
+  Sample:
+    description: >-
+      Environmental sample from groundwater monitoring wells.
+      Contains location, depth, and material type using ontology terms.
+
+      EXAMPLE SAMPLES:
+      - EU02-D01: Groundwater from well EU02 at 5.4m depth
+      - EU03-D01: Groundwater from well EU03 at 4.6m depth
+      - ED04-D01: Groundwater from well ED04 at 4.8m depth
+    annotations:
+      source_table: sdt_sample
+    attributes:
+      sdt_sample_id:
+        identifier: true
+        range: string
+        required: true
+        description: Unique sample identifier
+        pattern: "Sample\\d{7}"
+        examples:
+          - value: "Sample0000001"
+          - value: "Sample0000002"
+          - value: "Sample0000003"
+
+      sdt_sample_name:
+        range: string
+        description: Human-readable sample name (well-date format)
+        examples:
+          - value: "EU02-D01"
+            description: Well EU02, sampling day 01
+          - value: "EU03-D01"
+          - value: "ED04-D01"
+
+      sdt_location_name:
+        range: string
+        description: Sampling location/well identifier
+        comments:
+          - "Foreign key to Location.sdt_location_name"
+        examples:
+          - value: "EU02"
+          - value: "EU03"
+          - value: "ED04"
+
+      depth_meter:
+        range: float
+        description: Sample depth in meters below ground surface
+        minimum_value: 0.0
+        examples:
+          - value: 5.401056
+          - value: 4.605528
+          - value: 4.7625
+
+      elevation_meter:
+        range: float
+        description: Elevation in meters (above sea level)
+
+      date:
+        range: date
+        description: Sampling date (YYYY-MM-DD)
+        examples:
+          - value: "2019-07-29"
+
+      time:
+        range: string
+        description: Sampling time (HH:MM format)
+        examples:
+          - value: "6:59"
+          - value: "8:09"
+          - value: "8:58"
+
+      timezone:
+        range: string
+        description: Timezone offset
+        examples:
+          - value: "UTC-04"
+
+      material_sys_oterm_id:
+        range: string
+        description: ENVO ontology term ID for sample material type
+        examples:
+          - value: "ENVO:00002041"
+            description: Ground water
+
+      material_sys_oterm_name:
+        range: string
+        description: Human-readable material type name
+        examples:
+          - value: "ground water"
+
+      env_package_sys_oterm_id:
+        range: string
+        description: MIxS environmental package term ID
+        examples:
+          - value: "MIxS:0000017"
+            description: Water package
+
+      env_package_sys_oterm_name:
+        range: string
+        description: MIxS environmental package name
+        examples:
+          - value: "water"
+
+      sdt_sample_description:
+        range: string
+        description: Free-text sample description
+        examples:
+          - value: "1 L purged"
+
+  Location:
+    description: >-
+      Sampling location (groundwater monitoring well).
+    annotations:
+      source_table: sdt_location
+    attributes:
+      sdt_location_name:
+        identifier: true
+        range: string
+        required: true
+        description: Location/well identifier
+        examples:
+          - value: "EU02"
+          - value: "EU03"
+
+  Taxon:
+    description: >-
+      Taxonomic identification linked to NCBI taxonomy.
+      Includes bacteria, archaea, and other microorganisms.
+    annotations:
+      source_table: sdt_taxon
+    attributes:
+      sdt_taxon_id:
+        identifier: true
+        range: string
+        required: true
+        description: Internal taxon identifier
+        pattern: "Taxon\\d{7}"
+        examples:
+          - value: "Taxon0000842"
+          - value: "Taxon0000843"
+          - value: "Taxon0000844"
+
+      sdt_taxon_name:
+        range: string
+        description: Taxonomic name (any rank)
+        examples:
+          - value: "Cytophagales"
+            description: Order level
+          - value: "Cytophaga"
+            description: Genus level
+          - value: "Cytophagia"
+            description: Class level
+
+      ncbi_taxid:
+        range: string
+        description: NCBI Taxonomy ID with NCBITaxon prefix
+        pattern: "NCBITaxon:\\d+"
+        examples:
+          - value: "NCBITaxon:768507"
+            description: Cytophagales
+          - value: "NCBITaxon:978"
+            description: Cytophaga
+          - value: "NCBITaxon:768503"
+            description: Cytophagia
+
+  ASV:
+    description: >-
+      Amplicon Sequence Variant from 16S rRNA gene sequencing.
+      Exact sequence variants without clustering.
+    annotations:
+      source_table: sdt_asv
+    attributes:
+      sdt_asv_id:
+        identifier: true
+        range: string
+        description: ASV identifier
+
+  Condition:
+    description: >-
+      Experimental or environmental condition metadata.
+    annotations:
+      source_table: sdt_condition
+    attributes:
+      sdt_condition_id:
+        identifier: true
+        range: string
+        description: Condition identifier
+
+  Strain:
+    description: >-
+      Cultured microbial strain/isolate.
+    annotations:
+      source_table: sdt_strain
+    attributes:
+      sdt_strain_id:
+        identifier: true
+        range: string
+        description: Strain identifier
+
+  OntologyTerm:
+    description: >-
+      System ontology term (ENVO, MIxS, etc.) for standardized annotations.
+    annotations:
+      source_table: sys_oterm
+    attributes:
+      sys_oterm_id:
+        identifier: true
+        range: string
+        description: Ontology term ID (CURIE format)
+        examples:
+          - value: "ENVO:00002041"
+          - value: "MIxS:0000017"
+
+  Process:
+    description: >-
+      Data processing workflow or analysis process.
+    annotations:
+      source_table: sys_process
+    attributes:
+      sys_process_id:
+        identifier: true
+        range: string
+        description: Process identifier
+
+  DataBrick:
+    description: >-
+      Data brick for array/matrix data storage (ddt_brick* tables).
+      Used for efficient storage of multi-dimensional data like
+      abundance matrices.
+    annotations:
+      source_table: ddt_brick*
+    attributes:
+      brick_id:
+        identifier: true
+        range: string
+        description: Data brick identifier
+
+  NDArray:
+    description: >-
+      N-dimensional array metadata and type definitions.
+    annotations:
+      source_table: ddt_ndarray
+    attributes:
+      ndarray_id:
+        identifier: true
+        range: string
+        description: Array identifier
+
+  TypeDefinition:
+    description: >-
+      System type definitions for data bricks.
+    annotations:
+      source_table: sys_ddt_typedef
+    attributes:
+      typedef_id:
+        identifier: true
+        range: string
+        description: Type definition identifier

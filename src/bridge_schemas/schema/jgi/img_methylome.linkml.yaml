@@ -1,0 +1,429 @@
+name: img_methylome
+id: https://w3id.org/jgi/img_methylome
+imports:
+- linkml:types
+prefixes:
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  img_methylome:
+    prefix_prefix: img_methylome
+    prefix_reference: https://w3id.org/jgi/img_methylome/
+default_prefix: img_methylome
+default_range: string
+classes:
+  meth_exp:
+    name: meth_exp
+    attributes:
+      exp_oid:
+        name: exp_oid
+        range: integer
+        required: false
+      project_name:
+        name: project_name
+        range: string
+        required: false
+      exp_name:
+        name: exp_name
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      exp_date:
+        name: exp_date
+        range: string
+        required: false
+      exp_contact:
+        name: exp_contact
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      notes:
+        name: notes
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+      chemistry_type:
+        name: chemistry_type
+        range: string
+        required: false
+  meth_experiment:
+    name: meth_experiment
+    attributes:
+      exp_oid:
+        name: exp_oid
+        range: integer
+        required: false
+      project_name:
+        name: project_name
+        range: string
+        required: false
+      exp_name:
+        name: exp_name
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      exp_date:
+        name: exp_date
+        range: string
+        required: false
+      exp_contact:
+        name: exp_contact
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      notes:
+        name: notes
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+      chemistry_type:
+        name: chemistry_type
+        range: string
+        required: false
+  meth_experiment_ext_links:
+    name: meth_experiment_ext_links
+    attributes:
+      exp_oid:
+        name: exp_oid
+        description: Foreign key to meth_experiment
+        range: meth_experiment
+        required: false
+      db_name:
+        name: db_name
+        range: string
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+      custom_url:
+        name: custom_url
+        range: string
+        required: false
+  meth_experiment_publications:
+    name: meth_experiment_publications
+    attributes:
+      exp_oid:
+        name: exp_oid
+        description: Foreign key to meth_experiment
+        range: meth_experiment
+        required: false
+      publications:
+        name: publications
+        range: string
+        required: false
+  meth_function_coverage:
+    name: meth_function_coverage
+    attributes:
+      exp_oid:
+        name: exp_oid
+        description: Foreign key to meth_experiment
+        range: meth_experiment
+        required: false
+      sample_oid:
+        name: sample_oid
+        description: Foreign key to meth_sample
+        range: meth_sample
+        required: false
+      function_type:
+        name: function_type
+        range: string
+        required: false
+      function_id:
+        name: function_id
+        range: string
+        required: false
+      modification_count:
+        name: modification_count
+        range: float
+        required: false
+  meth_modification:
+    name: meth_modification
+    attributes:
+      modification_oid:
+        name: modification_oid
+        range: integer
+        required: false
+      motif_summary:
+        name: motif_summary
+        range: integer
+        required: false
+      refid:
+        name: refid
+        range: string
+        required: false
+      img_scaffold_oid:
+        name: img_scaffold_oid
+        range: integer
+        required: false
+      img_taxon_oid:
+        name: img_taxon_oid
+        range: integer
+        required: false
+      tool_name:
+        name: tool_name
+        range: string
+        required: false
+      type:
+        name: type
+        range: string
+        required: false
+      start_coord:
+        name: start_coord
+        range: float
+        required: false
+      end_coord:
+        name: end_coord
+        range: float
+        required: false
+      score:
+        name: score
+        range: float
+        required: false
+      strand:
+        name: strand
+        range: string
+        required: false
+      phase:
+        name: phase
+        range: string
+        required: false
+      ipd_ratio:
+        name: ipd_ratio
+        range: float
+        required: false
+      context:
+        name: context
+        range: string
+        required: false
+      coverage:
+        name: coverage
+        range: float
+        required: false
+      motif_string:
+        name: motif_string
+        range: string
+        required: false
+      sample:
+        name: sample
+        range: integer
+        required: false
+      experiment:
+        name: experiment
+        range: integer
+        required: false
+      methylation_coord:
+        name: methylation_coord
+        range: float
+        required: false
+  meth_motif:
+    name: meth_motif
+    attributes:
+      motif_oid:
+        name: motif_oid
+        range: integer
+        required: false
+      refid:
+        name: refid
+        range: string
+        required: false
+      img_scaffold_oid:
+        name: img_scaffold_oid
+        range: integer
+        required: false
+      img_taxon_oid:
+        name: img_taxon_oid
+        range: integer
+        required: false
+      tool_name:
+        name: tool_name
+        range: string
+        required: false
+      type:
+        name: type
+        range: string
+        required: false
+      start_coord:
+        name: start_coord
+        range: float
+        required: false
+      end_coord:
+        name: end_coord
+        range: float
+        required: false
+      score:
+        name: score
+        range: float
+        required: false
+      strand:
+        name: strand
+        range: string
+        required: false
+      phase:
+        name: phase
+        range: string
+        required: false
+      ipd_ratio:
+        name: ipd_ratio
+        range: float
+        required: false
+      context:
+        name: context
+        range: string
+        required: false
+      coverage:
+        name: coverage
+        range: float
+        required: false
+      motif_string:
+        name: motif_string
+        range: string
+        required: false
+      sample:
+        name: sample
+        range: integer
+        required: false
+      experiment:
+        name: experiment
+        range: integer
+        required: false
+  meth_motif_summary:
+    name: meth_motif_summary
+    attributes:
+      motif_summ_oid:
+        name: motif_summ_oid
+        range: integer
+        required: false
+      experiment:
+        name: experiment
+        description: Foreign key to meth_experiment
+        range: meth_experiment
+        required: false
+      sample:
+        name: sample
+        description: Foreign key to meth_sample
+        range: meth_sample
+        required: false
+      img_taxon_oid:
+        name: img_taxon_oid
+        range: integer
+        required: false
+      motif_string:
+        name: motif_string
+        range: string
+        required: false
+      center_pos:
+        name: center_pos
+        range: float
+        required: false
+      fraction:
+        name: fraction
+        range: float
+        required: false
+      n_detected:
+        name: n_detected
+        range: float
+        required: false
+      n_genome:
+        name: n_genome
+        range: float
+        required: false
+      group_tag:
+        name: group_tag
+        range: string
+        required: false
+      partner_motif_string:
+        name: partner_motif_string
+        range: string
+        required: false
+      mean_score:
+        name: mean_score
+        range: float
+        required: false
+      mean_ipd_ratio:
+        name: mean_ipd_ratio
+        range: float
+        required: false
+      mean_coverage:
+        name: mean_coverage
+        range: float
+        required: false
+      objective_score:
+        name: objective_score
+        range: float
+        required: false
+      modification_type:
+        name: modification_type
+        range: string
+        required: false
+  meth_sample:
+    name: meth_sample
+    attributes:
+      sample_oid:
+        name: sample_oid
+        range: integer
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      organism_name:
+        name: organism_name
+        range: string
+        required: false
+      img_taxon_oid:
+        name: img_taxon_oid
+        range: integer
+        required: false
+      experiment:
+        name: experiment
+        description: Foreign key to meth_experiment
+        range: meth_experiment
+        required: false
+  meth_stats:
+    name: meth_stats
+    attributes:
+      exp_oid:
+        name: exp_oid
+        description: Foreign key to meth_experiment
+        range: meth_experiment
+        required: false
+      sample_oid:
+        name: sample_oid
+        description: Foreign key to meth_sample
+        range: meth_sample
+        required: false
+      n_coding_mods:
+        name: n_coding_mods
+        range: float
+        required: false
+      n_anticoding_mods:
+        name: n_anticoding_mods
+        range: float
+        required: false
+      n_noncoding_mods:
+        name: n_noncoding_mods
+        range: float
+        required: false
+      n_both_strand_mods:
+        name: n_both_strand_mods
+        range: float
+        required: false

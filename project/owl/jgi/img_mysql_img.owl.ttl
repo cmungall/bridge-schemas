@@ -1,0 +1,244 @@
+@prefix img_mysql_img: <https://w3id.org/jgi/img_mysql_img/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/jgi/img_mysql_img.owl.ttl> a owl:Ontology ;
+    rdfs:label "img_mysql_img" .
+
+img_mysql_img:GoldSpHabitat a owl:Class ;
+    rdfs:label "gold_sp_habitat" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_img:gold_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_img:habitat ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_img:habitat ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_img:gold_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_img:habitat ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_img:gold_id ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_img> .
+
+img_mysql_img:Taxon a owl:Class ;
+    rdfs:label "taxon" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_img:ecosystem ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_img:genome_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_img:is_public ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_img:ecosystem_subtype ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_img:ecosystem ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_img:ecosystem_subtype ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_img:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_img:obsolete_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_img:ecosystem_category ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_img:ecosystem_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_img:ecosystem_category ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_img:specific_ecosystem ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_img:genome_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_img:taxon_display_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_img:taxon_display_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_img:specific_ecosystem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_img:obsolete_flag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_img:obsolete_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_img:ecosystem_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_img:ecosystem_category ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_img:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_img:specific_ecosystem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_img:ecosystem ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_img:ecosystem_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_img:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_img:genome_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_img:taxon_display_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_img:is_public ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_img:is_public ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_img:ecosystem_subtype ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_img> .
+
+img_mysql_img:TaxonBodySite a owl:Class ;
+    rdfs:label "taxon_body_site" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_img:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_img:body_subsite ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_img:body_site ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_img:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_img:body_site ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_img:body_subsite ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_img:body_site ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_img:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_img:body_subsite ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_img> .
+
+img_mysql_img:TaxonHabitat a owl:Class ;
+    rdfs:label "taxon_habitat" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_img:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_img:habitat ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_img:habitat ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_img:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_img:habitat ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_img:taxon_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_img> .
+
+img_mysql_img:TaxonVrpr a owl:Class ;
+    rdfs:label "taxon_vrpr" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_img:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_img:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_img:taxon_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_img> .
+
+img_mysql_img:body_site a owl:DatatypeProperty ;
+    rdfs:label "body_site" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_img> .
+
+img_mysql_img:body_subsite a owl:DatatypeProperty ;
+    rdfs:label "body_subsite" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_img> .
+
+img_mysql_img:ecosystem a owl:DatatypeProperty ;
+    rdfs:label "ecosystem" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_img> .
+
+img_mysql_img:ecosystem_category a owl:DatatypeProperty ;
+    rdfs:label "ecosystem_category" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_img> .
+
+img_mysql_img:ecosystem_subtype a owl:DatatypeProperty ;
+    rdfs:label "ecosystem_subtype" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_img> .
+
+img_mysql_img:ecosystem_type a owl:DatatypeProperty ;
+    rdfs:label "ecosystem_type" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_img> .
+
+img_mysql_img:genome_type a owl:DatatypeProperty ;
+    rdfs:label "genome_type" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_img> .
+
+img_mysql_img:gold_id a owl:DatatypeProperty ;
+    rdfs:label "gold_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_img> .
+
+img_mysql_img:is_public a owl:DatatypeProperty ;
+    rdfs:label "is_public" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_img> .
+
+img_mysql_img:obsolete_flag a owl:DatatypeProperty ;
+    rdfs:label "obsolete_flag" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_img> .
+
+img_mysql_img:specific_ecosystem a owl:DatatypeProperty ;
+    rdfs:label "specific_ecosystem" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_img> .
+
+img_mysql_img:taxon_display_name a owl:DatatypeProperty ;
+    rdfs:label "taxon_display_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_img> .
+
+img_mysql_img:habitat a owl:DatatypeProperty .
+
+img_mysql_img:taxon_oid a owl:DatatypeProperty .
+
+

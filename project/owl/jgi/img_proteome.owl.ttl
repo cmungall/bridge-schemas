@@ -1,0 +1,2119 @@
+@prefix img_proteome: <https://w3id.org/jgi/img_proteome/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/jgi/img_proteome.owl.ttl> a owl:Ontology ;
+    rdfs:label "img_proteome" .
+
+img_proteome:ContactProtexpPermissions a owl:Class ;
+    rdfs:label "contact_protexp_permissions" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:protexp_permissions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:protexp_permissions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:contact_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:contact_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:contact_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:protexp_permissions ] ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:MsExperimentExtLinks a owl:Class ;
+    rdfs:label "ms_experiment_ext_links" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom img_proteome:MsExperiment ;
+            owl:onProperty img_proteome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:custom_url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:db_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:db_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:custom_url ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:db_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:custom_url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:exp_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:MsExperimentPublications a owl:Class ;
+    rdfs:label "ms_experiment_publications" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:publications ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:publications ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:publications ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:exp_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:MsExperimentSop a owl:Class ;
+    rdfs:label "ms_experiment_sop" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom img_proteome:MsExperiment ;
+            owl:onProperty img_proteome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:tag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:tag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:tag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:value ] ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:MsPeptide a owl:Class ;
+    rdfs:label "ms_peptide" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:first_aa ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:prev_aa ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:end_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:calc_mh ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:sample ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:sp_rank ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:frame ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:obs_mh ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:filter_pass_obs ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:max_deltcn ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:sp_score ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:prev_aa ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:mass_tag_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:filter_pass_obs ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:start_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:match_spec_cnt ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:ion_perc ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:first_aa ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:frame ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:is_unique ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:tryptic_state ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:mass_tag_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:is_unique ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:notes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:calc_mh ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:protein ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:max_pep_prob ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:prev_aa ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:peptide_seq ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:tryptic_state ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:ion_perc ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:max_xcorr ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:notes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:mass_tag_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:max_xcorr ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:peptide_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:spectrum_ref ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:obs_mh ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:max_deltcn ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:first_aa ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:peptide_seq ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:tryptic_state ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:sample ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom img_proteome:MsProtein ;
+            owl:onProperty img_proteome:protein ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:is_unique ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:notes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:total_intensity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:max_pep_prob ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:match_spec_cnt ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:calc_mh ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:spectrum_ref ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:obs_mh ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:sample ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:start_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:match_spec_cnt ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:frame ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:total_intensity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:peptide_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:sp_score ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:sp_score ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:ion_perc ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:sp_rank ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:experiment ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:protein ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:max_xcorr ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:end_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:start_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:total_intensity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:experiment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:end_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:spectrum_ref ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:peptide_seq ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:max_pep_prob ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:max_deltcn ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:filter_pass_obs ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:peptide_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:sp_rank ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom img_proteome:MsExperiment ;
+            owl:onProperty img_proteome:experiment ] ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:MsPeptideOld a owl:Class ;
+    rdfs:label "ms_peptide_old" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:max_xcorr ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:sp_score ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:end_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:protein ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:tryptic_state ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:match_spec_cnt ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:start_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:is_unique ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:filter_pass_obs ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:frame ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:peptide_seq ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:calc_mh ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:ion_perc ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:spectrum_ref ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:filter_pass_obs ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:mass_tag_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:max_pep_prob ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:peptide_seq ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:sample ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:sp_rank ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:mass_tag_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:sp_score ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:prev_aa ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:max_deltcn ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:calc_mh ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:is_unique ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:first_aa ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:max_deltcn ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:obs_mh ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:sp_rank ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:end_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:max_pep_prob ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:experiment ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:tryptic_state ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:first_aa ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:spectrum_ref ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:calc_mh ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:protein ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:is_unique ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:max_xcorr ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:tryptic_state ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:frame ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:peptide_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:notes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:obs_mh ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:peptide_seq ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:sample ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:sp_rank ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:total_intensity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:max_deltcn ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:protein ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:start_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:notes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:prev_aa ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:frame ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:ion_perc ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:total_intensity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:match_spec_cnt ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:notes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:mass_tag_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:peptide_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:total_intensity ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:experiment ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:peptide_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:max_pep_prob ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:experiment ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:first_aa ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:sample ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:sp_score ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:max_xcorr ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:obs_mh ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:prev_aa ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:start_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:spectrum_ref ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:filter_pass_obs ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:end_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:ion_perc ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:match_spec_cnt ] ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:MsProteinImgGenes a owl:Class ;
+    rdfs:label "ms_protein_img_genes" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:end_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:protein_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:gene ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:gene ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:end_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:comments ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:start_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:mod_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:start_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_proteome:mod_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:protein_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:comments ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:genome ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:end_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:genome ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:genome ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom img_proteome:MsProtein ;
+            owl:onProperty img_proteome:protein_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:gene ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:comments ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:start_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:mod_date ] ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:MsProteinImgGenesOld a owl:Class ;
+    rdfs:label "ms_protein_img_genes_old" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:comments ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:gene ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:comments ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:start_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:genome ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:genome ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:genome ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:gene ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:protein_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:protein_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:start_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:start_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:mod_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:gene ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_proteome:mod_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:protein_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:mod_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:end_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:comments ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:end_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:end_coord ] ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:MsProteinOld a owl:Class ;
+    rdfs:label "ms_protein_old" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:end_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:pi ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:seq_coverage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:sample ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:prot_seq_length ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:search_db ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:search_engine ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:protein_source_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:sample ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:protein_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:protein_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:score ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:protein_seq ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:seq_coverage ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:prot_seq_length ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:locus_tag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:protein_acc_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:notes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:score ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:locus_tag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:search_engine ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:search_db ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:spec_uniq_cnt ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:pi ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:start_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:pep_tot_cnt ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:notes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:pi ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:pep_uniq_cnt ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:pep_uniq_cnt ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:spec_tot_cnt ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:locus_tag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:mol_wt ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:end_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:protein_source_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:threshold ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:experiment ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:start_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:protein_seq ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:sample ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:threshold ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:start_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:pep_tot_cnt ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:protein_acc_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:protein_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:search_db ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:protein_seq ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:spec_tot_cnt ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:pep_nonuniq_cnt ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:nsaf_score ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:spec_tot_cnt ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:spec_uniq_cnt ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:seq_coverage ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:spec_uniq_cnt ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:pep_nonuniq_cnt ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:prot_seq_length ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:pep_tot_cnt ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:experiment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:threshold ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:search_engine ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:notes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:mol_wt ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:protein_source_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:protein_acc_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:mol_wt ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:pep_nonuniq_cnt ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:score ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:pep_uniq_cnt ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:experiment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:nsaf_score ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:end_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:nsaf_score ] ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:MsSample a owl:Class ;
+    rdfs:label "ms_sample" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom img_proteome:MsExperiment ;
+            owl:onProperty img_proteome:experiment ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:organism_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:sample_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:img_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:experiment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:img_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:experiment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:organism_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:sample_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:organism_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:sample_origin ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:sample_origin ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:sample_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:img_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:sample_origin ] ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:MsSampleExtLinks a owl:Class ;
+    rdfs:label "ms_sample_ext_links" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:db_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:db_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:db_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:sample_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:sample_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:sample_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:custom_url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:custom_url ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:custom_url ] ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:MsSampleSop a owl:Class ;
+    rdfs:label "ms_sample_sop" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:sample_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:tag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:sample_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:sample_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:tag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:tag ] ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:PlanTable a owl:Class ;
+    rdfs:label "plan_table" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:partition_stop ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:other_xml ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:object_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:partition_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:partition_stop ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:options ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:access_predicates ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:position ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:object_node ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:object_instance ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:cpu_cost ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:object_owner ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:filter_predicates ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:operation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:cpu_cost ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:partition_start ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:distribution ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:remarks ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:distribution ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:statement_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:object_alias ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:time ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:cardinality ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:object_owner ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:timestamp ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:projection ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:access_predicates ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:projection ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:qblock_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:temp_space ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:search_columns ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:filter_predicates ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:parent_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:object_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:options ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:optimizer ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:search_columns ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:cost ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:object_instance ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:bytes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:other ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:plan_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:object_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:object_node ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:cardinality ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:remarks ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:object_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:options ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:cost ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:object_alias ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:statement_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:optimizer ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:plan_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:cost ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:optimizer ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:depth ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:time ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:plan_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:time ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:access_predicates ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:other_tag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:cpu_cost ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:position ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:bytes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:projection ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:object_node ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:qblock_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:partition_stop ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:timestamp ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:object_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:partition_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:filter_predicates ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:partition_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:other_tag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:distribution ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:temp_space ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:operation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:temp_space ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:other ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:parent_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:io_cost ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:qblock_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:operation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:other ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:position ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_proteome:timestamp ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:object_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:bytes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:other_tag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:remarks ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:statement_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:depth ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:object_alias ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:other_xml ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:other_xml ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:partition_start ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:io_cost ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:depth ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:partition_start ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:parent_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:object_owner ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:search_columns ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:cardinality ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:io_cost ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:object_instance ] ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:MsProtein a owl:Class ;
+    rdfs:label "ms_protein" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:protein_source_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:prot_seq_length ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:notes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:pi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:end_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:mol_wt ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:spec_tot_cnt ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:spec_uniq_cnt ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:score ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:search_db ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:pi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:pep_uniq_cnt ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:threshold ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:spec_uniq_cnt ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:protein_source_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:protein_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:protein_acc_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:nsaf_score ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:threshold ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:locus_tag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:pep_tot_cnt ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:prot_seq_length ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:pep_nonuniq_cnt ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:end_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:protein_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:score ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:protein_source_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:seq_coverage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:nsaf_score ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:mol_wt ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:protein_seq ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:locus_tag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:seq_coverage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:spec_tot_cnt ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:pep_tot_cnt ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:pep_tot_cnt ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:start_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:prot_seq_length ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:pep_nonuniq_cnt ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:search_engine ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:protein_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:protein_acc_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:threshold ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:spec_tot_cnt ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:pep_nonuniq_cnt ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:protein_acc_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:start_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:search_db ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:mol_wt ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:sample ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:pi ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:pep_uniq_cnt ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:notes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:experiment ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:pep_uniq_cnt ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:start_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:experiment ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:protein_seq ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:sample ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:nsaf_score ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:notes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:search_engine ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom img_proteome:MsExperiment ;
+            owl:onProperty img_proteome:experiment ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:locus_tag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_proteome:seq_coverage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:sample ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:spec_uniq_cnt ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:search_engine ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:score ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:protein_seq ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:end_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:search_db ] ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:access_predicates a owl:DatatypeProperty ;
+    rdfs:label "access_predicates" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:add_date a owl:DatatypeProperty ;
+    rdfs:label "add_date" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:bytes a owl:DatatypeProperty ;
+    rdfs:label "bytes" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:cardinality a owl:DatatypeProperty ;
+    rdfs:label "cardinality" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:contact_oid a owl:DatatypeProperty ;
+    rdfs:label "contact_oid" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:cost a owl:DatatypeProperty ;
+    rdfs:label "cost" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:cpu_cost a owl:DatatypeProperty ;
+    rdfs:label "cpu_cost" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:depth a owl:DatatypeProperty ;
+    rdfs:label "depth" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:distribution a owl:DatatypeProperty ;
+    rdfs:label "distribution" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:exp_contact a owl:DatatypeProperty ;
+    rdfs:label "exp_contact" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:exp_date a owl:DatatypeProperty ;
+    rdfs:label "exp_date" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:exp_name a owl:DatatypeProperty ;
+    rdfs:label "exp_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:ext_accession a owl:DatatypeProperty ;
+    rdfs:label "ext_accession" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:filter_predicates a owl:DatatypeProperty ;
+    rdfs:label "filter_predicates" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:img_taxon_oid a owl:DatatypeProperty ;
+    rdfs:label "img_taxon_oid" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:io_cost a owl:DatatypeProperty ;
+    rdfs:label "io_cost" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:is_public a owl:DatatypeProperty ;
+    rdfs:label "is_public" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:method_type a owl:DatatypeProperty ;
+    rdfs:label "method_type" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:ncbi_taxon_id a owl:DatatypeProperty ;
+    rdfs:label "ncbi_taxon_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:object_alias a owl:DatatypeProperty ;
+    rdfs:label "object_alias" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:object_instance a owl:DatatypeProperty ;
+    rdfs:label "object_instance" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:object_name a owl:DatatypeProperty ;
+    rdfs:label "object_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:object_node a owl:DatatypeProperty ;
+    rdfs:label "object_node" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:object_owner a owl:DatatypeProperty ;
+    rdfs:label "object_owner" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:object_type a owl:DatatypeProperty ;
+    rdfs:label "object_type" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:operation a owl:DatatypeProperty ;
+    rdfs:label "operation" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:optimizer a owl:DatatypeProperty ;
+    rdfs:label "optimizer" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:options a owl:DatatypeProperty ;
+    rdfs:label "options" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:organism_name a owl:DatatypeProperty ;
+    rdfs:label "organism_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:other a owl:DatatypeProperty ;
+    rdfs:label "other" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:other_tag a owl:DatatypeProperty ;
+    rdfs:label "other_tag" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:other_xml a owl:DatatypeProperty ;
+    rdfs:label "other_xml" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:parent_id a owl:DatatypeProperty ;
+    rdfs:label "parent_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:partition_id a owl:DatatypeProperty ;
+    rdfs:label "partition_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:partition_start a owl:DatatypeProperty ;
+    rdfs:label "partition_start" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:partition_stop a owl:DatatypeProperty ;
+    rdfs:label "partition_stop" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:peptide_count a owl:DatatypeProperty ;
+    rdfs:label "peptide_count" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:plan_id a owl:DatatypeProperty ;
+    rdfs:label "plan_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:position a owl:DatatypeProperty ;
+    rdfs:label "position" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:project_name a owl:DatatypeProperty ;
+    rdfs:label "project_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:projection a owl:DatatypeProperty ;
+    rdfs:label "projection" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:protein_count a owl:DatatypeProperty ;
+    rdfs:label "protein_count" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:protexp_permissions a owl:DatatypeProperty ;
+    rdfs:label "protexp_permissions" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:publications a owl:DatatypeProperty ;
+    rdfs:label "publications" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:qblock_name a owl:DatatypeProperty ;
+    rdfs:label "qblock_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:remarks a owl:DatatypeProperty ;
+    rdfs:label "remarks" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:sample_origin a owl:DatatypeProperty ;
+    rdfs:label "sample_origin" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:search_columns a owl:DatatypeProperty ;
+    rdfs:label "search_columns" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:spectra_count a owl:DatatypeProperty ;
+    rdfs:label "spectra_count" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:statement_id a owl:DatatypeProperty ;
+    rdfs:label "statement_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:temp_space a owl:DatatypeProperty ;
+    rdfs:label "temp_space" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:time a owl:DatatypeProperty ;
+    rdfs:label "time" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:timestamp a owl:DatatypeProperty ;
+    rdfs:label "timestamp" ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:MsExperiment a owl:Class ;
+    rdfs:label "ms_experiment" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:project_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:ext_accession ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:exp_contact ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:method_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:exp_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:notes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:peptide_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:exp_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:exp_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:exp_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:spectra_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:project_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:ext_accession ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:peptide_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:protein_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:peptide_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:spectra_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:method_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:exp_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:exp_contact ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:exp_contact ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:exp_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:is_public ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:project_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_proteome:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:is_public ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:notes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:notes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:spectra_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_proteome:add_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_proteome:protein_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:is_public ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_proteome:method_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:protein_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_proteome:ext_accession ] ;
+    skos:inScheme <https://w3id.org/jgi/img_proteome> .
+
+img_proteome:calc_mh a owl:DatatypeProperty .
+
+img_proteome:comments a owl:DatatypeProperty .
+
+img_proteome:custom_url a owl:DatatypeProperty .
+
+img_proteome:db_name a owl:DatatypeProperty .
+
+img_proteome:filter_pass_obs a owl:DatatypeProperty .
+
+img_proteome:first_aa a owl:DatatypeProperty .
+
+img_proteome:frame a owl:DatatypeProperty .
+
+img_proteome:gene a owl:DatatypeProperty .
+
+img_proteome:genome a owl:DatatypeProperty .
+
+img_proteome:ion_perc a owl:DatatypeProperty .
+
+img_proteome:is_unique a owl:DatatypeProperty .
+
+img_proteome:locus_tag a owl:DatatypeProperty .
+
+img_proteome:mass_tag_id a owl:DatatypeProperty .
+
+img_proteome:match_spec_cnt a owl:DatatypeProperty .
+
+img_proteome:max_deltcn a owl:DatatypeProperty .
+
+img_proteome:max_pep_prob a owl:DatatypeProperty .
+
+img_proteome:max_xcorr a owl:DatatypeProperty .
+
+img_proteome:mod_date a owl:DatatypeProperty .
+
+img_proteome:mol_wt a owl:DatatypeProperty .
+
+img_proteome:nsaf_score a owl:DatatypeProperty .
+
+img_proteome:obs_mh a owl:DatatypeProperty .
+
+img_proteome:pep_nonuniq_cnt a owl:DatatypeProperty .
+
+img_proteome:pep_tot_cnt a owl:DatatypeProperty .
+
+img_proteome:pep_uniq_cnt a owl:DatatypeProperty .
+
+img_proteome:peptide_oid a owl:DatatypeProperty .
+
+img_proteome:peptide_seq a owl:DatatypeProperty .
+
+img_proteome:pi a owl:DatatypeProperty .
+
+img_proteome:prev_aa a owl:DatatypeProperty .
+
+img_proteome:prot_seq_length a owl:DatatypeProperty .
+
+img_proteome:protein a owl:DatatypeProperty,
+        owl:ObjectProperty .
+
+img_proteome:protein_acc_id a owl:DatatypeProperty .
+
+img_proteome:protein_seq a owl:DatatypeProperty .
+
+img_proteome:protein_source_id a owl:DatatypeProperty .
+
+img_proteome:score a owl:DatatypeProperty .
+
+img_proteome:search_db a owl:DatatypeProperty .
+
+img_proteome:search_engine a owl:DatatypeProperty .
+
+img_proteome:seq_coverage a owl:DatatypeProperty .
+
+img_proteome:sp_rank a owl:DatatypeProperty .
+
+img_proteome:sp_score a owl:DatatypeProperty .
+
+img_proteome:spec_tot_cnt a owl:DatatypeProperty .
+
+img_proteome:spec_uniq_cnt a owl:DatatypeProperty .
+
+img_proteome:spectrum_ref a owl:DatatypeProperty .
+
+img_proteome:tag a owl:DatatypeProperty .
+
+img_proteome:threshold a owl:DatatypeProperty .
+
+img_proteome:total_intensity a owl:DatatypeProperty .
+
+img_proteome:tryptic_state a owl:DatatypeProperty .
+
+img_proteome:value a owl:DatatypeProperty .
+
+img_proteome:id a owl:DatatypeProperty .
+
+img_proteome:sample_oid a owl:DatatypeProperty .
+
+img_proteome:description a owl:DatatypeProperty .
+
+img_proteome:exp_oid a owl:DatatypeProperty,
+        owl:ObjectProperty .
+
+img_proteome:protein_oid a owl:DatatypeProperty,
+        owl:ObjectProperty .
+
+img_proteome:sample a owl:DatatypeProperty .
+
+img_proteome:experiment a owl:DatatypeProperty,
+        owl:ObjectProperty .
+
+img_proteome:notes a owl:DatatypeProperty .
+
+img_proteome:end_coord a owl:DatatypeProperty .
+
+img_proteome:start_coord a owl:DatatypeProperty .
+
+

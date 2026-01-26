@@ -1,0 +1,1940 @@
+@prefix img_mysql_mbin: <https://w3id.org/jgi/img_mysql_mbin/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/jgi/img_mysql_mbin.owl.ttl> a owl:Ontology ;
+    rdfs:label "img_mysql_mbin" .
+
+img_mysql_mbin:Bin a owl:Class ;
+    rdfs:label "bin" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_domain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_trna ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_16s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:contamination ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:gtdbtk_genus ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_order ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_domain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_23s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_5s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_family ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_5s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_trna ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_family ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_genus ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_created_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:gene_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_created_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_mbin:completeness ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:gtdbtk_phylum ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_23s ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:gtdbtk_class ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_16s ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:scaffold_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_mbin:contamination ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_mysql_mbin:bin_add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:avg_coverage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:bin_created_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_family ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:gene_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_23s ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:gtdbtk_family ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:gtdbtk_species ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_quality ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_class ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_genus ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:gtdbtk_domain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:total_base ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_domain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_phylum ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_species ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_class ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_quality ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_phylum ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_species ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_phylum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_species ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:completeness ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_order ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_16s ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:total_base ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_phylum ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_domain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_class ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaffold_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_class ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:gene_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_quality ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_order ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaffold_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_genus ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:contamination ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:completeness ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_5s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_class ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_family ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:avg_coverage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:total_base ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_methods ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_genus ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_domain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_trna ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_phylum ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_family ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_mbin:avg_coverage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:gtdbtk_order ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_methods ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_genus ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_methods ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:BinCoverage a owl:Class ;
+    rdfs:label "bin_coverage" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_mbin:avg_coverage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:avg_coverage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:avg_coverage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:BinScaffolds a owl:Class ;
+    rdfs:label "bin_scaffolds" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_genus ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_num_23s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_genus ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_order ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_num_5s ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:scaf_num_trna ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaffold_length ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_domain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:scaf_class ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_family ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_domain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:gene_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_family ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaffold_length ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:scaf_num_23s ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:scaf_phylum ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_species ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_num_16s ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_mbin:gc ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_num_16s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:scaf_species ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:gene_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:scaf_family ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:scaf_order ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_phylum ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_phylum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:scaffold_length ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:scaf_genus ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:scaf_num_16s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_class ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:scaf_domain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_num_5s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:gc ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:scaf_num_5s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:gc ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_num_trna ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_num_trna ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:gene_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_num_23s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_class ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:Ebin a owl:Class ;
+    rdfs:label "ebin" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:ebin_phylum ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:processed_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:ebin_genus ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:external_link ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_mbin:completeness ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:ebin_domain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:ebin_family ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:ebin_domain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:processed_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_5s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:methods ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_mbin:contamination ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:ebin_order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:ebin_species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:processed_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:ebin_family ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:methods ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:total_bases ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:ebin_domain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:contamination ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:ebin_genus ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_mbin:avg_coverage ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:processed_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_28s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaffold_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_18s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:ebin_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:external_link ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:contamination ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaffold_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_18s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:ebin_order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:ebin_class ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:avg_coverage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:ebin_genus ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:scaffold_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_18s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:completeness ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:ebin_class ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:ebin_species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_28s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:avg_coverage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:ebin_order ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_28s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:methods ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:total_bases ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:ebin_species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:ebin_phylum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_5s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:completeness ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_mysql_mbin:processed_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:ebin_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:ebin_phylum ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:external_link ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:ebin_family ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_5s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:ebin_class ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:processed_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:total_bases ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:ebin_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:EbinExtLinks a owl:Class ;
+    rdfs:label "ebin_ext_links" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:db_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:custom_url ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:custom_url ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:db_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:ebin_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:ebin_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:ebin_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:custom_url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:db_name ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:EbinNotLoadedMetagenomes a owl:Class ;
+    rdfs:label "ebin_not_loaded_metagenomes" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_lq_bins ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:processed_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:comment ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:methods ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:processed_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:methods ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_lq_bins ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:comment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_mysql_mbin:processed_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:methods ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_lq_bins ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:comment ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:processed_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_merged_bins ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_merged_bins ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:processed_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_merged_bins ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:processed_date ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:EbinScaffolds a owl:Class ;
+    rdfs:label "ebin_scaffolds" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:scaffold_length ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_28s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaffold_length ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:ebin_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:ebin_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_5s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaffold_length ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_28s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:ebin_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_5s ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_18s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_5s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_18s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_18s ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_28s ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:ImgUmagBinTarballs02062024 a owl:Class ;
+    rdfs:label "img_umag_bin_tarballs_02062024" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:taxon_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:NotLoadedMetagenomes a owl:Class ;
+    rdfs:label "not_loaded_metagenomes" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_created_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_created_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:bin_created_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_mysql_mbin:processed_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_lq_bins ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_lq_bins ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_methods ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:processed_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:comment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_lq_bins ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_methods ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:comment ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_methods ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:processed_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:comment ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:SemiBin a owl:Class ;
+    rdfs:label "semi_bin" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_domain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_domain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_class ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:contamination ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:has_datafile ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_methods ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_5s ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_order ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:avg_coverage ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_mbin:contamination ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_L50 ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_created_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_genus ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaffold_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_family ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:avg_coverage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_order ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_N50 ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_order ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:completeness ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:contamination ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_trna ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_created_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_phylum ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:in_portal ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:gtdbtk_family ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_family ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_quality ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:completeness ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_genus ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:gtdbtk_phylum ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_5s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_quality ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_class ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:gtdbtk_species ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_class ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:has_datafile ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:has_datafile ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:scaffold_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_domain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_methods ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_N50 ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_genus ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:in_portal ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:gene_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_quality ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_trna ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:gene_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_species ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_phylum ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_genus ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_phylum ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_class ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:total_base ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_23s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_trna ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:total_base ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_mysql_mbin:bin_add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:gene_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_phylum ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_L50 ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_genus ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_N50 ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_domain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_5s ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_23s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_phylum ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_family ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_methods ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_16s ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:gtdbtk_genus ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:gtdbtk_family ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_domain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_L50 ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_mbin:avg_coverage ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_23s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaffold_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:bin_created_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_mbin:completeness ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_family ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:gtdbtk_domain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_add_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:gtdbtk_order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:total_base ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_class ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_order ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_16s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_16s ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:gtdbtk_class ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:in_portal ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_species ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:SemiBinCoverage a owl:Class ;
+    rdfs:label "semi_bin_coverage" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:avg_coverage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_mbin:avg_coverage ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:avg_coverage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:SemiBinNotLoaded a owl:Class ;
+    rdfs:label "semi_bin_not_loaded" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_lq_bins ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_lq_bins ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_mysql_mbin:processed_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_lq_bins ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_created_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:processed_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_created_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:comment ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_methods ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:comment ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:processed_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_methods ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:comment ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_methods ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:bin_created_by ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:SemiBinScaffolds a owl:Class ;
+    rdfs:label "semi_bin_scaffolds" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:gc ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:scaf_genus ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_num_16s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_order ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_class ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:gene_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_num_23s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_num_23s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_domain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_genus ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaffold_length ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:gc ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:gene_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:scaf_order ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_class ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_domain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:scaf_class ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:gene_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_family ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_order ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_phylum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:scaf_num_16s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_phylum ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_genus ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaffold_length ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:scaffold_length ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_num_5s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_family ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:scaf_family ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:scaf_species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:scaf_num_23s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_num_16s ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_num_trna ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_mbin:gc ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_num_trna ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:scaf_num_trna ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaf_species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:scaf_domain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:scaf_num_5s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:scaf_phylum ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaf_num_5s ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:SemiEbin a owl:Class ;
+    rdfs:label "semi_ebin" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:methods ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:avg_coverage ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:ebin_genus ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:processed_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:ebin_species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_mbin:completeness ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:external_link ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_28s ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:in_portal ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:ebin_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:ebin_domain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:processed_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:ebin_family ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:total_bases ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:ebin_class ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:contamination ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:external_link ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_mbin:avg_coverage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:ebin_family ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:has_datafile ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_5s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:ebin_phylum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:ebin_phylum ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:total_bases ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:ebin_phylum ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:contamination ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:ebin_domain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:in_portal ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_18s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:completeness ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:ebin_order ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:ebin_order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:ebin_family ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_mbin:contamination ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_18s ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:external_link ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_18s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaffold_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:ebin_order ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:completeness ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:ebin_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:has_datafile ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:scaffold_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:processed_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:ebin_class ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_5s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:methods ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_5s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:processed_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_28s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_28s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:in_portal ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:processed_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_mysql_mbin:processed_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:has_datafile ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:ebin_domain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:total_bases ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:ebin_class ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:ebin_species ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:ebin_genus ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:ebin_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:avg_coverage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:ebin_species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:ebin_genus ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:methods ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaffold_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:taxon_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:SemiEbinNotLoaded a owl:Class ;
+    rdfs:label "semi_ebin_not_loaded" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_merged_bins ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:methods ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:processed_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_lq_bins ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:comment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_mysql_mbin:processed_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:processed_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_merged_bins ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_lq_bins ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:processed_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:processed_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:processed_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:comment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:methods ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:methods ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:comment ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_lq_bins ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_merged_bins ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:SemiEbinScaffolds a owl:Class ;
+    rdfs:label "semi_ebin_scaffolds" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_28s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_18s ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_28s ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_18s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:ebin_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:num_5s ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:scaffold_length ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_5s ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:ebin_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_5s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:num_28s ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaffold_length ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:ebin_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:num_18s ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaffold_length ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:SemiLq a owl:Class ;
+    rdfs:label "semi_lq" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:scaffold_list ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:bin_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_mbin:bin_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:scaffold_list ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_mbin:scaffold_list ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_mbin:bin_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:bin_L50 a owl:DatatypeProperty ;
+    rdfs:label "bin_L50" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:bin_N50 a owl:DatatypeProperty ;
+    rdfs:label "bin_N50" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:custom_url a owl:DatatypeProperty ;
+    rdfs:label "custom_url" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:db_name a owl:DatatypeProperty ;
+    rdfs:label "db_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:id a owl:DatatypeProperty ;
+    rdfs:label "id" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:scaffold_list a owl:DatatypeProperty ;
+    rdfs:label "scaffold_list" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_mbin> .
+
+img_mysql_mbin:bin_add_date a owl:DatatypeProperty .
+
+img_mysql_mbin:bin_class a owl:DatatypeProperty .
+
+img_mysql_mbin:bin_domain a owl:DatatypeProperty .
+
+img_mysql_mbin:bin_family a owl:DatatypeProperty .
+
+img_mysql_mbin:bin_genus a owl:DatatypeProperty .
+
+img_mysql_mbin:bin_order a owl:DatatypeProperty .
+
+img_mysql_mbin:bin_phylum a owl:DatatypeProperty .
+
+img_mysql_mbin:bin_quality a owl:DatatypeProperty .
+
+img_mysql_mbin:bin_species a owl:DatatypeProperty .
+
+img_mysql_mbin:ebin_class a owl:DatatypeProperty .
+
+img_mysql_mbin:ebin_domain a owl:DatatypeProperty .
+
+img_mysql_mbin:ebin_family a owl:DatatypeProperty .
+
+img_mysql_mbin:ebin_genus a owl:DatatypeProperty .
+
+img_mysql_mbin:ebin_order a owl:DatatypeProperty .
+
+img_mysql_mbin:ebin_phylum a owl:DatatypeProperty .
+
+img_mysql_mbin:ebin_species a owl:DatatypeProperty .
+
+img_mysql_mbin:external_link a owl:DatatypeProperty .
+
+img_mysql_mbin:gc a owl:DatatypeProperty .
+
+img_mysql_mbin:gtdbtk_class a owl:DatatypeProperty .
+
+img_mysql_mbin:gtdbtk_domain a owl:DatatypeProperty .
+
+img_mysql_mbin:gtdbtk_family a owl:DatatypeProperty .
+
+img_mysql_mbin:gtdbtk_genus a owl:DatatypeProperty .
+
+img_mysql_mbin:gtdbtk_order a owl:DatatypeProperty .
+
+img_mysql_mbin:gtdbtk_phylum a owl:DatatypeProperty .
+
+img_mysql_mbin:gtdbtk_species a owl:DatatypeProperty .
+
+img_mysql_mbin:has_datafile a owl:DatatypeProperty .
+
+img_mysql_mbin:in_portal a owl:DatatypeProperty .
+
+img_mysql_mbin:num_16s a owl:DatatypeProperty .
+
+img_mysql_mbin:num_23s a owl:DatatypeProperty .
+
+img_mysql_mbin:num_merged_bins a owl:DatatypeProperty .
+
+img_mysql_mbin:num_trna a owl:DatatypeProperty .
+
+img_mysql_mbin:scaf_class a owl:DatatypeProperty .
+
+img_mysql_mbin:scaf_domain a owl:DatatypeProperty .
+
+img_mysql_mbin:scaf_family a owl:DatatypeProperty .
+
+img_mysql_mbin:scaf_genus a owl:DatatypeProperty .
+
+img_mysql_mbin:scaf_num_16s a owl:DatatypeProperty .
+
+img_mysql_mbin:scaf_num_23s a owl:DatatypeProperty .
+
+img_mysql_mbin:scaf_num_5s a owl:DatatypeProperty .
+
+img_mysql_mbin:scaf_num_trna a owl:DatatypeProperty .
+
+img_mysql_mbin:scaf_order a owl:DatatypeProperty .
+
+img_mysql_mbin:scaf_phylum a owl:DatatypeProperty .
+
+img_mysql_mbin:scaf_species a owl:DatatypeProperty .
+
+img_mysql_mbin:total_base a owl:DatatypeProperty .
+
+img_mysql_mbin:total_bases a owl:DatatypeProperty .
+
+img_mysql_mbin:bin_created_by a owl:DatatypeProperty .
+
+img_mysql_mbin:bin_methods a owl:DatatypeProperty .
+
+img_mysql_mbin:comment a owl:DatatypeProperty .
+
+img_mysql_mbin:completeness a owl:DatatypeProperty .
+
+img_mysql_mbin:contamination a owl:DatatypeProperty .
+
+img_mysql_mbin:gene_count a owl:DatatypeProperty .
+
+img_mysql_mbin:methods a owl:DatatypeProperty .
+
+img_mysql_mbin:num_18s a owl:DatatypeProperty .
+
+img_mysql_mbin:num_28s a owl:DatatypeProperty .
+
+img_mysql_mbin:num_lq_bins a owl:DatatypeProperty .
+
+img_mysql_mbin:processed_by a owl:DatatypeProperty .
+
+img_mysql_mbin:scaffold_count a owl:DatatypeProperty .
+
+img_mysql_mbin:scaffold_length a owl:DatatypeProperty .
+
+img_mysql_mbin:scaffold_oid a owl:DatatypeProperty .
+
+img_mysql_mbin:ebin_oid a owl:DatatypeProperty .
+
+img_mysql_mbin:avg_coverage a owl:DatatypeProperty .
+
+img_mysql_mbin:num_5s a owl:DatatypeProperty .
+
+img_mysql_mbin:processed_date a owl:DatatypeProperty .
+
+img_mysql_mbin:bin_oid a owl:DatatypeProperty .
+
+img_mysql_mbin:taxon_oid a owl:DatatypeProperty .
+
+

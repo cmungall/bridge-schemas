@@ -1,0 +1,1825 @@
+name: img_sub
+id: https://w3id.org/jgi/img_sub
+imports:
+- linkml:types
+prefixes:
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  img_sub:
+    prefix_prefix: img_sub
+    prefix_reference: https://w3id.org/jgi/img_sub/
+default_prefix: img_sub
+default_range: string
+classes:
+  analysis_project_permissions:
+    name: analysis_project_permissions
+    attributes:
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      contact_oid:
+        name: contact_oid
+        range: integer
+        required: false
+  annotation_contigs_proteins_counts:
+    name: annotation_contigs_proteins_counts
+    attributes:
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      split_number:
+        name: split_number
+        range: integer
+        required: false
+      contigs_count:
+        name: contigs_count
+        range: integer
+        required: false
+      bp_count:
+        name: bp_count
+        range: integer
+        required: false
+      proteins_count:
+        name: proteins_count
+        range: integer
+        required: false
+      aa_count:
+        name: aa_count
+        range: integer
+        required: false
+  annotation_job_sbatch_args:
+    name: annotation_job_sbatch_args
+    attributes:
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      job_id:
+        name: job_id
+        range: string
+        required: false
+      sbatch_args:
+        name: sbatch_args
+        range: string
+        required: false
+      dependency_after:
+        name: dependency_after
+        range: integer
+        required: false
+      number_of_array_tasks:
+        name: number_of_array_tasks
+        range: integer
+        required: false
+  annotation_job_stats:
+    name: annotation_job_stats
+    attributes:
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      job_id:
+        name: job_id
+        range: string
+        required: false
+      submit_time:
+        name: submit_time
+        range: datetime
+        required: false
+      start_time:
+        name: start_time
+        range: datetime
+        required: false
+      end_time:
+        name: end_time
+        range: datetime
+        required: false
+      elapsed_time:
+        name: elapsed_time
+        range: string
+        required: false
+      alloc_cpus:
+        name: alloc_cpus
+        range: integer
+        required: false
+      job_state:
+        name: job_state
+        range: string
+        required: false
+  annotation_step_stats:
+    name: annotation_step_stats
+    attributes:
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      split_number:
+        name: split_number
+        range: integer
+        required: false
+      step:
+        name: step
+        range: string
+        required: false
+      command:
+        name: command
+        range: string
+        required: false
+      run_time:
+        name: run_time
+        range: string
+        required: false
+      used_memory_in_kb:
+        name: used_memory_in_kb
+        range: integer
+        required: false
+      cpu_percent:
+        name: cpu_percent
+        range: integer
+        required: false
+      annotations_count:
+        name: annotations_count
+        range: integer
+        required: false
+      used_versions:
+        name: used_versions
+        range: string
+        required: false
+  announcement:
+    name: announcement
+    attributes:
+      type:
+        name: type
+        range: string
+        required: false
+      notes:
+        name: notes
+        range: string
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+  batch:
+    name: batch
+    attributes:
+      batch_id:
+        name: batch_id
+        range: integer
+        required: false
+      database:
+        name: database
+        range: string
+        required: false
+      no_submissions:
+        name: no_submissions
+        range: integer
+        required: false
+      start_date:
+        name: start_date
+        range: datetime
+        required: false
+      annot_ready_date:
+        name: annot_ready_date
+        range: datetime
+        required: false
+      finish_date:
+        name: finish_date
+        range: datetime
+        required: false
+  bin_methodcv:
+    name: bin_methodcv
+    attributes:
+      cv_term:
+        name: cv_term
+        range: string
+        required: false
+  contact:
+    name: contact
+    attributes:
+      contact_oid:
+        name: contact_oid
+        range: integer
+        required: false
+      username:
+        name: username
+        range: string
+        required: false
+      password:
+        name: password
+        range: string
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+      title:
+        name: title
+        range: string
+        required: false
+      department:
+        name: department
+        range: string
+        required: false
+      email:
+        name: email
+        range: string
+        required: false
+      phone:
+        name: phone
+        range: string
+        required: false
+      organization:
+        name: organization
+        range: string
+        required: false
+      address:
+        name: address
+        range: string
+        required: false
+      city:
+        name: city
+        range: string
+        required: false
+      state:
+        name: state
+        range: string
+        required: false
+      country:
+        name: country
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      super_user:
+        name: super_user
+        range: string
+        required: false
+      img_editor:
+        name: img_editor
+        range: string
+        required: false
+      img_group:
+        name: img_group
+        range: integer
+        required: false
+      jgi_user:
+        name: jgi_user
+        range: string
+        required: false
+      img_editing_level:
+        name: img_editing_level
+        range: string
+        required: false
+      caliban_id:
+        name: caliban_id
+        range: integer
+        required: false
+      caliban_user_name:
+        name: caliban_user_name
+        range: string
+        required: false
+      is_group_account:
+        name: is_group_account
+        range: string
+        required: false
+      opt_in:
+        name: opt_in
+        range: string
+        required: false
+      keycloak_id:
+        name: keycloak_id
+        range: string
+        required: false
+  contact_img_groups:
+    name: contact_img_groups
+    attributes:
+      contact_oid:
+        name: contact_oid
+        range: integer
+        required: false
+      img_group:
+        name: img_group
+        range: integer
+        required: false
+      role:
+        name: role
+        range: string
+        required: false
+  contact_jgi_accounts:
+    name: contact_jgi_accounts
+    attributes:
+      contact_oid:
+        name: contact_oid
+        range: integer
+        required: false
+      jgi_user_id:
+        name: jgi_user_id
+        range: integer
+        required: false
+      jgi_user_name:
+        name: jgi_user_name
+        range: string
+        required: false
+  contact_rna_data_permissions:
+    name: contact_rna_data_permissions
+    attributes:
+      contact_oid:
+        name: contact_oid
+        range: integer
+        required: false
+      dataset_oid:
+        name: dataset_oid
+        range: integer
+        required: false
+  contact_rnaexp_permissions:
+    name: contact_rnaexp_permissions
+    attributes:
+      contact_oid:
+        name: contact_oid
+        range: integer
+        required: false
+      rnaexp_permissions:
+        name: rnaexp_permissions
+        range: integer
+        required: false
+  contact_taxon_permissions:
+    name: contact_taxon_permissions
+    attributes:
+      contact_oid:
+        name: contact_oid
+        range: integer
+        required: false
+      taxon_permissions:
+        name: taxon_permissions
+        range: integer
+        required: false
+  contact_workspace_group:
+    name: contact_workspace_group
+    attributes:
+      contact_oid:
+        name: contact_oid
+        range: integer
+        required: false
+      data_set_type:
+        name: data_set_type
+        range: string
+        required: false
+      data_set_name:
+        name: data_set_name
+        range: string
+        required: false
+      group_id:
+        name: group_id
+        range: integer
+        required: false
+  countrycv:
+    name: countrycv
+    attributes:
+      cv_term:
+        name: cv_term
+        range: string
+        required: false
+      longitude:
+        name: longitude
+        range: string
+        required: false
+      latitude:
+        name: latitude
+        range: string
+        required: false
+  gene_myimg_enzymes:
+    name: gene_myimg_enzymes
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      ec_number:
+        name: ec_number
+        range: string
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+  gene_myimg_functions:
+    name: gene_myimg_functions
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      product_name:
+        name: product_name
+        range: string
+        required: false
+      prot_desc:
+        name: prot_desc
+        range: string
+        required: false
+      ec_number:
+        name: ec_number
+        range: string
+        required: false
+      pubmed_id:
+        name: pubmed_id
+        range: string
+        required: false
+      inference:
+        name: inference
+        range: string
+        required: false
+      is_pseudogene:
+        name: is_pseudogene
+        range: string
+        required: false
+      notes:
+        name: notes
+        range: string
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      gene_symbol:
+        name: gene_symbol
+        range: string
+        required: false
+      obsolete_flag:
+        name: obsolete_flag
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+  gene_myimg_groups:
+    name: gene_myimg_groups
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: float
+        required: false
+      contact_oid:
+        name: contact_oid
+        range: float
+        required: false
+      group_id:
+        name: group_id
+        range: float
+        required: false
+  genecallingcv:
+    name: genecallingcv
+    attributes:
+      cv_term:
+        name: cv_term
+        range: string
+        required: false
+      cv_order:
+        name: cv_order
+        range: integer
+        required: false
+  img_group:
+    name: img_group
+    attributes:
+      group_id:
+        name: group_id
+        range: integer
+        required: false
+      group_name:
+        name: group_name
+        range: string
+        required: false
+      lead:
+        name: lead
+        range: integer
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+  img_group_news:
+    name: img_group_news
+    attributes:
+      group_id:
+        name: group_id
+        range: integer
+        required: false
+      news_id:
+        name: news_id
+        range: integer
+        required: false
+      title:
+        name: title
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      posted_by:
+        name: posted_by
+        range: integer
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+      released_by:
+        name: released_by
+        range: integer
+        required: false
+      release_date:
+        name: release_date
+        range: datetime
+        required: false
+  kbase_pangenome:
+    name: kbase_pangenome
+    attributes:
+      pangenome_id:
+        name: pangenome_id
+        range: string
+        required: false
+      rep_clade_name:
+        name: rep_clade_name
+        range: string
+        required: false
+      gtdb_domain:
+        name: gtdb_domain
+        range: string
+        required: false
+      gtdb_phylum:
+        name: gtdb_phylum
+        range: string
+        required: false
+      gtdb_class:
+        name: gtdb_class
+        range: string
+        required: false
+      gtdb_order:
+        name: gtdb_order
+        range: string
+        required: false
+      gtdb_family:
+        name: gtdb_family
+        range: string
+        required: false
+      gtdb_genus:
+        name: gtdb_genus
+        range: string
+        required: false
+      gtdb_species:
+        name: gtdb_species
+        range: string
+        required: false
+  kbase_pangenome_members:
+    name: kbase_pangenome_members
+    attributes:
+      pangenome_id:
+        name: pangenome_id
+        range: string
+        required: false
+      member_id:
+        name: member_id
+        range: string
+        required: false
+      checkm_completeness:
+        name: checkm_completeness
+        range: float
+        required: false
+      checkm_contamination:
+        name: checkm_contamination
+        range: float
+        required: false
+      new_completeness:
+        name: new_completeness
+        range: float
+        required: false
+  lock_status:
+    name: lock_status
+    attributes:
+      lock_status:
+        name: lock_status
+        range: string
+        required: false
+      script:
+        name: script
+        range: string
+        required: false
+  merfs_aggregate_file_size:
+    name: merfs_aggregate_file_size
+    attributes:
+      pre_aggregate_file_size_gb:
+        name: pre_aggregate_file_size_gb
+        range: float
+        required: false
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      post_aggregate_file_size_gb:
+        name: post_aggregate_file_size_gb
+        range: float
+        required: false
+      status:
+        name: status
+        range: integer
+        required: false
+      start_date:
+        name: start_date
+        range: datetime
+        required: false
+      end_date:
+        name: end_date
+        range: datetime
+        required: false
+      agg_sum_files:
+        name: agg_sum_files
+        range: float
+        required: false
+  mygene:
+    name: mygene
+    attributes:
+      mygene_oid:
+        name: mygene_oid
+        range: integer
+        required: false
+      gene_symbol:
+        name: gene_symbol
+        range: string
+        required: false
+      gene_display_name:
+        name: gene_display_name
+        range: string
+        required: false
+      product_name:
+        name: product_name
+        range: string
+        required: false
+      ec_number:
+        name: ec_number
+        range: string
+        required: false
+      locus_tag:
+        name: locus_tag
+        range: string
+        required: false
+      locus_type:
+        name: locus_type
+        range: string
+        required: false
+      scaffold:
+        name: scaffold
+        range: integer
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+      strand:
+        name: strand
+        range: string
+        required: false
+      dna_seq_length:
+        name: dna_seq_length
+        range: integer
+        required: false
+      aa_seq_length:
+        name: aa_seq_length
+        range: integer
+        required: false
+      is_pseudogene:
+        name: is_pseudogene
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      protein_seq_accid:
+        name: protein_seq_accid
+        range: string
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+      img_orf_type:
+        name: img_orf_type
+        range: string
+        required: false
+      obsolete_flag:
+        name: obsolete_flag
+        range: string
+        required: false
+      aa_residue:
+        name: aa_residue
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      hitgene_oid:
+        name: hitgene_oid
+        range: integer
+        required: false
+      dna_coords:
+        name: dna_coords
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+      replacing_gene:
+        name: replacing_gene
+        range: string
+        required: false
+      created_by:
+        name: created_by
+        range: integer
+        required: false
+  mygene_img_groups:
+    name: mygene_img_groups
+    attributes:
+      mygene_oid:
+        name: mygene_oid
+        range: float
+        required: false
+      contact_oid:
+        name: contact_oid
+        range: float
+        required: false
+      group_id:
+        name: group_id
+        range: float
+        required: false
+  myimg_bio_cluster_np:
+    name: myimg_bio_cluster_np
+    attributes:
+      cluster_id:
+        name: cluster_id
+        range: string
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      compound_oid:
+        name: compound_oid
+        range: integer
+        required: false
+      ncbi_acc:
+        name: ncbi_acc
+        range: string
+        required: false
+      ncbi_taxon:
+        name: ncbi_taxon
+        range: float
+        required: false
+      is_partial:
+        name: is_partial
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      modified_by:
+        name: modified_by
+        range: float
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+  not_to_release:
+    name: not_to_release
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+  request_account:
+    name: request_account
+    attributes:
+      request_oid:
+        name: request_oid
+        range: integer
+        required: false
+      username:
+        name: username
+        range: string
+        required: false
+      group_name:
+        name: group_name
+        range: string
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+      title:
+        name: title
+        range: string
+        required: false
+      department:
+        name: department
+        range: string
+        required: false
+      email:
+        name: email
+        range: string
+        required: false
+      phone:
+        name: phone
+        range: string
+        required: false
+      organization:
+        name: organization
+        range: string
+        required: false
+      address:
+        name: address
+        range: string
+        required: false
+      city:
+        name: city
+        range: string
+        required: false
+      state:
+        name: state
+        range: string
+        required: false
+      country:
+        name: country
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      notes:
+        name: notes
+        range: string
+        required: false
+      status:
+        name: status
+        range: string
+        required: false
+      request_date:
+        name: request_date
+        range: datetime
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      assign_contact_oid:
+        name: assign_contact_oid
+        range: integer
+        required: false
+  request_statuscv:
+    name: request_statuscv
+    attributes:
+      cv_term:
+        name: cv_term
+        range: string
+        required: false
+  rnaseq_notify:
+    name: rnaseq_notify
+    attributes:
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      dataset_oid:
+        name: dataset_oid
+        range: integer
+        required: false
+      submission_date:
+        name: submission_date
+        range: datetime
+        required: false
+      reference_taxon_oid:
+        name: reference_taxon_oid
+        range: integer
+        required: false
+      reference_taxon:
+        name: reference_taxon
+        range: string
+        required: false
+      project:
+        name: project
+        range: string
+        required: false
+      loading_date:
+        name: loading_date
+        range: datetime
+        required: false
+      pi:
+        name: pi
+        range: string
+        required: false
+      its_spid:
+        name: its_spid
+        range: integer
+        required: false
+      its_apid:
+        name: its_apid
+        range: integer
+        required: false
+      rna_processed_date:
+        name: rna_processed_date
+        range: datetime
+        required: false
+      notified:
+        name: notified
+        range: string
+        required: false
+      pi_email:
+        name: pi_email
+        range: string
+        required: false
+      dataset_url:
+        name: dataset_url
+        range: string
+        required: false
+      submission_id_url:
+        name: submission_id_url
+        range: string
+        required: false
+      reference_taxon_oid_url:
+        name: reference_taxon_oid_url
+        range: string
+        required: false
+      reference_taxon_url:
+        name: reference_taxon_url
+        range: string
+        required: false
+      project_url:
+        name: project_url
+        range: string
+        required: false
+      main_contact:
+        name: main_contact
+        range: string
+        required: false
+      supplemental_contact:
+        name: supplemental_contact
+        range: string
+        required: false
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      person_notified:
+        name: person_notified
+        range: string
+        required: false
+      email_rna_data:
+        name: email_rna_data
+        range: string
+        required: false
+      name_rna_data:
+        name: name_rna_data
+        range: string
+        required: false
+      main_contact_name:
+        name: main_contact_name
+        range: string
+        required: false
+      database:
+        name: database
+        range: string
+        required: false
+      jgi_rnd_flag:
+        name: jgi_rnd_flag
+        range: string
+        required: false
+      in_file:
+        name: in_file
+        range: string
+        required: false
+      is_img_public:
+        name: is_img_public
+        range: string
+        required: false
+      analysis_project_id:
+        name: analysis_project_id
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      projectid:
+        name: projectid
+        range: string
+        required: false
+      sampleid:
+        name: sampleid
+        range: string
+        required: false
+      email_pm_contact:
+        name: email_pm_contact
+        range: string
+        required: false
+      name_pm_contact:
+        name: name_pm_contact
+        range: string
+        required: false
+      dual_role:
+        name: dual_role
+        range: string
+        required: false
+      dataset_oid_spid_list:
+        name: dataset_oid_spid_list
+        range: string
+        required: false
+      combined_assembly:
+        name: combined_assembly
+        range: string
+        required: false
+  submission:
+    name: submission
+    attributes:
+      database:
+        name: database
+        range: string
+        required: false
+      contact:
+        name: contact
+        range: integer
+        required: false
+      project_info:
+        name: project_info
+        range: integer
+        required: false
+      submission_date:
+        name: submission_date
+        range: datetime
+        required: false
+      genbank_file:
+        name: genbank_file
+        range: string
+        required: false
+      img_ec_flag:
+        name: img_ec_flag
+        range: string
+        required: false
+      img_product_flag:
+        name: img_product_flag
+        range: string
+        required: false
+      species_code:
+        name: species_code
+        range: string
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      scaffold_count:
+        name: scaffold_count
+        range: integer
+        required: false
+      error_file:
+        name: error_file
+        range: string
+        required: false
+      status:
+        name: status
+        range: integer
+        required: false
+      gene_calling_flag:
+        name: gene_calling_flag
+        range: string
+        required: false
+      file_location:
+        name: file_location
+        range: string
+        required: false
+      sample_oid:
+        name: sample_oid
+        range: integer
+        required: false
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      contigs_file:
+        name: contigs_file
+        range: string
+        required: false
+      singlets_file:
+        name: singlets_file
+        range: string
+        required: false
+      binning_file:
+        name: binning_file
+        range: string
+        required: false
+      is_img_public:
+        name: is_img_public
+        range: string
+        required: false
+      img_taxon_oid:
+        name: img_taxon_oid
+        range: integer
+        required: false
+      admin_notes:
+        name: admin_notes
+        range: string
+        required: false
+      mol_topology:
+        name: mol_topology
+        range: string
+        required: false
+      approval_status:
+        name: approval_status
+        range: string
+        required: false
+      approved_by:
+        name: approved_by
+        range: integer
+        required: false
+      replace_taxon_oid:
+        name: replace_taxon_oid
+        range: integer
+        required: false
+      error_msg:
+        name: error_msg
+        range: string
+        required: false
+      img_dev_flag:
+        name: img_dev_flag
+        range: string
+        required: false
+      remove_duplicate_flag:
+        name: remove_duplicate_flag
+        range: string
+        required: false
+      seq_status:
+        name: seq_status
+        range: string
+        required: false
+      subtitle:
+        name: subtitle
+        range: string
+        required: false
+      bin_method:
+        name: bin_method
+        range: string
+        required: false
+      stats_file:
+        name: stats_file
+        range: string
+        required: false
+      assembled_seq_file:
+        name: assembled_seq_file
+        range: string
+        required: false
+      assembler_used:
+        name: assembler_used
+        range: string
+        required: false
+      reads_for_assembly:
+        name: reads_for_assembly
+        range: string
+        required: false
+      unassembled_454_file:
+        name: unassembled_454_file
+        range: string
+        required: false
+      unassembled_454_quality_trim:
+        name: unassembled_454_quality_trim
+        range: string
+        required: false
+      unassembled_454_trim_method:
+        name: unassembled_454_trim_method
+        range: string
+        required: false
+      unassembled_illumina_file:
+        name: unassembled_illumina_file
+        range: string
+        required: false
+      cluster_seq:
+        name: cluster_seq
+        range: string
+        required: false
+      quality_based_trim:
+        name: quality_based_trim
+        range: string
+        required: false
+      seq_coverage_file:
+        name: seq_coverage_file
+        range: string
+        required: false
+      unassembled_illum_quality_trim:
+        name: unassembled_illum_quality_trim
+        range: string
+        required: false
+      unassembled_illum_trim_method:
+        name: unassembled_illum_trim_method
+        range: string
+        required: false
+      loaded_into_img:
+        name: loaded_into_img
+        range: string
+        required: false
+      in_file:
+        name: in_file
+        range: string
+        required: false
+      permute:
+        name: permute
+        range: string
+        required: false
+      all_reads:
+        name: all_reads
+        range: string
+        required: false
+      assembly_qd_report:
+        name: assembly_qd_report
+        range: string
+        required: false
+      assembly_qc_report:
+        name: assembly_qc_report
+        range: string
+        required: false
+      info_file:
+        name: info_file
+        range: string
+        required: false
+      agp_file:
+        name: agp_file
+        range: string
+        required: false
+      add_to_portal:
+        name: add_to_portal
+        range: string
+        required: false
+      portal_url:
+        name: portal_url
+        range: string
+        required: false
+      portal_release_date:
+        name: portal_release_date
+        range: datetime
+        required: false
+      names_map_file:
+        name: names_map_file
+        range: string
+        required: false
+      batch_id:
+        name: batch_id
+        range: integer
+        required: false
+      prev_submission_id:
+        name: prev_submission_id
+        range: integer
+        required: false
+      embargo_days:
+        name: embargo_days
+        range: integer
+        required: false
+      refseq_project_id:
+        name: refseq_project_id
+        range: integer
+        required: false
+      gbk_project_id:
+        name: gbk_project_id
+        range: integer
+        required: false
+      gff_file:
+        name: gff_file
+        range: string
+        required: false
+      approval_date:
+        name: approval_date
+        range: datetime
+        required: false
+      bam_file:
+        name: bam_file
+        range: string
+        required: false
+      result_wig_directory:
+        name: result_wig_directory
+        range: string
+        required: false
+      result_exp_file:
+        name: result_exp_file
+        range: string
+        required: false
+      reference_sub_id:
+        name: reference_sub_id
+        range: integer
+        required: false
+      exp_experiment_id:
+        name: exp_experiment_id
+        range: integer
+        required: false
+      library_info:
+        name: library_info
+        range: string
+        required: false
+      genbank_id:
+        name: genbank_id
+        range: string
+        required: false
+      h5_files:
+        name: h5_files
+        range: string
+        required: false
+      rqc_assembly_id:
+        name: rqc_assembly_id
+        range: integer
+        required: false
+      unassembled_pacbio_file:
+        name: unassembled_pacbio_file
+        range: string
+        required: false
+      jat_key_id:
+        name: jat_key_id
+        range: string
+        required: false
+      analysis_project_id:
+        name: analysis_project_id
+        range: string
+        required: false
+      passed_quality_chk:
+        name: passed_quality_chk
+        range: string
+        required: false
+      is_jgi:
+        name: is_jgi
+        range: string
+        required: false
+      contact_email:
+        name: contact_email
+        range: string
+        required: false
+      met_processing:
+        name: met_processing
+        range: string
+        required: false
+      set_embargo_date:
+        name: set_embargo_date
+        range: string
+        required: false
+      pushed_to_met_ws:
+        name: pushed_to_met_ws
+        range: string
+        required: false
+      img_term_transfer_date:
+        name: img_term_transfer_date
+        range: datetime
+        required: false
+      is_contaminated:
+        name: is_contaminated
+        range: string
+        required: false
+      genome_completion:
+        name: genome_completion
+        range: float
+        required: false
+      img_handler:
+        name: img_handler
+        range: string
+        required: false
+      jgi_rnd_flag:
+        name: jgi_rnd_flag
+        range: string
+        required: false
+      pass_to_qaqc:
+        name: pass_to_qaqc
+        range: string
+        required: false
+      protein_faa_file:
+        name: protein_faa_file
+        range: string
+        required: false
+      compute_platform:
+        name: compute_platform
+        range: string
+        required: false
+      source:
+        name: source
+        range: string
+        required: false
+      send_email:
+        name: send_email
+        range: string
+        required: false
+      jamo_archive:
+        name: jamo_archive
+        range: string
+        required: false
+      img_beehive:
+        name: img_beehive
+        range: string
+        required: false
+      annotation_version:
+        name: annotation_version
+        range: string
+        required: false
+  submission_data_files:
+    name: submission_data_files
+    attributes:
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      file_type:
+        name: file_type
+        range: string
+        required: false
+      file_name:
+        name: file_name
+        range: string
+        required: false
+      md5sum:
+        name: md5sum
+        range: string
+        required: false
+  submission_data_files_dmpath:
+    name: submission_data_files_dmpath
+    attributes:
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      file_type:
+        name: file_type
+        range: string
+        required: false
+      file_name:
+        name: file_name
+        range: string
+        required: false
+      restore_date:
+        name: restore_date
+        range: datetime
+        required: false
+  submission_history:
+    name: submission_history
+    attributes:
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      status:
+        name: status
+        range: integer
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      username:
+        name: username
+        range: string
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+  submission_img_contacts:
+    name: submission_img_contacts
+    attributes:
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      img_contacts:
+        name: img_contacts
+        range: integer
+        required: false
+  submission_proc_stats:
+    name: submission_proc_stats
+    attributes:
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      step:
+        name: step
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      total_seq:
+        name: total_seq
+        range: integer
+        required: false
+      total_bases:
+        name: total_bases
+        range: integer
+        required: false
+      shortest_seq:
+        name: shortest_seq
+        range: integer
+        required: false
+      longest_seq:
+        name: longest_seq
+        range: integer
+        required: false
+      avg_seq:
+        name: avg_seq
+        range: integer
+        required: false
+      median_seq:
+        name: median_seq
+        range: integer
+        required: false
+      standard_dev:
+        name: standard_dev
+        range: integer
+        required: false
+      picture_file:
+        name: picture_file
+        range: string
+        required: false
+      type_of_feature:
+        name: type_of_feature
+        range: string
+        required: false
+      no_pred_features:
+        name: no_pred_features
+        range: integer
+        required: false
+  submission_proc_steps:
+    name: submission_proc_steps
+    attributes:
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      step:
+        name: step
+        range: string
+        required: false
+      program_used:
+        name: program_used
+        range: string
+        required: false
+      program_version:
+        name: program_version
+        range: string
+        required: false
+      input_file:
+        name: input_file
+        range: string
+        required: false
+      input_file_format:
+        name: input_file_format
+        range: string
+        required: false
+      output_file:
+        name: output_file
+        range: string
+        required: false
+      output_file_format:
+        name: output_file_format
+        range: string
+        required: false
+      reference_db:
+        name: reference_db
+        range: string
+        required: false
+      command_arg:
+        name: command_arg
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      start_at:
+        name: start_at
+        range: datetime
+        required: false
+      end_at:
+        name: end_at
+        range: datetime
+        required: false
+  submission_querycv:
+    name: submission_querycv
+    attributes:
+      term_oid:
+        name: term_oid
+        range: float
+        required: false
+      cv_term:
+        name: cv_term
+        range: string
+        required: false
+  submission_reads_file:
+    name: submission_reads_file
+    attributes:
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      reads_file:
+        name: reads_file
+        range: string
+        required: false
+  submission_samples:
+    name: submission_samples
+    attributes:
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      sample_oid:
+        name: sample_oid
+        range: integer
+        required: false
+  submission_statuscv:
+    name: submission_statuscv
+    attributes:
+      term_oid:
+        name: term_oid
+        range: integer
+        required: false
+      cv_term:
+        name: cv_term
+        range: string
+        required: false
+      cv_type:
+        name: cv_type
+        range: string
+        required: false
+      terminal_status:
+        name: terminal_status
+        range: string
+        required: false
+  taxon_gene_info:
+    name: taxon_gene_info
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      gene_prefix:
+        name: gene_prefix
+        range: string
+        required: false
+      min_value:
+        name: min_value
+        range: integer
+        required: false
+      max_value:
+        name: max_value
+        range: integer
+        required: false
+  taxon_history:
+    name: taxon_history
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: float
+        required: false
+      modified_by:
+        name: modified_by
+        range: float
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      comments_old:
+        name: comments_old
+        range: string
+        required: false
+      is_public_old:
+        name: is_public_old
+        range: string
+        required: false
+      obsolete_flag_old:
+        name: obsolete_flag_old
+        range: string
+        required: false
+      is_public_new:
+        name: is_public_new
+        range: string
+        required: false
+      obsolete_flag_new:
+        name: obsolete_flag_new
+        range: string
+        required: false
+      comments_new:
+        name: comments_new
+        range: string
+        required: false
+  taxon_scaffold_info:
+    name: taxon_scaffold_info
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      scaf_prefix:
+        name: scaf_prefix
+        range: string
+        required: false
+      min_value:
+        name: min_value
+        range: integer
+        required: false
+      max_value:
+        name: max_value
+        range: integer
+        required: false
+  yesnocv_sub:
+    name: yesnocv_sub
+    attributes:
+      cv_term:
+        name: cv_term
+        range: string
+        required: false
+  yesnoonlycv:
+    name: yesnoonlycv
+    attributes:
+      cv_term:
+        name: cv_term
+        range: string
+        required: false

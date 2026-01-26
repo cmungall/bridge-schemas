@@ -1,0 +1,239 @@
+name: img_mysql_imgvr_prod
+id: https://w3id.org/jgi/img_mysql_imgvr_prod
+imports:
+- linkml:types
+prefixes:
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  img_mysql_imgvr_prod:
+    prefix_prefix: img_mysql_imgvr_prod
+    prefix_reference: https://w3id.org/jgi/img_mysql_imgvr_prod/
+default_prefix: img_mysql_imgvr_prod
+default_range: string
+classes:
+  uvig:
+    name: uvig
+    attributes:
+      uvig:
+        name: uvig
+        range: string
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      genomad_score:
+        name: genomad_score
+        range: float
+        required: false
+      viral_otus:
+        name: viral_otus
+        range: string
+        required: false
+      uvig_length:
+        name: uvig_length
+        range: integer
+        required: false
+      uvig_total_gene_count:
+        name: uvig_total_gene_count
+        range: integer
+        required: false
+      uvig_trna_gene_count:
+        name: uvig_trna_gene_count
+        range: integer
+        required: false
+      uvig_cds_gene_count:
+        name: uvig_cds_gene_count
+        range: integer
+        required: false
+      estimated_completeness:
+        name: estimated_completeness
+        range: float
+        required: false
+      uvig_topology:
+        name: uvig_topology
+        range: string
+        required: false
+      uvig_discovery:
+        name: uvig_discovery
+        range: string
+        required: false
+      uvig_discovery_doi:
+        name: uvig_discovery_doi
+        range: string
+        required: false
+      genetic_code:
+        name: genetic_code
+        range: integer
+        required: false
+      estimated_contamination:
+        name: estimated_contamination
+        range: float
+        required: false
+      high_confidence:
+        name: high_confidence
+        range: string
+        required: false
+      source:
+        name: source
+        range: string
+        required: false
+      confidence_tier:
+        name: confidence_tier
+        range: string
+        required: false
+  uvig_domain:
+    name: uvig_domain
+    attributes:
+      uvig:
+        name: uvig
+        range: string
+        required: false
+      db:
+        name: db
+        range: string
+        required: false
+      domain:
+        name: domain
+        range: string
+        required: false
+      gene:
+        name: gene
+        range: string
+        required: false
+  uvig_hosts:
+    name: uvig_hosts
+    attributes:
+      uvig:
+        name: uvig
+        range: string
+        required: false
+      method:
+        name: method
+        range: string
+        required: false
+      host_domain:
+        name: host_domain
+        range: string
+        required: false
+      host_phylum:
+        name: host_phylum
+        range: string
+        required: false
+      host_class:
+        name: host_class
+        range: string
+        required: false
+      host_order:
+        name: host_order
+        range: string
+        required: false
+      host_family:
+        name: host_family
+        range: string
+        required: false
+      host_genus:
+        name: host_genus
+        range: string
+        required: false
+      host_species:
+        name: host_species
+        range: string
+        required: false
+  uvig_lineage:
+    name: uvig_lineage
+    attributes:
+      uvig:
+        name: uvig
+        range: string
+        required: false
+      method:
+        name: method
+        range: string
+        required: false
+      domain:
+        name: domain
+        range: string
+        required: false
+      phylum:
+        name: phylum
+        range: string
+        required: false
+      ir_class:
+        name: ir_class
+        range: string
+        required: false
+      ir_order:
+        name: ir_order
+        range: string
+        required: false
+      family:
+        name: family
+        range: string
+        required: false
+      genus:
+        name: genus
+        range: string
+        required: false
+      species:
+        name: species
+        range: string
+        required: false
+      realm:
+        name: realm
+        range: string
+        required: false
+  uvig_pfams:
+    name: uvig_pfams
+    attributes:
+      uvig:
+        name: uvig
+        range: string
+        required: false
+      pfam:
+        name: pfam
+        range: string
+        required: false
+      pfam_count:
+        name: pfam_count
+        range: integer
+        required: false
+  uvig_scaffolds:
+    name: uvig_scaffolds
+    attributes:
+      uvig:
+        name: uvig
+        range: string
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      scaffold_id:
+        name: scaffold_id
+        range: string
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+  viral_spacer:
+    name: viral_spacer
+    attributes:
+      spacer_id:
+        name: spacer_id
+        range: string
+        required: false
+      spacer_seq:
+        name: spacer_seq
+        range: string
+        required: false
+      alt_short_id:
+        name: alt_short_id
+        range: string
+        required: false

@@ -1,0 +1,181 @@
+name: img_mysql_misi
+id: https://w3id.org/jgi/img_mysql_misi
+imports:
+- linkml:types
+prefixes:
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  img_mysql_misi:
+    prefix_prefix: img_mysql_misi
+    prefix_reference: https://w3id.org/jgi/img_mysql_misi/
+default_prefix: img_mysql_misi
+default_range: string
+classes:
+  iteration_info:
+    name: iteration_info
+    attributes:
+      iteration_date:
+        name: iteration_date
+        range: date
+        required: false
+      directory:
+        name: directory
+        range: string
+        required: false
+      versions:
+        name: versions
+        range: string
+        required: false
+      sketches_created:
+        name: sketches_created
+        range: string
+        required: false
+      sketches_directory:
+        name: sketches_directory
+        range: string
+        required: false
+      num_genomes_added:
+        name: num_genomes_added
+        range: integer
+        required: false
+      num_genomes_removed:
+        name: num_genomes_removed
+        range: integer
+        required: false
+      num_genomes_retained:
+        name: num_genomes_retained
+        range: integer
+        required: false
+  mash_dist:
+    name: mash_dist
+    attributes:
+      genomeA:
+        name: genomeA
+        range: string
+        required: false
+      genomeB:
+        name: genomeB
+        range: string
+        required: false
+      distance:
+        name: distance
+        range: float
+        required: false
+      pvalue:
+        name: pvalue
+        range: float
+        required: false
+      shared_hashes:
+        name: shared_hashes
+        range: string
+        required: false
+  misi_ani:
+    name: misi_ani
+    attributes:
+      genomeA:
+        name: genomeA
+        range: string
+        required: false
+      genomeB:
+        name: genomeB
+        range: string
+        required: false
+      genomeA_size:
+        name: genomeA_size
+        range: integer
+        required: false
+      genomeB_size:
+        name: genomeB_size
+        range: integer
+        required: false
+      num_bbhA:
+        name: num_bbhA
+        range: integer
+        required: false
+      num_bbhB:
+        name: num_bbhB
+        range: integer
+        required: false
+      aln_lenA:
+        name: aln_lenA
+        range: float
+        required: false
+      aln_lenB:
+        name: aln_lenB
+        range: float
+        required: false
+      aln_nucA:
+        name: aln_nucA
+        range: float
+        required: false
+      aln_nucB:
+        name: aln_nucB
+        range: float
+        required: false
+      ani_AB:
+        name: ani_AB
+        range: float
+        required: false
+      ani_BA:
+        name: ani_BA
+        range: float
+        required: false
+      af_AB:
+        name: af_AB
+        range: float
+        required: false
+      af_BA:
+        name: af_BA
+        range: float
+        required: false
+      ani_lower:
+        name: ani_lower
+        range: float
+        required: false
+      af_lower:
+        name: af_lower
+        range: float
+        required: false
+  misi_clusters:
+    name: misi_clusters
+    attributes:
+      cluster_id:
+        name: cluster_id
+        range: integer
+        required: false
+      cluster_type:
+        name: cluster_type
+        range: string
+        required: false
+      img_taxon_id:
+        name: img_taxon_id
+        range: string
+        required: false
+  taxon_info:
+    name: taxon_info
+    attributes:
+      img_taxon_id:
+        name: img_taxon_id
+        range: string
+        required: false
+      img_add_date:
+        name: img_add_date
+        range: datetime
+        required: false
+      domain:
+        name: domain
+        range: string
+        required: false
+      rna_to_ignore:
+        name: rna_to_ignore
+        range: string
+        required: false
+      iteration_date:
+        name: iteration_date
+        range: date
+        required: false
+      db_type:
+        name: db_type
+        range: string
+        required: false

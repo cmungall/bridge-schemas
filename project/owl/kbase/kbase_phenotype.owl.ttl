@@ -1,0 +1,384 @@
+@prefix kbase: <https://w3id.org/kbase/kbase_phenotype/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/kbase/kbase_phenotype.owl.ttl> a owl:Ontology ;
+    rdfs:label "kbase_phenotype" .
+
+kbase:ConditionSet a owl:Class ;
+    rdfs:label "ConditionSet" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:condition_set_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:condition_set_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:experiment_condition_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty kbase:condition_set_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:experiment_condition_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:experiment_condition_id ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_phenotype> ;
+    kbase:source_table "condition_set" .
+
+kbase:Experiment a owl:Class ;
+    rdfs:label "Experiment" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:created_at ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:created_at ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:protocol_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:experiment_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:contributor ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:experiment_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:contributor ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:created_at ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:protocol_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:protocol_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:contributor ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty kbase:experiment_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:description ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_phenotype> ;
+    kbase:source_table "experiment" .
+
+kbase:ExperimentXMeasurement a owl:Class ;
+    rdfs:label "ExperimentXMeasurement" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:quality ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:measurement_set_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:variable_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:measurement_set_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:timestamp ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:timestamp ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:experiment_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:experiment_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:measurement_set_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:quality ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:variable_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:experiment_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:variable_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:timestamp ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:quality ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_phenotype> ;
+    kbase:source_table "experiment_x_measurement" .
+
+kbase:ExperimentalContext a owl:Class ;
+    rdfs:label "ExperimentalContext" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:variable_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:experiment_context_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:experiment_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:experiment_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:experiment_context_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:variable_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:variable_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:experiment_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:experiment_context_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:value ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_phenotype> ;
+    kbase:source_table "experimental_context" .
+
+kbase:ExperimentalVariable a owl:Class ;
+    rdfs:label "ExperimentalVariable" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:name_cv_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:value_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:variable_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:value_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:units ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:variable_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:value_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:variable_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:units ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:units ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:name_cv_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:name_cv_id ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_phenotype> ;
+    kbase:source_table "experimental_variable" .
+
+kbase:Measurement a owl:Class ;
+    rdfs:label "Measurement" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:measurement_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:measurement_set_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:condition_set_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:measurement_set_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:measurement_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:measurement_set_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty kbase:measurement_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:condition_set_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:condition_set_id ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_phenotype> ;
+    kbase:source_table "measurement" .
+
+kbase:Protocol a owl:Class ;
+    rdfs:label "Protocol" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:steps ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:steps ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:protocol_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:protocol_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:steps ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty kbase:protocol_id ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_phenotype> ;
+    kbase:source_table "protocol" .
+
+kbase:contributor a owl:DatatypeProperty ;
+    rdfs:label "contributor" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_phenotype> .
+
+kbase:created_at a owl:DatatypeProperty ;
+    rdfs:label "created_at" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_phenotype> .
+
+kbase:experiment_condition_id a owl:DatatypeProperty ;
+    rdfs:label "experiment_condition_id" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_phenotype> .
+
+kbase:experiment_context_id a owl:DatatypeProperty ;
+    rdfs:label "experiment_context_id" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_phenotype> .
+
+kbase:measurement_id a owl:DatatypeProperty ;
+    rdfs:label "measurement_id" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_phenotype> .
+
+kbase:name_cv_id a owl:DatatypeProperty ;
+    rdfs:label "name_cv_id" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_phenotype> .
+
+kbase:quality a owl:DatatypeProperty ;
+    rdfs:label "quality" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_phenotype> .
+
+kbase:steps a owl:DatatypeProperty ;
+    rdfs:label "steps" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_phenotype> .
+
+kbase:timestamp a owl:DatatypeProperty ;
+    rdfs:label "timestamp" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_phenotype> .
+
+kbase:units a owl:DatatypeProperty ;
+    rdfs:label "units" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_phenotype> .
+
+kbase:value_type a owl:DatatypeProperty ;
+    rdfs:label "value_type" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_phenotype> .
+
+kbase:condition_set_id a owl:DatatypeProperty .
+
+kbase:measurement_set_id a owl:DatatypeProperty .
+
+kbase:protocol_id a owl:DatatypeProperty .
+
+kbase:value a owl:DatatypeProperty .
+
+kbase:description a owl:DatatypeProperty .
+
+kbase:experiment_id a owl:DatatypeProperty .
+
+kbase:name a owl:DatatypeProperty .
+
+kbase:variable_id a owl:DatatypeProperty .
+
+

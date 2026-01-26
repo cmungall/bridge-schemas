@@ -1,0 +1,678 @@
+name: img_i_taxon
+id: https://w3id.org/jgi/img_i_taxon
+imports:
+- linkml:types
+prefixes:
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  img_i_taxon:
+    prefix_prefix: img_i_taxon
+    prefix_reference: https://w3id.org/jgi/img_i_taxon/
+default_prefix: img_i_taxon
+default_range: string
+classes:
+  gene_myimg_enzymes:
+    name: gene_myimg_enzymes
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      ec_number:
+        name: ec_number
+        range: string
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+  gene_myimg_terms:
+    name: gene_myimg_terms
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      term_oid:
+        name: term_oid
+        range: integer
+        required: false
+      evidence:
+        name: evidence
+        range: string
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+  i_taxon_original_070323:
+    name: i_taxon_original_070323
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      taxon_name:
+        name: taxon_name
+        range: string
+        required: false
+      genus:
+        name: genus
+        range: string
+        required: false
+      species:
+        name: species
+        range: string
+        required: false
+      strain:
+        name: strain
+        range: string
+        required: false
+      taxon_display_name:
+        name: taxon_display_name
+        range: string
+        required: false
+      ncbi_taxon_id:
+        name: ncbi_taxon_id
+        range: integer
+        required: false
+      domain:
+        name: domain
+        range: string
+        required: false
+      phylum:
+        name: phylum
+        range: string
+        required: false
+      ir_class:
+        name: ir_class
+        range: string
+        required: false
+      ir_order:
+        name: ir_order
+        range: string
+        required: false
+      family:
+        name: family
+        range: string
+        required: false
+      jgi_species_code:
+        name: jgi_species_code
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      env_sample:
+        name: env_sample
+        range: integer
+        required: false
+      seq_status:
+        name: seq_status
+        range: string
+        required: false
+      seq_center:
+        name: seq_center
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+      is_replaced:
+        name: is_replaced
+        range: string
+        required: false
+      img_ec_flag:
+        name: img_ec_flag
+        range: string
+        required: false
+      funding_agency:
+        name: funding_agency
+        range: string
+        required: false
+      jgi_project_id:
+        name: jgi_project_id
+        range: integer
+        required: false
+      img_version:
+        name: img_version
+        range: string
+        required: false
+      ncbi_species_code:
+        name: ncbi_species_code
+        range: string
+        required: false
+      ncbi_project_id:
+        name: ncbi_project_id
+        range: integer
+        required: false
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      release_date:
+        name: release_date
+        range: datetime
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      ornl_species_code:
+        name: ornl_species_code
+        range: string
+        required: false
+      is_big_euk:
+        name: is_big_euk
+        range: string
+        required: false
+      host_ncbi_taxon_id:
+        name: host_ncbi_taxon_id
+        range: float
+        required: false
+      is_std_reference:
+        name: is_std_reference
+        range: string
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      project:
+        name: project
+        range: integer
+        required: false
+      genome_type:
+        name: genome_type
+        range: string
+        required: false
+      gram_stain:
+        name: gram_stain
+        range: string
+        required: false
+      is_proxygene_set:
+        name: is_proxygene_set
+        range: string
+        required: false
+      obsolete_flag:
+        name: obsolete_flag
+        range: string
+        required: false
+      is_pangenome:
+        name: is_pangenome
+        range: string
+        required: false
+      edit_flag:
+        name: edit_flag
+        range: string
+        required: false
+      submission_id:
+        name: submission_id
+        range: float
+        required: false
+      img_product_flag:
+        name: img_product_flag
+        range: string
+        required: false
+      refseq_project_id:
+        name: refseq_project_id
+        range: integer
+        required: false
+      gbk_project_id:
+        name: gbk_project_id
+        range: integer
+        required: false
+      is_low_quality:
+        name: is_low_quality
+        range: string
+        required: false
+      phylodist_date:
+        name: phylodist_date
+        range: datetime
+        required: false
+      proposal_name:
+        name: proposal_name
+        range: string
+        required: false
+      sample_gold_id:
+        name: sample_gold_id
+        range: string
+        required: false
+      phylodist_method:
+        name: phylodist_method
+        range: string
+        required: false
+      in_file:
+        name: in_file
+        range: string
+        required: false
+      ncbi_bioproject_id:
+        name: ncbi_bioproject_id
+        range: string
+        required: false
+      combined_sample_flag:
+        name: combined_sample_flag
+        range: string
+        required: false
+      high_quality_flag:
+        name: high_quality_flag
+        range: string
+        required: false
+      taxonomy_lock:
+        name: taxonomy_lock
+        range: string
+        required: false
+      locked_by:
+        name: locked_by
+        range: integer
+        required: false
+      lock_date:
+        name: lock_date
+        range: datetime
+        required: false
+      distmatrix_date:
+        name: distmatrix_date
+        range: datetime
+        required: false
+      analysis_project_id:
+        name: analysis_project_id
+        range: string
+        required: false
+      legacy_gold_id:
+        name: legacy_gold_id
+        range: string
+        required: false
+      ani_species:
+        name: ani_species
+        range: string
+        required: false
+      study_gold_id:
+        name: study_gold_id
+        range: string
+        required: false
+      sequencing_gold_id:
+        name: sequencing_gold_id
+        range: string
+        required: false
+      genome_completion:
+        name: genome_completion
+        range: float
+        required: false
+      is_nr:
+        name: is_nr
+        range: string
+        required: false
+      its_ap_id:
+        name: its_ap_id
+        range: integer
+        required: false
+      analysis_product_name:
+        name: analysis_product_name
+        range: string
+        required: false
+      analysis_project_type:
+        name: analysis_project_type
+        range: string
+        required: false
+      jgi_rnd_flag:
+        name: jgi_rnd_flag
+        range: string
+        required: false
+      has_coverage:
+        name: has_coverage
+        range: string
+        required: false
+  kp_tmp:
+    name: kp_tmp
+    attributes:
+      id:
+        name: id
+        range: integer
+        required: false
+  replaced_metagenomes:
+    name: replaced_metagenomes
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      new_genome_visibility:
+        name: new_genome_visibility
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      replace_taxon_oid:
+        name: replace_taxon_oid
+        range: integer
+        required: false
+      old_genome_visibility:
+        name: old_genome_visibility
+        range: string
+        required: false
+  scaffold:
+    name: scaffold
+    attributes:
+      scaffold_oid:
+        name: scaffold_oid
+        range: integer
+        required: false
+      scaffold_name:
+        name: scaffold_name
+        range: string
+        required: false
+      chromosome:
+        name: chromosome
+        range: string
+        required: false
+      mol_topology:
+        name: mol_topology
+        range: string
+        required: false
+      mol_type:
+        name: mol_type
+        range: string
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+      env_sample:
+        name: env_sample
+        range: integer
+        required: false
+      ext_accession:
+        name: ext_accession
+        range: string
+        required: false
+      db_source:
+        name: db_source
+        range: string
+        required: false
+      seq_file:
+        name: seq_file
+        range: string
+        required: false
+      last_update:
+        name: last_update
+        range: datetime
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      read_depth:
+        name: read_depth
+        range: float
+        required: false
+      dna_md5checksum:
+        name: dna_md5checksum
+        range: string
+        required: false
+      contig_id_map:
+        name: contig_id_map
+        range: string
+        required: false
+      contig_id_orig:
+        name: contig_id_orig
+        range: string
+        required: false
+  taxon:
+    name: taxon
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      genus:
+        name: genus
+        range: string
+        required: false
+      species:
+        name: species
+        range: string
+        required: false
+      strain:
+        name: strain
+        range: string
+        required: false
+      taxon_display_name:
+        name: taxon_display_name
+        range: string
+        required: false
+      ncbi_taxon_id:
+        name: ncbi_taxon_id
+        range: integer
+        required: false
+      domain:
+        name: domain
+        range: string
+        required: false
+      phylum:
+        name: phylum
+        range: string
+        required: false
+      ir_class:
+        name: ir_class
+        range: string
+        required: false
+      ir_order:
+        name: ir_order
+        range: string
+        required: false
+      family:
+        name: family
+        range: string
+        required: false
+      jgi_species_code:
+        name: jgi_species_code
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      seq_status:
+        name: seq_status
+        range: string
+        required: false
+      seq_center:
+        name: seq_center
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+      is_replaced:
+        name: is_replaced
+        range: string
+        required: false
+      funding_agency:
+        name: funding_agency
+        range: string
+        required: false
+      jgi_project_id:
+        name: jgi_project_id
+        range: integer
+        required: false
+      img_version:
+        name: img_version
+        range: string
+        required: false
+      ncbi_species_code:
+        name: ncbi_species_code
+        range: string
+        required: false
+      release_date:
+        name: release_date
+        range: datetime
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      is_big_euk:
+        name: is_big_euk
+        range: string
+        required: false
+      host_ncbi_taxon_id:
+        name: host_ncbi_taxon_id
+        range: float
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      genome_type:
+        name: genome_type
+        range: string
+        required: false
+      gram_stain:
+        name: gram_stain
+        range: string
+        required: false
+      obsolete_flag:
+        name: obsolete_flag
+        range: string
+        required: false
+      is_pangenome:
+        name: is_pangenome
+        range: string
+        required: false
+      submission_id:
+        name: submission_id
+        range: float
+        required: false
+      phylodist_date:
+        name: phylodist_date
+        range: datetime
+        required: false
+      proposal_name:
+        name: proposal_name
+        range: string
+        required: false
+      sample_gold_id:
+        name: sample_gold_id
+        range: string
+        required: false
+      phylodist_method:
+        name: phylodist_method
+        range: string
+        required: false
+      in_file:
+        name: in_file
+        range: string
+        required: false
+      combined_sample_flag:
+        name: combined_sample_flag
+        range: string
+        required: false
+      high_quality_flag:
+        name: high_quality_flag
+        range: string
+        required: false
+      analysis_project_id:
+        name: analysis_project_id
+        range: string
+        required: false
+      ani_species:
+        name: ani_species
+        range: string
+        required: false
+      study_gold_id:
+        name: study_gold_id
+        range: string
+        required: false
+      sequencing_gold_id:
+        name: sequencing_gold_id
+        range: string
+        required: false
+      genome_completion:
+        name: genome_completion
+        range: float
+        required: false
+      its_ap_id:
+        name: its_ap_id
+        range: integer
+        required: false
+      analysis_product_name:
+        name: analysis_product_name
+        range: string
+        required: false
+      analysis_project_type:
+        name: analysis_project_type
+        range: string
+        required: false
+      jgi_rnd_flag:
+        name: jgi_rnd_flag
+        range: string
+        required: false
+      has_coverage:
+        name: has_coverage
+        range: string
+        required: false
+      has_per_sample_coverage:
+        name: has_per_sample_coverage
+        range: string
+        required: false
+  taxon_history:
+    name: taxon_history
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: float
+        required: false
+      modified_by:
+        name: modified_by
+        range: float
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      comments_old:
+        name: comments_old
+        range: string
+        required: false
+      is_public_old:
+        name: is_public_old
+        range: string
+        required: false
+      obsolete_flag_old:
+        name: obsolete_flag_old
+        range: string
+        required: false
+      is_public_new:
+        name: is_public_new
+        range: string
+        required: false
+      obsolete_flag_new:
+        name: obsolete_flag_new
+        range: string
+        required: false
+      comments_new:
+        name: comments_new
+        range: string
+        required: false

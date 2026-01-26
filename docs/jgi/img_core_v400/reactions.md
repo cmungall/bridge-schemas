@@ -1,0 +1,67 @@
+
+
+# Slot: reactions 
+
+
+
+URI: [img_core_v400:reactions](https://w3id.org/jgi/img_core_v400/reactions)
+Alias: reactions
+
+<!-- no inheritance hierarchy -->
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [KeggModuleReactions](KeggModuleReactions.md) |  |  no  |
+| [KoTermReactions](KoTermReactions.md) |  |  no  |
+| [ImageRoiReactions](ImageRoiReactions.md) |  |  no  |
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | img_core_v400:reactions |
+| native | img_core_v400:reactions |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: reactions
+alias: reactions
+domain_of:
+- image_roi_reactions
+- kegg_module_reactions
+- ko_term_reactions
+range: string
+
+```
+</details>

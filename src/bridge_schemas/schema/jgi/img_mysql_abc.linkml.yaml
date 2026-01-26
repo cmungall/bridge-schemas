@@ -1,0 +1,520 @@
+name: img_mysql_abc
+id: https://w3id.org/jgi/img_mysql_abc
+imports:
+- linkml:types
+prefixes:
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  img_mysql_abc:
+    prefix_prefix: img_mysql_abc
+    prefix_reference: https://w3id.org/jgi/img_mysql_abc/
+default_prefix: img_mysql_abc
+default_range: string
+classes:
+  asv5_taxons:
+    name: asv5_taxons
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+  bcg_bin_gene_pfams:
+    name: bcg_bin_gene_pfams
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: string
+        required: false
+      pfam_id:
+        name: pfam_id
+        range: string
+        required: false
+      query_start:
+        name: query_start
+        range: integer
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+  bcg_bin_region:
+    name: bcg_bin_region
+    attributes:
+      region_id:
+        name: region_id
+        range: string
+        required: false
+      bin_oid:
+        name: bin_oid
+        range: string
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+      bcg_type:
+        name: bcg_type
+        range: string
+        required: false
+      seq_id:
+        name: seq_id
+        range: string
+        required: false
+      bcg_method:
+        name: bcg_method
+        range: string
+        required: false
+      bcg_rules:
+        name: bcg_rules
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: date
+        required: false
+  bcg_bin_region_genes:
+    name: bcg_bin_region_genes
+    attributes:
+      region_id:
+        name: region_id
+        range: string
+        required: false
+      bin_oid:
+        name: bin_oid
+        range: string
+        required: false
+      bcg_gene_type:
+        name: bcg_gene_type
+        range: string
+        required: false
+      gene_functions:
+        name: gene_functions
+        range: string
+        required: false
+      is_protocore_gene:
+        name: is_protocore_gene
+        range: string
+        required: false
+      gene_oid:
+        name: gene_oid
+        range: string
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+  bcg_gene_pfams:
+    name: bcg_gene_pfams
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      pfam_id:
+        name: pfam_id
+        range: string
+        required: false
+      query_start:
+        name: query_start
+        range: integer
+        required: false
+  bcg_gene_pfams_obs:
+    name: bcg_gene_pfams_obs
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      pfam_id:
+        name: pfam_id
+        range: string
+        required: false
+      query_start:
+        name: query_start
+        range: integer
+        required: false
+  bcg_region:
+    name: bcg_region
+    attributes:
+      region_id:
+        name: region_id
+        range: string
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      scaffold_oid:
+        name: scaffold_oid
+        range: integer
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+      add_date:
+        name: add_date
+        range: date
+        required: false
+      bcg_type:
+        name: bcg_type
+        range: string
+        required: false
+      seq_id:
+        name: seq_id
+        range: string
+        required: false
+      bcg_method:
+        name: bcg_method
+        range: string
+        required: false
+      bcg_rules:
+        name: bcg_rules
+        range: string
+        required: false
+  bcg_region_ext_links:
+    name: bcg_region_ext_links
+    attributes:
+      region_id:
+        name: region_id
+        range: string
+        required: false
+      db_name:
+        name: db_name
+        range: string
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+  bcg_region_genes:
+    name: bcg_region_genes
+    attributes:
+      region_id:
+        name: region_id
+        range: string
+        required: false
+      bcg_gene_type:
+        name: bcg_gene_type
+        range: string
+        required: false
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      scaffold_oid:
+        name: scaffold_oid
+        range: integer
+        required: false
+      gene_functions:
+        name: gene_functions
+        range: string
+        required: false
+      is_protocore_gene:
+        name: is_protocore_gene
+        range: string
+        required: false
+      locus_tag:
+        name: locus_tag
+        range: string
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+      strand:
+        name: strand
+        range: string
+        required: false
+      match_type:
+        name: match_type
+        range: string
+        required: false
+  bcg_region_genes_new:
+    name: bcg_region_genes_new
+    attributes:
+      region_id:
+        name: region_id
+        range: string
+        required: false
+      bcg_gene_type:
+        name: bcg_gene_type
+        range: string
+        required: false
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      scaffold_oid:
+        name: scaffold_oid
+        range: integer
+        required: false
+      gene_functions:
+        name: gene_functions
+        range: string
+        required: false
+      is_protocore_gene:
+        name: is_protocore_gene
+        range: string
+        required: false
+  bcg_region_new:
+    name: bcg_region_new
+    attributes:
+      region_id:
+        name: region_id
+        range: string
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      scaffold_oid:
+        name: scaffold_oid
+        range: integer
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+      add_date:
+        name: add_date
+        range: date
+        required: false
+      bcg_type:
+        name: bcg_type
+        range: string
+        required: false
+      seq_id:
+        name: seq_id
+        range: string
+        required: false
+      bcg_method:
+        name: bcg_method
+        range: string
+        required: false
+      bcg_rules:
+        name: bcg_rules
+        range: string
+        required: false
+  bcg_region_sms:
+    name: bcg_region_sms
+    attributes:
+      region_id:
+        name: region_id
+        range: string
+        required: false
+      sm_product:
+        name: sm_product
+        range: string
+        required: false
+      img_compound_id:
+        name: img_compound_id
+        range: integer
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+  bcg_region_stats:
+    name: bcg_region_stats
+    attributes:
+      region_id:
+        name: region_id
+        range: string
+        required: false
+      gff_total_genes:
+        name: gff_total_genes
+        range: integer
+        required: false
+      gff2img_exact_genes:
+        name: gff2img_exact_genes
+        range: integer
+        required: false
+      gff2img_fuzzy_genes:
+        name: gff2img_fuzzy_genes
+        range: integer
+        required: false
+      putative_img_genes:
+        name: putative_img_genes
+        range: integer
+        required: false
+      percent_exact:
+        name: percent_exact
+        range: float
+        required: false
+      percent_total:
+        name: percent_total
+        range: float
+        required: false
+      percent_unmatch_crucial:
+        name: percent_unmatch_crucial
+        range: float
+        required: false
+  bcg_type:
+    name: bcg_type
+    attributes:
+      bcg_type:
+        name: bcg_type
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+  my_bcg:
+    name: my_bcg
+    attributes:
+      contact_oid:
+        name: contact_oid
+        range: integer
+        required: false
+      dataset_id:
+        name: dataset_id
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: date
+        required: false
+      orig_region_id:
+        name: orig_region_id
+        range: string
+        required: false
+      comment:
+        name: comment
+        range: string
+        required: false
+      file_name:
+        name: file_name
+        range: string
+        required: false
+  npatlas:
+    name: npatlas
+    attributes:
+      npaid:
+        name: npaid
+        range: string
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+      mol_formula:
+        name: mol_formula
+        range: string
+        required: false
+      mass:
+        name: mass
+        range: float
+        required: false
+      mwt:
+        name: mwt
+        range: float
+        required: false
+      smiles:
+        name: smiles
+        range: string
+        required: false
+      inchikey:
+        name: inchikey
+        range: string
+        required: false
+      inchi:
+        name: inchi
+        range: string
+        required: false
+      origin_type:
+        name: origin_type
+        range: string
+        required: false
+      genus:
+        name: genus
+        range: string
+        required: false
+      species:
+        name: species
+        range: string
+        required: false
+      ref:
+        name: ref
+        range: string
+        required: false
+      ref_doi:
+        name: ref_doi
+        range: string
+        required: false
+      synthesis_doi:
+        name: synthesis_doi
+        range: string
+        required: false
+      npa_url:
+        name: npa_url
+        range: string
+        required: false
+  taxon_bcg_type:
+    name: taxon_bcg_type
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      bcg_type:
+        name: bcg_type
+        range: string
+        required: false
+      count_bcg_type:
+        name: count_bcg_type
+        range: integer
+        required: false
+  tmp_genes:
+    name: tmp_genes
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      scaffold_oid:
+        name: scaffold_oid
+        range: integer
+        required: false

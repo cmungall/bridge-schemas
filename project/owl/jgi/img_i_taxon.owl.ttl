@@ -1,0 +1,1776 @@
+@prefix img_i_taxon: <https://w3id.org/jgi/img_i_taxon/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/jgi/img_i_taxon.owl.ttl> a owl:Ontology ;
+    rdfs:label "img_i_taxon" .
+
+img_i_taxon:GeneMyimgEnzymes a owl:Class ;
+    rdfs:label "gene_myimg_enzymes" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:mod_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:ec_number ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_i_taxon:mod_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:ec_number ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:gene_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:mod_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:modified_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:gene_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:ec_number ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:gene_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:modified_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:modified_by ] ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:GeneMyimgTerms a owl:Class ;
+    rdfs:label "gene_myimg_terms" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:mod_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:mod_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:modified_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:evidence ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:evidence ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:modified_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:evidence ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:term_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:gene_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:gene_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:term_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:term_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:gene_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:modified_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_i_taxon:mod_date ] ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:ITaxonOriginal070323 a owl:Class ;
+    rdfs:label "i_taxon_original_070323" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:in_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:seq_status ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:species ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:family ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:is_big_euk ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:proposal_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:analysis_project_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:distmatrix_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:ncbi_project_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:gbk_project_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:seq_status ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:img_product_flag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:lock_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:is_nr ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:legacy_gold_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:ir_class ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:has_coverage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:project ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:img_version ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:is_pangenome ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:env_sample ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:ani_species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:is_big_euk ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:img_version ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:jgi_species_code ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:ncbi_bioproject_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:project ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_i_taxon:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:sequencing_gold_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:img_product_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:gold_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:analysis_project_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_i_taxon:submission_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_i_taxon:host_ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:img_product_flag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:is_big_euk ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:is_pangenome ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:comments ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:is_std_reference ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:jgi_rnd_flag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:is_proxygene_set ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:high_quality_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:funding_agency ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:img_ec_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:genus ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:jgi_species_code ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:analysis_project_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:sample_gold_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:jgi_rnd_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:locked_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:is_low_quality ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_i_taxon:distmatrix_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:has_coverage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:in_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:phylodist_method ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:obsolete_flag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:is_replaced ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:phylodist_method ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:env_sample ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:taxonomy_lock ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:domain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:taxon_display_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:seq_center ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:ncbi_species_code ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:ir_order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:taxon_display_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:img_ec_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:gbk_project_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:its_ap_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:is_std_reference ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:sequencing_gold_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:gram_stain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:genome_completion ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:legacy_gold_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:edit_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:taxonomy_lock ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:taxon_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:has_coverage ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:in_file ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:ir_class ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:combined_sample_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:taxonomy_lock ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:analysis_project_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:phylodist_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:ornl_species_code ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:lock_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:gram_stain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:img_version ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:distmatrix_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:is_proxygene_set ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:ncbi_bioproject_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:funding_agency ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:release_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:analysis_product_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:comments ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:ir_class ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:sample_gold_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_i_taxon:phylodist_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:phylum ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:domain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:study_gold_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:high_quality_flag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:ani_species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:img_ec_flag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:jgi_project_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:is_nr ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:genome_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:seq_center ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:jgi_species_code ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:study_gold_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:phylum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:its_ap_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:modified_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:obsolete_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:jgi_project_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:strain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:funding_agency ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:seq_center ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:phylodist_method ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:species ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:seq_status ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:edit_flag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:analysis_project_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:modified_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:ncbi_project_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:study_gold_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:mod_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:phylodist_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:is_replaced ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:its_ap_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:ir_order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:env_sample ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:gbk_project_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:domain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:is_public ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:combined_sample_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:locked_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:refseq_project_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_i_taxon:mod_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:ncbi_species_code ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:proposal_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_i_taxon:release_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:locked_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:genome_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:analysis_product_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:strain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:ornl_species_code ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:species ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:mod_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:host_ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:gold_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:high_quality_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:analysis_project_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:family ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:submission_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:ncbi_species_code ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:is_public ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:gram_stain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:taxon_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:genus ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:legacy_gold_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_i_taxon:genome_completion ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:genus ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:edit_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:family ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:sample_gold_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:combined_sample_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:is_std_reference ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:is_proxygene_set ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:phylum ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:ornl_species_code ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:sequencing_gold_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:obsolete_flag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:project ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:jgi_rnd_flag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:genome_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:ncbi_bioproject_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:is_low_quality ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:gold_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:modified_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:taxon_display_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:comments ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:refseq_project_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:is_pangenome ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:refseq_project_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:add_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:ir_order ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:is_low_quality ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:release_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:is_nr ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:is_public ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:taxon_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_i_taxon:lock_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:strain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:ncbi_project_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:is_replaced ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:ani_species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:analysis_product_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:proposal_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:jgi_project_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:genome_completion ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:host_ncbi_taxon_id ] ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:KpTmp a owl:Class ;
+    rdfs:label "kp_tmp" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:id ] ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:ReplacedMetagenomes a owl:Class ;
+    rdfs:label "replaced_metagenomes" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:new_genome_visibility ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:replace_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:old_genome_visibility ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:replace_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:replace_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:old_genome_visibility ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:new_genome_visibility ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:new_genome_visibility ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_i_taxon:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:old_genome_visibility ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:add_date ] ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:Scaffold a owl:Class ;
+    rdfs:label "scaffold" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:contig_id_map ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:taxon ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:dna_md5checksum ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:scaffold_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:env_sample ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:ext_accession ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:db_source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:seq_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:contig_id_orig ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:add_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:mol_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:read_depth ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_i_taxon:read_depth ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:env_sample ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:scaffold_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_i_taxon:last_update ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:contig_id_orig ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:ext_accession ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:mol_topology ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:last_update ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:chromosome ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:env_sample ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:seq_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:read_depth ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:mol_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:mol_topology ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:ext_accession ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:contig_id_map ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:db_source ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:chromosome ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:taxon ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:mol_topology ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:taxon ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:scaffold_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:dna_md5checksum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:db_source ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:contig_id_map ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:chromosome ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:mol_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_i_taxon:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:last_update ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:contig_id_orig ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:dna_md5checksum ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:seq_file ] ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:Taxon a owl:Class ;
+    rdfs:label "taxon" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:jgi_species_code ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:species ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:seq_status ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:ir_order ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:seq_center ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:genome_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:analysis_project_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:study_gold_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:img_version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:submission_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:domain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:mod_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:obsolete_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:strain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:is_replaced ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:funding_agency ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:add_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_i_taxon:mod_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:jgi_species_code ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:funding_agency ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:img_version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:ani_species ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:release_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:has_coverage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:strain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:analysis_product_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:phylodist_method ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:modified_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:proposal_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:comments ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:comments ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:in_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:phylum ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:combined_sample_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:combined_sample_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_i_taxon:phylodist_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:in_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:is_public ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:taxon_display_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:is_public ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:study_gold_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:ir_order ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:ir_class ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:gram_stain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:strain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_i_taxon:release_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:seq_center ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:phylodist_method ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:funding_agency ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:high_quality_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:taxon_display_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:is_pangenome ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:family ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:taxon_display_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:sequencing_gold_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:modified_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_i_taxon:submission_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:gram_stain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:genome_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:has_per_sample_coverage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:genome_completion ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:combined_sample_flag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:is_big_euk ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:mod_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:comments ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:img_version ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:analysis_project_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:analysis_project_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:family ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:has_per_sample_coverage ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:its_ap_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:sample_gold_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:phylum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:seq_status ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:gram_stain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:sample_gold_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:ani_species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:ir_class ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:jgi_project_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:jgi_project_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:ani_species ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:phylodist_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:jgi_rnd_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:analysis_product_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:domain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:obsolete_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:modified_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:has_per_sample_coverage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_i_taxon:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:proposal_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:proposal_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:analysis_project_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:is_big_euk ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:high_quality_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:jgi_species_code ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:is_pangenome ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:obsolete_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:family ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:ncbi_species_code ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:genus ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:in_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:genus ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:analysis_project_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:ncbi_species_code ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:genome_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:sample_gold_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:seq_status ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:jgi_project_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:host_ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:phylum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:is_pangenome ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:sequencing_gold_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:analysis_product_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:analysis_project_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:sequencing_gold_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:high_quality_flag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:ir_class ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:is_public ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:domain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:its_ap_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:has_coverage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_i_taxon:its_ap_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:phylodist_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:is_replaced ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:jgi_rnd_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:jgi_rnd_flag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:has_coverage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:is_big_euk ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:genome_completion ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:study_gold_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_i_taxon:host_ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:is_replaced ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:release_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:ncbi_species_code ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_i_taxon:genome_completion ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:genus ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:host_ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:phylodist_method ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:seq_center ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:ir_order ] ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:TaxonHistory a owl:Class ;
+    rdfs:label "taxon_history" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:mod_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:comments_new ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:mod_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:is_public_new ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:is_public_old ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:modified_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_i_taxon:modified_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:comments_new ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:obsolete_flag_new ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:obsolete_flag_new ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:modified_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:comments_old ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:is_public_old ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:is_public_new ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_i_taxon:mod_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_i_taxon:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:comments_new ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:obsolete_flag_old ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:obsolete_flag_new ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:is_public_old ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:comments_old ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:obsolete_flag_old ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:obsolete_flag_old ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_i_taxon:is_public_new ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_i_taxon:comments_old ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_i_taxon:taxon_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:chromosome a owl:DatatypeProperty ;
+    rdfs:label "chromosome" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:comments_new a owl:DatatypeProperty ;
+    rdfs:label "comments_new" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:comments_old a owl:DatatypeProperty ;
+    rdfs:label "comments_old" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:contig_id_map a owl:DatatypeProperty ;
+    rdfs:label "contig_id_map" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:contig_id_orig a owl:DatatypeProperty ;
+    rdfs:label "contig_id_orig" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:db_source a owl:DatatypeProperty ;
+    rdfs:label "db_source" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:distmatrix_date a owl:DatatypeProperty ;
+    rdfs:label "distmatrix_date" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:dna_md5checksum a owl:DatatypeProperty ;
+    rdfs:label "dna_md5checksum" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:ec_number a owl:DatatypeProperty ;
+    rdfs:label "ec_number" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:edit_flag a owl:DatatypeProperty ;
+    rdfs:label "edit_flag" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:evidence a owl:DatatypeProperty ;
+    rdfs:label "evidence" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:ext_accession a owl:DatatypeProperty ;
+    rdfs:label "ext_accession" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:gbk_project_id a owl:DatatypeProperty ;
+    rdfs:label "gbk_project_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:gold_id a owl:DatatypeProperty ;
+    rdfs:label "gold_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:has_per_sample_coverage a owl:DatatypeProperty ;
+    rdfs:label "has_per_sample_coverage" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:id a owl:DatatypeProperty ;
+    rdfs:label "id" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:img_ec_flag a owl:DatatypeProperty ;
+    rdfs:label "img_ec_flag" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:img_product_flag a owl:DatatypeProperty ;
+    rdfs:label "img_product_flag" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:is_low_quality a owl:DatatypeProperty ;
+    rdfs:label "is_low_quality" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:is_nr a owl:DatatypeProperty ;
+    rdfs:label "is_nr" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:is_proxygene_set a owl:DatatypeProperty ;
+    rdfs:label "is_proxygene_set" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:is_public_new a owl:DatatypeProperty ;
+    rdfs:label "is_public_new" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:is_public_old a owl:DatatypeProperty ;
+    rdfs:label "is_public_old" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:is_std_reference a owl:DatatypeProperty ;
+    rdfs:label "is_std_reference" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:last_update a owl:DatatypeProperty ;
+    rdfs:label "last_update" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:legacy_gold_id a owl:DatatypeProperty ;
+    rdfs:label "legacy_gold_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:lock_date a owl:DatatypeProperty ;
+    rdfs:label "lock_date" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:locked_by a owl:DatatypeProperty ;
+    rdfs:label "locked_by" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:mol_topology a owl:DatatypeProperty ;
+    rdfs:label "mol_topology" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:mol_type a owl:DatatypeProperty ;
+    rdfs:label "mol_type" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:ncbi_bioproject_id a owl:DatatypeProperty ;
+    rdfs:label "ncbi_bioproject_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:ncbi_project_id a owl:DatatypeProperty ;
+    rdfs:label "ncbi_project_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:new_genome_visibility a owl:DatatypeProperty ;
+    rdfs:label "new_genome_visibility" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:obsolete_flag_new a owl:DatatypeProperty ;
+    rdfs:label "obsolete_flag_new" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:obsolete_flag_old a owl:DatatypeProperty ;
+    rdfs:label "obsolete_flag_old" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:old_genome_visibility a owl:DatatypeProperty ;
+    rdfs:label "old_genome_visibility" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:ornl_species_code a owl:DatatypeProperty ;
+    rdfs:label "ornl_species_code" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:project a owl:DatatypeProperty ;
+    rdfs:label "project" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:read_depth a owl:DatatypeProperty ;
+    rdfs:label "read_depth" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:refseq_project_id a owl:DatatypeProperty ;
+    rdfs:label "refseq_project_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:replace_taxon_oid a owl:DatatypeProperty ;
+    rdfs:label "replace_taxon_oid" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:scaffold_name a owl:DatatypeProperty ;
+    rdfs:label "scaffold_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:scaffold_oid a owl:DatatypeProperty ;
+    rdfs:label "scaffold_oid" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:seq_file a owl:DatatypeProperty ;
+    rdfs:label "seq_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:taxon a owl:DatatypeProperty ;
+    rdfs:label "taxon" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:taxon_name a owl:DatatypeProperty ;
+    rdfs:label "taxon_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:taxonomy_lock a owl:DatatypeProperty ;
+    rdfs:label "taxonomy_lock" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:term_oid a owl:DatatypeProperty ;
+    rdfs:label "term_oid" ;
+    skos:inScheme <https://w3id.org/jgi/img_i_taxon> .
+
+img_i_taxon:analysis_product_name a owl:DatatypeProperty .
+
+img_i_taxon:analysis_project_id a owl:DatatypeProperty .
+
+img_i_taxon:analysis_project_type a owl:DatatypeProperty .
+
+img_i_taxon:ani_species a owl:DatatypeProperty .
+
+img_i_taxon:combined_sample_flag a owl:DatatypeProperty .
+
+img_i_taxon:comments a owl:DatatypeProperty .
+
+img_i_taxon:domain a owl:DatatypeProperty .
+
+img_i_taxon:env_sample a owl:DatatypeProperty .
+
+img_i_taxon:family a owl:DatatypeProperty .
+
+img_i_taxon:funding_agency a owl:DatatypeProperty .
+
+img_i_taxon:gene_oid a owl:DatatypeProperty .
+
+img_i_taxon:genome_completion a owl:DatatypeProperty .
+
+img_i_taxon:genome_type a owl:DatatypeProperty .
+
+img_i_taxon:genus a owl:DatatypeProperty .
+
+img_i_taxon:gram_stain a owl:DatatypeProperty .
+
+img_i_taxon:has_coverage a owl:DatatypeProperty .
+
+img_i_taxon:high_quality_flag a owl:DatatypeProperty .
+
+img_i_taxon:host_ncbi_taxon_id a owl:DatatypeProperty .
+
+img_i_taxon:img_version a owl:DatatypeProperty .
+
+img_i_taxon:in_file a owl:DatatypeProperty .
+
+img_i_taxon:ir_class a owl:DatatypeProperty .
+
+img_i_taxon:ir_order a owl:DatatypeProperty .
+
+img_i_taxon:is_big_euk a owl:DatatypeProperty .
+
+img_i_taxon:is_pangenome a owl:DatatypeProperty .
+
+img_i_taxon:is_public a owl:DatatypeProperty .
+
+img_i_taxon:is_replaced a owl:DatatypeProperty .
+
+img_i_taxon:its_ap_id a owl:DatatypeProperty .
+
+img_i_taxon:jgi_project_id a owl:DatatypeProperty .
+
+img_i_taxon:jgi_rnd_flag a owl:DatatypeProperty .
+
+img_i_taxon:jgi_species_code a owl:DatatypeProperty .
+
+img_i_taxon:ncbi_species_code a owl:DatatypeProperty .
+
+img_i_taxon:ncbi_taxon_id a owl:DatatypeProperty .
+
+img_i_taxon:obsolete_flag a owl:DatatypeProperty .
+
+img_i_taxon:phylodist_date a owl:DatatypeProperty .
+
+img_i_taxon:phylodist_method a owl:DatatypeProperty .
+
+img_i_taxon:phylum a owl:DatatypeProperty .
+
+img_i_taxon:proposal_name a owl:DatatypeProperty .
+
+img_i_taxon:release_date a owl:DatatypeProperty .
+
+img_i_taxon:sample_gold_id a owl:DatatypeProperty .
+
+img_i_taxon:seq_center a owl:DatatypeProperty .
+
+img_i_taxon:seq_status a owl:DatatypeProperty .
+
+img_i_taxon:sequencing_gold_id a owl:DatatypeProperty .
+
+img_i_taxon:species a owl:DatatypeProperty .
+
+img_i_taxon:strain a owl:DatatypeProperty .
+
+img_i_taxon:study_gold_id a owl:DatatypeProperty .
+
+img_i_taxon:submission_id a owl:DatatypeProperty .
+
+img_i_taxon:taxon_display_name a owl:DatatypeProperty .
+
+img_i_taxon:add_date a owl:DatatypeProperty .
+
+img_i_taxon:taxon_oid a owl:DatatypeProperty .
+
+img_i_taxon:mod_date a owl:DatatypeProperty .
+
+img_i_taxon:modified_by a owl:DatatypeProperty .
+
+

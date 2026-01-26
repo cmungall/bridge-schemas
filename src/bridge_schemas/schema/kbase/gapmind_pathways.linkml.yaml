@@ -1,0 +1,256 @@
+id: https://w3id.org/kbase/gapmind_pathways
+name: gapmind_pathways
+title: GapMind Metabolic Pathway Completeness
+description: >-
+  GapMind pathway completeness scores for genomes across the KBase pangenome database.
+  GapMind assesses whether a genome can synthesize or catabolize various metabolites
+  by searching for characterized enzymes and transporters.
+
+  DATABASE STATISTICS:
+  - 463,729,001 pathway assessments
+  - 80 metabolic pathways assessed per genome
+  - Linked to GTDB species clades from kbase_ke_pangenome
+
+  TOP PATHWAYS BY ASSESSMENT COUNT:
+  | Pathway          | Assessments  | Category        |
+  |------------------|--------------|-----------------|
+  | phenylalanine    | 18,603,662   | Amino acid      |
+  | arginine         | 15,945,996   | Amino acid      |
+  | citrulline       | 14,617,163   | Amino acid      |
+  | 4-hydroxybenzoate| 14,617,163   | Aromatic        |
+  | threonine        | 14,617,163   | Amino acid      |
+  | tryptophan       | 14,617,163   | Amino acid      |
+  | sucrose          | 13,288,330   | Carbohydrate    |
+  | lactose          | 13,288,330   | Carbohydrate    |
+
+  SCORING SYSTEM:
+  - nHi/nMed/nLo: Count of high/medium/low confidence gene hits
+  - score: Overall pathway score (higher = more complete)
+  - score_category: "present", "partial", or "not_present"
+  - score_simplified: 1 (present), 0.5 (partial), 0 (not_present)
+
+  USAGE: Join with kbase_ke_pangenome.genome on genome_id and clade_name
+  to analyze metabolic capabilities across species clades.
+
+  REFERENCE: Price et al. 2020 "GapMind: Automated Annotation of Amino Acid
+  Biosynthesis" mSystems 5:e00291-20
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  gapmind: https://papers.genomics.lbl.gov/cgi-bin/gapView.cgi
+
+default_range: string
+imports:
+  - linkml:types
+
+enums:
+  MetabolicCategory:
+    description: >-
+      Broad metabolic category for pathways. Organizes pathways by
+      the type of metabolite being synthesized or catabolized.
+    permissible_values:
+      aa:
+        description: >-
+          Amino acid biosynthesis and catabolism. Includes all 20 standard
+          amino acids plus citrulline, ornithine, etc.
+      carbon:
+        description: >-
+          Carbon source utilization. Carbohydrates, organic acids, and
+          other carbon compounds.
+      aromatic:
+        description: >-
+          Aromatic compound metabolism. Includes 4-hydroxybenzoate,
+          phenylacetate, and other aromatic degradation pathways.
+
+  SequenceScope:
+    description: >-
+      Sequence scope for pathway assessment - core or auxiliary genes.
+    permissible_values:
+      core:
+        description: >-
+          Core pathway genes required for the metabolic function.
+          Essential enzymes in the pathway.
+      aux:
+        description: >-
+          Auxiliary genes that support but are not essential for
+          the pathway. May include transporters or regulatory genes.
+
+  ScoreCategory:
+    description: >-
+      Categorical assessment of pathway completeness based on
+      GapMind scoring algorithm.
+    permissible_values:
+      present:
+        description: >-
+          Pathway is complete or nearly complete. High confidence that
+          the organism can perform this metabolic function.
+      partial:
+        description: >-
+          Pathway is partially present. Some genes found but pathway
+          may not be fully functional.
+      not_present:
+        description: >-
+          Pathway is absent or too incomplete to be functional.
+          Organism likely cannot perform this metabolic function.
+
+classes:
+  GapmindPathway:
+    description: >-
+      GapMind pathway completeness assessment for a genome.
+      Each row represents the assessment of one metabolic pathway
+      for one genome, with gene hit counts and scores.
+
+      EXAMPLE INTERPRETATION:
+      - score > 0, score_category = "present" -> pathway functional
+      - score < 0, nLo > 0 -> some genes found but pathway incomplete
+      - score = 0, all counts = 0 -> no genes found
+
+      JOIN PATTERN:
+      ```sql
+      SELECT g.*, p.genome_id, p.pathway, p.score_category
+      FROM kbase_ke_pangenome.genome g
+      JOIN globalusers_gapmind_pathways.gapmind_pathways p
+        ON g.genome_id = p.genome_id
+      WHERE p.score_category = 'present'
+      ```
+    annotations:
+      source_table: gapmind_pathways
+    attributes:
+      genome_id:
+        range: string
+        required: true
+        description: >-
+          RefSeq/GenBank genome assembly accession (GCF_*/GCA_*).
+          Links to kbase_ke_pangenome.genome.genome_id.
+        comments:
+          - "Foreign key to kbase_ke_pangenome.genome.genome_id"
+        pattern: "GC[FA]_\\d+\\.\\d+"
+        examples:
+          - value: "GCF_019211765.1"
+            description: Lactiplantibacillus plantarum genome
+
+      pathway:
+        range: string
+        required: true
+        description: >-
+          Metabolic pathway being assessed. 80 different pathways
+          covering amino acid biosynthesis, carbon utilization, etc.
+        examples:
+          - value: "arg"
+            description: Arginine biosynthesis
+          - value: "asn"
+            description: Asparagine biosynthesis
+          - value: "phenylalanine"
+            description: Phenylalanine biosynthesis/catabolism
+          - value: "sucrose"
+            description: Sucrose utilization
+          - value: "lactose"
+            description: Lactose utilization
+          - value: "4-hydroxybenzoate"
+            description: 4-hydroxybenzoate degradation
+
+      clade_name:
+        range: string
+        description: >-
+          GTDB species clade identifier. Links to pangenome data.
+          Format: s__Genus_species--RS_GCF_XXXXXXXXX.X
+        comments:
+          - "Foreign key to kbase_ke_pangenome.gtdb_species_clade.gtdb_species_clade_id"
+        examples:
+          - value: "s__Lactiplantibacillus_plantarum--RS_GCF_014131735.1"
+            description: L. plantarum species clade
+
+      metabolic_category:
+        range: MetabolicCategory
+        description: >-
+          Broad metabolic category (amino acid, carbon, aromatic).
+        examples:
+          - value: "aa"
+            description: Amino acid pathway
+
+      sequence_scope:
+        range: SequenceScope
+        description: >-
+          Whether assessing core or auxiliary pathway genes.
+        examples:
+          - value: "aux"
+            description: Auxiliary genes
+          - value: "core"
+            description: Core pathway genes
+
+      nHi:
+        range: integer
+        description: >-
+          Count of high-confidence gene hits. These are strong
+          matches to characterized enzymes.
+        minimum_value: 0
+        examples:
+          - value: 0
+          - value: 5
+            description: 5 high-confidence hits
+
+      nMed:
+        range: integer
+        description: >-
+          Count of medium-confidence gene hits. Moderate matches
+          that may or may not be functional.
+        minimum_value: 0
+        examples:
+          - value: 0
+          - value: 2
+
+      nLo:
+        range: integer
+        description: >-
+          Count of low-confidence gene hits. Weak matches that
+          are unlikely to perform the expected function.
+        minimum_value: 0
+        examples:
+          - value: 8
+            description: 8 low-confidence hits only
+          - value: 1
+          - value: 3
+
+      score:
+        range: integer
+        description: >-
+          Overall pathway completeness score. Calculated from gene
+          hits with weighting: positive = likely complete,
+          negative = likely incomplete.
+        examples:
+          - value: -16
+            description: Very incomplete (only low hits)
+          - value: -2
+            description: Incomplete
+          - value: -6
+            description: Incomplete
+          - value: 10
+            description: Complete pathway
+
+      score_category:
+        range: ScoreCategory
+        required: true
+        description: >-
+          Categorical assessment of pathway completeness.
+        examples:
+          - value: "not_present"
+            description: Pathway absent or non-functional
+          - value: "partial"
+            description: Pathway partially present
+          - value: "present"
+            description: Pathway complete
+
+      score_simplified:
+        range: float
+        description: >-
+          Simplified numeric score for aggregation.
+          1.0 = present, 0.5 = partial, 0.0 = not_present.
+        minimum_value: 0.0
+        maximum_value: 1.0
+        examples:
+          - value: 0.0
+            description: Not present
+          - value: 0.5
+            description: Partial
+          - value: 1.0
+            description: Present

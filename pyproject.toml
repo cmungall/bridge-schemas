@@ -1,0 +1,30 @@
+[project]
+name = "bridge-schemas"
+version = "0.1.0"
+description = "LinkML schemas for JGI and KBase genomics lakehouses"
+readme = "README.md"
+authors = [
+    {name = "Chris Mungall", email = "cjmungall@lbl.gov"}
+]
+license = {text = "MIT"}
+requires-python = ">=3.9"
+dependencies = [
+    "linkml>=1.8",
+    "linkml-runtime>=1.8",
+]
+
+[project.optional-dependencies]
+dev = [
+    "mkdocs-material>=9.0",
+    "mkdocs-mermaid2-plugin>=1.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = [
+    "mkdocs-material>=9.0",
+    "mkdocs-mermaid2-plugin>=1.0",
+]

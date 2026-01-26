@@ -1,0 +1,289 @@
+@prefix kbase: <https://w3id.org/kbase/kbase_refseq_taxon_api/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/kbase/kbase_refseq_taxon_api.owl.ttl> a owl:Ontology ;
+    rdfs:label "kbase_refseq_taxon_api" .
+
+kbase:ContigCollection a owl:Class ;
+    rdfs:label "ContigCollection" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:gtdb_taxon_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:collection_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:contig_collection_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:collection_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:contig_collection_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:collection_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:gtdb_taxon_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:contig_collection_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:gtdb_taxon_id ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_refseq_taxon_api> ;
+    kbase:source_table "contig_collection" .
+
+kbase:Datasource a owl:Class ;
+    rdfs:label "Datasource" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:accessed ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:accessed ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:version ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:url ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:version ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:accessed ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:name ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_refseq_taxon_api> ;
+    kbase:source_table "datasource" .
+
+kbase:Entity a owl:Class ;
+    rdfs:label "Entity" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:updated ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:data_source ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:data_source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:data_source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:entity_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:created ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:updated ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:entity_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:entity_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:created ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:updated ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_refseq_taxon_api> ;
+    kbase:source_table "entity" .
+
+kbase:Identifier a owl:Class ;
+    rdfs:label "Identifier" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:identifier ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:identifier ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:identifier ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:description ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_refseq_taxon_api> ;
+    kbase:source_table "identifier" .
+
+kbase:Name a owl:Class ;
+    rdfs:label "Name" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:entity_id ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_refseq_taxon_api> ;
+    kbase:source_table "name" .
+
+kbase:accessed a owl:DatatypeProperty ;
+    rdfs:label "accessed" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_refseq_taxon_api> .
+
+kbase:collection_id a owl:DatatypeProperty ;
+    rdfs:label "collection_id" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_refseq_taxon_api> .
+
+kbase:contig_collection_type a owl:DatatypeProperty ;
+    rdfs:label "contig_collection_type" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_refseq_taxon_api> .
+
+kbase:created a owl:DatatypeProperty ;
+    rdfs:label "created" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_refseq_taxon_api> .
+
+kbase:data_source a owl:DatatypeProperty ;
+    rdfs:label "data_source" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_refseq_taxon_api> .
+
+kbase:entity_type a owl:DatatypeProperty ;
+    rdfs:label "entity_type" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_refseq_taxon_api> .
+
+kbase:gtdb_taxon_id a owl:DatatypeProperty ;
+    rdfs:label "gtdb_taxon_id" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_refseq_taxon_api> .
+
+kbase:identifier a owl:DatatypeProperty ;
+    rdfs:label "identifier" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_refseq_taxon_api> .
+
+kbase:ncbi_taxon_id a owl:DatatypeProperty ;
+    rdfs:label "ncbi_taxon_id" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_refseq_taxon_api> .
+
+kbase:updated a owl:DatatypeProperty ;
+    rdfs:label "updated" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_refseq_taxon_api> .
+
+kbase:url a owl:DatatypeProperty ;
+    rdfs:label "url" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_refseq_taxon_api> .
+
+kbase:version a owl:DatatypeProperty ;
+    rdfs:label "version" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_refseq_taxon_api> .
+
+kbase:description a owl:DatatypeProperty .
+
+kbase:name a owl:DatatypeProperty .
+
+kbase:entity_id a owl:DatatypeProperty .
+
+kbase:source a owl:DatatypeProperty .
+
+

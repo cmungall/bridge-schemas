@@ -1,0 +1,2346 @@
+name: img_ext
+id: https://w3id.org/jgi/img_ext
+imports:
+- linkml:types
+prefixes:
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  img_ext:
+    prefix_prefix: img_ext
+    prefix_reference: https://w3id.org/jgi/img_ext/
+default_prefix: img_ext
+default_range: string
+classes:
+  assertioncv:
+    name: assertioncv
+    attributes:
+      term_cv:
+        name: term_cv
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+  bc_ext_links:
+    name: bc_ext_links
+    attributes:
+      cluster_id:
+        name: cluster_id
+        range: string
+        required: false
+      db_name:
+        name: db_name
+        range: string
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+  cell_localization:
+    name: cell_localization
+    attributes:
+      loc_type:
+        name: loc_type
+        range: string
+        required: false
+      definition:
+        name: definition
+        range: string
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+  componentcv:
+    name: componentcv
+    attributes:
+      component_cv:
+        name: component_cv
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+  compound_ext_db:
+    name: compound_ext_db
+    attributes:
+      db_name:
+        name: db_name
+        range: string
+        required: false
+      url_template:
+        name: url_template
+        range: string
+        required: false
+  db_source:
+    name: db_source
+    attributes:
+      db_code:
+        name: db_code
+        range: string
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+      base_url:
+        name: base_url
+        range: string
+        required: false
+  dt_all_phylo_taxon_stats:
+    name: dt_all_phylo_taxon_stats
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: float
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+      homolog_taxon:
+        name: homolog_taxon
+        range: float
+        required: false
+      gene_count_30:
+        name: gene_count_30
+        range: float
+        required: false
+      gene_count_60:
+        name: gene_count_60
+        range: float
+        required: false
+      gene_count_90:
+        name: gene_count_90
+        range: float
+        required: false
+      est_copy_30:
+        name: est_copy_30
+        range: float
+        required: false
+      est_copy_60:
+        name: est_copy_60
+        range: float
+        required: false
+      est_copy_90:
+        name: est_copy_90
+        range: float
+        required: false
+  dt_phylo_taxon_stats:
+    name: dt_phylo_taxon_stats
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: float
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+      homolog_taxon:
+        name: homolog_taxon
+        range: float
+        required: false
+      gene_count_30:
+        name: gene_count_30
+        range: float
+        required: false
+      gene_count_60:
+        name: gene_count_60
+        range: float
+        required: false
+      gene_count_90:
+        name: gene_count_90
+        range: float
+        required: false
+      est_copy_30:
+        name: est_copy_30
+        range: float
+        required: false
+      est_copy_60:
+        name: est_copy_60
+        range: float
+        required: false
+      est_copy_90:
+        name: est_copy_90
+        range: float
+        required: false
+  gene_function_history:
+    name: gene_function_history
+    attributes:
+      annot_oid:
+        name: annot_oid
+        range: integer
+        required: false
+      author:
+        name: author
+        range: string
+        required: false
+      contact:
+        name: contact
+        range: integer
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+      img_build:
+        name: img_build
+        range: integer
+        required: false
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      prev_build_gene_oid:
+        name: prev_build_gene_oid
+        range: integer
+        required: false
+      function_old:
+        name: function_old
+        range: integer
+        required: false
+      function_new:
+        name: function_new
+        range: integer
+        required: false
+      evidence_old:
+        name: evidence_old
+        range: string
+        required: false
+      evidence_new:
+        name: evidence_new
+        range: string
+        required: false
+      confidence_old:
+        name: confidence_old
+        range: string
+        required: false
+      confidence_new:
+        name: confidence_new
+        range: string
+        required: false
+      action:
+        name: action
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      aa_checksum:
+        name: aa_checksum
+        range: string
+        required: false
+      cell_loc_old:
+        name: cell_loc_old
+        range: string
+        required: false
+      cell_loc_new:
+        name: cell_loc_new
+        range: string
+        required: false
+  gene_history:
+    name: gene_history
+    attributes:
+      annot_oid:
+        name: annot_oid
+        range: integer
+        required: false
+      author:
+        name: author
+        range: string
+        required: false
+      contact:
+        name: contact
+        range: integer
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+      img_build:
+        name: img_build
+        description: Foreign key to img_build_history
+        range: img_build_history
+        required: false
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      prev_build_gene_oid:
+        name: prev_build_gene_oid
+        range: integer
+        required: false
+      aa_checksum:
+        name: aa_checksum
+        range: string
+        required: false
+      img_orf_type_old:
+        name: img_orf_type_old
+        range: string
+        required: false
+      img_orf_type_new:
+        name: img_orf_type_new
+        range: string
+        required: false
+      action:
+        name: action
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+  gene_img_functions:
+    name: gene_img_functions
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      function:
+        name: function
+        description: Foreign key to img_term
+        range: img_term
+        required: false
+      f_order:
+        name: f_order
+        range: integer
+        required: false
+      evidence:
+        name: evidence
+        range: string
+        required: false
+      confidence:
+        name: confidence
+        range: string
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      cell_loc:
+        name: cell_loc
+        description: Foreign key to cell_localization
+        range: cell_localization
+        required: false
+      f_flag:
+        name: f_flag
+        range: string
+        required: false
+      taxon:
+        name: taxon
+        range: float
+        required: false
+      scaffold:
+        name: scaffold
+        range: float
+        required: false
+  gene_myimg_functions:
+    name: gene_myimg_functions
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      product_name:
+        name: product_name
+        range: string
+        required: false
+      prot_desc:
+        name: prot_desc
+        range: string
+        required: false
+      ec_number:
+        name: ec_number
+        range: string
+        required: false
+      pubmed_id:
+        name: pubmed_id
+        range: string
+        required: false
+      inference:
+        name: inference
+        range: string
+        required: false
+      is_pseudogene:
+        name: is_pseudogene
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+      notes:
+        name: notes
+        range: string
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      gene_symbol:
+        name: gene_symbol
+        range: string
+        required: false
+      obsolete_flag:
+        name: obsolete_flag
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+  gene_myimg_groups:
+    name: gene_myimg_groups
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: float
+        required: false
+      contact_oid:
+        name: contact_oid
+        range: float
+        required: false
+      group_id:
+        name: group_id
+        range: float
+        required: false
+  img_build:
+    name: img_build
+    attributes:
+      build_oid:
+        name: build_oid
+        range: integer
+        required: false
+      build_number:
+        name: build_number
+        range: integer
+        required: false
+      build_date:
+        name: build_date
+        range: datetime
+        required: false
+      release_date:
+        name: release_date
+        range: datetime
+        required: false
+      img_version:
+        name: img_version
+        range: string
+        required: false
+      seq_dir:
+        name: seq_dir
+        range: string
+        required: false
+  img_build_history:
+    name: img_build_history
+    attributes:
+      build_oid:
+        name: build_oid
+        range: integer
+        required: false
+      build_number:
+        name: build_number
+        range: integer
+        required: false
+      build_date:
+        name: build_date
+        range: datetime
+        required: false
+      release_date:
+        name: release_date
+        range: datetime
+        required: false
+      img_version:
+        name: img_version
+        range: string
+        required: false
+      seq_dir:
+        name: seq_dir
+        range: string
+        required: false
+  img_compound:
+    name: img_compound
+    attributes:
+      compound_oid:
+        name: compound_oid
+        range: integer
+        required: false
+      ext_accession:
+        name: ext_accession
+        range: string
+        required: false
+      db_source:
+        name: db_source
+        description: Foreign key to db_source
+        range: db_source
+        required: false
+      compound_name:
+        name: compound_name
+        range: string
+        required: false
+      common_name:
+        name: common_name
+        range: string
+        required: false
+      class:
+        name: class
+        range: string
+        required: false
+      composition:
+        name: composition
+        range: string
+        required: false
+      formula:
+        name: formula
+        range: string
+        required: false
+      cas_number:
+        name: cas_number
+        range: string
+        required: false
+      status:
+        name: status
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      mol_weight:
+        name: mol_weight
+        range: float
+        required: false
+      num_atoms:
+        name: num_atoms
+        range: float
+        required: false
+      np_class:
+        name: np_class
+        range: string
+        required: false
+      np_sub_class:
+        name: np_sub_class
+        range: string
+        required: false
+      smiles:
+        name: smiles
+        range: string
+        required: false
+      inchi:
+        name: inchi
+        range: string
+        required: false
+      inchi_key:
+        name: inchi_key
+        range: string
+        required: false
+      num_bonds:
+        name: num_bonds
+        range: float
+        required: false
+      is_sm:
+        name: is_sm
+        range: string
+        required: false
+  img_compound_activity:
+    name: img_compound_activity
+    attributes:
+      compound_oid:
+        name: compound_oid
+        range: integer
+        required: false
+      activity:
+        name: activity
+        range: string
+        required: false
+  img_compound_aliases:
+    name: img_compound_aliases
+    attributes:
+      compound_oid:
+        name: compound_oid
+        description: Foreign key to img_compound
+        range: img_compound
+        required: false
+      aliases:
+        name: aliases
+        range: string
+        required: false
+  img_compound_ext_links:
+    name: img_compound_ext_links
+    attributes:
+      compound_oid:
+        name: compound_oid
+        description: Foreign key to img_compound
+        range: img_compound
+        required: false
+      db_name:
+        name: db_name
+        description: Foreign key to db_source
+        range: db_source
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+  img_compound_kegg_compounds:
+    name: img_compound_kegg_compounds
+    attributes:
+      compound_oid:
+        name: compound_oid
+        description: Foreign key to img_compound
+        range: img_compound
+        required: false
+      compound:
+        name: compound
+        range: string
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+  img_compound_meshd_tree:
+    name: img_compound_meshd_tree
+    attributes:
+      compound_oid:
+        name: compound_oid
+        range: float
+        required: false
+      node:
+        name: node
+        range: string
+        required: false
+  img_gold_phenotype:
+    name: img_gold_phenotype
+    attributes:
+      cv_type:
+        name: cv_type
+        range: string
+        required: false
+      cv_value:
+        name: cv_value
+        range: string
+        required: false
+  img_job_paramcv:
+    name: img_job_paramcv
+    attributes:
+      cv_term:
+        name: cv_term
+        range: string
+        required: false
+  img_job_statuscv:
+    name: img_job_statuscv
+    attributes:
+      cv_term:
+        name: cv_term
+        range: string
+        required: false
+  img_job_typecv:
+    name: img_job_typecv
+    attributes:
+      cv_term:
+        name: cv_term
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+  img_parts_list:
+    name: img_parts_list
+    attributes:
+      parts_list_oid:
+        name: parts_list_oid
+        range: integer
+        required: false
+      parts_list_name:
+        name: parts_list_name
+        range: string
+        required: false
+      definition:
+        name: definition
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+  img_parts_list_backup:
+    name: img_parts_list_backup
+    attributes:
+      parts_list_oid:
+        name: parts_list_oid
+        range: integer
+        required: false
+      parts_list_name:
+        name: parts_list_name
+        range: string
+        required: false
+      definition:
+        name: definition
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+  img_parts_list_history:
+    name: img_parts_list_history
+    attributes:
+      annot_oid:
+        name: annot_oid
+        range: integer
+        required: false
+      author:
+        name: author
+        range: string
+        required: false
+      contact:
+        name: contact
+        range: integer
+        required: false
+      img_build:
+        name: img_build
+        range: integer
+        required: false
+      parts_list_oid:
+        name: parts_list_oid
+        range: integer
+        required: false
+      parts_list:
+        name: parts_list
+        range: integer
+        required: false
+      parts_list_old:
+        name: parts_list_old
+        range: string
+        required: false
+      parts_list_new:
+        name: parts_list_new
+        range: string
+        required: false
+      action:
+        name: action
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+  img_parts_list_img_terms:
+    name: img_parts_list_img_terms
+    attributes:
+      parts_list_oid:
+        name: parts_list_oid
+        range: integer
+        required: false
+      list_order:
+        name: list_order
+        range: integer
+        required: false
+      term:
+        name: term
+        description: Foreign key to img_term
+        range: img_term
+        required: false
+  img_pathway:
+    name: img_pathway
+    attributes:
+      pathway_oid:
+        name: pathway_oid
+        range: integer
+        required: false
+      pathway_name:
+        name: pathway_name
+        range: string
+        required: false
+      handle:
+        name: handle
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      is_valid:
+        name: is_valid
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+  img_pathway_assertions:
+    name: img_pathway_assertions
+    attributes:
+      pathway_oid:
+        name: pathway_oid
+        description: Foreign key to img_pathway
+        range: img_pathway
+        required: false
+      taxon_node:
+        name: taxon_node
+        range: integer
+        required: false
+      status:
+        name: status
+        description: Foreign key to assertioncv
+        range: assertioncv
+        required: false
+      evidence:
+        name: evidence
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+  img_pathway_c_components:
+    name: img_pathway_c_components
+    attributes:
+      pathway_oid:
+        name: pathway_oid
+        description: Foreign key to img_pathway
+        range: img_pathway
+        required: false
+      c_type:
+        name: c_type
+        description: Foreign key to componentcv
+        range: componentcv
+        required: false
+      stoich:
+        name: stoich
+        range: integer
+        required: false
+      compound:
+        name: compound
+        description: Foreign key to img_compound
+        range: img_compound
+        required: false
+      main_flag:
+        name: main_flag
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+  img_pathway_history:
+    name: img_pathway_history
+    attributes:
+      annot_oid:
+        name: annot_oid
+        range: integer
+        required: false
+      author:
+        name: author
+        range: string
+        required: false
+      contact:
+        name: contact
+        range: integer
+        required: false
+      img_build:
+        name: img_build
+        description: Foreign key to img_build_history
+        range: img_build_history
+        required: false
+      pathway_oid:
+        name: pathway_oid
+        range: integer
+        required: false
+      pathway:
+        name: pathway
+        description: Foreign key to img_pathway
+        range: img_pathway
+        required: false
+      prev_build_pathway_oid:
+        name: prev_build_pathway_oid
+        range: integer
+        required: false
+      pathway_name_old:
+        name: pathway_name_old
+        range: string
+        required: false
+      handle_old:
+        name: handle_old
+        range: string
+        required: false
+      pathway_name_new:
+        name: pathway_name_new
+        range: string
+        required: false
+      handle_new:
+        name: handle_new
+        range: string
+        required: false
+      action:
+        name: action
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+  img_pathway_reactions:
+    name: img_pathway_reactions
+    attributes:
+      pathway_oid:
+        name: pathway_oid
+        description: Foreign key to img_pathway
+        range: img_pathway
+        required: false
+      rxn_order:
+        name: rxn_order
+        range: integer
+        required: false
+      is_mandatory:
+        name: is_mandatory
+        range: string
+        required: false
+      rxn:
+        name: rxn
+        description: Foreign key to img_reaction
+        range: img_reaction
+        required: false
+  img_pathway_t_components:
+    name: img_pathway_t_components
+    attributes:
+      pathway_oid:
+        name: pathway_oid
+        description: Foreign key to img_pathway
+        range: img_pathway
+        required: false
+      c_type:
+        name: c_type
+        description: Foreign key to componentcv
+        range: componentcv
+        required: false
+      stoich:
+        name: stoich
+        range: integer
+        required: false
+      term:
+        name: term
+        description: Foreign key to img_term
+        range: img_term
+        required: false
+      main_flag:
+        name: main_flag
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+  img_pathway_taxons:
+    name: img_pathway_taxons
+    attributes:
+      pathway_oid:
+        name: pathway_oid
+        description: Foreign key to img_pathway
+        range: img_pathway
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+      confidence:
+        name: confidence
+        range: string
+        required: false
+      evidence:
+        name: evidence
+        range: string
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      status:
+        name: status
+        description: Foreign key to statuscv
+        range: statuscv
+        required: false
+  img_reaction:
+    name: img_reaction
+    attributes:
+      rxn_oid:
+        name: rxn_oid
+        range: integer
+        required: false
+      rxn_name:
+        name: rxn_name
+        range: string
+        required: false
+      rxn_definition:
+        name: rxn_definition
+        range: string
+        required: false
+      rxn_equation:
+        name: rxn_equation
+        range: string
+        required: false
+      is_reversible:
+        name: is_reversible
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      rxn_type:
+        name: rxn_type
+        range: string
+        required: false
+  img_reaction_assoc_networks:
+    name: img_reaction_assoc_networks
+    attributes:
+      rxn_oid:
+        name: rxn_oid
+        description: Foreign key to img_reaction
+        range: img_reaction
+        required: false
+      network:
+        name: network
+        description: Foreign key to pathway_network
+        range: pathway_network
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+  img_reaction_assoc_paths:
+    name: img_reaction_assoc_paths
+    attributes:
+      rxn_oid:
+        name: rxn_oid
+        description: Foreign key to img_reaction
+        range: img_reaction
+        required: false
+      pathway:
+        name: pathway
+        description: Foreign key to img_pathway
+        range: img_pathway
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+  img_reaction_assoc_rxns:
+    name: img_reaction_assoc_rxns
+    attributes:
+      rxn_oid:
+        name: rxn_oid
+        description: Foreign key to img_reaction
+        range: img_reaction
+        required: false
+      rxn:
+        name: rxn
+        description: Foreign key to img_reaction
+        range: img_reaction
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+  img_reaction_c_components:
+    name: img_reaction_c_components
+    attributes:
+      rxn_oid:
+        name: rxn_oid
+        description: Foreign key to img_reaction
+        range: img_reaction
+        required: false
+      c_type:
+        name: c_type
+        description: Foreign key to componentcv
+        range: componentcv
+        required: false
+      stoich:
+        name: stoich
+        range: integer
+        required: false
+      compound:
+        name: compound
+        description: Foreign key to img_compound
+        range: img_compound
+        required: false
+      main_flag:
+        name: main_flag
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+      sub_cell_loc:
+        name: sub_cell_loc
+        description: Foreign key to cell_localization
+        range: cell_localization
+        required: false
+  img_reaction_catalysts:
+    name: img_reaction_catalysts
+    attributes:
+      rxn_oid:
+        name: rxn_oid
+        description: Foreign key to img_reaction
+        range: img_reaction
+        required: false
+      catalysts:
+        name: catalysts
+        description: Foreign key to img_term
+        range: img_term
+        required: false
+  img_reaction_ext_links:
+    name: img_reaction_ext_links
+    attributes:
+      rxn_oid:
+        name: rxn_oid
+        description: Foreign key to img_reaction
+        range: img_reaction
+        required: false
+      db_name:
+        name: db_name
+        description: Foreign key to db_source
+        range: db_source
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+  img_reaction_t_components:
+    name: img_reaction_t_components
+    attributes:
+      rxn_oid:
+        name: rxn_oid
+        description: Foreign key to img_reaction
+        range: img_reaction
+        required: false
+      c_type:
+        name: c_type
+        description: Foreign key to componentcv
+        range: componentcv
+        required: false
+      stoich:
+        name: stoich
+        range: integer
+        required: false
+      term:
+        name: term
+        description: Foreign key to img_term
+        range: img_term
+        required: false
+      main_flag:
+        name: main_flag
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+      sub_cell_loc:
+        name: sub_cell_loc
+        description: Foreign key to cell_localization
+        range: cell_localization
+        required: false
+  img_term:
+    name: img_term
+    attributes:
+      term_oid:
+        name: term_oid
+        range: integer
+        required: false
+      term:
+        name: term
+        range: string
+        required: false
+      term_type:
+        name: term_type
+        description: Foreign key to imgtermcv
+        range: imgtermcv
+        required: false
+      definition:
+        name: definition
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      is_root:
+        name: is_root
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      is_valid:
+        name: is_valid
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+      pubmed_id:
+        name: pubmed_id
+        range: string
+        required: false
+  img_term_children:
+    name: img_term_children
+    attributes:
+      term_oid:
+        name: term_oid
+        description: Foreign key to img_term
+        range: img_term
+        required: false
+      child:
+        name: child
+        description: Foreign key to img_term
+        range: img_term
+        required: false
+      rel_type:
+        name: rel_type
+        range: integer
+        required: false
+      c_order:
+        name: c_order
+        range: integer
+        required: false
+  img_term_enzymes:
+    name: img_term_enzymes
+    attributes:
+      term_oid:
+        name: term_oid
+        description: Foreign key to img_term
+        range: img_term
+        required: false
+      enzymes:
+        name: enzymes
+        range: string
+        required: false
+  img_term_graph_path:
+    name: img_term_graph_path
+    attributes:
+      graph_path_oid:
+        name: graph_path_oid
+        range: integer
+        required: false
+      term_1:
+        name: term_1
+        description: Foreign key to img_term
+        range: img_term
+        required: false
+      term_2:
+        name: term_2
+        description: Foreign key to img_term
+        range: img_term
+        required: false
+      distance:
+        name: distance
+        range: integer
+        required: false
+  img_term_history:
+    name: img_term_history
+    attributes:
+      annot_oid:
+        name: annot_oid
+        range: integer
+        required: false
+      author:
+        name: author
+        range: string
+        required: false
+      contact:
+        name: contact
+        range: integer
+        required: false
+      img_build:
+        name: img_build
+        description: Foreign key to img_build_history
+        range: img_build_history
+        required: false
+      term_oid:
+        name: term_oid
+        range: integer
+        required: false
+      term:
+        name: term
+        description: Foreign key to img_term
+        range: img_term
+        required: false
+      prev_build_term_oid:
+        name: prev_build_term_oid
+        range: integer
+        required: false
+      term_old:
+        name: term_old
+        range: string
+        required: false
+      term_new:
+        name: term_new
+        range: string
+        required: false
+      term_type_old:
+        name: term_type_old
+        range: string
+        required: false
+      term_type_new:
+        name: term_type_new
+        range: string
+        required: false
+      action:
+        name: action
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+  img_term_synonyms:
+    name: img_term_synonyms
+    attributes:
+      term_oid:
+        name: term_oid
+        description: Foreign key to img_term
+        range: img_term
+        required: false
+      synonyms:
+        name: synonyms
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      a_flag:
+        name: a_flag
+        range: string
+        required: false
+  imgtermcv:
+    name: imgtermcv
+    attributes:
+      term_cv:
+        name: term_cv
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+  mesh_dtree:
+    name: mesh_dtree
+    attributes:
+      name:
+        name: name
+        range: string
+        required: false
+      node:
+        name: node
+        range: string
+        required: false
+  mygene:
+    name: mygene
+    attributes:
+      mygene_oid:
+        name: mygene_oid
+        range: integer
+        required: false
+      gene_symbol:
+        name: gene_symbol
+        range: string
+        required: false
+      gene_display_name:
+        name: gene_display_name
+        range: string
+        required: false
+      product_name:
+        name: product_name
+        range: string
+        required: false
+      ec_number:
+        name: ec_number
+        range: string
+        required: false
+      locus_tag:
+        name: locus_tag
+        range: string
+        required: false
+      locus_type:
+        name: locus_type
+        range: string
+        required: false
+      scaffold:
+        name: scaffold
+        range: integer
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+      strand:
+        name: strand
+        range: string
+        required: false
+      dna_seq_length:
+        name: dna_seq_length
+        range: integer
+        required: false
+      aa_seq_length:
+        name: aa_seq_length
+        range: integer
+        required: false
+      is_pseudogene:
+        name: is_pseudogene
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      protein_seq_accid:
+        name: protein_seq_accid
+        range: string
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+      img_orf_type:
+        name: img_orf_type
+        range: string
+        required: false
+      obsolete_flag:
+        name: obsolete_flag
+        range: string
+        required: false
+      aa_residue:
+        name: aa_residue
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      hitgene_oid:
+        name: hitgene_oid
+        range: integer
+        required: false
+      dna_coords:
+        name: dna_coords
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+      replacing_gene:
+        name: replacing_gene
+        range: string
+        required: false
+      created_by:
+        name: created_by
+        range: integer
+        required: false
+  mygene_img_groups:
+    name: mygene_img_groups
+    attributes:
+      mygene_oid:
+        name: mygene_oid
+        range: float
+        required: false
+      contact_oid:
+        name: contact_oid
+        range: float
+        required: false
+      group_id:
+        name: group_id
+        range: float
+        required: false
+  mygene_terms:
+    name: mygene_terms
+    attributes:
+      mygene_oid:
+        name: mygene_oid
+        range: integer
+        required: false
+      term_oid:
+        name: term_oid
+        range: integer
+        required: false
+      evidence:
+        name: evidence
+        range: string
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+  myimg_bio_cluster_np:
+    name: myimg_bio_cluster_np
+    attributes:
+      cluster_id:
+        name: cluster_id
+        range: string
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      compound_oid:
+        name: compound_oid
+        range: integer
+        required: false
+      ncbi_acc:
+        name: ncbi_acc
+        range: string
+        required: false
+      ncbi_taxon:
+        name: ncbi_taxon
+        range: float
+        required: false
+      is_partial:
+        name: is_partial
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      modified_by:
+        name: modified_by
+        range: float
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+  myimg_job:
+    name: myimg_job
+    attributes:
+      img_job_id:
+        name: img_job_id
+        range: float
+        required: false
+      contact:
+        name: contact
+        range: float
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      status:
+        name: status
+        description: Foreign key to img_job_statuscv
+        range: img_job_statuscv
+        required: false
+      job_type:
+        name: job_type
+        description: Foreign key to img_job_typecv
+        range: img_job_typecv
+        required: false
+      database:
+        name: database
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+      log_file:
+        name: log_file
+        range: string
+        required: false
+      data_path:
+        name: data_path
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      modified_by:
+        name: modified_by
+        range: float
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      admin_notes:
+        name: admin_notes
+        range: string
+        required: false
+      user_notes:
+        name: user_notes
+        range: string
+        required: false
+  myimg_job_parameters:
+    name: myimg_job_parameters
+    attributes:
+      img_job_id:
+        name: img_job_id
+        description: Foreign key to myimg_job
+        range: myimg_job
+        required: false
+      param_type:
+        name: param_type
+        description: Foreign key to img_job_paramcv
+        range: img_job_paramcv
+        required: false
+      param_value:
+        name: param_value
+        range: string
+        required: false
+  myimg_job_users:
+    name: myimg_job_users
+    attributes:
+      img_job_id:
+        name: img_job_id
+        description: Foreign key to myimg_job
+        range: myimg_job
+        required: false
+      users:
+        name: users
+        range: float
+        required: false
+  natural_product:
+    name: natural_product
+    attributes:
+      np_id:
+        name: np_id
+        range: float
+        required: false
+      np_product_name:
+        name: np_product_name
+        range: string
+        required: false
+      np_product_link:
+        name: np_product_link
+        range: string
+        required: false
+      project_oid:
+        name: project_oid
+        range: float
+        required: false
+      taxon:
+        name: taxon
+        range: float
+        required: false
+      cluster_id:
+        name: cluster_id
+        range: string
+        required: false
+      genbank_id:
+        name: genbank_id
+        range: string
+        required: false
+      evidence:
+        name: evidence
+        range: string
+        required: false
+      np_type:
+        name: np_type
+        range: string
+        required: false
+      activity:
+        name: activity
+        range: string
+        required: false
+      compound_oid:
+        name: compound_oid
+        range: float
+        required: false
+      modified_by:
+        name: modified_by
+        range: float
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+  np_activity_cv:
+    name: np_activity_cv
+    attributes:
+      cv_term:
+        name: cv_term
+        range: string
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+  np_biosynthesis_source:
+    name: np_biosynthesis_source
+    attributes:
+      cluster_id:
+        name: cluster_id
+        range: string
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      compound_oid:
+        name: compound_oid
+        range: integer
+        required: false
+      ncbi_acc:
+        name: ncbi_acc
+        range: string
+        required: false
+      ncbi_taxon:
+        name: ncbi_taxon
+        range: float
+        required: false
+      is_partial:
+        name: is_partial
+        range: string
+        required: false
+      modified_by:
+        name: modified_by
+        range: float
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+  np_similarity:
+    name: np_similarity
+    attributes:
+      compound_oid1:
+        name: compound_oid1
+        range: integer
+        required: false
+      compound_oid2:
+        name: compound_oid2
+        range: integer
+        required: false
+      sim_score:
+        name: sim_score
+        range: float
+        required: false
+      source:
+        name: source
+        range: string
+        required: false
+  pathway_network:
+    name: pathway_network
+    attributes:
+      network_oid:
+        name: network_oid
+        range: integer
+        required: false
+      network_name:
+        name: network_name
+        range: string
+        required: false
+      eqn_grammer:
+        name: eqn_grammer
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      image_id:
+        name: image_id
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+  pathway_network_c_components:
+    name: pathway_network_c_components
+    attributes:
+      network_oid:
+        name: network_oid
+        description: Foreign key to pathway_network
+        range: pathway_network
+        required: false
+      c_type:
+        name: c_type
+        description: Foreign key to componentcv
+        range: componentcv
+        required: false
+      stoich:
+        name: stoich
+        range: integer
+        required: false
+      compound:
+        name: compound
+        description: Foreign key to img_compound
+        range: img_compound
+        required: false
+      main_flag:
+        name: main_flag
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+  pathway_network_img_pathways:
+    name: pathway_network_img_pathways
+    attributes:
+      network_oid:
+        name: network_oid
+        description: Foreign key to pathway_network
+        range: pathway_network
+        required: false
+      pathway:
+        name: pathway
+        description: Foreign key to img_pathway
+        range: img_pathway
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+  pathway_network_parents:
+    name: pathway_network_parents
+    attributes:
+      network_oid:
+        name: network_oid
+        description: Foreign key to pathway_network
+        range: pathway_network
+        required: false
+      parent:
+        name: parent
+        description: Foreign key to pathway_network
+        range: pathway_network
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+  pathway_network_parts_lists:
+    name: pathway_network_parts_lists
+    attributes:
+      network_oid:
+        name: network_oid
+        description: Foreign key to pathway_network
+        range: pathway_network
+        required: false
+      parts_list:
+        name: parts_list
+        range: integer
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+  pathway_network_t_components:
+    name: pathway_network_t_components
+    attributes:
+      network_oid:
+        name: network_oid
+        description: Foreign key to pathway_network
+        range: pathway_network
+        required: false
+      c_type:
+        name: c_type
+        description: Foreign key to componentcv
+        range: componentcv
+        required: false
+      stoich:
+        name: stoich
+        range: integer
+        required: false
+      term:
+        name: term
+        description: Foreign key to img_term
+        range: img_term
+        required: false
+      main_flag:
+        name: main_flag
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+  pathway_network_taxons:
+    name: pathway_network_taxons
+    attributes:
+      network_oid:
+        name: network_oid
+        description: Foreign key to pathway_network
+        range: pathway_network
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+      confidence:
+        name: confidence
+        range: string
+        required: false
+      evidence:
+        name: evidence
+        range: string
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+  phenotype_rule:
+    name: phenotype_rule
+    attributes:
+      rule_id:
+        name: rule_id
+        range: float
+        required: false
+      cv_type:
+        name: cv_type
+        range: string
+        required: false
+      cv_value:
+        name: cv_value
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      rule:
+        name: rule
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: float
+        required: false
+      rule_type:
+        name: rule_type
+        range: string
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+  phenotype_rule_taxons:
+    name: phenotype_rule_taxons
+    attributes:
+      rule_id:
+        name: rule_id
+        description: Foreign key to phenotype_rule
+        range: phenotype_rule
+        required: false
+      taxon:
+        name: taxon
+        range: float
+        required: false
+      modified_by:
+        name: modified_by
+        range: float
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+  public_set:
+    name: public_set
+    attributes:
+      name:
+        name: name
+        range: string
+        required: false
+      set_type:
+        name: set_type
+        range: string
+        required: false
+      contact_oid:
+        name: contact_oid
+        range: float
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      scaffold_count:
+        name: scaffold_count
+        range: float
+        required: false
+      domain:
+        name: domain
+        range: string
+        required: false
+      phylum:
+        name: phylum
+        range: string
+        required: false
+      ir_class:
+        name: ir_class
+        range: string
+        required: false
+      ir_order:
+        name: ir_order
+        range: string
+        required: false
+      family:
+        name: family
+        range: string
+        required: false
+      genus:
+        name: genus
+        range: string
+        required: false
+      species:
+        name: species
+        range: string
+        required: false
+      set_id:
+        name: set_id
+        range: float
+        required: false
+  statuscv:
+    name: statuscv
+    attributes:
+      term_cv:
+        name: term_cv
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+  taxon_cathfunfam_count:
+    name: taxon_cathfunfam_count
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+      func_id:
+        name: func_id
+        range: string
+        required: false
+      gene_count:
+        name: gene_count
+        range: float
+        required: false
+  taxon_cog_count:
+    name: taxon_cog_count
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+      func_id:
+        name: func_id
+        range: string
+        required: false
+      gene_count:
+        name: gene_count
+        range: float
+        required: false
+  taxon_ec_count:
+    name: taxon_ec_count
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+      func_id:
+        name: func_id
+        range: string
+        required: false
+      gene_count:
+        name: gene_count
+        range: float
+        required: false
+  taxon_ko_count:
+    name: taxon_ko_count
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+      func_id:
+        name: func_id
+        range: string
+        required: false
+      gene_count:
+        name: gene_count
+        range: float
+        required: false
+  taxon_pfam_count:
+    name: taxon_pfam_count
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+      func_id:
+        name: func_id
+        range: string
+        required: false
+      gene_count:
+        name: gene_count
+        range: float
+        required: false
+  taxon_smart_count:
+    name: taxon_smart_count
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+      func_id:
+        name: func_id
+        range: string
+        required: false
+      gene_count:
+        name: gene_count
+        range: float
+        required: false
+  taxon_supfam_count:
+    name: taxon_supfam_count
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+      func_id:
+        name: func_id
+        range: string
+        required: false
+      gene_count:
+        name: gene_count
+        range: float
+        required: false
+  taxon_tigr_count:
+    name: taxon_tigr_count
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+      func_id:
+        name: func_id
+        range: string
+        required: false
+      gene_count:
+        name: gene_count
+        range: float
+        required: false
+  taxon_update_request:
+    name: taxon_update_request
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      requested_by:
+        name: requested_by
+        range: integer
+        required: false
+      request_date:
+        name: request_date
+        range: datetime
+        required: false
+      refresh_date:
+        name: refresh_date
+        range: datetime
+        required: false
+  yesnocv:
+    name: yesnocv
+    attributes:
+      flag_cv:
+        name: flag_cv
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false

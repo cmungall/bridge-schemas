@@ -1,0 +1,945 @@
+@prefix img_rnaseq: <https://w3id.org/jgi/img_rnaseq/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/jgi/img_rnaseq.owl.ttl> a owl:Ontology ;
+    rdfs:label "img_rnaseq" .
+
+img_rnaseq:RnaseqDatasetStats a owl:Class ;
+    rdfs:label "rnaseq_dataset_stats" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:gene_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_rnaseq:gene_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom img_rnaseq:RnaseqDataset ;
+            owl:onProperty img_rnaseq:dataset_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:total_reads_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:dataset_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_rnaseq:avg_reads_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:gene_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:avg_reads_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:avg_reads_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:dataset_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:total_reads_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_rnaseq:total_reads_count ] ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:RnaseqExperimentExtLinks a owl:Class ;
+    rdfs:label "rnaseq_experiment_ext_links" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom img_rnaseq:RnaseqExperiment ;
+            owl:onProperty img_rnaseq:exp_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:db_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:custom_url ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:db_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:db_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:custom_url ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:exp_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:custom_url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:exp_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:id ] ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:RnaseqExperimentPubs a owl:Class ;
+    rdfs:label "rnaseq_experiment_pubs" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:exp_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:pubs ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:pubs ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom img_rnaseq:RnaseqExperiment ;
+            owl:onProperty img_rnaseq:exp_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:pubs ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:exp_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:RnaseqExperimentSop a owl:Class ;
+    rdfs:label "rnaseq_experiment_sop" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:tag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:exp_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom img_rnaseq:RnaseqExperiment ;
+            owl:onProperty img_rnaseq:exp_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:exp_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:tag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:tag ] ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:RnaseqExperimentStats a owl:Class ;
+    rdfs:label "rnaseq_experiment_stats" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:gene_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:gene_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_rnaseq:num_samples ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:num_samples ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:exp_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:num_samples ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom img_rnaseq:RnaseqExperiment ;
+            owl:onProperty img_rnaseq:exp_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_rnaseq:gene_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:exp_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:RnaseqSample a owl:Class ;
+    rdfs:label "rnaseq_sample" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:gold_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_rnaseq:img_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:experiment ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:img_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:in_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:is_public ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:analysis_project_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:er_sample_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:gold_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:img_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:experiment_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:organism_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:experiment_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:er_project_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:sample_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:notes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:obsolete_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_rnaseq:submission_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:obsolete_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:experiment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:organism_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:notes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:dataset_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:in_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:sample_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_rnaseq:project_sample_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:sample_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:obsolete_flag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:project_sample_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:is_public ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:is_public ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:dataset_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:dataset_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_rnaseq:ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_rnaseq:analysis_project_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:sample_origin ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:ncbi_taxon_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:organism_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:experiment_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_rnaseq:er_project_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_rnaseq:er_sample_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_rnaseq:experiment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:sample_origin ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:sample_origin ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_rnaseq:add_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:in_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:er_sample_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:gold_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:project_sample_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:analysis_project_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:notes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:er_project_id ] ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:RnaseqSampleExtLinks a owl:Class ;
+    rdfs:label "rnaseq_sample_ext_links" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:sample_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:db_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:sample_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:sample_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:db_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:custom_url ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:db_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:custom_url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:custom_url ] ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:RnaseqSampleSop a owl:Class ;
+    rdfs:label "rnaseq_sample_sop" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:sample_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:tag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:tag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:sample_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:tag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:sample_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:value ] ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:Usermaster a owl:Class ;
+    rdfs:label "usermaster" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:user_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_rnaseq:user_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:user_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:id_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:id_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:id_type ] ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:RnaseqDataset a owl:Class ;
+    rdfs:label "rnaseq_dataset" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:intergenic_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:quality ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:obsolete_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:gold_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_rnaseq:release_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:sample_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:its_sp_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:submission_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:sample_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:notes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_rnaseq:dataset_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:intergenic_flag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:jgi_rnd_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_rnaseq:reference_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:gold_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:er_project_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:in_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:dataset_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:dataset_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:is_public ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:sample_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_rnaseq:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:is_public ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:er_sample_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:dataset_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_rnaseq:its_ap_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:in_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:dataset_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:er_project_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:pem_value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:intergenic_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_rnaseq:add_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_rnaseq:pem_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_rnaseq:er_sample_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:combined_assembly_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:submission_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:notes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:reference_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:obsolete_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:combined_assembly_flag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:quality ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:analysis_project_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:is_public ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:dataset_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:its_ap_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:notes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_rnaseq:as_read_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:release_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:quality ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:jgi_rnd_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:gold_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:combined_assembly_flag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:obsolete_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:its_ap_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_rnaseq:er_project_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:jgi_rnd_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:reference_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:release_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:analysis_project_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_rnaseq:its_sp_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:its_sp_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:er_sample_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:as_read_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:as_read_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:analysis_project_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:in_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:pem_value ] ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:as_read_count a owl:DatatypeProperty ;
+    rdfs:label "as_read_count" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:avg_reads_count a owl:DatatypeProperty ;
+    rdfs:label "avg_reads_count" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:combined_assembly_flag a owl:DatatypeProperty ;
+    rdfs:label "combined_assembly_flag" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:dataset_type a owl:DatatypeProperty ;
+    rdfs:label "dataset_type" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:exp_contact a owl:DatatypeProperty ;
+    rdfs:label "exp_contact" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:exp_date a owl:DatatypeProperty ;
+    rdfs:label "exp_date" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:exp_name a owl:DatatypeProperty ;
+    rdfs:label "exp_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:experiment a owl:DatatypeProperty ;
+    rdfs:label "experiment" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:experiment_date a owl:DatatypeProperty ;
+    rdfs:label "experiment_date" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:ext_accession a owl:DatatypeProperty ;
+    rdfs:label "ext_accession" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:id_type a owl:DatatypeProperty ;
+    rdfs:label "id_type" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:img_taxon_oid a owl:DatatypeProperty ;
+    rdfs:label "img_taxon_oid" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:intergenic_flag a owl:DatatypeProperty ;
+    rdfs:label "intergenic_flag" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:its_ap_id a owl:DatatypeProperty ;
+    rdfs:label "its_ap_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:its_sp_id a owl:DatatypeProperty ;
+    rdfs:label "its_sp_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:jgi_rnd_flag a owl:DatatypeProperty ;
+    rdfs:label "jgi_rnd_flag" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:method_type a owl:DatatypeProperty ;
+    rdfs:label "method_type" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:ncbi_taxon_id a owl:DatatypeProperty ;
+    rdfs:label "ncbi_taxon_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:num_samples a owl:DatatypeProperty ;
+    rdfs:label "num_samples" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:organism_name a owl:DatatypeProperty ;
+    rdfs:label "organism_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:pem_value a owl:DatatypeProperty ;
+    rdfs:label "pem_value" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:project_name a owl:DatatypeProperty ;
+    rdfs:label "project_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:project_sample_id a owl:DatatypeProperty ;
+    rdfs:label "project_sample_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:pubs a owl:DatatypeProperty ;
+    rdfs:label "pubs" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:quality a owl:DatatypeProperty ;
+    rdfs:label "quality" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:reference_taxon_oid a owl:DatatypeProperty ;
+    rdfs:label "reference_taxon_oid" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:release_date a owl:DatatypeProperty ;
+    rdfs:label "release_date" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:sample_origin a owl:DatatypeProperty ;
+    rdfs:label "sample_origin" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:total_reads_count a owl:DatatypeProperty ;
+    rdfs:label "total_reads_count" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:user_id a owl:DatatypeProperty ;
+    rdfs:label "user_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:RnaseqExperiment a owl:Class ;
+    rdfs:label "rnaseq_experiment" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:notes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:exp_contact ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:exp_contact ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:ext_accession ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_rnaseq:submission_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:exp_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:notes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:submission_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_rnaseq:add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:exp_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:is_public ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:notes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:method_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:exp_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:exp_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_rnaseq:exp_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:method_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:method_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:exp_contact ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:is_public ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:exp_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:exp_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:project_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:in_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:exp_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:project_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:ext_accession ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_rnaseq:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:is_public ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:in_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:project_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:in_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_rnaseq:ext_accession ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_rnaseq:exp_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_rnaseq> .
+
+img_rnaseq:analysis_project_id a owl:DatatypeProperty .
+
+img_rnaseq:custom_url a owl:DatatypeProperty .
+
+img_rnaseq:db_name a owl:DatatypeProperty .
+
+img_rnaseq:description a owl:DatatypeProperty .
+
+img_rnaseq:er_project_id a owl:DatatypeProperty .
+
+img_rnaseq:er_sample_id a owl:DatatypeProperty .
+
+img_rnaseq:gene_count a owl:DatatypeProperty .
+
+img_rnaseq:gold_id a owl:DatatypeProperty .
+
+img_rnaseq:id a owl:DatatypeProperty .
+
+img_rnaseq:obsolete_flag a owl:DatatypeProperty .
+
+img_rnaseq:tag a owl:DatatypeProperty .
+
+img_rnaseq:value a owl:DatatypeProperty .
+
+img_rnaseq:add_date a owl:DatatypeProperty .
+
+img_rnaseq:dataset_oid a owl:DatatypeProperty,
+        owl:ObjectProperty .
+
+img_rnaseq:in_file a owl:DatatypeProperty .
+
+img_rnaseq:is_public a owl:DatatypeProperty .
+
+img_rnaseq:notes a owl:DatatypeProperty .
+
+img_rnaseq:submission_id a owl:DatatypeProperty .
+
+img_rnaseq:sample_oid a owl:DatatypeProperty .
+
+img_rnaseq:exp_oid a owl:DatatypeProperty,
+        owl:ObjectProperty .
+
+

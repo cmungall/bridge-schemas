@@ -1,0 +1,328 @@
+id: https://w3id.org/jgi/jgi_portal
+name: jgi_portal
+title: JGI Portal Database
+description: >-
+  JGI Portal job management and data access system.
+  Manages BLAST jobs, downloads, custom tracks, and user interactions.
+
+  DATABASE: portal-db-1.portal
+  TABLES: 87
+
+  KEY FUNCTIONALITY:
+  - BLAST and alignment job management
+  - Data download tracking and requests
+  - Custom genome browser tracks
+  - Globus transfer management
+  - User favorites and genome admin
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+
+default_range: string
+imports:
+  - linkml:types
+
+enums:
+  JobStatus:
+    permissible_values:
+      pending:
+        description: Job is queued
+      running:
+        description: Job is executing
+      complete:
+        description: Job finished successfully
+      failed:
+        description: Job failed
+
+classes:
+  Job:
+    description: >-
+      Computational job (BLAST, alignment, etc.).
+
+      EXAMPLE:
+      - jobId: 53954770, jobType: webblast, db: Dibbae1, stage: Complete
+    annotations:
+      source_table: jobs
+    attributes:
+      jobId:
+        identifier: true
+        range: integer
+        description: Unique job identifier
+        examples:
+          - value: 53954770
+
+      jobToken:
+        range: integer
+
+      pcsJobId:
+        range: integer
+        description: PCS (Pipeline Control System) job ID
+
+      jobType:
+        range: string
+        description: Type of job (webblast, clustalw, etc.)
+        examples:
+          - value: "webblast"
+
+      jobMode:
+        range: integer
+
+      db:
+        range: string
+        description: Target database/genome
+        examples:
+          - value: "Dibbae1"
+          - value: "Morkaki1"
+
+      inputFiles:
+        range: string
+        description: Path to input files
+
+      outputFiles:
+        range: string
+        description: Path to output files
+
+      inputParams:
+        range: string
+        description: Job parameters (pipe-delimited)
+
+      status:
+        range: integer
+        description: Job status code
+
+      stage:
+        range: string
+        description: Job stage description
+        examples:
+          - value: "Complete"
+
+      schedTime:
+        range: integer
+        description: Scheduled time (Unix timestamp)
+
+      startTime:
+        range: integer
+        description: Start time (Unix timestamp)
+
+      doneTime:
+        range: integer
+        description: Completion time (Unix timestamp)
+
+      email:
+        range: string
+        description: User email for notifications
+
+      inputFileSize:
+        range: integer
+        description: Size of input in bytes
+
+      dataSetName:
+        range: string
+        description: Target dataset name
+        examples:
+          - value: "Dibbae1_AssemblyScaffolds_Repeatmasked"
+
+      datasetCategory:
+        range: string
+        description: Dataset category
+        examples:
+          - value: "Assembly--Repeatmasked"
+
+      engine:
+        range: string
+        description: Compute engine used
+        examples:
+          - value: "aces"
+
+      createdTime:
+        range: integer
+
+      numberOfHits:
+        range: integer
+        description: Number of hits/results
+
+  JobType:
+    description: >-
+      Type of computational job.
+    annotations:
+      source_table: jobTypes
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+      description:
+        range: string
+
+  JobGroup:
+    description: >-
+      Group of related jobs.
+    annotations:
+      source_table: jobGroups
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+
+  AlignmentDb:
+    description: >-
+      Alignment database configuration.
+    annotations:
+      source_table: alignmentDbs
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+      path:
+        range: string
+
+  AlignmentProgram:
+    description: >-
+      Alignment program (BLAST, etc.).
+    annotations:
+      source_table: alignmentPrograms
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+
+  DownloadRequest:
+    description: >-
+      User download request.
+    annotations:
+      source_table: downloadRequests
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      user_id:
+        range: integer
+      status:
+        range: string
+      created_time:
+        range: datetime
+
+  DownloadRequestFile:
+    description: >-
+      File in a download request.
+    annotations:
+      source_table: downloadRequestFiles
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      request_id:
+        range: integer
+        comments:
+          - "Foreign key to DownloadRequest.id"
+      file_path:
+        range: string
+
+  GlobusDownloadRequest:
+    description: >-
+      Globus-based download request.
+    annotations:
+      source_table: globusDownloadRequests
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      globus_identity_id:
+        range: integer
+      endpoint_id:
+        range: string
+
+  GlobusIdentity:
+    description: >-
+      Globus user identity.
+    annotations:
+      source_table: globusIdentities
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      globus_id:
+        range: string
+
+  CustomTrack:
+    description: >-
+      Custom genome browser track.
+    annotations:
+      source_table: customTracks
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      user_id:
+        range: integer
+      name:
+        range: string
+      genome:
+        range: string
+
+  MyFavorite:
+    description: >-
+      User's favorite genomes/datasets.
+    annotations:
+      source_table: myFavorites
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      user_id:
+        range: integer
+      item_type:
+        range: string
+      item_id:
+        range: string
+
+  FungiTaxonomyInfo:
+    description: >-
+      Fungal taxonomy information for MycoCosm.
+    annotations:
+      source_table: fungiTaxonomyInfo
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      portal_name:
+        range: string
+      taxonomy_id:
+        range: integer
+
+  ImgTaxonOid:
+    description: >-
+      IMG taxon OID mapping.
+    annotations:
+      source_table: imgTaxonOids
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      portal_name:
+        range: string
+      img_taxon_oid:
+        range: integer
+
+  KbasePushLog:
+    description: >-
+      Log of data pushes to KBase.
+    annotations:
+      source_table: kbasePushLog
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      genome:
+        range: string
+      push_time:
+        range: datetime
+      status:
+        range: string

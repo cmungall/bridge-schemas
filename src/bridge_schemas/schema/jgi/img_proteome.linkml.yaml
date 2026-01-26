@@ -1,0 +1,830 @@
+name: img_proteome
+id: https://w3id.org/jgi/img_proteome
+imports:
+- linkml:types
+prefixes:
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  img_proteome:
+    prefix_prefix: img_proteome
+    prefix_reference: https://w3id.org/jgi/img_proteome/
+default_prefix: img_proteome
+default_range: string
+classes:
+  contact_protexp_permissions:
+    name: contact_protexp_permissions
+    attributes:
+      contact_oid:
+        name: contact_oid
+        range: integer
+        required: false
+      protexp_permissions:
+        name: protexp_permissions
+        range: integer
+        required: false
+  ms_experiment:
+    name: ms_experiment
+    attributes:
+      exp_oid:
+        name: exp_oid
+        range: integer
+        required: false
+      project_name:
+        name: project_name
+        range: string
+        required: false
+      exp_name:
+        name: exp_name
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      ext_accession:
+        name: ext_accession
+        range: string
+        required: false
+      exp_date:
+        name: exp_date
+        range: string
+        required: false
+      exp_contact:
+        name: exp_contact
+        range: string
+        required: false
+      method_type:
+        name: method_type
+        range: string
+        required: false
+      protein_count:
+        name: protein_count
+        range: integer
+        required: false
+      peptide_count:
+        name: peptide_count
+        range: integer
+        required: false
+      spectra_count:
+        name: spectra_count
+        range: integer
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      notes:
+        name: notes
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+  ms_experiment_ext_links:
+    name: ms_experiment_ext_links
+    attributes:
+      exp_oid:
+        name: exp_oid
+        description: Foreign key to ms_experiment
+        range: ms_experiment
+        required: false
+      db_name:
+        name: db_name
+        range: string
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+      custom_url:
+        name: custom_url
+        range: string
+        required: false
+  ms_experiment_publications:
+    name: ms_experiment_publications
+    attributes:
+      exp_oid:
+        name: exp_oid
+        range: float
+        required: false
+      publications:
+        name: publications
+        range: string
+        required: false
+  ms_experiment_sop:
+    name: ms_experiment_sop
+    attributes:
+      exp_oid:
+        name: exp_oid
+        description: Foreign key to ms_experiment
+        range: ms_experiment
+        required: false
+      tag:
+        name: tag
+        range: string
+        required: false
+      value:
+        name: value
+        range: string
+        required: false
+  ms_peptide:
+    name: ms_peptide
+    attributes:
+      peptide_oid:
+        name: peptide_oid
+        range: integer
+        required: false
+      mass_tag_id:
+        name: mass_tag_id
+        range: string
+        required: false
+      protein:
+        name: protein
+        description: Foreign key to ms_protein
+        range: ms_protein
+        required: false
+      peptide_seq:
+        name: peptide_seq
+        range: string
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+      frame:
+        name: frame
+        range: integer
+        required: false
+      spectrum_ref:
+        name: spectrum_ref
+        range: string
+        required: false
+      tryptic_state:
+        name: tryptic_state
+        range: string
+        required: false
+      first_aa:
+        name: first_aa
+        range: string
+        required: false
+      prev_aa:
+        name: prev_aa
+        range: string
+        required: false
+      max_xcorr:
+        name: max_xcorr
+        range: float
+        required: false
+      max_deltcn:
+        name: max_deltcn
+        range: float
+        required: false
+      max_pep_prob:
+        name: max_pep_prob
+        range: float
+        required: false
+      filter_pass_obs:
+        name: filter_pass_obs
+        range: integer
+        required: false
+      obs_mh:
+        name: obs_mh
+        range: float
+        required: false
+      calc_mh:
+        name: calc_mh
+        range: float
+        required: false
+      ion_perc:
+        name: ion_perc
+        range: float
+        required: false
+      match_spec_cnt:
+        name: match_spec_cnt
+        range: integer
+        required: false
+      notes:
+        name: notes
+        range: string
+        required: false
+      experiment:
+        name: experiment
+        description: Foreign key to ms_experiment
+        range: ms_experiment
+        required: false
+      sample:
+        name: sample
+        range: integer
+        required: false
+      sp_score:
+        name: sp_score
+        range: float
+        required: false
+      sp_rank:
+        name: sp_rank
+        range: integer
+        required: false
+      is_unique:
+        name: is_unique
+        range: string
+        required: false
+      total_intensity:
+        name: total_intensity
+        range: float
+        required: false
+  ms_peptide_old:
+    name: ms_peptide_old
+    attributes:
+      peptide_oid:
+        name: peptide_oid
+        range: integer
+        required: false
+      mass_tag_id:
+        name: mass_tag_id
+        range: string
+        required: false
+      protein:
+        name: protein
+        range: integer
+        required: false
+      peptide_seq:
+        name: peptide_seq
+        range: string
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+      frame:
+        name: frame
+        range: integer
+        required: false
+      spectrum_ref:
+        name: spectrum_ref
+        range: string
+        required: false
+      tryptic_state:
+        name: tryptic_state
+        range: string
+        required: false
+      first_aa:
+        name: first_aa
+        range: string
+        required: false
+      prev_aa:
+        name: prev_aa
+        range: string
+        required: false
+      max_xcorr:
+        name: max_xcorr
+        range: float
+        required: false
+      max_deltcn:
+        name: max_deltcn
+        range: float
+        required: false
+      max_pep_prob:
+        name: max_pep_prob
+        range: float
+        required: false
+      filter_pass_obs:
+        name: filter_pass_obs
+        range: integer
+        required: false
+      obs_mh:
+        name: obs_mh
+        range: float
+        required: false
+      calc_mh:
+        name: calc_mh
+        range: float
+        required: false
+      ion_perc:
+        name: ion_perc
+        range: float
+        required: false
+      match_spec_cnt:
+        name: match_spec_cnt
+        range: integer
+        required: false
+      notes:
+        name: notes
+        range: string
+        required: false
+      experiment:
+        name: experiment
+        range: integer
+        required: false
+      sample:
+        name: sample
+        range: integer
+        required: false
+      sp_score:
+        name: sp_score
+        range: float
+        required: false
+      sp_rank:
+        name: sp_rank
+        range: integer
+        required: false
+      is_unique:
+        name: is_unique
+        range: string
+        required: false
+      total_intensity:
+        name: total_intensity
+        range: float
+        required: false
+  ms_protein:
+    name: ms_protein
+    attributes:
+      protein_oid:
+        name: protein_oid
+        range: integer
+        required: false
+      protein_source_id:
+        name: protein_source_id
+        range: string
+        required: false
+      protein_acc_id:
+        name: protein_acc_id
+        range: string
+        required: false
+      search_engine:
+        name: search_engine
+        range: string
+        required: false
+      search_db:
+        name: search_db
+        range: string
+        required: false
+      score:
+        name: score
+        range: float
+        required: false
+      threshold:
+        name: threshold
+        range: float
+        required: false
+      seq_coverage:
+        name: seq_coverage
+        range: float
+        required: false
+      pep_uniq_cnt:
+        name: pep_uniq_cnt
+        range: integer
+        required: false
+      pep_nonuniq_cnt:
+        name: pep_nonuniq_cnt
+        range: integer
+        required: false
+      pep_tot_cnt:
+        name: pep_tot_cnt
+        range: integer
+        required: false
+      spec_uniq_cnt:
+        name: spec_uniq_cnt
+        range: integer
+        required: false
+      spec_tot_cnt:
+        name: spec_tot_cnt
+        range: integer
+        required: false
+      nsaf_score:
+        name: nsaf_score
+        range: float
+        required: false
+      experiment:
+        name: experiment
+        description: Foreign key to ms_experiment
+        range: ms_experiment
+        required: false
+      sample:
+        name: sample
+        range: integer
+        required: false
+      protein_seq:
+        name: protein_seq
+        range: string
+        required: false
+      locus_tag:
+        name: locus_tag
+        range: string
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+      prot_seq_length:
+        name: prot_seq_length
+        range: integer
+        required: false
+      mol_wt:
+        name: mol_wt
+        range: float
+        required: false
+      pi:
+        name: pi
+        range: float
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      notes:
+        name: notes
+        range: string
+        required: false
+  ms_protein_img_genes:
+    name: ms_protein_img_genes
+    attributes:
+      protein_oid:
+        name: protein_oid
+        description: Foreign key to ms_protein
+        range: ms_protein
+        required: false
+      gene:
+        name: gene
+        range: integer
+        required: false
+      genome:
+        name: genome
+        range: integer
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+  ms_protein_img_genes_old:
+    name: ms_protein_img_genes_old
+    attributes:
+      protein_oid:
+        name: protein_oid
+        range: integer
+        required: false
+      gene:
+        name: gene
+        range: integer
+        required: false
+      genome:
+        name: genome
+        range: integer
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+  ms_protein_old:
+    name: ms_protein_old
+    attributes:
+      protein_oid:
+        name: protein_oid
+        range: integer
+        required: false
+      protein_source_id:
+        name: protein_source_id
+        range: string
+        required: false
+      protein_acc_id:
+        name: protein_acc_id
+        range: string
+        required: false
+      search_engine:
+        name: search_engine
+        range: string
+        required: false
+      search_db:
+        name: search_db
+        range: string
+        required: false
+      score:
+        name: score
+        range: float
+        required: false
+      threshold:
+        name: threshold
+        range: float
+        required: false
+      seq_coverage:
+        name: seq_coverage
+        range: float
+        required: false
+      pep_uniq_cnt:
+        name: pep_uniq_cnt
+        range: integer
+        required: false
+      pep_nonuniq_cnt:
+        name: pep_nonuniq_cnt
+        range: integer
+        required: false
+      pep_tot_cnt:
+        name: pep_tot_cnt
+        range: integer
+        required: false
+      spec_uniq_cnt:
+        name: spec_uniq_cnt
+        range: integer
+        required: false
+      spec_tot_cnt:
+        name: spec_tot_cnt
+        range: integer
+        required: false
+      nsaf_score:
+        name: nsaf_score
+        range: float
+        required: false
+      experiment:
+        name: experiment
+        range: integer
+        required: false
+      sample:
+        name: sample
+        range: integer
+        required: false
+      protein_seq:
+        name: protein_seq
+        range: string
+        required: false
+      locus_tag:
+        name: locus_tag
+        range: string
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+      prot_seq_length:
+        name: prot_seq_length
+        range: integer
+        required: false
+      mol_wt:
+        name: mol_wt
+        range: float
+        required: false
+      pi:
+        name: pi
+        range: float
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      notes:
+        name: notes
+        range: string
+        required: false
+  ms_sample:
+    name: ms_sample
+    attributes:
+      sample_oid:
+        name: sample_oid
+        range: integer
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      sample_origin:
+        name: sample_origin
+        range: string
+        required: false
+      ncbi_taxon_id:
+        name: ncbi_taxon_id
+        range: integer
+        required: false
+      organism_name:
+        name: organism_name
+        range: string
+        required: false
+      img_taxon_oid:
+        name: img_taxon_oid
+        range: integer
+        required: false
+      experiment:
+        name: experiment
+        description: Foreign key to ms_experiment
+        range: ms_experiment
+        required: false
+  ms_sample_ext_links:
+    name: ms_sample_ext_links
+    attributes:
+      sample_oid:
+        name: sample_oid
+        range: integer
+        required: false
+      db_name:
+        name: db_name
+        range: string
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+      custom_url:
+        name: custom_url
+        range: string
+        required: false
+  ms_sample_sop:
+    name: ms_sample_sop
+    attributes:
+      sample_oid:
+        name: sample_oid
+        range: integer
+        required: false
+      tag:
+        name: tag
+        range: string
+        required: false
+      value:
+        name: value
+        range: string
+        required: false
+  plan_table:
+    name: plan_table
+    attributes:
+      statement_id:
+        name: statement_id
+        range: string
+        required: false
+      plan_id:
+        name: plan_id
+        range: float
+        required: false
+      timestamp:
+        name: timestamp
+        range: datetime
+        required: false
+      remarks:
+        name: remarks
+        range: string
+        required: false
+      operation:
+        name: operation
+        range: string
+        required: false
+      options:
+        name: options
+        range: string
+        required: false
+      object_node:
+        name: object_node
+        range: string
+        required: false
+      object_owner:
+        name: object_owner
+        range: string
+        required: false
+      object_name:
+        name: object_name
+        range: string
+        required: false
+      object_alias:
+        name: object_alias
+        range: string
+        required: false
+      object_instance:
+        name: object_instance
+        range: float
+        required: false
+      object_type:
+        name: object_type
+        range: string
+        required: false
+      optimizer:
+        name: optimizer
+        range: string
+        required: false
+      search_columns:
+        name: search_columns
+        range: float
+        required: false
+      id:
+        name: id
+        range: float
+        required: false
+      parent_id:
+        name: parent_id
+        range: float
+        required: false
+      depth:
+        name: depth
+        range: float
+        required: false
+      position:
+        name: position
+        range: float
+        required: false
+      cost:
+        name: cost
+        range: float
+        required: false
+      cardinality:
+        name: cardinality
+        range: float
+        required: false
+      bytes:
+        name: bytes
+        range: float
+        required: false
+      other_tag:
+        name: other_tag
+        range: string
+        required: false
+      partition_start:
+        name: partition_start
+        range: string
+        required: false
+      partition_stop:
+        name: partition_stop
+        range: string
+        required: false
+      partition_id:
+        name: partition_id
+        range: float
+        required: false
+      other:
+        name: other
+        range: string
+        required: false
+      distribution:
+        name: distribution
+        range: string
+        required: false
+      cpu_cost:
+        name: cpu_cost
+        range: float
+        required: false
+      io_cost:
+        name: io_cost
+        range: float
+        required: false
+      temp_space:
+        name: temp_space
+        range: float
+        required: false
+      access_predicates:
+        name: access_predicates
+        range: string
+        required: false
+      filter_predicates:
+        name: filter_predicates
+        range: string
+        required: false
+      projection:
+        name: projection
+        range: string
+        required: false
+      time:
+        name: time
+        range: float
+        required: false
+      qblock_name:
+        name: qblock_name
+        range: string
+        required: false
+      other_xml:
+        name: other_xml
+        range: string
+        required: false

@@ -1,0 +1,5016 @@
+@prefix img_sub: <https://w3id.org/jgi/img_sub/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/jgi/img_sub.owl.ttl> a owl:Ontology ;
+    rdfs:label "img_sub" .
+
+img_sub:AnalysisProjectPermissions a owl:Class ;
+    rdfs:label "analysis_project_permissions" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:gold_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:gold_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:gold_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:contact_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:AnnotationContigsProteinsCounts a owl:Class ;
+    rdfs:label "annotation_contigs_proteins_counts" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:proteins_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:split_number ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:aa_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:split_number ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:aa_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:bp_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:proteins_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:split_number ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:bp_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:contigs_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:bp_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:contigs_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:aa_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:contigs_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:proteins_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:submission_id ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:AnnotationJobSbatchArgs a owl:Class ;
+    rdfs:label "annotation_job_sbatch_args" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:dependency_after ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:dependency_after ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:number_of_array_tasks ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:number_of_array_tasks ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:dependency_after ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:sbatch_args ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:sbatch_args ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:job_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:job_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:job_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:sbatch_args ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:number_of_array_tasks ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:AnnotationJobStats a owl:Class ;
+    rdfs:label "annotation_job_stats" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:job_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:alloc_cpus ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:end_time ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:end_time ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:job_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:job_state ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:job_state ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:submit_time ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:start_time ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:start_time ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:submit_time ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:end_time ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:alloc_cpus ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:alloc_cpus ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:job_state ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:elapsed_time ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:start_time ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:job_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:submit_time ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:elapsed_time ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:elapsed_time ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:AnnotationStepStats a owl:Class ;
+    rdfs:label "annotation_step_stats" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:used_memory_in_kb ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:annotations_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:run_time ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:used_versions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:annotations_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:run_time ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:used_memory_in_kb ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:command ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:used_versions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:cpu_percent ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:cpu_percent ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:command ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:split_number ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:cpu_percent ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:step ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:used_versions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:command ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:split_number ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:annotations_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:used_memory_in_kb ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:run_time ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:step ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:step ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:split_number ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:Announcement a owl:Class ;
+    rdfs:label "announcement" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:notes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:notes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:notes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:modified_by ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:Batch a owl:Class ;
+    rdfs:label "batch" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:batch_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:annot_ready_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:annot_ready_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:finish_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:finish_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:no_submissions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:start_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:finish_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:database ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:start_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:batch_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:batch_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:database ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:no_submissions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:database ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:no_submissions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:annot_ready_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:start_date ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:BinMethodcv a owl:Class ;
+    rdfs:label "bin_methodcv" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:cv_term ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:cv_term ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:cv_term ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:Contact a owl:Class ;
+    rdfs:label "contact" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:img_group ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:caliban_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:caliban_user_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:organization ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:jgi_user ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:city ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:address ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:organization ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:jgi_user ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:img_editing_level ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:opt_in ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:country ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:comments ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:jgi_user ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:caliban_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:img_editor ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:city ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:opt_in ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:email ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:super_user ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:state ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:is_group_account ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:country ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:img_group ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:img_group ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:img_editing_level ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:country ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:username ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:caliban_user_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:organization ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:img_editor ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:department ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:address ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:state ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:comments ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:address ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:city ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:caliban_user_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:phone ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:email ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:keycloak_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:is_group_account ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:password ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:department ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:email ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:state ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:img_editing_level ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:super_user ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:is_group_account ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:password ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:super_user ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:opt_in ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:password ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:img_editor ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:phone ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:username ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:add_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:caliban_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:keycloak_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:comments ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:keycloak_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:department ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:username ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:phone ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:ContactImgGroups a owl:Class ;
+    rdfs:label "contact_img_groups" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:role ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:img_group ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:role ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:role ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:img_group ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:img_group ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:contact_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:ContactJgiAccounts a owl:Class ;
+    rdfs:label "contact_jgi_accounts" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:jgi_user_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:jgi_user_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:jgi_user_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:jgi_user_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:jgi_user_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:jgi_user_name ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:ContactRnaDataPermissions a owl:Class ;
+    rdfs:label "contact_rna_data_permissions" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:dataset_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:dataset_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:dataset_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:ContactRnaexpPermissions a owl:Class ;
+    rdfs:label "contact_rnaexp_permissions" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:rnaexp_permissions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:rnaexp_permissions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:rnaexp_permissions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:contact_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:ContactTaxonPermissions a owl:Class ;
+    rdfs:label "contact_taxon_permissions" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:taxon_permissions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:taxon_permissions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:taxon_permissions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:contact_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:ContactWorkspaceGroup a owl:Class ;
+    rdfs:label "contact_workspace_group" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:data_set_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:data_set_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:data_set_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:data_set_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:group_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:data_set_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:data_set_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:group_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:group_id ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:Countrycv a owl:Class ;
+    rdfs:label "countrycv" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:longitude ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:latitude ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:cv_term ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:longitude ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:longitude ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:cv_term ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:cv_term ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:latitude ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:latitude ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:GeneMyimgEnzymes a owl:Class ;
+    rdfs:label "gene_myimg_enzymes" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:ec_number ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:ec_number ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:gene_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:gene_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:ec_number ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:gene_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:mod_date ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:GeneMyimgFunctions a owl:Class ;
+    rdfs:label "gene_myimg_functions" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:gene_symbol ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:ec_number ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:gene_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:notes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:prot_desc ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:is_pseudogene ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:product_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:obsolete_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:notes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:inference ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:ec_number ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:is_pseudogene ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:gene_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:gene_symbol ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:pubmed_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:is_public ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:inference ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:product_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:prot_desc ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:product_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:obsolete_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:is_public ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:prot_desc ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:gene_symbol ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:gene_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:pubmed_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:is_pseudogene ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:pubmed_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:inference ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:notes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:obsolete_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:ec_number ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:is_public ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:GeneMyimgGroups a owl:Class ;
+    rdfs:label "gene_myimg_groups" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:group_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:gene_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:gene_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:group_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_sub:gene_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_sub:group_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:contact_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:Genecallingcv a owl:Class ;
+    rdfs:label "genecallingcv" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:cv_term ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:cv_order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:cv_order ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:cv_term ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:cv_term ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:cv_order ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:ImgGroup a owl:Class ;
+    rdfs:label "img_group" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:add_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:lead ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:add_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:comments ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:comments ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:group_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:lead ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:group_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:group_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:lead ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:group_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:comments ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:group_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:group_name ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:ImgGroupNews a owl:Class ;
+    rdfs:label "img_group_news" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:news_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:posted_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:group_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:released_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:release_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:news_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:group_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:release_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:group_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:is_public ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:posted_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:posted_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:released_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:is_public ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:news_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:release_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:released_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:is_public ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:KbasePangenome a owl:Class ;
+    rdfs:label "kbase_pangenome" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:gtdb_order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:pangenome_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:gtdb_domain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:rep_clade_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:gtdb_family ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:rep_clade_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:gtdb_phylum ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:gtdb_species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:gtdb_phylum ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:gtdb_genus ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:gtdb_class ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:gtdb_genus ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:pangenome_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:gtdb_family ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:rep_clade_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:gtdb_class ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:gtdb_order ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:gtdb_family ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:gtdb_order ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:gtdb_domain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:gtdb_genus ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:gtdb_species ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:gtdb_class ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:pangenome_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:gtdb_phylum ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:gtdb_domain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:gtdb_species ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:KbasePangenomeMembers a owl:Class ;
+    rdfs:label "kbase_pangenome_members" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:new_completeness ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:checkm_completeness ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:member_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:pangenome_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:member_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:checkm_contamination ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_sub:new_completeness ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_sub:checkm_completeness ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:pangenome_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:pangenome_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:new_completeness ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:checkm_completeness ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_sub:checkm_contamination ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:member_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:checkm_contamination ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:LockStatus a owl:Class ;
+    rdfs:label "lock_status" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:lock_status ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:script ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:lock_status ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:script ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:script ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:lock_status ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:MerfsAggregateFileSize a owl:Class ;
+    rdfs:label "merfs_aggregate_file_size" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:status ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:agg_sum_files ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:end_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_sub:post_aggregate_file_size_gb ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:post_aggregate_file_size_gb ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:start_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:start_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:status ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_sub:pre_aggregate_file_size_gb ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:end_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:status ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:start_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:end_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:post_aggregate_file_size_gb ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:agg_sum_files ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:pre_aggregate_file_size_gb ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:pre_aggregate_file_size_gb ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_sub:agg_sum_files ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:Mygene a owl:Class ;
+    rdfs:label "mygene" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:product_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:is_pseudogene ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:start_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:aa_seq_length ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:obsolete_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:created_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:dna_seq_length ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:hitgene_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:gene_display_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:strand ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:end_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:scaffold ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:scaffold ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:mygene_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:protein_seq_accid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:img_orf_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:locus_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:scaffold ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:obsolete_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:aa_seq_length ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:dna_seq_length ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:is_pseudogene ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:obsolete_flag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:product_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:protein_seq_accid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:created_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:replacing_gene ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:replacing_gene ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:is_public ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:taxon ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:gene_symbol ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:img_orf_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:dna_coords ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:dna_coords ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:aa_residue ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:locus_tag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:taxon ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:product_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:dna_seq_length ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:is_public ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:gene_display_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:strand ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:gene_display_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:aa_seq_length ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:mygene_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:locus_tag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:locus_tag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:mygene_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:is_pseudogene ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:aa_residue ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:locus_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:locus_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:is_public ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:dna_coords ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:strand ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:ec_number ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:hitgene_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:img_orf_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:gene_symbol ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:ec_number ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:taxon ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:ec_number ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:end_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:protein_seq_accid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:gene_symbol ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:hitgene_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:replacing_gene ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:created_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:start_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:aa_residue ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:end_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:start_coord ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:MygeneImgGroups a owl:Class ;
+    rdfs:label "mygene_img_groups" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:group_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:group_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:mygene_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:mygene_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:contact_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_sub:group_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_sub:mygene_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:MyimgBioClusterNp a owl:Class ;
+    rdfs:label "myimg_bio_cluster_np" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:compound_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:is_partial ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_sub:ncbi_taxon ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:compound_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:comments ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:cluster_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:ncbi_taxon ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:compound_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:is_partial ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:is_partial ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:is_public ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:ncbi_acc ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:cluster_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:is_public ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:comments ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:ncbi_acc ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:comments ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:cluster_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:ncbi_acc ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:ncbi_taxon ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:is_public ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:NotToRelease a owl:Class ;
+    rdfs:label "not_to_release" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:add_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:add_date ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:RequestAccount a owl:Class ;
+    rdfs:label "request_account" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:city ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:request_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:city ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:address ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:group_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:organization ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:state ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:phone ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:comments ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:phone ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:assign_contact_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:department ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:request_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:address ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:email ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:email ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:notes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:status ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:title ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:request_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:username ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:country ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:group_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:state ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:username ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:notes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:notes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:comments ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:state ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:country ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:organization ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:email ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:request_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:phone ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:request_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:organization ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:country ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:comments ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:status ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:department ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:status ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:address ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:request_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:assign_contact_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:city ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:assign_contact_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:department ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:group_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:username ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:RequestStatuscv a owl:Class ;
+    rdfs:label "request_statuscv" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:cv_term ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:cv_term ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:cv_term ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:RnaseqNotify a owl:Class ;
+    rdfs:label "rnaseq_notify" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:jgi_rnd_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:notified ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:dual_role ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:email_pm_contact ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:submission_id_url ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:its_apid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:main_contact ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:person_notified ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:jgi_rnd_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:is_img_public ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:project_url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:analysis_project_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:main_contact_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:name_rna_data ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:dataset_oid_spid_list ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:dataset_oid_spid_list ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:dataset_url ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:analysis_project_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:main_contact_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:combined_assembly ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:project ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:projectid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:pi_email ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:sampleid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:reference_taxon_oid_url ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:in_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:in_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:supplemental_contact ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:reference_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:sampleid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:pi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:rna_processed_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:submission_id_url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:name_pm_contact ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:reference_taxon_url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:rna_processed_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:project_url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:loading_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:its_spid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:main_contact ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:database ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:dataset_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:email_pm_contact ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:reference_taxon_oid_url ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:person_notified ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:reference_taxon ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:combined_assembly ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:its_apid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:email_rna_data ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:gold_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:name_pm_contact ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:reference_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:gold_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:project ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:dual_role ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:dataset_oid_spid_list ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:email_rna_data ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:is_img_public ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:loading_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:reference_taxon ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:jgi_rnd_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:loading_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:submission_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:its_apid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:reference_taxon_url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:dataset_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:submission_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:pi_email ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:notified ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:project ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:email_pm_contact ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:project_url ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:database ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:name_rna_data ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:in_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:dataset_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:submission_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:combined_assembly ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:name_rna_data ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:main_contact ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:dataset_url ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:reference_taxon ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:sampleid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:pi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:reference_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:notified ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:main_contact_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:email_rna_data ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:gold_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:is_img_public ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:person_notified ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:dataset_url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:projectid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:projectid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:its_spid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:supplemental_contact ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:dual_role ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:name_pm_contact ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:pi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:its_spid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:reference_taxon_oid_url ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:reference_taxon_url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:database ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:pi_email ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:submission_id_url ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:analysis_project_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:rna_processed_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:supplemental_contact ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:Submission a owl:Class ;
+    rdfs:label "submission" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:img_ec_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:gff_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:replace_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:result_wig_directory ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:seq_coverage_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:all_reads ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_sub:genome_completion ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:assembly_qd_report ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:assembly_qc_report ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:met_processing ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:project_info ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:annotation_version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:unassembled_illum_trim_method ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:result_exp_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:pass_to_qaqc ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:binning_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:set_embargo_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:bam_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:send_email ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:genbank_file ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:submission_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:contigs_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:assembled_seq_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:jgi_rnd_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:img_handler ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:comments ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:remove_duplicate_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:species_code ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:in_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:genome_completion ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:jat_key_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:add_to_portal ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:img_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:stats_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:species_code ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:gene_calling_flag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:bam_file ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:assembly_qc_report ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:pass_to_qaqc ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:contigs_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:img_handler ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:assembled_seq_file ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:is_contaminated ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:singlets_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:refseq_project_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:unassembled_illum_trim_method ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:prev_submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:unassembled_illumina_file ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:assembler_used ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:binning_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:exp_experiment_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:unassembled_454_quality_trim ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:met_processing ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:assembler_used ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:unassembled_454_trim_method ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:mol_topology ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:add_to_portal ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:remove_duplicate_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:replace_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:is_jgi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:reads_for_assembly ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:bam_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:loaded_into_img ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:names_map_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:library_info ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:portal_url ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:scaffold_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:info_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:reference_sub_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:img_beehive ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:assembled_seq_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:unassembled_illumina_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:img_ec_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:seq_status ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:quality_based_trim ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:submission_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:database ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:subtitle ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:genbank_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:approval_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:status ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:rqc_assembly_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:loaded_into_img ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:agp_file ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:passed_quality_chk ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:jgi_rnd_flag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:bin_method ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:mol_topology ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:send_email ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:unassembled_illum_quality_trim ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:analysis_project_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:set_embargo_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:binning_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:gff_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:genome_completion ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:genbank_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:pass_to_qaqc ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:species_code ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:annotation_version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:result_wig_directory ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:mol_topology ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:permute ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:quality_based_trim ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:contigs_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:analysis_project_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:unassembled_454_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:assembly_qd_report ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:subtitle ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:contact ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:contact_email ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:scaffold_count ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:gbk_project_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:admin_notes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:is_img_public ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:send_email ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:contact ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:admin_notes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:genbank_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:genbank_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:agp_file ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:gff_file ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:img_product_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:scaffold_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:img_dev_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:jat_key_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:protein_faa_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:quality_based_trim ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:img_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:comments ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:compute_platform ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:reads_for_assembly ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:sample_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:seq_status ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:h5_files ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:is_img_public ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:stats_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:subtitle ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:stats_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:result_exp_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:img_beehive ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:library_info ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:img_term_transfer_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:submission_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:error_msg ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:contact ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:unassembled_illum_quality_trim ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:gbk_project_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:img_product_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:portal_release_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:rqc_assembly_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:approval_status ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:contact_email ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:project_info ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:unassembled_454_quality_trim ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:is_jgi ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:unassembled_454_trim_method ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:approval_status ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:h5_files ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:img_beehive ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:unassembled_illum_quality_trim ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:reads_for_assembly ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:error_msg ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:img_term_transfer_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:gbk_project_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:seq_coverage_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:unassembled_454_trim_method ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:approval_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:img_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:approved_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:is_contaminated ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:refseq_project_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:pushed_to_met_ws ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:admin_notes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:seq_coverage_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:compute_platform ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:gene_calling_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:refseq_project_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:compute_platform ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:jgi_rnd_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:is_jgi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:protein_faa_file ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:portal_release_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:assembly_qc_report ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:exp_experiment_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:portal_url ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:in_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:prev_submission_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:batch_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:remove_duplicate_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:approved_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:set_embargo_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:status ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:passed_quality_chk ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:img_handler ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:unassembled_454_file ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:in_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:embargo_days ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:file_location ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:error_file ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:pushed_to_met_ws ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:result_exp_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:passed_quality_chk ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:cluster_seq ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:img_ec_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:unassembled_illumina_file ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:jamo_archive ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:img_dev_flag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:unassembled_454_file ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:is_img_public ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:rqc_assembly_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:status ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:bin_method ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:met_processing ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:unassembled_454_quality_trim ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:names_map_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:comments ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:assembly_qd_report ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:protein_faa_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:jat_key_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:unassembled_pacbio_file ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:file_location ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:database ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:embargo_days ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:error_file ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:reference_sub_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:analysis_project_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:file_location ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:approval_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:batch_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:result_wig_directory ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:jamo_archive ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:permute ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:img_product_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:cluster_seq ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:all_reads ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:exp_experiment_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:sample_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:names_map_file ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:approval_status ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:error_msg ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:cluster_seq ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:replace_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:error_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:library_info ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:permute ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:portal_release_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:prev_submission_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:img_term_transfer_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:info_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:agp_file ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:add_to_portal ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:bin_method ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:info_file ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:singlets_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:project_info ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:portal_url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:unassembled_illum_trim_method ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:gene_calling_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:all_reads ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:reference_sub_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:img_dev_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:genbank_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:seq_status ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:singlets_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:assembler_used ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:pushed_to_met_ws ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:embargo_days ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:loaded_into_img ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:batch_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:annotation_version ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:contact_email ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:approved_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:h5_files ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:unassembled_pacbio_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:database ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:is_contaminated ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:source ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:sample_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:source ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:unassembled_pacbio_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:jamo_archive ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:SubmissionDataFiles a owl:Class ;
+    rdfs:label "submission_data_files" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:file_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:file_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:file_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:file_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:md5sum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:file_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:file_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:md5sum ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:md5sum ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:submission_id ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:SubmissionDataFilesDmpath a owl:Class ;
+    rdfs:label "submission_data_files_dmpath" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:restore_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:file_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:file_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:restore_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:file_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:file_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:restore_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:file_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:file_name ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:SubmissionHistory a owl:Class ;
+    rdfs:label "submission_history" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:comments ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:comments ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:comments ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:username ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:status ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:username ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:status ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:username ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:status ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:mod_date ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:SubmissionImgContacts a owl:Class ;
+    rdfs:label "submission_img_contacts" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:img_contacts ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:img_contacts ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:img_contacts ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:submission_id ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:SubmissionProcStats a owl:Class ;
+    rdfs:label "submission_proc_stats" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:median_seq ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:avg_seq ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:standard_dev ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:step ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:total_bases ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:no_pred_features ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:shortest_seq ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:standard_dev ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:shortest_seq ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:step ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:step ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:avg_seq ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:total_seq ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:total_bases ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:picture_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:standard_dev ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:avg_seq ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:type_of_feature ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:total_seq ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:type_of_feature ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:picture_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:no_pred_features ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:type_of_feature ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:median_seq ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:picture_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:longest_seq ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:longest_seq ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:total_seq ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:shortest_seq ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:no_pred_features ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:longest_seq ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:median_seq ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:total_bases ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:SubmissionProcSteps a owl:Class ;
+    rdfs:label "submission_proc_steps" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:program_version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:output_file_format ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:input_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:command_arg ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:command_arg ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:input_file_format ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:step ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:program_used ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:reference_db ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:step ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:reference_db ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:comments ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:input_file ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:start_at ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:comments ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:output_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:program_version ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:input_file_format ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:command_arg ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:end_at ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:reference_db ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:program_version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:input_file_format ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:comments ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:end_at ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:output_file_format ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:output_file ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:start_at ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:input_file ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:output_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:program_used ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:start_at ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:output_file_format ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:end_at ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:step ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:program_used ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:SubmissionQuerycv a owl:Class ;
+    rdfs:label "submission_querycv" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:cv_term ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:cv_term ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:cv_term ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:term_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_sub:term_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:term_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:SubmissionReadsFile a owl:Class ;
+    rdfs:label "submission_reads_file" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:reads_file ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:reads_file ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:reads_file ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:SubmissionSamples a owl:Class ;
+    rdfs:label "submission_samples" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:sample_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:submission_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:sample_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:sample_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:SubmissionStatuscv a owl:Class ;
+    rdfs:label "submission_statuscv" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:term_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:terminal_status ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:cv_term ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:term_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:cv_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:term_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:cv_term ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:terminal_status ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:cv_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:cv_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:terminal_status ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:cv_term ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:TaxonGeneInfo a owl:Class ;
+    rdfs:label "taxon_gene_info" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:min_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:max_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:gene_prefix ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:min_value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:gene_prefix ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:min_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:gene_prefix ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:max_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:max_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:taxon_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:TaxonHistory a owl:Class ;
+    rdfs:label "taxon_history" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:comments_old ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:is_public_new ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:comments_old ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:comments_new ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:is_public_new ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:obsolete_flag_old ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:is_public_old ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:obsolete_flag_new ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:comments_new ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:is_public_old ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:obsolete_flag_new ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:obsolete_flag_old ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:comments_new ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:is_public_old ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_sub:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:is_public_new ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:obsolete_flag_old ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:comments_old ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_sub:mod_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:modified_by ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:obsolete_flag_new ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:TaxonScaffoldInfo a owl:Class ;
+    rdfs:label "taxon_scaffold_info" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:min_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:max_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:scaf_prefix ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:max_value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:scaf_prefix ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:min_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:scaf_prefix ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:max_value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:min_value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_sub:taxon_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:YesnocvSub a owl:Class ;
+    rdfs:label "yesnocv_sub" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:cv_term ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:cv_term ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:cv_term ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:Yesnoonlycv a owl:Class ;
+    rdfs:label "yesnoonlycv" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_sub:cv_term ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_sub:cv_term ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_sub:cv_term ] ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:aa_count a owl:DatatypeProperty ;
+    rdfs:label "aa_count" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:aa_residue a owl:DatatypeProperty ;
+    rdfs:label "aa_residue" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:aa_seq_length a owl:DatatypeProperty ;
+    rdfs:label "aa_seq_length" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:add_to_portal a owl:DatatypeProperty ;
+    rdfs:label "add_to_portal" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:admin_notes a owl:DatatypeProperty ;
+    rdfs:label "admin_notes" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:agg_sum_files a owl:DatatypeProperty ;
+    rdfs:label "agg_sum_files" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:agp_file a owl:DatatypeProperty ;
+    rdfs:label "agp_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:all_reads a owl:DatatypeProperty ;
+    rdfs:label "all_reads" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:alloc_cpus a owl:DatatypeProperty ;
+    rdfs:label "alloc_cpus" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:annot_ready_date a owl:DatatypeProperty ;
+    rdfs:label "annot_ready_date" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:annotation_version a owl:DatatypeProperty ;
+    rdfs:label "annotation_version" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:annotations_count a owl:DatatypeProperty ;
+    rdfs:label "annotations_count" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:approval_date a owl:DatatypeProperty ;
+    rdfs:label "approval_date" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:approval_status a owl:DatatypeProperty ;
+    rdfs:label "approval_status" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:approved_by a owl:DatatypeProperty ;
+    rdfs:label "approved_by" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:assembled_seq_file a owl:DatatypeProperty ;
+    rdfs:label "assembled_seq_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:assembler_used a owl:DatatypeProperty ;
+    rdfs:label "assembler_used" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:assembly_qc_report a owl:DatatypeProperty ;
+    rdfs:label "assembly_qc_report" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:assembly_qd_report a owl:DatatypeProperty ;
+    rdfs:label "assembly_qd_report" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:assign_contact_oid a owl:DatatypeProperty ;
+    rdfs:label "assign_contact_oid" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:avg_seq a owl:DatatypeProperty ;
+    rdfs:label "avg_seq" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:bam_file a owl:DatatypeProperty ;
+    rdfs:label "bam_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:bin_method a owl:DatatypeProperty ;
+    rdfs:label "bin_method" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:binning_file a owl:DatatypeProperty ;
+    rdfs:label "binning_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:bp_count a owl:DatatypeProperty ;
+    rdfs:label "bp_count" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:caliban_id a owl:DatatypeProperty ;
+    rdfs:label "caliban_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:caliban_user_name a owl:DatatypeProperty ;
+    rdfs:label "caliban_user_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:checkm_completeness a owl:DatatypeProperty ;
+    rdfs:label "checkm_completeness" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:checkm_contamination a owl:DatatypeProperty ;
+    rdfs:label "checkm_contamination" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:cluster_id a owl:DatatypeProperty ;
+    rdfs:label "cluster_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:cluster_seq a owl:DatatypeProperty ;
+    rdfs:label "cluster_seq" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:combined_assembly a owl:DatatypeProperty ;
+    rdfs:label "combined_assembly" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:command a owl:DatatypeProperty ;
+    rdfs:label "command" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:command_arg a owl:DatatypeProperty ;
+    rdfs:label "command_arg" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:comments_new a owl:DatatypeProperty ;
+    rdfs:label "comments_new" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:comments_old a owl:DatatypeProperty ;
+    rdfs:label "comments_old" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:compound_oid a owl:DatatypeProperty ;
+    rdfs:label "compound_oid" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:compute_platform a owl:DatatypeProperty ;
+    rdfs:label "compute_platform" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:contact a owl:DatatypeProperty ;
+    rdfs:label "contact" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:contact_email a owl:DatatypeProperty ;
+    rdfs:label "contact_email" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:contigs_count a owl:DatatypeProperty ;
+    rdfs:label "contigs_count" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:contigs_file a owl:DatatypeProperty ;
+    rdfs:label "contigs_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:cpu_percent a owl:DatatypeProperty ;
+    rdfs:label "cpu_percent" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:created_by a owl:DatatypeProperty ;
+    rdfs:label "created_by" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:cv_order a owl:DatatypeProperty ;
+    rdfs:label "cv_order" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:cv_type a owl:DatatypeProperty ;
+    rdfs:label "cv_type" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:data_set_name a owl:DatatypeProperty ;
+    rdfs:label "data_set_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:data_set_type a owl:DatatypeProperty ;
+    rdfs:label "data_set_type" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:dataset_oid_spid_list a owl:DatatypeProperty ;
+    rdfs:label "dataset_oid_spid_list" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:dataset_url a owl:DatatypeProperty ;
+    rdfs:label "dataset_url" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:dependency_after a owl:DatatypeProperty ;
+    rdfs:label "dependency_after" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:dna_coords a owl:DatatypeProperty ;
+    rdfs:label "dna_coords" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:dna_seq_length a owl:DatatypeProperty ;
+    rdfs:label "dna_seq_length" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:dual_role a owl:DatatypeProperty ;
+    rdfs:label "dual_role" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:elapsed_time a owl:DatatypeProperty ;
+    rdfs:label "elapsed_time" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:email_pm_contact a owl:DatatypeProperty ;
+    rdfs:label "email_pm_contact" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:email_rna_data a owl:DatatypeProperty ;
+    rdfs:label "email_rna_data" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:embargo_days a owl:DatatypeProperty ;
+    rdfs:label "embargo_days" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:end_at a owl:DatatypeProperty ;
+    rdfs:label "end_at" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:end_coord a owl:DatatypeProperty ;
+    rdfs:label "end_coord" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:end_date a owl:DatatypeProperty ;
+    rdfs:label "end_date" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:end_time a owl:DatatypeProperty ;
+    rdfs:label "end_time" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:error_file a owl:DatatypeProperty ;
+    rdfs:label "error_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:error_msg a owl:DatatypeProperty ;
+    rdfs:label "error_msg" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:exp_experiment_id a owl:DatatypeProperty ;
+    rdfs:label "exp_experiment_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:file_location a owl:DatatypeProperty ;
+    rdfs:label "file_location" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:finish_date a owl:DatatypeProperty ;
+    rdfs:label "finish_date" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:gbk_project_id a owl:DatatypeProperty ;
+    rdfs:label "gbk_project_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:genbank_file a owl:DatatypeProperty ;
+    rdfs:label "genbank_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:genbank_id a owl:DatatypeProperty ;
+    rdfs:label "genbank_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:gene_calling_flag a owl:DatatypeProperty ;
+    rdfs:label "gene_calling_flag" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:gene_display_name a owl:DatatypeProperty ;
+    rdfs:label "gene_display_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:gene_prefix a owl:DatatypeProperty ;
+    rdfs:label "gene_prefix" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:genome_completion a owl:DatatypeProperty ;
+    rdfs:label "genome_completion" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:gff_file a owl:DatatypeProperty ;
+    rdfs:label "gff_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:gtdb_class a owl:DatatypeProperty ;
+    rdfs:label "gtdb_class" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:gtdb_domain a owl:DatatypeProperty ;
+    rdfs:label "gtdb_domain" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:gtdb_family a owl:DatatypeProperty ;
+    rdfs:label "gtdb_family" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:gtdb_genus a owl:DatatypeProperty ;
+    rdfs:label "gtdb_genus" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:gtdb_order a owl:DatatypeProperty ;
+    rdfs:label "gtdb_order" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:gtdb_phylum a owl:DatatypeProperty ;
+    rdfs:label "gtdb_phylum" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:gtdb_species a owl:DatatypeProperty ;
+    rdfs:label "gtdb_species" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:h5_files a owl:DatatypeProperty ;
+    rdfs:label "h5_files" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:hitgene_oid a owl:DatatypeProperty ;
+    rdfs:label "hitgene_oid" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:img_beehive a owl:DatatypeProperty ;
+    rdfs:label "img_beehive" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:img_contacts a owl:DatatypeProperty ;
+    rdfs:label "img_contacts" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:img_dev_flag a owl:DatatypeProperty ;
+    rdfs:label "img_dev_flag" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:img_ec_flag a owl:DatatypeProperty ;
+    rdfs:label "img_ec_flag" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:img_editing_level a owl:DatatypeProperty ;
+    rdfs:label "img_editing_level" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:img_editor a owl:DatatypeProperty ;
+    rdfs:label "img_editor" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:img_handler a owl:DatatypeProperty ;
+    rdfs:label "img_handler" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:img_orf_type a owl:DatatypeProperty ;
+    rdfs:label "img_orf_type" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:img_product_flag a owl:DatatypeProperty ;
+    rdfs:label "img_product_flag" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:img_taxon_oid a owl:DatatypeProperty ;
+    rdfs:label "img_taxon_oid" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:img_term_transfer_date a owl:DatatypeProperty ;
+    rdfs:label "img_term_transfer_date" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:inference a owl:DatatypeProperty ;
+    rdfs:label "inference" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:info_file a owl:DatatypeProperty ;
+    rdfs:label "info_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:input_file a owl:DatatypeProperty ;
+    rdfs:label "input_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:input_file_format a owl:DatatypeProperty ;
+    rdfs:label "input_file_format" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:is_contaminated a owl:DatatypeProperty ;
+    rdfs:label "is_contaminated" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:is_group_account a owl:DatatypeProperty ;
+    rdfs:label "is_group_account" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:is_jgi a owl:DatatypeProperty ;
+    rdfs:label "is_jgi" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:is_partial a owl:DatatypeProperty ;
+    rdfs:label "is_partial" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:is_public_new a owl:DatatypeProperty ;
+    rdfs:label "is_public_new" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:is_public_old a owl:DatatypeProperty ;
+    rdfs:label "is_public_old" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:its_apid a owl:DatatypeProperty ;
+    rdfs:label "its_apid" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:its_spid a owl:DatatypeProperty ;
+    rdfs:label "its_spid" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:jamo_archive a owl:DatatypeProperty ;
+    rdfs:label "jamo_archive" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:jat_key_id a owl:DatatypeProperty ;
+    rdfs:label "jat_key_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:jgi_user a owl:DatatypeProperty ;
+    rdfs:label "jgi_user" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:jgi_user_id a owl:DatatypeProperty ;
+    rdfs:label "jgi_user_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:jgi_user_name a owl:DatatypeProperty ;
+    rdfs:label "jgi_user_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:job_state a owl:DatatypeProperty ;
+    rdfs:label "job_state" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:keycloak_id a owl:DatatypeProperty ;
+    rdfs:label "keycloak_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:latitude a owl:DatatypeProperty ;
+    rdfs:label "latitude" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:lead a owl:DatatypeProperty ;
+    rdfs:label "lead" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:library_info a owl:DatatypeProperty ;
+    rdfs:label "library_info" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:loaded_into_img a owl:DatatypeProperty ;
+    rdfs:label "loaded_into_img" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:loading_date a owl:DatatypeProperty ;
+    rdfs:label "loading_date" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:lock_status a owl:DatatypeProperty ;
+    rdfs:label "lock_status" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:locus_tag a owl:DatatypeProperty ;
+    rdfs:label "locus_tag" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:locus_type a owl:DatatypeProperty ;
+    rdfs:label "locus_type" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:longest_seq a owl:DatatypeProperty ;
+    rdfs:label "longest_seq" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:longitude a owl:DatatypeProperty ;
+    rdfs:label "longitude" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:main_contact a owl:DatatypeProperty ;
+    rdfs:label "main_contact" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:main_contact_name a owl:DatatypeProperty ;
+    rdfs:label "main_contact_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:md5sum a owl:DatatypeProperty ;
+    rdfs:label "md5sum" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:median_seq a owl:DatatypeProperty ;
+    rdfs:label "median_seq" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:member_id a owl:DatatypeProperty ;
+    rdfs:label "member_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:met_processing a owl:DatatypeProperty ;
+    rdfs:label "met_processing" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:mol_topology a owl:DatatypeProperty ;
+    rdfs:label "mol_topology" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:name_pm_contact a owl:DatatypeProperty ;
+    rdfs:label "name_pm_contact" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:name_rna_data a owl:DatatypeProperty ;
+    rdfs:label "name_rna_data" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:names_map_file a owl:DatatypeProperty ;
+    rdfs:label "names_map_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:ncbi_acc a owl:DatatypeProperty ;
+    rdfs:label "ncbi_acc" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:ncbi_taxon a owl:DatatypeProperty ;
+    rdfs:label "ncbi_taxon" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:new_completeness a owl:DatatypeProperty ;
+    rdfs:label "new_completeness" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:news_id a owl:DatatypeProperty ;
+    rdfs:label "news_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:no_pred_features a owl:DatatypeProperty ;
+    rdfs:label "no_pred_features" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:no_submissions a owl:DatatypeProperty ;
+    rdfs:label "no_submissions" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:notified a owl:DatatypeProperty ;
+    rdfs:label "notified" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:number_of_array_tasks a owl:DatatypeProperty ;
+    rdfs:label "number_of_array_tasks" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:obsolete_flag_new a owl:DatatypeProperty ;
+    rdfs:label "obsolete_flag_new" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:obsolete_flag_old a owl:DatatypeProperty ;
+    rdfs:label "obsolete_flag_old" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:opt_in a owl:DatatypeProperty ;
+    rdfs:label "opt_in" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:output_file a owl:DatatypeProperty ;
+    rdfs:label "output_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:output_file_format a owl:DatatypeProperty ;
+    rdfs:label "output_file_format" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:pass_to_qaqc a owl:DatatypeProperty ;
+    rdfs:label "pass_to_qaqc" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:passed_quality_chk a owl:DatatypeProperty ;
+    rdfs:label "passed_quality_chk" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:password a owl:DatatypeProperty ;
+    rdfs:label "password" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:permute a owl:DatatypeProperty ;
+    rdfs:label "permute" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:person_notified a owl:DatatypeProperty ;
+    rdfs:label "person_notified" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:pi a owl:DatatypeProperty ;
+    rdfs:label "pi" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:pi_email a owl:DatatypeProperty ;
+    rdfs:label "pi_email" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:picture_file a owl:DatatypeProperty ;
+    rdfs:label "picture_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:portal_release_date a owl:DatatypeProperty ;
+    rdfs:label "portal_release_date" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:portal_url a owl:DatatypeProperty ;
+    rdfs:label "portal_url" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:post_aggregate_file_size_gb a owl:DatatypeProperty ;
+    rdfs:label "post_aggregate_file_size_gb" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:posted_by a owl:DatatypeProperty ;
+    rdfs:label "posted_by" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:pre_aggregate_file_size_gb a owl:DatatypeProperty ;
+    rdfs:label "pre_aggregate_file_size_gb" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:prev_submission_id a owl:DatatypeProperty ;
+    rdfs:label "prev_submission_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:program_used a owl:DatatypeProperty ;
+    rdfs:label "program_used" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:program_version a owl:DatatypeProperty ;
+    rdfs:label "program_version" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:project a owl:DatatypeProperty ;
+    rdfs:label "project" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:project_info a owl:DatatypeProperty ;
+    rdfs:label "project_info" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:project_url a owl:DatatypeProperty ;
+    rdfs:label "project_url" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:projectid a owl:DatatypeProperty ;
+    rdfs:label "projectid" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:prot_desc a owl:DatatypeProperty ;
+    rdfs:label "prot_desc" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:protein_faa_file a owl:DatatypeProperty ;
+    rdfs:label "protein_faa_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:protein_seq_accid a owl:DatatypeProperty ;
+    rdfs:label "protein_seq_accid" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:proteins_count a owl:DatatypeProperty ;
+    rdfs:label "proteins_count" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:pubmed_id a owl:DatatypeProperty ;
+    rdfs:label "pubmed_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:pushed_to_met_ws a owl:DatatypeProperty ;
+    rdfs:label "pushed_to_met_ws" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:quality_based_trim a owl:DatatypeProperty ;
+    rdfs:label "quality_based_trim" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:reads_file a owl:DatatypeProperty ;
+    rdfs:label "reads_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:reads_for_assembly a owl:DatatypeProperty ;
+    rdfs:label "reads_for_assembly" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:reference_db a owl:DatatypeProperty ;
+    rdfs:label "reference_db" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:reference_sub_id a owl:DatatypeProperty ;
+    rdfs:label "reference_sub_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:reference_taxon a owl:DatatypeProperty ;
+    rdfs:label "reference_taxon" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:reference_taxon_oid a owl:DatatypeProperty ;
+    rdfs:label "reference_taxon_oid" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:reference_taxon_oid_url a owl:DatatypeProperty ;
+    rdfs:label "reference_taxon_oid_url" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:reference_taxon_url a owl:DatatypeProperty ;
+    rdfs:label "reference_taxon_url" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:refseq_project_id a owl:DatatypeProperty ;
+    rdfs:label "refseq_project_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:release_date a owl:DatatypeProperty ;
+    rdfs:label "release_date" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:released_by a owl:DatatypeProperty ;
+    rdfs:label "released_by" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:remove_duplicate_flag a owl:DatatypeProperty ;
+    rdfs:label "remove_duplicate_flag" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:rep_clade_name a owl:DatatypeProperty ;
+    rdfs:label "rep_clade_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:replace_taxon_oid a owl:DatatypeProperty ;
+    rdfs:label "replace_taxon_oid" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:replacing_gene a owl:DatatypeProperty ;
+    rdfs:label "replacing_gene" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:request_date a owl:DatatypeProperty ;
+    rdfs:label "request_date" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:request_oid a owl:DatatypeProperty ;
+    rdfs:label "request_oid" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:restore_date a owl:DatatypeProperty ;
+    rdfs:label "restore_date" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:result_exp_file a owl:DatatypeProperty ;
+    rdfs:label "result_exp_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:result_wig_directory a owl:DatatypeProperty ;
+    rdfs:label "result_wig_directory" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:rna_processed_date a owl:DatatypeProperty ;
+    rdfs:label "rna_processed_date" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:rnaexp_permissions a owl:DatatypeProperty ;
+    rdfs:label "rnaexp_permissions" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:role a owl:DatatypeProperty ;
+    rdfs:label "role" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:rqc_assembly_id a owl:DatatypeProperty ;
+    rdfs:label "rqc_assembly_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:run_time a owl:DatatypeProperty ;
+    rdfs:label "run_time" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:sampleid a owl:DatatypeProperty ;
+    rdfs:label "sampleid" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:sbatch_args a owl:DatatypeProperty ;
+    rdfs:label "sbatch_args" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:scaf_prefix a owl:DatatypeProperty ;
+    rdfs:label "scaf_prefix" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:scaffold a owl:DatatypeProperty ;
+    rdfs:label "scaffold" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:scaffold_count a owl:DatatypeProperty ;
+    rdfs:label "scaffold_count" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:script a owl:DatatypeProperty ;
+    rdfs:label "script" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:send_email a owl:DatatypeProperty ;
+    rdfs:label "send_email" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:seq_coverage_file a owl:DatatypeProperty ;
+    rdfs:label "seq_coverage_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:seq_status a owl:DatatypeProperty ;
+    rdfs:label "seq_status" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:set_embargo_date a owl:DatatypeProperty ;
+    rdfs:label "set_embargo_date" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:shortest_seq a owl:DatatypeProperty ;
+    rdfs:label "shortest_seq" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:singlets_file a owl:DatatypeProperty ;
+    rdfs:label "singlets_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:source a owl:DatatypeProperty ;
+    rdfs:label "source" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:species_code a owl:DatatypeProperty ;
+    rdfs:label "species_code" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:standard_dev a owl:DatatypeProperty ;
+    rdfs:label "standard_dev" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:start_at a owl:DatatypeProperty ;
+    rdfs:label "start_at" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:start_coord a owl:DatatypeProperty ;
+    rdfs:label "start_coord" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:start_time a owl:DatatypeProperty ;
+    rdfs:label "start_time" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:stats_file a owl:DatatypeProperty ;
+    rdfs:label "stats_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:strand a owl:DatatypeProperty ;
+    rdfs:label "strand" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:submission_id_url a owl:DatatypeProperty ;
+    rdfs:label "submission_id_url" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:submit_time a owl:DatatypeProperty ;
+    rdfs:label "submit_time" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:subtitle a owl:DatatypeProperty ;
+    rdfs:label "subtitle" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:super_user a owl:DatatypeProperty ;
+    rdfs:label "super_user" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:supplemental_contact a owl:DatatypeProperty ;
+    rdfs:label "supplemental_contact" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:taxon a owl:DatatypeProperty ;
+    rdfs:label "taxon" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:taxon_permissions a owl:DatatypeProperty ;
+    rdfs:label "taxon_permissions" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:terminal_status a owl:DatatypeProperty ;
+    rdfs:label "terminal_status" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:total_bases a owl:DatatypeProperty ;
+    rdfs:label "total_bases" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:total_seq a owl:DatatypeProperty ;
+    rdfs:label "total_seq" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:type a owl:DatatypeProperty ;
+    rdfs:label "type" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:type_of_feature a owl:DatatypeProperty ;
+    rdfs:label "type_of_feature" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:unassembled_454_file a owl:DatatypeProperty ;
+    rdfs:label "unassembled_454_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:unassembled_454_quality_trim a owl:DatatypeProperty ;
+    rdfs:label "unassembled_454_quality_trim" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:unassembled_454_trim_method a owl:DatatypeProperty ;
+    rdfs:label "unassembled_454_trim_method" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:unassembled_illum_quality_trim a owl:DatatypeProperty ;
+    rdfs:label "unassembled_illum_quality_trim" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:unassembled_illum_trim_method a owl:DatatypeProperty ;
+    rdfs:label "unassembled_illum_trim_method" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:unassembled_illumina_file a owl:DatatypeProperty ;
+    rdfs:label "unassembled_illumina_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:unassembled_pacbio_file a owl:DatatypeProperty ;
+    rdfs:label "unassembled_pacbio_file" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:used_memory_in_kb a owl:DatatypeProperty ;
+    rdfs:label "used_memory_in_kb" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:used_versions a owl:DatatypeProperty ;
+    rdfs:label "used_versions" ;
+    skos:inScheme <https://w3id.org/jgi/img_sub> .
+
+img_sub:address a owl:DatatypeProperty .
+
+img_sub:analysis_project_id a owl:DatatypeProperty .
+
+img_sub:batch_id a owl:DatatypeProperty .
+
+img_sub:city a owl:DatatypeProperty .
+
+img_sub:country a owl:DatatypeProperty .
+
+img_sub:dataset_oid a owl:DatatypeProperty .
+
+img_sub:department a owl:DatatypeProperty .
+
+img_sub:email a owl:DatatypeProperty .
+
+img_sub:file_name a owl:DatatypeProperty .
+
+img_sub:file_type a owl:DatatypeProperty .
+
+img_sub:gene_symbol a owl:DatatypeProperty .
+
+img_sub:gold_id a owl:DatatypeProperty .
+
+img_sub:group_name a owl:DatatypeProperty .
+
+img_sub:img_group a owl:DatatypeProperty .
+
+img_sub:in_file a owl:DatatypeProperty .
+
+img_sub:is_img_public a owl:DatatypeProperty .
+
+img_sub:is_pseudogene a owl:DatatypeProperty .
+
+img_sub:jgi_rnd_flag a owl:DatatypeProperty .
+
+img_sub:job_id a owl:DatatypeProperty .
+
+img_sub:max_value a owl:DatatypeProperty .
+
+img_sub:min_value a owl:DatatypeProperty .
+
+img_sub:mygene_oid a owl:DatatypeProperty .
+
+img_sub:name a owl:DatatypeProperty .
+
+img_sub:obsolete_flag a owl:DatatypeProperty .
+
+img_sub:organization a owl:DatatypeProperty .
+
+img_sub:pangenome_id a owl:DatatypeProperty .
+
+img_sub:phone a owl:DatatypeProperty .
+
+img_sub:product_name a owl:DatatypeProperty .
+
+img_sub:sample_oid a owl:DatatypeProperty .
+
+img_sub:split_number a owl:DatatypeProperty .
+
+img_sub:start_date a owl:DatatypeProperty .
+
+img_sub:state a owl:DatatypeProperty .
+
+img_sub:submission_date a owl:DatatypeProperty .
+
+img_sub:term_oid a owl:DatatypeProperty .
+
+img_sub:database a owl:DatatypeProperty .
+
+img_sub:ec_number a owl:DatatypeProperty .
+
+img_sub:gene_oid a owl:DatatypeProperty .
+
+img_sub:notes a owl:DatatypeProperty .
+
+img_sub:step a owl:DatatypeProperty .
+
+img_sub:title a owl:DatatypeProperty .
+
+img_sub:username a owl:DatatypeProperty .
+
+img_sub:description a owl:DatatypeProperty .
+
+img_sub:is_public a owl:DatatypeProperty .
+
+img_sub:status a owl:DatatypeProperty .
+
+img_sub:group_id a owl:DatatypeProperty .
+
+img_sub:taxon_oid a owl:DatatypeProperty .
+
+img_sub:add_date a owl:DatatypeProperty .
+
+img_sub:comments a owl:DatatypeProperty .
+
+img_sub:cv_term a owl:DatatypeProperty .
+
+img_sub:modified_by a owl:DatatypeProperty .
+
+img_sub:contact_oid a owl:DatatypeProperty .
+
+img_sub:mod_date a owl:DatatypeProperty .
+
+img_sub:submission_id a owl:DatatypeProperty .
+
+

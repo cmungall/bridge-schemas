@@ -1,0 +1,142 @@
+id: https://w3id.org/kbase/kbase_uniref50
+name: kbase_uniref50
+title: UniRef50 Sequence Clusters
+description: >-
+  UniRef50 clustered protein sequences at 50% sequence identity threshold.
+  Part of the UniProt Reference Clusters (UniRef) providing highly compressed
+  clustered sets of sequences from UniProt.
+
+  DATABASE STATISTICS:
+  - Clusters and entities
+  - Cross-references to UniProt entries
+
+  CLUSTERING:
+  UniRef50 clusters sequences at 50% identity and 80% coverage thresholds,
+  providing maximum redundancy reduction while preserving functional diversity.
+  Useful for fast homology searches and reduced database sizes.
+
+  USAGE:
+  Use for broad functional annotation or when searching large sequence sets
+  where redundancy reduction is important.
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  UniRef: https://www.uniprot.org/uniref/
+
+default_range: string
+imports:
+  - linkml:types
+
+classes:
+  Cluster:
+    description: >-
+      UniRef50 protein sequence cluster. Groups proteins with ≥50% sequence
+      identity and ≥80% coverage to a representative sequence.
+    annotations:
+      source_table: cluster
+    attributes:
+      cluster_id:
+        identifier: true
+        range: string
+        description: Unique cluster identifier (CDM UUID)
+
+      name:
+        range: string
+        description: Cluster name with representative protein description
+
+      entity_type:
+        range: string
+        description: Type of entity (protein)
+
+      description:
+        range: string
+        description: Additional cluster description (optional)
+
+      protocol_id:
+        range: string
+        description: Clustering protocol identifier
+
+  ClusterMember:
+    description: >-
+      Member of a UniRef50 cluster. Links individual protein entities
+      to their parent clusters with membership metadata.
+    annotations:
+      source_table: clustermember
+    attributes:
+      cluster_id:
+        range: string
+        description: Parent cluster identifier
+        comments:
+          - "Foreign key to Cluster.cluster_id"
+
+      entity_id:
+        range: string
+        description: Member entity identifier
+        comments:
+          - "Foreign key to Entity.entity_id"
+
+      is_representative:
+        range: boolean
+        description: Whether this member is the cluster representative
+
+      is_seed:
+        range: boolean
+        description: Whether this member was used as clustering seed
+
+      score:
+        range: float
+        description: Membership score/similarity to representative
+
+  CrossReference:
+    description: >-
+      External database cross-reference for entities.
+      Links UniRef entries to UniProt, NCBI, and other databases.
+    annotations:
+      source_table: crossreference
+    attributes:
+      entity_id:
+        range: string
+        description: Entity being cross-referenced
+        comments:
+          - "Foreign key to Entity.entity_id"
+
+      xref_type:
+        range: string
+        description: Type of cross-reference (UniProt, NCBI, etc.)
+
+      xref_value:
+        range: string
+        description: Cross-reference identifier value
+
+  Entity:
+    description: >-
+      Protein entity in the UniRef50 database.
+      Represents individual protein sequences that are members of clusters.
+    annotations:
+      source_table: entity
+    attributes:
+      entity_id:
+        identifier: true
+        range: string
+        description: Unique entity identifier (CDM UUID)
+
+      data_source_entity_id:
+        range: string
+        description: Original UniRef50 identifier
+        pattern: "UniRef50_[A-Z0-9]+"
+
+      entity_type:
+        range: string
+        description: Type of entity
+
+      data_source:
+        range: string
+        description: Source database
+
+      updated:
+        range: datetime
+        description: Last update timestamp
+
+      created:
+        range: datetime
+        description: Creation timestamp

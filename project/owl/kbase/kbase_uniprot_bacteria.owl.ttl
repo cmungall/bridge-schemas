@@ -1,0 +1,456 @@
+@prefix kbase: <https://w3id.org/kbase/kbase_uniprot_bacteria/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/kbase/kbase_uniprot_bacteria.owl.ttl> a owl:Ontology ;
+    rdfs:label "kbase_uniprot_bacteria" .
+
+kbase:UniprotDbAssociationsDelta a owl:Class ;
+    rdfs:label "UniprotDbAssociationsDelta" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:evidence_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:supporting_objects ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:publications ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:publications ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:predicate ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:subject ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:subject ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:predicate ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:object ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:object ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:evidence_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:publications ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:subject ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:supporting_objects ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:object ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:evidence_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:supporting_objects ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:predicate ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> ;
+    kbase:source_table "uniprot_db_associations_delta" .
+
+kbase:UniprotDbEntitiesDelta a owl:Class ;
+    rdfs:label "UniprotDbEntitiesDelta" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:entity_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:uniprot_created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:uniprot_modified ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:uniprot_modified ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:uniprot_modified ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:entity_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:data_source ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:uniprot_created ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:data_source ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:updated ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:updated ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:created ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:entity_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:data_source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:updated ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:uniprot_created ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:version ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> ;
+    kbase:source_table "uniprot_db_entities_delta" .
+
+kbase:UniprotDbIdentifiersDelta a owl:Class ;
+    rdfs:label "UniprotDbIdentifiersDelta" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:identifier ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:identifier ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:identifier ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> ;
+    kbase:source_table "uniprot_db_identifiers_delta" .
+
+kbase:UniprotDbNamesDelta a owl:Class ;
+    rdfs:label "UniprotDbNamesDelta" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:entity_id ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> ;
+    kbase:source_table "uniprot_db_names_delta" .
+
+kbase:UniprotDbProteinsDelta a owl:Class ;
+    rdfs:label "UniprotDbProteinsDelta" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:checksum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:evidence_for_existence ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:modified ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:checksum ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:sequence_version ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:modified ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:mass ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:checksum ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:entry_modified ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:ec_numbers ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:protein_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:mass ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:entry_modified ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:evidence_for_existence ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:length ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:sequence ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:sequence ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:sequence_version ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:length ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:entry_modified ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:ec_numbers ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:ec_numbers ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:sequence_version ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:evidence_for_existence ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:protein_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:sequence ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:modified ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:length ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:protein_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:mass ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> ;
+    kbase:source_table "uniprot_db_proteins_delta" .
+
+kbase:UniprotDbPublicationsDelta a owl:Class ;
+    rdfs:label "UniprotDbPublicationsDelta" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:publication ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:entity_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:publication ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:publication ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> ;
+    kbase:source_table "uniprot_db_publications_delta" .
+
+kbase:checksum a owl:DatatypeProperty ;
+    rdfs:label "checksum" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:created a owl:DatatypeProperty ;
+    rdfs:label "created" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:data_source a owl:DatatypeProperty ;
+    rdfs:label "data_source" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:ec_numbers a owl:DatatypeProperty ;
+    rdfs:label "ec_numbers" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:entity_type a owl:DatatypeProperty ;
+    rdfs:label "entity_type" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:entry_modified a owl:DatatypeProperty ;
+    rdfs:label "entry_modified" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:evidence_for_existence a owl:DatatypeProperty ;
+    rdfs:label "evidence_for_existence" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:evidence_type a owl:DatatypeProperty ;
+    rdfs:label "evidence_type" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:identifier a owl:DatatypeProperty ;
+    rdfs:label "identifier" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:length a owl:DatatypeProperty ;
+    rdfs:label "length" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:mass a owl:DatatypeProperty ;
+    rdfs:label "mass" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:modified a owl:DatatypeProperty ;
+    rdfs:label "modified" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:object a owl:DatatypeProperty ;
+    rdfs:label "object" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:predicate a owl:DatatypeProperty ;
+    rdfs:label "predicate" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:protein_id a owl:DatatypeProperty ;
+    rdfs:label "protein_id" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:publication a owl:DatatypeProperty ;
+    rdfs:label "publication" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:publications a owl:DatatypeProperty ;
+    rdfs:label "publications" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:sequence a owl:DatatypeProperty ;
+    rdfs:label "sequence" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:sequence_version a owl:DatatypeProperty ;
+    rdfs:label "sequence_version" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:subject a owl:DatatypeProperty ;
+    rdfs:label "subject" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:supporting_objects a owl:DatatypeProperty ;
+    rdfs:label "supporting_objects" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:uniprot_created a owl:DatatypeProperty ;
+    rdfs:label "uniprot_created" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:uniprot_modified a owl:DatatypeProperty ;
+    rdfs:label "uniprot_modified" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:updated a owl:DatatypeProperty ;
+    rdfs:label "updated" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:version a owl:DatatypeProperty ;
+    rdfs:label "version" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_uniprot_bacteria> .
+
+kbase:description a owl:DatatypeProperty .
+
+kbase:source a owl:DatatypeProperty .
+
+kbase:entity_id a owl:DatatypeProperty .
+
+

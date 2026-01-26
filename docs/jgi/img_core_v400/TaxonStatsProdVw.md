@@ -1,0 +1,2335 @@
+
+
+# Class: TaxonStatsProdVw 
+
+
+
+URI: [img_core_v400:TaxonStatsProdVw](https://w3id.org/jgi/img_core_v400/TaxonStatsProdVw)
+
+
+
+
+
+```mermaid
+ classDiagram
+    class TaxonStatsProdVw
+    click TaxonStatsProdVw href "../TaxonStatsProdVw/"
+      TaxonStatsProdVw : cds_genes
+        
+      TaxonStatsProdVw : cds_genes_pc
+        
+      TaxonStatsProdVw : cog_clusters
+        
+      TaxonStatsProdVw : crispr_count
+        
+      TaxonStatsProdVw : gc_percent
+        
+      TaxonStatsProdVw : genes_hor_transfer
+        
+      TaxonStatsProdVw : genes_hor_transfer_pc
+        
+      TaxonStatsProdVw : genes_in_bcgs
+        
+      TaxonStatsProdVw : genes_in_bcgs_pc
+        
+      TaxonStatsProdVw : genes_in_cathfunfam
+        
+      TaxonStatsProdVw : genes_in_cathfunfam_pc
+        
+      TaxonStatsProdVw : genes_in_cog
+        
+      TaxonStatsProdVw : genes_in_cog_pc
+        
+      TaxonStatsProdVw : genes_in_enzymes
+        
+      TaxonStatsProdVw : genes_in_enzymes_pc
+        
+      TaxonStatsProdVw : genes_in_kegg
+        
+      TaxonStatsProdVw : genes_in_kegg_pc
+        
+      TaxonStatsProdVw : genes_in_ko
+        
+      TaxonStatsProdVw : genes_in_ko_pc
+        
+      TaxonStatsProdVw : genes_in_kog
+        
+      TaxonStatsProdVw : genes_in_kog_pc
+        
+      TaxonStatsProdVw : genes_in_metacyc
+        
+      TaxonStatsProdVw : genes_in_metacyc_pc
+        
+      TaxonStatsProdVw : genes_in_myimg
+        
+      TaxonStatsProdVw : genes_in_myimg_pc
+        
+      TaxonStatsProdVw : genes_in_paralogs
+        
+      TaxonStatsProdVw : genes_in_paralogs_pc
+        
+      TaxonStatsProdVw : genes_in_pfam
+        
+      TaxonStatsProdVw : genes_in_pfam_pc
+        
+      TaxonStatsProdVw : genes_in_smart
+        
+      TaxonStatsProdVw : genes_in_smart_pc
+        
+      TaxonStatsProdVw : genes_in_sp
+        
+      TaxonStatsProdVw : genes_in_sp_pc
+        
+      TaxonStatsProdVw : genes_in_supfam
+        
+      TaxonStatsProdVw : genes_in_supfam_pc
+        
+      TaxonStatsProdVw : genes_in_tigrfam
+        
+      TaxonStatsProdVw : genes_in_tigrfam_pc
+        
+      TaxonStatsProdVw : genes_not_in_kegg
+        
+      TaxonStatsProdVw : genes_not_in_kegg_pc
+        
+      TaxonStatsProdVw : genes_not_in_ko
+        
+      TaxonStatsProdVw : genes_not_in_ko_pc
+        
+      TaxonStatsProdVw : genes_not_in_metacyc
+        
+      TaxonStatsProdVw : genes_not_in_metacyc_pc
+        
+      TaxonStatsProdVw : genes_not_in_sp
+        
+      TaxonStatsProdVw : genes_not_in_sp_pc
+        
+      TaxonStatsProdVw : genes_obsolete
+        
+      TaxonStatsProdVw : genes_obsolete_pc
+        
+      TaxonStatsProdVw : genes_signalp
+        
+      TaxonStatsProdVw : genes_signalp_pc
+        
+      TaxonStatsProdVw : genes_transmembrane
+        
+      TaxonStatsProdVw : genes_transmembrane_pc
+        
+      TaxonStatsProdVw : genes_w_func_pred
+        
+      TaxonStatsProdVw : genes_w_func_pred_pc
+        
+      TaxonStatsProdVw : kog_clusters
+        
+      TaxonStatsProdVw : mod_date
+        
+      TaxonStatsProdVw : n_scaffolds
+        
+      TaxonStatsProdVw : other_rna_genes
+        
+      TaxonStatsProdVw : other_rna_genes_pc
+        
+      TaxonStatsProdVw : paralog_groups
+        
+      TaxonStatsProdVw : pfam_clusters
+        
+      TaxonStatsProdVw : predicted_plasmid_contigs
+        
+      TaxonStatsProdVw : pseudo_genes
+        
+      TaxonStatsProdVw : pseudo_genes_pc
+        
+      TaxonStatsProdVw : rna_genes
+        
+      TaxonStatsProdVw : rna_genes_pc
+        
+      TaxonStatsProdVw : rrna16s_genes
+        
+      TaxonStatsProdVw : rrna16s_genes_pc
+        
+      TaxonStatsProdVw : rrna18s_genes
+        
+      TaxonStatsProdVw : rrna18s_genes_pc
+        
+      TaxonStatsProdVw : rrna23s_genes
+        
+      TaxonStatsProdVw : rrna23s_genes_pc
+        
+      TaxonStatsProdVw : rrna28s_genes
+        
+      TaxonStatsProdVw : rrna28s_genes_pc
+        
+      TaxonStatsProdVw : rrna5s_genes
+        
+      TaxonStatsProdVw : rrna5s_genes_pc
+        
+      TaxonStatsProdVw : rrna_genes
+        
+      TaxonStatsProdVw : rrna_genes_pc
+        
+      TaxonStatsProdVw : taxon_oid
+        
+      TaxonStatsProdVw : tigrfam_clusters
+        
+      TaxonStatsProdVw : total_a
+        
+      TaxonStatsProdVw : total_bases
+        
+      TaxonStatsProdVw : total_bcgs
+        
+      TaxonStatsProdVw : total_c
+        
+      TaxonStatsProdVw : total_cassettes
+        
+      TaxonStatsProdVw : total_coding_bases
+        
+      TaxonStatsProdVw : total_g
+        
+      TaxonStatsProdVw : total_gatc
+        
+      TaxonStatsProdVw : total_gc
+        
+      TaxonStatsProdVw : total_gene_count
+        
+      TaxonStatsProdVw : total_n
+        
+      TaxonStatsProdVw : total_t
+        
+      TaxonStatsProdVw : total_x
+        
+      TaxonStatsProdVw : trna_genes
+        
+      TaxonStatsProdVw : trna_genes_pc
+        
+      TaxonStatsProdVw : uncharacterized_genes
+        
+      TaxonStatsProdVw : uncharacterized_genes_pc
+        
+      
+```
+
+
+
+
+<!-- no inheritance hierarchy -->
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [taxon_oid](taxon_oid.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [total_gene_count](total_gene_count.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [cds_genes](cds_genes.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [cds_genes_pc](cds_genes_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [rna_genes](rna_genes.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [rna_genes_pc](rna_genes_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [rrna_genes](rrna_genes.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [rrna_genes_pc](rrna_genes_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [rrna5s_genes](rrna5s_genes.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [rrna5s_genes_pc](rrna5s_genes_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [rrna16s_genes](rrna16s_genes.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [rrna16s_genes_pc](rrna16s_genes_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [rrna23s_genes](rrna23s_genes.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [rrna23s_genes_pc](rrna23s_genes_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [trna_genes](trna_genes.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [trna_genes_pc](trna_genes_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [other_rna_genes](other_rna_genes.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [other_rna_genes_pc](other_rna_genes_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [genes_w_func_pred](genes_w_func_pred.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_w_func_pred_pc](genes_w_func_pred_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [genes_in_enzymes](genes_in_enzymes.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_in_enzymes_pc](genes_in_enzymes_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [genes_in_kegg](genes_in_kegg.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_in_kegg_pc](genes_in_kegg_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [genes_not_in_kegg](genes_not_in_kegg.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_not_in_kegg_pc](genes_not_in_kegg_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [genes_in_paralogs](genes_in_paralogs.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_in_paralogs_pc](genes_in_paralogs_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [genes_in_cog](genes_in_cog.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_in_cog_pc](genes_in_cog_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [genes_in_pfam](genes_in_pfam.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_in_pfam_pc](genes_in_pfam_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [genes_in_tigrfam](genes_in_tigrfam.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_in_tigrfam_pc](genes_in_tigrfam_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [pseudo_genes](pseudo_genes.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [pseudo_genes_pc](pseudo_genes_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [genes_in_myimg](genes_in_myimg.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_in_myimg_pc](genes_in_myimg_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [pfam_clusters](pfam_clusters.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [paralog_groups](paralog_groups.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [n_scaffolds](n_scaffolds.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [total_coding_bases](total_coding_bases.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [total_gatc](total_gatc.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [total_g](total_g.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [total_a](total_a.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [total_t](total_t.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [total_c](total_c.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [total_n](total_n.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [total_x](total_x.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [total_gc](total_gc.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [gc_percent](gc_percent.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [total_bases](total_bases.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_obsolete](genes_obsolete.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_obsolete_pc](genes_obsolete_pc.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [mod_date](mod_date.md) | 0..1 <br/> [Datetime](Datetime.md) |  | direct |
+| [rrna18s_genes](rrna18s_genes.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [rrna18s_genes_pc](rrna18s_genes_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [rrna28s_genes](rrna28s_genes.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [rrna28s_genes_pc](rrna28s_genes_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [uncharacterized_genes](uncharacterized_genes.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [uncharacterized_genes_pc](uncharacterized_genes_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [genes_signalp](genes_signalp.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_signalp_pc](genes_signalp_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [genes_transmembrane](genes_transmembrane.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_transmembrane_pc](genes_transmembrane_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [cog_clusters](cog_clusters.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [tigrfam_clusters](tigrfam_clusters.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [total_cassettes](total_cassettes.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_in_metacyc](genes_in_metacyc.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_in_metacyc_pc](genes_in_metacyc_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [genes_not_in_metacyc](genes_not_in_metacyc.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_not_in_metacyc_pc](genes_not_in_metacyc_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [genes_in_ko](genes_in_ko.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_in_ko_pc](genes_in_ko_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [genes_not_in_ko](genes_not_in_ko.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_not_in_ko_pc](genes_not_in_ko_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [genes_hor_transfer](genes_hor_transfer.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_hor_transfer_pc](genes_hor_transfer_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [crispr_count](crispr_count.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_in_sp](genes_in_sp.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_in_sp_pc](genes_in_sp_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [genes_not_in_sp](genes_not_in_sp.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_not_in_sp_pc](genes_not_in_sp_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [genes_in_kog](genes_in_kog.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_in_kog_pc](genes_in_kog_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [kog_clusters](kog_clusters.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_in_supfam](genes_in_supfam.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_in_supfam_pc](genes_in_supfam_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [genes_in_smart](genes_in_smart.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_in_smart_pc](genes_in_smart_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [genes_in_cathfunfam](genes_in_cathfunfam.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_in_cathfunfam_pc](genes_in_cathfunfam_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [total_bcgs](total_bcgs.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_in_bcgs](genes_in_bcgs.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+| [genes_in_bcgs_pc](genes_in_bcgs_pc.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [predicted_plasmid_contigs](predicted_plasmid_contigs.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
+
+
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/jgi/img_core_v400
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | img_core_v400:TaxonStatsProdVw |
+| native | img_core_v400:TaxonStatsProdVw |
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: taxon_stats_prod_vw
+from_schema: https://w3id.org/jgi/img_core_v400
+attributes:
+  taxon_oid:
+    name: taxon_oid
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - asv5_taxons
+    - bcg_taxons
+    - dt_all_phylo_taxon_stats
+    - dt_cog_stats
+    - dt_kog_stats
+    - dt_phylo_taxon_stats
+    - dt_phylodist_new_taxons
+    - dt_phylum_dist_genes
+    - dt_phylum_dist_stats
+    - dt_scog_genes
+    - dt_taxon_kmodule_mcr
+    - img_iuig_tarballs_11202023
+    - img_umag_bin_tarballs_02062024
+    - imgnr_taxons_062123
+    - iso_plasmids
+    - kp_actino
+    - kp_taxons
+    - new_taxons
+    - new_taxons_batch
+    - old_taxons
+    - tarball_refresh_taxons
+    - taxon
+    - taxon_assembly_stats
+    - taxon_cathfunfam_count
+    - taxon_cog_count
+    - taxon_crispr_details
+    - taxon_crispr_summary
+    - taxon_dw
+    - taxon_ec_count
+    - taxon_ext_links
+    - taxon_gene_prefix
+    - taxon_gtdbtk_lineage
+    - taxon_ko_count
+    - taxon_pfam_count
+    - taxon_prod_vw
+    - taxon_replacements
+    - taxon_replacements_view
+    - taxon_scaf_prefix
+    - taxon_smart_count
+    - taxon_smc_stats
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    - taxon_supfam_count
+    - taxon_taxon_scaffold_info
+    - taxon_tigr_count
+    - vw_gold_taxon
+    - vw_taxon_sc
+    range: integer
+    required: false
+  total_gene_count:
+    name: total_gene_count
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  cds_genes:
+    name: cds_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  cds_genes_pc:
+    name: cds_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  rna_genes:
+    name: rna_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  rna_genes_pc:
+    name: rna_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  rrna_genes:
+    name: rrna_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  rrna_genes_pc:
+    name: rrna_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  rrna5s_genes:
+    name: rrna5s_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  rrna5s_genes_pc:
+    name: rrna5s_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  rrna16s_genes:
+    name: rrna16s_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  rrna16s_genes_pc:
+    name: rrna16s_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  rrna23s_genes:
+    name: rrna23s_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  rrna23s_genes_pc:
+    name: rrna23s_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  trna_genes:
+    name: trna_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  trna_genes_pc:
+    name: trna_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  other_rna_genes:
+    name: other_rna_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  other_rna_genes_pc:
+    name: other_rna_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_w_func_pred:
+    name: genes_w_func_pred
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_w_func_pred_pc:
+    name: genes_w_func_pred_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_enzymes:
+    name: genes_in_enzymes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_enzymes_pc:
+    name: genes_in_enzymes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_kegg:
+    name: genes_in_kegg
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_kegg_pc:
+    name: genes_in_kegg_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_not_in_kegg:
+    name: genes_not_in_kegg
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_not_in_kegg_pc:
+    name: genes_not_in_kegg_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_paralogs:
+    name: genes_in_paralogs
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_paralogs_pc:
+    name: genes_in_paralogs_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_cog:
+    name: genes_in_cog
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_cog_pc:
+    name: genes_in_cog_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_pfam:
+    name: genes_in_pfam
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_pfam_pc:
+    name: genes_in_pfam_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_tigrfam:
+    name: genes_in_tigrfam
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_tigrfam_pc:
+    name: genes_in_tigrfam_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  pseudo_genes:
+    name: pseudo_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  pseudo_genes_pc:
+    name: pseudo_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_myimg:
+    name: genes_in_myimg
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_myimg_pc:
+    name: genes_in_myimg_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  pfam_clusters:
+    name: pfam_clusters
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  paralog_groups:
+    name: paralog_groups
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  n_scaffolds:
+    name: n_scaffolds
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_smc_stats
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  total_coding_bases:
+    name: total_coding_bases
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  total_gatc:
+    name: total_gatc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  total_g:
+    name: total_g
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  total_a:
+    name: total_a
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  total_t:
+    name: total_t
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  total_c:
+    name: total_c
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  total_n:
+    name: total_n
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  total_x:
+    name: total_x
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  total_gc:
+    name: total_gc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  gc_percent:
+    name: gc_percent
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - gene
+    - scaffold_stats
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  total_bases:
+    name: total_bases
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_obsolete:
+    name: genes_obsolete
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_obsolete_pc:
+    name: genes_obsolete_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  mod_date:
+    name: mod_date
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - gene
+    - img_orf_type
+    - scaffold_stats
+    - taxon
+    - taxon_prod_vw
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: datetime
+    required: false
+  rrna18s_genes:
+    name: rrna18s_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  rrna18s_genes_pc:
+    name: rrna18s_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  rrna28s_genes:
+    name: rrna28s_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  rrna28s_genes_pc:
+    name: rrna28s_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  uncharacterized_genes:
+    name: uncharacterized_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  uncharacterized_genes_pc:
+    name: uncharacterized_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_signalp:
+    name: genes_signalp
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_signalp_pc:
+    name: genes_signalp_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_transmembrane:
+    name: genes_transmembrane
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_transmembrane_pc:
+    name: genes_transmembrane_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  cog_clusters:
+    name: cog_clusters
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  tigrfam_clusters:
+    name: tigrfam_clusters
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  total_cassettes:
+    name: total_cassettes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_metacyc:
+    name: genes_in_metacyc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_metacyc_pc:
+    name: genes_in_metacyc_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_not_in_metacyc:
+    name: genes_not_in_metacyc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_not_in_metacyc_pc:
+    name: genes_not_in_metacyc_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_ko:
+    name: genes_in_ko
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_ko_pc:
+    name: genes_in_ko_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_not_in_ko:
+    name: genes_not_in_ko
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_not_in_ko_pc:
+    name: genes_not_in_ko_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_hor_transfer:
+    name: genes_hor_transfer
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_hor_transfer_pc:
+    name: genes_hor_transfer_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  crispr_count:
+    name: crispr_count
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_sp:
+    name: genes_in_sp
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_sp_pc:
+    name: genes_in_sp_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_not_in_sp:
+    name: genes_not_in_sp
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_not_in_sp_pc:
+    name: genes_not_in_sp_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_kog:
+    name: genes_in_kog
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_kog_pc:
+    name: genes_in_kog_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  kog_clusters:
+    name: kog_clusters
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_supfam:
+    name: genes_in_supfam
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_supfam_pc:
+    name: genes_in_supfam_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_smart:
+    name: genes_in_smart
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_smart_pc:
+    name: genes_in_smart_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_cathfunfam:
+    name: genes_in_cathfunfam
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_cathfunfam_pc:
+    name: genes_in_cathfunfam_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  total_bcgs:
+    name: total_bcgs
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_bcgs:
+    name: genes_in_bcgs
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_bcgs_pc:
+    name: genes_in_bcgs_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  predicted_plasmid_contigs:
+    name: predicted_plasmid_contigs
+    from_schema: https://w3id.org/jgi/img_core_v400
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: taxon_stats_prod_vw
+from_schema: https://w3id.org/jgi/img_core_v400
+attributes:
+  taxon_oid:
+    name: taxon_oid
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: taxon_oid
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - asv5_taxons
+    - bcg_taxons
+    - dt_all_phylo_taxon_stats
+    - dt_cog_stats
+    - dt_kog_stats
+    - dt_phylo_taxon_stats
+    - dt_phylodist_new_taxons
+    - dt_phylum_dist_genes
+    - dt_phylum_dist_stats
+    - dt_scog_genes
+    - dt_taxon_kmodule_mcr
+    - img_iuig_tarballs_11202023
+    - img_umag_bin_tarballs_02062024
+    - imgnr_taxons_062123
+    - iso_plasmids
+    - kp_actino
+    - kp_taxons
+    - new_taxons
+    - new_taxons_batch
+    - old_taxons
+    - tarball_refresh_taxons
+    - taxon
+    - taxon_assembly_stats
+    - taxon_cathfunfam_count
+    - taxon_cog_count
+    - taxon_crispr_details
+    - taxon_crispr_summary
+    - taxon_dw
+    - taxon_ec_count
+    - taxon_ext_links
+    - taxon_gene_prefix
+    - taxon_gtdbtk_lineage
+    - taxon_ko_count
+    - taxon_pfam_count
+    - taxon_prod_vw
+    - taxon_replacements
+    - taxon_replacements_view
+    - taxon_scaf_prefix
+    - taxon_smart_count
+    - taxon_smc_stats
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    - taxon_supfam_count
+    - taxon_taxon_scaffold_info
+    - taxon_tigr_count
+    - vw_gold_taxon
+    - vw_taxon_sc
+    range: integer
+    required: false
+  total_gene_count:
+    name: total_gene_count
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: total_gene_count
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  cds_genes:
+    name: cds_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: cds_genes
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  cds_genes_pc:
+    name: cds_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: cds_genes_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  rna_genes:
+    name: rna_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: rna_genes
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  rna_genes_pc:
+    name: rna_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: rna_genes_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  rrna_genes:
+    name: rrna_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: rrna_genes
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  rrna_genes_pc:
+    name: rrna_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: rrna_genes_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  rrna5s_genes:
+    name: rrna5s_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: rrna5s_genes
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  rrna5s_genes_pc:
+    name: rrna5s_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: rrna5s_genes_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  rrna16s_genes:
+    name: rrna16s_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: rrna16s_genes
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  rrna16s_genes_pc:
+    name: rrna16s_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: rrna16s_genes_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  rrna23s_genes:
+    name: rrna23s_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: rrna23s_genes
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  rrna23s_genes_pc:
+    name: rrna23s_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: rrna23s_genes_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  trna_genes:
+    name: trna_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: trna_genes
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  trna_genes_pc:
+    name: trna_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: trna_genes_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  other_rna_genes:
+    name: other_rna_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: other_rna_genes
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  other_rna_genes_pc:
+    name: other_rna_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: other_rna_genes_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_w_func_pred:
+    name: genes_w_func_pred
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_w_func_pred
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_w_func_pred_pc:
+    name: genes_w_func_pred_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_w_func_pred_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_enzymes:
+    name: genes_in_enzymes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_enzymes
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_enzymes_pc:
+    name: genes_in_enzymes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_enzymes_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_kegg:
+    name: genes_in_kegg
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_kegg
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_kegg_pc:
+    name: genes_in_kegg_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_kegg_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_not_in_kegg:
+    name: genes_not_in_kegg
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_not_in_kegg
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_not_in_kegg_pc:
+    name: genes_not_in_kegg_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_not_in_kegg_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_paralogs:
+    name: genes_in_paralogs
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_paralogs
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_paralogs_pc:
+    name: genes_in_paralogs_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_paralogs_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_cog:
+    name: genes_in_cog
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_cog
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_cog_pc:
+    name: genes_in_cog_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_cog_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_pfam:
+    name: genes_in_pfam
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_pfam
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_pfam_pc:
+    name: genes_in_pfam_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_pfam_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_tigrfam:
+    name: genes_in_tigrfam
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_tigrfam
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_tigrfam_pc:
+    name: genes_in_tigrfam_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_tigrfam_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  pseudo_genes:
+    name: pseudo_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: pseudo_genes
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  pseudo_genes_pc:
+    name: pseudo_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: pseudo_genes_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_myimg:
+    name: genes_in_myimg
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_myimg
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_myimg_pc:
+    name: genes_in_myimg_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_myimg_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  pfam_clusters:
+    name: pfam_clusters
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: pfam_clusters
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  paralog_groups:
+    name: paralog_groups
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: paralog_groups
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  n_scaffolds:
+    name: n_scaffolds
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: n_scaffolds
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_smc_stats
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  total_coding_bases:
+    name: total_coding_bases
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: total_coding_bases
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  total_gatc:
+    name: total_gatc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: total_gatc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  total_g:
+    name: total_g
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: total_g
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  total_a:
+    name: total_a
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: total_a
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  total_t:
+    name: total_t
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: total_t
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  total_c:
+    name: total_c
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: total_c
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  total_n:
+    name: total_n
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: total_n
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  total_x:
+    name: total_x
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: total_x
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  total_gc:
+    name: total_gc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: total_gc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  gc_percent:
+    name: gc_percent
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: gc_percent
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - gene
+    - scaffold_stats
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  total_bases:
+    name: total_bases
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: total_bases
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_obsolete:
+    name: genes_obsolete
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_obsolete
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_obsolete_pc:
+    name: genes_obsolete_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_obsolete_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  mod_date:
+    name: mod_date
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: mod_date
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - gene
+    - img_orf_type
+    - scaffold_stats
+    - taxon
+    - taxon_prod_vw
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: datetime
+    required: false
+  rrna18s_genes:
+    name: rrna18s_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: rrna18s_genes
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  rrna18s_genes_pc:
+    name: rrna18s_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: rrna18s_genes_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  rrna28s_genes:
+    name: rrna28s_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: rrna28s_genes
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  rrna28s_genes_pc:
+    name: rrna28s_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: rrna28s_genes_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  uncharacterized_genes:
+    name: uncharacterized_genes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: uncharacterized_genes
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  uncharacterized_genes_pc:
+    name: uncharacterized_genes_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: uncharacterized_genes_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_signalp:
+    name: genes_signalp
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_signalp
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_signalp_pc:
+    name: genes_signalp_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_signalp_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_transmembrane:
+    name: genes_transmembrane
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_transmembrane
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_transmembrane_pc:
+    name: genes_transmembrane_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_transmembrane_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  cog_clusters:
+    name: cog_clusters
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: cog_clusters
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  tigrfam_clusters:
+    name: tigrfam_clusters
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: tigrfam_clusters
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  total_cassettes:
+    name: total_cassettes
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: total_cassettes
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_metacyc:
+    name: genes_in_metacyc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_metacyc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_metacyc_pc:
+    name: genes_in_metacyc_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_metacyc_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_not_in_metacyc:
+    name: genes_not_in_metacyc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_not_in_metacyc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_not_in_metacyc_pc:
+    name: genes_not_in_metacyc_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_not_in_metacyc_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_ko:
+    name: genes_in_ko
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_ko
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_ko_pc:
+    name: genes_in_ko_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_ko_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_not_in_ko:
+    name: genes_not_in_ko
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_not_in_ko
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_not_in_ko_pc:
+    name: genes_not_in_ko_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_not_in_ko_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_hor_transfer:
+    name: genes_hor_transfer
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_hor_transfer
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_hor_transfer_pc:
+    name: genes_hor_transfer_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_hor_transfer_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  crispr_count:
+    name: crispr_count
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: crispr_count
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_sp:
+    name: genes_in_sp
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_sp
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_sp_pc:
+    name: genes_in_sp_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_sp_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_not_in_sp:
+    name: genes_not_in_sp
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_not_in_sp
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_not_in_sp_pc:
+    name: genes_not_in_sp_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_not_in_sp_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_kog:
+    name: genes_in_kog
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_kog
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_kog_pc:
+    name: genes_in_kog_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_kog_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  kog_clusters:
+    name: kog_clusters
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: kog_clusters
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_supfam:
+    name: genes_in_supfam
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_supfam
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_supfam_pc:
+    name: genes_in_supfam_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_supfam_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_smart:
+    name: genes_in_smart
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_smart
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_smart_pc:
+    name: genes_in_smart_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_smart_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  genes_in_cathfunfam:
+    name: genes_in_cathfunfam
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_cathfunfam
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_cathfunfam_pc:
+    name: genes_in_cathfunfam_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_cathfunfam_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  total_bcgs:
+    name: total_bcgs
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: total_bcgs
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_bcgs:
+    name: genes_in_bcgs
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_bcgs
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+  genes_in_bcgs_pc:
+    name: genes_in_bcgs_pc
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: genes_in_bcgs_pc
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_prod_vw
+    range: float
+    required: false
+  predicted_plasmid_contigs:
+    name: predicted_plasmid_contigs
+    from_schema: https://w3id.org/jgi/img_core_v400
+    alias: predicted_plasmid_contigs
+    owner: taxon_stats_prod_vw
+    domain_of:
+    - taxon_stats
+    - taxon_stats_merfs
+    - taxon_stats_prod_vw
+    range: integer
+    required: false
+
+```
+</details>

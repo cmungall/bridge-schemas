@@ -1,0 +1,101 @@
+name: img_mysql_img
+id: https://w3id.org/jgi/img_mysql_img
+imports:
+- linkml:types
+prefixes:
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  img_mysql_img:
+    prefix_prefix: img_mysql_img
+    prefix_reference: https://w3id.org/jgi/img_mysql_img/
+default_prefix: img_mysql_img
+default_range: string
+classes:
+  gold_sp_habitat:
+    name: gold_sp_habitat
+    attributes:
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      habitat:
+        name: habitat
+        range: string
+        required: false
+  taxon:
+    name: taxon
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      taxon_display_name:
+        name: taxon_display_name
+        range: string
+        required: false
+      genome_type:
+        name: genome_type
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+      obsolete_flag:
+        name: obsolete_flag
+        range: string
+        required: false
+      ecosystem:
+        name: ecosystem
+        range: string
+        required: false
+      ecosystem_category:
+        name: ecosystem_category
+        range: string
+        required: false
+      ecosystem_type:
+        name: ecosystem_type
+        range: string
+        required: false
+      ecosystem_subtype:
+        name: ecosystem_subtype
+        range: string
+        required: false
+      specific_ecosystem:
+        name: specific_ecosystem
+        range: string
+        required: false
+  taxon_body_site:
+    name: taxon_body_site
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      body_site:
+        name: body_site
+        range: string
+        required: false
+      body_subsite:
+        name: body_subsite
+        range: string
+        required: false
+  taxon_habitat:
+    name: taxon_habitat
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      habitat:
+        name: habitat
+        range: string
+        required: false
+  taxon_vrpr:
+    name: taxon_vrpr
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false

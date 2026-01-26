@@ -1,0 +1,379 @@
+id: https://w3id.org/kbase/phagefoundry_strain_modelling
+name: phagefoundry_strain_modelling
+title: PhageFoundry Strain Modelling Database
+description: >-
+  PhageFoundry strain modelling database for phage-host interaction studies.
+  Contains organisms, genomes, genes, experiments, and interaction data
+  for understanding phage-bacteria dynamics.
+
+  DATABASE STATISTICS:
+  - 284 organisms (primarily E. coli strains)
+  - Genome sets, sequences, and gene annotations
+  - Experimental data with metrics and features
+  - Protein family and interaction data
+
+  TABLE STRUCTURE (18 tables):
+  - Core: strainmodelling_organism, strainmodelling_genome, strainmodelling_sequence, strainmodelling_gene
+  - Metadata: strainmodelling_organism_metadata, strainmodelling_genome_set, strainmodelling_genome_set_genomes
+  - Experiments: strainmodelling_experiment, strainmodelling_experiment_metadata, strainmodelling_experiment_metric
+  - Features: strainmodelling_feature, strainmodelling_feature_metric, strainmodelling_feature_intervals
+  - Analysis: strainmodelling_interaction, strainmodelling_interval
+  - Protein families: strainmodelling_protein_family, strainmodelling_protein_family_genes, strainmodelling_protein_family_features
+
+  PROJECT CONTEXT:
+  Supports computational modelling of phage-host interactions for
+  phage therapy development. Focus on E. coli strains.
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+
+default_range: string
+imports:
+  - linkml:types
+
+classes:
+  Organism:
+    description: >-
+      Bacterial organism/strain used in phage interaction studies.
+      Primarily E. coli strains for phage therapy research.
+
+      EXAMPLE ORGANISMS:
+      - E. coli 370D
+      - E. coli 381A
+      - E. coli 536
+    annotations:
+      source_table: strainmodelling_organism
+    attributes:
+      id:
+        identifier: true
+        range: integer
+        required: true
+        description: Internal organism ID
+        examples:
+          - value: 297
+          - value: 298
+          - value: 299
+
+      name:
+        range: string
+        required: true
+        description: Short organism/strain name
+        examples:
+          - value: "370D"
+          - value: "381A"
+          - value: "536"
+
+      full_name:
+        range: string
+        description: Full organism name with species
+        examples:
+          - value: "E. coli 370D"
+          - value: "E. coli 381A"
+          - value: "E. coli 536"
+
+      domain:
+        range: string
+        description: Taxonomic domain
+        examples:
+          - value: "Bacteria"
+
+      description:
+        range: string
+        description: Organism description (optional)
+
+  OrganismMetadata:
+    description: >-
+      Extended metadata for organisms as key-value pairs.
+    annotations:
+      source_table: strainmodelling_organism_metadata
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      organism_id:
+        range: integer
+        comments:
+          - "Foreign key to Organism.id"
+      key:
+        range: string
+      value:
+        range: string
+
+  Genome:
+    description: >-
+      Genome assembly for an organism.
+    annotations:
+      source_table: strainmodelling_genome
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      organism_id:
+        range: integer
+        comments:
+          - "Foreign key to Organism.id"
+      name:
+        range: string
+        description: Genome name/accession
+      size:
+        range: integer
+        description: Genome size in base pairs
+
+  GenomeSet:
+    description: >-
+      Collection of genomes for comparative analysis.
+    annotations:
+      source_table: strainmodelling_genome_set
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+        description: Genome set name
+      description:
+        range: string
+
+  GenomeSetGenome:
+    description: >-
+      Many-to-many link between genome sets and genomes.
+    annotations:
+      source_table: strainmodelling_genome_set_genomes
+    attributes:
+      genome_set_id:
+        range: integer
+        comments:
+          - "Foreign key to GenomeSet.id"
+      genome_id:
+        range: integer
+        comments:
+          - "Foreign key to Genome.id"
+
+  Sequence:
+    description: >-
+      DNA/RNA sequence (contig, chromosome, or plasmid).
+    annotations:
+      source_table: strainmodelling_sequence
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      genome_id:
+        range: integer
+        comments:
+          - "Foreign key to Genome.id"
+      name:
+        range: string
+      length:
+        range: integer
+        description: Sequence length in base pairs
+
+  Gene:
+    description: >-
+      Predicted gene with location and annotation.
+    annotations:
+      source_table: strainmodelling_gene
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      sequence_id:
+        range: integer
+        comments:
+          - "Foreign key to Sequence.id"
+      locus_tag:
+        range: string
+      start:
+        range: integer
+      end:
+        range: integer
+      strand:
+        range: integer
+        description: Strand (1 or -1)
+      product:
+        range: string
+        description: Gene product/function
+
+  Experiment:
+    description: >-
+      Phage-host interaction experiment.
+    annotations:
+      source_table: strainmodelling_experiment
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+        description: Experiment name
+      description:
+        range: string
+
+  ExperimentMetadata:
+    description: >-
+      Extended experiment metadata as key-value pairs.
+    annotations:
+      source_table: strainmodelling_experiment_metadata
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      experiment_id:
+        range: integer
+        comments:
+          - "Foreign key to Experiment.id"
+      key:
+        range: string
+      value:
+        range: string
+
+  ExperimentMetric:
+    description: >-
+      Quantitative metrics from experiments (e.g., infection efficiency).
+    annotations:
+      source_table: strainmodelling_experiment_metric
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      experiment_id:
+        range: integer
+        comments:
+          - "Foreign key to Experiment.id"
+      metric_name:
+        range: string
+      value:
+        range: float
+
+  Feature:
+    description: >-
+      Genomic or phenotypic feature relevant to phage interaction.
+    annotations:
+      source_table: strainmodelling_feature
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+      feature_type:
+        range: string
+        description: Type of feature (e.g., receptor, defense system)
+
+  FeatureMetric:
+    description: >-
+      Quantitative metrics associated with features.
+    annotations:
+      source_table: strainmodelling_feature_metric
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      feature_id:
+        range: integer
+        comments:
+          - "Foreign key to Feature.id"
+      metric_name:
+        range: string
+      value:
+        range: float
+
+  FeatureInterval:
+    description: >-
+      Genomic intervals (coordinates) for features.
+    annotations:
+      source_table: strainmodelling_feature_intervals
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      feature_id:
+        range: integer
+        comments:
+          - "Foreign key to Feature.id"
+      interval_id:
+        range: integer
+        comments:
+          - "Foreign key to Interval.id"
+
+  Interaction:
+    description: >-
+      Phage-host interaction data (infection, resistance, etc.).
+    annotations:
+      source_table: strainmodelling_interaction
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      phage_id:
+        range: integer
+        description: Phage identifier
+      host_id:
+        range: integer
+        description: Host organism identifier
+      interaction_type:
+        range: string
+        description: Type of interaction (infection, resistance, etc.)
+
+  Interval:
+    description: >-
+      Genomic interval (coordinate range).
+    annotations:
+      source_table: strainmodelling_interval
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      sequence_id:
+        range: integer
+        comments:
+          - "Foreign key to Sequence.id"
+      start:
+        range: integer
+      end:
+        range: integer
+
+  ProteinFamily:
+    description: >-
+      Protein family grouping related proteins.
+    annotations:
+      source_table: strainmodelling_protein_family
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+        description: Protein family name/identifier
+      description:
+        range: string
+
+  ProteinFamilyGene:
+    description: >-
+      Genes belonging to protein families.
+    annotations:
+      source_table: strainmodelling_protein_family_genes
+    attributes:
+      protein_family_id:
+        range: integer
+        comments:
+          - "Foreign key to ProteinFamily.id"
+      gene_id:
+        range: integer
+        comments:
+          - "Foreign key to Gene.id"
+
+  ProteinFamilyFeature:
+    description: >-
+      Features associated with protein families.
+    annotations:
+      source_table: strainmodelling_protein_family_features
+    attributes:
+      protein_family_id:
+        range: integer
+        comments:
+          - "Foreign key to ProteinFamily.id"
+      feature_id:
+        range: integer
+        comments:
+          - "Foreign key to Feature.id"

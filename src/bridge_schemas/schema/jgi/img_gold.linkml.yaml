@@ -1,0 +1,2612 @@
+name: img_gold
+id: https://w3id.org/jgi/img_gold
+imports:
+- linkml:types
+prefixes:
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  img_gold:
+    prefix_prefix: img_gold
+    prefix_reference: https://w3id.org/jgi/img_gold/
+default_prefix: img_gold
+default_range: string
+classes:
+  gold_analysis_project:
+    name: gold_analysis_project
+    attributes:
+      gold_analysis_project_id:
+        name: gold_analysis_project_id
+        range: integer
+        required: false
+      its_analysis_project_id:
+        name: its_analysis_project_id
+        range: integer
+        required: false
+      analysis_project_name:
+        name: analysis_project_name
+        range: string
+        required: false
+      ncbi_tax_id:
+        name: ncbi_tax_id
+        range: integer
+        required: false
+      img_dataset_id:
+        name: img_dataset_id
+        range: integer
+        required: false
+      analysis_product_name:
+        name: analysis_product_name
+        range: string
+        required: false
+      visibility:
+        name: visibility
+        range: string
+        required: false
+      domain:
+        name: domain
+        range: string
+        required: false
+      ncbi_phylum:
+        name: ncbi_phylum
+        range: string
+        required: false
+      ncbi_class:
+        name: ncbi_class
+        range: string
+        required: false
+      ncbi_order:
+        name: ncbi_order
+        range: string
+        required: false
+      ncbi_family:
+        name: ncbi_family
+        range: string
+        required: false
+      ncbi_genus:
+        name: ncbi_genus
+        range: string
+        required: false
+      ncbi_species:
+        name: ncbi_species
+        range: string
+        required: false
+      gold_analysis_project_type:
+        name: gold_analysis_project_type
+        range: string
+        required: false
+      gold_proposal_name:
+        name: gold_proposal_name
+        range: string
+        required: false
+      ecosystem:
+        name: ecosystem
+        range: string
+        required: false
+      ecosystem_category:
+        name: ecosystem_category
+        range: string
+        required: false
+      ecosystem_subtype:
+        name: ecosystem_subtype
+        range: string
+        required: false
+      specific_ecosystem:
+        name: specific_ecosystem
+        range: string
+        required: false
+      reference_img_oid:
+        name: reference_img_oid
+        range: integer
+        required: false
+      pi_name:
+        name: pi_name
+        range: string
+        required: false
+      pi_email:
+        name: pi_email
+        range: string
+        required: false
+      submitter_contact_oid:
+        name: submitter_contact_oid
+        range: integer
+        required: false
+      ecosystem_type:
+        name: ecosystem_type
+        range: string
+        required: false
+      specimen:
+        name: specimen
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      reference_img_experiment_id:
+        name: reference_img_experiment_id
+        range: integer
+        required: false
+      reference_gold_ap_id:
+        name: reference_gold_ap_id
+        range: integer
+        required: false
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      genome_size:
+        name: genome_size
+        range: integer
+        required: false
+      gene_count:
+        name: gene_count
+        range: integer
+        required: false
+      scaffold_count:
+        name: scaffold_count
+        range: integer
+        required: false
+      its_analysis_project_name:
+        name: its_analysis_project_name
+        range: string
+        required: false
+      contig_count:
+        name: contig_count
+        range: integer
+        required: false
+      genbank_low_quality_annotation:
+        name: genbank_low_quality_annotation
+        range: string
+        required: false
+      genbank_low_quality_genome:
+        name: genbank_low_quality_genome
+        range: string
+        required: false
+      completion_date:
+        name: completion_date
+        range: datetime
+        required: false
+      binning_method:
+        name: binning_method
+        range: string
+        required: false
+      gene_calling_method:
+        name: gene_calling_method
+        range: string
+        required: false
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      img_analysis_complete:
+        name: img_analysis_complete
+        range: string
+        required: false
+      status:
+        name: status
+        range: string
+        required: false
+      is_gene_primp:
+        name: is_gene_primp
+        range: string
+        required: false
+      gene_primp_date:
+        name: gene_primp_date
+        range: datetime
+        required: false
+      is_decontamination:
+        name: is_decontamination
+        range: string
+        required: false
+      is_img_annotation:
+        name: is_img_annotation
+        range: string
+        required: false
+      its_annotation_at_id:
+        name: its_annotation_at_id
+        range: integer
+        required: false
+      its_assembly_at_id:
+        name: its_assembly_at_id
+        range: integer
+        required: false
+      is_assembled:
+        name: is_assembled
+        range: string
+        required: false
+      genome_type:
+        name: genome_type
+        range: string
+        required: false
+      study_gold_id:
+        name: study_gold_id
+        range: string
+        required: false
+      locus_tag:
+        name: locus_tag
+        range: string
+        required: false
+      cultured:
+        name: cultured
+        range: string
+        required: false
+      jgi_sequenced:
+        name: jgi_sequenced
+        range: string
+        required: false
+      reference_gold_id:
+        name: reference_gold_id
+        range: string
+        required: false
+      strain:
+        name: strain
+        range: string
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      submission_type:
+        name: submission_type
+        range: string
+        required: false
+      submitter_email:
+        name: submitter_email
+        range: string
+        required: false
+      review_status:
+        name: review_status
+        range: string
+        required: false
+      caliban_id:
+        name: caliban_id
+        range: integer
+        required: false
+      assembly_method:
+        name: assembly_method
+        range: string
+        required: false
+      genus:
+        name: genus
+        range: string
+        required: false
+      species:
+        name: species
+        range: string
+        required: false
+      sequencing_depth:
+        name: sequencing_depth
+        range: string
+        required: false
+      img_use:
+        name: img_use
+        range: string
+        required: false
+      gold_phylogeny:
+        name: gold_phylogeny
+        range: string
+        required: false
+      uncultured_type:
+        name: uncultured_type
+        range: string
+        required: false
+      culture_type:
+        name: culture_type
+        range: string
+        required: false
+      ncbi_superkingdom:
+        name: ncbi_superkingdom
+        range: string
+        required: false
+      external:
+        name: external
+        range: string
+        required: false
+      pipeline_version:
+        name: pipeline_version
+        range: string
+        required: false
+      its_data_utilization_status:
+        name: its_data_utilization_status
+        range: string
+        required: false
+      is_genbank_anomalous_assembly:
+        name: is_genbank_anomalous_assembly
+        range: string
+        required: false
+      img_annotation_version:
+        name: img_annotation_version
+        range: string
+        required: false
+  gold_analysis_project_genbanks:
+    name: gold_analysis_project_genbanks
+    attributes:
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      genbank_id:
+        name: genbank_id
+        range: string
+        required: false
+      assembly_accession:
+        name: assembly_accession
+        range: string
+        required: false
+      type:
+        name: type
+        range: string
+        required: false
+  gold_analysis_project_jgi_award_dois:
+    name: gold_analysis_project_jgi_award_dois
+    attributes:
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      jgi_award_doi:
+        name: jgi_award_doi
+        range: string
+        required: false
+  gold_analysis_project_lookup2:
+    name: gold_analysis_project_lookup2
+    attributes:
+      gold_id:
+        name: gold_id
+        description: Foreign key to gold_analysis_project
+        range: gold_analysis_project
+        required: false
+      its_spid:
+        name: its_spid
+        range: integer
+        required: false
+      project_oid:
+        name: project_oid
+        range: integer
+        required: false
+      sample_oid:
+        name: sample_oid
+        range: integer
+        required: false
+      sp_gold_id:
+        name: sp_gold_id
+        range: string
+        required: false
+      pmo_project_id:
+        name: pmo_project_id
+        range: integer
+        required: false
+  gold_analysis_project_sra_runs:
+    name: gold_analysis_project_sra_runs
+    attributes:
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      sra_run:
+        name: sra_run
+        range: string
+        required: false
+  gold_analysis_project_users:
+    name: gold_analysis_project_users
+    attributes:
+      gold_id:
+        name: gold_id
+        description: Foreign key to gold_analysis_project
+        range: gold_analysis_project
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+      email:
+        name: email
+        range: string
+        required: false
+      role:
+        name: role
+        range: string
+        required: false
+      caliban_id:
+        name: caliban_id
+        range: integer
+        required: false
+  gold_ap_genbank:
+    name: gold_ap_genbank
+    attributes:
+      id:
+        name: id
+        range: integer
+        required: false
+      gold_analysis_project_id:
+        name: gold_analysis_project_id
+        range: integer
+        required: false
+      genbank_id:
+        name: genbank_id
+        range: string
+        required: false
+      assembly_accession:
+        name: assembly_accession
+        range: string
+        required: false
+  gold_ap_genbank_anomalous_reasons:
+    name: gold_ap_genbank_anomalous_reasons
+    attributes:
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      genbank_anomalous_reason:
+        name: genbank_anomalous_reason
+        range: string
+        required: false
+  gold_ap_publications:
+    name: gold_ap_publications
+    attributes:
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      pubmed_id:
+        name: pubmed_id
+        range: integer
+        required: false
+      journal_name:
+        name: journal_name
+        range: string
+        required: false
+      volume:
+        name: volume
+        range: string
+        required: false
+      issue:
+        name: issue
+        range: string
+        required: false
+      page:
+        name: page
+        range: string
+        required: false
+      title:
+        name: title
+        range: string
+        required: false
+      publication_date:
+        name: publication_date
+        range: string
+        required: false
+      doi:
+        name: doi
+        range: string
+        required: false
+  gold_contactcv:
+    name: gold_contactcv
+    attributes:
+      cv_term:
+        name: cv_term
+        range: string
+        required: false
+  gold_img_nat_prod_entity:
+    name: gold_img_nat_prod_entity
+    attributes:
+      gold_np_id:
+        name: gold_np_id
+        range: integer
+        required: false
+      np_id:
+        name: np_id
+        range: integer
+        required: false
+      project_oid:
+        name: project_oid
+        range: integer
+        required: false
+      img_oid:
+        name: img_oid
+        range: integer
+        required: false
+      bio_cluster_id:
+        name: bio_cluster_id
+        range: integer
+        required: false
+      evidence:
+        name: evidence
+        range: string
+        required: false
+      activity:
+        name: activity
+        range: string
+        required: false
+  gold_master_analysis_project:
+    name: gold_master_analysis_project
+    attributes:
+      analysis_project_id:
+        name: analysis_project_id
+        range: float
+        required: false
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      organism_id:
+        name: organism_id
+        range: float
+        required: false
+      external:
+        name: external
+        range: string
+        required: false
+      its_analysis_project_id:
+        name: its_analysis_project_id
+        range: float
+        required: false
+      analysis_project_name:
+        name: analysis_project_name
+        range: string
+        required: false
+      img_taxon_id:
+        name: img_taxon_id
+        range: float
+        required: false
+      its_product_name:
+        name: its_product_name
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+      analysis_project_type:
+        name: analysis_project_type
+        range: string
+        required: false
+      ecosystem:
+        name: ecosystem
+        range: string
+        required: false
+      ecosystem_category:
+        name: ecosystem_category
+        range: string
+        required: false
+      ecosystem_type:
+        name: ecosystem_type
+        range: string
+        required: false
+      ecosystem_subtype:
+        name: ecosystem_subtype
+        range: string
+        required: false
+      specific_ecosystem:
+        name: specific_ecosystem
+        range: string
+        required: false
+      specimen:
+        name: specimen
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      est_size:
+        name: est_size
+        range: float
+        required: false
+      gene_count:
+        name: gene_count
+        range: float
+        required: false
+      scaffold_count:
+        name: scaffold_count
+        range: float
+        required: false
+      its_analysis_project_name:
+        name: its_analysis_project_name
+        range: string
+        required: false
+      contig_count:
+        name: contig_count
+        range: float
+        required: false
+      genbank_low_quality_annotation:
+        name: genbank_low_quality_annotation
+        range: string
+        required: false
+      completion_date:
+        name: completion_date
+        range: datetime
+        required: false
+      binning_method:
+        name: binning_method
+        range: string
+        required: false
+      gene_calling_method:
+        name: gene_calling_method
+        range: string
+        required: false
+      submission_id:
+        name: submission_id
+        range: float
+        required: false
+      status_id:
+        name: status_id
+        range: float
+        required: false
+      is_decontamination:
+        name: is_decontamination
+        range: string
+        required: false
+      its_annotation_at_id:
+        name: its_annotation_at_id
+        range: float
+        required: false
+      study_id:
+        name: study_id
+        range: float
+        required: false
+      reference_ap_id:
+        name: reference_ap_id
+        range: float
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      is_primary:
+        name: is_primary
+        range: string
+        required: false
+      review_status:
+        name: review_status
+        range: string
+        required: false
+      sequencing_depth:
+        name: sequencing_depth
+        range: string
+        required: false
+      img_use:
+        name: img_use
+        range: string
+        required: false
+      pipeline_annotation_method:
+        name: pipeline_annotation_method
+        range: string
+        required: false
+      replaces_ap_id:
+        name: replaces_ap_id
+        range: float
+        required: false
+      img_annotation_version:
+        name: img_annotation_version
+        range: string
+        required: false
+      is_mag_or_meg:
+        name: is_mag_or_meg
+        range: string
+        required: false
+  gold_master_analysis_project_publication:
+    name: gold_master_analysis_project_publication
+    attributes:
+      analysis_project_id:
+        name: analysis_project_id
+        range: float
+        required: false
+      publication_id:
+        name: publication_id
+        range: float
+        required: false
+  gold_master_analysis_project_sra_run:
+    name: gold_master_analysis_project_sra_run
+    attributes:
+      analysis_project_id:
+        name: analysis_project_id
+        range: float
+        required: false
+      sra_run_id:
+        name: sra_run_id
+        range: string
+        required: false
+  gold_master_assembly:
+    name: gold_master_assembly
+    attributes:
+      analysis_project_id:
+        name: analysis_project_id
+        range: float
+        required: false
+      method:
+        name: method
+        range: string
+        required: false
+  gold_master_biosample:
+    name: gold_master_biosample
+    attributes:
+      biosample_id:
+        name: biosample_id
+        range: float
+        required: false
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      active:
+        name: active
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+      ncbi_taxonomy_id:
+        name: ncbi_taxonomy_id
+        range: float
+        required: false
+      sample_collection_site:
+        name: sample_collection_site
+        range: string
+        required: false
+      sample_isolation_country_id:
+        name: sample_isolation_country_id
+        range: float
+        required: false
+      sample_collection_year:
+        name: sample_collection_year
+        range: float
+        required: false
+      sample_collection_month:
+        name: sample_collection_month
+        range: float
+        required: false
+      sample_collection_day:
+        name: sample_collection_day
+        range: float
+        required: false
+      geographic_location:
+        name: geographic_location
+        range: string
+        required: false
+      latitude:
+        name: latitude
+        range: float
+        required: false
+      longitude:
+        name: longitude
+        range: float
+        required: false
+      host_name:
+        name: host_name
+        range: string
+        required: false
+      host_gender:
+        name: host_gender
+        range: string
+        required: false
+      host_taxonomy_id:
+        name: host_taxonomy_id
+        range: float
+        required: false
+      ecosystem:
+        name: ecosystem
+        range: string
+        required: false
+      ecosystem_category:
+        name: ecosystem_category
+        range: string
+        required: false
+      ecosystem_type:
+        name: ecosystem_type
+        range: string
+        required: false
+      ecosystem_subtype:
+        name: ecosystem_subtype
+        range: string
+        required: false
+      specific_ecosystem:
+        name: specific_ecosystem
+        range: string
+        required: false
+      host_body_site:
+        name: host_body_site
+        range: string
+        required: false
+      host_body_subsite:
+        name: host_body_subsite
+        range: string
+        required: false
+      mrn:
+        name: mrn
+        range: string
+        required: false
+      patient_visit_number:
+        name: patient_visit_number
+        range: float
+        required: false
+      longhurst_code:
+        name: longhurst_code
+        range: string
+        required: false
+      proport_ocean:
+        name: proport_ocean
+        range: string
+        required: false
+      proport_isolation:
+        name: proport_isolation
+        range: string
+        required: false
+      proport_station:
+        name: proport_station
+        range: string
+        required: false
+      proport_woa_temperature:
+        name: proport_woa_temperature
+        range: float
+        required: false
+      proport_woa_salinity:
+        name: proport_woa_salinity
+        range: float
+        required: false
+      proport_woa_dissolved_oxygen:
+        name: proport_woa_dissolved_oxygen
+        range: float
+        required: false
+      proport_woa_silicate:
+        name: proport_woa_silicate
+        range: float
+        required: false
+      proport_woa_phosphate:
+        name: proport_woa_phosphate
+        range: float
+        required: false
+      proport_woa_nitrate:
+        name: proport_woa_nitrate
+        range: float
+        required: false
+      growth_temperature:
+        name: growth_temperature
+        range: float
+        required: false
+      pressure:
+        name: pressure
+        range: string
+        required: false
+      chlorophyll_concentration:
+        name: chlorophyll_concentration
+        range: string
+        required: false
+      oxygen_concentration:
+        name: oxygen_concentration
+        range: string
+        required: false
+      salinity_concentration:
+        name: salinity_concentration
+        range: string
+        required: false
+      nitrate_concentration:
+        name: nitrate_concentration
+        range: string
+        required: false
+      ph1:
+        name: ph1
+        range: float
+        required: false
+      ph2:
+        name: ph2
+        range: float
+        required: false
+      depth:
+        name: depth
+        range: float
+        required: false
+      depth2:
+        name: depth2
+        range: float
+        required: false
+      altitude:
+        name: altitude
+        range: float
+        required: false
+      altitude2:
+        name: altitude2
+        range: float
+        required: false
+      elevation:
+        name: elevation
+        range: float
+        required: false
+      elevation2:
+        name: elevation2
+        range: float
+        required: false
+      subsurface_depth:
+        name: subsurface_depth
+        range: float
+        required: false
+      subsurface_depth2:
+        name: subsurface_depth2
+        range: float
+        required: false
+      habitat:
+        name: habitat
+        range: string
+        required: false
+  gold_master_contact:
+    name: gold_master_contact
+    attributes:
+      contact_id:
+        name: contact_id
+        range: float
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+      email:
+        name: email
+        range: string
+        required: false
+      caliban_id:
+        name: caliban_id
+        range: float
+        required: false
+      orcid_id:
+        name: orcid_id
+        range: string
+        required: false
+  gold_master_cvap_status:
+    name: gold_master_cvap_status
+    attributes:
+      id:
+        name: id
+        range: float
+        required: false
+      term:
+        name: term
+        range: string
+        required: false
+  gold_master_cvbiotic_relationship:
+    name: gold_master_cvbiotic_relationship
+    attributes:
+      id:
+        name: id
+        range: float
+        required: false
+      term:
+        name: term
+        range: string
+        required: false
+  gold_master_cvcell_arrangement:
+    name: gold_master_cvcell_arrangement
+    attributes:
+      id:
+        name: id
+        range: float
+        required: false
+      term:
+        name: term
+        range: string
+        required: false
+  gold_master_cvdisease:
+    name: gold_master_cvdisease
+    attributes:
+      id:
+        name: id
+        range: float
+        required: false
+      term:
+        name: term
+        range: string
+        required: false
+  gold_master_cvenergy_source:
+    name: gold_master_cvenergy_source
+    attributes:
+      id:
+        name: id
+        range: float
+        required: false
+      term:
+        name: term
+        range: string
+        required: false
+  gold_master_cvhabitat:
+    name: gold_master_cvhabitat
+    attributes:
+      id:
+        name: id
+        range: float
+        required: false
+      term:
+        name: term
+        range: string
+        required: false
+  gold_master_cvmetabolism:
+    name: gold_master_cvmetabolism
+    attributes:
+      id:
+        name: id
+        range: float
+        required: false
+      term:
+        name: term
+        range: string
+        required: false
+  gold_master_cvphenotype:
+    name: gold_master_cvphenotype
+    attributes:
+      id:
+        name: id
+        range: float
+        required: false
+      term:
+        name: term
+        range: string
+        required: false
+  gold_master_cvrelevance:
+    name: gold_master_cvrelevance
+    attributes:
+      id:
+        name: id
+        range: float
+        required: false
+      term:
+        name: term
+        range: string
+        required: false
+  gold_master_cvseq_quality:
+    name: gold_master_cvseq_quality
+    attributes:
+      id:
+        name: id
+        range: float
+        required: false
+      term:
+        name: term
+        range: string
+        required: false
+  gold_master_cvseq_status:
+    name: gold_master_cvseq_status
+    attributes:
+      id:
+        name: id
+        range: float
+        required: false
+      term:
+        name: term
+        range: string
+        required: false
+  gold_master_dw_ap_data_utilization_status:
+    name: gold_master_dw_ap_data_utilization_status
+    attributes:
+      analysis_project_id:
+        name: analysis_project_id
+        range: float
+        required: false
+      data_utilization_status:
+        name: data_utilization_status
+        range: string
+        required: false
+  gold_master_genbank:
+    name: gold_master_genbank
+    attributes:
+      analysis_project_id:
+        name: analysis_project_id
+        range: float
+        required: false
+      genbank_id:
+        name: genbank_id
+        range: string
+        required: false
+      assembly_accession:
+        name: assembly_accession
+        range: string
+        required: false
+      type:
+        name: type
+        range: string
+        required: false
+      is_ncbi_public:
+        name: is_ncbi_public
+        range: string
+        required: false
+      anomalous_assembly:
+        name: anomalous_assembly
+        range: string
+        required: false
+      anomalous_reason:
+        name: anomalous_reason
+        range: string
+        required: false
+  gold_master_hmp_project:
+    name: gold_master_hmp_project
+    attributes:
+      project_id:
+        name: project_id
+        range: float
+        required: false
+      hmp_id:
+        name: hmp_id
+        range: float
+        required: false
+  gold_master_institution:
+    name: gold_master_institution
+    attributes:
+      id:
+        name: id
+        range: float
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+      country:
+        name: country
+        range: string
+        required: false
+      url:
+        name: url
+        range: string
+        required: false
+  gold_master_its_proposal:
+    name: gold_master_its_proposal
+    attributes:
+      its_proposal_id:
+        name: its_proposal_id
+        range: float
+        required: false
+      proposal_name:
+        name: proposal_name
+        range: string
+        required: false
+      award_doi:
+        name: award_doi
+        range: string
+        required: false
+  gold_master_journal:
+    name: gold_master_journal
+    attributes:
+      journal_id:
+        name: journal_id
+        range: float
+        required: false
+      title:
+        name: title
+        range: string
+        required: false
+  gold_master_longhurst_code:
+    name: gold_master_longhurst_code
+    attributes:
+      id:
+        name: id
+        range: float
+        required: false
+      term:
+        name: term
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+  gold_master_organism:
+    name: gold_master_organism
+    attributes:
+      organism_id:
+        name: organism_id
+        range: float
+        required: false
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      active:
+        name: active
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+      ncbi_taxonomy_id:
+        name: ncbi_taxonomy_id
+        range: float
+        required: false
+      domain:
+        name: domain
+        range: string
+        required: false
+      ncbi_superkingdom:
+        name: ncbi_superkingdom
+        range: string
+        required: false
+      ncbi_kingdom:
+        name: ncbi_kingdom
+        range: string
+        required: false
+      ncbi_phylum:
+        name: ncbi_phylum
+        range: string
+        required: false
+      ncbi_class:
+        name: ncbi_class
+        range: string
+        required: false
+      ncbi_order:
+        name: ncbi_order
+        range: string
+        required: false
+      ncbi_family:
+        name: ncbi_family
+        range: string
+        required: false
+      ncbi_genus:
+        name: ncbi_genus
+        range: string
+        required: false
+      ncbi_species:
+        name: ncbi_species
+        range: string
+        required: false
+      cultured:
+        name: cultured
+        range: string
+        required: false
+      strain:
+        name: strain
+        range: string
+        required: false
+      genus:
+        name: genus
+        range: string
+        required: false
+      species:
+        name: species
+        range: string
+        required: false
+      gold_phylogeny:
+        name: gold_phylogeny
+        range: string
+        required: false
+      uncultured_type:
+        name: uncultured_type
+        range: string
+        required: false
+      culture_type:
+        name: culture_type
+        range: string
+        required: false
+      latitude:
+        name: latitude
+        range: float
+        required: false
+      longitude:
+        name: longitude
+        range: float
+        required: false
+      altitude:
+        name: altitude
+        range: float
+        required: false
+      altitude2:
+        name: altitude2
+        range: float
+        required: false
+      depth:
+        name: depth
+        range: float
+        required: false
+      depth2:
+        name: depth2
+        range: float
+        required: false
+      elevation:
+        name: elevation
+        range: float
+        required: false
+      elevation2:
+        name: elevation2
+        range: float
+        required: false
+      subsurface_depth1:
+        name: subsurface_depth1
+        range: float
+        required: false
+      subsurface_depth2:
+        name: subsurface_depth2
+        range: float
+        required: false
+      clade:
+        name: clade
+        range: string
+        required: false
+      sample_collection_site:
+        name: sample_collection_site
+        range: string
+        required: false
+      oxygen_concentration:
+        name: oxygen_concentration
+        range: string
+        required: false
+      oxygen_requirement:
+        name: oxygen_requirement
+        range: string
+        required: false
+      cell_shape:
+        name: cell_shape
+        range: string
+        required: false
+      motility:
+        name: motility
+        range: string
+        required: false
+      sporulation:
+        name: sporulation
+        range: string
+        required: false
+      temperature_range:
+        name: temperature_range
+        range: string
+        required: false
+      salinity:
+        name: salinity
+        range: string
+        required: false
+      sample_isolation_country_id:
+        name: sample_isolation_country_id
+        range: float
+        required: false
+      geographic_location:
+        name: geographic_location
+        range: string
+        required: false
+      gram_stain:
+        name: gram_stain
+        range: string
+        required: false
+      host_name:
+        name: host_name
+        range: string
+        required: false
+      type_strain:
+        name: type_strain
+        range: string
+        required: false
+      ecosystem:
+        name: ecosystem
+        range: string
+        required: false
+      ecosystem_category:
+        name: ecosystem_category
+        range: string
+        required: false
+      ecosystem_type:
+        name: ecosystem_type
+        range: string
+        required: false
+      ecosystem_subtype:
+        name: ecosystem_subtype
+        range: string
+        required: false
+      specific_ecosystem:
+        name: specific_ecosystem
+        range: string
+        required: false
+      host_body_site:
+        name: host_body_site
+        range: string
+        required: false
+      host_body_subsite:
+        name: host_body_subsite
+        range: string
+        required: false
+      ecotype:
+        name: ecotype
+        range: string
+        required: false
+      proport_ocean:
+        name: proport_ocean
+        range: string
+        required: false
+      proport_isolation:
+        name: proport_isolation
+        range: string
+        required: false
+      proport_station:
+        name: proport_station
+        range: string
+        required: false
+      proport_woa_temperature:
+        name: proport_woa_temperature
+        range: float
+        required: false
+      proport_woa_salinity:
+        name: proport_woa_salinity
+        range: float
+        required: false
+      proport_woa_dissolved_oxygen:
+        name: proport_woa_dissolved_oxygen
+        range: float
+        required: false
+      proport_woa_silicate:
+        name: proport_woa_silicate
+        range: float
+        required: false
+      proport_woa_phosphate:
+        name: proport_woa_phosphate
+        range: float
+        required: false
+      proport_woa_nitrate:
+        name: proport_woa_nitrate
+        range: float
+        required: false
+      viral_group:
+        name: viral_group
+        range: string
+        required: false
+      viral_subgroup:
+        name: viral_subgroup
+        range: string
+        required: false
+      sample_collection_temperature:
+        name: sample_collection_temperature
+        range: float
+        required: false
+      pressure:
+        name: pressure
+        range: string
+        required: false
+      chlorophyll_concentration:
+        name: chlorophyll_concentration
+        range: string
+        required: false
+      salinity_concentration:
+        name: salinity_concentration
+        range: string
+        required: false
+      nitrate_concentration:
+        name: nitrate_concentration
+        range: string
+        required: false
+      ph1:
+        name: ph1
+        range: float
+        required: false
+      ph2:
+        name: ph2
+        range: float
+        required: false
+  gold_master_organism_biotic_rel:
+    name: gold_master_organism_biotic_rel
+    attributes:
+      organism_id:
+        name: organism_id
+        range: float
+        required: false
+      biotic_relationship_id:
+        name: biotic_relationship_id
+        range: float
+        required: false
+  gold_master_organism_cell_arrangement:
+    name: gold_master_organism_cell_arrangement
+    attributes:
+      organism_id:
+        name: organism_id
+        range: float
+        required: false
+      cell_arrangement_id:
+        name: cell_arrangement_id
+        range: float
+        required: false
+  gold_master_organism_disease:
+    name: gold_master_organism_disease
+    attributes:
+      organism_id:
+        name: organism_id
+        range: float
+        required: false
+      disease_id:
+        name: disease_id
+        range: float
+        required: false
+  gold_master_organism_energy_source:
+    name: gold_master_organism_energy_source
+    attributes:
+      organism_id:
+        name: organism_id
+        range: float
+        required: false
+      energy_source_id:
+        name: energy_source_id
+        range: float
+        required: false
+  gold_master_organism_habitat:
+    name: gold_master_organism_habitat
+    attributes:
+      organism_id:
+        name: organism_id
+        range: float
+        required: false
+      habitat_id:
+        name: habitat_id
+        range: float
+        required: false
+  gold_master_organism_metabolism:
+    name: gold_master_organism_metabolism
+    attributes:
+      organism_id:
+        name: organism_id
+        range: float
+        required: false
+      metabolism_id:
+        name: metabolism_id
+        range: float
+        required: false
+  gold_master_organism_phenotype:
+    name: gold_master_organism_phenotype
+    attributes:
+      organism_id:
+        name: organism_id
+        range: float
+        required: false
+      phenotype_id:
+        name: phenotype_id
+        range: float
+        required: false
+  gold_master_permission:
+    name: gold_master_permission
+    attributes:
+      permission_id:
+        name: permission_id
+        range: float
+        required: false
+      contact_id:
+        name: contact_id
+        range: float
+        required: false
+      user_role:
+        name: user_role
+        range: string
+        required: false
+      study_id:
+        name: study_id
+        range: float
+        required: false
+      project_id:
+        name: project_id
+        range: float
+        required: false
+      analysis_project_id:
+        name: analysis_project_id
+        range: float
+        required: false
+      biosample_id:
+        name: biosample_id
+        range: float
+        required: false
+      organism_id:
+        name: organism_id
+        range: float
+        required: false
+  gold_master_project:
+    name: gold_master_project
+    attributes:
+      project_id:
+        name: project_id
+        range: float
+        required: false
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      project_name:
+        name: project_name
+        range: string
+        required: false
+      active:
+        name: active
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      master_study_id:
+        name: master_study_id
+        range: float
+        required: false
+      organism_id:
+        name: organism_id
+        range: float
+        required: false
+      ncbi_bioproject_id:
+        name: ncbi_bioproject_id
+        range: float
+        required: false
+      its_proposal_id:
+        name: its_proposal_id
+        range: float
+        required: false
+      gpts_proposal_id:
+        name: gpts_proposal_id
+        range: float
+        required: false
+      its_spid:
+        name: its_spid
+        range: float
+        required: false
+      its_sample_id:
+        name: its_sample_id
+        range: float
+        required: false
+      pmo_project_id:
+        name: pmo_project_id
+        range: float
+        required: false
+      sequencing_strategy:
+        name: sequencing_strategy
+        range: string
+        required: false
+      project_status:
+        name: project_status
+        range: string
+        required: false
+      ncbi_bioproject_accession:
+        name: ncbi_bioproject_accession
+        range: string
+        required: false
+      ncbi_biosample_accession:
+        name: ncbi_biosample_accession
+        range: string
+        required: false
+      its_data_utilization_status:
+        name: its_data_utilization_status
+        range: string
+        required: false
+      sequencing_status_id:
+        name: sequencing_status_id
+        range: float
+        required: false
+      sequencing_quality_id:
+        name: sequencing_quality_id
+        range: float
+        required: false
+      ncbi_locus_tag:
+        name: ncbi_locus_tag
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      funding_program:
+        name: funding_program
+        range: string
+        required: false
+      funding_year:
+        name: funding_year
+        range: float
+        required: false
+      project_oid:
+        name: project_oid
+        range: float
+        required: false
+      sample_oid:
+        name: sample_oid
+        range: float
+        required: false
+  gold_master_project_analysis_project:
+    name: gold_master_project_analysis_project
+    attributes:
+      project_id:
+        name: project_id
+        range: float
+        required: false
+      analysis_project_id:
+        name: analysis_project_id
+        range: float
+        required: false
+  gold_master_project_biosample:
+    name: gold_master_project_biosample
+    attributes:
+      project_id:
+        name: project_id
+        range: float
+        required: false
+      biosample_id:
+        name: biosample_id
+        range: float
+        required: false
+  gold_master_project_collaborator:
+    name: gold_master_project_collaborator
+    attributes:
+      project_id:
+        name: project_id
+        range: float
+        required: false
+      institution_id:
+        name: institution_id
+        range: float
+        required: false
+  gold_master_project_genome_publication:
+    name: gold_master_project_genome_publication
+    attributes:
+      project_id:
+        name: project_id
+        range: float
+        required: false
+      publication_id:
+        name: publication_id
+        range: float
+        required: false
+  gold_master_project_relevance:
+    name: gold_master_project_relevance
+    attributes:
+      project_id:
+        name: project_id
+        range: float
+        required: false
+      relevance_id:
+        name: relevance_id
+        range: float
+        required: false
+  gold_master_project_sequencing_center:
+    name: gold_master_project_sequencing_center
+    attributes:
+      project_id:
+        name: project_id
+        range: float
+        required: false
+      institution_id:
+        name: institution_id
+        range: float
+        required: false
+  gold_master_project_sequencing_method:
+    name: gold_master_project_sequencing_method
+    attributes:
+      project_id:
+        name: project_id
+        range: float
+        required: false
+      sequencing_method_id:
+        name: sequencing_method_id
+        range: float
+        required: false
+  gold_master_publication:
+    name: gold_master_publication
+    attributes:
+      publication_id:
+        name: publication_id
+        range: float
+        required: false
+      pubmed_id:
+        name: pubmed_id
+        range: float
+        required: false
+      journal_id:
+        name: journal_id
+        range: float
+        required: false
+      volume:
+        name: volume
+        range: string
+        required: false
+      issue:
+        name: issue
+        range: string
+        required: false
+      page:
+        name: page
+        range: string
+        required: false
+      title:
+        name: title
+        range: string
+        required: false
+      publication_date:
+        name: publication_date
+        range: datetime
+        required: false
+      doi:
+        name: doi
+        range: string
+        required: false
+  gold_master_sequencing_method:
+    name: gold_master_sequencing_method
+    attributes:
+      id:
+        name: id
+        range: float
+        required: false
+      term:
+        name: term
+        range: string
+        required: false
+  gold_master_sra_experiment:
+    name: gold_master_sra_experiment
+    attributes:
+      project_id:
+        name: project_id
+        range: float
+        required: false
+      sra_experiment_id:
+        name: sra_experiment_id
+        range: string
+        required: false
+  gold_master_study:
+    name: gold_master_study
+    attributes:
+      study_id:
+        name: study_id
+        range: float
+        required: false
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      study_name:
+        name: study_name
+        range: string
+        required: false
+      active:
+        name: active
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+      contact_id:
+        name: contact_id
+        range: float
+        required: false
+      ecosystem:
+        name: ecosystem
+        range: string
+        required: false
+      ecosystem_category:
+        name: ecosystem_category
+        range: string
+        required: false
+      ecosystem_type:
+        name: ecosystem_type
+        range: string
+        required: false
+      ecosystem_subtype:
+        name: ecosystem_subtype
+        range: string
+        required: false
+      specific_ecosystem:
+        name: specific_ecosystem
+        range: string
+        required: false
+  gold_master_timestamp:
+    name: gold_master_timestamp
+    attributes:
+      id:
+        name: id
+        range: integer
+        required: false
+      last_synced:
+        name: last_synced
+        range: datetime
+        required: false
+  gold_sequencing_project:
+    name: gold_sequencing_project
+    attributes:
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      display_name:
+        name: display_name
+        range: string
+        required: false
+      strain:
+        name: strain
+        range: string
+        required: false
+      phylogeny:
+        name: phylogeny
+        range: string
+        required: false
+      ncbi_taxon_id:
+        name: ncbi_taxon_id
+        range: string
+        required: false
+      domain:
+        name: domain
+        range: string
+        required: false
+      ncbi_kingdom:
+        name: ncbi_kingdom
+        range: string
+        required: false
+      ncbi_phylum:
+        name: ncbi_phylum
+        range: string
+        required: false
+      ncbi_class:
+        name: ncbi_class
+        range: string
+        required: false
+      ncbi_order:
+        name: ncbi_order
+        range: string
+        required: false
+      ncbi_family:
+        name: ncbi_family
+        range: string
+        required: false
+      ncbi_genus:
+        name: ncbi_genus
+        range: string
+        required: false
+      ncbi_species:
+        name: ncbi_species
+        range: string
+        required: false
+      clade:
+        name: clade
+        range: string
+        required: false
+      ncbi_project_id:
+        name: ncbi_project_id
+        range: integer
+        required: false
+      isolation:
+        name: isolation
+        range: string
+        required: false
+      oxygen_req:
+        name: oxygen_req
+        range: string
+        required: false
+      cell_shape:
+        name: cell_shape
+        range: string
+        required: false
+      motility:
+        name: motility
+        range: string
+        required: false
+      sporulation:
+        name: sporulation
+        range: string
+        required: false
+      temp_range:
+        name: temp_range
+        range: string
+        required: false
+      salinity:
+        name: salinity
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      seq_status:
+        name: seq_status
+        range: string
+        required: false
+      img_taxon_oid:
+        name: img_taxon_oid
+        range: integer
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      contact_oid:
+        name: contact_oid
+        range: integer
+        required: false
+      iso_country:
+        name: iso_country
+        range: string
+        required: false
+      date_collected:
+        name: date_collected
+        range: string
+        required: false
+      geo_location:
+        name: geo_location
+        range: string
+        required: false
+      latitude:
+        name: latitude
+        range: string
+        required: false
+      longitude:
+        name: longitude
+        range: string
+        required: false
+      altitude:
+        name: altitude
+        range: string
+        required: false
+      gram_stain:
+        name: gram_stain
+        range: string
+        required: false
+      host_name:
+        name: host_name
+        range: string
+        required: false
+      host_gender:
+        name: host_gender
+        range: string
+        required: false
+      host_ncbi_taxid:
+        name: host_ncbi_taxid
+        range: integer
+        required: false
+      biotic_rel:
+        name: biotic_rel
+        range: string
+        required: false
+      hmp_id:
+        name: hmp_id
+        range: integer
+        required: false
+      locus_tag:
+        name: locus_tag
+        range: string
+        required: false
+      funding_program:
+        name: funding_program
+        range: string
+        required: false
+      type_strain:
+        name: type_strain
+        range: string
+        required: false
+      ecosystem:
+        name: ecosystem
+        range: string
+        required: false
+      ecosystem_category:
+        name: ecosystem_category
+        range: string
+        required: false
+      ecosystem_type:
+        name: ecosystem_type
+        range: string
+        required: false
+      ecosystem_subtype:
+        name: ecosystem_subtype
+        range: string
+        required: false
+      specific_ecosystem:
+        name: specific_ecosystem
+        range: string
+        required: false
+      sample_body_site:
+        name: sample_body_site
+        range: string
+        required: false
+      sample_body_subsite:
+        name: sample_body_subsite
+        range: string
+        required: false
+      mrn:
+        name: mrn
+        range: integer
+        required: false
+      visit_num:
+        name: visit_num
+        range: integer
+        required: false
+      replicate_num:
+        name: replicate_num
+        range: integer
+        required: false
+      pmo_project_id:
+        name: pmo_project_id
+        range: integer
+        required: false
+      project_id:
+        name: project_id
+        range: integer
+        required: false
+      cultured:
+        name: cultured
+        range: string
+        required: false
+      uncultured_type:
+        name: uncultured_type
+        range: string
+        required: false
+      culture_type:
+        name: culture_type
+        range: string
+        required: false
+      bioproject_accession:
+        name: bioproject_accession
+        range: string
+        required: false
+      biosample_accession:
+        name: biosample_accession
+        range: string
+        required: false
+      its_spid:
+        name: its_spid
+        range: integer
+        required: false
+      pi_email:
+        name: pi_email
+        range: string
+        required: false
+      pi_name:
+        name: pi_name
+        range: string
+        required: false
+      legacy_project_type:
+        name: legacy_project_type
+        range: string
+        required: false
+      seq_quality:
+        name: seq_quality
+        range: string
+        required: false
+      depth:
+        name: depth
+        range: string
+        required: false
+      sequencing_strategy:
+        name: sequencing_strategy
+        range: string
+        required: false
+      pm_email:
+        name: pm_email
+        range: string
+        required: false
+      pm_name:
+        name: pm_name
+        range: string
+        required: false
+      ecotype:
+        name: ecotype
+        range: string
+        required: false
+      longhurst_code:
+        name: longhurst_code
+        range: string
+        required: false
+      longhurst_description:
+        name: longhurst_description
+        range: string
+        required: false
+      project_status:
+        name: project_status
+        range: string
+        required: false
+      sequencing_quality:
+        name: sequencing_quality
+        range: string
+        required: false
+      sequencing_depth:
+        name: sequencing_depth
+        range: string
+        required: false
+      genus:
+        name: genus
+        range: string
+        required: false
+      species:
+        name: species
+        range: string
+        required: false
+      proport_ocean:
+        name: proport_ocean
+        range: string
+        required: false
+      proport_isolation:
+        name: proport_isolation
+        range: string
+        required: false
+      proport_station:
+        name: proport_station
+        range: string
+        required: false
+      proport_woa_temperature:
+        name: proport_woa_temperature
+        range: float
+        required: false
+      proport_woa_salinity:
+        name: proport_woa_salinity
+        range: float
+        required: false
+      proport_woa_dissolved_oxygen:
+        name: proport_woa_dissolved_oxygen
+        range: float
+        required: false
+      proport_woa_silicate:
+        name: proport_woa_silicate
+        range: float
+        required: false
+      proport_woa_phosphate:
+        name: proport_woa_phosphate
+        range: float
+        required: false
+      proport_woa_nitrate:
+        name: proport_woa_nitrate
+        range: float
+        required: false
+      viral_group:
+        name: viral_group
+        range: string
+        required: false
+      viral_subgroup:
+        name: viral_subgroup
+        range: string
+        required: false
+      gpts_proposal_id:
+        name: gpts_proposal_id
+        range: integer
+        required: false
+      its_proposal_id:
+        name: its_proposal_id
+        range: integer
+        required: false
+      sample_collect_temp:
+        name: sample_collect_temp
+        range: string
+        required: false
+      pressure:
+        name: pressure
+        range: string
+        required: false
+      chlorophyll_concentration:
+        name: chlorophyll_concentration
+        range: string
+        required: false
+      oxygen_concentration:
+        name: oxygen_concentration
+        range: string
+        required: false
+      salinity_concentration:
+        name: salinity_concentration
+        range: string
+        required: false
+      nitrate_concentration:
+        name: nitrate_concentration
+        range: string
+        required: false
+      ph:
+        name: ph
+        range: string
+        required: false
+      sequencing_status:
+        name: sequencing_status
+        range: string
+        required: false
+      funding_year:
+        name: funding_year
+        range: integer
+        required: false
+      latitude_n:
+        name: latitude_n
+        range: float
+        required: false
+      longitude_n:
+        name: longitude_n
+        range: float
+        required: false
+      altitude_in_meters:
+        name: altitude_in_meters
+        range: float
+        required: false
+      altitude_in_meters2:
+        name: altitude_in_meters2
+        range: float
+        required: false
+      depth_in_meters:
+        name: depth_in_meters
+        range: float
+        required: false
+      depth_in_meters2:
+        name: depth_in_meters2
+        range: float
+        required: false
+      elevation_in_meters:
+        name: elevation_in_meters
+        range: float
+        required: false
+      elevation_in_meters2:
+        name: elevation_in_meters2
+        range: float
+        required: false
+      subsurface_depth_in_meters:
+        name: subsurface_depth_in_meters
+        range: float
+        required: false
+      subsurface_depth_in_meters2:
+        name: subsurface_depth_in_meters2
+        range: float
+        required: false
+      its_data_utilization_status:
+        name: its_data_utilization_status
+        range: string
+        required: false
+      its_proposal_name:
+        name: its_proposal_name
+        range: string
+        required: false
+      biosample_gold_id:
+        name: biosample_gold_id
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+  gold_sp_cell_arrangement:
+    name: gold_sp_cell_arrangement
+    attributes:
+      gold_id:
+        name: gold_id
+        description: Foreign key to gold_sequencing_project
+        range: gold_sequencing_project
+        required: false
+      cell_arrangement:
+        name: cell_arrangement
+        range: string
+        required: false
+  gold_sp_collaborator:
+    name: gold_sp_collaborator
+    attributes:
+      gold_id:
+        name: gold_id
+        description: Foreign key to gold_sequencing_project
+        range: gold_sequencing_project
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+      country:
+        name: country
+        range: string
+        required: false
+      url:
+        name: url
+        range: string
+        required: false
+  gold_sp_disease:
+    name: gold_sp_disease
+    attributes:
+      gold_id:
+        name: gold_id
+        description: Foreign key to gold_sequencing_project
+        range: gold_sequencing_project
+        required: false
+      disease:
+        name: disease
+        range: string
+        required: false
+  gold_sp_energy_source:
+    name: gold_sp_energy_source
+    attributes:
+      gold_id:
+        name: gold_id
+        description: Foreign key to gold_sequencing_project
+        range: gold_sequencing_project
+        required: false
+      energy_source:
+        name: energy_source
+        range: string
+        required: false
+  gold_sp_genome_publications:
+    name: gold_sp_genome_publications
+    attributes:
+      gold_id:
+        name: gold_id
+        description: Foreign key to gold_sequencing_project
+        range: gold_sequencing_project
+        required: false
+      pubmed_id:
+        name: pubmed_id
+        range: integer
+        required: false
+      journal_name:
+        name: journal_name
+        range: string
+        required: false
+      volume:
+        name: volume
+        range: string
+        required: false
+      issue:
+        name: issue
+        range: string
+        required: false
+      page:
+        name: page
+        range: string
+        required: false
+      title:
+        name: title
+        range: string
+        required: false
+      publication_date:
+        name: publication_date
+        range: string
+        required: false
+      doi:
+        name: doi
+        range: string
+        required: false
+  gold_sp_habitat:
+    name: gold_sp_habitat
+    attributes:
+      gold_id:
+        name: gold_id
+        description: Foreign key to gold_sequencing_project
+        range: gold_sequencing_project
+        required: false
+      habitat:
+        name: habitat
+        range: string
+        required: false
+  gold_sp_metabolism:
+    name: gold_sp_metabolism
+    attributes:
+      gold_id:
+        name: gold_id
+        description: Foreign key to gold_sequencing_project
+        range: gold_sequencing_project
+        required: false
+      metabolism:
+        name: metabolism
+        range: string
+        required: false
+  gold_sp_phenotype:
+    name: gold_sp_phenotype
+    attributes:
+      gold_id:
+        name: gold_id
+        description: Foreign key to gold_sequencing_project
+        range: gold_sequencing_project
+        required: false
+      phenotype:
+        name: phenotype
+        range: string
+        required: false
+  gold_sp_relevance:
+    name: gold_sp_relevance
+    attributes:
+      gold_id:
+        name: gold_id
+        description: Foreign key to gold_sequencing_project
+        range: gold_sequencing_project
+        required: false
+      relevance:
+        name: relevance
+        range: string
+        required: false
+  gold_sp_seq_center:
+    name: gold_sp_seq_center
+    attributes:
+      gold_id:
+        name: gold_id
+        description: Foreign key to gold_sequencing_project
+        range: gold_sequencing_project
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+      country:
+        name: country
+        range: string
+        required: false
+      url:
+        name: url
+        range: string
+        required: false
+  gold_sp_seq_method:
+    name: gold_sp_seq_method
+    attributes:
+      gold_id:
+        name: gold_id
+        description: Foreign key to gold_sequencing_project
+        range: gold_sequencing_project
+        required: false
+      seq_method:
+        name: seq_method
+        range: string
+        required: false
+  gold_sp_sra:
+    name: gold_sp_sra
+    attributes:
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      sra_id:
+        name: sra_id
+        range: string
+        required: false
+  gold_sp_study_gold_id:
+    name: gold_sp_study_gold_id
+    attributes:
+      gold_id:
+        name: gold_id
+        description: Foreign key to gold_sequencing_project
+        range: gold_sequencing_project
+        required: false
+      study_gold_id:
+        name: study_gold_id
+        range: string
+        required: false
+  gold_study:
+    name: gold_study
+    attributes:
+      study_id:
+        name: study_id
+        range: integer
+        required: false
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      study_name:
+        name: study_name
+        range: string
+        required: false
+      contact_oid:
+        name: contact_oid
+        range: integer
+        required: false
+      contact_email:
+        name: contact_email
+        range: string
+        required: false
+      ecosystem:
+        name: ecosystem
+        range: string
+        required: false
+      ecosystem_category:
+        name: ecosystem_category
+        range: string
+        required: false
+      ecosystem_type:
+        name: ecosystem_type
+        range: string
+        required: false
+      ecosystem_subtype:
+        name: ecosystem_subtype
+        range: string
+        required: false
+      specific_ecosystem:
+        name: specific_ecosystem
+        range: string
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false

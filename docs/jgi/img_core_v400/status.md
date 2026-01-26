@@ -1,0 +1,74 @@
+
+
+# Slot: status 
+
+
+
+URI: [img_core_v400:status](https://w3id.org/jgi/img_core_v400/status)
+Alias: status
+
+<!-- no inheritance hierarchy -->
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [Compound](Compound.md) |  |  no  |
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/jgi/img_core_v400
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | img_core_v400:status |
+| native | img_core_v400:status |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: status
+from_schema: https://w3id.org/jgi/img_core_v400
+rank: 1000
+alias: status
+owner: compound
+domain_of:
+- compound
+range: string
+required: false
+
+```
+</details>

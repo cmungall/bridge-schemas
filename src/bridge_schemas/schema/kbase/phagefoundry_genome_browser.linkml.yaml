@@ -1,0 +1,589 @@
+id: https://w3id.org/kbase/phagefoundry_genome_browser
+name: phagefoundry_genome_browser
+title: PhageFoundry Genome Browser Database
+description: >-
+  PhageFoundry comparative genome browser databases for bacterial pathogens.
+  Contains genome annotations, functional classifications, and regulatory
+  information for phage therapy target organisms.
+
+  AVAILABLE DATABASES:
+  | Database | Organism | Genomes | Description |
+  |----------|----------|---------|-------------|
+  | phagefoundry_acinetobacter_genome_browser | A. baumannii | 891 | Nosocomial pathogen |
+  | phagefoundry_klebsiella_genome_browser_genomedepot | K. pneumoniae | 220 | Carbapenem-resistant |
+  | phagefoundry_paeruginosa_genome_browser | P. aeruginosa | 535 | Opportunistic pathogen |
+  | phagefoundry_pviridiflava_genome_browser | P. viridiflava | 259 | Plant pathogen |
+
+  TABLE STRUCTURE (30 tables per database):
+  - Core: browser_genome, browser_contig, browser_gene, browser_protein
+  - Annotations: browser_cazy_family, browser_cog_class, browser_ec_number,
+    browser_go_term, browser_kegg_ortholog, browser_kegg_pathway
+  - Protein links: browser_protein_* (many-to-many annotation links)
+  - Regulation: browser_operon, browser_regulon, browser_regulon_regulators
+  - Metadata: browser_sample, browser_sample_metadata, browser_site, browser_genome_tags
+
+  PHAGEFOUNDRY PROJECT:
+  Developing phage therapies for antibiotic-resistant bacterial infections.
+  Genome browsers support identification of phage receptor genes and
+  resistance mechanisms.
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  GO: http://purl.obolibrary.org/obo/GO_
+  EC: https://enzyme.expasy.org/EC/
+  KEGG: https://www.genome.jp/kegg/
+  CAZy: http://www.cazy.org/
+
+default_range: string
+imports:
+  - linkml:types
+
+classes:
+  Genome:
+    description: >-
+      Bacterial genome assembly with basic statistics.
+      Links to NCBI via external_id and external_url.
+
+      EXAMPLE GENOMES (Acinetobacter):
+      - ARLG-6271: 143 contigs, 4.0 Mb, 3,901 genes
+      - ARLG-6273: 205 contigs, 4.0 Mb, 3,955 genes
+      - ARLG-6274: 159 contigs, 4.0 Mb, 3,951 genes
+    annotations:
+      source_table: browser_genome
+    attributes:
+      id:
+        identifier: true
+        range: integer
+        required: true
+        description: Internal genome ID
+        examples:
+          - value: 501
+          - value: 502
+
+      name:
+        range: string
+        required: true
+        description: Genome/strain name
+        examples:
+          - value: "ARLG-6271"
+          - value: "ARLG-6273"
+
+      description:
+        range: string
+        description: Genome description (often same as name)
+
+      contigs:
+        range: integer
+        description: Number of contigs in assembly
+        minimum_value: 1
+        examples:
+          - value: 143
+          - value: 205
+          - value: 159
+
+      size:
+        range: integer
+        description: Total genome size in base pairs
+        minimum_value: 0
+        examples:
+          - value: 4015922
+            description: ~4.0 Mb
+          - value: 4031673
+          - value: 4035956
+
+      genes:
+        range: integer
+        description: Total number of predicted genes
+        minimum_value: 0
+        examples:
+          - value: 3901
+          - value: 3955
+          - value: 3951
+
+      json_url:
+        range: string
+        description: Relative URL to genome JSON data
+
+      pub_date:
+        range: datetime
+        description: Publication/upload date
+        examples:
+          - value: "2023-12-23 01:14:13.381489"
+
+      external_url:
+        range: uri
+        description: NCBI nucleotide URL
+        examples:
+          - value: "https://www.ncbi.nlm.nih.gov/nuccore/DAKMEH010000000"
+
+      external_id:
+        range: string
+        description: NCBI accession number
+        examples:
+          - value: "DAKMEH010000000"
+
+      gbk_filepath:
+        range: string
+        description: Path to GenBank file on server
+
+      sample_id:
+        range: integer
+        description: Link to sample metadata
+        comments:
+          - "Foreign key to Sample.id"
+
+      strain_id:
+        range: integer
+        description: Strain identifier
+        examples:
+          - value: 501
+
+      taxon_id:
+        range: integer
+        description: Taxonomy reference
+        examples:
+          - value: 2
+
+  Contig:
+    description: >-
+      Genome contig/scaffold with sequence and GC content.
+    annotations:
+      source_table: browser_contig
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+        description: Contig name/identifier
+      genome_id:
+        range: integer
+        comments:
+          - "Foreign key to Genome.id"
+      size:
+        range: integer
+        description: Contig length in bp
+      gc_content:
+        range: float
+        description: GC content (0-1)
+
+  Gene:
+    description: >-
+      Predicted gene with coordinates and strand.
+    annotations:
+      source_table: browser_gene
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      locus_tag:
+        range: string
+        description: Locus tag identifier
+      contig_id:
+        range: integer
+        comments:
+          - "Foreign key to Contig.id"
+      start:
+        range: integer
+        description: Start coordinate (1-based)
+      end:
+        range: integer
+        description: End coordinate
+      strand:
+        range: integer
+        description: Strand (1 or -1)
+      type:
+        range: string
+        description: Gene type (CDS, tRNA, rRNA, etc.)
+
+  Protein:
+    description: >-
+      Protein sequence with functional annotations.
+      Links to multiple annotation systems via protein_* tables.
+
+      EXAMPLE PROTEINS:
+      - DUF4054 domain-containing protein (127aa)
+      - DUF2184 domain-containing protein (324aa)
+    annotations:
+      source_table: browser_protein
+    attributes:
+      id:
+        identifier: true
+        range: integer
+        examples:
+          - value: 90841
+          - value: 90842
+
+      name:
+        range: string
+        description: Protein name with locus tag, length, and description
+        examples:
+          - value: "OXR37_002879|127aa|DUF4054 domain-containing protein"
+          - value: "OXR37_002880|127aa|hypothetical protein"
+
+      length:
+        range: integer
+        description: Protein length in amino acids
+        minimum_value: 1
+        examples:
+          - value: 127
+          - value: 324
+
+      protein_hash:
+        range: string
+        description: MD5 hash of protein sequence
+        pattern: "[a-f0-9]{32}"
+        examples:
+          - value: "178a9653b894a8ace53dcdc33777cf2e"
+
+      sequence:
+        range: string
+        description: Amino acid sequence
+
+      eggnog_description_id:
+        range: integer
+        description: Link to eggNOG functional description
+        comments:
+          - "Foreign key to EggNOGDescription.id"
+        examples:
+          - value: 2174
+          - value: 6
+
+      taxonomy_id_id:
+        range: integer
+        description: Taxonomy reference
+        examples:
+          - value: 7
+
+  Annotation:
+    description: >-
+      Generic annotation record (used by browser_annotation).
+    annotations:
+      source_table: browser_annotation
+    attributes:
+      id:
+        identifier: true
+        range: integer
+
+  CAZyFamily:
+    description: >-
+      Carbohydrate-Active enZYme family classification.
+      CAZy database families (GH, GT, PL, CE, AA, CBM).
+    annotations:
+      source_table: browser_cazy_family
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+        description: CAZy family name (e.g., GH13, GT2)
+
+  COGClass:
+    description: >-
+      COG (Clusters of Orthologous Groups) functional class.
+      Single-letter codes (A-Z) for broad functional categories.
+    annotations:
+      source_table: browser_cog_class
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+        description: COG class letter and name
+
+  ECNumber:
+    description: >-
+      Enzyme Commission number for enzymatic function.
+    annotations:
+      source_table: browser_ec_number
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+        description: EC number (X.X.X.X format)
+
+  EggNOGDescription:
+    description: >-
+      eggNOG ortholog group functional description.
+    annotations:
+      source_table: browser_eggnog_description
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      description:
+        range: string
+
+  GOTerm:
+    description: >-
+      Gene Ontology term for functional annotation.
+    annotations:
+      source_table: browser_go_term
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      go_id:
+        range: string
+        description: GO term ID (GO:NNNNNNN)
+        pattern: "GO:\\d{7}"
+      name:
+        range: string
+
+  KEGGOrtholog:
+    description: >-
+      KEGG Orthology (KO) identifier for pathway mapping.
+    annotations:
+      source_table: browser_kegg_ortholog
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      ko_id:
+        range: string
+        description: KO identifier (KXXXXX)
+        pattern: "K\\d{5}"
+
+  KEGGPathway:
+    description: >-
+      KEGG metabolic or signaling pathway.
+    annotations:
+      source_table: browser_kegg_pathway
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      pathway_id:
+        range: string
+        description: KEGG pathway ID
+
+  KEGGReaction:
+    description: >-
+      KEGG biochemical reaction.
+    annotations:
+      source_table: browser_kegg_reaction
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      reaction_id:
+        range: string
+
+  Operon:
+    description: >-
+      Predicted operon (co-transcribed gene cluster).
+    annotations:
+      source_table: browser_operon
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+      genome_id:
+        range: integer
+        comments:
+          - "Foreign key to Genome.id"
+
+  OrthologGroup:
+    description: >-
+      Ortholog group across genomes in the database.
+    annotations:
+      source_table: browser_ortholog_group
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+
+  Regulon:
+    description: >-
+      Regulatory network/regulon controlled by transcription factors.
+    annotations:
+      source_table: browser_regulon
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+      genome_id:
+        range: integer
+        comments:
+          - "Foreign key to Genome.id"
+
+  RegulonRegulator:
+    description: >-
+      Transcription factor/regulator in a regulon.
+    annotations:
+      source_table: browser_regulon_regulators
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      regulon_id:
+        range: integer
+        comments:
+          - "Foreign key to Regulon.id"
+      gene_id:
+        range: integer
+        comments:
+          - "Foreign key to Gene.id"
+
+  Sample:
+    description: >-
+      Sample/isolate metadata.
+    annotations:
+      source_table: browser_sample
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+
+  SampleMetadata:
+    description: >-
+      Extended sample metadata key-value pairs.
+    annotations:
+      source_table: browser_sample_metadata
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      sample_id:
+        range: integer
+        comments:
+          - "Foreign key to Sample.id"
+      key:
+        range: string
+      value:
+        range: string
+
+  Site:
+    description: >-
+      Sampling site/location information.
+    annotations:
+      source_table: browser_site
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+
+  GenomeTag:
+    description: >-
+      Tags/labels for genome classification or grouping.
+    annotations:
+      source_table: browser_genome_tags
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      genome_id:
+        range: integer
+        comments:
+          - "Foreign key to Genome.id"
+      tag:
+        range: string
+
+  # Many-to-many link tables
+  ProteinCAZyFamily:
+    description: Protein to CAZy family assignments
+    annotations:
+      source_table: browser_protein_cazy_families
+    attributes:
+      protein_id:
+        range: integer
+        comments:
+          - "Foreign key to Protein.id"
+      cazy_family_id:
+        range: integer
+        comments:
+          - "Foreign key to CAZyFamily.id"
+
+  ProteinCOGClass:
+    description: Protein to COG class assignments
+    annotations:
+      source_table: browser_protein_cog_classes
+    attributes:
+      protein_id:
+        range: integer
+      cog_class_id:
+        range: integer
+
+  ProteinECNumber:
+    description: Protein to EC number assignments
+    annotations:
+      source_table: browser_protein_ec_numbers
+    attributes:
+      protein_id:
+        range: integer
+      ec_number_id:
+        range: integer
+
+  ProteinGOTerm:
+    description: Protein to GO term assignments
+    annotations:
+      source_table: browser_protein_go_terms
+    attributes:
+      protein_id:
+        range: integer
+      go_term_id:
+        range: integer
+
+  ProteinKEGGOrtholog:
+    description: Protein to KEGG ortholog assignments
+    annotations:
+      source_table: browser_protein_kegg_orthologs
+    attributes:
+      protein_id:
+        range: integer
+      kegg_ortholog_id:
+        range: integer
+
+  ProteinKEGGPathway:
+    description: Protein to KEGG pathway assignments
+    annotations:
+      source_table: browser_protein_kegg_pathways
+    attributes:
+      protein_id:
+        range: integer
+      kegg_pathway_id:
+        range: integer
+
+  ProteinKEGGReaction:
+    description: Protein to KEGG reaction assignments
+    annotations:
+      source_table: browser_protein_kegg_reactions
+    attributes:
+      protein_id:
+        range: integer
+      kegg_reaction_id:
+        range: integer
+
+  ProteinOrthologGroup:
+    description: Protein to ortholog group assignments
+    annotations:
+      source_table: browser_protein_ortholog_groups
+    attributes:
+      protein_id:
+        range: integer
+      ortholog_group_id:
+        range: integer
+
+  ProteinTCFamily:
+    description: Protein to Transporter Classification family assignments
+    annotations:
+      source_table: browser_protein_tc_families
+    attributes:
+      protein_id:
+        range: integer
+      tc_family_id:
+        range: integer

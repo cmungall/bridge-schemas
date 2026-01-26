@@ -1,0 +1,68 @@
+site_name: Bridge Schemas
+site_description: LinkML schemas for JGI and KBase genomics lakehouses
+repo_url: https://github.com/cmungall/bridge-schemas
+
+theme:
+  name: material
+  palette:
+    primary: teal
+    accent: cyan
+
+plugins:
+  - search
+  - mermaid2
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid
+
+nav:
+  - Home: index.md
+  - Methods: methods/index.md
+  - Cross-Database Joins: cross-database-joins.md
+  - Case Studies:
+    - Overview: case-studies/index.md
+    - mll BGC (M. extorquens): case-studies/mll-bgc-methylorubrum.md
+  - KBase/BERDL Schemas:
+    - Pangenome: kbase/kbase_ke_pangenome/index.md
+    - NMDC Core: kbase/nmdc_core/index.md
+    - Genomes: kbase/kbase_genomes/index.md
+    - GapMind Pathways: kbase/gapmind_pathways/index.md
+    - ENIGMA CoRAL: kbase/enigma_coral/index.md
+    - PhageFoundry Browser: kbase/phagefoundry_genome_browser/index.md
+    - PhageFoundry Modelling: kbase/phagefoundry_strain_modelling/index.md
+    - UniProt Archaea: kbase/kbase_uniprot_archaea/index.md
+    - UniProt Bacteria: kbase/kbase_uniprot_bacteria/index.md
+    - UniRef50: kbase/kbase_uniref50/index.md
+    - UniRef90: kbase/kbase_uniref90/index.md
+    - UniRef100: kbase/kbase_uniref100/index.md
+    - Phenotype: kbase/kbase_phenotype/index.md
+    - MSD Biochemistry: kbase/kbase_msd_biochemistry/index.md
+    - Ontology Source: kbase/kbase_ontology_source/index.md
+    - RefSeq Taxon: kbase/kbase_refseq_taxon_api/index.md
+  - JGI Lakehouse Schemas:
+    - GOLD: jgi/gold/index.md
+    - IMG Core: jgi/img_core_v400/index.md
+    - IMG Extended: jgi/img_ext/index.md
+    - IMG GOLD: jgi/img_gold/index.md
+    - IMG Satellite: jgi/img_sat_v450/index.md
+    - IMG Submission: jgi/img_sub/index.md
+    - IMG Development: jgi/imgsg_dev/index.md
+    - IMG Taxonomy: jgi/img_i_taxon/index.md
+    - IMG Methylome: jgi/img_methylome/index.md
+    - IMG Proteome: jgi/img_proteome/index.md
+    - IMG RNAseq: jgi/img_rnaseq/index.md
+    - IMG MySQL ABC: jgi/img_mysql_abc/index.md
+    - IMG MySQL Core: jgi/img_mysql_img/index.md
+    - IMG/VR: jgi/img_mysql_imgvr_prod/index.md
+    - IMG MySQL MBin: jgi/img_mysql_mbin/index.md
+    - IMG MySQL MISI: jgi/img_mysql_misi/index.md
+    - Phytozome: jgi/phytozome/index.md
+    - MycoCosm: jgi/mycocosm/index.md
+    - Citation Service: jgi/gcs_citation/index.md
+    - JGI Portal: jgi/jgi_portal/index.md
+    - SDM Metadata: jgi/sdm_metadata/index.md
+    - SMC: jgi/smc/index.md

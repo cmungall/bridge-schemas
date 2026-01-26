@@ -1,0 +1,500 @@
+@prefix img_mysql_misi: <https://w3id.org/jgi/img_mysql_misi/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/jgi/img_mysql_misi.owl.ttl> a owl:Ontology ;
+    rdfs:label "img_mysql_misi" .
+
+img_mysql_misi:IterationInfo a owl:Class ;
+    rdfs:label "iteration_info" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:iteration_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:sketches_directory ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:num_genomes_retained ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:sketches_created ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_misi:num_genomes_added ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_misi:num_genomes_removed ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:num_genomes_removed ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:num_genomes_added ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:num_genomes_removed ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_misi:sketches_created ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:directory ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_misi:num_genomes_retained ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:num_genomes_retained ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_misi:versions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:versions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty img_mysql_misi:iteration_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:num_genomes_added ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_misi:directory ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:directory ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:versions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:iteration_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:sketches_directory ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_misi:sketches_directory ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:sketches_created ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:MashDist a owl:Class ;
+    rdfs:label "mash_dist" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:genomeB ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_misi:genomeB ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_misi:pvalue ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:distance ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:genomeA ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_misi:distance ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:genomeB ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_misi:genomeA ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_misi:shared_hashes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:pvalue ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:distance ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:pvalue ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:genomeA ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:shared_hashes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:shared_hashes ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:MisiAni a owl:Class ;
+    rdfs:label "misi_ani" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_misi:num_bbhA ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:genomeB ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:genomeA_size ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:af_AB ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_misi:aln_nucB ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:af_AB ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:ani_lower ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:af_BA ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_misi:ani_AB ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:genomeA ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_misi:genomeA ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_misi:ani_BA ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:af_lower ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:ani_BA ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:af_lower ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_misi:af_BA ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:genomeB ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:aln_nucA ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:aln_lenB ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:ani_AB ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:ani_BA ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:aln_nucB ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:aln_nucB ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:num_bbhB ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:aln_nucA ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:genomeB_size ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:ani_AB ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_misi:ani_lower ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_misi:af_AB ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:aln_lenB ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_misi:af_lower ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:genomeA_size ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_misi:aln_nucA ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_misi:genomeB_size ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_misi:num_bbhB ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:num_bbhB ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:af_BA ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:genomeB_size ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:num_bbhA ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:genomeA ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:aln_lenA ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:ani_lower ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_misi:genomeA_size ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:aln_lenA ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_misi:genomeB ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_misi:aln_lenB ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_misi:aln_lenA ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:num_bbhA ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:MisiClusters a owl:Class ;
+    rdfs:label "misi_clusters" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:img_taxon_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_misi:cluster_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:cluster_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:cluster_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_misi:img_taxon_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:cluster_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_misi:cluster_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:cluster_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:img_taxon_id ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:TaxonInfo a owl:Class ;
+    rdfs:label "taxon_info" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_misi:db_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_misi:domain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_misi:rna_to_ignore ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:domain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:img_add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:iteration_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:rna_to_ignore ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_mysql_misi:img_add_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_misi:img_taxon_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty img_mysql_misi:iteration_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:img_add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:img_taxon_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:db_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:domain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:db_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_misi:img_taxon_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:rna_to_ignore ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_misi:iteration_date ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:af_AB a owl:DatatypeProperty ;
+    rdfs:label "af_AB" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:af_BA a owl:DatatypeProperty ;
+    rdfs:label "af_BA" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:af_lower a owl:DatatypeProperty ;
+    rdfs:label "af_lower" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:aln_lenA a owl:DatatypeProperty ;
+    rdfs:label "aln_lenA" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:aln_lenB a owl:DatatypeProperty ;
+    rdfs:label "aln_lenB" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:aln_nucA a owl:DatatypeProperty ;
+    rdfs:label "aln_nucA" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:aln_nucB a owl:DatatypeProperty ;
+    rdfs:label "aln_nucB" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:ani_AB a owl:DatatypeProperty ;
+    rdfs:label "ani_AB" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:ani_BA a owl:DatatypeProperty ;
+    rdfs:label "ani_BA" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:ani_lower a owl:DatatypeProperty ;
+    rdfs:label "ani_lower" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:cluster_id a owl:DatatypeProperty ;
+    rdfs:label "cluster_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:cluster_type a owl:DatatypeProperty ;
+    rdfs:label "cluster_type" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:db_type a owl:DatatypeProperty ;
+    rdfs:label "db_type" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:directory a owl:DatatypeProperty ;
+    rdfs:label "directory" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:distance a owl:DatatypeProperty ;
+    rdfs:label "distance" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:domain a owl:DatatypeProperty ;
+    rdfs:label "domain" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:genomeA_size a owl:DatatypeProperty ;
+    rdfs:label "genomeA_size" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:genomeB_size a owl:DatatypeProperty ;
+    rdfs:label "genomeB_size" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:img_add_date a owl:DatatypeProperty ;
+    rdfs:label "img_add_date" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:num_bbhA a owl:DatatypeProperty ;
+    rdfs:label "num_bbhA" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:num_bbhB a owl:DatatypeProperty ;
+    rdfs:label "num_bbhB" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:num_genomes_added a owl:DatatypeProperty ;
+    rdfs:label "num_genomes_added" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:num_genomes_removed a owl:DatatypeProperty ;
+    rdfs:label "num_genomes_removed" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:num_genomes_retained a owl:DatatypeProperty ;
+    rdfs:label "num_genomes_retained" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:pvalue a owl:DatatypeProperty ;
+    rdfs:label "pvalue" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:rna_to_ignore a owl:DatatypeProperty ;
+    rdfs:label "rna_to_ignore" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:shared_hashes a owl:DatatypeProperty ;
+    rdfs:label "shared_hashes" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:sketches_created a owl:DatatypeProperty ;
+    rdfs:label "sketches_created" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:sketches_directory a owl:DatatypeProperty ;
+    rdfs:label "sketches_directory" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:versions a owl:DatatypeProperty ;
+    rdfs:label "versions" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_misi> .
+
+img_mysql_misi:genomeA a owl:DatatypeProperty .
+
+img_mysql_misi:genomeB a owl:DatatypeProperty .
+
+img_mysql_misi:img_taxon_id a owl:DatatypeProperty .
+
+img_mysql_misi:iteration_date a owl:DatatypeProperty .
+
+

@@ -1,0 +1,65 @@
+
+
+# Slot: protein_acc_id 
+
+
+
+URI: [img_proteome:protein_acc_id](https://w3id.org/jgi/img_proteome/protein_acc_id)
+Alias: protein_acc_id
+
+<!-- no inheritance hierarchy -->
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [MsProteinOld](MsProteinOld.md) |  |  no  |
+| [MsProtein](MsProtein.md) |  |  no  |
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | img_proteome:protein_acc_id |
+| native | img_proteome:protein_acc_id |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: protein_acc_id
+alias: protein_acc_id
+domain_of:
+- ms_protein
+- ms_protein_old
+range: string
+
+```
+</details>

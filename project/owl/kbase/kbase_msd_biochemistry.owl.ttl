@@ -1,0 +1,371 @@
+@prefix kbase: <https://w3id.org/kbase/kbase_msd_biochemistry/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/kbase/kbase_msd_biochemistry.owl.ttl> a owl:Ontology ;
+    rdfs:label "kbase_msd_biochemistry" .
+
+kbase:Molecule a owl:Class ;
+    rdfs:label "Molecule" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:mass ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:deltag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:formula ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:formula ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:pkb ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:charge ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:inchikey ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:abbreviation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:pkb ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:inchikey ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:abbreviation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:pkb ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:deltagerr ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:charge ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:deltag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:charge ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:smiles ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:pka ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:formula ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:abbreviation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty kbase:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:smiles ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:mass ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:deltag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:smiles ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:mass ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:deltagerr ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:inchikey ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:deltagerr ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:pka ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:pka ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_msd_biochemistry> ;
+    kbase:source_table "molecule" .
+
+kbase:Reaction a owl:Class ;
+    rdfs:label "Reaction" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:deltagerr ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:deltag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:reversibility ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:deltag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:abbreviation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:status ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:deltag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:is_transport ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:reversibility ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:is_transport ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:is_transport ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty kbase:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:deltagerr ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:abbreviation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:abbreviation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:reversibility ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:source ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:status ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:status ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:deltagerr ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_msd_biochemistry> ;
+    kbase:source_table "reaction" .
+
+kbase:ReactionSimilarity a owl:Class ;
+    rdfs:label "ReactionSimilarity" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:similarity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:reaction_1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:reaction_1 ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:similarity ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:similarity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:reaction_2 ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:reaction_1 ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:reaction_2 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:reaction_2 ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_msd_biochemistry> ;
+    kbase:source_table "reaction_similarity" .
+
+kbase:Reagent a owl:Class ;
+    rdfs:label "Reagent" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:molecule_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:compartment_index ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:molecule_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:reaction_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:stoichiometry ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:molecule_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:stoichiometry ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:compartment_index ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:reaction_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:compartment_index ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:stoichiometry ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:reaction_id ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_msd_biochemistry> ;
+    kbase:source_table "reagent" .
+
+kbase:charge a owl:DatatypeProperty ;
+    rdfs:label "charge" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_msd_biochemistry> .
+
+kbase:compartment_index a owl:DatatypeProperty ;
+    rdfs:label "compartment_index" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_msd_biochemistry> .
+
+kbase:formula a owl:DatatypeProperty ;
+    rdfs:label "formula" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_msd_biochemistry> .
+
+kbase:inchikey a owl:DatatypeProperty ;
+    rdfs:label "inchikey" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_msd_biochemistry> .
+
+kbase:is_transport a owl:DatatypeProperty ;
+    rdfs:label "is_transport" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_msd_biochemistry> .
+
+kbase:mass a owl:DatatypeProperty ;
+    rdfs:label "mass" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_msd_biochemistry> .
+
+kbase:molecule_id a owl:DatatypeProperty ;
+    rdfs:label "molecule_id" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_msd_biochemistry> .
+
+kbase:pka a owl:DatatypeProperty ;
+    rdfs:label "pka" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_msd_biochemistry> .
+
+kbase:pkb a owl:DatatypeProperty ;
+    rdfs:label "pkb" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_msd_biochemistry> .
+
+kbase:reaction_1 a owl:DatatypeProperty ;
+    rdfs:label "reaction_1" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_msd_biochemistry> .
+
+kbase:reaction_2 a owl:DatatypeProperty ;
+    rdfs:label "reaction_2" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_msd_biochemistry> .
+
+kbase:reaction_id a owl:DatatypeProperty ;
+    rdfs:label "reaction_id" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_msd_biochemistry> .
+
+kbase:reversibility a owl:DatatypeProperty ;
+    rdfs:label "reversibility" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_msd_biochemistry> .
+
+kbase:similarity a owl:DatatypeProperty ;
+    rdfs:label "similarity" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_msd_biochemistry> .
+
+kbase:smiles a owl:DatatypeProperty ;
+    rdfs:label "smiles" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_msd_biochemistry> .
+
+kbase:status a owl:DatatypeProperty ;
+    rdfs:label "status" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_msd_biochemistry> .
+
+kbase:stoichiometry a owl:DatatypeProperty ;
+    rdfs:label "stoichiometry" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_msd_biochemistry> .
+
+kbase:abbreviation a owl:DatatypeProperty .
+
+kbase:deltag a owl:DatatypeProperty .
+
+kbase:deltagerr a owl:DatatypeProperty .
+
+kbase:id a owl:DatatypeProperty .
+
+kbase:name a owl:DatatypeProperty .
+
+kbase:source a owl:DatatypeProperty .
+
+

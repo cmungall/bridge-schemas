@@ -1,0 +1,257 @@
+id: https://w3id.org/jgi/gcs_citation
+name: gcs_citation
+title: JGI Genome Citation Service
+description: >-
+  Citation and publication tracking database for JGI genomes.
+  Tracks genome citations, publications, concepts, and related metadata.
+
+  DATABASE: gcs-vm-1 postgresql.public
+  TABLES: 40
+
+  KEY FUNCTIONALITY:
+  - Track genome citations and publications
+  - Concept/entity recognition from literature
+  - Document and publication indexing
+  - Citation statistics and reporting
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  PMID: https://pubmed.ncbi.nlm.nih.gov/
+  DOI: https://doi.org/
+
+default_range: string
+imports:
+  - linkml:types
+
+classes:
+  Concept:
+    description: >-
+      Named concept/entity extracted from literature (gene, organism, etc.).
+    annotations:
+      source_table: concept
+    attributes:
+      luid:
+        identifier: true
+        range: integer
+        description: Local unique identifier
+      type:
+        range: string
+        description: Concept type (relation, gene, organism, etc.)
+
+  ConceptIdentifier:
+    description: >-
+      External identifier for a concept (NCBI Gene ID, taxonomy ID, etc.).
+    annotations:
+      source_table: concept_identifier
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      concept_luid:
+        range: integer
+        comments:
+          - "Foreign key to Concept.luid"
+      identifier_type_id:
+        range: integer
+        comments:
+          - "Foreign key to ConceptIdentifierType.id"
+      value:
+        range: string
+        description: The identifier value
+
+  ConceptIdentifierType:
+    description: >-
+      Type of concept identifier (NCBI Gene, NCBI Taxonomy, etc.).
+    annotations:
+      source_table: concept_identifier_type
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+        description: Identifier type name
+
+  ConceptRelation:
+    description: >-
+      Relationship between two concepts.
+    annotations:
+      source_table: concept_relation
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      subject_luid:
+        range: integer
+        comments:
+          - "Foreign key to Concept.luid"
+      object_luid:
+        range: integer
+        comments:
+          - "Foreign key to Concept.luid"
+      relation_type:
+        range: string
+
+  Document:
+    description: >-
+      Document/publication record.
+    annotations:
+      source_table: document
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      corpus_id:
+        range: integer
+        comments:
+          - "Foreign key to Corpus.id"
+      title:
+        range: string
+      abstract:
+        range: string
+
+  DocumentConcept:
+    description: >-
+      Link between documents and concepts mentioned in them.
+    annotations:
+      source_table: document_concept
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      document_id:
+        range: integer
+        comments:
+          - "Foreign key to Document.id"
+      concept_luid:
+        range: integer
+        comments:
+          - "Foreign key to Concept.luid"
+
+  Publication:
+    description: >-
+      Publication metadata (journal article, preprint, etc.).
+    annotations:
+      source_table: publication
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      pmid:
+        range: string
+        description: PubMed ID
+      doi:
+        range: string
+        description: Digital Object Identifier
+      title:
+        range: string
+      journal:
+        range: string
+      year:
+        range: integer
+
+  Corpus:
+    description: >-
+      Collection of documents (e.g., all JGI publications).
+    annotations:
+      source_table: corpus
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+
+  GenomeCitationReport:
+    description: >-
+      Citation report for a genome/project.
+    annotations:
+      source_table: genome_citation_report_full
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      genome_id:
+        range: string
+      pmid:
+        range: string
+      doi:
+        range: string
+      citation_count:
+        range: integer
+
+  GenomeCitationStatistics:
+    description: >-
+      Aggregated citation statistics for genomes.
+    annotations:
+      source_table: genome_citation_statistics
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      genome_id:
+        range: string
+      total_citations:
+        range: integer
+      year_count:
+        range: integer
+
+  Institution:
+    description: >-
+      Research institution.
+    annotations:
+      source_table: institution
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+
+  Publisher:
+    description: >-
+      Journal publisher.
+    annotations:
+      source_table: publisher
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+
+  JgiMetadata:
+    description: >-
+      JGI-specific metadata records.
+    annotations:
+      source_table: jgi_metadata
+    attributes:
+      id:
+        identifier: true
+        range: integer
+
+  MeshKeyword:
+    description: >-
+      MeSH (Medical Subject Headings) keyword.
+    annotations:
+      source_table: mesh_keyword
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      term:
+        range: string
+
+  ApiAccessLog:
+    description: >-
+      API access logging.
+    annotations:
+      source_table: api_access_log
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      timestamp:
+        range: datetime
+      endpoint:
+        range: string

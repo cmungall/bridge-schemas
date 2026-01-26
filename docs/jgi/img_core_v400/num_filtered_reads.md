@@ -1,0 +1,74 @@
+
+
+# Slot: num_filtered_reads 
+
+
+
+URI: [img_core_v400:num_filtered_reads](https://w3id.org/jgi/img_core_v400/num_filtered_reads)
+Alias: num_filtered_reads
+
+<!-- no inheritance hierarchy -->
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [TaxonAssemblyStats](TaxonAssemblyStats.md) |  |  no  |
+
+
+
+
+
+
+## Properties
+
+* Range: [Float](Float.md)
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/jgi/img_core_v400
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | img_core_v400:num_filtered_reads |
+| native | img_core_v400:num_filtered_reads |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: num_filtered_reads
+from_schema: https://w3id.org/jgi/img_core_v400
+rank: 1000
+alias: num_filtered_reads
+owner: taxon_assembly_stats
+domain_of:
+- taxon_assembly_stats
+range: float
+required: false
+
+```
+</details>

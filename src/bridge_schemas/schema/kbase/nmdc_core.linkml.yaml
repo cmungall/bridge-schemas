@@ -1,0 +1,1627 @@
+id: https://w3id.org/kbase/nmdc_core
+name: nmdc_core
+title: NMDC Core Database
+description: >-
+  National Microbiome Data Collaborative (NMDC) core data including samples,
+  studies, omics data, annotations, and embeddings. Contains data from GOLD,
+  metabolomics, metagenomics, and other microbiome sources. Supports multi-modal
+  analysis through unified embeddings and tokenization.
+
+  DATABASE STATISTICS (as of 2024):
+  - 48 research studies with comprehensive metadata
+  - 3,129,061+ metabolomics feature records
+  - 48,196 annotation terms (GO, EC, KEGG, COG, MetaCyc)
+  - 39,354 non-obsolete GO terms
+  - 256-dimensional unified embeddings per biosample
+
+  ANNOTATION TERM COUNTS BY SOURCE:
+  | Source       | Terms  | Description                        |
+  |--------------|--------|-------------------------------------|
+  | GO           | 48,196 | Gene Ontology terms                |
+  | EC           | 8,813  | Enzyme Commission numbers          |
+  | KEGG KO      | 8,104  | KEGG Orthology functional orthologs|
+  | MetaCyc      | 1,538  | MetaCyc metabolic pathways         |
+  | KEGG Module  | 370    | KEGG functional modules            |
+  | KEGG Pathway | 306    | KEGG metabolic pathways            |
+  | COG          | 26     | Clusters of Orthologous Groups     |
+
+  GO TERM DISTRIBUTION BY NAMESPACE:
+  | Namespace          | Count  | Fraction |
+  |--------------------|--------|----------|
+  | biological_process | 30,817 | 64%      |
+  | molecular_function | 12,805 | 27%      |
+  | cellular_component | 4,573  | 9%       |
+
+  ECOSYSTEM COVERAGE (studies with ecosystem data):
+  - Environmental/Terrestrial/Soil (3 studies)
+  - Environmental/Aquatic/Freshwater (3 studies)
+  - Environmental/Terrestrial/Deep subsurface (1 study)
+  - Host-associated/Plants (1 study)
+
+  KEY FEATURES:
+  - Multi-modal embeddings for similarity search across samples
+  - Unified annotation vocabulary across GO, KEGG, EC, COG, MetaCyc
+  - Pre-computed GO hierarchy for efficient ancestor queries
+  - Mass spectrometry metabolomics with compound identification
+  - Taxonomic classification from multiple tools (Kraken, GOTTCHA, Centrifuge)
+
+  USAGE: For functional analysis, start with annotation_terms_unified. For
+  metabolomics, use metabolomics_gold. For similarity search, use embeddings_v1.
+  For GO-based enrichment, use go_hierarchy_flat for closure queries.
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  nmdc: https://w3id.org/nmdc/
+  GO: http://purl.obolibrary.org/obo/GO_
+  KEGG: https://www.genome.jp/kegg/
+  EC: https://enzyme.expasy.org/EC/
+  COG: https://www.ncbi.nlm.nih.gov/research/cog/
+  ChEBI: http://purl.obolibrary.org/obo/CHEBI_
+  GOLD: https://gold.jgi.doe.gov/
+  RHEA: https://www.rhea-db.org/rhea/
+
+default_range: string
+imports:
+  - linkml:types
+
+enums:
+  AnnotationSource:
+    description: >-
+      Source databases for annotation terms. NMDC integrates annotations
+      from multiple sources into a unified vocabulary.
+
+      TERM COUNTS BY SOURCE:
+      - go: 48,196 terms (Gene Ontology - largest source)
+      - ec: 8,813 terms (Enzyme Commission numbers)
+      - kegg_ko: 8,104 terms (KEGG Orthology)
+      - metacyc: 1,538 terms (MetaCyc pathways)
+      - kegg_module: 370 terms (KEGG modules)
+      - kegg_pathway: 306 terms (KEGG pathways)
+      - cog: 26 categories (COG functional categories)
+    permissible_values:
+      go:
+        description: >-
+          Gene Ontology - structured vocabulary for gene products. Largest
+          annotation source with 48,196 terms across biological process,
+          molecular function, and cellular component namespaces.
+      kegg_ko:
+        description: >-
+          KEGG Orthology - functional orthologs across species. 8,104 terms
+          with K##### identifiers linking genes to pathways and modules.
+      kegg_pathway:
+        description: >-
+          KEGG Pathway - metabolic and signaling pathways. 306 pathways
+          with ko##### identifiers representing biological processes.
+      kegg_module:
+        description: >-
+          KEGG Module - functional units within pathways. 370 modules
+          representing complete or partial pathway components.
+      ec:
+        description: >-
+          Enzyme Commission - hierarchical enzyme classification. 8,813
+          EC numbers in X.X.X.X format based on catalyzed reactions.
+      cog:
+        description: >-
+          Clusters of Orthologous Groups - 26 single-letter functional
+          categories (A-Z) for broad functional classification.
+      metacyc:
+        description: >-
+          MetaCyc metabolic pathways - curated pathway database with
+          1,538 pathways including reaction details.
+
+  GoNamespace:
+    description: >-
+      Gene Ontology namespaces (aspects). GO is divided into three main
+      namespaces representing different aspects of gene product function.
+
+      DISTRIBUTION IN DATABASE:
+      - biological_process: 30,817 terms (64%) - what the gene product does
+      - molecular_function: 12,805 terms (27%) - activities at molecular level
+      - cellular_component: 4,573 terms (9%) - where the product is located
+      - external: 1 term (cross-references)
+    permissible_values:
+      biological_process:
+        description: >-
+          Biological process (BP) - 30,817 terms describing larger processes
+          accomplished by multiple molecular activities. Examples include
+          "mitochondrion inheritance" (GO:0000001), "signal transduction".
+      molecular_function:
+        description: >-
+          Molecular function (MF) - 12,805 terms describing activities at
+          the molecular level. Examples include "high-affinity zinc
+          transmembrane transporter activity" (GO:0000006).
+      cellular_component:
+        description: >-
+          Cellular component (CC) - 4,573 terms describing locations
+          relative to cellular structures. Examples include "nucleus",
+          "plasma membrane", "mitochondrion".
+      external:
+        description: >-
+          External cross-references to other databases. Rarely used
+          namespace for terms not in the main three aspects.
+
+  Ecosystem:
+    description: >-
+      Top-level ecosystem classification from GOLD. Distinguishes between
+      free-living environmental samples and host-associated microbiomes.
+    permissible_values:
+      Environmental:
+        description: >-
+          Environmental/free-living samples from natural habitats including
+          soil, water, sediment, and subsurface environments. Most common
+          ecosystem type in NMDC with studies spanning terrestrial and
+          aquatic environments.
+      Host-associated:
+        description: >-
+          Host-associated microbiomes from humans, animals, and plants.
+          Includes gut microbiomes, plant root associations, and other
+          symbiotic communities.
+
+  EcosystemCategory:
+    description: >-
+      Ecosystem category within top-level ecosystem classification.
+      Second level of the GOLD ecosystem hierarchy.
+    permissible_values:
+      Aquatic:
+        description: >-
+          Aquatic environments including freshwater (lakes, rivers, wetlands)
+          and marine ecosystems. 3+ studies in NMDC focus on freshwater
+          systems like the Columbia River.
+      Terrestrial:
+        description: >-
+          Land-based environments including soils, deep subsurface, and
+          caves. Most common category with studies on soil microbiomes
+          and deep shale carbon reservoirs.
+      Plants:
+        description: >-
+          Plant-associated environments including rhizosphere, phyllosphere,
+          and endophytic communities. Includes tropical forest soil studies.
+
+  EcosystemType:
+    description: >-
+      Specific ecosystem types within categories. Third level of GOLD
+      ecosystem classification providing more detail.
+    permissible_values:
+      Soil:
+        description: >-
+          Soil environments - surface and subsurface soils. 3 studies focus
+          on soil including tropical forest soils and peatlands.
+      Freshwater:
+        description: >-
+          Freshwater environments including lakes, rivers, and wetlands.
+          Columbia River hyporheic zone and Minnesota peatlands are examples.
+      Deep subsurface:
+        description: >-
+          Deep subsurface environments including shale formations, aquifers,
+          and caves. Marcellus/Utica shale study examines deep carbon reservoirs.
+      Unclassified:
+        description: >-
+          Unclassified or mixed ecosystem types where specific classification
+          is not available or environment spans multiple types.
+
+  StudyCategory:
+    description: Study organization type - individual research or consortium
+    permissible_values:
+      research_study:
+        description: >-
+          Individual research study typically led by a single PI or research
+          group. Most NMDC studies are research_study type.
+      consortium:
+        description: >-
+          Multi-institution consortium project like NEON (National Ecological
+          Observatory Network) that aggregates data across many sites.
+
+  CogFunctionalCategory:
+    description: >-
+      COG single-letter functional categories (A-Z). Provides broad functional
+      classification of proteins based on Clusters of Orthologous Groups.
+      26 categories covering information processing, metabolism, and cellular
+      processes.
+
+      CATEGORY GROUPS:
+      - INFORMATION STORAGE/PROCESSING: J, A, K, L, B
+      - CELLULAR PROCESSES/SIGNALING: D, Y, V, T, M, N, Z, W, U, O, X
+      - METABOLISM: C, G, E, F, H, I, P, Q
+      - POORLY CHARACTERIZED: R, S
+    permissible_values:
+      A:
+        description: RNA processing and modification (color #FCDCFC)
+      B:
+        description: Chromatin structure and dynamics (color #FCDCCC)
+      C:
+        description: Energy production and conversion (color #CCFCCC)
+      D:
+        description: Cell cycle control, cell division, chromosome partitioning (color #FCFCDC)
+      E:
+        description: Amino acid transport and metabolism (color #CCFCBC)
+      F:
+        description: Nucleotide transport and metabolism (color #CCFCAC)
+      G:
+        description: Carbohydrate transport and metabolism (color #BCFCAC)
+      H:
+        description: Coenzyme transport and metabolism (color #ACFCAC)
+      I:
+        description: Lipid transport and metabolism (color #ACFCBC)
+      J:
+        description: Translation, ribosomal structure and biogenesis (color #FCCCFC)
+      K:
+        description: Transcription (color #FCDCEC)
+      L:
+        description: Replication, recombination and repair (color #FCDCDC)
+      M:
+        description: Cell wall/membrane/envelope biogenesis (color #ECFCAC)
+      N:
+        description: Cell motility (color #DCFCAC)
+      O:
+        description: Posttranslational modification, protein turnover, chaperones (color #BCFCBC)
+      P:
+        description: Inorganic ion transport and metabolism (color #ACFCCC)
+      Q:
+        description: Secondary metabolites biosynthesis, transport and catabolism (color #ACFCDC)
+      R:
+        description: General function prediction only (color #CCCCFC)
+      S:
+        description: Function unknown (color #BCCCFC)
+      T:
+        description: Signal transduction mechanisms (color #FCFCAC)
+      U:
+        description: Intracellular trafficking, secretion, and vesicular transport (color #CCFCCC)
+      V:
+        description: Defense mechanisms (color #FCFCBC)
+      W:
+        description: Extracellular structures (color #CCFCDC)
+      X:
+        description: Mobilome - prophages, transposons (color #DCCCFC)
+      Y:
+        description: Nuclear structure (color #FCFCCC)
+      Z:
+        description: Cytoskeleton (color #DCFCBC)
+
+  TokenEntityType:
+    description: Types of entities in the vocabulary registry for tokenization
+    permissible_values:
+      special:
+        description: >-
+          Special tokens for ML models including [PAD], [CLS], [SEP], [MASK],
+          [UNK]. These are system tokens not representing biological entities.
+      taxon:
+        description: Taxonomic entities (species, genera, etc.) for taxonomy features
+      go_term:
+        description: Gene Ontology terms for functional trait features
+      compound:
+        description: Chemical compounds for metabolomics/biochemical features
+      environmental:
+        description: Environmental parameters for abiotic features
+
+  SourceModality:
+    description: Data modality from which tokens/embeddings are derived
+    permissible_values:
+      system:
+        description: System tokens ([PAD], [CLS], etc.) not from biological data
+      taxonomy:
+        description: Taxonomic composition from 16S/metagenomic classification
+      trait:
+        description: Functional traits from GO term annotations
+      biochemical:
+        description: Biochemical features from metabolomics
+      abiotic:
+        description: Abiotic environmental measurements (pH, temperature, etc.)
+
+classes:
+  # Core Ontology/Annotation Tables
+  AnnotationTermsUnified:
+    description: >-
+      Unified annotation terms across sources (GO, KEGG, EC, COG, MetaCyc).
+      Provides a single interface for querying functional annotations
+      regardless of source ontology.
+
+      TOTAL TERMS: 67,353 across all sources
+
+      USAGE: Query this table when you need to search across annotation
+      databases. Use the source column to filter by specific database.
+      For GO-specific queries with hierarchy, use go_terms and go_hierarchy_flat.
+
+      EXAMPLE QUERIES:
+      - Find all kinase-related terms: WHERE name LIKE '%kinase%'
+      - Get all EC numbers: WHERE source = 'ec'
+      - Search by ID: WHERE term_id = 'GO:0008150'
+    annotations:
+      source_table: annotation_terms_unified
+    attributes:
+      source:
+        range: AnnotationSource
+        required: true
+        description: >-
+          Source ontology/database for this term. Determines ID format
+          and available metadata.
+        examples:
+          - value: "go"
+            description: Gene Ontology - largest source with 48K+ terms
+          - value: "ec"
+            description: Enzyme Commission - 8,813 enzyme classifications
+          - value: "kegg_ko"
+            description: KEGG Orthology - 8,104 functional orthologs
+          - value: "cog"
+            description: COG categories - 26 broad functional groups
+      term_id:
+        identifier: true
+        range: string
+        required: true
+        description: >-
+          Term identifier with format varying by source. GO uses GO:NNNNNNN,
+          EC uses X.X.X.X, KEGG KO uses KXXXXX.
+        examples:
+          - value: "GO:0008150"
+            description: biological_process - root term for BP namespace
+          - value: "GO:0003674"
+            description: molecular_function - root term for MF namespace
+          - value: "K00001"
+            description: KEGG alcohol dehydrogenase ortholog
+          - value: "1.1.1.1"
+            description: EC number for alcohol dehydrogenase
+          - value: "J"
+            description: COG category - Translation, ribosomal structure
+      name:
+        range: string
+        description: Human-readable term name/label
+        examples:
+          - value: "biological_process"
+            description: Root GO term name
+          - value: "mitochondrion inheritance"
+            description: Specific GO biological process
+          - value: "Alcohol dehydrogenase"
+            description: EC enzyme name
+      description:
+        range: string
+        description: >-
+          Term description or definition. For GO terms, contains the
+          formal definition with citations. May be empty for some sources.
+      namespace:
+        range: string
+        description: >-
+          Ontology namespace (primarily for GO terms). One of
+          biological_process, molecular_function, or cellular_component.
+        examples:
+          - value: "biological_process"
+          - value: "molecular_function"
+          - value: "cellular_component"
+      is_obsolete:
+        range: boolean
+        description: >-
+          Whether term is deprecated and should not be used for new
+          annotations. About 18% of GO terms are obsolete.
+        examples:
+          - value: false
+            description: Active term - safe to use
+          - value: true
+            description: Obsolete - check for replacement
+
+  GoTerms:
+    description: >-
+      Gene Ontology terms with full metadata. GO provides structured
+      vocabulary for gene products across biological process, molecular
+      function, and cellular component namespaces.
+
+      TOTAL TERMS: 48,196 (39,354 non-obsolete)
+
+      NAMESPACE BREAKDOWN:
+      - biological_process: 30,817 terms (64%)
+      - molecular_function: 12,805 terms (27%)
+      - cellular_component: 4,573 terms (9%)
+
+      USAGE: Use for looking up GO term details. For ancestor/descendant
+      queries, use go_hierarchy_flat which has pre-computed transitive closure.
+
+      EXAMPLE QUERIES:
+      - Find non-obsolete terms: WHERE is_obsolete = false
+      - Terms by namespace: WHERE namespace = 'biological_process'
+      - Search by name: WHERE name LIKE '%kinase%'
+    annotations:
+      source_table: go_terms
+    attributes:
+      go_id:
+        identifier: true
+        range: string
+        required: true
+        description: >-
+          GO term ID in GO:NNNNNNN format. Seven-digit numeric identifier
+          prefixed with "GO:".
+        pattern: "GO:\\d{7}"
+        examples:
+          - value: "GO:0000001"
+            description: mitochondrion inheritance (biological_process)
+          - value: "GO:0000006"
+            description: high-affinity zinc transmembrane transporter activity (MF)
+          - value: "GO:0008150"
+            description: biological_process - root term
+          - value: "GO:0003674"
+            description: molecular_function - root term
+          - value: "GO:0005575"
+            description: cellular_component - root term
+      name:
+        range: string
+        description: Primary term name (may include "obsolete" prefix for deprecated terms)
+        examples:
+          - value: "mitochondrion inheritance"
+            description: Active biological process term
+          - value: "high-affinity zinc transmembrane transporter activity"
+            description: Molecular function with specific substrate
+          - value: "obsolete mitochondrial genome maintenance"
+            description: Obsolete term - check is_obsolete flag
+      namespace:
+        range: GoNamespace
+        description: >-
+          GO namespace (aspect). Determines the type of information
+          the term represents.
+        examples:
+          - value: "biological_process"
+            description: 64% of terms - describes biological goals
+          - value: "molecular_function"
+            description: 27% of terms - molecular activities
+          - value: "cellular_component"
+            description: 9% of terms - cellular locations
+      definition:
+        range: string
+        description: >-
+          Full term definition with citations in double quotes. Provides
+          precise meaning of the term with source references.
+        examples:
+          - value: "\"The distribution of mitochondria, including the mitochondrial genome, into daughter cells after mitosis or meiosis, mediated by interactions between mitochondria and the cytoskeleton.\""
+            description: Definition for GO:0000001
+          - value: "\"OBSOLETE. Assists in the correct assembly of ribosomes...\""
+            description: Obsolete terms have OBSOLETE prefix
+      synonyms:
+        range: string
+        description: >-
+          Semicolon-separated list of term synonyms. Includes exact,
+          related, and narrow synonyms.
+        examples:
+          - value: "mitochondrial inheritance"
+            description: Single synonym
+          - value: "high affinity zinc uptake transmembrane transporter activity; high-affinity zinc uptake transmembrane transporter activity"
+            description: Multiple synonyms separated by semicolon
+      is_obsolete:
+        range: boolean
+        description: >-
+          Whether term is deprecated. About 18% of terms are obsolete.
+          Check replacement terms in definition before using obsolete terms.
+        examples:
+          - value: false
+            description: Active term (82% of terms)
+          - value: true
+            description: Obsolete (18%) - find replacement
+
+  GoHierarchyFlat:
+    description: >-
+      Flattened GO hierarchy for efficient ancestor/descendant queries.
+      Pre-computed transitive closure of is_a and part_of relationships.
+
+      USAGE: Essential for GO enrichment analysis and hierarchical queries.
+      Use all_ancestors for finding parent terms, all_parents for direct parents.
+      Depth indicates distance from root (root terms have depth 1).
+
+      EXAMPLE QUERIES:
+      - Find all ancestors of a term: SELECT all_ancestors WHERE go_id = 'GO:0000001'
+      - Find terms at specific depth: WHERE depth = 5
+      - Non-obsolete with ancestors: WHERE is_obsolete = false AND all_ancestors IS NOT NULL
+    annotations:
+      source_table: go_hierarchy_flat
+    attributes:
+      go_id:
+        range: string
+        description: GO term this row describes
+        comments:
+          - "Foreign key to GoTerms.go_id"
+        pattern: "GO:\\d{7}"
+        examples:
+          - value: "GO:0000001"
+            description: mitochondrion inheritance
+      namespace:
+        range: GoNamespace
+        description: GO namespace of this term
+        examples:
+          - value: "biological_process"
+      all_parents:
+        range: string
+        description: >-
+          Semicolon-separated direct parent GO IDs (immediate is_a/part_of
+          parents). Empty for root terms.
+        examples:
+          - value: "GO:0048308;GO:0048311"
+            description: Two direct parents
+          - value: "GO:0008150"
+            description: Single parent (biological_process root)
+      all_ancestors:
+        range: string
+        description: >-
+          Semicolon-separated all ancestor GO IDs (transitive closure).
+          Includes all terms reachable through is_a and part_of relations.
+        examples:
+          - value: "GO:0006996;GO:0008150;GO:0009987;GO:0016043;GO:0048308"
+            description: Multiple ancestors from root to direct parents
+      depth:
+        range: integer
+        description: >-
+          Maximum depth from root (root terms have depth 1). Useful for
+          filtering by specificity - higher depth = more specific term.
+        minimum_value: 1
+        examples:
+          - value: 1
+            description: Root terms (biological_process, molecular_function)
+          - value: 5
+            description: Mid-level terms
+          - value: 10
+            description: Highly specific terms
+      is_obsolete:
+        range: boolean
+        description: Whether term is deprecated
+        examples:
+          - value: false
+
+  EcTerms:
+    description: >-
+      Enzyme Commission (EC) number terms. EC provides hierarchical
+      classification of enzymes based on reactions catalyzed.
+
+      TOTAL TERMS: 8,813
+
+      EC NUMBER HIERARCHY:
+      - Level 1: X.-.-.- (7 classes: oxidoreductases, transferases, etc.)
+      - Level 2: X.X.-.- (subclasses by bond type/group transferred)
+      - Level 3: X.X.X.- (sub-subclasses by specific reaction)
+      - Level 4: X.X.X.X (specific enzyme)
+
+      EXAMPLE: 1.1.1.1 (Alcohol dehydrogenase)
+      - 1.-.-.- Oxidoreductases (act on CH-OH group donors)
+      - 1.1.-.- Acting on CH-OH group of donors
+      - 1.1.1.- With NAD(+) or NADP(+) as acceptor
+      - 1.1.1.1 Alcohol dehydrogenase
+    annotations:
+      source_table: ec_terms
+    attributes:
+      ec_id:
+        identifier: true
+        range: string
+        required: true
+        description: >-
+          EC number in X.X.X.X format. Dashes (-) indicate partial
+          classification at higher hierarchy levels.
+        pattern: "\\d+\\.[-\\d]+\\.[-\\d]+\\.[-\\d]+"
+        examples:
+          - value: "1.-.-.-"
+            description: Class 1 - Oxidoreductases (top level)
+          - value: "1.1.-.-"
+            description: Subclass - Acting on CH-OH group
+          - value: "1.1.1.-"
+            description: Sub-subclass - NAD/NADP acceptor
+          - value: "1.1.1.1"
+            description: Alcohol dehydrogenase (full EC number)
+          - value: "1.1.1.10"
+            description: L-xylulose reductase
+      name:
+        range: string
+        description: Enzyme name or class description
+        examples:
+          - value: "Oxidoreductases."
+            description: Class 1 name
+          - value: "Acting on the CH-OH group of donors."
+            description: Subclass description
+          - value: "With NAD(+) or NADP(+) as acceptor."
+            description: Sub-subclass description
+          - value: "Alcohol dehydrogenase"
+            description: Specific enzyme name
+          - value: "L-xylulose reductase"
+            description: Another specific enzyme
+      description:
+        range: string
+        description: Detailed enzyme description (may repeat name for specific enzymes)
+        examples:
+          - value: "alcohol dehydrogenase"
+            description: Description for EC 1.1.1.1
+      synonyms:
+        range: string
+        description: Alternative enzyme names
+        examples:
+          - value: "aldehyde reductase"
+            description: Synonym for alcohol dehydrogenase
+      is_obsolete:
+        range: boolean
+        description: Whether this EC number is deprecated/transferred
+        examples:
+          - value: false
+
+  KeggKoTerms:
+    description: >-
+      KEGG Orthology (KO) terms. KO provides functional orthologs
+      across species for pathway and module membership.
+
+      TOTAL TERMS: 8,104
+
+      KO IDENTIFIER FORMAT: KXXXXX (K followed by 5 digits)
+
+      USAGE: Link genes to pathways via KO assignments. Each KO represents
+      a functional ortholog group - genes with the same KO likely have
+      similar function across species.
+
+      NOTE: Names and definitions may be sparse in this table. For full
+      KO information, query KEGG API or use kegg_ko_pathway/kegg_ko_module
+      for pathway associations.
+    annotations:
+      source_table: kegg_ko_terms
+    attributes:
+      ko_id:
+        identifier: true
+        range: string
+        required: true
+        description: KEGG Orthology ID in KXXXXX format
+        pattern: "K\\d{5}"
+        examples:
+          - value: "K00001"
+            description: First KO (alcohol dehydrogenase related)
+          - value: "K00002"
+            description: Second KO
+          - value: "K00003"
+            description: Third KO
+      name:
+        range: string
+        description: KO name/symbol (may be empty - use KEGG API for full data)
+      definition:
+        range: string
+        description: KO functional definition
+      category:
+        range: string
+        description: KEGG functional category
+
+  KeggPathwayTerms:
+    description: >-
+      KEGG pathway definitions with category classification.
+
+      TOTAL PATHWAYS: 306
+
+      PATHWAY ID FORMATS:
+      - ko##### - Reference pathway (organism-independent)
+      - map##### - Map/reference pathway
+
+      MAJOR PATHWAY CATEGORIES:
+      - Metabolism (carbohydrate, energy, lipid, nucleotide, amino acid)
+      - Genetic Information Processing
+      - Environmental Information Processing
+      - Cellular Processes
+      - Human Diseases (reference only)
+    annotations:
+      source_table: kegg_pathway_terms
+    attributes:
+      pathway_id:
+        identifier: true
+        range: string
+        required: true
+        description: KEGG pathway ID (ko or map prefix)
+        pattern: "(map|ko)\\d{5}"
+        examples:
+          - value: "ko00010"
+            description: Glycolysis / Gluconeogenesis
+          - value: "ko00020"
+            description: Citrate cycle (TCA cycle)
+          - value: "ko00030"
+            description: Pentose phosphate pathway
+          - value: "map00010"
+            description: Map version of Glycolysis
+      name:
+        range: string
+        description: Pathway name (may be empty - use category)
+        examples:
+          - value: "Glycolysis / Gluconeogenesis"
+          - value: "Citrate cycle (TCA cycle)"
+      category:
+        range: string
+        description: Pathway category (e.g., Carbohydrate metabolism)
+        examples:
+          - value: "Carbohydrate metabolism"
+          - value: "Energy metabolism"
+          - value: "Lipid metabolism"
+
+  CogCategories:
+    description: >-
+      COG functional categories with descriptions and colors.
+      Single-letter codes representing 26 major functional groups.
+
+      TOTAL CATEGORIES: 26
+
+      CATEGORY GROUPS:
+      - Information Storage/Processing (A, B, J, K, L)
+      - Cellular Processes/Signaling (D, M, N, O, T, U, V, W, Y, Z, X)
+      - Metabolism (C, E, F, G, H, I, P, Q)
+      - Poorly Characterized (R, S)
+
+      USAGE: For broad functional classification of genes/proteins.
+      Each gene may have multiple COG category assignments.
+    annotations:
+      source_table: cog_categories
+    attributes:
+      cog_id:
+        identifier: true
+        range: string
+        description: Internal COG category ID (same as category_code)
+        examples:
+          - value: "J"
+          - value: "C"
+      category_code:
+        range: CogFunctionalCategory
+        required: true
+        description: Single-letter COG category code (A-Z)
+        examples:
+          - value: "J"
+            description: Translation - most abundant in bacteria
+          - value: "C"
+            description: Energy production - metabolic core
+          - value: "K"
+            description: Transcription
+          - value: "S"
+            description: Function unknown - poorly characterized
+      category_name:
+        range: string
+        description: Full category name
+        examples:
+          - value: "Translation, ribosomal structure and biogenesis"
+            description: Category J
+          - value: "Energy production and conversion"
+            description: Category C
+          - value: "Cell wall/membrane/envelope biogenesis"
+            description: Category M
+      description:
+        range: string
+        description: Detailed category description (often same as name)
+      color_code:
+        range: string
+        description: >-
+          Hex color code for visualization (without # prefix).
+          6-character RGB code for consistent color schemes.
+        pattern: "[A-F0-9]{6}"
+        examples:
+          - value: "FCCCFC"
+            description: Pink - Category J
+          - value: "CCFCCC"
+            description: Light green - Category C
+          - value: "FCFCAC"
+            description: Yellow - Category T
+
+  # Study and Sample Tables
+  StudyTable:
+    description: >-
+      NMDC research studies with ecosystem classification and investigator
+      information. Links to GOLD study identifiers and DOIs.
+
+      TOTAL STUDIES: 48
+
+      ECOSYSTEM DISTRIBUTION:
+      - Environmental/Terrestrial/Soil: 3 studies
+      - Environmental/Aquatic/Freshwater: 3 studies
+      - Environmental/Terrestrial/Deep subsurface: 1 study
+      - Host-associated/Plants: 1 study
+      - Unclassified: 40 studies
+
+      STUDY TYPES:
+      - research_study: Individual PI-led studies (most common)
+      - consortium: Multi-institution projects like NEON
+
+      EXAMPLE STUDIES:
+      - Deep shale microbiomes (Kelly Wrighton, Colorado State)
+      - SPRUCE peatland experiment (Christopher Schadt, ORNL)
+      - Columbia River hyporheic zone (James Stegen, PNNL)
+      - NEON soil metagenomes (Kate Thibault, nationwide)
+    annotations:
+      source_table: study_table
+    attributes:
+      study_id:
+        identifier: true
+        range: string
+        required: true
+        description: >-
+          NMDC study identifier. Format: nmdc:sty-NN-XXXXXXXX where
+          NN is a two-digit code and X is alphanumeric.
+        pattern: "nmdc:sty-\\d{2}-[a-z0-9]+"
+        examples:
+          - value: "nmdc:sty-11-8fb6t785"
+            description: Deep subsurface shale study (Kelly Wrighton)
+          - value: "nmdc:sty-11-33fbta56"
+            description: SPRUCE peatland study (Christopher Schadt)
+          - value: "nmdc:sty-11-aygzgv51"
+            description: Columbia River study (James Stegen)
+          - value: "nmdc:sty-11-34xj1150"
+            description: NEON soil metagenomes (Kate Thibault)
+      name:
+        range: string
+        description: Study short name
+        examples:
+          - value: "Deep subsurface shale carbon reservoir microbial communities from Ohio and West Virginia, USA"
+          - value: "Peatland microbial communities from Minnesota, USA, analyzing carbon cycling and trace gas fluxes"
+          - value: "National Ecological Observatory Network: soil metagenomes (DP1.10107.001)"
+      description:
+        range: string
+        description: >-
+          Detailed study description including goals, methods, and context.
+          Often includes information about sampling locations and conditions.
+      title:
+        range: string
+        description: Formal study title (may differ from name)
+        examples:
+          - value: "Fungal, bacterial, and archaeal communities mediating C cycling and trace gas flux in peatland ecosystems subject to climate change"
+          - value: "Riverbed sediment microbial communities from the Columbia River, Washington, USA"
+      ecosystem:
+        range: Ecosystem
+        description: Top-level ecosystem classification
+        examples:
+          - value: "Environmental"
+            description: Most NMDC studies are environmental
+          - value: "Host-associated"
+            description: Host-associated microbiomes
+      ecosystem_category:
+        range: EcosystemCategory
+        description: Ecosystem category (second level)
+        examples:
+          - value: "Terrestrial"
+            description: Land-based environments
+          - value: "Aquatic"
+            description: Water environments
+          - value: "Plants"
+            description: Plant-associated
+      ecosystem_type:
+        range: EcosystemType
+        description: Specific ecosystem type (third level)
+        examples:
+          - value: "Deep subsurface"
+            description: Shale formations, aquifers
+          - value: "Freshwater"
+            description: Rivers, wetlands, lakes
+          - value: "Soil"
+            description: Surface and subsurface soils
+      ecosystem_subtype:
+        range: string
+        description: Ecosystem subtype for further classification
+        examples:
+          - value: "Wetlands"
+            description: Peatlands, marshes
+          - value: "River"
+            description: River sediments
+          - value: "Unclassified"
+            description: Not further classified
+      specific_ecosystem:
+        range: string
+        description: Most specific ecosystem classification
+        examples:
+          - value: "Sediment"
+            description: River or lake sediments
+          - value: "Forest Soil"
+            description: Forest soil microbiomes
+          - value: "Unclassified"
+      principal_investigator_name:
+        range: string
+        description: PI name
+        examples:
+          - value: "Kelly Wrighton"
+            description: Colorado State University
+          - value: "Christopher Schadt"
+            description: Oak Ridge National Lab
+          - value: "James Stegen"
+            description: Pacific Northwest National Lab
+          - value: "Kate Thibault"
+            description: NEON/Battelle Ecology
+      principal_investigator_orcid:
+        range: string
+        description: PI ORCID identifier for disambiguation
+        pattern: "orcid:\\d{4}-\\d{4}-\\d{4}-\\d{3}[0-9X]"
+        examples:
+          - value: "orcid:0000-0003-0434-4217"
+            description: Kelly Wrighton
+          - value: "orcid:0000-0001-8759-2448"
+            description: Christopher Schadt
+          - value: "orcid:0000-0001-9135-7424"
+            description: James Stegen
+      study_category:
+        range: StudyCategory
+        description: Category of study
+        examples:
+          - value: "research_study"
+            description: Most studies are individual research
+          - value: "consortium"
+            description: NEON is a consortium
+      funding_sources:
+        range: string
+        description: JSON array of funding sources
+        examples:
+          - value: '["National Sciences Foundation Dimensions of Biodiversity (award no. 1342701)"]'
+          - value: '["U.S. Department of Energy, Office of Science, Office of Biological and Environmental Research (BER)"]'
+      gold_study_identifiers:
+        range: string
+        description: JSON array of GOLD study IDs
+        examples:
+          - value: '["gold:Gs0114675"]'
+            description: Single GOLD ID
+          - value: '["gold:Gs0144570", "gold:Gs0161344"]'
+            description: Multiple GOLD IDs (NEON)
+      associated_dois:
+        range: string
+        description: >-
+          JSON array of DOI objects with doi_value, doi_category (dataset_doi,
+          award_doi, publication_doi), and doi_provider (jgi, emsl, etc.)
+        examples:
+          - value: '[{"doi_value": "doi:10.25585/1487763", "doi_category": "dataset_doi", "doi_provider": "jgi"}]'
+          - value: '[{"doi_value": "doi:10.1371/journal.pone.0228165", "doi_category": "publication_doi"}]'
+            description: Publication DOI
+      websites:
+        range: string
+        description: JSON array of associated website URLs
+        examples:
+          - value: '["https://mnspruce.ornl.gov/project/overview"]'
+            description: SPRUCE project website
+          - value: '["https://www.pnnl.gov/projects/river-corridor-hydrobiogeochemistry-science-focus-area"]'
+            description: PNNL project page
+
+  TaxonomyDim:
+    description: >-
+      Taxonomic hierarchy dimension table using NCBI taxonomy.
+      Pre-parsed ranks for efficient filtering and aggregation.
+
+      USAGE: Join with taxonomic classification tables (kraken_gold,
+      gottcha_gold, centrifuge_gold) to get full taxonomic lineages.
+
+      TAXONOMIC RANKS:
+      - Kingdom (superkingdom): Bacteria, Archaea, Metazoa, etc.
+      - Phylum: Proteobacteria, Arthropoda, etc.
+      - Class: Insecta, Gammaproteobacteria, etc.
+      - Order: Hymenoptera, Enterobacterales, etc.
+      - Family: Ichneumonidae, Enterobacteriaceae, etc.
+      - Genus: Diplazon, Escherichia, etc.
+      - Species: binomial names with strain identifiers
+    annotations:
+      source_table: taxonomy_dim
+    attributes:
+      taxid:
+        identifier: true
+        range: integer
+        required: true
+        description: NCBI taxonomy ID (integer)
+        minimum_value: 1
+        examples:
+          - value: 2327552
+            description: Example NCBI taxid
+          - value: 562
+            description: Escherichia coli
+          - value: 9606
+            description: Homo sapiens
+      kingdom:
+        range: string
+        description: Kingdom/superkingdom name
+        examples:
+          - value: "Bacteria"
+            description: Bacterial domain
+          - value: "Archaea"
+            description: Archaeal domain
+          - value: "Metazoa"
+            description: Animals
+      phylum:
+        range: string
+        description: Phylum name
+        examples:
+          - value: "Proteobacteria"
+            description: Major bacterial phylum
+          - value: "Arthropoda"
+            description: Insects, crustaceans, etc.
+          - value: "Firmicutes"
+            description: Gram-positive bacteria
+      class:
+        range: string
+        description: Class name
+        examples:
+          - value: "Gammaproteobacteria"
+            description: Bacterial class
+          - value: "Insecta"
+            description: Insects
+      order:
+        range: string
+        description: Order name
+        examples:
+          - value: "Enterobacterales"
+            description: Enteric bacteria
+          - value: "Hymenoptera"
+            description: Bees, wasps, ants
+      family:
+        range: string
+        description: Family name
+        examples:
+          - value: "Enterobacteriaceae"
+            description: Enteric bacteria family
+          - value: "Ichneumonidae"
+            description: Parasitoid wasps
+      genus:
+        range: string
+        description: Genus name
+        examples:
+          - value: "Escherichia"
+          - value: "Diplazon"
+      species:
+        range: string
+        description: Species name (binomial or with identifier)
+        examples:
+          - value: "Diplazon sp. BBHYJ995-10"
+            description: Species with isolate ID
+          - value: "Escherichia coli"
+            description: Standard binomial
+
+  # Omics Data Tables
+  MetabolomicsGold:
+    description: >-
+      Metabolomics data linked to GOLD samples. Contains compound
+      identifications with mass spec features and chemical identifiers.
+
+      TOTAL RECORDS: 3,129,061+ mass spec features
+
+      DATA INCLUDES:
+      - Mass-to-charge ratios (m/z) for detected features
+      - Retention times from chromatography
+      - Peak intensities and areas
+      - Molecular formulas (when determined)
+      - Chemical identifiers (SMILES, InChI, InChIKey when known)
+      - Links to KEGG and ChEBI compound databases
+
+      USAGE: For metabolomics analysis, join with study_table via file_id.
+      Many features are unidentified (name is null). Use mz and retention
+      time for feature matching across samples.
+    annotations:
+      source_table: metabolomics_gold
+    attributes:
+      file_id:
+        range: string
+        description: NMDC data object ID for source file
+        examples:
+          - value: "nmdc:dobj-12-3j09wy18"
+            description: Metabolomics data object ID
+      file_name:
+        range: string
+        description: Original CSV file name
+        examples:
+          - value: "4A8_2_41_pinto-63-s028-a03.csv"
+            description: Sample name encoded in filename
+      feature_id:
+        range: string
+        description: Metabolite feature ID (unique within file)
+        examples:
+          - value: "16348"
+          - value: "1653"
+          - value: "19466"
+      name:
+        range: string
+        description: >-
+          Compound name when identified. NULL for unidentified features
+          (most features are unidentified initially).
+      mz:
+        range: float
+        description: >-
+          Mass-to-charge ratio (m/z). Primary identifier for mass spec
+          features. Precision typically to 4-6 decimal places.
+        slot_uri: nmdc:mz
+        minimum_value: 0.0
+        examples:
+          - value: 493.3288007596016
+            description: Higher mass feature
+          - value: 447.25243219640714
+            description: Medium mass feature
+          - value: 322.23733159062687
+            description: Lower mass feature
+      Retention_Time_min:
+        range: float
+        description: >-
+          Chromatographic retention time in minutes. Second dimension
+          for feature identification after m/z.
+        slot_uri: nmdc:retention_time
+        minimum_value: 0.0
+        examples:
+          - value: 6.8750589
+          - value: 7.5899288
+          - value: 5.0135949
+      Intensity:
+        range: float
+        description: >-
+          Signal intensity (peak height). Proportional to compound
+          abundance but not directly comparable across samples.
+        minimum_value: 0.0
+        examples:
+          - value: 7355465.5
+            description: Moderate intensity
+          - value: 51934152.0
+            description: High intensity feature
+          - value: 6229143.0
+      Molecular_Formula:
+        range: string
+        description: >-
+          Chemical formula when determined from isotope patterns.
+          Format: Elements with counts and charges.
+        examples:
+          - value: "C23 H36 O3 N4 P1"
+            description: Larger molecule with phosphorus
+          - value: "C19 H32 O3 N1"
+            description: Medium-sized molecule
+      inchi:
+        range: string
+        description: InChI (International Chemical Identifier) string
+      inchikey:
+        range: string
+        description: >-
+          InChIKey - 27-character hash of InChI for database searching.
+          Format: 14 chars - 10 chars - 1 char checksum.
+        pattern: "[A-Z]{14}-[A-Z]{10}-[A-Z]"
+      smiles:
+        range: string
+        description: SMILES notation for chemical structure
+      kegg:
+        range: string
+        description: KEGG compound ID (C##### format)
+      chebi:
+        range: string
+        description: ChEBI compound ID
+
+  MetatranscriptomicsGold:
+    description: >-
+      Metatranscriptomics expression data linked to GOLD samples.
+      Contains gene expression levels from community RNA-seq.
+    annotations:
+      source_table: metatranscriptomics_gold
+
+  LipidomicsGold:
+    description: >-
+      Lipidomics data linked to GOLD samples. Specialized metabolomics
+      focused on lipid compounds.
+    annotations:
+      source_table: lipidomics_gold
+
+  ProteomicsGold:
+    description: >-
+      Proteomics data linked to GOLD samples. Mass spec identification
+      of proteins in environmental samples.
+    annotations:
+      source_table: proteomics_gold
+
+  # Taxonomy/Classification Tables
+  CentrifugeGold:
+    description: >-
+      Centrifuge taxonomic classifications for GOLD samples.
+      Fast metagenomic classifier based on FM-index compression.
+
+      TOOL: Centrifuge (Kim et al. 2016)
+      - Very fast classification
+      - Low memory usage via FM-index
+      - Works with large databases
+    annotations:
+      source_table: centrifuge_gold
+
+  GottchaGold:
+    description: >-
+      GOTTCHA taxonomic classifications for GOLD samples.
+      Gene-independent taxonomic classifier using unique signature k-mers.
+
+      TOOL: GOTTCHA (Freitas et al. 2015)
+      - Uses unique k-mers per taxon
+      - High specificity
+      - Good for strain-level identification
+    annotations:
+      source_table: gottcha_gold
+
+  KrakenGold:
+    description: >-
+      Kraken taxonomic classifications for GOLD samples.
+      K-mer based taxonomic classifier with high speed and accuracy.
+
+      TOOL: Kraken2 (Wood et al. 2019)
+      - Industry standard classifier
+      - Very fast (millions of reads/minute)
+      - Comprehensive database options
+    annotations:
+      source_table: kraken_gold
+
+  ContigTaxonomy:
+    description: >-
+      Contig-level taxonomic assignments from metagenome assemblies.
+      Links assembled contigs to taxonomic classifications.
+    annotations:
+      source_table: contig_taxonomy
+
+  # Embedding Tables
+  EmbeddingsV1:
+    description: >-
+      Vector embeddings version 1 for samples and entities.
+      Enables similarity search and multi-modal analysis across samples.
+
+      DIMENSIONALITY: 256 dimensions (dim_0 through dim_255)
+      INDEX: Sample IDs (nmdc:bsm-XX-XXXXXXXX format)
+
+      USAGE: For finding similar samples, compute cosine similarity
+      between embedding vectors. Embeddings combine information from
+      taxonomy, traits, abiotic factors, and biochemical features.
+
+      EXAMPLE IDs:
+      - nmdc:bsm-11-3a6fv767
+      - nmdc:bsm-11-2hve6455
+      - nmdc:bsm-11-s8ktn043
+    annotations:
+      source_table: embeddings_v1
+    attributes:
+      __index_level_0__:
+        range: string
+        identifier: true
+        description: >-
+          Sample identifier (biosample ID). Used as row index for
+          embedding lookups.
+        examples:
+          - value: "nmdc:bsm-11-3a6fv767"
+          - value: "nmdc:bsm-11-2hve6455"
+          - value: "nmdc:bsm-11-s8ktn043"
+      dim_0:
+        range: float
+        description: First embedding dimension
+        examples:
+          - value: -0.1364271342754364
+          - value: -0.2726755142211914
+      dim_255:
+        range: float
+        description: Last embedding dimension (256 total dimensions, 0-255)
+
+  TaxonomyEmbeddings:
+    description: >-
+      Taxonomic profile embeddings - vector representation of community
+      composition derived from taxonomic classification results.
+    annotations:
+      source_table: taxonomy_embeddings
+
+  TraitEmbeddings:
+    description: >-
+      Trait-based embeddings derived from functional annotations.
+      Represents functional potential of samples.
+    annotations:
+      source_table: trait_embeddings
+
+  AbioticEmbeddings:
+    description: >-
+      Abiotic factor embeddings from environmental measurements
+      (pH, temperature, moisture, etc.).
+    annotations:
+      source_table: abiotic_embeddings
+
+  BiochemicalEmbeddings:
+    description: >-
+      Biochemical feature embeddings from metabolomics data.
+      Represents chemical composition of samples.
+    annotations:
+      source_table: biochemical_embeddings
+
+  UnifiedEmbeddings:
+    description: >-
+      Unified multi-modal embeddings combining taxonomy, traits,
+      abiotic factors, and biochemical features into single vector space.
+      Primary embedding table for sample similarity analysis.
+    annotations:
+      source_table: unified_embeddings
+
+  # Vocabulary and Tokenization
+  VocabRegistryV1:
+    description: >-
+      Vocabulary registry for multi-modal tokenization.
+      Maps features to token IDs for embedding models.
+
+      TOKEN TYPES:
+      - special: System tokens ([PAD], [CLS], [SEP], [MASK], [UNK])
+      - taxon: Taxonomic entities
+      - go_term: Gene Ontology terms
+      - compound: Chemical compounds
+      - environmental: Environmental parameters
+
+      SPECIAL TOKENS (IDs 0-4):
+      - 0: [PAD] - padding token
+      - 1: [CLS] - classification token
+      - 2: [SEP] - separator token
+      - 3: [MASK] - mask token for MLM
+      - 4: [UNK] - unknown token
+    annotations:
+      source_table: vocab_registry_v1
+    attributes:
+      token_id:
+        identifier: true
+        range: integer
+        required: true
+        description: Unique token ID in vocabulary
+        minimum_value: 0
+        examples:
+          - value: 0
+            description: "[PAD] token"
+          - value: 1
+            description: "[CLS] token"
+          - value: 2
+            description: "[SEP] token"
+          - value: 3
+            description: "[MASK] token"
+          - value: 4
+            description: "[UNK] token"
+      entity_type:
+        range: TokenEntityType
+        description: Type of entity this token represents
+        examples:
+          - value: "special"
+            description: System tokens
+          - value: "taxon"
+            description: Taxonomic entities
+      entity_key:
+        range: string
+        description: Unique key for this entity within its type
+        examples:
+          - value: "[PAD]"
+          - value: "[CLS]"
+          - value: "[SEP]"
+      human_name:
+        range: string
+        description: Human-readable name for the token
+        examples:
+          - value: "[PAD]"
+          - value: "[CLS]"
+      source_modality:
+        range: SourceModality
+        description: Data modality this token comes from
+        examples:
+          - value: "system"
+            description: System/special tokens
+          - value: "taxonomy"
+            description: Taxonomic features
+
+  SampleTokensV1:
+    description: >-
+      Sample-level token assignments from vocabulary.
+      Sparse representation of sample features for ML models.
+
+      USAGE: Each row represents a token-sample-modality combination
+      with an associated value. Use to reconstruct sample feature
+      vectors or train models on tokenized representations.
+    annotations:
+      source_table: sample_tokens_v1
+    attributes:
+      sample_id:
+        range: string
+        required: true
+        description: Sample identifier
+        examples:
+          - value: "nmdc:bsm-11-3a6fv767"
+      token_id:
+        range: integer
+        required: true
+        description: Vocabulary token ID from vocab_registry_v1
+        minimum_value: 0
+        comments:
+          - "Foreign key to VocabRegistryV1.token_id"
+      modality_id:
+        range: string
+        description: Data modality (taxonomy, trait, abiotic, biochemical)
+        examples:
+          - value: "taxonomy"
+          - value: "trait"
+          - value: "biochemical"
+          - value: "abiotic"
+      value:
+        range: float
+        description: Token value/weight (e.g., abundance, presence score)
+
+  # Feature Tables
+  TaxonomyFeatures:
+    description: >-
+      Taxonomy-derived features for machine learning.
+      Taxon abundances or presence/absence vectors.
+    annotations:
+      source_table: taxonomy_features
+
+  TraitFeatures:
+    description: >-
+      Trait-derived features for machine learning.
+      Functional trait presence/absence from GO annotations.
+    annotations:
+      source_table: trait_features
+
+  BiochemicalFeatures:
+    description: >-
+      Biochemical features from metabolomics for machine learning.
+      Compound intensities or presence/absence.
+    annotations:
+      source_table: biochemical_features
+
+  AbioticFeatures:
+    description: >-
+      Abiotic environmental features for machine learning.
+      pH, temperature, moisture, and other measurements.
+    annotations:
+      source_table: abiotic_features
+
+  # Trait Tables
+  TraitUnified:
+    description: >-
+      Unified trait annotations across samples from multiple sources.
+      Provides consistent trait vocabulary across studies.
+    annotations:
+      source_table: trait_unified
+
+  TraitSources:
+    description: >-
+      Sources for trait data (databases, literature, predictions).
+      Provenance information for trait assignments.
+    annotations:
+      source_table: trait_sources
+
+  TraitTaxonomyMapping:
+    description: >-
+      Mapping between traits and taxonomic groups.
+      Which taxa have which traits based on known biology.
+    annotations:
+      source_table: trait_taxonomy_mapping
+
+  # File/Sample Management
+  OmicsFilesTable:
+    description: >-
+      Inventory of omics data files with metadata and URLs.
+      Includes file sizes, checksums, and download locations.
+    annotations:
+      source_table: omics_files_table
+
+  SampleFileLookup:
+    description: >-
+      Sample to file mapping for data retrieval.
+      Links biosample IDs to their associated data files.
+    annotations:
+      source_table: sample_file_lookup
+
+  SampleFileSelections:
+    description: >-
+      User-curated file selections per sample for analysis.
+      Tracks which files are preferred for different analysis types.
+    annotations:
+      source_table: sample_file_selections
+
+  # Cross-references and Hierarchies
+  AnnotationCrossrefs:
+    description: >-
+      Cross-references between annotation databases.
+      Maps between GO, EC, KEGG, COG, and MetaCyc identifiers.
+
+      EXAMPLE MAPPINGS:
+      - GO <-> EC (enzyme annotations)
+      - KO <-> EC (KEGG orthologs to enzymes)
+      - GO <-> KEGG (function to pathway)
+    annotations:
+      source_table: annotation_crossrefs
+
+  AnnotationHierarchiesUnified:
+    description: >-
+      Unified annotation hierarchies across sources.
+      Pre-computed parent-child relationships for efficient queries.
+    annotations:
+      source_table: annotation_hierarchies_unified
+
+  RheaReactions:
+    description: >-
+      Rhea biochemical reactions database. Provides detailed reaction
+      information with balanced equations and enzyme links.
+
+      RHEA ID STRUCTURE:
+      - RHEA_ID_MASTER: Main reaction ID
+      - RHEA_ID_LR: Left-to-right direction
+      - RHEA_ID_RL: Right-to-left direction
+      - RHEA_ID_BI: Bidirectional
+
+      EXAMPLE: Reaction 10000 has IDs 10001 (L->R), 10002 (R->L), 10003 (bi)
+    annotations:
+      source_table: rhea_reactions
+    attributes:
+      RHEA_ID_MASTER:
+        identifier: true
+        range: integer
+        description: Master reaction ID
+        examples:
+          - value: 10000
+          - value: 10004
+          - value: 10008
+      RHEA_ID_LR:
+        range: integer
+        description: Left-to-right reaction ID
+        examples:
+          - value: 10001
+      RHEA_ID_RL:
+        range: integer
+        description: Right-to-left reaction ID
+        examples:
+          - value: 10002
+      RHEA_ID_BI:
+        range: integer
+        description: Bidirectional reaction ID
+        examples:
+          - value: 10003
+
+  RheaCrossrefs:
+    description: >-
+      Cross-references from Rhea reactions to other databases.
+      Links Rhea reactions to EC numbers, KEGG reactions, MetaCyc.
+    annotations:
+      source_table: rhea_crossrefs
+
+  MetacycPathways:
+    description: >-
+      MetaCyc metabolic pathways with hierarchical classification.
+
+      TOTAL PATHWAYS: 1,538
+
+      HIERARCHY:
+      - PATHWAYS (root)
+      - Categories (e.g., BIOLUMINESCENCE with 7 instances)
+      - Specific pathways (BACTERIAL, CORAL, DINOFLAGELLATE, etc.)
+
+      USAGE: For detailed pathway analysis with reaction-level information.
+      Use pathway_id to join with metacyc_pathway_reactions.
+    annotations:
+      source_table: metacyc_pathways
+    attributes:
+      pathway_id:
+        identifier: true
+        range: string
+        description: MetaCyc pathway identifier
+        examples:
+          - value: "PATHWAYS"
+            description: Root of pathway hierarchy
+          - value: "BIOLUMINESCENCE"
+            description: Category with 7 pathway instances
+          - value: "BACTERIAL"
+            description: Bacterial bioluminescence pathway
+          - value: "CORAL"
+            description: Coral bioluminescence
+      name:
+        range: string
+        description: Pathway name
+        examples:
+          - value: "Pathways"
+            description: Root name
+          - value: "(7 instances)"
+            description: Category with count
+          - value: "bioluminescence"
+            description: Specific pathway type
+      description:
+        range: string
+        description: Pathway description
+      parent_pathway:
+        range: string
+        description: Parent pathway in hierarchy
+        comments:
+          - "Self-referential foreign key to MetacycPathways.pathway_id"
+        examples:
+          - value: "PATHWAYS"
+            description: Direct child of root
+
+  MetacycPathwayReactions:
+    description: >-
+      Reactions within MetaCyc pathways.
+      Links pathways to their constituent biochemical reactions.
+    annotations:
+      source_table: metacyc_pathway_reactions
+
+  # NOM (Natural Organic Matter)
+  NomGold:
+    description: >-
+      Natural organic matter data linked to GOLD samples.
+      NOM characterization from soil and sediment samples using
+      high-resolution mass spectrometry.
+    annotations:
+      source_table: nom_gold
+
+  NomFeatureMetadata:
+    description: >-
+      NOM feature metadata including molecular formulas, exact masses,
+      and compound classes. Characterizes organic matter composition.
+    annotations:
+      source_table: nom_feature_metadata
+
+  NomMatrixOptimized:
+    description: >-
+      Optimized NOM feature matrix for efficient queries.
+      Sparse matrix format for sample x feature abundance data.
+    annotations:
+      source_table: nom_matrix_optimized

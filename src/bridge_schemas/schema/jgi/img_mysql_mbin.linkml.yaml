@@ -1,0 +1,825 @@
+name: img_mysql_mbin
+id: https://w3id.org/jgi/img_mysql_mbin
+imports:
+- linkml:types
+prefixes:
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  img_mysql_mbin:
+    prefix_prefix: img_mysql_mbin
+    prefix_reference: https://w3id.org/jgi/img_mysql_mbin/
+default_prefix: img_mysql_mbin
+default_range: string
+classes:
+  bin:
+    name: bin
+    attributes:
+      bin_oid:
+        name: bin_oid
+        range: string
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      bin_domain:
+        name: bin_domain
+        range: string
+        required: false
+      bin_phylum:
+        name: bin_phylum
+        range: string
+        required: false
+      bin_class:
+        name: bin_class
+        range: string
+        required: false
+      bin_order:
+        name: bin_order
+        range: string
+        required: false
+      bin_family:
+        name: bin_family
+        range: string
+        required: false
+      bin_genus:
+        name: bin_genus
+        range: string
+        required: false
+      bin_species:
+        name: bin_species
+        range: string
+        required: false
+      completeness:
+        name: completeness
+        range: float
+        required: false
+      contamination:
+        name: contamination
+        range: float
+        required: false
+      total_base:
+        name: total_base
+        range: integer
+        required: false
+      gene_count:
+        name: gene_count
+        range: integer
+        required: false
+      bin_quality:
+        name: bin_quality
+        range: string
+        required: false
+      gtdbtk_domain:
+        name: gtdbtk_domain
+        range: string
+        required: false
+      gtdbtk_phylum:
+        name: gtdbtk_phylum
+        range: string
+        required: false
+      gtdbtk_class:
+        name: gtdbtk_class
+        range: string
+        required: false
+      gtdbtk_order:
+        name: gtdbtk_order
+        range: string
+        required: false
+      gtdbtk_family:
+        name: gtdbtk_family
+        range: string
+        required: false
+      gtdbtk_genus:
+        name: gtdbtk_genus
+        range: string
+        required: false
+      gtdbtk_species:
+        name: gtdbtk_species
+        range: string
+        required: false
+      bin_add_date:
+        name: bin_add_date
+        range: datetime
+        required: false
+      bin_methods:
+        name: bin_methods
+        range: string
+        required: false
+      bin_created_by:
+        name: bin_created_by
+        range: integer
+        required: false
+      num_16s:
+        name: num_16s
+        range: integer
+        required: false
+      num_5s:
+        name: num_5s
+        range: integer
+        required: false
+      num_23s:
+        name: num_23s
+        range: integer
+        required: false
+      num_trna:
+        name: num_trna
+        range: integer
+        required: false
+      scaffold_count:
+        name: scaffold_count
+        range: integer
+        required: false
+      avg_coverage:
+        name: avg_coverage
+        range: float
+        required: false
+  bin_coverage:
+    name: bin_coverage
+    attributes:
+      bin_oid:
+        name: bin_oid
+        range: string
+        required: false
+      avg_coverage:
+        name: avg_coverage
+        range: float
+        required: false
+  bin_scaffolds:
+    name: bin_scaffolds
+    attributes:
+      bin_oid:
+        name: bin_oid
+        range: string
+        required: false
+      scaffold_oid:
+        name: scaffold_oid
+        range: string
+        required: false
+      scaffold_length:
+        name: scaffold_length
+        range: integer
+        required: false
+      gc:
+        name: gc
+        range: float
+        required: false
+      gene_count:
+        name: gene_count
+        range: integer
+        required: false
+      scaf_domain:
+        name: scaf_domain
+        range: string
+        required: false
+      scaf_phylum:
+        name: scaf_phylum
+        range: string
+        required: false
+      scaf_class:
+        name: scaf_class
+        range: string
+        required: false
+      scaf_order:
+        name: scaf_order
+        range: string
+        required: false
+      scaf_family:
+        name: scaf_family
+        range: string
+        required: false
+      scaf_genus:
+        name: scaf_genus
+        range: string
+        required: false
+      scaf_species:
+        name: scaf_species
+        range: string
+        required: false
+      scaf_num_16s:
+        name: scaf_num_16s
+        range: integer
+        required: false
+      scaf_num_5s:
+        name: scaf_num_5s
+        range: integer
+        required: false
+      scaf_num_23s:
+        name: scaf_num_23s
+        range: integer
+        required: false
+      scaf_num_trna:
+        name: scaf_num_trna
+        range: integer
+        required: false
+  ebin:
+    name: ebin
+    attributes:
+      ebin_oid:
+        name: ebin_oid
+        range: string
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      completeness:
+        name: completeness
+        range: float
+        required: false
+      contamination:
+        name: contamination
+        range: float
+        required: false
+      methods:
+        name: methods
+        range: string
+        required: false
+      processed_by:
+        name: processed_by
+        range: integer
+        required: false
+      processed_date:
+        name: processed_date
+        range: datetime
+        required: false
+      total_bases:
+        name: total_bases
+        range: integer
+        required: false
+      ebin_domain:
+        name: ebin_domain
+        range: string
+        required: false
+      ebin_phylum:
+        name: ebin_phylum
+        range: string
+        required: false
+      ebin_class:
+        name: ebin_class
+        range: string
+        required: false
+      ebin_order:
+        name: ebin_order
+        range: string
+        required: false
+      ebin_family:
+        name: ebin_family
+        range: string
+        required: false
+      ebin_genus:
+        name: ebin_genus
+        range: string
+        required: false
+      ebin_species:
+        name: ebin_species
+        range: string
+        required: false
+      external_link:
+        name: external_link
+        range: string
+        required: false
+      scaffold_count:
+        name: scaffold_count
+        range: integer
+        required: false
+      num_5s:
+        name: num_5s
+        range: integer
+        required: false
+      num_18s:
+        name: num_18s
+        range: integer
+        required: false
+      num_28s:
+        name: num_28s
+        range: integer
+        required: false
+      avg_coverage:
+        name: avg_coverage
+        range: float
+        required: false
+  ebin_ext_links:
+    name: ebin_ext_links
+    attributes:
+      ebin_oid:
+        name: ebin_oid
+        range: string
+        required: false
+      db_name:
+        name: db_name
+        range: string
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+      custom_url:
+        name: custom_url
+        range: string
+        required: false
+  ebin_not_loaded_metagenomes:
+    name: ebin_not_loaded_metagenomes
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      methods:
+        name: methods
+        range: string
+        required: false
+      processed_by:
+        name: processed_by
+        range: integer
+        required: false
+      processed_date:
+        name: processed_date
+        range: datetime
+        required: false
+      num_merged_bins:
+        name: num_merged_bins
+        range: integer
+        required: false
+      num_lq_bins:
+        name: num_lq_bins
+        range: integer
+        required: false
+      comment:
+        name: comment
+        range: string
+        required: false
+  ebin_scaffolds:
+    name: ebin_scaffolds
+    attributes:
+      ebin_oid:
+        name: ebin_oid
+        range: string
+        required: false
+      scaffold_oid:
+        name: scaffold_oid
+        range: string
+        required: false
+      scaffold_length:
+        name: scaffold_length
+        range: integer
+        required: false
+      num_5s:
+        name: num_5s
+        range: integer
+        required: false
+      num_18s:
+        name: num_18s
+        range: integer
+        required: false
+      num_28s:
+        name: num_28s
+        range: integer
+        required: false
+  img_umag_bin_tarballs_02062024:
+    name: img_umag_bin_tarballs_02062024
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+  not_loaded_metagenomes:
+    name: not_loaded_metagenomes
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      processed_date:
+        name: processed_date
+        range: datetime
+        required: false
+      num_lq_bins:
+        name: num_lq_bins
+        range: integer
+        required: false
+      bin_methods:
+        name: bin_methods
+        range: string
+        required: false
+      bin_created_by:
+        name: bin_created_by
+        range: integer
+        required: false
+      comment:
+        name: comment
+        range: string
+        required: false
+  semi_bin:
+    name: semi_bin
+    attributes:
+      bin_oid:
+        name: bin_oid
+        range: string
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      bin_domain:
+        name: bin_domain
+        range: string
+        required: false
+      bin_phylum:
+        name: bin_phylum
+        range: string
+        required: false
+      bin_class:
+        name: bin_class
+        range: string
+        required: false
+      bin_order:
+        name: bin_order
+        range: string
+        required: false
+      bin_family:
+        name: bin_family
+        range: string
+        required: false
+      bin_genus:
+        name: bin_genus
+        range: string
+        required: false
+      bin_species:
+        name: bin_species
+        range: string
+        required: false
+      completeness:
+        name: completeness
+        range: float
+        required: false
+      contamination:
+        name: contamination
+        range: float
+        required: false
+      total_base:
+        name: total_base
+        range: integer
+        required: false
+      gene_count:
+        name: gene_count
+        range: integer
+        required: false
+      bin_quality:
+        name: bin_quality
+        range: string
+        required: false
+      gtdbtk_domain:
+        name: gtdbtk_domain
+        range: string
+        required: false
+      gtdbtk_phylum:
+        name: gtdbtk_phylum
+        range: string
+        required: false
+      gtdbtk_class:
+        name: gtdbtk_class
+        range: string
+        required: false
+      gtdbtk_order:
+        name: gtdbtk_order
+        range: string
+        required: false
+      gtdbtk_family:
+        name: gtdbtk_family
+        range: string
+        required: false
+      gtdbtk_genus:
+        name: gtdbtk_genus
+        range: string
+        required: false
+      gtdbtk_species:
+        name: gtdbtk_species
+        range: string
+        required: false
+      bin_add_date:
+        name: bin_add_date
+        range: datetime
+        required: false
+      bin_methods:
+        name: bin_methods
+        range: string
+        required: false
+      bin_created_by:
+        name: bin_created_by
+        range: integer
+        required: false
+      num_16s:
+        name: num_16s
+        range: integer
+        required: false
+      num_5s:
+        name: num_5s
+        range: integer
+        required: false
+      num_23s:
+        name: num_23s
+        range: integer
+        required: false
+      num_trna:
+        name: num_trna
+        range: integer
+        required: false
+      scaffold_count:
+        name: scaffold_count
+        range: integer
+        required: false
+      avg_coverage:
+        name: avg_coverage
+        range: float
+        required: false
+      bin_N50:
+        name: bin_N50
+        range: string
+        required: false
+      bin_L50:
+        name: bin_L50
+        range: string
+        required: false
+      in_portal:
+        name: in_portal
+        range: string
+        required: false
+      has_datafile:
+        name: has_datafile
+        range: string
+        required: false
+  semi_bin_coverage:
+    name: semi_bin_coverage
+    attributes:
+      bin_oid:
+        name: bin_oid
+        range: string
+        required: false
+      avg_coverage:
+        name: avg_coverage
+        range: float
+        required: false
+  semi_bin_not_loaded:
+    name: semi_bin_not_loaded
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      processed_date:
+        name: processed_date
+        range: datetime
+        required: false
+      num_lq_bins:
+        name: num_lq_bins
+        range: integer
+        required: false
+      bin_methods:
+        name: bin_methods
+        range: string
+        required: false
+      bin_created_by:
+        name: bin_created_by
+        range: integer
+        required: false
+      comment:
+        name: comment
+        range: string
+        required: false
+  semi_bin_scaffolds:
+    name: semi_bin_scaffolds
+    attributes:
+      bin_oid:
+        name: bin_oid
+        range: string
+        required: false
+      scaffold_oid:
+        name: scaffold_oid
+        range: string
+        required: false
+      scaffold_length:
+        name: scaffold_length
+        range: integer
+        required: false
+      gc:
+        name: gc
+        range: float
+        required: false
+      gene_count:
+        name: gene_count
+        range: integer
+        required: false
+      scaf_domain:
+        name: scaf_domain
+        range: string
+        required: false
+      scaf_phylum:
+        name: scaf_phylum
+        range: string
+        required: false
+      scaf_class:
+        name: scaf_class
+        range: string
+        required: false
+      scaf_order:
+        name: scaf_order
+        range: string
+        required: false
+      scaf_family:
+        name: scaf_family
+        range: string
+        required: false
+      scaf_genus:
+        name: scaf_genus
+        range: string
+        required: false
+      scaf_species:
+        name: scaf_species
+        range: string
+        required: false
+      scaf_num_16s:
+        name: scaf_num_16s
+        range: integer
+        required: false
+      scaf_num_5s:
+        name: scaf_num_5s
+        range: integer
+        required: false
+      scaf_num_23s:
+        name: scaf_num_23s
+        range: integer
+        required: false
+      scaf_num_trna:
+        name: scaf_num_trna
+        range: integer
+        required: false
+  semi_ebin:
+    name: semi_ebin
+    attributes:
+      ebin_oid:
+        name: ebin_oid
+        range: string
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      completeness:
+        name: completeness
+        range: float
+        required: false
+      contamination:
+        name: contamination
+        range: float
+        required: false
+      methods:
+        name: methods
+        range: string
+        required: false
+      processed_by:
+        name: processed_by
+        range: integer
+        required: false
+      processed_date:
+        name: processed_date
+        range: datetime
+        required: false
+      total_bases:
+        name: total_bases
+        range: integer
+        required: false
+      ebin_domain:
+        name: ebin_domain
+        range: string
+        required: false
+      ebin_phylum:
+        name: ebin_phylum
+        range: string
+        required: false
+      ebin_class:
+        name: ebin_class
+        range: string
+        required: false
+      ebin_order:
+        name: ebin_order
+        range: string
+        required: false
+      ebin_family:
+        name: ebin_family
+        range: string
+        required: false
+      ebin_genus:
+        name: ebin_genus
+        range: string
+        required: false
+      ebin_species:
+        name: ebin_species
+        range: string
+        required: false
+      external_link:
+        name: external_link
+        range: string
+        required: false
+      scaffold_count:
+        name: scaffold_count
+        range: integer
+        required: false
+      num_5s:
+        name: num_5s
+        range: integer
+        required: false
+      num_18s:
+        name: num_18s
+        range: integer
+        required: false
+      num_28s:
+        name: num_28s
+        range: integer
+        required: false
+      avg_coverage:
+        name: avg_coverage
+        range: float
+        required: false
+      has_datafile:
+        name: has_datafile
+        range: string
+        required: false
+      in_portal:
+        name: in_portal
+        range: string
+        required: false
+  semi_ebin_not_loaded:
+    name: semi_ebin_not_loaded
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      methods:
+        name: methods
+        range: string
+        required: false
+      processed_by:
+        name: processed_by
+        range: integer
+        required: false
+      processed_date:
+        name: processed_date
+        range: datetime
+        required: false
+      num_merged_bins:
+        name: num_merged_bins
+        range: integer
+        required: false
+      num_lq_bins:
+        name: num_lq_bins
+        range: integer
+        required: false
+      comment:
+        name: comment
+        range: string
+        required: false
+  semi_ebin_scaffolds:
+    name: semi_ebin_scaffolds
+    attributes:
+      ebin_oid:
+        name: ebin_oid
+        range: string
+        required: false
+      scaffold_oid:
+        name: scaffold_oid
+        range: string
+        required: false
+      scaffold_length:
+        name: scaffold_length
+        range: integer
+        required: false
+      num_5s:
+        name: num_5s
+        range: integer
+        required: false
+      num_18s:
+        name: num_18s
+        range: integer
+        required: false
+      num_28s:
+        name: num_28s
+        range: integer
+        required: false
+  semi_lq:
+    name: semi_lq
+    attributes:
+      bin_oid:
+        name: bin_oid
+        range: string
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      scaffold_list:
+        name: scaffold_list
+        range: string
+        required: false

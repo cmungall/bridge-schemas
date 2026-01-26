@@ -1,0 +1,7175 @@
+name: img_core_v400
+id: https://w3id.org/jgi/img_core_v400
+imports:
+- linkml:types
+prefixes:
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+  img_core_v400:
+    prefix_prefix: img_core_v400
+    prefix_reference: https://w3id.org/jgi/img_core_v400/
+default_prefix: img_core_v400
+default_range: string
+classes:
+  accession_types:
+    name: accession_types
+    attributes:
+      accession_id:
+        name: accession_id
+        range: string
+        required: false
+      type:
+        name: type
+        range: string
+        required: false
+  actino_abc_genes:
+    name: actino_abc_genes
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+  actino_cassette:
+    name: actino_cassette
+    attributes:
+      group_oid:
+        name: group_oid
+        range: integer
+        required: false
+  actino_cassette_genes:
+    name: actino_cassette_genes
+    attributes:
+      group_oid:
+        name: group_oid
+        range: integer
+        required: false
+      genes:
+        name: genes
+        range: integer
+        required: false
+  alt_transcript:
+    name: alt_transcript
+    attributes:
+      alt_transcript_oid:
+        name: alt_transcript_oid
+        range: integer
+        required: false
+      gene:
+        name: gene
+        range: integer
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+      dna_seq_length:
+        name: dna_seq_length
+        range: integer
+        required: false
+      aa_seq_length:
+        name: aa_seq_length
+        range: integer
+        required: false
+      strand:
+        name: strand
+        range: string
+        required: false
+      is_pseudogene:
+        name: is_pseudogene
+        range: string
+        required: false
+      aa_checksum:
+        name: aa_checksum
+        range: string
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+      ext_accession:
+        name: ext_accession
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      aa_residue:
+        name: aa_residue
+        range: string
+        required: false
+  asv5_taxons:
+    name: asv5_taxons
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+  bc_type:
+    name: bc_type
+    attributes:
+      bc_code:
+        name: bc_code
+        range: string
+        required: false
+      bc_desc:
+        name: bc_desc
+        range: string
+        required: false
+  bcg_taxons:
+    name: bcg_taxons
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+  biocyc_class:
+    name: biocyc_class
+    attributes:
+      unique_id:
+        name: unique_id
+        range: string
+        required: false
+      common_name:
+        name: common_name
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+  biocyc_class_parents:
+    name: biocyc_class_parents
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_class
+        range: biocyc_class
+        required: false
+      parents:
+        name: parents
+        description: Foreign key to biocyc_class
+        range: biocyc_class
+        required: false
+  biocyc_class_synonyms:
+    name: biocyc_class_synonyms
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_class
+        range: biocyc_class
+        required: false
+      synonyms:
+        name: synonyms
+        range: string
+        required: false
+  biocyc_class_types:
+    name: biocyc_class_types
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_class
+        range: biocyc_class
+        required: false
+      types:
+        name: types
+        range: string
+        required: false
+  biocyc_comp:
+    name: biocyc_comp
+    attributes:
+      unique_id:
+        name: unique_id
+        range: string
+        required: false
+      mol_wt:
+        name: mol_wt
+        range: float
+        required: false
+      common_name:
+        name: common_name
+        range: string
+        required: false
+      systematic_name:
+        name: systematic_name
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      smiles:
+        name: smiles
+        range: string
+        required: false
+      db_source:
+        name: db_source
+        description: Foreign key to db_source
+        range: db_source
+        required: false
+      formula:
+        name: formula
+        range: string
+        required: false
+      inch_i_key:
+        name: inch_i_key
+        range: string
+        required: false
+  biocyc_comp_ext_links:
+    name: biocyc_comp_ext_links
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_comp
+        range: biocyc_comp
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+      db_name:
+        name: db_name
+        range: string
+        required: false
+  biocyc_comp_synonyms:
+    name: biocyc_comp_synonyms
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_comp
+        range: biocyc_comp
+        required: false
+      synonyms:
+        name: synonyms
+        range: string
+        required: false
+  biocyc_comp_types:
+    name: biocyc_comp_types
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_comp
+        range: biocyc_comp
+        required: false
+      types:
+        name: types
+        range: string
+        required: false
+  biocyc_enzrxn:
+    name: biocyc_enzrxn
+    attributes:
+      unique_id:
+        name: unique_id
+        range: string
+        required: false
+      biocyc_enzyme:
+        name: biocyc_enzyme
+        description: Foreign key to biocyc_protein
+        range: biocyc_protein
+        required: false
+      common_name:
+        name: common_name
+        range: string
+        required: false
+      assign_basis:
+        name: assign_basis
+        range: string
+        required: false
+      reaction:
+        name: reaction
+        description: Foreign key to biocyc_reaction
+        range: biocyc_reaction
+        required: false
+      rxn_direction:
+        name: rxn_direction
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+  biocyc_enzrxn_ext_links:
+    name: biocyc_enzrxn_ext_links
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_enzrxn
+        range: biocyc_enzrxn
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+      db_name:
+        name: db_name
+        range: string
+        required: false
+  biocyc_enzrxn_prosth_groups:
+    name: biocyc_enzrxn_prosth_groups
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_enzrxn
+        range: biocyc_enzrxn
+        required: false
+      prosth_groups:
+        name: prosth_groups
+        range: string
+        required: false
+  biocyc_enzrxn_synonyms:
+    name: biocyc_enzrxn_synonyms
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_enzrxn
+        range: biocyc_enzrxn
+        required: false
+      synonyms:
+        name: synonyms
+        range: string
+        required: false
+  biocyc_pathway:
+    name: biocyc_pathway
+    attributes:
+      unique_id:
+        name: unique_id
+        range: string
+        required: false
+      common_name:
+        name: common_name
+        range: string
+        required: false
+      net_rxn_eqn:
+        name: net_rxn_eqn
+        range: string
+        required: false
+      credits:
+        name: credits
+        range: string
+        required: false
+  biocyc_pathway_comments:
+    name: biocyc_pathway_comments
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_pathway
+        range: biocyc_pathway
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+  biocyc_pathway_ext_links:
+    name: biocyc_pathway_ext_links
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_pathway
+        range: biocyc_pathway
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+      db_name:
+        name: db_name
+        range: string
+        required: false
+  biocyc_pathway_in_species:
+    name: biocyc_pathway_in_species
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_pathway
+        range: biocyc_pathway
+        required: false
+      in_species:
+        name: in_species
+        range: string
+        required: false
+  biocyc_pathway_pwy_links:
+    name: biocyc_pathway_pwy_links
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_pathway
+        range: biocyc_pathway
+        required: false
+      pwy_links:
+        name: pwy_links
+        range: string
+        required: false
+  biocyc_pathway_sub_pwys:
+    name: biocyc_pathway_sub_pwys
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_pathway
+        range: biocyc_pathway
+        required: false
+      sub_pwys:
+        name: sub_pwys
+        description: Foreign key to biocyc_pathway
+        range: biocyc_pathway
+        required: false
+  biocyc_pathway_super_pwys:
+    name: biocyc_pathway_super_pwys
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_pathway
+        range: biocyc_pathway
+        required: false
+      super_pwys:
+        name: super_pwys
+        description: Foreign key to biocyc_pathway
+        range: biocyc_pathway
+        required: false
+  biocyc_pathway_taxon_range:
+    name: biocyc_pathway_taxon_range
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_pathway
+        range: biocyc_pathway
+        required: false
+      taxon_range:
+        name: taxon_range
+        range: string
+        required: false
+  biocyc_pathway_types:
+    name: biocyc_pathway_types
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_pathway
+        range: biocyc_pathway
+        required: false
+      types:
+        name: types
+        range: string
+        required: false
+  biocyc_protein:
+    name: biocyc_protein
+    attributes:
+      unique_id:
+        name: unique_id
+        range: string
+        required: false
+      common_name:
+        name: common_name
+        range: string
+        required: false
+      systematic_name:
+        name: systematic_name
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      func_status:
+        name: func_status
+        range: string
+        required: false
+      biocyc_gene:
+        name: biocyc_gene
+        range: string
+        required: false
+  biocyc_protein_catalyzes:
+    name: biocyc_protein_catalyzes
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_protein
+        range: biocyc_protein
+        required: false
+      enzrxn:
+        name: enzrxn
+        description: Foreign key to biocyc_enzrxn
+        range: biocyc_enzrxn
+        required: false
+      ec_number:
+        name: ec_number
+        range: string
+        required: false
+  biocyc_protein_ext_links:
+    name: biocyc_protein_ext_links
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_protein
+        range: biocyc_protein
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+      db_name:
+        name: db_name
+        range: string
+        required: false
+  biocyc_protein_in_species:
+    name: biocyc_protein_in_species
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_protein
+        range: biocyc_protein
+        required: false
+      in_species:
+        name: in_species
+        range: string
+        required: false
+  biocyc_protein_synonyms:
+    name: biocyc_protein_synonyms
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_protein
+        range: biocyc_protein
+        required: false
+      synonyms:
+        name: synonyms
+        range: string
+        required: false
+  biocyc_protein_types:
+    name: biocyc_protein_types
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_protein
+        range: biocyc_protein
+        required: false
+      types:
+        name: types
+        range: string
+        required: false
+  biocyc_reaction:
+    name: biocyc_reaction
+    attributes:
+      unique_id:
+        name: unique_id
+        range: string
+        required: false
+      common_name:
+        name: common_name
+        range: string
+        required: false
+      balance_state:
+        name: balance_state
+        range: string
+        required: false
+      ec_number:
+        name: ec_number
+        range: string
+        required: false
+      is_official_ec:
+        name: is_official_ec
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+      is_orphan:
+        name: is_orphan
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+      is_spontaneous:
+        name: is_spontaneous
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+  biocyc_reaction_ext_links:
+    name: biocyc_reaction_ext_links
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_reaction
+        range: biocyc_reaction
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+      db_name:
+        name: db_name
+        range: string
+        required: false
+  biocyc_reaction_in_pwys:
+    name: biocyc_reaction_in_pwys
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_reaction
+        range: biocyc_reaction
+        required: false
+      in_pwys:
+        name: in_pwys
+        description: Foreign key to biocyc_pathway
+        range: biocyc_pathway
+        required: false
+  biocyc_reaction_left_hand:
+    name: biocyc_reaction_left_hand
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_reaction
+        range: biocyc_reaction
+        required: false
+      substrate:
+        name: substrate
+        description: Foreign key to biocyc_comp
+        range: biocyc_comp
+        required: false
+      compartment:
+        name: compartment
+        range: string
+        required: false
+  biocyc_reaction_right_hand:
+    name: biocyc_reaction_right_hand
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_reaction
+        range: biocyc_reaction
+        required: false
+      substrate:
+        name: substrate
+        description: Foreign key to biocyc_comp
+        range: biocyc_comp
+        required: false
+      compartment:
+        name: compartment
+        range: string
+        required: false
+  biocyc_reaction_synonyms:
+    name: biocyc_reaction_synonyms
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_reaction
+        range: biocyc_reaction
+        required: false
+      synonyms:
+        name: synonyms
+        range: string
+        required: false
+  biocyc_reaction_types:
+    name: biocyc_reaction_types
+    attributes:
+      unique_id:
+        name: unique_id
+        description: Foreign key to biocyc_reaction
+        range: biocyc_reaction
+        required: false
+      types:
+        name: types
+        range: string
+        required: false
+  cath_funfam:
+    name: cath_funfam
+    attributes:
+      accession:
+        name: accession
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      sub_id:
+        name: sub_id
+        range: string
+        required: false
+  cog:
+    name: cog
+    attributes:
+      cog_id:
+        name: cog_id
+        range: string
+        required: false
+      cog_name:
+        name: cog_name
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      db_source:
+        name: db_source
+        description: Foreign key to db_source
+        range: db_source
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      seq_length:
+        name: seq_length
+        range: integer
+        required: false
+  cog2014:
+    name: cog2014
+    attributes:
+      cog:
+        name: cog
+        range: string
+        required: false
+      func:
+        name: func
+        range: string
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+  cog_families:
+    name: cog_families
+    attributes:
+      cog_id:
+        name: cog_id
+        description: Foreign key to cog
+        range: cog
+        required: false
+      families:
+        name: families
+        range: string
+        required: false
+  cog_function:
+    name: cog_function
+    attributes:
+      function_code:
+        name: function_code
+        range: string
+        required: false
+      definition:
+        name: definition
+        range: string
+        required: false
+      function_group:
+        name: function_group
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+  cog_functions:
+    name: cog_functions
+    attributes:
+      cog_id:
+        name: cog_id
+        range: string
+        required: false
+      functions:
+        name: functions
+        range: string
+        required: false
+  cog_pathway:
+    name: cog_pathway
+    attributes:
+      cog_pathway_oid:
+        name: cog_pathway_oid
+        range: integer
+        required: false
+      function:
+        name: function
+        description: Foreign key to cog_function
+        range: cog_function
+        required: false
+      cog_pathway_name:
+        name: cog_pathway_name
+        range: string
+        required: false
+  cog_pathway_cog_members:
+    name: cog_pathway_cog_members
+    attributes:
+      cog_pathway_oid:
+        name: cog_pathway_oid
+        description: Foreign key to cog_pathway
+        range: cog_pathway
+        required: false
+      cog_members:
+        name: cog_members
+        description: Foreign key to cog
+        range: cog
+        required: false
+  cog_species:
+    name: cog_species
+    attributes:
+      species_code:
+        name: species_code
+        range: string
+        required: false
+      cog_species_name:
+        name: cog_species_name
+        range: string
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+      species_family:
+        name: species_family
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+  cogfunc2014:
+    name: cogfunc2014
+    attributes:
+      code:
+        name: code
+        range: string
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+  compound:
+    name: compound
+    attributes:
+      ext_accession:
+        name: ext_accession
+        range: string
+        required: false
+      db_source:
+        name: db_source
+        description: Foreign key to db_source
+        range: db_source
+        required: false
+      compound_name:
+        name: compound_name
+        range: string
+        required: false
+      common_name:
+        name: common_name
+        range: string
+        required: false
+      class:
+        name: class
+        range: string
+        required: false
+      formula:
+        name: formula
+        range: string
+        required: false
+      parent:
+        name: parent
+        range: string
+        required: false
+      status:
+        name: status
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      family:
+        name: family
+        range: string
+        required: false
+      mol_weight:
+        name: mol_weight
+        range: float
+        required: false
+      num_atoms:
+        name: num_atoms
+        range: float
+        required: false
+      smiles:
+        name: smiles
+        range: string
+        required: false
+      inchi:
+        name: inchi
+        range: string
+        required: false
+      inchi_key:
+        name: inchi_key
+        range: string
+        required: false
+      cas_number:
+        name: cas_number
+        range: string
+        required: false
+  compound_aliases:
+    name: compound_aliases
+    attributes:
+      ext_accession:
+        name: ext_accession
+        description: Foreign key to compound
+        range: compound
+        required: false
+      aliases:
+        name: aliases
+        range: string
+        required: false
+  compound_ext_links:
+    name: compound_ext_links
+    attributes:
+      ext_accession:
+        name: ext_accession
+        description: Foreign key to compound
+        range: compound
+        required: false
+      db_name:
+        name: db_name
+        description: Foreign key to db_source
+        range: db_source
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+  db_source:
+    name: db_source
+    attributes:
+      db_code:
+        name: db_code
+        range: string
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+      base_url:
+        name: base_url
+        range: string
+        required: false
+  delete_genes:
+    name: delete_genes
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+  delete_scaffolds:
+    name: delete_scaffolds
+    attributes:
+      scaffold_oid:
+        name: scaffold_oid
+        range: integer
+        required: false
+  delete_taxons:
+    name: delete_taxons
+    attributes:
+      old_taxon_oid:
+        name: old_taxon_oid
+        range: integer
+        required: false
+      taxon_name:
+        name: taxon_name
+        range: string
+        required: false
+  dt_all_phylo_taxon_stats:
+    name: dt_all_phylo_taxon_stats
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: float
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+      homolog_taxon:
+        name: homolog_taxon
+        range: float
+        required: false
+      gene_count_30:
+        name: gene_count_30
+        range: float
+        required: false
+      gene_count_60:
+        name: gene_count_60
+        range: float
+        required: false
+      gene_count_90:
+        name: gene_count_90
+        range: float
+        required: false
+      est_copy_30:
+        name: est_copy_30
+        range: float
+        required: false
+      est_copy_60:
+        name: est_copy_60
+        range: float
+        required: false
+      est_copy_90:
+        name: est_copy_90
+        range: float
+        required: false
+  dt_cog:
+    name: dt_cog
+    attributes:
+      cog_id:
+        name: cog_id
+        range: string
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+  dt_cog_stats:
+    name: dt_cog_stats
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: float
+        required: false
+      total_cog_gene_count:
+        name: total_cog_gene_count
+        range: float
+        required: false
+      amino_acid_metabolism:
+        name: amino_acid_metabolism
+        range: float
+        required: false
+      amino_acid_metabolism_pc:
+        name: amino_acid_metabolism_pc
+        range: float
+        required: false
+      carbohydrate_metabolism:
+        name: carbohydrate_metabolism
+        range: float
+        required: false
+      carbohydrate_metabolism_pc:
+        name: carbohydrate_metabolism_pc
+        range: float
+        required: false
+      cell_cycle:
+        name: cell_cycle
+        range: float
+        required: false
+      cell_cycle_pc:
+        name: cell_cycle_pc
+        range: float
+        required: false
+      cell_motility:
+        name: cell_motility
+        range: float
+        required: false
+      cell_motility_pc:
+        name: cell_motility_pc
+        range: float
+        required: false
+      cell_wall_biogenesis:
+        name: cell_wall_biogenesis
+        range: float
+        required: false
+      cell_wall_biogenesis_pc:
+        name: cell_wall_biogenesis_pc
+        range: float
+        required: false
+      chromatin_structure:
+        name: chromatin_structure
+        range: float
+        required: false
+      chromatin_structure_pc:
+        name: chromatin_structure_pc
+        range: float
+        required: false
+      coenzyme_transport:
+        name: coenzyme_transport
+        range: float
+        required: false
+      coenzyme_transport_pc:
+        name: coenzyme_transport_pc
+        range: float
+        required: false
+      cytoskeleton:
+        name: cytoskeleton
+        range: float
+        required: false
+      cytoskeleton_pc:
+        name: cytoskeleton_pc
+        range: float
+        required: false
+      defense_mechanisms:
+        name: defense_mechanisms
+        range: float
+        required: false
+      defense_mechanisms_pc:
+        name: defense_mechanisms_pc
+        range: float
+        required: false
+      energy_production:
+        name: energy_production
+        range: float
+        required: false
+      energy_production_pc:
+        name: energy_production_pc
+        range: float
+        required: false
+      extracellular_structures:
+        name: extracellular_structures
+        range: float
+        required: false
+      extracellular_structures_pc:
+        name: extracellular_structures_pc
+        range: float
+        required: false
+      function_unknown:
+        name: function_unknown
+        range: float
+        required: false
+      function_unknown_pc:
+        name: function_unknown_pc
+        range: float
+        required: false
+      general_function_only:
+        name: general_function_only
+        range: float
+        required: false
+      general_function_only_pc:
+        name: general_function_only_pc
+        range: float
+        required: false
+      ion_transport:
+        name: ion_transport
+        range: float
+        required: false
+      ion_transport_pc:
+        name: ion_transport_pc
+        range: float
+        required: false
+      intracellular_trafficking:
+        name: intracellular_trafficking
+        range: float
+        required: false
+      intracellular_trafficking_pc:
+        name: intracellular_trafficking_pc
+        range: float
+        required: false
+      lipid_metabolism:
+        name: lipid_metabolism
+        range: float
+        required: false
+      lipid_metabolism_pc:
+        name: lipid_metabolism_pc
+        range: float
+        required: false
+      nuclear_structure:
+        name: nuclear_structure
+        range: float
+        required: false
+      nuclear_structure_pc:
+        name: nuclear_structure_pc
+        range: float
+        required: false
+      nucleotide_metabolism:
+        name: nucleotide_metabolism
+        range: float
+        required: false
+      nucleotide_metabolism_pc:
+        name: nucleotide_metabolism_pc
+        range: float
+        required: false
+      posttrans_modification:
+        name: posttrans_modification
+        range: float
+        required: false
+      posttrans_modification_pc:
+        name: posttrans_modification_pc
+        range: float
+        required: false
+      rna_processing:
+        name: rna_processing
+        range: float
+        required: false
+      rna_processing_pc:
+        name: rna_processing_pc
+        range: float
+        required: false
+      replication_repair:
+        name: replication_repair
+        range: float
+        required: false
+      replication_repair_pc:
+        name: replication_repair_pc
+        range: float
+        required: false
+      secondary_metabolites:
+        name: secondary_metabolites
+        range: float
+        required: false
+      secondary_metabolites_pc:
+        name: secondary_metabolites_pc
+        range: float
+        required: false
+      signal_transduction:
+        name: signal_transduction
+        range: float
+        required: false
+      signal_transduction_pc:
+        name: signal_transduction_pc
+        range: float
+        required: false
+      transcription:
+        name: transcription
+        range: float
+        required: false
+      transcription_pc:
+        name: transcription_pc
+        range: float
+        required: false
+      translation:
+        name: translation
+        range: float
+        required: false
+      translation_pc:
+        name: translation_pc
+        range: float
+        required: false
+      mobilome:
+        name: mobilome
+        range: float
+        required: false
+      mobilome_pc:
+        name: mobilome_pc
+        range: float
+        required: false
+  dt_ht_hits:
+    name: dt_ht_hits
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      phylo_level:
+        name: phylo_level
+        range: string
+        required: false
+      phylo_val:
+        name: phylo_val
+        range: string
+        required: false
+      homolog:
+        name: homolog
+        range: integer
+        required: false
+      rank:
+        name: rank
+        range: integer
+        required: false
+      rev_gene_oid:
+        name: rev_gene_oid
+        range: integer
+        required: false
+  dt_img_gene_prot_pep_sample:
+    name: dt_img_gene_prot_pep_sample
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+      gene_display_name:
+        name: gene_display_name
+        range: string
+        required: false
+      gene_seq_length:
+        name: gene_seq_length
+        range: integer
+        required: false
+      pep_seq_length:
+        name: pep_seq_length
+        range: integer
+        required: false
+      pep_spectral_cnt:
+        name: pep_spectral_cnt
+        range: integer
+        required: false
+      coverage:
+        name: coverage
+        range: float
+        required: false
+      protein_oid:
+        name: protein_oid
+        range: integer
+        required: false
+      peptide_oid:
+        name: peptide_oid
+        range: integer
+        required: false
+      peptide_seq:
+        name: peptide_seq
+        range: string
+        required: false
+      sample_oid:
+        name: sample_oid
+        range: integer
+        required: false
+      sample_desc:
+        name: sample_desc
+        range: string
+        required: false
+      exp_oid:
+        name: exp_oid
+        range: integer
+        required: false
+  dt_img_term:
+    name: dt_img_term
+    attributes:
+      term_oid:
+        name: term_oid
+        range: integer
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+  dt_img_term_path:
+    name: dt_img_term_path
+    attributes:
+      term_oid:
+        name: term_oid
+        range: integer
+        required: false
+      map_term:
+        name: map_term
+        range: integer
+        required: false
+  dt_intergenic:
+    name: dt_intergenic
+    attributes:
+      scaffold_oid:
+        name: scaffold_oid
+        range: integer
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+  dt_ko:
+    name: dt_ko
+    attributes:
+      ko_id:
+        name: ko_id
+        range: string
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+  dt_ko_ec_cog_pfam:
+    name: dt_ko_ec_cog_pfam
+    attributes:
+      ko_id:
+        name: ko_id
+        range: string
+        required: false
+      ec:
+        name: ec
+        range: string
+        required: false
+      cog:
+        name: cog
+        range: string
+        required: false
+      pfam:
+        name: pfam
+        range: string
+        required: false
+  dt_kog_stats:
+    name: dt_kog_stats
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: float
+        required: false
+      total_kog_gene_count:
+        name: total_kog_gene_count
+        range: float
+        required: false
+      amino_acid_metabolism:
+        name: amino_acid_metabolism
+        range: float
+        required: false
+      amino_acid_metabolism_pc:
+        name: amino_acid_metabolism_pc
+        range: float
+        required: false
+      carbohydrate_metabolism:
+        name: carbohydrate_metabolism
+        range: float
+        required: false
+      carbohydrate_metabolism_pc:
+        name: carbohydrate_metabolism_pc
+        range: float
+        required: false
+      cell_cycle:
+        name: cell_cycle
+        range: float
+        required: false
+      cell_cycle_pc:
+        name: cell_cycle_pc
+        range: float
+        required: false
+      cell_motility:
+        name: cell_motility
+        range: float
+        required: false
+      cell_motility_pc:
+        name: cell_motility_pc
+        range: float
+        required: false
+      cell_wall_biogenesis:
+        name: cell_wall_biogenesis
+        range: float
+        required: false
+      cell_wall_biogenesis_pc:
+        name: cell_wall_biogenesis_pc
+        range: float
+        required: false
+      chromatin_structure:
+        name: chromatin_structure
+        range: float
+        required: false
+      chromatin_structure_pc:
+        name: chromatin_structure_pc
+        range: float
+        required: false
+      coenzyme_transport:
+        name: coenzyme_transport
+        range: float
+        required: false
+      coenzyme_transport_pc:
+        name: coenzyme_transport_pc
+        range: float
+        required: false
+      cytoskeleton:
+        name: cytoskeleton
+        range: float
+        required: false
+      cytoskeleton_pc:
+        name: cytoskeleton_pc
+        range: float
+        required: false
+      defense_mechanisms:
+        name: defense_mechanisms
+        range: float
+        required: false
+      defense_mechanisms_pc:
+        name: defense_mechanisms_pc
+        range: float
+        required: false
+      energy_production:
+        name: energy_production
+        range: float
+        required: false
+      energy_production_pc:
+        name: energy_production_pc
+        range: float
+        required: false
+      extracellular_structures:
+        name: extracellular_structures
+        range: float
+        required: false
+      extracellular_structures_pc:
+        name: extracellular_structures_pc
+        range: float
+        required: false
+      function_unknown:
+        name: function_unknown
+        range: float
+        required: false
+      function_unknown_pc:
+        name: function_unknown_pc
+        range: float
+        required: false
+      general_function_only:
+        name: general_function_only
+        range: float
+        required: false
+      general_function_only_pc:
+        name: general_function_only_pc
+        range: float
+        required: false
+      ion_transport:
+        name: ion_transport
+        range: float
+        required: false
+      ion_transport_pc:
+        name: ion_transport_pc
+        range: float
+        required: false
+      intracellular_trafficking:
+        name: intracellular_trafficking
+        range: float
+        required: false
+      intracellular_trafficking_pc:
+        name: intracellular_trafficking_pc
+        range: float
+        required: false
+      lipid_metabolism:
+        name: lipid_metabolism
+        range: float
+        required: false
+      lipid_metabolism_pc:
+        name: lipid_metabolism_pc
+        range: float
+        required: false
+      nuclear_structure:
+        name: nuclear_structure
+        range: float
+        required: false
+      nuclear_structure_pc:
+        name: nuclear_structure_pc
+        range: float
+        required: false
+      nucleotide_metabolism:
+        name: nucleotide_metabolism
+        range: float
+        required: false
+      nucleotide_metabolism_pc:
+        name: nucleotide_metabolism_pc
+        range: float
+        required: false
+      posttrans_modification:
+        name: posttrans_modification
+        range: float
+        required: false
+      posttrans_modification_pc:
+        name: posttrans_modification_pc
+        range: float
+        required: false
+      rna_processing:
+        name: rna_processing
+        range: float
+        required: false
+      rna_processing_pc:
+        name: rna_processing_pc
+        range: float
+        required: false
+      replication_repair:
+        name: replication_repair
+        range: float
+        required: false
+      replication_repair_pc:
+        name: replication_repair_pc
+        range: float
+        required: false
+      secondary_metabolites:
+        name: secondary_metabolites
+        range: float
+        required: false
+      secondary_metabolites_pc:
+        name: secondary_metabolites_pc
+        range: float
+        required: false
+      signal_transduction:
+        name: signal_transduction
+        range: float
+        required: false
+      signal_transduction_pc:
+        name: signal_transduction_pc
+        range: float
+        required: false
+      transcription:
+        name: transcription
+        range: float
+        required: false
+      transcription_pc:
+        name: transcription_pc
+        range: float
+        required: false
+      translation:
+        name: translation
+        range: float
+        required: false
+      translation_pc:
+        name: translation_pc
+        range: float
+        required: false
+  dt_pfam:
+    name: dt_pfam
+    attributes:
+      pfam_id:
+        name: pfam_id
+        range: string
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+  dt_phylo_taxon_stats:
+    name: dt_phylo_taxon_stats
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: float
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+      homolog_taxon:
+        name: homolog_taxon
+        range: float
+        required: false
+      gene_count_30:
+        name: gene_count_30
+        range: float
+        required: false
+      gene_count_60:
+        name: gene_count_60
+        range: float
+        required: false
+      gene_count_90:
+        name: gene_count_90
+        range: float
+        required: false
+      est_copy_30:
+        name: est_copy_30
+        range: float
+        required: false
+      est_copy_60:
+        name: est_copy_60
+        range: float
+        required: false
+      est_copy_90:
+        name: est_copy_90
+        range: float
+        required: false
+  dt_phylodist_new_taxons:
+    name: dt_phylodist_new_taxons
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      taxon_name:
+        name: taxon_name
+        range: string
+        required: false
+  dt_phylum_dist_genes:
+    name: dt_phylum_dist_genes
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      domain:
+        name: domain
+        range: string
+        required: false
+      phylum:
+        name: phylum
+        range: string
+        required: false
+      ir_class:
+        name: ir_class
+        range: string
+        required: false
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      homolog:
+        name: homolog
+        range: integer
+        required: false
+      homolog_taxon:
+        name: homolog_taxon
+        range: integer
+        required: false
+      perc_ident_bin:
+        name: perc_ident_bin
+        range: integer
+        required: false
+      percent_identity:
+        name: percent_identity
+        range: float
+        required: false
+      bit_score:
+        name: bit_score
+        range: float
+        required: false
+  dt_phylum_dist_stats:
+    name: dt_phylum_dist_stats
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      domain:
+        name: domain
+        range: string
+        required: false
+      phylum:
+        name: phylum
+        range: string
+        required: false
+      ir_class:
+        name: ir_class
+        range: string
+        required: false
+      perc_ident_bin:
+        name: perc_ident_bin
+        range: integer
+        required: false
+      gene_count:
+        name: gene_count
+        range: integer
+        required: false
+      taxon_count:
+        name: taxon_count
+        range: integer
+        required: false
+  dt_scog_genes:
+    name: dt_scog_genes
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      cog_id:
+        name: cog_id
+        range: string
+        required: false
+  dt_scogs:
+    name: dt_scogs
+    attributes:
+      cog_id:
+        name: cog_id
+        range: string
+        required: false
+      cog_name:
+        name: cog_name
+        range: string
+        required: false
+      single_copy:
+        name: single_copy
+        range: string
+        required: false
+  dt_taxon_kmodule_mcr:
+    name: dt_taxon_kmodule_mcr
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      module_id:
+        name: module_id
+        range: string
+        required: false
+      mcr:
+        name: mcr
+        range: float
+        required: false
+  dt_taxon_node_lite:
+    name: dt_taxon_node_lite
+    attributes:
+      node_oid:
+        name: node_oid
+        range: integer
+        required: false
+      display_name:
+        name: display_name
+        range: string
+        required: false
+      rank_name:
+        name: rank_name
+        range: string
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+      parent:
+        name: parent
+        range: integer
+        required: false
+  dt_tfam:
+    name: dt_tfam
+    attributes:
+      tfam_id:
+        name: tfam_id
+        range: string
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+  dt_tfams_to_exclude:
+    name: dt_tfams_to_exclude
+    attributes:
+      tfam_id:
+        name: tfam_id
+        range: string
+        required: false
+  enzyme:
+    name: enzyme
+    attributes:
+      ec_number:
+        name: ec_number
+        range: string
+        required: false
+      enzyme_name:
+        name: enzyme_name
+        range: string
+        required: false
+      systematic_name:
+        name: systematic_name
+        range: string
+        required: false
+      parent_class:
+        name: parent_class
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      rxn_desc:
+        name: rxn_desc
+        range: string
+        required: false
+      cas_number:
+        name: cas_number
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+  enzyme_enz_aliases:
+    name: enzyme_enz_aliases
+    attributes:
+      ec_number:
+        name: ec_number
+        range: string
+        required: false
+      enz_aliases:
+        name: enz_aliases
+        range: string
+        required: false
+  enzyme_ext_links:
+    name: enzyme_ext_links
+    attributes:
+      ec_number:
+        name: ec_number
+        range: string
+        required: false
+      db_name:
+        name: db_name
+        description: Foreign key to db_source
+        range: db_source
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+  enzyme_products:
+    name: enzyme_products
+    attributes:
+      ec_number:
+        name: ec_number
+        range: string
+        required: false
+      products:
+        name: products
+        description: Foreign key to compound
+        range: compound
+        required: false
+  enzyme_substrates:
+    name: enzyme_substrates
+    attributes:
+      ec_number:
+        name: ec_number
+        range: string
+        required: false
+      substrates:
+        name: substrates
+        description: Foreign key to compound
+        range: compound
+        required: false
+  enzyme_transferred:
+    name: enzyme_transferred
+    attributes:
+      ec_number:
+        name: ec_number
+        range: string
+        required: false
+      enzyme_name:
+        name: enzyme_name
+        range: string
+        required: false
+      systematic_name:
+        name: systematic_name
+        range: string
+        required: false
+      parent_class:
+        name: parent_class
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      rxn_desc:
+        name: rxn_desc
+        range: string
+        required: false
+      cas_number:
+        name: cas_number
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+  exclude_func:
+    name: exclude_func
+    attributes:
+      function_id:
+        name: function_id
+        range: string
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+  gene:
+    name: gene
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      gene_symbol:
+        name: gene_symbol
+        range: string
+        required: false
+      gene_display_name:
+        name: gene_display_name
+        range: string
+        required: false
+      product_name:
+        name: product_name
+        range: string
+        required: false
+      locus_tag:
+        name: locus_tag
+        range: string
+        required: false
+      locus_type:
+        name: locus_type
+        range: string
+        required: false
+      scaffold:
+        name: scaffold
+        range: integer
+        required: false
+      chromosome:
+        name: chromosome
+        range: string
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+      strand:
+        name: strand
+        range: string
+        required: false
+      is_partial_w:
+        name: is_partial_w
+        range: string
+        required: false
+      start_coord_w:
+        name: start_coord_w
+        range: integer
+        required: false
+      end_coord_w:
+        name: end_coord_w
+        range: integer
+        required: false
+      dna_seq_length:
+        name: dna_seq_length
+        range: integer
+        required: false
+      aa_seq_length:
+        name: aa_seq_length
+        range: integer
+        required: false
+      aa_checksum:
+        name: aa_checksum
+        range: string
+        required: false
+      is_pseudogene:
+        name: is_pseudogene
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      protein_seq_accid:
+        name: protein_seq_accid
+        range: string
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+      obsolete_flag:
+        name: obsolete_flag
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      img_product_source:
+        name: img_product_source
+        range: string
+        required: false
+      cds_frag_coord:
+        name: cds_frag_coord
+        range: string
+        required: false
+      partial_gene:
+        name: partial_gene
+        range: string
+        required: false
+      copy_number:
+        name: copy_number
+        range: integer
+        required: false
+      est_copy:
+        name: est_copy
+        range: integer
+        required: false
+      gc_percent:
+        name: gc_percent
+        range: float
+        required: false
+      transl_table:
+        name: transl_table
+        range: integer
+        required: false
+  gene_aliases:
+    name: gene_aliases
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      aliases:
+        name: aliases
+        range: string
+        required: false
+  gene_biocyc_rxns:
+    name: gene_biocyc_rxns
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      biocyc_enzrxn:
+        name: biocyc_enzrxn
+        range: string
+        required: false
+      biocyc_rxn:
+        name: biocyc_rxn
+        range: string
+        required: false
+      ec_number:
+        name: ec_number
+        range: string
+        required: false
+      common_name:
+        name: common_name
+        range: string
+        required: false
+      assign_basis:
+        name: assign_basis
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+      scaffold:
+        name: scaffold
+        range: integer
+        required: false
+  gene_cathfam:
+    name: gene_cathfam
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      db_name:
+        name: db_name
+        range: string
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+      percent_identity:
+        name: percent_identity
+        range: float
+        required: false
+      query_start:
+        name: query_start
+        range: integer
+        required: false
+      query_end:
+        name: query_end
+        range: integer
+        required: false
+      evalue:
+        name: evalue
+        range: float
+        required: false
+      bit_score:
+        name: bit_score
+        range: float
+        required: false
+      align_length:
+        name: align_length
+        range: integer
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+      scaffold:
+        name: scaffold
+        range: integer
+        required: false
+  gene_cog_groups:
+    name: gene_cog_groups
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      cog:
+        name: cog
+        range: string
+        required: false
+      percent_identity:
+        name: percent_identity
+        range: float
+        required: false
+      query_start:
+        name: query_start
+        range: integer
+        required: false
+      query_end:
+        name: query_end
+        range: integer
+        required: false
+      subj_start:
+        name: subj_start
+        range: integer
+        required: false
+      subj_end:
+        name: subj_end
+        range: integer
+        required: false
+      evalue:
+        name: evalue
+        range: float
+        required: false
+      bit_score:
+        name: bit_score
+        range: float
+        required: false
+      align_length:
+        name: align_length
+        range: integer
+        required: false
+      rank_order:
+        name: rank_order
+        range: integer
+        required: false
+      taxon:
+        name: taxon
+        description: Foreign key to taxon
+        range: taxon
+        required: false
+      scaffold:
+        name: scaffold
+        range: integer
+        required: false
+  gene_essential_genes:
+    name: gene_essential_genes
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      ext_id:
+        name: ext_id
+        range: string
+        required: false
+      essentiality:
+        name: essentiality
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+      assertion_error:
+        name: assertion_error
+        range: float
+        required: false
+      sp_id:
+        name: sp_id
+        range: string
+        required: false
+      func_role:
+        name: func_role
+        range: string
+        required: false
+      func_cat:
+        name: func_cat
+        range: string
+        required: false
+  gene_exceptions:
+    name: gene_exceptions
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      gb_tag:
+        name: gb_tag
+        range: string
+        required: false
+      exception:
+        name: exception
+        range: string
+        required: false
+  gene_ext_links:
+    name: gene_ext_links
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      db_name:
+        name: db_name
+        description: Foreign key to db_source
+        range: db_source
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+      xref:
+        name: xref
+        range: string
+        required: false
+      custom_url:
+        name: custom_url
+        range: string
+        required: false
+  gene_feature_tags:
+    name: gene_feature_tags
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      tag:
+        name: tag
+        range: string
+        required: false
+      value:
+        name: value
+        range: string
+        required: false
+      notes:
+        name: notes
+        range: string
+        required: false
+  gene_frag_coords:
+    name: gene_frag_coords
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      frag_order:
+        name: frag_order
+        range: integer
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+  gene_go_terms:
+    name: gene_go_terms
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      go_type:
+        name: go_type
+        range: string
+        required: false
+      go_id:
+        name: go_id
+        range: string
+        required: false
+      go_evidence:
+        name: go_evidence
+        range: string
+        required: false
+      reference:
+        name: reference
+        range: string
+        required: false
+      xref:
+        name: xref
+        range: string
+        required: false
+  gene_img_interpro_hits:
+    name: gene_img_interpro_hits
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      length:
+        name: length
+        range: integer
+        required: false
+      domaindb:
+        name: domaindb
+        range: string
+        required: false
+      domainid:
+        name: domainid
+        range: string
+        required: false
+      domaindesc:
+        name: domaindesc
+        range: string
+        required: false
+      sfcount:
+        name: sfcount
+        range: integer
+        required: false
+      sfstarts:
+        name: sfstarts
+        range: integer
+        required: false
+      sfends:
+        name: sfends
+        range: integer
+        required: false
+      sfscores:
+        name: sfscores
+        range: integer
+        required: false
+      iprid:
+        name: iprid
+        range: string
+        required: false
+      iprdesc:
+        name: iprdesc
+        range: string
+        required: false
+      go_info:
+        name: go_info
+        range: string
+        required: false
+      url:
+        name: url
+        range: string
+        required: false
+      scaffold:
+        name: scaffold
+        description: Foreign key to taxon
+        range: taxon
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+  gene_ko_enzymes:
+    name: gene_ko_enzymes
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      enzymes:
+        name: enzymes
+        range: string
+        required: false
+      ko_id:
+        name: ko_id
+        range: string
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+      scaffold:
+        name: scaffold
+        range: integer
+        required: false
+  gene_ko_enzymes_new:
+    name: gene_ko_enzymes_new
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      enzymes:
+        name: enzymes
+        range: string
+        required: false
+      ko_id:
+        name: ko_id
+        range: string
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+      scaffold:
+        name: scaffold
+        range: integer
+        required: false
+  gene_ko_terms:
+    name: gene_ko_terms
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      ko_terms:
+        name: ko_terms
+        range: string
+        required: false
+      percent_identity:
+        name: percent_identity
+        range: float
+        required: false
+      query_start:
+        name: query_start
+        range: integer
+        required: false
+      query_end:
+        name: query_end
+        range: integer
+        required: false
+      subj_start:
+        name: subj_start
+        range: integer
+        required: false
+      subj_end:
+        name: subj_end
+        range: integer
+        required: false
+      evalue:
+        name: evalue
+        range: float
+        required: false
+      bit_score:
+        name: bit_score
+        range: float
+        required: false
+      align_length:
+        name: align_length
+        range: integer
+        required: false
+      kegg_gene:
+        name: kegg_gene
+        range: string
+        required: false
+      img_ko_flag:
+        name: img_ko_flag
+        range: string
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+      scaffold:
+        name: scaffold
+        range: integer
+        required: false
+  gene_kog_groups:
+    name: gene_kog_groups
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      kog:
+        name: kog
+        range: string
+        required: false
+      percent_identity:
+        name: percent_identity
+        range: float
+        required: false
+      query_start:
+        name: query_start
+        range: integer
+        required: false
+      query_end:
+        name: query_end
+        range: integer
+        required: false
+      subj_start:
+        name: subj_start
+        range: integer
+        required: false
+      subj_end:
+        name: subj_end
+        range: integer
+        required: false
+      evalue:
+        name: evalue
+        range: float
+        required: false
+      bit_score:
+        name: bit_score
+        range: float
+        required: false
+      align_length:
+        name: align_length
+        range: integer
+        required: false
+      rank_order:
+        name: rank_order
+        range: integer
+        required: false
+      taxon:
+        name: taxon
+        description: Foreign key to taxon
+        range: taxon
+        required: false
+      scaffold:
+        name: scaffold
+        range: integer
+        required: false
+  gene_notes:
+    name: gene_notes
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      notes:
+        name: notes
+        range: string
+        required: false
+  gene_paralogs:
+    name: gene_paralogs
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      paralog:
+        name: paralog
+        range: integer
+        required: false
+      percent_identity:
+        name: percent_identity
+        range: float
+        required: false
+      evalue:
+        name: evalue
+        range: float
+        required: false
+      bit_score:
+        name: bit_score
+        range: float
+        required: false
+      subj_start:
+        name: subj_start
+        range: integer
+        required: false
+      subj_end:
+        name: subj_end
+        range: integer
+        required: false
+      query_start:
+        name: query_start
+        range: integer
+        required: false
+      query_end:
+        name: query_end
+        range: integer
+        required: false
+  gene_pdb_xrefs:
+    name: gene_pdb_xrefs
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      db_name:
+        name: db_name
+        description: Foreign key to db_source
+        range: db_source
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+      xref:
+        name: xref
+        range: string
+        required: false
+  gene_pfam_families:
+    name: gene_pfam_families
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      pfam_family:
+        name: pfam_family
+        range: string
+        required: false
+      percent_identity:
+        name: percent_identity
+        range: float
+        required: false
+      query_start:
+        name: query_start
+        range: integer
+        required: false
+      query_end:
+        name: query_end
+        range: integer
+        required: false
+      subj_start:
+        name: subj_start
+        range: integer
+        required: false
+      subj_end:
+        name: subj_end
+        range: integer
+        required: false
+      evalue:
+        name: evalue
+        range: float
+        required: false
+      bit_score:
+        name: bit_score
+        range: float
+        required: false
+      align_length:
+        name: align_length
+        range: integer
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+      scaffold:
+        name: scaffold
+        range: integer
+        required: false
+  gene_sig_peptides:
+    name: gene_sig_peptides
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      feature_type:
+        name: feature_type
+        range: string
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+  gene_smart:
+    name: gene_smart
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      db_name:
+        name: db_name
+        range: string
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+      percent_identity:
+        name: percent_identity
+        range: float
+        required: false
+      query_start:
+        name: query_start
+        range: integer
+        required: false
+      query_end:
+        name: query_end
+        range: integer
+        required: false
+      evalue:
+        name: evalue
+        range: float
+        required: false
+      bit_score:
+        name: bit_score
+        range: float
+        required: false
+      align_length:
+        name: align_length
+        range: integer
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+      scaffold:
+        name: scaffold
+        range: integer
+        required: false
+  gene_superfam:
+    name: gene_superfam
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      db_name:
+        name: db_name
+        range: string
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+      percent_identity:
+        name: percent_identity
+        range: float
+        required: false
+      query_start:
+        name: query_start
+        range: integer
+        required: false
+      query_end:
+        name: query_end
+        range: integer
+        required: false
+      evalue:
+        name: evalue
+        range: float
+        required: false
+      bit_score:
+        name: bit_score
+        range: float
+        required: false
+      align_length:
+        name: align_length
+        range: integer
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+      scaffold:
+        name: scaffold
+        range: integer
+        required: false
+  gene_tigrfams:
+    name: gene_tigrfams
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      ext_accession:
+        name: ext_accession
+        range: string
+        required: false
+      sfstarts:
+        name: sfstarts
+        range: string
+        required: false
+      sfsends:
+        name: sfsends
+        range: string
+        required: false
+      sfscores:
+        name: sfscores
+        range: string
+        required: false
+      bit_score:
+        name: bit_score
+        range: float
+        required: false
+      percent_identity:
+        name: percent_identity
+        range: float
+        required: false
+      evalue:
+        name: evalue
+        range: float
+        required: false
+      taxon:
+        name: taxon
+        description: Foreign key to taxon
+        range: taxon
+        required: false
+      scaffold:
+        name: scaffold
+        range: integer
+        required: false
+  gene_xref_families:
+    name: gene_xref_families
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      db_name:
+        name: db_name
+        description: Foreign key to db_source
+        range: db_source
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      xref:
+        name: xref
+        range: string
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+      scaffold:
+        name: scaffold
+        range: integer
+        required: false
+  genome_property:
+    name: genome_property
+    attributes:
+      prop_accession:
+        name: prop_accession
+        range: string
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      threshold:
+        name: threshold
+        range: integer
+        required: false
+      type:
+        name: type
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+  genome_property_parents:
+    name: genome_property_parents
+    attributes:
+      prop_accession:
+        name: prop_accession
+        description: Foreign key to genome_property
+        range: genome_property
+        required: false
+      parents:
+        name: parents
+        description: Foreign key to genome_property
+        range: genome_property
+        required: false
+  go_graph_path:
+    name: go_graph_path
+    attributes:
+      graph_path_id:
+        name: graph_path_id
+        range: integer
+        required: false
+      term_1:
+        name: term_1
+        description: Foreign key to go_term
+        range: go_term
+        required: false
+      term_2:
+        name: term_2
+        description: Foreign key to go_term
+        range: go_term
+        required: false
+      distance:
+        name: distance
+        range: integer
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+  go_term:
+    name: go_term
+    attributes:
+      go_id:
+        name: go_id
+        range: string
+        required: false
+      go_term:
+        name: go_term
+        range: string
+        required: false
+      go_type:
+        name: go_type
+        range: string
+        required: false
+      definition:
+        name: definition
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      is_root:
+        name: is_root
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+      is_obsolete:
+        name: is_obsolete
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+      db_source:
+        name: db_source
+        description: Foreign key to db_source
+        range: db_source
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+  go_term_parents:
+    name: go_term_parents
+    attributes:
+      go_id:
+        name: go_id
+        description: Foreign key to go_term
+        range: go_term
+        required: false
+      parent:
+        name: parent
+        description: Foreign key to go_term
+        range: go_term
+        required: false
+      rel_type:
+        name: rel_type
+        range: integer
+        required: false
+  go_term_synonyms:
+    name: go_term_synonyms
+    attributes:
+      go_id:
+        name: go_id
+        description: Foreign key to go_term
+        range: go_term
+        required: false
+      synonyms:
+        name: synonyms
+        range: string
+        required: false
+  image_roi:
+    name: image_roi
+    attributes:
+      roi_id:
+        name: roi_id
+        range: integer
+        required: false
+      shape:
+        name: shape
+        range: string
+        required: false
+      roi_type:
+        name: roi_type
+        range: string
+        required: false
+      roi_label:
+        name: roi_label
+        range: string
+        required: false
+      x_coord:
+        name: x_coord
+        range: integer
+        required: false
+      y_coord:
+        name: y_coord
+        range: integer
+        required: false
+      height:
+        name: height
+        range: integer
+        required: false
+      width:
+        name: width
+        range: integer
+        required: false
+      pathway:
+        name: pathway
+        description: Foreign key to kegg_pathway
+        range: kegg_pathway
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      related_pathway:
+        name: related_pathway
+        description: Foreign key to kegg_pathway
+        range: kegg_pathway
+        required: false
+      coord_string:
+        name: coord_string
+        range: string
+        required: false
+  image_roi_compounds:
+    name: image_roi_compounds
+    attributes:
+      roi_id:
+        name: roi_id
+        range: integer
+        required: false
+      compounds:
+        name: compounds
+        description: Foreign key to compound
+        range: compound
+        required: false
+  image_roi_enzymes:
+    name: image_roi_enzymes
+    attributes:
+      roi_id:
+        name: roi_id
+        range: integer
+        required: false
+      enzymes:
+        name: enzymes
+        range: string
+        required: false
+  image_roi_ko_terms:
+    name: image_roi_ko_terms
+    attributes:
+      roi_id:
+        name: roi_id
+        range: integer
+        required: false
+      ko_terms:
+        name: ko_terms
+        description: Foreign key to ko_term
+        range: ko_term
+        required: false
+  image_roi_reactions:
+    name: image_roi_reactions
+    attributes:
+      roi_id:
+        name: roi_id
+        range: integer
+        required: false
+      reactions:
+        name: reactions
+        description: Foreign key to reaction
+        range: reaction
+        required: false
+  img_build:
+    name: img_build
+    attributes:
+      build_oid:
+        name: build_oid
+        range: integer
+        required: false
+      build_number:
+        name: build_number
+        range: integer
+        required: false
+      build_date:
+        name: build_date
+        range: datetime
+        required: false
+      release_date:
+        name: release_date
+        range: datetime
+        required: false
+      img_version:
+        name: img_version
+        range: string
+        required: false
+      seq_dir:
+        name: seq_dir
+        range: string
+        required: false
+  img_content_history:
+    name: img_content_history
+    attributes:
+      img_version:
+        name: img_version
+        range: string
+        required: false
+      release_date:
+        name: release_date
+        range: datetime
+        required: false
+      bacteria:
+        name: bacteria
+        range: integer
+        required: false
+      archaea:
+        name: archaea
+        range: integer
+        required: false
+      eukaryota:
+        name: eukaryota
+        range: integer
+        required: false
+      plasmids:
+        name: plasmids
+        range: integer
+        required: false
+      viruses:
+        name: viruses
+        range: integer
+        required: false
+      total_genomes:
+        name: total_genomes
+        range: integer
+        required: false
+      total_genes:
+        name: total_genes
+        range: integer
+        required: false
+      jgi_genomes:
+        name: jgi_genomes
+        range: integer
+        required: false
+      gfragment:
+        name: gfragment
+        range: integer
+        required: false
+  img_funcs_info:
+    name: img_funcs_info
+    attributes:
+      function:
+        name: function
+        range: string
+        required: false
+      isolates:
+        name: isolates
+        range: string
+        required: false
+      metagenomes:
+        name: metagenomes
+        range: string
+        required: false
+  img_iuig_tarballs_11202023:
+    name: img_iuig_tarballs_11202023
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+  img_orf_type:
+    name: img_orf_type
+    attributes:
+      orf_type:
+        name: orf_type
+        range: string
+        required: false
+      definition:
+        name: definition
+        range: string
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+  img_umag_bin_tarballs_02062024:
+    name: img_umag_bin_tarballs_02062024
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+  imgnr_taxons_062123:
+    name: imgnr_taxons_062123
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      domain:
+        name: domain
+        range: string
+        required: false
+      phylum:
+        name: phylum
+        range: string
+        required: false
+      ir_class:
+        name: ir_class
+        range: string
+        required: false
+      ir_order:
+        name: ir_order
+        range: string
+        required: false
+      family:
+        name: family
+        range: string
+        required: false
+      genus:
+        name: genus
+        range: string
+        required: false
+      species:
+        name: species
+        range: string
+        required: false
+      taxon_display_name:
+        name: taxon_display_name
+        range: string
+        required: false
+  interpro:
+    name: interpro
+    attributes:
+      ext_accession:
+        name: ext_accession
+        range: string
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+      type:
+        name: type
+        range: string
+        required: false
+  interpro_go_terms:
+    name: interpro_go_terms
+    attributes:
+      ext_accession:
+        name: ext_accession
+        description: Foreign key to interpro
+        range: interpro
+        required: false
+      go_terms:
+        name: go_terms
+        range: string
+        required: false
+  iso_plasmids:
+    name: iso_plasmids
+    attributes:
+      plasmid_id:
+        name: plasmid_id
+        range: string
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      scaffold:
+        name: scaffold
+        range: string
+        required: false
+      source:
+        name: source
+        range: string
+        required: false
+  kegg_gene:
+    name: kegg_gene
+    attributes:
+      kegg_gene_id:
+        name: kegg_gene_id
+        range: string
+        required: false
+      aa_seq_length:
+        name: aa_seq_length
+        range: integer
+        required: false
+      checksum:
+        name: checksum
+        range: string
+        required: false
+  kegg_gene_ko_terms:
+    name: kegg_gene_ko_terms
+    attributes:
+      kegg_gene_id:
+        name: kegg_gene_id
+        description: Foreign key to kegg_gene
+        range: kegg_gene
+        required: false
+      ko_term:
+        name: ko_term
+        description: Foreign key to ko_term
+        range: ko_term
+        required: false
+  kegg_gene_ncbi_gene_ids:
+    name: kegg_gene_ncbi_gene_ids
+    attributes:
+      kegg_gene_id:
+        name: kegg_gene_id
+        description: Foreign key to kegg_gene
+        range: kegg_gene
+        required: false
+      ncbi_gene_id:
+        name: ncbi_gene_id
+        range: string
+        required: false
+      source:
+        name: source
+        range: string
+        required: false
+  kegg_gene_uniprot_ids:
+    name: kegg_gene_uniprot_ids
+    attributes:
+      kegg_gene_id:
+        name: kegg_gene_id
+        description: Foreign key to kegg_gene
+        range: kegg_gene
+        required: false
+      uniprot_id:
+        name: uniprot_id
+        range: string
+        required: false
+      source:
+        name: source
+        range: string
+        required: false
+  kegg_module:
+    name: kegg_module
+    attributes:
+      module_id:
+        name: module_id
+        range: string
+        required: false
+      module_name:
+        name: module_name
+        range: string
+        required: false
+      module_type:
+        name: module_type
+        range: string
+        required: false
+      definition:
+        name: definition
+        range: string
+        required: false
+      pathway:
+        name: pathway
+        description: Foreign key to kegg_pathway
+        range: kegg_pathway
+        required: false
+      ko_pathway_id:
+        name: ko_pathway_id
+        range: string
+        required: false
+      image_id:
+        name: image_id
+        range: string
+        required: false
+  kegg_module_compounds:
+    name: kegg_module_compounds
+    attributes:
+      module_id:
+        name: module_id
+        description: Foreign key to kegg_module
+        range: kegg_module
+        required: false
+      compounds:
+        name: compounds
+        description: Foreign key to compound
+        range: compound
+        required: false
+  kegg_module_ko_terms:
+    name: kegg_module_ko_terms
+    attributes:
+      module_id:
+        name: module_id
+        description: Foreign key to kegg_module
+        range: kegg_module
+        required: false
+      ko_terms:
+        name: ko_terms
+        description: Foreign key to ko_term
+        range: ko_term
+        required: false
+  kegg_module_reactions:
+    name: kegg_module_reactions
+    attributes:
+      module_id:
+        name: module_id
+        description: Foreign key to kegg_module
+        range: kegg_module
+        required: false
+      reactions:
+        name: reactions
+        description: Foreign key to reaction
+        range: reaction
+        required: false
+  kegg_pathway:
+    name: kegg_pathway
+    attributes:
+      pathway_oid:
+        name: pathway_oid
+        range: integer
+        required: false
+      pathway_name:
+        name: pathway_name
+        range: string
+        required: false
+      title:
+        name: title
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      category:
+        name: category
+        range: string
+        required: false
+      db_source:
+        name: db_source
+        description: Foreign key to db_source
+        range: db_source
+        required: false
+      image_id:
+        name: image_id
+        range: string
+        required: false
+      kegg_id:
+        name: kegg_id
+        range: string
+        required: false
+      image_file:
+        name: image_file
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      ko_pathway_id:
+        name: ko_pathway_id
+        range: string
+        required: false
+  kegg_pathway_modules:
+    name: kegg_pathway_modules
+    attributes:
+      pathway_oid:
+        name: pathway_oid
+        description: Foreign key to kegg_pathway
+        range: kegg_pathway
+        required: false
+      modules:
+        name: modules
+        description: Foreign key to kegg_module
+        range: kegg_module
+        required: false
+  kegg_pathway_related_pathways:
+    name: kegg_pathway_related_pathways
+    attributes:
+      pathway_oid:
+        name: pathway_oid
+        description: Foreign key to kegg_pathway
+        range: kegg_pathway
+        required: false
+      related_pathways:
+        name: related_pathways
+        description: Foreign key to kegg_pathway
+        range: kegg_pathway
+        required: false
+  km_image_roi:
+    name: km_image_roi
+    attributes:
+      roi_id:
+        name: roi_id
+        range: integer
+        required: false
+      shape:
+        name: shape
+        range: string
+        required: false
+      roi_type:
+        name: roi_type
+        range: string
+        required: false
+      roi_label:
+        name: roi_label
+        range: string
+        required: false
+      x_coord:
+        name: x_coord
+        range: integer
+        required: false
+      y_coord:
+        name: y_coord
+        range: integer
+        required: false
+      height:
+        name: height
+        range: integer
+        required: false
+      width:
+        name: width
+        range: integer
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      coord_string:
+        name: coord_string
+        range: string
+        required: false
+      kegg_module:
+        name: kegg_module
+        range: string
+        required: false
+  km_image_roi_ko_terms:
+    name: km_image_roi_ko_terms
+    attributes:
+      roi_id:
+        name: roi_id
+        range: integer
+        required: false
+      ko_terms:
+        name: ko_terms
+        range: string
+        required: false
+  ko2cog:
+    name: ko2cog
+    attributes:
+      ko_id:
+        name: ko_id
+        range: string
+        required: false
+      cog_id:
+        name: cog_id
+        range: string
+        required: false
+  ko2ec:
+    name: ko2ec
+    attributes:
+      ko_id:
+        name: ko_id
+        range: string
+        required: false
+      ec_number:
+        name: ec_number
+        range: string
+        required: false
+  ko2go:
+    name: ko2go
+    attributes:
+      ko_id:
+        name: ko_id
+        range: string
+        required: false
+      go_id:
+        name: go_id
+        range: string
+        required: false
+  ko2module:
+    name: ko2module
+    attributes:
+      ko_id:
+        name: ko_id
+        range: string
+        required: false
+      module_id:
+        name: module_id
+        range: string
+        required: false
+  ko2pathway:
+    name: ko2pathway
+    attributes:
+      ko_id:
+        name: ko_id
+        range: string
+        required: false
+      image_id:
+        name: image_id
+        range: string
+        required: false
+  ko2reaction:
+    name: ko2reaction
+    attributes:
+      ko_id:
+        name: ko_id
+        range: string
+        required: false
+      reaction_id:
+        name: reaction_id
+        range: string
+        required: false
+  ko2tc:
+    name: ko2tc
+    attributes:
+      ko_id:
+        name: ko_id
+        range: string
+        required: false
+      tc_id:
+        name: tc_id
+        range: string
+        required: false
+  ko_term:
+    name: ko_term
+    attributes:
+      ko_id:
+        name: ko_id
+        range: string
+        required: false
+      ko_name:
+        name: ko_name
+        range: string
+        required: false
+      definition:
+        name: definition
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+  ko_term_classes:
+    name: ko_term_classes
+    attributes:
+      ko_id:
+        name: ko_id
+        description: Foreign key to ko_term
+        range: ko_term
+        required: false
+      class:
+        name: class
+        range: string
+        required: false
+      ko_pathway_id:
+        name: ko_pathway_id
+        range: string
+        required: false
+  ko_term_cogs:
+    name: ko_term_cogs
+    attributes:
+      ko_id:
+        name: ko_id
+        description: Foreign key to ko_term
+        range: ko_term
+        required: false
+      cogs:
+        name: cogs
+        description: Foreign key to cog
+        range: cog
+        required: false
+  ko_term_enzymes:
+    name: ko_term_enzymes
+    attributes:
+      ko_id:
+        name: ko_id
+        description: Foreign key to ko_term
+        range: ko_term
+        required: false
+      enzymes:
+        name: enzymes
+        range: string
+        required: false
+  ko_term_go_ids:
+    name: ko_term_go_ids
+    attributes:
+      ko_id:
+        name: ko_id
+        description: Foreign key to ko_term
+        range: ko_term
+        required: false
+      go_ids:
+        name: go_ids
+        description: Foreign key to go_term
+        range: go_term
+        required: false
+  ko_term_modules:
+    name: ko_term_modules
+    attributes:
+      ko_id:
+        name: ko_id
+        range: string
+        required: false
+      modules:
+        name: modules
+        range: string
+        required: false
+  ko_term_pathways:
+    name: ko_term_pathways
+    attributes:
+      ko_id:
+        name: ko_id
+        range: string
+        required: false
+      pathway_oid:
+        name: pathway_oid
+        range: integer
+        required: false
+      image_id:
+        name: image_id
+        range: string
+        required: false
+  ko_term_reactions:
+    name: ko_term_reactions
+    attributes:
+      ko_id:
+        name: ko_id
+        description: Foreign key to ko_term
+        range: ko_term
+        required: false
+      reactions:
+        name: reactions
+        description: Foreign key to reaction
+        range: reaction
+        required: false
+  ko_term_tc_families:
+    name: ko_term_tc_families
+    attributes:
+      ko_id:
+        name: ko_id
+        range: string
+        required: false
+      tc_families:
+        name: tc_families
+        range: string
+        required: false
+  kog:
+    name: kog
+    attributes:
+      kog_id:
+        name: kog_id
+        range: string
+        required: false
+      kog_name:
+        name: kog_name
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      db_source:
+        name: db_source
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      seq_length:
+        name: seq_length
+        range: integer
+        required: false
+  kog_families:
+    name: kog_families
+    attributes:
+      kog_id:
+        name: kog_id
+        description: Foreign key to kog
+        range: kog
+        required: false
+      families:
+        name: families
+        range: string
+        required: false
+  kog_function:
+    name: kog_function
+    attributes:
+      function_code:
+        name: function_code
+        range: string
+        required: false
+      definition:
+        name: definition
+        range: string
+        required: false
+      function_group:
+        name: function_group
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+  kog_functions:
+    name: kog_functions
+    attributes:
+      kog_id:
+        name: kog_id
+        description: Foreign key to kog
+        range: kog
+        required: false
+      functions:
+        name: functions
+        description: Foreign key to kog_function
+        range: kog_function
+        required: false
+  kog_pathway:
+    name: kog_pathway
+    attributes:
+      kog_pathway_oid:
+        name: kog_pathway_oid
+        range: integer
+        required: false
+      function:
+        name: function
+        description: Foreign key to kog_function
+        range: kog_function
+        required: false
+      kog_pathway_name:
+        name: kog_pathway_name
+        range: string
+        required: false
+  kog_pathway_kog_members:
+    name: kog_pathway_kog_members
+    attributes:
+      kog_pathway_oid:
+        name: kog_pathway_oid
+        description: Foreign key to kog_pathway
+        range: kog_pathway
+        required: false
+      kog_members:
+        name: kog_members
+        description: Foreign key to kog
+        range: kog
+        required: false
+  kp_actino:
+    name: kp_actino
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+  kp_pseudo:
+    name: kp_pseudo
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+      scaffold:
+        name: scaffold
+        range: integer
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+      strand:
+        name: strand
+        range: string
+        required: false
+      locus_tag:
+        name: locus_tag
+        range: string
+        required: false
+      aa_seq_length:
+        name: aa_seq_length
+        range: integer
+        required: false
+      product_name:
+        name: product_name
+        range: string
+        required: false
+      gene_display_name:
+        name: gene_display_name
+        range: string
+        required: false
+  kp_taxons:
+    name: kp_taxons
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      taxon_name:
+        name: taxon_name
+        range: string
+        required: false
+  map_taxon_pairs:
+    name: map_taxon_pairs
+    attributes:
+      new_taxon_oid:
+        name: new_taxon_oid
+        range: integer
+        required: false
+      old_taxon_oid:
+        name: old_taxon_oid
+        range: integer
+        required: false
+  merfs_gene_mapping:
+    name: merfs_gene_mapping
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      merfs_gene_id:
+        name: merfs_gene_id
+        range: string
+        required: false
+      locus_tag:
+        name: locus_tag
+        range: string
+        required: false
+      taxon:
+        name: taxon
+        range: integer
+        required: false
+  mv_gene_tmhmm_stats:
+    name: mv_gene_tmhmm_stats
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+      cnt:
+        name: cnt
+        range: float
+        required: false
+  new_taxons:
+    name: new_taxons
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      taxon_name:
+        name: taxon_name
+        range: string
+        required: false
+  new_taxons_batch:
+    name: new_taxons_batch
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      taxon_name:
+        name: taxon_name
+        range: string
+        required: false
+  old_taxons:
+    name: old_taxons
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      taxon_name:
+        name: taxon_name
+        range: string
+        required: false
+  paralog_group:
+    name: paralog_group
+    attributes:
+      group_oid:
+        name: group_oid
+        range: integer
+        required: false
+      taxon:
+        name: taxon
+        description: Foreign key to taxon
+        range: taxon
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      group_name:
+        name: group_name
+        range: string
+        required: false
+  paralog_group_genes:
+    name: paralog_group_genes
+    attributes:
+      group_oid:
+        name: group_oid
+        range: integer
+        required: false
+      genes:
+        name: genes
+        range: integer
+        required: false
+  pfam2go:
+    name: pfam2go
+    attributes:
+      pfam_id:
+        name: pfam_id
+        range: string
+        required: false
+      go_id:
+        name: go_id
+        range: string
+        required: false
+      go_term:
+        name: go_term
+        range: string
+        required: false
+      go_category:
+        name: go_category
+        range: string
+        required: false
+  pfam_clan:
+    name: pfam_clan
+    attributes:
+      ext_accession:
+        name: ext_accession
+        range: string
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      previous_name:
+        name: previous_name
+        range: string
+        required: false
+  pfam_clan_pfam_families:
+    name: pfam_clan_pfam_families
+    attributes:
+      ext_accession:
+        name: ext_accession
+        range: string
+        required: false
+      pfam_families:
+        name: pfam_families
+        range: string
+        required: false
+  pfam_dead:
+    name: pfam_dead
+    attributes:
+      dead_pfam_id:
+        name: dead_pfam_id
+        range: string
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      new_pfam_id:
+        name: new_pfam_id
+        range: string
+        required: false
+  pfam_family:
+    name: pfam_family
+    attributes:
+      ext_accession:
+        name: ext_accession
+        range: string
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+      seq_length:
+        name: seq_length
+        range: integer
+        required: false
+      db_source:
+        name: db_source
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      previous_name:
+        name: previous_name
+        range: string
+        required: false
+      type:
+        name: type
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      change_status:
+        name: change_status
+        range: string
+        required: false
+      is_scp_marker:
+        name: is_scp_marker
+        range: string
+        required: false
+  pfam_family_cogs:
+    name: pfam_family_cogs
+    attributes:
+      ext_accession:
+        name: ext_accession
+        range: string
+        required: false
+      cog:
+        name: cog
+        description: Foreign key to cog
+        range: cog
+        required: false
+      functions:
+        name: functions
+        description: Foreign key to cog_function
+        range: cog_function
+        required: false
+  pfam_family_ext_links:
+    name: pfam_family_ext_links
+    attributes:
+      ext_accession:
+        name: ext_accession
+        range: string
+        required: false
+      db_name:
+        name: db_name
+        description: Foreign key to db_source
+        range: db_source
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+  pfam_family_genome_properties:
+    name: pfam_family_genome_properties
+    attributes:
+      ext_accession:
+        name: ext_accession
+        range: string
+        required: false
+      property:
+        name: property
+        description: Foreign key to genome_property
+        range: genome_property
+        required: false
+      property_step:
+        name: property_step
+        description: Foreign key to property_step
+        range: property_step
+        required: false
+  positional_cluster:
+    name: positional_cluster
+    attributes:
+      group_oid:
+        name: group_oid
+        range: integer
+        required: false
+      cluster_name:
+        name: cluster_name
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+  positional_cluster_genes:
+    name: positional_cluster_genes
+    attributes:
+      group_oid:
+        name: group_oid
+        range: float
+        required: false
+      genes:
+        name: genes
+        range: integer
+        required: false
+  property_step:
+    name: property_step
+    attributes:
+      step_accession:
+        name: step_accession
+        range: string
+        required: false
+      genome_property:
+        name: genome_property
+        description: Foreign key to genome_property
+        range: genome_property
+        required: false
+      name:
+        name: name
+        range: string
+        required: false
+      is_required:
+        name: is_required
+        range: integer
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+  property_step_evidences:
+    name: property_step_evidences
+    attributes:
+      step_accession:
+        name: step_accession
+        description: Foreign key to property_step
+        range: property_step
+        required: false
+      query:
+        name: query
+        range: string
+        required: false
+      method:
+        name: method
+        range: string
+        required: false
+  reaction:
+    name: reaction
+    attributes:
+      ext_accession:
+        name: ext_accession
+        range: string
+        required: false
+      rxn_name:
+        name: rxn_name
+        range: string
+        required: false
+      rxn_definition:
+        name: rxn_definition
+        range: string
+        required: false
+      rxn_equation:
+        name: rxn_equation
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+  reaction_compounds:
+    name: reaction_compounds
+    attributes:
+      ext_accession:
+        name: ext_accession
+        description: Foreign key to reaction
+        range: reaction
+        required: false
+      compounds:
+        name: compounds
+        description: Foreign key to compound
+        range: compound
+        required: false
+  reaction_enzymes:
+    name: reaction_enzymes
+    attributes:
+      ext_accession:
+        name: ext_accession
+        description: Foreign key to reaction
+        range: reaction
+        required: false
+      enzymes:
+        name: enzymes
+        range: string
+        required: false
+  reaction_ext_links:
+    name: reaction_ext_links
+    attributes:
+      ext_accession:
+        name: ext_accession
+        description: Foreign key to reaction
+        range: reaction
+        required: false
+      db_name:
+        name: db_name
+        description: Foreign key to db_source
+        range: db_source
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+  refseq_uniprot:
+    name: refseq_uniprot
+    attributes:
+      refseq_protein_id:
+        name: refseq_protein_id
+        range: string
+        required: false
+      uniprot_id:
+        name: uniprot_id
+        range: string
+        required: false
+  scaffold:
+    name: scaffold
+    attributes:
+      scaffold_oid:
+        name: scaffold_oid
+        range: integer
+        required: false
+      scaffold_name:
+        name: scaffold_name
+        range: string
+        required: false
+      chromosome:
+        name: chromosome
+        range: string
+        required: false
+      mol_topology:
+        name: mol_topology
+        range: string
+        required: false
+      mol_type:
+        name: mol_type
+        range: string
+        required: false
+      taxon:
+        name: taxon
+        description: Foreign key to taxon
+        range: taxon
+        required: false
+      env_sample:
+        name: env_sample
+        range: integer
+        required: false
+      ext_accession:
+        name: ext_accession
+        range: string
+        required: false
+      db_source:
+        name: db_source
+        description: Foreign key to db_source
+        range: db_source
+        required: false
+      seq_file:
+        name: seq_file
+        range: string
+        required: false
+      last_update:
+        name: last_update
+        range: datetime
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      read_depth:
+        name: read_depth
+        range: float
+        required: false
+      dna_md5checksum:
+        name: dna_md5checksum
+        range: string
+        required: false
+      contig_id_map:
+        name: contig_id_map
+        range: string
+        required: false
+      contig_id_orig:
+        name: contig_id_orig
+        range: string
+        required: false
+  scaffold_ext_links:
+    name: scaffold_ext_links
+    attributes:
+      scaffold_oid:
+        name: scaffold_oid
+        range: integer
+        required: false
+      db_name:
+        name: db_name
+        description: Foreign key to db_source
+        range: db_source
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+      custom_url:
+        name: custom_url
+        range: string
+        required: false
+  scaffold_nx_feature:
+    name: scaffold_nx_feature
+    attributes:
+      scaffold_oid:
+        name: scaffold_oid
+        range: integer
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+      strand:
+        name: strand
+        range: string
+        required: false
+      seq_length:
+        name: seq_length
+        range: integer
+        required: false
+  scaffold_repeats:
+    name: scaffold_repeats
+    attributes:
+      scaffold_oid:
+        name: scaffold_oid
+        range: integer
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+      n_copies:
+        name: n_copies
+        range: integer
+        required: false
+      type:
+        name: type
+        range: string
+        required: false
+  scaffold_stats:
+    name: scaffold_stats
+    attributes:
+      scaffold_oid:
+        name: scaffold_oid
+        range: integer
+        required: false
+      seq_length:
+        name: seq_length
+        range: integer
+        required: false
+      tot_gatc:
+        name: tot_gatc
+        range: integer
+        required: false
+      tot_g:
+        name: tot_g
+        range: integer
+        required: false
+      tot_a:
+        name: tot_a
+        range: integer
+        required: false
+      tot_t:
+        name: tot_t
+        range: integer
+        required: false
+      tot_c:
+        name: tot_c
+        range: integer
+        required: false
+      tot_n:
+        name: tot_n
+        range: integer
+        required: false
+      tot_x:
+        name: tot_x
+        range: integer
+        required: false
+      count_cog:
+        name: count_cog
+        range: integer
+        required: false
+      count_kegg:
+        name: count_kegg
+        range: integer
+        required: false
+      count_enzymes:
+        name: count_enzymes
+        range: integer
+        required: false
+      count_go:
+        name: count_go
+        range: integer
+        required: false
+      count_homologs:
+        name: count_homologs
+        range: integer
+        required: false
+      count_orthologs:
+        name: count_orthologs
+        range: integer
+        required: false
+      count_paralogs:
+        name: count_paralogs
+        range: integer
+        required: false
+      count_interpro:
+        name: count_interpro
+        range: integer
+        required: false
+      count_pfam:
+        name: count_pfam
+        range: integer
+        required: false
+      count_cds:
+        name: count_cds
+        range: integer
+        required: false
+      count_rna:
+        name: count_rna
+        range: integer
+        required: false
+      count_total_gene:
+        name: count_total_gene
+        range: integer
+        required: false
+      first_gene:
+        name: first_gene
+        range: integer
+        required: false
+      first_cds:
+        name: first_cds
+        range: integer
+        required: false
+      gc_percent:
+        name: gc_percent
+        range: float
+        required: false
+      taxon:
+        name: taxon
+        description: Foreign key to taxon
+        range: taxon
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+  smart:
+    name: smart
+    attributes:
+      domain:
+        name: domain
+        range: string
+        required: false
+      accession:
+        name: accession
+        range: string
+        required: false
+      definition:
+        name: definition
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+  superfamily:
+    name: superfamily
+    attributes:
+      name:
+        name: name
+        range: string
+        required: false
+      accession:
+        name: accession
+        range: integer
+        required: false
+      description:
+        name: description
+        range: string
+        required: false
+  t1:
+    name: t1
+    attributes:
+      f1:
+        name: f1
+        range: integer
+        required: false
+      f2:
+        name: f2
+        range: string
+        required: false
+  t2:
+    name: t2
+    attributes:
+      f1:
+        name: f1
+        range: integer
+        required: false
+      f2:
+        name: f2
+        range: string
+        required: false
+  t3:
+    name: t3
+    attributes:
+      f1:
+        name: f1
+        range: integer
+        required: false
+      f2:
+        name: f2
+        range: string
+        required: false
+      f3:
+        name: f3
+        range: string
+        required: false
+  tarball_refresh_taxons:
+    name: tarball_refresh_taxons
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      taxon_name:
+        name: taxon_name
+        range: string
+        required: false
+  taxon:
+    name: taxon
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      genus:
+        name: genus
+        range: string
+        required: false
+      species:
+        name: species
+        range: string
+        required: false
+      strain:
+        name: strain
+        range: string
+        required: false
+      taxon_display_name:
+        name: taxon_display_name
+        range: string
+        required: false
+      ncbi_taxon_id:
+        name: ncbi_taxon_id
+        range: integer
+        required: false
+      domain:
+        name: domain
+        range: string
+        required: false
+      phylum:
+        name: phylum
+        range: string
+        required: false
+      ir_class:
+        name: ir_class
+        range: string
+        required: false
+      ir_order:
+        name: ir_order
+        range: string
+        required: false
+      family:
+        name: family
+        range: string
+        required: false
+      jgi_species_code:
+        name: jgi_species_code
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      seq_status:
+        name: seq_status
+        range: string
+        required: false
+      seq_center:
+        name: seq_center
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+      is_replaced:
+        name: is_replaced
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+      funding_agency:
+        name: funding_agency
+        range: string
+        required: false
+      jgi_project_id:
+        name: jgi_project_id
+        range: integer
+        required: false
+      img_version:
+        name: img_version
+        range: string
+        required: false
+      ncbi_species_code:
+        name: ncbi_species_code
+        range: string
+        required: false
+      release_date:
+        name: release_date
+        range: datetime
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      is_big_euk:
+        name: is_big_euk
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+      host_ncbi_taxon_id:
+        name: host_ncbi_taxon_id
+        range: integer
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      genome_type:
+        name: genome_type
+        range: string
+        required: false
+      gram_stain:
+        name: gram_stain
+        range: string
+        required: false
+      obsolete_flag:
+        name: obsolete_flag
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+      is_pangenome:
+        name: is_pangenome
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      phylodist_date:
+        name: phylodist_date
+        range: datetime
+        required: false
+      proposal_name:
+        name: proposal_name
+        range: string
+        required: false
+      sample_gold_id:
+        name: sample_gold_id
+        range: string
+        required: false
+      phylodist_method:
+        name: phylodist_method
+        range: string
+        required: false
+      in_file:
+        name: in_file
+        description: Foreign key to yesnocv
+        range: yesnocv
+        required: false
+      combined_sample_flag:
+        name: combined_sample_flag
+        range: string
+        required: false
+      high_quality_flag:
+        name: high_quality_flag
+        range: string
+        required: false
+      analysis_project_id:
+        name: analysis_project_id
+        range: string
+        required: false
+      ani_species:
+        name: ani_species
+        range: string
+        required: false
+      study_gold_id:
+        name: study_gold_id
+        range: string
+        required: false
+      sequencing_gold_id:
+        name: sequencing_gold_id
+        range: string
+        required: false
+      genome_completion:
+        name: genome_completion
+        range: float
+        required: false
+      its_ap_id:
+        name: its_ap_id
+        range: integer
+        required: false
+      analysis_product_name:
+        name: analysis_product_name
+        range: string
+        required: false
+      analysis_project_type:
+        name: analysis_project_type
+        range: string
+        required: false
+      jgi_rnd_flag:
+        name: jgi_rnd_flag
+        range: string
+        required: false
+      has_coverage:
+        name: has_coverage
+        range: string
+        required: false
+      has_per_sample_coverage:
+        name: has_per_sample_coverage
+        range: string
+        required: false
+  taxon_assembly_stats:
+    name: taxon_assembly_stats
+    attributes:
+      num_filtered_reads:
+        name: num_filtered_reads
+        range: float
+        required: false
+      num_mapped_reads:
+        name: num_mapped_reads
+        range: float
+        required: false
+      tot_size_filtered_reads:
+        name: tot_size_filtered_reads
+        range: float
+        required: false
+      tot_size_mapped_reads:
+        name: tot_size_mapped_reads
+        range: float
+        required: false
+      avg_cov_assembled_seq:
+        name: avg_cov_assembled_seq
+        range: float
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      average_scp:
+        name: average_scp
+        range: float
+        required: false
+      median_scp:
+        name: median_scp
+        range: float
+        required: false
+      std_dev_scp:
+        name: std_dev_scp
+        range: float
+        required: false
+      mode_scp:
+        name: mode_scp
+        range: float
+        required: false
+      est_num_of_genomes:
+        name: est_num_of_genomes
+        range: float
+        required: false
+      est_avg_genome_size:
+        name: est_avg_genome_size
+        range: float
+        required: false
+  taxon_cathfunfam_count:
+    name: taxon_cathfunfam_count
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+      func_id:
+        name: func_id
+        range: string
+        required: false
+      gene_count:
+        name: gene_count
+        range: float
+        required: false
+  taxon_cog_count:
+    name: taxon_cog_count
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+      func_id:
+        name: func_id
+        range: string
+        required: false
+      gene_count:
+        name: gene_count
+        range: float
+        required: false
+  taxon_crispr_details:
+    name: taxon_crispr_details
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      contig_id:
+        name: contig_id
+        range: string
+        required: false
+      crispr_no:
+        name: crispr_no
+        range: integer
+        required: false
+      pos:
+        name: pos
+        range: integer
+        required: false
+      repeat_seq:
+        name: repeat_seq
+        range: string
+        required: false
+      spacer_seq:
+        name: spacer_seq
+        range: string
+        required: false
+      tool_code:
+        name: tool_code
+        range: string
+        required: false
+  taxon_crispr_summary:
+    name: taxon_crispr_summary
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      contig_id:
+        name: contig_id
+        range: string
+        required: false
+      crispr_no:
+        name: crispr_no
+        range: integer
+        required: false
+      start_coord:
+        name: start_coord
+        range: integer
+        required: false
+      end_coord:
+        name: end_coord
+        range: integer
+        required: false
+  taxon_dw:
+    name: taxon_dw
+    attributes:
+      its_ap_id:
+        name: its_ap_id
+        range: integer
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      img_status:
+        name: img_status
+        range: string
+        required: false
+      obsolete_flag:
+        name: obsolete_flag
+        range: string
+        required: false
+      last_updated_date:
+        name: last_updated_date
+        range: datetime
+        required: false
+  taxon_ec_count:
+    name: taxon_ec_count
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+      func_id:
+        name: func_id
+        range: string
+        required: false
+      gene_count:
+        name: gene_count
+        range: float
+        required: false
+  taxon_ext_links:
+    name: taxon_ext_links
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        description: Foreign key to taxon
+        range: taxon
+        required: false
+      db_name:
+        name: db_name
+        description: Foreign key to db_source
+        range: db_source
+        required: false
+      id:
+        name: id
+        range: string
+        required: false
+      custom_url:
+        name: custom_url
+        range: string
+        required: false
+  taxon_gene_prefix:
+    name: taxon_gene_prefix
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      id_prefix:
+        name: id_prefix
+        range: string
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+  taxon_gtdbtk_lineage:
+    name: taxon_gtdbtk_lineage
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      gtdbtk_lineage:
+        name: gtdbtk_lineage
+        range: string
+        required: false
+      gtdbtk_domain:
+        name: gtdbtk_domain
+        range: string
+        required: false
+      gtdbtk_phylum:
+        name: gtdbtk_phylum
+        range: string
+        required: false
+      gtdbtk_class:
+        name: gtdbtk_class
+        range: string
+        required: false
+      gtdbtk_order:
+        name: gtdbtk_order
+        range: string
+        required: false
+      gtdbtk_family:
+        name: gtdbtk_family
+        range: string
+        required: false
+      gtdbtk_genus:
+        name: gtdbtk_genus
+        range: string
+        required: false
+      gtdbtk_species:
+        name: gtdbtk_species
+        range: string
+        required: false
+      checkm_completeness:
+        name: checkm_completeness
+        range: float
+        required: false
+      checkm_contamination:
+        name: checkm_contamination
+        range: float
+        required: false
+      version_info:
+        name: version_info
+        range: string
+        required: false
+  taxon_ko_count:
+    name: taxon_ko_count
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+      func_id:
+        name: func_id
+        range: string
+        required: false
+      gene_count:
+        name: gene_count
+        range: float
+        required: false
+  taxon_node_lite:
+    name: taxon_node_lite
+    attributes:
+      node_oid:
+        name: node_oid
+        range: integer
+        required: false
+      display_name:
+        name: display_name
+        range: string
+        required: false
+      rank_name:
+        name: rank_name
+        range: string
+        required: false
+      taxon:
+        name: taxon
+        description: Foreign key to taxon
+        range: taxon
+        required: false
+      parent:
+        name: parent
+        description: Foreign key to taxon_node_lite
+        range: taxon_node_lite
+        required: false
+  taxon_pfam_count:
+    name: taxon_pfam_count
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+      func_id:
+        name: func_id
+        range: string
+        required: false
+      gene_count:
+        name: gene_count
+        range: float
+        required: false
+  taxon_prod_vw:
+    name: taxon_prod_vw
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      genus:
+        name: genus
+        range: string
+        required: false
+      species:
+        name: species
+        range: string
+        required: false
+      strain:
+        name: strain
+        range: string
+        required: false
+      taxon_display_name:
+        name: taxon_display_name
+        range: string
+        required: false
+      ncbi_taxon_id:
+        name: ncbi_taxon_id
+        range: integer
+        required: false
+      domain:
+        name: domain
+        range: string
+        required: false
+      phylum:
+        name: phylum
+        range: string
+        required: false
+      ir_class:
+        name: ir_class
+        range: string
+        required: false
+      ir_order:
+        name: ir_order
+        range: string
+        required: false
+      family:
+        name: family
+        range: string
+        required: false
+      jgi_species_code:
+        name: jgi_species_code
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+      seq_status:
+        name: seq_status
+        range: string
+        required: false
+      seq_center:
+        name: seq_center
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+      is_replaced:
+        name: is_replaced
+        range: string
+        required: false
+      funding_agency:
+        name: funding_agency
+        range: string
+        required: false
+      jgi_project_id:
+        name: jgi_project_id
+        range: integer
+        required: false
+      img_version:
+        name: img_version
+        range: string
+        required: false
+      ncbi_species_code:
+        name: ncbi_species_code
+        range: string
+        required: false
+      release_date:
+        name: release_date
+        range: datetime
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      is_big_euk:
+        name: is_big_euk
+        range: string
+        required: false
+      host_ncbi_taxon_id:
+        name: host_ncbi_taxon_id
+        range: integer
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      modified_by:
+        name: modified_by
+        range: integer
+        required: false
+      genome_type:
+        name: genome_type
+        range: string
+        required: false
+      gram_stain:
+        name: gram_stain
+        range: string
+        required: false
+      obsolete_flag:
+        name: obsolete_flag
+        range: string
+        required: false
+      is_pangenome:
+        name: is_pangenome
+        range: string
+        required: false
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      phylodist_date:
+        name: phylodist_date
+        range: datetime
+        required: false
+      proposal_name:
+        name: proposal_name
+        range: string
+        required: false
+      sample_gold_id:
+        name: sample_gold_id
+        range: string
+        required: false
+      phylodist_method:
+        name: phylodist_method
+        range: string
+        required: false
+      in_file:
+        name: in_file
+        range: string
+        required: false
+      combined_sample_flag:
+        name: combined_sample_flag
+        range: string
+        required: false
+      high_quality_flag:
+        name: high_quality_flag
+        range: string
+        required: false
+      analysis_project_id:
+        name: analysis_project_id
+        range: string
+        required: false
+      ani_species:
+        name: ani_species
+        range: string
+        required: false
+      study_gold_id:
+        name: study_gold_id
+        range: string
+        required: false
+      sequencing_gold_id:
+        name: sequencing_gold_id
+        range: string
+        required: false
+      genome_completion:
+        name: genome_completion
+        range: float
+        required: false
+      its_ap_id:
+        name: its_ap_id
+        range: integer
+        required: false
+      analysis_product_name:
+        name: analysis_product_name
+        range: string
+        required: false
+      analysis_project_type:
+        name: analysis_project_type
+        range: string
+        required: false
+      jgi_rnd_flag:
+        name: jgi_rnd_flag
+        range: string
+        required: false
+      has_coverage:
+        name: has_coverage
+        range: string
+        required: false
+  taxon_replacements:
+    name: taxon_replacements
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        description: Foreign key to taxon
+        range: taxon
+        required: false
+      old_taxon_oid:
+        name: old_taxon_oid
+        range: integer
+        required: false
+      img_version:
+        name: img_version
+        range: string
+        required: false
+      release_date:
+        name: release_date
+        range: datetime
+        required: false
+      old_taxon_name:
+        name: old_taxon_name
+        range: string
+        required: false
+      comments:
+        name: comments
+        range: string
+        required: false
+  taxon_replacements_view:
+    name: taxon_replacements_view
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      date_last_updated:
+        name: date_last_updated
+        range: datetime
+        required: false
+      old_taxon_oid:
+        name: old_taxon_oid
+        range: integer
+        required: false
+  taxon_scaf_prefix:
+    name: taxon_scaf_prefix
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      id_prefix:
+        name: id_prefix
+        range: string
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+  taxon_smart_count:
+    name: taxon_smart_count
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+      func_id:
+        name: func_id
+        range: string
+        required: false
+      gene_count:
+        name: gene_count
+        range: float
+        required: false
+  taxon_smc_stats:
+    name: taxon_smc_stats
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      smc_id:
+        name: smc_id
+        range: integer
+        required: false
+      bgc_count:
+        name: bgc_count
+        range: integer
+        required: false
+      n_scaffolds:
+        name: n_scaffolds
+        range: integer
+        required: false
+      no_bases:
+        name: no_bases
+        range: integer
+        required: false
+      gc_content:
+        name: gc_content
+        range: float
+        required: false
+  taxon_stats:
+    name: taxon_stats
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      total_gene_count:
+        name: total_gene_count
+        range: integer
+        required: false
+      cds_genes:
+        name: cds_genes
+        range: integer
+        required: false
+      cds_genes_pc:
+        name: cds_genes_pc
+        range: float
+        required: false
+      rna_genes:
+        name: rna_genes
+        range: integer
+        required: false
+      rna_genes_pc:
+        name: rna_genes_pc
+        range: float
+        required: false
+      rrna_genes:
+        name: rrna_genes
+        range: integer
+        required: false
+      rrna_genes_pc:
+        name: rrna_genes_pc
+        range: float
+        required: false
+      rrna5s_genes:
+        name: rrna5s_genes
+        range: integer
+        required: false
+      rrna5s_genes_pc:
+        name: rrna5s_genes_pc
+        range: float
+        required: false
+      rrna16s_genes:
+        name: rrna16s_genes
+        range: integer
+        required: false
+      rrna16s_genes_pc:
+        name: rrna16s_genes_pc
+        range: float
+        required: false
+      rrna23s_genes:
+        name: rrna23s_genes
+        range: integer
+        required: false
+      rrna23s_genes_pc:
+        name: rrna23s_genes_pc
+        range: float
+        required: false
+      trna_genes:
+        name: trna_genes
+        range: integer
+        required: false
+      trna_genes_pc:
+        name: trna_genes_pc
+        range: float
+        required: false
+      other_rna_genes:
+        name: other_rna_genes
+        range: integer
+        required: false
+      other_rna_genes_pc:
+        name: other_rna_genes_pc
+        range: float
+        required: false
+      genes_w_func_pred:
+        name: genes_w_func_pred
+        range: integer
+        required: false
+      genes_w_func_pred_pc:
+        name: genes_w_func_pred_pc
+        range: float
+        required: false
+      genes_in_enzymes:
+        name: genes_in_enzymes
+        range: integer
+        required: false
+      genes_in_enzymes_pc:
+        name: genes_in_enzymes_pc
+        range: float
+        required: false
+      genes_in_kegg:
+        name: genes_in_kegg
+        range: integer
+        required: false
+      genes_in_kegg_pc:
+        name: genes_in_kegg_pc
+        range: float
+        required: false
+      genes_not_in_kegg:
+        name: genes_not_in_kegg
+        range: integer
+        required: false
+      genes_not_in_kegg_pc:
+        name: genes_not_in_kegg_pc
+        range: float
+        required: false
+      genes_in_paralogs:
+        name: genes_in_paralogs
+        range: integer
+        required: false
+      genes_in_paralogs_pc:
+        name: genes_in_paralogs_pc
+        range: float
+        required: false
+      genes_in_cog:
+        name: genes_in_cog
+        range: integer
+        required: false
+      genes_in_cog_pc:
+        name: genes_in_cog_pc
+        range: float
+        required: false
+      genes_in_pfam:
+        name: genes_in_pfam
+        range: integer
+        required: false
+      genes_in_pfam_pc:
+        name: genes_in_pfam_pc
+        range: float
+        required: false
+      genes_in_tigrfam:
+        name: genes_in_tigrfam
+        range: integer
+        required: false
+      genes_in_tigrfam_pc:
+        name: genes_in_tigrfam_pc
+        range: float
+        required: false
+      pseudo_genes:
+        name: pseudo_genes
+        range: integer
+        required: false
+      pseudo_genes_pc:
+        name: pseudo_genes_pc
+        range: float
+        required: false
+      genes_in_myimg:
+        name: genes_in_myimg
+        range: integer
+        required: false
+      genes_in_myimg_pc:
+        name: genes_in_myimg_pc
+        range: float
+        required: false
+      pfam_clusters:
+        name: pfam_clusters
+        range: integer
+        required: false
+      paralog_groups:
+        name: paralog_groups
+        range: integer
+        required: false
+      n_scaffolds:
+        name: n_scaffolds
+        range: integer
+        required: false
+      total_coding_bases:
+        name: total_coding_bases
+        range: integer
+        required: false
+      total_gatc:
+        name: total_gatc
+        range: integer
+        required: false
+      total_g:
+        name: total_g
+        range: integer
+        required: false
+      total_a:
+        name: total_a
+        range: integer
+        required: false
+      total_t:
+        name: total_t
+        range: integer
+        required: false
+      total_c:
+        name: total_c
+        range: integer
+        required: false
+      total_n:
+        name: total_n
+        range: integer
+        required: false
+      total_x:
+        name: total_x
+        range: integer
+        required: false
+      total_gc:
+        name: total_gc
+        range: integer
+        required: false
+      count_go:
+        name: count_go
+        range: integer
+        required: false
+      gc_percent:
+        name: gc_percent
+        range: float
+        required: false
+      total_bases:
+        name: total_bases
+        range: integer
+        required: false
+      genes_revised:
+        name: genes_revised
+        range: integer
+        required: false
+      genes_revised_pc:
+        name: genes_revised_pc
+        range: integer
+        required: false
+      genes_obsolete:
+        name: genes_obsolete
+        range: integer
+        required: false
+      genes_obsolete_pc:
+        name: genes_obsolete_pc
+        range: integer
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      rrna18s_genes:
+        name: rrna18s_genes
+        range: integer
+        required: false
+      rrna18s_genes_pc:
+        name: rrna18s_genes_pc
+        range: float
+        required: false
+      rrna28s_genes:
+        name: rrna28s_genes
+        range: integer
+        required: false
+      rrna28s_genes_pc:
+        name: rrna28s_genes_pc
+        range: float
+        required: false
+      uncharacterized_genes:
+        name: uncharacterized_genes
+        range: integer
+        required: false
+      uncharacterized_genes_pc:
+        name: uncharacterized_genes_pc
+        range: float
+        required: false
+      genes_signalp:
+        name: genes_signalp
+        range: integer
+        required: false
+      genes_signalp_pc:
+        name: genes_signalp_pc
+        range: float
+        required: false
+      genes_transmembrane:
+        name: genes_transmembrane
+        range: integer
+        required: false
+      genes_transmembrane_pc:
+        name: genes_transmembrane_pc
+        range: float
+        required: false
+      cog_clusters:
+        name: cog_clusters
+        range: integer
+        required: false
+      tigrfam_clusters:
+        name: tigrfam_clusters
+        range: integer
+        required: false
+      total_cassettes:
+        name: total_cassettes
+        range: integer
+        required: false
+      genes_in_metacyc:
+        name: genes_in_metacyc
+        range: integer
+        required: false
+      genes_in_metacyc_pc:
+        name: genes_in_metacyc_pc
+        range: float
+        required: false
+      genes_not_in_metacyc:
+        name: genes_not_in_metacyc
+        range: integer
+        required: false
+      genes_not_in_metacyc_pc:
+        name: genes_not_in_metacyc_pc
+        range: float
+        required: false
+      genes_in_ko:
+        name: genes_in_ko
+        range: integer
+        required: false
+      genes_in_ko_pc:
+        name: genes_in_ko_pc
+        range: float
+        required: false
+      genes_not_in_ko:
+        name: genes_not_in_ko
+        range: integer
+        required: false
+      genes_not_in_ko_pc:
+        name: genes_not_in_ko_pc
+        range: float
+        required: false
+      genes_hor_transfer:
+        name: genes_hor_transfer
+        range: integer
+        required: false
+      genes_hor_transfer_pc:
+        name: genes_hor_transfer_pc
+        range: float
+        required: false
+      crispr_count:
+        name: crispr_count
+        range: integer
+        required: false
+      genes_in_sp:
+        name: genes_in_sp
+        range: integer
+        required: false
+      genes_in_sp_pc:
+        name: genes_in_sp_pc
+        range: float
+        required: false
+      genes_not_in_sp:
+        name: genes_not_in_sp
+        range: integer
+        required: false
+      genes_not_in_sp_pc:
+        name: genes_not_in_sp_pc
+        range: float
+        required: false
+      genes_in_kog:
+        name: genes_in_kog
+        range: integer
+        required: false
+      genes_in_kog_pc:
+        name: genes_in_kog_pc
+        range: float
+        required: false
+      kog_clusters:
+        name: kog_clusters
+        range: integer
+        required: false
+      genes_in_supfam:
+        name: genes_in_supfam
+        range: integer
+        required: false
+      genes_in_supfam_pc:
+        name: genes_in_supfam_pc
+        range: float
+        required: false
+      genes_in_smart:
+        name: genes_in_smart
+        range: integer
+        required: false
+      genes_in_smart_pc:
+        name: genes_in_smart_pc
+        range: float
+        required: false
+      genes_in_cathfunfam:
+        name: genes_in_cathfunfam
+        range: integer
+        required: false
+      genes_in_cathfunfam_pc:
+        name: genes_in_cathfunfam_pc
+        range: float
+        required: false
+      total_bcgs:
+        name: total_bcgs
+        range: integer
+        required: false
+      genes_in_bcgs:
+        name: genes_in_bcgs
+        range: integer
+        required: false
+      genes_in_bcgs_pc:
+        name: genes_in_bcgs_pc
+        range: float
+        required: false
+      predicted_plasmid_contigs:
+        name: predicted_plasmid_contigs
+        range: integer
+        required: false
+      smc_bcgs:
+        name: smc_bcgs
+        range: integer
+        required: false
+  taxon_stats_merfs:
+    name: taxon_stats_merfs
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      total_gene_count:
+        name: total_gene_count
+        range: integer
+        required: false
+      cds_genes:
+        name: cds_genes
+        range: integer
+        required: false
+      cds_genes_pc:
+        name: cds_genes_pc
+        range: float
+        required: false
+      rna_genes:
+        name: rna_genes
+        range: integer
+        required: false
+      rna_genes_pc:
+        name: rna_genes_pc
+        range: float
+        required: false
+      rrna_genes:
+        name: rrna_genes
+        range: integer
+        required: false
+      rrna_genes_pc:
+        name: rrna_genes_pc
+        range: float
+        required: false
+      rrna5s_genes:
+        name: rrna5s_genes
+        range: integer
+        required: false
+      rrna5s_genes_pc:
+        name: rrna5s_genes_pc
+        range: float
+        required: false
+      rrna16s_genes:
+        name: rrna16s_genes
+        range: integer
+        required: false
+      rrna16s_genes_pc:
+        name: rrna16s_genes_pc
+        range: float
+        required: false
+      rrna23s_genes:
+        name: rrna23s_genes
+        range: integer
+        required: false
+      rrna23s_genes_pc:
+        name: rrna23s_genes_pc
+        range: float
+        required: false
+      trna_genes:
+        name: trna_genes
+        range: integer
+        required: false
+      trna_genes_pc:
+        name: trna_genes_pc
+        range: float
+        required: false
+      other_rna_genes:
+        name: other_rna_genes
+        range: integer
+        required: false
+      other_rna_genes_pc:
+        name: other_rna_genes_pc
+        range: float
+        required: false
+      genes_w_func_pred:
+        name: genes_w_func_pred
+        range: integer
+        required: false
+      genes_w_func_pred_pc:
+        name: genes_w_func_pred_pc
+        range: float
+        required: false
+      genes_in_enzymes:
+        name: genes_in_enzymes
+        range: integer
+        required: false
+      genes_in_enzymes_pc:
+        name: genes_in_enzymes_pc
+        range: float
+        required: false
+      genes_in_kegg:
+        name: genes_in_kegg
+        range: integer
+        required: false
+      genes_in_kegg_pc:
+        name: genes_in_kegg_pc
+        range: float
+        required: false
+      genes_not_in_kegg:
+        name: genes_not_in_kegg
+        range: integer
+        required: false
+      genes_not_in_kegg_pc:
+        name: genes_not_in_kegg_pc
+        range: float
+        required: false
+      genes_in_cog:
+        name: genes_in_cog
+        range: integer
+        required: false
+      genes_in_cog_pc:
+        name: genes_in_cog_pc
+        range: float
+        required: false
+      genes_in_pfam:
+        name: genes_in_pfam
+        range: integer
+        required: false
+      genes_in_pfam_pc:
+        name: genes_in_pfam_pc
+        range: float
+        required: false
+      pfam_clusters:
+        name: pfam_clusters
+        range: integer
+        required: false
+      n_scaffolds:
+        name: n_scaffolds
+        range: integer
+        required: false
+      total_coding_bases:
+        name: total_coding_bases
+        range: integer
+        required: false
+      total_gc:
+        name: total_gc
+        range: integer
+        required: false
+      gc_percent:
+        name: gc_percent
+        range: float
+        required: false
+      total_bases:
+        name: total_bases
+        range: integer
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      rrna18s_genes:
+        name: rrna18s_genes
+        range: integer
+        required: false
+      rrna18s_genes_pc:
+        name: rrna18s_genes_pc
+        range: float
+        required: false
+      rrna28s_genes:
+        name: rrna28s_genes
+        range: integer
+        required: false
+      rrna28s_genes_pc:
+        name: rrna28s_genes_pc
+        range: float
+        required: false
+      avg_gene_length:
+        name: avg_gene_length
+        range: float
+        required: false
+      cog_clusters:
+        name: cog_clusters
+        range: integer
+        required: false
+      genes_in_metacyc:
+        name: genes_in_metacyc
+        range: integer
+        required: false
+      genes_in_metacyc_pc:
+        name: genes_in_metacyc_pc
+        range: float
+        required: false
+      genes_not_in_metacyc:
+        name: genes_not_in_metacyc
+        range: integer
+        required: false
+      genes_not_in_metacyc_pc:
+        name: genes_not_in_metacyc_pc
+        range: float
+        required: false
+      genes_in_ko:
+        name: genes_in_ko
+        range: integer
+        required: false
+      genes_in_ko_pc:
+        name: genes_in_ko_pc
+        range: float
+        required: false
+      genes_not_in_ko:
+        name: genes_not_in_ko
+        range: integer
+        required: false
+      genes_not_in_ko_pc:
+        name: genes_not_in_ko_pc
+        range: float
+        required: false
+      crispr_count:
+        name: crispr_count
+        range: integer
+        required: false
+      genes_in_biosynthetic:
+        name: genes_in_biosynthetic
+        range: float
+        required: false
+      genes_in_biosynthetic_pc:
+        name: genes_in_biosynthetic_pc
+        range: float
+        required: false
+      total_biosynthetic:
+        name: total_biosynthetic
+        range: integer
+        required: false
+      datatype:
+        name: datatype
+        range: string
+        required: false
+      genes_in_tigrfam:
+        name: genes_in_tigrfam
+        range: integer
+        required: false
+      tigrfam_clusters:
+        name: tigrfam_clusters
+        range: integer
+        required: false
+      genes_in_tigrfam_pc:
+        name: genes_in_tigrfam_pc
+        range: integer
+        required: false
+      bin_count:
+        name: bin_count
+        range: integer
+        required: false
+      genes_in_smart:
+        name: genes_in_smart
+        range: integer
+        required: false
+      genes_in_smart_pc:
+        name: genes_in_smart_pc
+        range: float
+        required: false
+      genes_in_supfam:
+        name: genes_in_supfam
+        range: integer
+        required: false
+      genes_in_supfam_pc:
+        name: genes_in_supfam_pc
+        range: float
+        required: false
+      genes_in_cathfunfam:
+        name: genes_in_cathfunfam
+        range: integer
+        required: false
+      genes_in_cathfunfam_pc:
+        name: genes_in_cathfunfam_pc
+        range: float
+        required: false
+      predicted_viral_contigs:
+        name: predicted_viral_contigs
+        range: integer
+        required: false
+      scaffolds_2kb:
+        name: scaffolds_2kb
+        range: integer
+        required: false
+      scaffolds_4kb:
+        name: scaffolds_4kb
+        range: integer
+        required: false
+      predicted_plasmid_contigs:
+        name: predicted_plasmid_contigs
+        range: integer
+        required: false
+      euk_bin_count:
+        name: euk_bin_count
+        range: integer
+        required: false
+      smc_bcgs:
+        name: smc_bcgs
+        range: integer
+        required: false
+      semibin_count:
+        name: semibin_count
+        range: integer
+        required: false
+      euk_semibin_count:
+        name: euk_semibin_count
+        range: integer
+        required: false
+  taxon_stats_prod_vw:
+    name: taxon_stats_prod_vw
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      total_gene_count:
+        name: total_gene_count
+        range: integer
+        required: false
+      cds_genes:
+        name: cds_genes
+        range: integer
+        required: false
+      cds_genes_pc:
+        name: cds_genes_pc
+        range: float
+        required: false
+      rna_genes:
+        name: rna_genes
+        range: integer
+        required: false
+      rna_genes_pc:
+        name: rna_genes_pc
+        range: float
+        required: false
+      rrna_genes:
+        name: rrna_genes
+        range: integer
+        required: false
+      rrna_genes_pc:
+        name: rrna_genes_pc
+        range: float
+        required: false
+      rrna5s_genes:
+        name: rrna5s_genes
+        range: integer
+        required: false
+      rrna5s_genes_pc:
+        name: rrna5s_genes_pc
+        range: float
+        required: false
+      rrna16s_genes:
+        name: rrna16s_genes
+        range: integer
+        required: false
+      rrna16s_genes_pc:
+        name: rrna16s_genes_pc
+        range: float
+        required: false
+      rrna23s_genes:
+        name: rrna23s_genes
+        range: integer
+        required: false
+      rrna23s_genes_pc:
+        name: rrna23s_genes_pc
+        range: float
+        required: false
+      trna_genes:
+        name: trna_genes
+        range: integer
+        required: false
+      trna_genes_pc:
+        name: trna_genes_pc
+        range: float
+        required: false
+      other_rna_genes:
+        name: other_rna_genes
+        range: integer
+        required: false
+      other_rna_genes_pc:
+        name: other_rna_genes_pc
+        range: float
+        required: false
+      genes_w_func_pred:
+        name: genes_w_func_pred
+        range: integer
+        required: false
+      genes_w_func_pred_pc:
+        name: genes_w_func_pred_pc
+        range: float
+        required: false
+      genes_in_enzymes:
+        name: genes_in_enzymes
+        range: integer
+        required: false
+      genes_in_enzymes_pc:
+        name: genes_in_enzymes_pc
+        range: float
+        required: false
+      genes_in_kegg:
+        name: genes_in_kegg
+        range: integer
+        required: false
+      genes_in_kegg_pc:
+        name: genes_in_kegg_pc
+        range: float
+        required: false
+      genes_not_in_kegg:
+        name: genes_not_in_kegg
+        range: integer
+        required: false
+      genes_not_in_kegg_pc:
+        name: genes_not_in_kegg_pc
+        range: float
+        required: false
+      genes_in_paralogs:
+        name: genes_in_paralogs
+        range: integer
+        required: false
+      genes_in_paralogs_pc:
+        name: genes_in_paralogs_pc
+        range: float
+        required: false
+      genes_in_cog:
+        name: genes_in_cog
+        range: integer
+        required: false
+      genes_in_cog_pc:
+        name: genes_in_cog_pc
+        range: float
+        required: false
+      genes_in_pfam:
+        name: genes_in_pfam
+        range: integer
+        required: false
+      genes_in_pfam_pc:
+        name: genes_in_pfam_pc
+        range: float
+        required: false
+      genes_in_tigrfam:
+        name: genes_in_tigrfam
+        range: integer
+        required: false
+      genes_in_tigrfam_pc:
+        name: genes_in_tigrfam_pc
+        range: float
+        required: false
+      pseudo_genes:
+        name: pseudo_genes
+        range: integer
+        required: false
+      pseudo_genes_pc:
+        name: pseudo_genes_pc
+        range: float
+        required: false
+      genes_in_myimg:
+        name: genes_in_myimg
+        range: integer
+        required: false
+      genes_in_myimg_pc:
+        name: genes_in_myimg_pc
+        range: float
+        required: false
+      pfam_clusters:
+        name: pfam_clusters
+        range: integer
+        required: false
+      paralog_groups:
+        name: paralog_groups
+        range: integer
+        required: false
+      n_scaffolds:
+        name: n_scaffolds
+        range: integer
+        required: false
+      total_coding_bases:
+        name: total_coding_bases
+        range: integer
+        required: false
+      total_gatc:
+        name: total_gatc
+        range: integer
+        required: false
+      total_g:
+        name: total_g
+        range: integer
+        required: false
+      total_a:
+        name: total_a
+        range: integer
+        required: false
+      total_t:
+        name: total_t
+        range: integer
+        required: false
+      total_c:
+        name: total_c
+        range: integer
+        required: false
+      total_n:
+        name: total_n
+        range: integer
+        required: false
+      total_x:
+        name: total_x
+        range: integer
+        required: false
+      total_gc:
+        name: total_gc
+        range: integer
+        required: false
+      gc_percent:
+        name: gc_percent
+        range: float
+        required: false
+      total_bases:
+        name: total_bases
+        range: integer
+        required: false
+      genes_obsolete:
+        name: genes_obsolete
+        range: integer
+        required: false
+      genes_obsolete_pc:
+        name: genes_obsolete_pc
+        range: integer
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      rrna18s_genes:
+        name: rrna18s_genes
+        range: integer
+        required: false
+      rrna18s_genes_pc:
+        name: rrna18s_genes_pc
+        range: float
+        required: false
+      rrna28s_genes:
+        name: rrna28s_genes
+        range: integer
+        required: false
+      rrna28s_genes_pc:
+        name: rrna28s_genes_pc
+        range: float
+        required: false
+      uncharacterized_genes:
+        name: uncharacterized_genes
+        range: integer
+        required: false
+      uncharacterized_genes_pc:
+        name: uncharacterized_genes_pc
+        range: float
+        required: false
+      genes_signalp:
+        name: genes_signalp
+        range: integer
+        required: false
+      genes_signalp_pc:
+        name: genes_signalp_pc
+        range: float
+        required: false
+      genes_transmembrane:
+        name: genes_transmembrane
+        range: integer
+        required: false
+      genes_transmembrane_pc:
+        name: genes_transmembrane_pc
+        range: float
+        required: false
+      cog_clusters:
+        name: cog_clusters
+        range: integer
+        required: false
+      tigrfam_clusters:
+        name: tigrfam_clusters
+        range: integer
+        required: false
+      total_cassettes:
+        name: total_cassettes
+        range: integer
+        required: false
+      genes_in_metacyc:
+        name: genes_in_metacyc
+        range: integer
+        required: false
+      genes_in_metacyc_pc:
+        name: genes_in_metacyc_pc
+        range: float
+        required: false
+      genes_not_in_metacyc:
+        name: genes_not_in_metacyc
+        range: integer
+        required: false
+      genes_not_in_metacyc_pc:
+        name: genes_not_in_metacyc_pc
+        range: float
+        required: false
+      genes_in_ko:
+        name: genes_in_ko
+        range: integer
+        required: false
+      genes_in_ko_pc:
+        name: genes_in_ko_pc
+        range: float
+        required: false
+      genes_not_in_ko:
+        name: genes_not_in_ko
+        range: integer
+        required: false
+      genes_not_in_ko_pc:
+        name: genes_not_in_ko_pc
+        range: float
+        required: false
+      genes_hor_transfer:
+        name: genes_hor_transfer
+        range: integer
+        required: false
+      genes_hor_transfer_pc:
+        name: genes_hor_transfer_pc
+        range: float
+        required: false
+      crispr_count:
+        name: crispr_count
+        range: integer
+        required: false
+      genes_in_sp:
+        name: genes_in_sp
+        range: integer
+        required: false
+      genes_in_sp_pc:
+        name: genes_in_sp_pc
+        range: float
+        required: false
+      genes_not_in_sp:
+        name: genes_not_in_sp
+        range: integer
+        required: false
+      genes_not_in_sp_pc:
+        name: genes_not_in_sp_pc
+        range: float
+        required: false
+      genes_in_kog:
+        name: genes_in_kog
+        range: integer
+        required: false
+      genes_in_kog_pc:
+        name: genes_in_kog_pc
+        range: float
+        required: false
+      kog_clusters:
+        name: kog_clusters
+        range: integer
+        required: false
+      genes_in_supfam:
+        name: genes_in_supfam
+        range: integer
+        required: false
+      genes_in_supfam_pc:
+        name: genes_in_supfam_pc
+        range: float
+        required: false
+      genes_in_smart:
+        name: genes_in_smart
+        range: integer
+        required: false
+      genes_in_smart_pc:
+        name: genes_in_smart_pc
+        range: float
+        required: false
+      genes_in_cathfunfam:
+        name: genes_in_cathfunfam
+        range: integer
+        required: false
+      genes_in_cathfunfam_pc:
+        name: genes_in_cathfunfam_pc
+        range: float
+        required: false
+      total_bcgs:
+        name: total_bcgs
+        range: integer
+        required: false
+      genes_in_bcgs:
+        name: genes_in_bcgs
+        range: integer
+        required: false
+      genes_in_bcgs_pc:
+        name: genes_in_bcgs_pc
+        range: float
+        required: false
+      predicted_plasmid_contigs:
+        name: predicted_plasmid_contigs
+        range: integer
+        required: false
+  taxon_supfam_count:
+    name: taxon_supfam_count
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+      func_id:
+        name: func_id
+        range: string
+        required: false
+      gene_count:
+        name: gene_count
+        range: float
+        required: false
+  taxon_taxon_scaffold_info:
+    name: taxon_taxon_scaffold_info
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      scaf_prefix:
+        name: scaf_prefix
+        range: string
+        required: false
+      min_value:
+        name: min_value
+        range: integer
+        required: false
+      max_value:
+        name: max_value
+        range: integer
+        required: false
+  taxon_tigr_count:
+    name: taxon_tigr_count
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      data_type:
+        name: data_type
+        range: string
+        required: false
+      func_id:
+        name: func_id
+        range: string
+        required: false
+      gene_count:
+        name: gene_count
+        range: float
+        required: false
+  tc_family:
+    name: tc_family
+    attributes:
+      tc_family_num:
+        name: tc_family_num
+        range: string
+        required: false
+      tc_family_name:
+        name: tc_family_name
+        range: string
+        required: false
+  tigr_role:
+    name: tigr_role
+    attributes:
+      role_id:
+        name: role_id
+        range: integer
+        required: false
+      main_role:
+        name: main_role
+        range: string
+        required: false
+      sub_role:
+        name: sub_role
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+  tigrfam:
+    name: tigrfam
+    attributes:
+      ext_accession:
+        name: ext_accession
+        range: string
+        required: false
+      abbr_name:
+        name: abbr_name
+        range: string
+        required: false
+      expanded_name:
+        name: expanded_name
+        range: string
+        required: false
+      isology_type:
+        name: isology_type
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      gene_symbol:
+        name: gene_symbol
+        range: string
+        required: false
+      ls_nc_model:
+        name: ls_nc_model
+        range: float
+        required: false
+      ls_nc_domain:
+        name: ls_nc_domain
+        range: float
+        required: false
+      ls_ga_model:
+        name: ls_ga_model
+        range: float
+        required: false
+      ls_ga_domain:
+        name: ls_ga_domain
+        range: float
+        required: false
+      ls_tc_model:
+        name: ls_tc_model
+        range: float
+        required: false
+      ls_tc_domain:
+        name: ls_tc_domain
+        range: float
+        required: false
+  tigrfam_enzymes:
+    name: tigrfam_enzymes
+    attributes:
+      ext_accession:
+        name: ext_accession
+        description: Foreign key to tigrfam
+        range: tigrfam
+        required: false
+      enzymes:
+        name: enzymes
+        range: string
+        required: false
+  tigrfam_genome_properties:
+    name: tigrfam_genome_properties
+    attributes:
+      ext_accession:
+        name: ext_accession
+        description: Foreign key to tigrfam
+        range: tigrfam
+        required: false
+      property:
+        name: property
+        description: Foreign key to genome_property
+        range: genome_property
+        required: false
+      property_step:
+        name: property_step
+        description: Foreign key to property_step
+        range: property_step
+        required: false
+  tigrfam_roles:
+    name: tigrfam_roles
+    attributes:
+      ext_accession:
+        name: ext_accession
+        description: Foreign key to tigrfam
+        range: tigrfam
+        required: false
+      roles:
+        name: roles
+        description: Foreign key to tigr_role
+        range: tigr_role
+        required: false
+  tmp_genes:
+    name: tmp_genes
+    attributes:
+      gene_oid:
+        name: gene_oid
+        range: integer
+        required: false
+  vw_gold_taxon:
+    name: vw_gold_taxon
+    attributes:
+      img_domain:
+        name: img_domain
+        range: string
+        required: false
+      img_class:
+        name: img_class
+        range: string
+        required: false
+      img_order:
+        name: img_order
+        range: string
+        required: false
+      img_phylum:
+        name: img_phylum
+        range: string
+        required: false
+      img_family:
+        name: img_family
+        range: string
+        required: false
+      genus:
+        name: genus
+        range: string
+        required: false
+      species:
+        name: species
+        range: string
+        required: false
+      ncbi_kingdom:
+        name: ncbi_kingdom
+        range: string
+        required: false
+      ncbi_class:
+        name: ncbi_class
+        range: string
+        required: false
+      ncbi_order:
+        name: ncbi_order
+        range: string
+        required: false
+      ncbi_phylum:
+        name: ncbi_phylum
+        range: string
+        required: false
+      ncbi_family:
+        name: ncbi_family
+        range: string
+        required: false
+      ncbi_genus:
+        name: ncbi_genus
+        range: string
+        required: false
+      ncbi_species:
+        name: ncbi_species
+        range: string
+        required: false
+      altitude:
+        name: altitude
+        range: string
+        required: false
+      analysis_project_id:
+        name: analysis_project_id
+        range: string
+        required: false
+      analysis_project_type:
+        name: analysis_project_type
+        range: string
+        required: false
+      biotic_rel:
+        name: biotic_rel
+        range: string
+        required: false
+      cell_shape:
+        name: cell_shape
+        range: string
+        required: false
+      chlorophyll_concentration:
+        name: chlorophyll_concentration
+        range: string
+        required: false
+      clade:
+        name: clade
+        range: string
+        required: false
+      combined_sample_flag:
+        name: combined_sample_flag
+        range: string
+        required: false
+      depth:
+        name: depth
+        range: string
+        required: false
+      ecosystem_category:
+        name: ecosystem_category
+        range: string
+        required: false
+      ecosystem_subtype:
+        name: ecosystem_subtype
+        range: string
+        required: false
+      ecosystem_type:
+        name: ecosystem_type
+        range: string
+        required: false
+      ecosystem:
+        name: ecosystem
+        range: string
+        required: false
+      ecotype:
+        name: ecotype
+        range: string
+        required: false
+      genome_type:
+        name: genome_type
+        range: string
+        required: false
+      geo_location:
+        name: geo_location
+        range: string
+        required: false
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      host_name:
+        name: host_name
+        range: string
+        required: false
+      host_gender:
+        name: host_gender
+        range: string
+        required: false
+      host_ncbi_taxid:
+        name: host_ncbi_taxid
+        range: integer
+        required: false
+      latitude:
+        name: latitude
+        range: string
+        required: false
+      longhurst_code:
+        name: longhurst_code
+        range: string
+        required: false
+      longhurst_description:
+        name: longhurst_description
+        range: string
+        required: false
+      longitude:
+        name: longitude
+        range: string
+        required: false
+      motility:
+        name: motility
+        range: string
+        required: false
+      nitrate_concentration:
+        name: nitrate_concentration
+        range: string
+        required: false
+      oxygen_concentration:
+        name: oxygen_concentration
+        range: string
+        required: false
+      oxygen_req:
+        name: oxygen_req
+        range: string
+        required: false
+      ph:
+        name: ph
+        range: string
+        required: false
+      pressure:
+        name: pressure
+        range: string
+        required: false
+      proport_isolation:
+        name: proport_isolation
+        range: string
+        required: false
+      proport_ocean:
+        name: proport_ocean
+        range: string
+        required: false
+      proport_station:
+        name: proport_station
+        range: string
+        required: false
+      proport_woa_dissolved_oxygen:
+        name: proport_woa_dissolved_oxygen
+        range: float
+        required: false
+      proport_woa_nitrate:
+        name: proport_woa_nitrate
+        range: float
+        required: false
+      proport_woa_phosphate:
+        name: proport_woa_phosphate
+        range: float
+        required: false
+      proport_woa_salinity:
+        name: proport_woa_salinity
+        range: float
+        required: false
+      proport_woa_silicate:
+        name: proport_woa_silicate
+        range: float
+        required: false
+      proport_woa_temperature:
+        name: proport_woa_temperature
+        range: float
+        required: false
+      salinity_concentration:
+        name: salinity_concentration
+        range: string
+        required: false
+      salinity:
+        name: salinity
+        range: string
+        required: false
+      sample_collect_temp:
+        name: sample_collect_temp
+        range: string
+        required: false
+      sequencing_gold_id:
+        name: sequencing_gold_id
+        range: string
+        required: false
+      specific_ecosystem:
+        name: specific_ecosystem
+        range: string
+        required: false
+      sporulation:
+        name: sporulation
+        range: string
+        required: false
+      study_gold_id:
+        name: study_gold_id
+        range: string
+        required: false
+      taxon_display_name:
+        name: taxon_display_name
+        range: string
+        required: false
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      gram_stain:
+        name: gram_stain
+        range: string
+        required: false
+      ncbi_taxon_id:
+        name: ncbi_taxon_id
+        range: integer
+        required: false
+      strain:
+        name: strain
+        range: string
+        required: false
+      temp_range:
+        name: temp_range
+        range: string
+        required: false
+      uncultured_type:
+        name: uncultured_type
+        range: string
+        required: false
+      pp_subset:
+        name: pp_subset
+        range: string
+        required: false
+      culture_type:
+        name: culture_type
+        range: string
+        required: false
+  vw_taxon_sc:
+    name: vw_taxon_sc
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      taxon_display_name:
+        name: taxon_display_name
+        range: string
+        required: false
+      domain:
+        name: domain
+        range: string
+        required: false
+      obsolete_flag:
+        name: obsolete_flag
+        range: string
+        required: false
+  yesnocv:
+    name: yesnocv
+    attributes:
+      flag_cv:
+        name: flag_cv
+        range: string
+        required: false
+      description:
+        name: description
+        range: string
+        required: false

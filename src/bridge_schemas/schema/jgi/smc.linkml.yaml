@@ -1,0 +1,294 @@
+id: https://w3id.org/jgi/smc
+name: smc
+title: JGI Secondary Metabolite Clusters Database
+description: >-
+  Secondary Metabolite Clusters (SMC) database for JGI.
+  Contains biosynthetic gene clusters (BGCs), annotations,
+  and secondary metabolite predictions.
+
+  DATABASE: smc-db postgresql.public
+  TABLES: 124
+
+  KEY FUNCTIONALITY:
+  - Biosynthetic gene cluster (BGC) identification
+  - Secondary metabolite class annotation
+  - Gene and contig mapping
+  - Analysis tool results
+  - Collection and blog management
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+
+default_range: string
+imports:
+  - linkml:types
+
+classes:
+  BGC:
+    description: >-
+      Biosynthetic Gene Cluster - a genomic region encoding
+      enzymes for secondary metabolite production.
+    annotations:
+      source_table: bgc
+    attributes:
+      id:
+        identifier: true
+        range: integer
+        description: BGC identifier
+      name:
+        range: string
+      contig_id:
+        range: integer
+        comments:
+          - "Foreign key to Contig.id"
+      start:
+        range: integer
+        description: Start coordinate
+      end:
+        range: integer
+        description: End coordinate
+      strand:
+        range: integer
+
+  BGCClass:
+    description: >-
+      Secondary metabolite class (NRPS, PKS, terpene, etc.).
+    annotations:
+      source_table: bgc_class
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+        description: Class name (e.g., NRPS, PKS-T1, terpene)
+      description:
+        range: string
+
+  BGCToBGCClass:
+    description: >-
+      Many-to-many link between BGCs and their classes.
+    annotations:
+      source_table: bgc_to_bgc_class
+    attributes:
+      bgc_id:
+        range: integer
+        comments:
+          - "Foreign key to BGC.id"
+      bgc_class_id:
+        range: integer
+        comments:
+          - "Foreign key to BGCClass.id"
+
+  BGCAnalysis:
+    description: >-
+      Analysis result for a BGC.
+    annotations:
+      source_table: bgc_analysis
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      bgc_id:
+        range: integer
+        comments:
+          - "Foreign key to BGC.id"
+      analysis_tool_id:
+        range: integer
+        comments:
+          - "Foreign key to AnalysisTool.id"
+      result:
+        range: string
+
+  BGCAnalysisToSecmetFile:
+    description: >-
+      Link between BGC analysis and secondary metabolite files.
+    annotations:
+      source_table: bgc_analysis_to_secmet_file
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      bgc_analysis_id:
+        range: integer
+      secmet_file_path:
+        range: string
+
+  BGCAnnotation:
+    description: >-
+      Annotation for a BGC.
+    annotations:
+      source_table: bgc_annotation
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      bgc_id:
+        range: integer
+        comments:
+          - "Foreign key to BGC.id"
+      annotation_type:
+        range: string
+      value:
+        range: string
+
+  AnalysisTool:
+    description: >-
+      Tool used for BGC analysis (antiSMASH, etc.).
+    annotations:
+      source_table: analysis_tool
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+        description: Tool name (e.g., antiSMASH, PRISM)
+      version:
+        range: string
+
+  Contig:
+    description: >-
+      Genomic contig/scaffold.
+    annotations:
+      source_table: contigs
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+      length:
+        range: integer
+      genome_id:
+        range: integer
+
+  Gene:
+    description: >-
+      Gene record. Note: Multiple gene_N tables exist for partitioning.
+    annotations:
+      source_table: gene
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      locus_tag:
+        range: string
+      contig_id:
+        range: integer
+        comments:
+          - "Foreign key to Contig.id"
+      start:
+        range: integer
+      end:
+        range: integer
+      strand:
+        range: integer
+      product:
+        range: string
+        description: Gene product annotation
+
+  Collection:
+    description: >-
+      Collection of BGCs or genomes.
+    annotations:
+      source_table: collection
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+      description:
+        range: string
+      owner_id:
+        range: integer
+
+  CollectionMember:
+    description: >-
+      Member of a collection.
+    annotations:
+      source_table: collection_members
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      collection_id:
+        range: integer
+        comments:
+          - "Foreign key to Collection.id"
+      item_type:
+        range: string
+        description: Type of item (bgc, genome, etc.)
+      item_id:
+        range: integer
+
+  Comment:
+    description: >-
+      User comment on a BGC or other entity.
+    annotations:
+      source_table: comment
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      entity_type:
+        range: string
+      entity_id:
+        range: integer
+      user_id:
+        range: integer
+      text:
+        range: string
+      created_time:
+        range: datetime
+
+  Blog:
+    description: >-
+      Blog post about secondary metabolites.
+    annotations:
+      source_table: blog
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      title:
+        range: string
+      content:
+        range: string
+      author_id:
+        range: integer
+      published_time:
+        range: datetime
+
+  Activity:
+    description: >-
+      User activity log.
+    annotations:
+      source_table: activity
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      user_id:
+        range: integer
+      action:
+        range: string
+      timestamp:
+        range: datetime
+
+  ApiUsage:
+    description: >-
+      API usage tracking.
+    annotations:
+      source_table: api_usage
+    attributes:
+      id:
+        identifier: true
+        range: integer
+      endpoint:
+        range: string
+      timestamp:
+        range: datetime
+      response_time:
+        range: integer

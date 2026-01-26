@@ -1,0 +1,1281 @@
+@prefix img_mysql_abc: <https://w3id.org/jgi/img_mysql_abc/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/jgi/img_mysql_abc.owl.ttl> a owl:Ontology ;
+    rdfs:label "img_mysql_abc" .
+
+img_mysql_abc:Asv5Taxons a owl:Class ;
+    rdfs:label "asv5_taxons" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:taxon_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:BcgBinGenePfams a owl:Class ;
+    rdfs:label "bcg_bin_gene_pfams" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:pfam_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:gene_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:gene_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:query_start ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:pfam_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:query_start ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:gene_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:pfam_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:query_start ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:taxon_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:BcgBinRegion a owl:Class ;
+    rdfs:label "bcg_bin_region" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:start_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:bin_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:bcg_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:bcg_rules ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:bcg_rules ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:seq_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:bin_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:start_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:end_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:bcg_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:bcg_rules ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:seq_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:bcg_method ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:bcg_method ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:end_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:bcg_method ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:bcg_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:start_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:bin_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty img_mysql_abc:add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:end_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:seq_id ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:BcgBinRegionGenes a owl:Class ;
+    rdfs:label "bcg_bin_region_genes" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:gene_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:bin_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:bcg_gene_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:is_protocore_gene ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:is_protocore_gene ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:gene_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:bcg_gene_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:is_protocore_gene ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:bcg_gene_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:gene_functions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:bin_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:gene_functions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:gene_functions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:bin_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:gene_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:BcgGenePfams a owl:Class ;
+    rdfs:label "bcg_gene_pfams" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:pfam_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:pfam_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:query_start ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:pfam_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:gene_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:query_start ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:gene_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:gene_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:query_start ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:BcgGenePfamsObs a owl:Class ;
+    rdfs:label "bcg_gene_pfams_obs" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:query_start ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:gene_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:pfam_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:gene_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:pfam_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:gene_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:pfam_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:query_start ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:query_start ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:BcgRegion a owl:Class ;
+    rdfs:label "bcg_region" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:end_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:end_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:start_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:bcg_rules ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:bcg_rules ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:bcg_method ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:start_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:bcg_method ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:bcg_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:bcg_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:bcg_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:seq_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:bcg_method ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:start_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:end_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:bcg_rules ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:seq_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty img_mysql_abc:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:seq_id ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:BcgRegionExtLinks a owl:Class ;
+    rdfs:label "bcg_region_ext_links" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:comments ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:db_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:comments ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:comments ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:db_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:db_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:region_id ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:BcgRegionGenes a owl:Class ;
+    rdfs:label "bcg_region_genes" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:gene_functions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:locus_tag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:gene_functions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:match_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:bcg_gene_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:start_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:strand ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:bcg_gene_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:locus_tag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:bcg_gene_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:locus_tag ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:match_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:is_protocore_gene ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:start_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:strand ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:gene_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:end_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:is_protocore_gene ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:gene_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:start_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:match_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:end_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:gene_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:is_protocore_gene ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:gene_functions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:strand ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:end_coord ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:BcgRegionGenesNew a owl:Class ;
+    rdfs:label "bcg_region_genes_new" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:is_protocore_gene ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:gene_functions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:is_protocore_gene ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:bcg_gene_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:bcg_gene_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:bcg_gene_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:is_protocore_gene ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:gene_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:gene_functions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:gene_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:gene_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:gene_functions ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:scaffold_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:BcgRegionNew a owl:Class ;
+    rdfs:label "bcg_region_new" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:end_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:bcg_rules ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:end_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:end_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:bcg_method ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:bcg_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:bcg_method ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:start_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:seq_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:bcg_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:bcg_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:seq_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:bcg_method ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:start_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:bcg_rules ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:bcg_rules ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty img_mysql_abc:add_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:seq_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:start_coord ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:BcgRegionSms a owl:Class ;
+    rdfs:label "bcg_region_sms" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:sm_product ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:img_compound_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:img_compound_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:sm_product ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:img_compound_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:sm_product ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:BcgRegionStats a owl:Class ;
+    rdfs:label "bcg_region_stats" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:percent_unmatch_crucial ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:gff2img_fuzzy_genes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:gff_total_genes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:gff2img_fuzzy_genes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:percent_exact ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:gff2img_exact_genes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:gff2img_exact_genes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_abc:percent_exact ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:percent_unmatch_crucial ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:putative_img_genes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:putative_img_genes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:percent_total ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:gff2img_exact_genes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:gff_total_genes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:gff2img_fuzzy_genes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:percent_total ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:gff_total_genes ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:percent_exact ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:putative_img_genes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_abc:percent_total ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:region_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_abc:percent_unmatch_crucial ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:BcgType a owl:Class ;
+    rdfs:label "bcg_type" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:bcg_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:bcg_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:bcg_type ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:MyBcg a owl:Class ;
+    rdfs:label "my_bcg" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:file_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:comment ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:orig_region_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:contact_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:orig_region_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:comment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:date ;
+            owl:onProperty img_mysql_abc:add_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:orig_region_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:file_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:dataset_id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:contact_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:contact_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:dataset_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:dataset_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:comment ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:file_name ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:Npatlas a owl:Class ;
+    rdfs:label "npatlas" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:npaid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:mol_formula ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:species ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:inchikey ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:inchikey ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:genus ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:inchi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:synthesis_doi ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:smiles ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:ref ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:npaid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:smiles ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:genus ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_abc:mass ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:mwt ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:npaid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:mass ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:mol_formula ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:inchi ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:npa_url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:inchi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:mol_formula ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:mwt ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:ref ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:origin_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:ref ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:synthesis_doi ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:npa_url ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:synthesis_doi ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:origin_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:ref_doi ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:species ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:smiles ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:inchikey ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_mysql_abc:mwt ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:origin_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:npa_url ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:genus ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:ref_doi ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:mass ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:ref_doi ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:species ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:TaxonBcgType a owl:Class ;
+    rdfs:label "taxon_bcg_type" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_mysql_abc:bcg_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:count_bcg_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:count_bcg_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:bcg_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:count_bcg_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:bcg_type ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:TmpGenes a owl:Class ;
+    rdfs:label "tmp_genes" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_mysql_abc:gene_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:gene_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:gene_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_mysql_abc:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_mysql_abc:taxon_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:comment a owl:DatatypeProperty ;
+    rdfs:label "comment" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:comments a owl:DatatypeProperty ;
+    rdfs:label "comments" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:contact_oid a owl:DatatypeProperty ;
+    rdfs:label "contact_oid" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:count_bcg_type a owl:DatatypeProperty ;
+    rdfs:label "count_bcg_type" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:dataset_id a owl:DatatypeProperty ;
+    rdfs:label "dataset_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:db_name a owl:DatatypeProperty ;
+    rdfs:label "db_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:description a owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:file_name a owl:DatatypeProperty ;
+    rdfs:label "file_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:genus a owl:DatatypeProperty ;
+    rdfs:label "genus" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:gff2img_exact_genes a owl:DatatypeProperty ;
+    rdfs:label "gff2img_exact_genes" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:gff2img_fuzzy_genes a owl:DatatypeProperty ;
+    rdfs:label "gff2img_fuzzy_genes" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:gff_total_genes a owl:DatatypeProperty ;
+    rdfs:label "gff_total_genes" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:id a owl:DatatypeProperty ;
+    rdfs:label "id" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:img_compound_id a owl:DatatypeProperty ;
+    rdfs:label "img_compound_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:inchi a owl:DatatypeProperty ;
+    rdfs:label "inchi" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:inchikey a owl:DatatypeProperty ;
+    rdfs:label "inchikey" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:locus_tag a owl:DatatypeProperty ;
+    rdfs:label "locus_tag" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:mass a owl:DatatypeProperty ;
+    rdfs:label "mass" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:match_type a owl:DatatypeProperty ;
+    rdfs:label "match_type" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:mol_formula a owl:DatatypeProperty ;
+    rdfs:label "mol_formula" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:mwt a owl:DatatypeProperty ;
+    rdfs:label "mwt" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:npa_url a owl:DatatypeProperty ;
+    rdfs:label "npa_url" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:npaid a owl:DatatypeProperty ;
+    rdfs:label "npaid" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:orig_region_id a owl:DatatypeProperty ;
+    rdfs:label "orig_region_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:origin_type a owl:DatatypeProperty ;
+    rdfs:label "origin_type" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:percent_exact a owl:DatatypeProperty ;
+    rdfs:label "percent_exact" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:percent_total a owl:DatatypeProperty ;
+    rdfs:label "percent_total" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:percent_unmatch_crucial a owl:DatatypeProperty ;
+    rdfs:label "percent_unmatch_crucial" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:putative_img_genes a owl:DatatypeProperty ;
+    rdfs:label "putative_img_genes" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:ref a owl:DatatypeProperty ;
+    rdfs:label "ref" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:ref_doi a owl:DatatypeProperty ;
+    rdfs:label "ref_doi" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:sm_product a owl:DatatypeProperty ;
+    rdfs:label "sm_product" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:smiles a owl:DatatypeProperty ;
+    rdfs:label "smiles" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:species a owl:DatatypeProperty ;
+    rdfs:label "species" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:strand a owl:DatatypeProperty ;
+    rdfs:label "strand" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:synthesis_doi a owl:DatatypeProperty ;
+    rdfs:label "synthesis_doi" ;
+    skos:inScheme <https://w3id.org/jgi/img_mysql_abc> .
+
+img_mysql_abc:bin_oid a owl:DatatypeProperty .
+
+img_mysql_abc:bcg_gene_type a owl:DatatypeProperty .
+
+img_mysql_abc:bcg_method a owl:DatatypeProperty .
+
+img_mysql_abc:bcg_rules a owl:DatatypeProperty .
+
+img_mysql_abc:gene_functions a owl:DatatypeProperty .
+
+img_mysql_abc:is_protocore_gene a owl:DatatypeProperty .
+
+img_mysql_abc:pfam_id a owl:DatatypeProperty .
+
+img_mysql_abc:query_start a owl:DatatypeProperty .
+
+img_mysql_abc:seq_id a owl:DatatypeProperty .
+
+img_mysql_abc:add_date a owl:DatatypeProperty .
+
+img_mysql_abc:end_coord a owl:DatatypeProperty .
+
+img_mysql_abc:start_coord a owl:DatatypeProperty .
+
+img_mysql_abc:bcg_type a owl:DatatypeProperty .
+
+img_mysql_abc:scaffold_oid a owl:DatatypeProperty .
+
+img_mysql_abc:gene_oid a owl:DatatypeProperty .
+
+img_mysql_abc:region_id a owl:DatatypeProperty .
+
+img_mysql_abc:taxon_oid a owl:DatatypeProperty .
+
+

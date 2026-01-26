@@ -1,0 +1,150 @@
+@prefix kbase: <https://w3id.org/kbase/kbase_ontology_source/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/kbase/kbase_ontology_source.owl.ttl> a owl:Ontology ;
+    rdfs:label "kbase_ontology_source" .
+
+kbase:EntailedEdge a owl:Class ;
+    rdfs:label "EntailedEdge" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:subject ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:object ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:object ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:predicate ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:subject ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:subject ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:object ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:predicate ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:predicate ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ontology_source> ;
+    kbase:source_table "entailed_edge" .
+
+kbase:Prefix a owl:Class ;
+    rdfs:label "Prefix" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:prefix ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:base ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:prefix ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:base ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:base ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:prefix ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ontology_source> ;
+    kbase:source_table "prefix" .
+
+kbase:Statements a owl:Class ;
+    rdfs:label "Statements" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:datatype ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:language ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:object ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:predicate ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:datatype ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:subject ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:language ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:object ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:object ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:predicate ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:predicate ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:subject ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kbase:language ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kbase:value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:subject ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kbase:datatype ] ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ontology_source> ;
+    kbase:source_table "statements" .
+
+kbase:base a owl:DatatypeProperty ;
+    rdfs:label "base" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ontology_source> .
+
+kbase:datatype a owl:DatatypeProperty ;
+    rdfs:label "datatype" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ontology_source> .
+
+kbase:language a owl:DatatypeProperty ;
+    rdfs:label "language" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ontology_source> .
+
+kbase:prefix a owl:DatatypeProperty ;
+    rdfs:label "prefix" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ontology_source> .
+
+kbase:value a owl:DatatypeProperty ;
+    rdfs:label "value" ;
+    skos:inScheme <https://w3id.org/kbase/kbase_ontology_source> .
+
+kbase:object a owl:DatatypeProperty .
+
+kbase:predicate a owl:DatatypeProperty .
+
+kbase:subject a owl:DatatypeProperty .
+
+

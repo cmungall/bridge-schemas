@@ -1,0 +1,1144 @@
+id: https://w3id.org/kbase/kbase_ke_pangenome
+name: kbase_ke_pangenome
+title: KBase Pangenome Database
+description: >-
+  Pangenomic data organized around GTDB species clades. Contains gene clusters,
+  genome metadata, taxonomy, and functional annotations. Built from GTDB r214
+  with pangenome analysis using PPanGGOLiN-style methods.
+
+  DATABASE STATISTICS:
+  - 85,000+ species pangenomes
+  - 1,011,650,903 genes
+  - 132,531,501 gene clusters
+  - 93,558,330 EggNOG annotations
+
+  TOP SPECIES BY GENOME COUNT:
+  - S. aureus: 14,526 genomes, 2,083 core genes
+  - K. pneumoniae: 14,240 genomes, 4,199 core genes
+  - S. enterica: 11,402 genomes, 3,639 core genes
+  - S. pneumoniae: 8,434 genomes, 1,475 core genes
+  - M. tuberculosis: 6,903 genomes, 3,741 core genes
+
+  TAXONOMIC DISTRIBUTION:
+  - Pseudomonadota: 117,619 genomes
+  - Bacillota: 67,072 genomes
+  - Actinomycetota: 26,949 genomes
+  - Bacteroidota: 20,615 genomes
+
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  kbase: https://w3id.org/kbase/pangenome/
+  GTDB: https://gtdb.ecogenomic.org/
+  NCBI: https://www.ncbi.nlm.nih.gov/
+  KEGG: https://www.genome.jp/kegg/
+  GO: http://purl.obolibrary.org/obo/GO_
+  EC: https://enzyme.expasy.org/EC/
+  COG: https://www.ncbi.nlm.nih.gov/research/cog/
+
+default_range: string
+imports:
+  - linkml:types
+
+enums:
+  GtdbDomain:
+    description: >-
+      GTDB taxonomic domains. Only Bacteria and Archaea - GTDB does not
+      include eukaryotes. These are the two primary domains of prokaryotic life.
+    permissible_values:
+      d__Archaea:
+        description: >-
+          Archaeal domain. Single-celled organisms distinct from bacteria,
+          often found in extreme environments. Examples: methanogens, halophiles,
+          thermophiles. About 4% of genomes in database.
+      d__Bacteria:
+        description: >-
+          Bacterial domain. The most abundant domain in the database (~96%).
+          Includes all major bacterial phyla: Pseudomonadota (Proteobacteria),
+          Bacillota (Firmicutes), Actinomycetota (Actinobacteria), etc.
+
+  CogFunctionalCategory:
+    description: >-
+      COG (Clusters of Orthologous Groups) single-letter functional categories.
+      Multi-letter combinations indicate proteins with multiple functions.
+
+      CATEGORY FREQUENCIES IN DATABASE:
+      - S (unknown): Most common
+      - J (translation): ~8% of annotations
+      - K (transcription): ~6%
+      - C (energy): ~5%
+      - E (amino acids): ~5%
+    permissible_values:
+      A:
+        description: RNA processing and modification
+      B:
+        description: Chromatin structure and dynamics
+      C:
+        description: Energy production and conversion
+      D:
+        description: Cell cycle control, cell division, chromosome partitioning
+      E:
+        description: Amino acid transport and metabolism
+      F:
+        description: Nucleotide transport and metabolism
+      G:
+        description: Carbohydrate transport and metabolism
+      H:
+        description: Coenzyme transport and metabolism
+      I:
+        description: Lipid transport and metabolism
+      J:
+        description: Translation, ribosomal structure and biogenesis
+      K:
+        description: Transcription
+      L:
+        description: Replication, recombination and repair
+      M:
+        description: Cell wall/membrane/envelope biogenesis
+      N:
+        description: Cell motility
+      O:
+        description: Posttranslational modification, protein turnover, chaperones
+      P:
+        description: Inorganic ion transport and metabolism
+      Q:
+        description: Secondary metabolites biosynthesis, transport and catabolism
+      R:
+        description: General function prediction only
+      S:
+        description: Function unknown
+      T:
+        description: Signal transduction mechanisms
+      U:
+        description: Intracellular trafficking, secretion, and vesicular transport
+      V:
+        description: Defense mechanisms
+      W:
+        description: Extracellular structures
+      X:
+        description: Mobilome - prophages, transposons
+      Y:
+        description: Nuclear structure
+      Z:
+        description: Cytoskeleton
+
+  GapmindScoreCategory:
+    description: >-
+      GapMind pathway completeness score categories. Used to assess whether
+      a genome can synthesize amino acids or utilize carbon sources.
+    permissible_values:
+      complete:
+        description: All pathway steps present with high-confidence annotations
+      likely_complete:
+        description: Most steps present; pathway likely functional despite gaps
+      steps_missing_low:
+        description: Some steps missing but alternatives may exist
+      steps_missing_medium:
+        description: Significant steps missing; pathway may be impaired
+      not_present:
+        description: Pathway not detected or too incomplete to function
+
+  GapmindMetabolicCategory:
+    description: >-
+      GapMind metabolic pathway categories. Two main types assessed.
+    permissible_values:
+      aa:
+        description: >-
+          Amino acid biosynthesis/catabolism. Includes: alanine, arginine,
+          asparagine, cysteine, glutamate, glycine, histidine, isoleucine,
+          leucine, lysine, methionine, phenylalanine, proline, serine,
+          threonine, tryptophan, tyrosine, valine
+      carbon:
+        description: >-
+          Carbon source utilization. Includes: glucose, fructose, sucrose,
+          lactose, maltose, trehalose, galactose, mannose, arabinose, xylose,
+          rhamnose, gluconate, glucuronate, galacturonate, citrate, pyruvate,
+          acetate, ethanol, glycerol, lactate, propionate
+
+classes:
+  GtdbSpeciesClade:
+    description: >-
+      GTDB species-level grouping with representative genome. Each clade represents
+      a species cluster defined by 95% ANI threshold following GTDB taxonomy.
+
+      A species clade contains all genomes that cluster together at >95% ANI
+      with the representative genome. The representative is typically the
+      highest-quality or type strain genome.
+
+      EXAMPLE CLADES (by genome count):
+      - s__Staphylococcus_aureus--RS_GCF_001027105.1: 14,526 genomes
+      - s__Klebsiella_pneumoniae--RS_GCF_000742135.1: 14,240 genomes
+      - s__Salmonella_enterica--RS_GCF_000006945.2: 11,402 genomes
+
+      USAGE: Start here to explore pangenomes. Join to Pangenome for statistics,
+      to Genome for individual assemblies, to GeneCluster for gene families.
+    annotations:
+      source_table: gtdb_species_clade
+    attributes:
+      gtdb_species_clade_id:
+        identifier: true
+        range: string
+        required: true
+        description: >-
+          Species clade ID combining species name and representative genome.
+          Format: s__Genus_species--{RS|GB}_GC{F|A}_XXXXXXXXX.X
+
+          The ID encodes: species name (s__prefix), representative source
+          (RS=RefSeq, GB=GenBank), and assembly accession.
+        pattern: "s__[A-Za-z0-9_]+--[A-Z]{2}_GC[AF]_\\d+\\.\\d+"
+        examples:
+          - value: "s__Klebsiella_pneumoniae--RS_GCF_000742135.1"
+            description: K. pneumoniae - major human pathogen, 14K+ genomes
+          - value: "s__Staphylococcus_aureus--RS_GCF_001027105.1"
+            description: S. aureus - most genomes in database
+          - value: "s__Escherichia_coli--RS_GCF_000005845.2"
+            description: E. coli K-12 - model organism
+          - value: "s__Mycobacterium_tuberculosis--RS_GCF_000195955.2"
+            description: TB pathogen - highly clonal species
+          - value: "s__Pseudomonas_aeruginosa--RS_GCF_001457615.1"
+            description: Opportunistic pathogen with large pangenome
+      representative_genome_id:
+        range: Genome
+        description: >-
+          Reference genome for this species. Typically highest quality assembly
+          or type strain. Used as anchor for ANI calculations.
+        comments:
+          - "Foreign key: Genome.genome_id"
+        examples:
+          - value: "RS_GCF_000742135.1"
+          - value: "RS_GCF_001027105.1"
+      GTDB_species:
+        range: string
+        description: >-
+          GTDB species name with s__ prefix. May differ from NCBI species
+          name due to GTDB's genome-based taxonomy.
+        pattern: "s__[A-Za-z0-9_]+"
+        examples:
+          - value: "s__Klebsiella_pneumoniae"
+          - value: "s__Staphylococcus_aureus"
+          - value: "s__Escherichia_coli"
+          - value: "s__Bacillus_subtilis"
+      GTDB_taxonomy:
+        range: string
+        description: >-
+          Full GTDB lineage from domain to genus (species not repeated).
+          Semicolon-separated with rank prefixes: d__, p__, c__, o__, f__, g__
+        examples:
+          - value: "d__Bacteria;p__Pseudomonadota;c__Gammaproteobacteria;o__Enterobacterales;f__Enterobacteriaceae;g__Klebsiella"
+          - value: "d__Bacteria;p__Bacillota;c__Bacilli;o__Staphylococcales;f__Staphylococcaceae;g__Staphylococcus"
+          - value: "d__Archaea;p__Methanobacteriota_B;c__Thermococci;o__Thermococcales;f__Thermococcaceae;g__Thermococcus_A"
+      ANI_circumscription_radius:
+        range: float
+        description: >-
+          ANI threshold for species membership. Typically 95% for most species.
+          Some species have tighter boundaries (higher values).
+        minimum_value: 90.0
+        maximum_value: 100.0
+        unit:
+          ucum_code: "%"
+        examples:
+          - value: 95.0
+            description: Standard species threshold
+          - value: 95.239
+            description: K. pneumoniae threshold
+          - value: 97.08
+            description: Tighter threshold for clonal species
+      mean_intra_species_ANI:
+        range: float
+        description: >-
+          Mean pairwise ANI among all genomes. Higher values indicate
+          more clonal/homogeneous species. Lower values suggest higher diversity.
+        minimum_value: 95.0
+        maximum_value: 100.0
+        examples:
+          - value: 98.97
+            description: K. pneumoniae - moderately diverse
+          - value: 99.5
+            description: Highly clonal species (e.g., M. tuberculosis)
+          - value: 96.5
+            description: Highly diverse species
+      min_intra_species_ANI:
+        range: float
+        description: >-
+          Minimum pairwise ANI observed. Low values near 95% indicate
+          species at boundary of splitting into subspecies.
+        minimum_value: 90.0
+        maximum_value: 100.0
+        examples:
+          - value: 95.28
+          - value: 97.08
+      mean_intra_species_AF:
+        range: float
+        description: >-
+          Mean alignment fraction - proportion of genome aligning in
+          ANI calculations. Low AF may indicate accessory genome differences.
+        minimum_value: 0.0
+        maximum_value: 1.0
+        examples:
+          - value: 0.88
+          - value: 0.95
+      min_intra_species_AF:
+        range: float
+        description: Minimum alignment fraction observed between any two genomes
+        minimum_value: 0.0
+        maximum_value: 1.0
+        examples:
+          - value: 0.76
+          - value: 0.82
+      no_clustered_genomes_unfiltered:
+        range: integer
+        description: >-
+          Total genomes assigned to species before quality filtering.
+          Difference from filtered count indicates low-quality genomes removed.
+        minimum_value: 1
+        examples:
+          - value: 14975
+            description: K. pneumoniae unfiltered
+          - value: 14959
+            description: S. aureus unfiltered
+      no_clustered_genomes_filtered:
+        range: integer
+        description: >-
+          Genomes passing quality filters used in pangenome analysis.
+          These genomes have sufficient completeness and low contamination.
+        minimum_value: 1
+        examples:
+          - value: 14240
+            description: K. pneumoniae after filtering
+          - value: 14526
+            description: S. aureus after filtering
+
+  Genome:
+    description: >-
+      Individual genome assembly from NCBI RefSeq or GenBank. Each genome
+      belongs to exactly one GTDB species clade and contains many genes.
+
+      GENOME SOURCES:
+      - RS_ prefix: RefSeq assemblies (curated, higher quality)
+      - GB_ prefix: GenBank assemblies (all submissions)
+
+      USAGE: Link to Gene for CDS, to GtdbMetadata for quality metrics,
+      to Sample for NCBI BioSample/BioProject accessions.
+    annotations:
+      source_table: genome
+    attributes:
+      genome_id:
+        identifier: true
+        range: string
+        required: true
+        description: >-
+          Genome accession with source prefix and version.
+          RS_ = RefSeq (GCF accessions), GB_ = GenBank (GCA accessions).
+        pattern: "(RS|GB)_GC[AF]_\\d+\\.\\d+"
+        examples:
+          - value: "RS_GCF_022568935.1"
+            description: RefSeq assembly version 1
+          - value: "RS_GCF_000005845.2"
+            description: E. coli K-12 MG1655 (version 2)
+          - value: "GB_GCA_902835305.1"
+            description: GenBank assembly
+          - value: "RS_GCF_000742135.1"
+            description: K. pneumoniae reference
+      gtdb_species_clade_id:
+        range: GtdbSpeciesClade
+        description: Species clade this genome belongs to
+        comments:
+          - "Foreign key: GtdbSpeciesClade.gtdb_species_clade_id"
+        examples:
+          - value: "s__Staphylococcus_lugdunensis--RS_GCF_002901705.1"
+          - value: "s__Escherichia_coli--RS_GCF_000005845.2"
+      gtdb_taxonomy_id:
+        range: string
+        description: Full GTDB taxonomy lineage string for this genome
+        examples:
+          - value: "d__Bacteria;p__Bacillota;c__Bacilli;o__Staphylococcales;f__Staphylococcaceae;g__Staphylococcus"
+          - value: "d__Bacteria;p__Pseudomonadota;c__Gammaproteobacteria;o__Enterobacterales;f__Enterobacteriaceae;g__Escherichia;s__Escherichia_fergusonii"
+      ncbi_biosample_id:
+        range: string
+        description: >-
+          NCBI BioSample accession linking to sample metadata including
+          isolation source, collection date, geographic location.
+        pattern: "SAM[NED][A-Z]?\\d+"
+        examples:
+          - value: "SAMN24838659"
+          - value: "SAMN02603679"
+          - value: "SAMEA2272191"
+      fna_file_path_nersc:
+        range: string
+        description: >-
+          Absolute path to nucleotide FASTA file at NERSC filesystem.
+          Contains genomic contigs/scaffolds.
+        examples:
+          - value: "/global/cfs/cdirs/kbase/jungbluth/Projects/Project_Pangenome_GTDB/GTDB_v214_download/ftp.ncbi.nlm.nih.gov/genomes/all/GCF/022/568/935/GCF_022568935.1_ASM2256893v1/GCF_022568935.1_ASM2256893v1_genomic.fna.gz"
+      faa_file_path_nersc:
+        range: string
+        description: >-
+          Absolute path to protein FASTA file at NERSC filesystem.
+          Contains predicted protein sequences.
+        examples:
+          - value: "/global/cfs/cdirs/kbase/jungbluth/Projects/Project_Pangenome_GTDB/GTDB_r214_by_spcluster/s__Staphylococcus_lugdunensis--RS_GCF_002901705.1/GCF_022568935.1_protein.faa.gz"
+
+  Gene:
+    description: >-
+      Gene/CDS within a genome. Identified by contig accession and CDS number.
+      Links to GeneCluster through junction table.
+
+      SCALE: 1,011,650,903 genes in database (>1 billion)
+
+      GENE ID FORMAT: {contig_accession}_{cds_number}
+      - Contig accession: NCBI nucleotide accession (NC_, NZ_, etc.)
+      - CDS number: Sequential 1-based index on that contig
+    annotations:
+      source_table: gene
+      row_count: "1011650903"
+    attributes:
+      gene_id:
+        identifier: true
+        range: string
+        required: true
+        description: >-
+          Composite gene identifier constructed from NCBI nucleotide accession
+          and CDS position. NOT an NCBI Gene ID (which are integers linking to
+          Entrez Gene database).
+
+          Format: {NCBI_nucleotide_accession}_{CDS_number}
+          - The nucleotide accession is from NCBI GenBank/RefSeq
+          - CDS_number is a 1-based sequential index of coding sequences on that contig
+
+          NCBI NUCLEOTIDE ACCESSION PREFIXES:
+          - NC_: RefSeq complete genomic molecules
+          - NZ_: RefSeq annotated genomic sequences (often WGS)
+          - CP: Complete plasmids/chromosomes
+          - {4-letter}: WGS contigs (e.g., UTEP, DXZZ)
+
+          To look up the source sequence, extract the accession part before the
+          underscore-number suffix and query NCBI Nucleotide database.
+        pattern: "[A-Z]{1,4}_?[A-Z]*\\d+\\.\\d+_\\d+"
+        see_also:
+          - https://www.ncbi.nlm.nih.gov/nuccore/
+        examples:
+          - value: "NZ_UTEP01000078.1_260"
+            description: WGS contig NZ_UTEP01000078.1, 260th CDS
+          - value: "NC_012808.1_2957"
+            description: Complete genome NC_012808.1, 2957th CDS
+          - value: "NZ_CP014762.1_1"
+            description: Complete plasmid NZ_CP014762.1, first CDS
+          - value: "DXZZ01000056.1_1"
+            description: Draft assembly contig, first CDS
+      genome_id:
+        range: Genome
+        required: true
+        description: Parent genome containing this gene
+        comments:
+          - "Foreign key: Genome.genome_id"
+        examples:
+          - value: "RS_GCF_900581555.1"
+          - value: "GB_GCA_902835305.1"
+
+  GeneCluster:
+    description: >-
+      Ortholog cluster at species level. Clusters are classified as:
+      - CORE: Present in all (or nearly all) genomes
+      - AUXILIARY: Present in some genomes (shell genes)
+      - SINGLETON: Present in only one genome (cloud genes)
+
+      SCALE: 132,531,501 gene clusters
+
+      PANGENOME STRUCTURE EXAMPLES:
+      - K. pneumoniae: 4,199 core + 438,925 auxiliary = 443,124 total
+      - S. aureus: 2,083 core + 145,831 auxiliary = 147,914 total
+
+      The core/auxiliary/singleton partition follows PPanGGOLiN methodology.
+    annotations:
+      source_table: gene_cluster
+      row_count: "132531501"
+    attributes:
+      gene_cluster_id:
+        identifier: true
+        range: string
+        required: true
+        description: >-
+          Unique cluster identifier. Often derived from seed gene ID.
+        examples:
+          - value: "DXZZ01000056.1_1"
+          - value: "NC_012808.1_2957"
+      gtdb_species_clade_id:
+        range: GtdbSpeciesClade
+        required: true
+        description: Species clade this cluster belongs to
+        comments:
+          - "Foreign key: GtdbSpeciesClade.gtdb_species_clade_id"
+        examples:
+          - value: "s__Collinsella_sp902835305--GB_GCA_902835305.1"
+      is_core:
+        range: boolean
+        description: >-
+          Present in all (or nearly all) genomes. Core genes define
+          species-level functions. Usually 10-20% of clusters.
+        examples:
+          - value: true
+            description: Essential housekeeping gene
+          - value: false
+            description: Accessory gene
+      is_auxiliary:
+        range: boolean
+        description: >-
+          Present in some but not all genomes. Shell/cloud genes.
+          May include mobile elements, strain-specific adaptations.
+        examples:
+          - value: true
+          - value: false
+      is_singleton:
+        range: boolean
+        description: >-
+          Present in only one genome. Often recently acquired genes,
+          pseudogenes, or annotation artifacts. Usually 30-50% of clusters.
+        examples:
+          - value: true
+          - value: false
+      likelihood:
+        range: float
+        description: >-
+          Log-likelihood from PPanGGOLiN Bayesian partitioning model.
+          More negative = stronger evidence for partition assignment.
+        examples:
+          - value: -5.167393657456563
+          - value: -2.5
+          - value: -10.3
+
+  GeneGeneclusterJunction:
+    description: >-
+      Junction table linking genes to gene clusters. Each gene belongs
+      to exactly one cluster within its species pangenome.
+
+      SCALE: 1,011,650,762 gene-cluster assignments
+      (nearly 1:1 with genes - some genes unassigned)
+
+      This table enables:
+      - Finding all genes in a cluster
+      - Finding which cluster a gene belongs to
+    annotations:
+      source_table: gene_genecluster_junction
+      row_count: "1011650762"
+    attributes:
+      gene_id:
+        range: Gene
+        required: true
+        description: Gene member of this cluster
+        comments:
+          - "Foreign key: Gene.gene_id"
+      gene_cluster_id:
+        range: GeneCluster
+        required: true
+        description: Cluster containing this gene
+        comments:
+          - "Foreign key: GeneCluster.gene_cluster_id"
+
+  Pangenome:
+    description: >-
+      Summary statistics for a species pangenome. One row per species.
+      Contains counts of core/auxiliary/singleton genes and quality metrics.
+
+      EXAMPLE PANGENOME STATISTICS:
+      | Species          | Genomes | Core  | Aux     | Total   |
+      |------------------|---------|-------|---------|---------|
+      | K. pneumoniae    | 14,240  | 4,199 | 438,925 | 443,124 |
+      | S. aureus        | 14,526  | 2,083 | 145,831 | 147,914 |
+      | S. enterica      | 11,402  | 3,639 | 262,732 | 266,371 |
+      | P. aeruginosa    | 6,760   | 5,199 | 250,894 | 256,093 |
+    annotations:
+      source_table: pangenome
+    attributes:
+      gtdb_species_clade_id:
+        identifier: true
+        range: GtdbSpeciesClade
+        required: true
+        description: Species clade this pangenome summarizes
+        comments:
+          - "Foreign key: GtdbSpeciesClade.gtdb_species_clade_id"
+        examples:
+          - value: "s__Klebsiella_pneumoniae--RS_GCF_000742135.1"
+          - value: "s__Staphylococcus_aureus--RS_GCF_001027105.1"
+      protocol_id:
+        range: string
+        description: >-
+          Analysis protocol version identifier. NOT a foreign key - this is a
+          version string constant that identifies the pangenome computation pipeline
+          and date.
+
+          Format breakdown: PGNKE_MMS90_V01_DEC2024
+          - PGNKE: Pangenome KBase project prefix
+          - MMS90: Method/parameter set identifier (MMSeqs2-based, 90% identity?)
+          - V01: Version 01
+          - DEC2024: Analysis run date (December 2024)
+
+          Currently all pangenomes in the database share the same protocol_id value,
+          indicating they were computed in a single batch analysis run.
+        examples:
+          - value: "PGNKE_MMS90_V01_DEC2024"
+            description: "Current protocol - all pangenomes use this value"
+      number_of_iterations:
+        range: integer
+        description: PPanGGOLiN model training iterations (0 = converged early)
+        minimum_value: 0
+        examples:
+          - value: 0
+      mean_initial_completeness:
+        range: float
+        description: >-
+          Mean CheckM completeness of input genomes before filtering.
+          Quality threshold typically 90%.
+        minimum_value: 0.0
+        maximum_value: 100.0
+        examples:
+          - value: 95.0
+      total_sum_of_loglikelihood_ratios:
+        range: float
+        description: >-
+          Model fit quality metric. Larger negative values indicate
+          larger species with more genes.
+        examples:
+          - value: -14186263623.030312
+            description: Large pangenome (K. pneumoniae)
+          - value: -5100735177.719256
+            description: Medium pangenome (S. aureus)
+      corrected_mean_completness:
+        range: float
+        description: >-
+          Completeness after pangenome-based correction. Usually higher
+          than initial because some "missing" genes are species-absent.
+        minimum_value: 0.0
+        maximum_value: 100.0
+        examples:
+          - value: 99.24400808378776
+          - value: 99.36403620861542
+      no_aux_genome:
+        range: integer
+        description: Number of auxiliary (shell) gene clusters
+        minimum_value: 0
+        examples:
+          - value: 438925
+            description: K. pneumoniae - open pangenome
+          - value: 145831
+            description: S. aureus - more closed pangenome
+      no_core:
+        range: integer
+        description: >-
+          Number of core gene clusters. Essential species functions.
+          Core genome size correlates with genome size.
+        minimum_value: 0
+        examples:
+          - value: 4199
+            description: K. pneumoniae
+          - value: 2083
+            description: S. aureus (smaller genome)
+          - value: 5199
+            description: P. aeruginosa (larger genome)
+      no_singleton_gene_clusters:
+        range: integer
+        description: >-
+          Number of singleton clusters. High counts indicate diverse
+          accessory genome or sequencing artifacts.
+        minimum_value: 0
+        examples:
+          - value: 276743
+          - value: 86127
+      no_gene_clusters:
+        range: integer
+        description: Total gene clusters (core + auxiliary + singleton)
+        minimum_value: 1
+        examples:
+          - value: 443124
+          - value: 147914
+      no_genomes:
+        range: integer
+        description: Number of genomes in pangenome analysis
+        minimum_value: 1
+        examples:
+          - value: 14240
+          - value: 14526
+
+  GtdbTaxonomyR214v1:
+    description: >-
+      GTDB release 214 taxonomy with parsed rank assignments.
+      Each genome has one row with full taxonomic lineage.
+
+      GTDB PHYLA (top 5 by genome count):
+      - p__Pseudomonadota: 117,619 genomes (was Proteobacteria)
+      - p__Bacillota: 67,072 genomes (was Firmicutes)
+      - p__Actinomycetota: 26,949 genomes (was Actinobacteria)
+      - p__Bacillota_A: 24,581 genomes (split from Firmicutes)
+      - p__Bacteroidota: 20,615 genomes
+    annotations:
+      source_table: gtdb_taxonomy_r214v1
+    attributes:
+      genome_id:
+        range: Genome
+        description: Genome this taxonomy applies to
+        comments:
+          - "Foreign key: Genome.genome_id"
+        examples:
+          - value: "RS_GCF_020034805.1"
+      gtdb_taxonomy_id:
+        identifier: true
+        range: string
+        description: Full semicolon-separated taxonomy string
+        examples:
+          - value: "d__Bacteria;p__Pseudomonadota;c__Gammaproteobacteria;o__Enterobacterales;f__Enterobacteriaceae;g__Escherichia;s__Escherichia fergusonii"
+      domain:
+        range: GtdbDomain
+        description: Domain rank (d__Archaea or d__Bacteria)
+        examples:
+          - value: "d__Bacteria"
+          - value: "d__Archaea"
+      phylum:
+        range: string
+        description: >-
+          Phylum name with p__ prefix. GTDB uses standardized names
+          that may differ from NCBI (e.g., Pseudomonadota vs Proteobacteria)
+        examples:
+          - value: "p__Pseudomonadota"
+            description: Formerly Proteobacteria
+          - value: "p__Bacillota"
+            description: Formerly Firmicutes
+          - value: "p__Actinomycetota"
+            description: Formerly Actinobacteria
+          - value: "p__Halobacteriota"
+            description: Archaeal phylum
+      class:
+        range: string
+        description: Class name with c__ prefix
+        examples:
+          - value: "c__Gammaproteobacteria"
+          - value: "c__Bacilli"
+          - value: "c__Clostridia"
+      order:
+        range: string
+        description: Order name with o__ prefix
+        examples:
+          - value: "o__Enterobacterales"
+          - value: "o__Staphylococcales"
+          - value: "o__Lactobacillales"
+      family:
+        range: string
+        description: Family name with f__ prefix
+        examples:
+          - value: "f__Enterobacteriaceae"
+          - value: "f__Staphylococcaceae"
+          - value: "f__Pseudomonadaceae"
+      genus:
+        range: string
+        description: Genus name with g__ prefix
+        examples:
+          - value: "g__Escherichia"
+          - value: "g__Klebsiella"
+          - value: "g__Staphylococcus"
+      species:
+        range: string
+        description: Species name with s__ prefix
+        examples:
+          - value: "s__Escherichia_coli"
+          - value: "s__Escherichia_fergusonii"
+          - value: "s__Klebsiella_pneumoniae"
+
+  GtdbMetadata:
+    description: >-
+      Comprehensive GTDB metadata with quality metrics, genome statistics,
+      and NCBI cross-references. Contains ~100 columns from GTDB metadata.
+
+      KEY QUALITY METRICS:
+      - checkm_completeness: >90% for inclusion
+      - checkm_contamination: <5% for inclusion
+      - genome_size: typically 0.5-10 Mbp for bacteria
+    annotations:
+      source_table: gtdb_metadata
+    attributes:
+      accession:
+        identifier: true
+        range: string
+        description: >-
+          NCBI assembly accession with RS_/GB_ prefix
+        examples:
+          - value: "RS_GCF_000246985.2"
+          - value: "RS_GCF_000980135.1"
+      checkm_completeness:
+        range: float
+        description: >-
+          CheckM genome completeness estimate. Minimum 90% for GTDB.
+          Based on single-copy marker genes.
+        minimum_value: 0.0
+        maximum_value: 100.0
+        examples:
+          - value: 99.5
+          - value: 100.0
+          - value: 95.0
+      checkm_contamination:
+        range: float
+        description: >-
+          CheckM contamination estimate. Maximum 5% for GTDB.
+          Based on duplicate single-copy markers.
+        minimum_value: 0.0
+        maximum_value: 100.0
+        examples:
+          - value: 0.5
+          - value: 0.65
+          - value: 0.0
+      genome_size:
+        range: integer
+        description: >-
+          Total genome size in base pairs. Varies widely:
+          - Minimal bacteria: ~500 kbp
+          - Typical bacteria: 2-6 Mbp
+          - Large bacteria: >10 Mbp
+        minimum_value: 100000
+        examples:
+          - value: 2215172
+            description: Small archaeal genome
+          - value: 4077567
+            description: Medium bacterial genome
+          - value: 6500000
+            description: Large bacterial genome
+      gc_percentage:
+        range: float
+        description: >-
+          GC content percentage. Varies by lineage:
+          - Low GC (Firmicutes): 30-40%
+          - Medium GC: 40-60%
+          - High GC (Actinobacteria): 60-75%
+        minimum_value: 0.0
+        maximum_value: 100.0
+        examples:
+          - value: 43.08802922449628
+          - value: 41.57088540809451
+          - value: 67.5
+      contig_count:
+        range: integer
+        description: >-
+          Number of contigs in assembly. Complete genomes = 1-5,
+          drafts may have hundreds.
+        minimum_value: 1
+        examples:
+          - value: 1
+            description: Complete genome
+          - value: 193
+            description: Draft assembly
+      protein_count:
+        range: integer
+        description: Number of predicted protein-coding genes
+        minimum_value: 0
+        examples:
+          - value: 2497
+          - value: 3513
+      gtdb_taxonomy:
+        range: string
+        description: Full GTDB taxonomy string
+      gtdb_representative:
+        range: boolean
+        description: >-
+          Whether this genome is the GTDB species representative.
+          Only one genome per species is representative.
+        examples:
+          - value: true
+          - value: false
+      ncbi_organism_name:
+        range: string
+        description: NCBI organism name including strain
+        examples:
+          - value: "Thermococcus litoralis DSM 5473"
+          - value: "Methanosarcina mazei"
+          - value: "Escherichia coli K-12"
+      ncbi_biosample:
+        range: string
+        description: NCBI BioSample accession
+        examples:
+          - value: "SAMN02603679"
+          - value: "SAMN02708973"
+      ncbi_taxid:
+        range: integer
+        description: NCBI taxonomy ID
+        examples:
+          - value: 523849
+          - value: 2209
+          - value: 83333
+
+  Sample:
+    description: >-
+      Links genomes to NCBI BioProject and BioSample accessions.
+      Enables finding related genomes from same study or sample source.
+    annotations:
+      source_table: sample
+    attributes:
+      genome_id:
+        range: Genome
+        description: Genome associated with this sample
+        comments:
+          - "Foreign key: Genome.genome_id"
+      ncbi_bioproject_accession_id:
+        range: string
+        description: >-
+          NCBI BioProject accession. Groups related genomes from same study.
+        pattern: "PRJ[A-Z]{2}\\d+"
+        examples:
+          - value: "PRJNA224116"
+            description: RefSeq reference genomes project
+          - value: "PRJNA13883"
+            description: Human microbiome project
+      ncbi_biosample_accession_id:
+        range: string
+        description: NCBI BioSample accession with sample metadata
+        pattern: "SAM[NED][A-Z]?\\d+"
+        examples:
+          - value: "SAMN02603679"
+          - value: "SAMEA2272191"
+
+  GenomeAni:
+    description: >-
+      Pairwise Average Nucleotide Identity (ANI) between genomes within
+      species clades. Used for species boundary determination and
+      strain typing.
+
+      ANI INTERPRETATION:
+      - >99%: Same strain
+      - 97-99%: Same species, different strains
+      - 95-97%: Species boundary region
+      - <95%: Different species
+    annotations:
+      source_table: genome_ani
+    attributes:
+      genome1_id:
+        range: Genome
+        required: true
+        description: First genome in pairwise comparison
+        comments:
+          - "Foreign key: Genome.genome_id"
+        examples:
+          - value: "RS_GCF_002186895.1"
+      genome2_id:
+        range: Genome
+        required: true
+        description: Second genome in pairwise comparison
+        comments:
+          - "Foreign key: Genome.genome_id"
+        examples:
+          - value: "RS_GCF_001645745.1"
+      protocol_id:
+        range: string
+        description: >-
+          ANI calculation method/version identifier. NOT a foreign key - this is
+          a version string that identifies the ANI computation pipeline and date.
+          Different from pangenome protocol_id as ANI may be computed separately.
+        examples:
+          - value: "PGNKEMCM012024"
+            description: "Protocol string (PGNKE=project, MCM=method?, 012024=Jan 2024?)"
+      ANI:
+        range: float
+        description: >-
+          Average Nucleotide Identity as percentage.
+          Based on aligned fragments between genomes.
+        minimum_value: 0.0
+        maximum_value: 100.0
+        examples:
+          - value: 99.0353
+            description: Same species, different strains
+          - value: 99.0835
+          - value: 95.5
+            description: Near species boundary
+      AF:
+        range: float
+        description: >-
+          Alignment Fraction - proportion of genome that aligned.
+          Low AF with high ANI may indicate incomplete genomes or
+          large accessory genome differences.
+        minimum_value: 0.0
+        maximum_value: 1.0
+        examples:
+          - value: 0.9070455891059799
+          - value: 0.9182027649769585
+          - value: 0.75
+            description: Lower AF due to accessory genome
+
+  EggnogMapperAnnotations:
+    description: >-
+      EggNOG-mapper v2 functional annotations for genes. Provides:
+      - COG functional categories
+      - GO term annotations
+      - KEGG pathway/ortholog mappings
+      - EC enzyme numbers
+      - PFAM domain annotations
+
+      COVERAGE: 93,558,330 annotated genes (~9% of total)
+
+      COG CATEGORY DISTRIBUTION (most common):
+      - S (function unknown): Most common
+      - J (translation): ~8%
+      - K (transcription): ~6%
+      - C (energy): ~5%
+      - E (amino acid metabolism): ~5%
+    annotations:
+      source_table: eggnog_mapper_annotations
+      row_count: "93558330"
+    attributes:
+      query_name:
+        identifier: true
+        range: string
+        description: Gene ID - links to Gene.gene_id
+        comments:
+          - "Foreign key: Gene.gene_id"
+        examples:
+          - value: "DBFF01000060.1_2"
+          - value: "CALVBM010000003.1_96"
+      seed_ortholog:
+        range: string
+        description: >-
+          Best matching seed ortholog from eggNOG database.
+          Format: taxon_id.locus_tag
+        examples:
+          - value: "42256.RradSPS_0079"
+          - value: "1548153.LR59_00700"
+      evalue:
+        range: float
+        description: E-value of seed ortholog match (lower = better match)
+        minimum_value: 0.0
+        examples:
+          - value: 3.06e-109
+          - value: 0.0
+            description: Exact match
+          - value: 1e-50
+      score:
+        range: float
+        description: Bit score of seed ortholog alignment
+        examples:
+          - value: 339.0
+          - value: 876.0
+      eggNOG_OGs:
+        range: string
+        description: >-
+          Hierarchical EggNOG ortholog groups from root to most specific.
+          Format: COG@level|taxon pairs, comma-separated.
+        examples:
+          - value: "COG0154@1|root,COG0154@2|Bacteria,2GKPZ@201174|Actinobacteria,4CPJR@84995|Rubrobacteria"
+          - value: "COG0439@1|root,COG0439@2|Bacteria,1MU4H@1224|Proteobacteria"
+      COG_category:
+        range: string
+        description: >-
+          COG functional category code(s). Single letter or combinations.
+          See CogFunctionalCategory enum for meanings.
+        examples:
+          - value: "J"
+            description: Translation/ribosome
+          - value: "I"
+            description: Lipid metabolism
+          - value: "CG"
+            description: Energy + Carbohydrate
+          - value: "S"
+            description: Function unknown
+      Description:
+        range: string
+        description: Functional description from seed ortholog
+        examples:
+          - value: "Belongs to the amidase family"
+          - value: "Biotin carboxylase"
+          - value: "DNA-directed RNA polymerase subunit beta"
+      Preferred_name:
+        range: string
+        description: Gene symbol when available, "-" if none
+        examples:
+          - value: "pycA"
+          - value: "rpoB"
+          - value: "-"
+      GOs:
+        range: string
+        description: GO terms, comma-separated. "-" if none.
+        examples:
+          - value: "GO:0003824,GO:0016021"
+          - value: "GO:0005524,GO:0004329,GO:0006633"
+          - value: "-"
+      EC:
+        range: string
+        description: EC enzyme numbers, comma-separated
+        examples:
+          - value: "3.5.1.4"
+          - value: "6.3.4.14,6.4.1.1,6.4.1.2"
+          - value: "2.7.7.6"
+      KEGG_ko:
+        range: string
+        description: KEGG Orthology IDs
+        examples:
+          - value: "ko:K01426"
+          - value: "ko:K01959,ko:K01961"
+      KEGG_Pathway:
+        range: string
+        description: KEGG pathway IDs, comma-separated
+        examples:
+          - value: "ko00330,ko00360,map00330,map00360"
+          - value: "ko00020,ko00061,ko00620,ko00640"
+      PFAMs:
+        range: string
+        description: PFAM domain annotations, comma-separated
+        examples:
+          - value: "Amidase"
+          - value: "Biotin_carb_C,Biotin_carb_N,CPSase_L_D2"
+          - value: "RNA_pol_Rpb2_1,RNA_pol_Rpb2_2"
+
+  GapmindPathways:
+    description: >-
+      GapMind metabolic pathway completeness scores. Indicates genome
+      capability for amino acid biosynthesis/catabolism and carbon utilization.
+
+      PATHWAY FREQUENCY (most assessed):
+      - phenylalanine: 12,267,024 genomes
+      - arginine: 10,514,592 genomes
+      - threonine, tryptophan: 9,638,376 each
+      - sucrose, lactose: 8,762,160 each
+
+      INTERPRETATION:
+      - "complete": Genome can synthesize/utilize this compound
+      - "not_present": Genome cannot, must acquire externally
+    annotations:
+      source_table: gapmind_pathways
+    attributes:
+      genome_id:
+        range: Genome
+        required: true
+        description: Genome assessed for pathway completeness
+        comments:
+          - "Foreign key: Genome.genome_id"
+      pathway:
+        range: string
+        description: >-
+          Pathway/compound name. Amino acids or carbon sources.
+        examples:
+          - value: "alanine"
+          - value: "phenylalanine"
+          - value: "tryptophan"
+          - value: "glucose"
+          - value: "lactose"
+          - value: "citrate"
+          - value: "acetate"
+      metabolic_category:
+        range: GapmindMetabolicCategory
+        description: Category - amino acid (aa) or carbon source
+        examples:
+          - value: "aa"
+          - value: "carbon"
+      score:
+        range: float
+        description: Pathway completeness score (0-1)
+        minimum_value: 0.0
+        maximum_value: 1.0
+        examples:
+          - value: 1.0
+            description: Complete pathway
+          - value: 0.8
+            description: Mostly complete
+          - value: 0.0
+            description: Not present
+      score_category:
+        range: GapmindScoreCategory
+        description: Categorical assessment of pathway completeness
+        examples:
+          - value: "complete"
+          - value: "likely_complete"
+          - value: "steps_missing_low"
+          - value: "not_present"

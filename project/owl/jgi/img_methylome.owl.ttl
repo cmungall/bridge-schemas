@@ -1,0 +1,1066 @@
+@prefix img_methylome: <https://w3id.org/jgi/img_methylome/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/jgi/img_methylome.owl.ttl> a owl:Ontology ;
+    rdfs:label "img_methylome" .
+
+img_methylome:MethExp a owl:Class ;
+    rdfs:label "meth_exp" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:project_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:exp_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:chemistry_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:exp_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:exp_name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:project_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:exp_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:chemistry_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:notes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_methylome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:exp_contact ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:notes ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:is_public ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:project_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:exp_contact ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:chemistry_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:is_public ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:notes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:is_public ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_methylome:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:add_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:exp_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:exp_contact ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:exp_name ] ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:MethExperimentExtLinks a owl:Class ;
+    rdfs:label "meth_experiment_ext_links" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:custom_url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:db_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:db_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:db_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:custom_url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:custom_url ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom img_methylome:MethExperiment ;
+            owl:onProperty img_methylome:exp_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:MethExperimentPublications a owl:Class ;
+    rdfs:label "meth_experiment_publications" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:publications ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom img_methylome:MethExperiment ;
+            owl:onProperty img_methylome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:publications ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:publications ] ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:MethFunctionCoverage a owl:Class ;
+    rdfs:label "meth_function_coverage" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:modification_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:modification_count ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:function_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:modification_count ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:sample_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:function_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:function_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom img_methylome:MethSample ;
+            owl:onProperty img_methylome:sample_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:function_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom img_methylome:MethExperiment ;
+            owl:onProperty img_methylome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:function_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:function_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:sample_oid ] ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:MethModification a owl:Class ;
+    rdfs:label "meth_modification" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:methylation_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:img_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:score ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:strand ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:start_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:methylation_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:motif_string ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:img_scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:refid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:img_scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:phase ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:tool_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:sample ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_methylome:experiment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_methylome:modification_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:start_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_methylome:motif_summary ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:end_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:score ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:end_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:modification_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:motif_string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:img_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:strand ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:start_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_methylome:img_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_methylome:img_scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:motif_string ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:ipd_ratio ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:coverage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:experiment ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:motif_summary ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:tool_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:motif_summary ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:phase ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:ipd_ratio ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:phase ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:ipd_ratio ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:strand ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:modification_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:coverage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:score ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:end_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:sample ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:context ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:context ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:refid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_methylome:sample ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:tool_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:refid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:methylation_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:coverage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:experiment ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:context ] ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:MethMotif a owl:Class ;
+    rdfs:label "meth_motif" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:tool_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:phase ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:img_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:coverage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:start_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_methylome:sample ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:motif_string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:ipd_ratio ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:strand ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:tool_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_methylome:experiment ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:start_coord ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:refid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:ipd_ratio ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:strand ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:img_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:sample ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:context ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:motif_string ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:score ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:phase ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:refid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:strand ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:end_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:context ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:score ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:end_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:img_scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:motif_string ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_methylome:motif_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:experiment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_methylome:img_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:coverage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:start_coord ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:score ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:tool_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:ipd_ratio ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:motif_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_methylome:img_scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:motif_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:experiment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:end_coord ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:coverage ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:refid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:phase ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:context ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:img_scaffold_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:sample ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:type ] ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:MethMotifSummary a owl:Class ;
+    rdfs:label "meth_motif_summary" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:mean_coverage ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:modification_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:group_tag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom img_methylome:MethSample ;
+            owl:onProperty img_methylome:sample ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:n_genome ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:group_tag ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:center_pos ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:partner_motif_string ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:mean_ipd_ratio ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:img_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:sample ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:n_detected ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:mean_score ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:objective_score ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:partner_motif_string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:fraction ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:group_tag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:center_pos ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:motif_summ_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:mean_ipd_ratio ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom img_methylome:MethExperiment ;
+            owl:onProperty img_methylome:experiment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_methylome:img_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:center_pos ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:modification_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:partner_motif_string ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_methylome:motif_summ_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:motif_string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:mean_coverage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:experiment ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:experiment ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:mean_coverage ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:mean_ipd_ratio ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:objective_score ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:sample ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:n_detected ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:motif_summ_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:fraction ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:objective_score ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:motif_string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:n_genome ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:mean_score ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:fraction ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:motif_string ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:n_genome ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:mean_score ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:img_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:modification_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:n_detected ] ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:MethStats a owl:Class ;
+    rdfs:label "meth_stats" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:n_noncoding_mods ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom img_methylome:MethExperiment ;
+            owl:onProperty img_methylome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:n_noncoding_mods ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:sample_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:n_both_strand_mods ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:n_both_strand_mods ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom img_methylome:MethSample ;
+            owl:onProperty img_methylome:sample_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:n_anticoding_mods ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:n_coding_mods ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:n_coding_mods ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:sample_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty img_methylome:n_noncoding_mods ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:n_anticoding_mods ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:n_coding_mods ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:n_both_strand_mods ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:n_anticoding_mods ] ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:MethSample a owl:Class ;
+    rdfs:label "meth_sample" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_methylome:sample_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom img_methylome:MethExperiment ;
+            owl:onProperty img_methylome:experiment ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:img_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_methylome:img_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:organism_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:img_taxon_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:organism_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:sample_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:sample_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:experiment ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:experiment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:organism_name ] ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:center_pos a owl:DatatypeProperty ;
+    rdfs:label "center_pos" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:custom_url a owl:DatatypeProperty ;
+    rdfs:label "custom_url" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:db_name a owl:DatatypeProperty ;
+    rdfs:label "db_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:fraction a owl:DatatypeProperty ;
+    rdfs:label "fraction" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:function_id a owl:DatatypeProperty ;
+    rdfs:label "function_id" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:function_type a owl:DatatypeProperty ;
+    rdfs:label "function_type" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:group_tag a owl:DatatypeProperty ;
+    rdfs:label "group_tag" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:id a owl:DatatypeProperty ;
+    rdfs:label "id" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:mean_coverage a owl:DatatypeProperty ;
+    rdfs:label "mean_coverage" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:mean_ipd_ratio a owl:DatatypeProperty ;
+    rdfs:label "mean_ipd_ratio" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:mean_score a owl:DatatypeProperty ;
+    rdfs:label "mean_score" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:methylation_coord a owl:DatatypeProperty ;
+    rdfs:label "methylation_coord" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:modification_count a owl:DatatypeProperty ;
+    rdfs:label "modification_count" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:modification_oid a owl:DatatypeProperty ;
+    rdfs:label "modification_oid" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:modification_type a owl:DatatypeProperty ;
+    rdfs:label "modification_type" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:motif_oid a owl:DatatypeProperty ;
+    rdfs:label "motif_oid" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:motif_summ_oid a owl:DatatypeProperty ;
+    rdfs:label "motif_summ_oid" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:motif_summary a owl:DatatypeProperty ;
+    rdfs:label "motif_summary" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:n_anticoding_mods a owl:DatatypeProperty ;
+    rdfs:label "n_anticoding_mods" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:n_both_strand_mods a owl:DatatypeProperty ;
+    rdfs:label "n_both_strand_mods" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:n_coding_mods a owl:DatatypeProperty ;
+    rdfs:label "n_coding_mods" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:n_detected a owl:DatatypeProperty ;
+    rdfs:label "n_detected" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:n_genome a owl:DatatypeProperty ;
+    rdfs:label "n_genome" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:n_noncoding_mods a owl:DatatypeProperty ;
+    rdfs:label "n_noncoding_mods" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:objective_score a owl:DatatypeProperty ;
+    rdfs:label "objective_score" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:organism_name a owl:DatatypeProperty ;
+    rdfs:label "organism_name" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:partner_motif_string a owl:DatatypeProperty ;
+    rdfs:label "partner_motif_string" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:publications a owl:DatatypeProperty ;
+    rdfs:label "publications" ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:MethExperiment a owl:Class ;
+    rdfs:label "meth_experiment" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:project_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:exp_contact ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:is_public ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:add_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:exp_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:is_public ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:exp_contact ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:notes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:exp_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:notes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:chemistry_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:chemistry_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:project_name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:chemistry_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:notes ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:exp_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:integer ;
+            owl:onProperty img_methylome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:add_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty img_methylome:add_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:exp_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty img_methylome:exp_date ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:exp_oid ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:exp_contact ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty img_methylome:project_name ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:is_public ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty img_methylome:exp_name ] ;
+    skos:inScheme <https://w3id.org/jgi/img_methylome> .
+
+img_methylome:add_date a owl:DatatypeProperty .
+
+img_methylome:chemistry_type a owl:DatatypeProperty .
+
+img_methylome:context a owl:DatatypeProperty .
+
+img_methylome:coverage a owl:DatatypeProperty .
+
+img_methylome:end_coord a owl:DatatypeProperty .
+
+img_methylome:exp_contact a owl:DatatypeProperty .
+
+img_methylome:exp_date a owl:DatatypeProperty .
+
+img_methylome:exp_name a owl:DatatypeProperty .
+
+img_methylome:img_scaffold_oid a owl:DatatypeProperty .
+
+img_methylome:ipd_ratio a owl:DatatypeProperty .
+
+img_methylome:is_public a owl:DatatypeProperty .
+
+img_methylome:notes a owl:DatatypeProperty .
+
+img_methylome:phase a owl:DatatypeProperty .
+
+img_methylome:project_name a owl:DatatypeProperty .
+
+img_methylome:refid a owl:DatatypeProperty .
+
+img_methylome:score a owl:DatatypeProperty .
+
+img_methylome:start_coord a owl:DatatypeProperty .
+
+img_methylome:strand a owl:DatatypeProperty .
+
+img_methylome:tool_name a owl:DatatypeProperty .
+
+img_methylome:type a owl:DatatypeProperty .
+
+img_methylome:description a owl:DatatypeProperty .
+
+img_methylome:motif_string a owl:DatatypeProperty .
+
+img_methylome:sample a owl:DatatypeProperty,
+        owl:ObjectProperty .
+
+img_methylome:sample_oid a owl:DatatypeProperty,
+        owl:ObjectProperty .
+
+img_methylome:experiment a owl:DatatypeProperty,
+        owl:ObjectProperty .
+
+img_methylome:img_taxon_oid a owl:DatatypeProperty .
+
+img_methylome:exp_oid a owl:DatatypeProperty,
+        owl:ObjectProperty .
+
+

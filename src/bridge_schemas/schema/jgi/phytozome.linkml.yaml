@@ -1,0 +1,434 @@
+id: https://w3id.org/jgi/phytozome
+name: phytozome
+title: JGI Phytozome Plant Genomics Database
+description: >-
+  Phytozome plant comparative genomics database.
+  Contains genome annotations, gene models, expression data,
+  and comparative genomics for plant species.
+
+  DATABASE: plant-db-7 postgresql.public
+  TABLES: 306
+
+  KEY FUNCTIONALITY:
+  - Plant genome annotations (Chado-based schema)
+  - Gene models and transcripts
+  - Expression data
+  - Comparative genomics and orthologs
+  - Biomaterial and cell line tracking
+
+  CHADO SCHEMA:
+  Uses GMOD Chado schema for genomic data with extensions
+  for plant-specific data types.
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  SO: http://purl.obolibrary.org/obo/SO_
+  GO: http://purl.obolibrary.org/obo/GO_
+
+default_range: string
+imports:
+  - linkml:types
+
+classes:
+  # Core Chado tables
+  Feature:
+    description: >-
+      Genomic feature (gene, mRNA, exon, CDS, etc.).
+      Central table in Chado schema.
+    annotations:
+      source_table: feature (via all_feature_names view)
+    attributes:
+      feature_id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+        description: Feature name/symbol
+      uniquename:
+        range: string
+        description: Unique identifier
+      type_id:
+        range: integer
+        description: SO term for feature type
+        comments:
+          - "Foreign key to cvterm.cvterm_id"
+      organism_id:
+        range: integer
+        comments:
+          - "Foreign key to organism.organism_id"
+      residues:
+        range: string
+        description: Sequence if stored
+      seqlen:
+        range: integer
+      is_analysis:
+        range: boolean
+      is_obsolete:
+        range: boolean
+
+  Analysis:
+    description: >-
+      Computational analysis/pipeline.
+    annotations:
+      source_table: analysis
+    attributes:
+      analysis_id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+      description:
+        range: string
+      program:
+        range: string
+        description: Analysis program name
+      programversion:
+        range: string
+      algorithm:
+        range: string
+      sourcename:
+        range: string
+      sourceversion:
+        range: string
+      sourceuri:
+        range: string
+      timeexecuted:
+        range: datetime
+
+  AnalysisFeature:
+    description: >-
+      Link between analysis and features it produced.
+    annotations:
+      source_table: analysisfeature
+    attributes:
+      analysisfeature_id:
+        identifier: true
+        range: integer
+      feature_id:
+        range: integer
+        comments:
+          - "Foreign key to feature.feature_id"
+      analysis_id:
+        range: integer
+        comments:
+          - "Foreign key to analysis.analysis_id"
+      rawscore:
+        range: float
+      normscore:
+        range: float
+      significance:
+        range: float
+      identity:
+        range: float
+
+  Organism:
+    description: >-
+      Plant organism/species.
+    annotations:
+      source_table: organism (inferred)
+    attributes:
+      organism_id:
+        identifier: true
+        range: integer
+      abbreviation:
+        range: string
+      genus:
+        range: string
+      species:
+        range: string
+      common_name:
+        range: string
+      comment:
+        range: string
+
+  # Controlled vocabulary
+  CV:
+    description: >-
+      Controlled vocabulary (GO, SO, etc.).
+    annotations:
+      source_table: cv
+    attributes:
+      cv_id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+        description: CV name (e.g., "sequence", "gene_ontology")
+      definition:
+        range: string
+
+  CVTerm:
+    description: >-
+      Term from a controlled vocabulary.
+    annotations:
+      source_table: cvterm (inferred from cv_cvterm_count)
+    attributes:
+      cvterm_id:
+        identifier: true
+        range: integer
+      cv_id:
+        range: integer
+        comments:
+          - "Foreign key to cv.cv_id"
+      name:
+        range: string
+      definition:
+        range: string
+      dbxref_id:
+        range: integer
+
+  # Biomaterial/Expression
+  Biomaterial:
+    description: >-
+      Biological material (tissue, cell line, etc.).
+    annotations:
+      source_table: biomaterial
+    attributes:
+      biomaterial_id:
+        identifier: true
+        range: integer
+      taxon_id:
+        range: integer
+      biosourceprovider_id:
+        range: integer
+      name:
+        range: string
+      description:
+        range: string
+
+  BiomaterialProp:
+    description: >-
+      Property of a biomaterial.
+    annotations:
+      source_table: biomaterialprop
+    attributes:
+      biomaterialprop_id:
+        identifier: true
+        range: integer
+      biomaterial_id:
+        range: integer
+        comments:
+          - "Foreign key to biomaterial.biomaterial_id"
+      type_id:
+        range: integer
+      value:
+        range: string
+      rank:
+        range: integer
+
+  BiomaterialRelationship:
+    description: >-
+      Relationship between biomaterials.
+    annotations:
+      source_table: biomaterial_relationship
+    attributes:
+      biomaterial_relationship_id:
+        identifier: true
+        range: integer
+      subject_id:
+        range: integer
+      object_id:
+        range: integer
+      type_id:
+        range: integer
+
+  BiomaterialTreatment:
+    description: >-
+      Treatment applied to biomaterial.
+    annotations:
+      source_table: biomaterial_treatment
+    attributes:
+      biomaterial_treatment_id:
+        identifier: true
+        range: integer
+      biomaterial_id:
+        range: integer
+      treatment_id:
+        range: integer
+
+  # Cell lines
+  CellLine:
+    description: >-
+      Cell line information.
+    annotations:
+      source_table: cell_line
+    attributes:
+      cell_line_id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+      uniquename:
+        range: string
+      organism_id:
+        range: integer
+      timeaccessioned:
+        range: datetime
+      timelastmodified:
+        range: datetime
+
+  CellLineProp:
+    description: >-
+      Cell line property.
+    annotations:
+      source_table: cell_lineprop
+    attributes:
+      cell_lineprop_id:
+        identifier: true
+        range: integer
+      cell_line_id:
+        range: integer
+      type_id:
+        range: integer
+      value:
+        range: string
+
+  CellLineFeature:
+    description: >-
+      Feature associated with cell line.
+    annotations:
+      source_table: cell_line_feature
+    attributes:
+      cell_line_feature_id:
+        identifier: true
+        range: integer
+      cell_line_id:
+        range: integer
+      feature_id:
+        range: integer
+
+  # Expression/Assay
+  Assay:
+    description: >-
+      Expression assay experiment.
+    annotations:
+      source_table: assay
+    attributes:
+      assay_id:
+        identifier: true
+        range: integer
+      arraydesign_id:
+        range: integer
+      protocol_id:
+        range: integer
+      assaydate:
+        range: datetime
+      name:
+        range: string
+      description:
+        range: string
+
+  AssayBiomaterial:
+    description: >-
+      Biomaterial used in assay.
+    annotations:
+      source_table: assay_biomaterial
+    attributes:
+      assay_biomaterial_id:
+        identifier: true
+        range: integer
+      assay_id:
+        range: integer
+      biomaterial_id:
+        range: integer
+      channel_id:
+        range: integer
+
+  ArrayDesign:
+    description: >-
+      Microarray or expression platform design.
+    annotations:
+      source_table: arraydesign
+    attributes:
+      arraydesign_id:
+        identifier: true
+        range: integer
+      manufacturer_id:
+        range: integer
+      platformtype_id:
+        range: integer
+      name:
+        range: string
+      version:
+        range: string
+
+  # Acquisition/data
+  Acquisition:
+    description: >-
+      Data acquisition from assay.
+    annotations:
+      source_table: acquisition
+    attributes:
+      acquisition_id:
+        identifier: true
+        range: integer
+      assay_id:
+        range: integer
+      protocol_id:
+        range: integer
+      channel_id:
+        range: integer
+      acquisitiondate:
+        range: datetime
+      name:
+        range: string
+      uri:
+        range: string
+
+  # Analysis sets
+  AnalysisSet:
+    description: >-
+      Set of related analyses.
+    annotations:
+      source_table: analysis_set
+    attributes:
+      analysis_set_id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+      description:
+        range: string
+
+  AnalysisGrp:
+    description: >-
+      Group of analyses.
+    annotations:
+      source_table: analysisgrp
+    attributes:
+      analysisgrp_id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+
+  # Contact
+  Contact:
+    description: >-
+      Contact/researcher information.
+    annotations:
+      source_table: contact
+    attributes:
+      contact_id:
+        identifier: true
+        range: integer
+      name:
+        range: string
+      description:
+        range: string
+
+  ContactRelationship:
+    description: >-
+      Relationship between contacts.
+    annotations:
+      source_table: contact_relationship
+    attributes:
+      contact_relationship_id:
+        identifier: true
+        range: integer
+      subject_id:
+        range: integer
+      object_id:
+        range: integer
+      type_id:
+        range: integer

@@ -1,0 +1,437 @@
+id: https://w3id.org/jgi/sdm_metadata
+name: sdm_metadata
+title: JGI Scientific Data Management Metadata
+description: >-
+  Scientific Data Management (SDM) metadata database for JGI.
+  Manages analysis workflows, file metadata, NCBI submissions,
+  and data publishing.
+
+  DATABASE: sdm dev mongo.sdm_metadata_dev
+  TABLES: 33
+
+  KEY FUNCTIONALITY:
+  - Analysis workflow management
+  - File and data store tracking
+  - NCBI/SRA submission management
+  - Metadata templates and macros
+  - Publishing flag management
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  SRA: https://www.ncbi.nlm.nih.gov/sra/
+
+default_range: string
+imports:
+  - linkml:types
+
+classes:
+  Analysis:
+    description: >-
+      Analysis workflow or pipeline run.
+    annotations:
+      source_table: analysis
+    attributes:
+      id:
+        identifier: true
+        range: string
+        description: Analysis identifier
+      name:
+        range: string
+      template_id:
+        range: string
+        comments:
+          - "Foreign key to AnalysisTemplate.id"
+      status:
+        range: string
+
+  AnalysisTemplate:
+    description: >-
+      Template defining an analysis workflow.
+    annotations:
+      source_table: analysis_template
+    attributes:
+      id:
+        identifier: true
+        range: string
+      name:
+        range: string
+      description:
+        range: string
+
+  AnalysisTagTemplate:
+    description: >-
+      Tag template for analysis categorization.
+    annotations:
+      source_table: analysis_tag_template
+    attributes:
+      id:
+        identifier: true
+        range: string
+      name:
+        range: string
+
+  AnalysisPublishingFlags:
+    description: >-
+      Publishing status flags for analyses.
+    annotations:
+      source_table: analysis_publishingflags
+    attributes:
+      id:
+        identifier: true
+        range: string
+      analysis_id:
+        range: string
+        comments:
+          - "Foreign key to Analysis.id"
+      is_public:
+        range: boolean
+      published_date:
+        range: datetime
+
+  AnalysisPlocations:
+    description: >-
+      Physical locations for analysis data.
+    annotations:
+      source_table: analysis_plocations
+    attributes:
+      id:
+        identifier: true
+        range: string
+      analysis_id:
+        range: string
+      location:
+        range: string
+
+  AnalysisCallerWarnings:
+    description: >-
+      Warnings from analysis callers/tools.
+    annotations:
+      source_table: analysis_caller_warnings
+    attributes:
+      id:
+        identifier: true
+        range: string
+      analysis_id:
+        range: string
+      warning_message:
+        range: string
+
+  AnalysisMacro:
+    description: >-
+      Macro definitions for analysis workflows.
+    annotations:
+      source_table: analysis_macros
+    attributes:
+      id:
+        identifier: true
+        range: string
+      macro_id:
+        range: string
+        comments:
+          - "Foreign key to Macro.id"
+
+  Macro:
+    description: >-
+      Reusable macro for workflows.
+    annotations:
+      source_table: macro
+    attributes:
+      id:
+        identifier: true
+        range: string
+      name:
+        range: string
+      definition:
+        range: string
+
+  DataStore:
+    description: >-
+      Data storage location.
+    annotations:
+      source_table: data_store
+    attributes:
+      id:
+        identifier: true
+        range: string
+      name:
+        range: string
+      path:
+        range: string
+
+  File:
+    description: >-
+      File metadata record.
+    annotations:
+      source_table: file
+    attributes:
+      id:
+        identifier: true
+        range: string
+      name:
+        range: string
+      path:
+        range: string
+      size:
+        range: integer
+      checksum:
+        range: string
+      data_store_id:
+        range: string
+        comments:
+          - "Foreign key to DataStore.id"
+
+  FileIngest:
+    description: >-
+      File ingestion record.
+    annotations:
+      source_table: file_ingest
+    attributes:
+      id:
+        identifier: true
+        range: string
+      file_id:
+        range: string
+      ingest_time:
+        range: datetime
+      status:
+        range: string
+
+  DeletedFile:
+    description: >-
+      Record of deleted files.
+    annotations:
+      source_table: deleted_file
+    attributes:
+      id:
+        identifier: true
+        range: string
+      original_file_id:
+        range: string
+      deleted_time:
+        range: datetime
+
+  DeletedAnalysis:
+    description: >-
+      Record of deleted analyses.
+    annotations:
+      source_table: deleted_analysis
+    attributes:
+      id:
+        identifier: true
+        range: string
+      original_analysis_id:
+        range: string
+      deleted_time:
+        range: datetime
+
+  Metadata:
+    description: >-
+      Generic metadata record.
+    annotations:
+      source_table: metadata
+    attributes:
+      id:
+        identifier: true
+        range: string
+      key:
+        range: string
+      value:
+        range: string
+
+  MetadataRefresh:
+    description: >-
+      Metadata refresh/update record.
+    annotations:
+      source_table: metadata_refresh
+    attributes:
+      id:
+        identifier: true
+        range: string
+      refresh_time:
+        range: datetime
+
+  NcbiSubmission:
+    description: >-
+      NCBI submission record.
+    annotations:
+      source_table: ncbi_submissions
+    attributes:
+      id:
+        identifier: true
+        range: string
+      analysis_id:
+        range: string
+      submission_id:
+        range: string
+      status:
+        range: string
+
+  NcbiTaxon:
+    description: >-
+      NCBI taxonomy reference.
+    annotations:
+      source_table: ncbi_taxon
+    attributes:
+      id:
+        identifier: true
+        range: string
+      taxon_id:
+        range: integer
+      name:
+        range: string
+
+  NcbiWorker:
+    description: >-
+      NCBI submission worker process.
+    annotations:
+      source_table: ncbi_workers
+    attributes:
+      id:
+        identifier: true
+        range: string
+      status:
+        range: string
+
+  SraSubmission:
+    description: >-
+      SRA (Sequence Read Archive) submission.
+    annotations:
+      source_table: sra_submissions
+    attributes:
+      id:
+        identifier: true
+        range: string
+      sra_id:
+        range: string
+      status:
+        range: string
+
+  SraUnsubmittable:
+    description: >-
+      Records that cannot be submitted to SRA.
+    annotations:
+      source_table: sra_unsubmittable
+    attributes:
+      id:
+        identifier: true
+        range: string
+      reason:
+        range: string
+
+  Publication:
+    description: >-
+      Publication linked to data.
+    annotations:
+      source_table: pubs
+    attributes:
+      id:
+        identifier: true
+        range: string
+      pmid:
+        range: string
+      doi:
+        range: string
+
+  Service:
+    description: >-
+      SDM service definition.
+    annotations:
+      source_table: service
+    attributes:
+      id:
+        identifier: true
+        range: string
+      name:
+        range: string
+
+  ProcessService:
+    description: >-
+      Process service configuration.
+    annotations:
+      source_table: process_services
+    attributes:
+      id:
+        identifier: true
+        range: string
+      service_id:
+        range: string
+
+  Subscription:
+    description: >-
+      Data subscription.
+    annotations:
+      source_table: subscriptions
+    attributes:
+      id:
+        identifier: true
+        range: string
+      user_id:
+        range: string
+
+  SubscriptionJira:
+    description: >-
+      Jira ticket linked to subscription.
+    annotations:
+      source_table: subscription_jira
+    attributes:
+      id:
+        identifier: true
+        range: string
+      jira_id:
+        range: string
+
+  Template:
+    description: >-
+      Generic template.
+    annotations:
+      source_table: template
+    attributes:
+      id:
+        identifier: true
+        range: string
+      name:
+        range: string
+
+  User:
+    description: >-
+      SDM user.
+    annotations:
+      source_table: user
+    attributes:
+      id:
+        identifier: true
+        range: string
+      username:
+        range: string
+      email:
+        range: string
+
+  Email:
+    description: >-
+      Email notification record.
+    annotations:
+      source_table: email
+    attributes:
+      id:
+        identifier: true
+        range: string
+      recipient:
+        range: string
+      subject:
+        range: string
+      sent_time:
+        range: datetime
+
+  Query:
+    description: >-
+      Saved query.
+    annotations:
+      source_table: queries
+    attributes:
+      id:
+        identifier: true
+        range: string
+      name:
+        range: string
+      query_text:
+        range: string

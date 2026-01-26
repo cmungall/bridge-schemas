@@ -1,0 +1,65 @@
+
+
+# Slot: est_copy_30 
+
+
+
+URI: [img_ext:est_copy_30](https://w3id.org/jgi/img_ext/est_copy_30)
+Alias: est_copy_30
+
+<!-- no inheritance hierarchy -->
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+| [DtPhyloTaxonStats](DtPhyloTaxonStats.md) |  |  no  |
+| [DtAllPhyloTaxonStats](DtAllPhyloTaxonStats.md) |  |  no  |
+
+
+
+
+
+
+## Properties
+
+* Range: [String](String.md)
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | img_ext:est_copy_30 |
+| native | img_ext:est_copy_30 |
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: est_copy_30
+alias: est_copy_30
+domain_of:
+- dt_all_phylo_taxon_stats
+- dt_phylo_taxon_stats
+range: string
+
+```
+</details>
