@@ -200,6 +200,18 @@
   </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../case-studies/microbial-isolates/">
+<span class="md-ellipsis">
+    
+  
+    Microbial Isolates
+  
+
+    
+  </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -814,10 +826,24 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-traitunified">Class: TraitUnified</h1>
 <p><em>Unified trait annotations across samples from multiple sources. Provides consistent trait vocabulary across studies.</em></p>
+<p><em>STATUS: PLANNED - Not yet implemented in NMDC database.</em></p>
+<p><em>INTENDED SOURCES: - GOLD organism_phenotype (7,113 curated organism-phenotype mappings) - IMG phenotype_rule_taxons (2M+ predicted trait-taxon mappings) - Literature-derived trait annotations</em></p>
+<p><em>INTENDED TRAIT CATEGORIES (from available sources): - Phenotype: Acidophile, Alkaliphile, Pathogen, Symbiont, Biofilm, etc. (159 terms) - Metabolism: Denitrifying, Nitrogen fixation, Methanogen, Sulfate reducer, etc. (157 terms) - Energy source: Autotroph, Heterotroph, Phototroph, Chemolithotroph, etc. (31 terms) - Oxygen requirement: Aerobe, Anaerobe, Facultative, Microaerophilic (7 terms) - Cell shape: Rod-shaped, Coccus-shaped, Spiral-shaped, Filament-shaped, etc. (18 terms) - Motility: Motile, Nonmotile (2 terms) - Sporulation: Sporulating, Nonsporulating (2 terms)</em></p>
+<p><em>EXAMPLE TRAITS (from GOLD cvphenotype): | ID | Term                  | Usage Count | |----|----------------------|-------------| | 122| Pathogen             | 3,132       | | 104| Non-Pathogen         | 576         | | 35 | Catalase negative    | 520         | | 36 | Catalase positive    | 414         | | 116| Opportunistic Pathogen| 279        | | 4  | Acidophile           | 143         | | 134| Probiotic            | 106         | | 138| Radiation resistant  | 49          | | 88 | Magnetotactic        | (rare)      | | 27 | Bioluminescent       | (rare)      |</em></p>
 <p>URI: <a href="https://w3id.org/kbase/nmdc_core/TraitUnified">https://w3id.org/kbase/nmdc_core/TraitUnified</a></p>
 <div class="mermaid"> classDiagram
     class TraitUnified
     click TraitUnified href "../TraitUnified/"
+      TraitUnified : definition
+
+      TraitUnified : synonyms
+
+      TraitUnified : trait_category
+
+      TraitUnified : trait_id
+
+      TraitUnified : trait_name
+
 
 </div>
 <!-- no inheritance hierarchy -->
@@ -833,10 +859,34 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><a href="../trait_id/">trait_id</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Unified trait identifier</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../trait_name/">trait_name</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Human-readable trait name</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../trait_category/">trait_category</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Category of trait (phenotype, metabolism, energy_source, oxygen_req, cell_sha...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../definition/">definition</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Formal definition of the trait</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../synonyms/">synonyms</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Semicolon-separated alternative names</td>
+<td>direct</td>
 </tr>
 </tbody>
 </table>
@@ -853,6 +903,10 @@
 <tr>
 <td>source_table</td>
 <td>trait_unified</td>
+</tr>
+<tr>
+<td>status</td>
+<td>planned</td>
 </tr>
 </tbody>
 </table>
@@ -888,9 +942,96 @@
 <span class="w">  </span><span class="nt">source_table</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source_table</span>
 <span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trait_unified</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unified trait annotations across samples from multiple sources. Provides</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">consistent trait vocabulary across studies.</span>
+<span class="w">  </span><span class="nt">status</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">status</span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">planned</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Unified</span><span class="nv"> </span><span class="s">trait</span><span class="nv"> </span><span class="s">annotations</span><span class="nv"> </span><span class="s">across</span><span class="nv"> </span><span class="s">samples</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">multiple</span><span class="nv"> </span><span class="s">sources.</span><span class="nv"> </span><span class="s">Provides</span>
+<span class="w">  </span><span class="s">consistent</span><span class="nv"> </span><span class="s">trait</span><span class="nv"> </span><span class="s">vocabulary</span><span class="nv"> </span><span class="s">across</span><span class="nv"> </span><span class="s">studies.</span>
+
+<span class="w">  </span><span class="s">STATUS:</span><span class="nv"> </span><span class="s">PLANNED</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Not</span><span class="nv"> </span><span class="s">yet</span><span class="nv"> </span><span class="s">implemented</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">NMDC</span><span class="nv"> </span><span class="s">database.</span>
+
+<span class="w">  </span><span class="s">INTENDED</span><span class="nv"> </span><span class="s">SOURCES:</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">GOLD</span><span class="nv"> </span><span class="s">organism_phenotype</span><span class="nv"> </span><span class="s">(7,113</span><span class="nv"> </span><span class="s">curated</span><span class="nv"> </span><span class="s">organism-phenotype</span><span class="nv"> </span><span class="s">mappings)</span>
+<span class="w">  </span><span class="s">-</span><span class="nv"> </span><span class="s">IMG</span><span class="nv"> </span><span class="s">phenotype_rule_taxons</span><span class="nv"> </span><span class="s">(2M+</span><span class="nv"> </span><span class="s">predicted</span><span class="nv"> </span><span class="s">trait-taxon</span><span class="nv"> </span><span class="s">mappings)</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Literature-derived</span>
+<span class="w">  </span><span class="s">trait</span><span class="nv"> </span><span class="s">annotations</span>
+
+<span class="w">  </span><span class="s">INTENDED</span><span class="nv"> </span><span class="s">TRAIT</span><span class="nv"> </span><span class="s">CATEGORIES</span><span class="nv"> </span><span class="s">(from</span><span class="nv"> </span><span class="s">available</span><span class="nv"> </span><span class="s">sources):</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Phenotype:</span><span class="nv"> </span><span class="s">Acidophile,</span><span class="nv"> </span><span class="s">Alkaliphile,</span>
+<span class="w">  </span><span class="s">Pathogen,</span><span class="nv"> </span><span class="s">Symbiont,</span><span class="nv"> </span><span class="s">Biofilm,</span><span class="nv"> </span><span class="s">etc.</span><span class="nv"> </span><span class="s">(159</span><span class="nv"> </span><span class="s">terms)</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Metabolism:</span><span class="nv"> </span><span class="s">Denitrifying,</span><span class="nv"> </span><span class="s">Nitrogen</span>
+<span class="w">  </span><span class="s">fixation,</span><span class="nv"> </span><span class="s">Methanogen,</span><span class="nv"> </span><span class="s">Sulfate</span><span class="nv"> </span><span class="s">reducer,</span><span class="nv"> </span><span class="s">etc.</span><span class="nv"> </span><span class="s">(157</span><span class="nv"> </span><span class="s">terms)</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Energy</span><span class="nv"> </span><span class="s">source:</span><span class="nv"> </span><span class="s">Autotroph,</span>
+<span class="w">  </span><span class="s">Heterotroph,</span><span class="nv"> </span><span class="s">Phototroph,</span><span class="nv"> </span><span class="s">Chemolithotroph,</span><span class="nv"> </span><span class="s">etc.</span><span class="nv"> </span><span class="s">(31</span><span class="nv"> </span><span class="s">terms)</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Oxygen</span><span class="nv"> </span><span class="s">requirement:</span>
+<span class="w">  </span><span class="s">Aerobe,</span><span class="nv"> </span><span class="s">Anaerobe,</span><span class="nv"> </span><span class="s">Facultative,</span><span class="nv"> </span><span class="s">Microaerophilic</span><span class="nv"> </span><span class="s">(7</span><span class="nv"> </span><span class="s">terms)</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Cell</span><span class="nv"> </span><span class="s">shape:</span><span class="nv"> </span><span class="s">Rod-shaped,</span>
+<span class="w">  </span><span class="s">Coccus-shaped,</span><span class="nv"> </span><span class="s">Spiral-shaped,</span><span class="nv"> </span><span class="s">Filament-shaped,</span><span class="nv"> </span><span class="s">etc.</span><span class="nv"> </span><span class="s">(18</span><span class="nv"> </span><span class="s">terms)</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Motility:</span><span class="nv"> </span><span class="s">Motile,</span>
+<span class="w">  </span><span class="s">Nonmotile</span><span class="nv"> </span><span class="s">(2</span><span class="nv"> </span><span class="s">terms)</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Sporulation:</span><span class="nv"> </span><span class="s">Sporulating,</span><span class="nv"> </span><span class="s">Nonsporulating</span><span class="nv"> </span><span class="s">(2</span><span class="nv"> </span><span class="s">terms)</span>
+
+<span class="w">  </span><span class="s">EXAMPLE</span><span class="nv"> </span><span class="s">TRAITS</span><span class="nv"> </span><span class="s">(from</span><span class="nv"> </span><span class="s">GOLD</span><span class="nv"> </span><span class="s">cvphenotype):</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">ID</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">Term</span><span class="nv">                  </span><span class="s">|</span><span class="nv"> </span><span class="s">Usage</span><span class="nv"> </span><span class="s">Count</span>
+<span class="w">  </span><span class="s">|</span><span class="nv"> </span><span class="s">|----|----------------------|-------------|</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">122|</span><span class="nv"> </span><span class="s">Pathogen</span><span class="nv">             </span><span class="s">|</span><span class="nv"> </span><span class="s">3,132</span><span class="nv">       </span><span class="s">|</span>
+<span class="w">  </span><span class="s">|</span><span class="nv"> </span><span class="s">104|</span><span class="nv"> </span><span class="s">Non-Pathogen</span><span class="nv">         </span><span class="s">|</span><span class="nv"> </span><span class="s">576</span><span class="nv">         </span><span class="s">|</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">35</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">Catalase</span><span class="nv"> </span><span class="s">negative</span><span class="nv">    </span><span class="s">|</span><span class="nv"> </span><span class="s">520</span><span class="nv">         </span><span class="s">|</span>
+<span class="w">  </span><span class="s">|</span><span class="nv"> </span><span class="s">36</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">Catalase</span><span class="nv"> </span><span class="s">positive</span><span class="nv">    </span><span class="s">|</span><span class="nv"> </span><span class="s">414</span><span class="nv">         </span><span class="s">|</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">116|</span><span class="nv"> </span><span class="s">Opportunistic</span><span class="nv"> </span><span class="s">Pathogen|</span><span class="nv"> </span><span class="s">279</span><span class="nv">        </span><span class="s">|</span>
+<span class="w">  </span><span class="s">|</span><span class="nv"> </span><span class="s">4</span><span class="nv">  </span><span class="s">|</span><span class="nv"> </span><span class="s">Acidophile</span><span class="nv">           </span><span class="s">|</span><span class="nv"> </span><span class="s">143</span><span class="nv">         </span><span class="s">|</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">134|</span><span class="nv"> </span><span class="s">Probiotic</span><span class="nv">            </span><span class="s">|</span><span class="nv"> </span><span class="s">106</span><span class="nv">         </span><span class="s">|</span>
+<span class="w">  </span><span class="s">|</span><span class="nv"> </span><span class="s">138|</span><span class="nv"> </span><span class="s">Radiation</span><span class="nv"> </span><span class="s">resistant</span><span class="nv">  </span><span class="s">|</span><span class="nv"> </span><span class="s">49</span><span class="nv">          </span><span class="s">|</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">88</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">Magnetotactic</span><span class="nv">        </span><span class="s">|</span><span class="nv"> </span><span class="s">(rare)</span><span class="nv">      </span><span class="s">|</span>
+<span class="w">  </span><span class="s">|</span><span class="nv"> </span><span class="s">27</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">Bioluminescent</span><span class="nv">       </span><span class="s">|</span><span class="nv"> </span><span class="s">(rare)</span><span class="nv">      </span><span class="s">|'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">trait_id</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trait_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unified trait identifier</span>
+<span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TRAIT:0000122</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pathogen trait</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TRAIT:0000004</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Acidophile trait</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitUnified</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitTaxonomyMapping</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">trait_name</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trait_name</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Human-readable trait name</span>
+<span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pathogen</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Acidophile</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Nitrogen fixation</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aerobe</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitUnified</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">trait_category</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trait_category</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Category of trait (phenotype, metabolism, energy_source, oxygen_req,</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">cell_shape, motility, sporulation)</span>
+<span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">phenotype</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">metabolism</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">energy_source</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">oxygen_req</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitUnified</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">definition</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">definition</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Formal definition of the trait</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GoTerms</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">KeggKoTerms</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitUnified</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">synonyms</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">synonyms</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Semicolon-separated alternative names</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GoTerms</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EcTerms</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitUnified</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 </code></pre></div>
 </details>
 <h3 id="induced">Induced</h3>
@@ -900,9 +1041,106 @@
 <span class="w">  </span><span class="nt">source_table</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source_table</span>
 <span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trait_unified</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unified trait annotations across samples from multiple sources. Provides</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">consistent trait vocabulary across studies.</span>
+<span class="w">  </span><span class="nt">status</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">status</span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">planned</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'Unified</span><span class="nv"> </span><span class="s">trait</span><span class="nv"> </span><span class="s">annotations</span><span class="nv"> </span><span class="s">across</span><span class="nv"> </span><span class="s">samples</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">multiple</span><span class="nv"> </span><span class="s">sources.</span><span class="nv"> </span><span class="s">Provides</span>
+<span class="w">  </span><span class="s">consistent</span><span class="nv"> </span><span class="s">trait</span><span class="nv"> </span><span class="s">vocabulary</span><span class="nv"> </span><span class="s">across</span><span class="nv"> </span><span class="s">studies.</span>
+
+<span class="w">  </span><span class="s">STATUS:</span><span class="nv"> </span><span class="s">PLANNED</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Not</span><span class="nv"> </span><span class="s">yet</span><span class="nv"> </span><span class="s">implemented</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">NMDC</span><span class="nv"> </span><span class="s">database.</span>
+
+<span class="w">  </span><span class="s">INTENDED</span><span class="nv"> </span><span class="s">SOURCES:</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">GOLD</span><span class="nv"> </span><span class="s">organism_phenotype</span><span class="nv"> </span><span class="s">(7,113</span><span class="nv"> </span><span class="s">curated</span><span class="nv"> </span><span class="s">organism-phenotype</span><span class="nv"> </span><span class="s">mappings)</span>
+<span class="w">  </span><span class="s">-</span><span class="nv"> </span><span class="s">IMG</span><span class="nv"> </span><span class="s">phenotype_rule_taxons</span><span class="nv"> </span><span class="s">(2M+</span><span class="nv"> </span><span class="s">predicted</span><span class="nv"> </span><span class="s">trait-taxon</span><span class="nv"> </span><span class="s">mappings)</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Literature-derived</span>
+<span class="w">  </span><span class="s">trait</span><span class="nv"> </span><span class="s">annotations</span>
+
+<span class="w">  </span><span class="s">INTENDED</span><span class="nv"> </span><span class="s">TRAIT</span><span class="nv"> </span><span class="s">CATEGORIES</span><span class="nv"> </span><span class="s">(from</span><span class="nv"> </span><span class="s">available</span><span class="nv"> </span><span class="s">sources):</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Phenotype:</span><span class="nv"> </span><span class="s">Acidophile,</span><span class="nv"> </span><span class="s">Alkaliphile,</span>
+<span class="w">  </span><span class="s">Pathogen,</span><span class="nv"> </span><span class="s">Symbiont,</span><span class="nv"> </span><span class="s">Biofilm,</span><span class="nv"> </span><span class="s">etc.</span><span class="nv"> </span><span class="s">(159</span><span class="nv"> </span><span class="s">terms)</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Metabolism:</span><span class="nv"> </span><span class="s">Denitrifying,</span><span class="nv"> </span><span class="s">Nitrogen</span>
+<span class="w">  </span><span class="s">fixation,</span><span class="nv"> </span><span class="s">Methanogen,</span><span class="nv"> </span><span class="s">Sulfate</span><span class="nv"> </span><span class="s">reducer,</span><span class="nv"> </span><span class="s">etc.</span><span class="nv"> </span><span class="s">(157</span><span class="nv"> </span><span class="s">terms)</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Energy</span><span class="nv"> </span><span class="s">source:</span><span class="nv"> </span><span class="s">Autotroph,</span>
+<span class="w">  </span><span class="s">Heterotroph,</span><span class="nv"> </span><span class="s">Phototroph,</span><span class="nv"> </span><span class="s">Chemolithotroph,</span><span class="nv"> </span><span class="s">etc.</span><span class="nv"> </span><span class="s">(31</span><span class="nv"> </span><span class="s">terms)</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Oxygen</span><span class="nv"> </span><span class="s">requirement:</span>
+<span class="w">  </span><span class="s">Aerobe,</span><span class="nv"> </span><span class="s">Anaerobe,</span><span class="nv"> </span><span class="s">Facultative,</span><span class="nv"> </span><span class="s">Microaerophilic</span><span class="nv"> </span><span class="s">(7</span><span class="nv"> </span><span class="s">terms)</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Cell</span><span class="nv"> </span><span class="s">shape:</span><span class="nv"> </span><span class="s">Rod-shaped,</span>
+<span class="w">  </span><span class="s">Coccus-shaped,</span><span class="nv"> </span><span class="s">Spiral-shaped,</span><span class="nv"> </span><span class="s">Filament-shaped,</span><span class="nv"> </span><span class="s">etc.</span><span class="nv"> </span><span class="s">(18</span><span class="nv"> </span><span class="s">terms)</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Motility:</span><span class="nv"> </span><span class="s">Motile,</span>
+<span class="w">  </span><span class="s">Nonmotile</span><span class="nv"> </span><span class="s">(2</span><span class="nv"> </span><span class="s">terms)</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Sporulation:</span><span class="nv"> </span><span class="s">Sporulating,</span><span class="nv"> </span><span class="s">Nonsporulating</span><span class="nv"> </span><span class="s">(2</span><span class="nv"> </span><span class="s">terms)</span>
+
+<span class="w">  </span><span class="s">EXAMPLE</span><span class="nv"> </span><span class="s">TRAITS</span><span class="nv"> </span><span class="s">(from</span><span class="nv"> </span><span class="s">GOLD</span><span class="nv"> </span><span class="s">cvphenotype):</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">ID</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">Term</span><span class="nv">                  </span><span class="s">|</span><span class="nv"> </span><span class="s">Usage</span><span class="nv"> </span><span class="s">Count</span>
+<span class="w">  </span><span class="s">|</span><span class="nv"> </span><span class="s">|----|----------------------|-------------|</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">122|</span><span class="nv"> </span><span class="s">Pathogen</span><span class="nv">             </span><span class="s">|</span><span class="nv"> </span><span class="s">3,132</span><span class="nv">       </span><span class="s">|</span>
+<span class="w">  </span><span class="s">|</span><span class="nv"> </span><span class="s">104|</span><span class="nv"> </span><span class="s">Non-Pathogen</span><span class="nv">         </span><span class="s">|</span><span class="nv"> </span><span class="s">576</span><span class="nv">         </span><span class="s">|</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">35</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">Catalase</span><span class="nv"> </span><span class="s">negative</span><span class="nv">    </span><span class="s">|</span><span class="nv"> </span><span class="s">520</span><span class="nv">         </span><span class="s">|</span>
+<span class="w">  </span><span class="s">|</span><span class="nv"> </span><span class="s">36</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">Catalase</span><span class="nv"> </span><span class="s">positive</span><span class="nv">    </span><span class="s">|</span><span class="nv"> </span><span class="s">414</span><span class="nv">         </span><span class="s">|</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">116|</span><span class="nv"> </span><span class="s">Opportunistic</span><span class="nv"> </span><span class="s">Pathogen|</span><span class="nv"> </span><span class="s">279</span><span class="nv">        </span><span class="s">|</span>
+<span class="w">  </span><span class="s">|</span><span class="nv"> </span><span class="s">4</span><span class="nv">  </span><span class="s">|</span><span class="nv"> </span><span class="s">Acidophile</span><span class="nv">           </span><span class="s">|</span><span class="nv"> </span><span class="s">143</span><span class="nv">         </span><span class="s">|</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">134|</span><span class="nv"> </span><span class="s">Probiotic</span><span class="nv">            </span><span class="s">|</span><span class="nv"> </span><span class="s">106</span><span class="nv">         </span><span class="s">|</span>
+<span class="w">  </span><span class="s">|</span><span class="nv"> </span><span class="s">138|</span><span class="nv"> </span><span class="s">Radiation</span><span class="nv"> </span><span class="s">resistant</span><span class="nv">  </span><span class="s">|</span><span class="nv"> </span><span class="s">49</span><span class="nv">          </span><span class="s">|</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">88</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">Magnetotactic</span><span class="nv">        </span><span class="s">|</span><span class="nv"> </span><span class="s">(rare)</span><span class="nv">      </span><span class="s">|</span>
+<span class="w">  </span><span class="s">|</span><span class="nv"> </span><span class="s">27</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">Bioluminescent</span><span class="nv">       </span><span class="s">|</span><span class="nv"> </span><span class="s">(rare)</span><span class="nv">      </span><span class="s">|'</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">trait_id</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trait_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unified trait identifier</span>
+<span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TRAIT:0000122</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pathogen trait</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TRAIT:0000004</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Acidophile trait</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trait_id</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitUnified</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitUnified</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitTaxonomyMapping</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">trait_name</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trait_name</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Human-readable trait name</span>
+<span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pathogen</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Acidophile</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Nitrogen fixation</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aerobe</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trait_name</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitUnified</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitUnified</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">trait_category</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trait_category</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Category of trait (phenotype, metabolism, energy_source, oxygen_req,</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">cell_shape, motility, sporulation)</span>
+<span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">phenotype</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">metabolism</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">energy_source</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">oxygen_req</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trait_category</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitUnified</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitUnified</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">definition</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">definition</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Formal definition of the trait</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">definition</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitUnified</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GoTerms</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">KeggKoTerms</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitUnified</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">synonyms</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">synonyms</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Semicolon-separated alternative names</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">synonyms</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitUnified</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GoTerms</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EcTerms</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitUnified</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 </code></pre></div>
 </details>
 </article>

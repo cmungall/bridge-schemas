@@ -200,6 +200,18 @@
   </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../case-studies/microbial-isolates/">
+<span class="md-ellipsis">
+    
+  
+    Microbial Isolates
+  
+
+    
+  </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -814,10 +826,54 @@
 <article class="md-content__inner md-typeset">
 <h1 id="class-traitsources">Class: TraitSources</h1>
 <p><em>Sources for trait data (databases, literature, predictions). Provenance information for trait assignments.</em></p>
+<p><em>STATUS: PLANNED - Not yet implemented in NMDC database.</em></p>
+<p><em>This table will track where trait annotations come from, distinguishing between curated assertions, rule-based predictions, and literature mining.</em></p>
+<p><em>INTENDED SOURCE TYPES:</em></p>
+<p><em>1. GOLD Curated Phenotypes (gold_curated)</em></p>
+<p>_   - Source: GOLD database cvphenotype + organism_phenotype tables_</p>
+<p>_   - Method: Manual curation by GOLD annotators_</p>
+<p>_   - Coverage: 7,113 organism-phenotype mappings across 159 phenotype terms_</p>
+<p>_   - Confidence: High (expert-curated)_</p>
+<p>_   - Example: Picrophilus torridus -&gt; Acidophile (curator-assigned)_</p>
+<p>__</p>
+<p><em>2. IMG Phenotype Rules (img_rules)</em></p>
+<p>_   - Source: IMG phenotype_rule + phenotype_rule_taxons tables_</p>
+<p>_   - Method: Pathway-based logical inference (65 rules)_</p>
+<p>_   - Coverage: 2,059,203 taxon-trait predictions_</p>
+<p>_   - Confidence: Medium-High (rule-based)_</p>
+<p>_   - Rule example: "L-histidine auxotroph" = absence of pathway 162_</p>
+<p>_   - Top predictions: L-histidine auxotroph (74,695 taxa),_</p>
+<p>_     L-glutamate prototroph (73,791 taxa)_</p>
+<p>__</p>
+<p><em>3. Literature Mining (literature)</em></p>
+<p>_   - Source: PubMed abstracts, full-text papers_</p>
+<p>_   - Method: NLP extraction_</p>
+<p>_   - Confidence: Variable (requires validation)_</p>
+<p>__</p>
+<p><em>4. Computational Prediction (computed)</em></p>
+<p>_   - Source: Genome-based prediction tools_</p>
+<p>_   - Method: ML models, homology-based inference_</p>
+<p>_   - Confidence: Requires benchmarking_</p>
+<p>__</p>
+<p><em>IMG PHENOTYPE RULE EXAMPLES: | rule_id | name                          | rule                           | taxa_count | |---------|-------------------------------|--------------------------------|------------| | 22      | L-histidine auxotroph         | !pathway(162)                  | 74,695     | | 2       | Aerobe                        | pathway(768|769|770)           | 45,956     | | 4       | Denitrifier                   | pathway(764) AND (765) AND...  | 1,653      | | 53      | Nitrogen fixer                | pathway(798)                   | (variable) | | 52      | Dissimilatory sulfate reducer | pathway(870) AND (864) AND...  | 626        | | 6       | Carbon fixation               | pathway(527|335|285|...)       | 483        |</em></p>
 <p>URI: <a href="https://w3id.org/kbase/nmdc_core/TraitSources">https://w3id.org/kbase/nmdc_core/TraitSources</a></p>
 <div class="mermaid"> classDiagram
     class TraitSources
     click TraitSources href "../TraitSources/"
+      TraitSources : confidence_level
+
+      TraitSources : coverage_count
+
+      TraitSources : rule_definition
+
+      TraitSources : source_database
+
+      TraitSources : source_id
+
+      TraitSources : source_name
+
+      TraitSources : source_type
+
 
 </div>
 <!-- no inheritance hierarchy -->
@@ -833,10 +889,46 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><a href="../source_id/">source_id</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Unique identifier for the trait source</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../source_name/">source_name</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Human-readable source name</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../source_type/">source_type</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Type of source (curated, rule_based, literature, computed)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../source_database/">source_database</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Database of origin</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rule_definition/">rule_definition</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>For rule-based sources, the logical rule definition</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../confidence_level/">confidence_level</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Confidence assessment of annotations from this source</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../coverage_count/">coverage_count</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Number of trait-taxon assignments from this source</td>
+<td>direct</td>
 </tr>
 </tbody>
 </table>
@@ -853,6 +945,10 @@
 <tr>
 <td>source_table</td>
 <td>trait_sources</td>
+</tr>
+<tr>
+<td>status</td>
+<td>planned</td>
 </tr>
 </tbody>
 </table>
@@ -888,9 +984,143 @@
 <span class="w">  </span><span class="nt">source_table</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source_table</span>
 <span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trait_sources</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sources for trait data (databases, literature, predictions). Provenance</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">information for trait assignments.</span>
+<span class="w">  </span><span class="nt">status</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">status</span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">planned</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Sources</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">trait</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">(databases,</span><span class="nv"> </span><span class="s">literature,</span><span class="nv"> </span><span class="s">predictions).</span><span class="nv"> </span><span class="s">Provenance\</span>
+<span class="w">  </span><span class="s">\ information</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">trait</span><span class="nv"> </span><span class="s">assignments.\nSTATUS:</span><span class="nv"> </span><span class="s">PLANNED</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Not</span><span class="nv"> </span><span class="s">yet</span><span class="nv"> </span><span class="s">implemented</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">NMDC\</span>
+<span class="w">  </span><span class="s">\ database.\nThis</span><span class="nv"> </span><span class="s">table</span><span class="nv"> </span><span class="s">will</span><span class="nv"> </span><span class="s">track</span><span class="nv"> </span><span class="s">where</span><span class="nv"> </span><span class="s">trait</span><span class="nv"> </span><span class="s">annotations</span><span class="nv"> </span><span class="s">come</span><span class="nv"> </span><span class="s">from,</span><span class="nv"> </span><span class="s">distinguishing\</span>
+<span class="w">  </span><span class="s">\ between</span><span class="nv"> </span><span class="s">curated</span><span class="nv"> </span><span class="s">assertions,</span><span class="nv"> </span><span class="s">rule-based</span><span class="nv"> </span><span class="s">predictions,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">literature</span><span class="nv"> </span><span class="s">mining.\nINTENDED\</span>
+<span class="w">  </span><span class="s">\ SOURCE</span><span class="nv"> </span><span class="s">TYPES:\n1.</span><span class="nv"> </span><span class="s">GOLD</span><span class="nv"> </span><span class="s">Curated</span><span class="nv"> </span><span class="s">Phenotypes</span><span class="nv"> </span><span class="s">(gold_curated)\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Source:</span><span class="nv"> </span><span class="s">GOLD</span><span class="nv"> </span><span class="s">database\</span>
+<span class="w">  </span><span class="s">\ cvphenotype</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">organism_phenotype</span><span class="nv"> </span><span class="s">tables\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Method:</span><span class="nv"> </span><span class="s">Manual</span><span class="nv"> </span><span class="s">curation</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">GOLD\</span>
+<span class="w">  </span><span class="s">\ annotators\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Coverage:</span><span class="nv"> </span><span class="s">7,113</span><span class="nv"> </span><span class="s">organism-phenotype</span><span class="nv"> </span><span class="s">mappings</span><span class="nv"> </span><span class="s">across</span><span class="nv"> </span><span class="s">159</span><span class="nv"> </span><span class="s">phenotype\</span>
+<span class="w">  </span><span class="s">\ terms\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Confidence:</span><span class="nv"> </span><span class="s">High</span><span class="nv"> </span><span class="s">(expert-curated)\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Example:</span><span class="nv"> </span><span class="s">Picrophilus</span><span class="nv"> </span><span class="s">torridus\</span>
+<span class="w">  </span><span class="s">\ -&gt;</span><span class="nv"> </span><span class="s">Acidophile</span><span class="nv"> </span><span class="s">(curator-assigned)\n\n2.</span><span class="nv"> </span><span class="s">IMG</span><span class="nv"> </span><span class="s">Phenotype</span><span class="nv"> </span><span class="s">Rules</span><span class="nv"> </span><span class="s">(img_rules)\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Source:\</span>
+<span class="w">  </span><span class="s">\ IMG</span><span class="nv"> </span><span class="s">phenotype_rule</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">phenotype_rule_taxons</span><span class="nv"> </span><span class="s">tables\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Method:</span><span class="nv"> </span><span class="s">Pathway-based\</span>
+<span class="w">  </span><span class="s">\ logical</span><span class="nv"> </span><span class="s">inference</span><span class="nv"> </span><span class="s">(65</span><span class="nv"> </span><span class="s">rules)\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Coverage:</span><span class="nv"> </span><span class="s">2,059,203</span><span class="nv"> </span><span class="s">taxon-trait</span><span class="nv"> </span><span class="s">predictions\n\</span>
+<span class="w">  </span><span class="s">\ </span><span class="nv">  </span><span class="s">-</span><span class="nv"> </span><span class="s">Confidence:</span><span class="nv"> </span><span class="s">Medium-High</span><span class="nv"> </span><span class="s">(rule-based)\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Rule</span><span class="nv"> </span><span class="s">example:</span><span class="nv"> </span><span class="s">\"L-histidine</span><span class="nv"> </span><span class="s">auxotroph\"\</span>
+<span class="w">  </span><span class="s">\ =</span><span class="nv"> </span><span class="s">absence</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">pathway</span><span class="nv"> </span><span class="s">162\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Top</span><span class="nv"> </span><span class="s">predictions:</span><span class="nv"> </span><span class="s">L-histidine</span><span class="nv"> </span><span class="s">auxotroph</span><span class="nv"> </span><span class="s">(74,695\</span>
+<span class="w">  </span><span class="s">\ taxa),\n</span><span class="nv">     </span><span class="s">L-glutamate</span><span class="nv"> </span><span class="s">prototroph</span><span class="nv"> </span><span class="s">(73,791</span><span class="nv"> </span><span class="s">taxa)\n\n3.</span><span class="nv"> </span><span class="s">Literature</span><span class="nv"> </span><span class="s">Mining</span><span class="nv"> </span><span class="s">(literature)\n\</span>
+<span class="w">  </span><span class="s">\ </span><span class="nv">  </span><span class="s">-</span><span class="nv"> </span><span class="s">Source:</span><span class="nv"> </span><span class="s">PubMed</span><span class="nv"> </span><span class="s">abstracts,</span><span class="nv"> </span><span class="s">full-text</span><span class="nv"> </span><span class="s">papers\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Method:</span><span class="nv"> </span><span class="s">NLP</span><span class="nv"> </span><span class="s">extraction\n\</span>
+<span class="w">  </span><span class="s">\ </span><span class="nv">  </span><span class="s">-</span><span class="nv"> </span><span class="s">Confidence:</span><span class="nv"> </span><span class="s">Variable</span><span class="nv"> </span><span class="s">(requires</span><span class="nv"> </span><span class="s">validation)\n\n4.</span><span class="nv"> </span><span class="s">Computational</span><span class="nv"> </span><span class="s">Prediction\</span>
+<span class="w">  </span><span class="s">\ (computed)\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Source:</span><span class="nv"> </span><span class="s">Genome-based</span><span class="nv"> </span><span class="s">prediction</span><span class="nv"> </span><span class="s">tools\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Method:</span><span class="nv"> </span><span class="s">ML</span><span class="nv"> </span><span class="s">models,\</span>
+<span class="w">  </span><span class="s">\ homology-based</span><span class="nv"> </span><span class="s">inference\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Confidence:</span><span class="nv"> </span><span class="s">Requires</span><span class="nv"> </span><span class="s">benchmarking\n\nIMG</span><span class="nv"> </span><span class="s">PHENOTYPE\</span>
+<span class="w">  </span><span class="s">\ RULE</span><span class="nv"> </span><span class="s">EXAMPLES:</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">rule_id</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">name</span><span class="nv">                          </span><span class="s">|</span><span class="nv"> </span><span class="s">rule</span><span class="nv">              </span><span class="s">\</span>
+<span class="w">  </span><span class="s">\ </span><span class="nv">            </span><span class="s">|</span><span class="nv"> </span><span class="s">taxa_count</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">|---------|-------------------------------|--------------------------------|------------|\</span>
+<span class="w">  </span><span class="s">\ |</span><span class="nv"> </span><span class="s">22</span><span class="nv">      </span><span class="s">|</span><span class="nv"> </span><span class="s">L-histidine</span><span class="nv"> </span><span class="s">auxotroph</span><span class="nv">         </span><span class="s">|</span><span class="nv"> </span><span class="s">!pathway(162)</span><span class="nv">                  </span><span class="s">|</span><span class="nv"> </span><span class="s">74,695\</span>
+<span class="w">  </span><span class="s">\ </span><span class="nv">    </span><span class="s">|</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">2</span><span class="nv">       </span><span class="s">|</span><span class="nv"> </span><span class="s">Aerobe</span><span class="nv">                        </span><span class="s">|</span><span class="nv"> </span><span class="s">pathway(768|769|770)</span><span class="nv">       </span><span class="s">\</span>
+<span class="w">  </span><span class="s">\ </span><span class="nv">   </span><span class="s">|</span><span class="nv"> </span><span class="s">45,956</span><span class="nv">     </span><span class="s">|</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">4</span><span class="nv">       </span><span class="s">|</span><span class="nv"> </span><span class="s">Denitrifier</span><span class="nv">                   </span><span class="s">|</span><span class="nv"> </span><span class="s">pathway(764)</span><span class="nv"> </span><span class="s">AND\</span>
+<span class="w">  </span><span class="s">\ (765)</span><span class="nv"> </span><span class="s">AND...</span><span class="nv">  </span><span class="s">|</span><span class="nv"> </span><span class="s">1,653</span><span class="nv">      </span><span class="s">|</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">53</span><span class="nv">      </span><span class="s">|</span><span class="nv"> </span><span class="s">Nitrogen</span><span class="nv"> </span><span class="s">fixer</span><span class="nv">                </span><span class="s">|</span><span class="nv"> </span><span class="s">pathway(798)\</span>
+<span class="w">  </span><span class="s">\ </span><span class="nv">                  </span><span class="s">|</span><span class="nv"> </span><span class="s">(variable)</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">52</span><span class="nv">      </span><span class="s">|</span><span class="nv"> </span><span class="s">Dissimilatory</span><span class="nv"> </span><span class="s">sulfate</span><span class="nv"> </span><span class="s">reducer</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">pathway(870)\</span>
+<span class="w">  </span><span class="s">\ AND</span><span class="nv"> </span><span class="s">(864)</span><span class="nv"> </span><span class="s">AND...</span><span class="nv">  </span><span class="s">|</span><span class="nv"> </span><span class="s">626</span><span class="nv">        </span><span class="s">|</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">6</span><span class="nv">       </span><span class="s">|</span><span class="nv"> </span><span class="s">Carbon</span><span class="nv"> </span><span class="s">fixation</span><span class="nv">               </span><span class="s">|</span><span class="nv"> </span><span class="s">pathway(527|335|285|...)\</span>
+<span class="w">  </span><span class="s">\ </span><span class="nv">      </span><span class="s">|</span><span class="nv"> </span><span class="s">483</span><span class="nv">        </span><span class="s">|"</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">source_id</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unique identifier for the trait source</span>
+<span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gold_curated</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GOLD curator-assigned phenotypes</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">img_rule_2</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IMG aerobe prediction rule</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">img_rule_53</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IMG nitrogen fixer prediction rule</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pubmed_nlp</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PubMed literature mining</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitSources</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitTaxonomyMapping</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">source_name</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source_name</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Human-readable source name</span>
+<span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GOLD Curated Phenotypes</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">'IMG</span><span class="nv"> </span><span class="s">Phenotype</span><span class="nv"> </span><span class="s">Rule:</span><span class="nv"> </span><span class="s">Aerobe'</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">'IMG</span><span class="nv"> </span><span class="s">Phenotype</span><span class="nv"> </span><span class="s">Rule:</span><span class="nv"> </span><span class="s">Nitrogen</span><span class="nv"> </span><span class="s">Fixer'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitSources</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">source_type</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Type of source (curated, rule_based, literature, computed)</span>
+<span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curated</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Expert-curated assertions</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rule_based</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pathway-based logical rules</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">literature</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Literature-mined annotations</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">computed</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Computationally predicted</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitSources</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">source_database</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source_database</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Database of origin</span>
+<span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GOLD</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IMG</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PubMed</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitSources</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">rule_definition</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rule_definition</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'For</span><span class="nv"> </span><span class="s">rule-based</span><span class="nv"> </span><span class="s">sources,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">logical</span><span class="nv"> </span><span class="s">rule</span><span class="nv"> </span><span class="s">definition.</span><span class="nv"> </span><span class="s">Uses</span><span class="nv"> </span><span class="s">IMG</span><span class="nv"> </span><span class="s">pathway</span>
+<span class="w">      </span><span class="s">IDs</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">operators:</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">(OR),</span><span class="nv"> </span><span class="s">,</span><span class="nv"> </span><span class="s">(AND),</span><span class="nv"> </span><span class="s">!</span><span class="nv"> </span><span class="s">(NOT).'</span>
+<span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(768|769|770)</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aerobe = has cytochrome c oxidase pathway</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(!162)</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">His auxotroph = lacks histidine biosynthesis</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(798)</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Nitrogen fixer = has nitrogenase pathway</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitSources</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">confidence_level</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">confidence_level</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Confidence assessment of annotations from this source</span>
+<span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">high</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Expert curated</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">medium-high</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Validated rule-based</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">medium</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Computational prediction</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitSources</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">coverage_count</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coverage_count</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Number of trait-taxon assignments from this source</span>
+<span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">'7113'</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GOLD curated phenotypes</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">'2059203'</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IMG rule-based predictions</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitSources</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
 </code></pre></div>
 </details>
 <h3 id="induced">Induced</h3>
@@ -900,9 +1130,157 @@
 <span class="w">  </span><span class="nt">source_table</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source_table</span>
 <span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trait_sources</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sources for trait data (databases, literature, predictions). Provenance</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">information for trait assignments.</span>
+<span class="w">  </span><span class="nt">status</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">status</span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">planned</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Sources</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">trait</span><span class="nv"> </span><span class="s">data</span><span class="nv"> </span><span class="s">(databases,</span><span class="nv"> </span><span class="s">literature,</span><span class="nv"> </span><span class="s">predictions).</span><span class="nv"> </span><span class="s">Provenance\</span>
+<span class="w">  </span><span class="s">\ information</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">trait</span><span class="nv"> </span><span class="s">assignments.\nSTATUS:</span><span class="nv"> </span><span class="s">PLANNED</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">Not</span><span class="nv"> </span><span class="s">yet</span><span class="nv"> </span><span class="s">implemented</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">NMDC\</span>
+<span class="w">  </span><span class="s">\ database.\nThis</span><span class="nv"> </span><span class="s">table</span><span class="nv"> </span><span class="s">will</span><span class="nv"> </span><span class="s">track</span><span class="nv"> </span><span class="s">where</span><span class="nv"> </span><span class="s">trait</span><span class="nv"> </span><span class="s">annotations</span><span class="nv"> </span><span class="s">come</span><span class="nv"> </span><span class="s">from,</span><span class="nv"> </span><span class="s">distinguishing\</span>
+<span class="w">  </span><span class="s">\ between</span><span class="nv"> </span><span class="s">curated</span><span class="nv"> </span><span class="s">assertions,</span><span class="nv"> </span><span class="s">rule-based</span><span class="nv"> </span><span class="s">predictions,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">literature</span><span class="nv"> </span><span class="s">mining.\nINTENDED\</span>
+<span class="w">  </span><span class="s">\ SOURCE</span><span class="nv"> </span><span class="s">TYPES:\n1.</span><span class="nv"> </span><span class="s">GOLD</span><span class="nv"> </span><span class="s">Curated</span><span class="nv"> </span><span class="s">Phenotypes</span><span class="nv"> </span><span class="s">(gold_curated)\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Source:</span><span class="nv"> </span><span class="s">GOLD</span><span class="nv"> </span><span class="s">database\</span>
+<span class="w">  </span><span class="s">\ cvphenotype</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">organism_phenotype</span><span class="nv"> </span><span class="s">tables\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Method:</span><span class="nv"> </span><span class="s">Manual</span><span class="nv"> </span><span class="s">curation</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">GOLD\</span>
+<span class="w">  </span><span class="s">\ annotators\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Coverage:</span><span class="nv"> </span><span class="s">7,113</span><span class="nv"> </span><span class="s">organism-phenotype</span><span class="nv"> </span><span class="s">mappings</span><span class="nv"> </span><span class="s">across</span><span class="nv"> </span><span class="s">159</span><span class="nv"> </span><span class="s">phenotype\</span>
+<span class="w">  </span><span class="s">\ terms\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Confidence:</span><span class="nv"> </span><span class="s">High</span><span class="nv"> </span><span class="s">(expert-curated)\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Example:</span><span class="nv"> </span><span class="s">Picrophilus</span><span class="nv"> </span><span class="s">torridus\</span>
+<span class="w">  </span><span class="s">\ -&gt;</span><span class="nv"> </span><span class="s">Acidophile</span><span class="nv"> </span><span class="s">(curator-assigned)\n\n2.</span><span class="nv"> </span><span class="s">IMG</span><span class="nv"> </span><span class="s">Phenotype</span><span class="nv"> </span><span class="s">Rules</span><span class="nv"> </span><span class="s">(img_rules)\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Source:\</span>
+<span class="w">  </span><span class="s">\ IMG</span><span class="nv"> </span><span class="s">phenotype_rule</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">phenotype_rule_taxons</span><span class="nv"> </span><span class="s">tables\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Method:</span><span class="nv"> </span><span class="s">Pathway-based\</span>
+<span class="w">  </span><span class="s">\ logical</span><span class="nv"> </span><span class="s">inference</span><span class="nv"> </span><span class="s">(65</span><span class="nv"> </span><span class="s">rules)\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Coverage:</span><span class="nv"> </span><span class="s">2,059,203</span><span class="nv"> </span><span class="s">taxon-trait</span><span class="nv"> </span><span class="s">predictions\n\</span>
+<span class="w">  </span><span class="s">\ </span><span class="nv">  </span><span class="s">-</span><span class="nv"> </span><span class="s">Confidence:</span><span class="nv"> </span><span class="s">Medium-High</span><span class="nv"> </span><span class="s">(rule-based)\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Rule</span><span class="nv"> </span><span class="s">example:</span><span class="nv"> </span><span class="s">\"L-histidine</span><span class="nv"> </span><span class="s">auxotroph\"\</span>
+<span class="w">  </span><span class="s">\ =</span><span class="nv"> </span><span class="s">absence</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">pathway</span><span class="nv"> </span><span class="s">162\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Top</span><span class="nv"> </span><span class="s">predictions:</span><span class="nv"> </span><span class="s">L-histidine</span><span class="nv"> </span><span class="s">auxotroph</span><span class="nv"> </span><span class="s">(74,695\</span>
+<span class="w">  </span><span class="s">\ taxa),\n</span><span class="nv">     </span><span class="s">L-glutamate</span><span class="nv"> </span><span class="s">prototroph</span><span class="nv"> </span><span class="s">(73,791</span><span class="nv"> </span><span class="s">taxa)\n\n3.</span><span class="nv"> </span><span class="s">Literature</span><span class="nv"> </span><span class="s">Mining</span><span class="nv"> </span><span class="s">(literature)\n\</span>
+<span class="w">  </span><span class="s">\ </span><span class="nv">  </span><span class="s">-</span><span class="nv"> </span><span class="s">Source:</span><span class="nv"> </span><span class="s">PubMed</span><span class="nv"> </span><span class="s">abstracts,</span><span class="nv"> </span><span class="s">full-text</span><span class="nv"> </span><span class="s">papers\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Method:</span><span class="nv"> </span><span class="s">NLP</span><span class="nv"> </span><span class="s">extraction\n\</span>
+<span class="w">  </span><span class="s">\ </span><span class="nv">  </span><span class="s">-</span><span class="nv"> </span><span class="s">Confidence:</span><span class="nv"> </span><span class="s">Variable</span><span class="nv"> </span><span class="s">(requires</span><span class="nv"> </span><span class="s">validation)\n\n4.</span><span class="nv"> </span><span class="s">Computational</span><span class="nv"> </span><span class="s">Prediction\</span>
+<span class="w">  </span><span class="s">\ (computed)\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Source:</span><span class="nv"> </span><span class="s">Genome-based</span><span class="nv"> </span><span class="s">prediction</span><span class="nv"> </span><span class="s">tools\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Method:</span><span class="nv"> </span><span class="s">ML</span><span class="nv"> </span><span class="s">models,\</span>
+<span class="w">  </span><span class="s">\ homology-based</span><span class="nv"> </span><span class="s">inference\n</span><span class="nv">   </span><span class="s">-</span><span class="nv"> </span><span class="s">Confidence:</span><span class="nv"> </span><span class="s">Requires</span><span class="nv"> </span><span class="s">benchmarking\n\nIMG</span><span class="nv"> </span><span class="s">PHENOTYPE\</span>
+<span class="w">  </span><span class="s">\ RULE</span><span class="nv"> </span><span class="s">EXAMPLES:</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">rule_id</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">name</span><span class="nv">                          </span><span class="s">|</span><span class="nv"> </span><span class="s">rule</span><span class="nv">              </span><span class="s">\</span>
+<span class="w">  </span><span class="s">\ </span><span class="nv">            </span><span class="s">|</span><span class="nv"> </span><span class="s">taxa_count</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">|---------|-------------------------------|--------------------------------|------------|\</span>
+<span class="w">  </span><span class="s">\ |</span><span class="nv"> </span><span class="s">22</span><span class="nv">      </span><span class="s">|</span><span class="nv"> </span><span class="s">L-histidine</span><span class="nv"> </span><span class="s">auxotroph</span><span class="nv">         </span><span class="s">|</span><span class="nv"> </span><span class="s">!pathway(162)</span><span class="nv">                  </span><span class="s">|</span><span class="nv"> </span><span class="s">74,695\</span>
+<span class="w">  </span><span class="s">\ </span><span class="nv">    </span><span class="s">|</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">2</span><span class="nv">       </span><span class="s">|</span><span class="nv"> </span><span class="s">Aerobe</span><span class="nv">                        </span><span class="s">|</span><span class="nv"> </span><span class="s">pathway(768|769|770)</span><span class="nv">       </span><span class="s">\</span>
+<span class="w">  </span><span class="s">\ </span><span class="nv">   </span><span class="s">|</span><span class="nv"> </span><span class="s">45,956</span><span class="nv">     </span><span class="s">|</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">4</span><span class="nv">       </span><span class="s">|</span><span class="nv"> </span><span class="s">Denitrifier</span><span class="nv">                   </span><span class="s">|</span><span class="nv"> </span><span class="s">pathway(764)</span><span class="nv"> </span><span class="s">AND\</span>
+<span class="w">  </span><span class="s">\ (765)</span><span class="nv"> </span><span class="s">AND...</span><span class="nv">  </span><span class="s">|</span><span class="nv"> </span><span class="s">1,653</span><span class="nv">      </span><span class="s">|</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">53</span><span class="nv">      </span><span class="s">|</span><span class="nv"> </span><span class="s">Nitrogen</span><span class="nv"> </span><span class="s">fixer</span><span class="nv">                </span><span class="s">|</span><span class="nv"> </span><span class="s">pathway(798)\</span>
+<span class="w">  </span><span class="s">\ </span><span class="nv">                  </span><span class="s">|</span><span class="nv"> </span><span class="s">(variable)</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">52</span><span class="nv">      </span><span class="s">|</span><span class="nv"> </span><span class="s">Dissimilatory</span><span class="nv"> </span><span class="s">sulfate</span><span class="nv"> </span><span class="s">reducer</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">pathway(870)\</span>
+<span class="w">  </span><span class="s">\ AND</span><span class="nv"> </span><span class="s">(864)</span><span class="nv"> </span><span class="s">AND...</span><span class="nv">  </span><span class="s">|</span><span class="nv"> </span><span class="s">626</span><span class="nv">        </span><span class="s">|</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">6</span><span class="nv">       </span><span class="s">|</span><span class="nv"> </span><span class="s">Carbon</span><span class="nv"> </span><span class="s">fixation</span><span class="nv">               </span><span class="s">|</span><span class="nv"> </span><span class="s">pathway(527|335|285|...)\</span>
+<span class="w">  </span><span class="s">\ </span><span class="nv">      </span><span class="s">|</span><span class="nv"> </span><span class="s">483</span><span class="nv">        </span><span class="s">|"</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="nt">attributes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">source_id</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source_id</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Unique identifier for the trait source</span>
+<span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gold_curated</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GOLD curator-assigned phenotypes</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">img_rule_2</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IMG aerobe prediction rule</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">img_rule_53</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IMG nitrogen fixer prediction rule</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pubmed_nlp</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PubMed literature mining</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">identifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source_id</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitSources</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitSources</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitTaxonomyMapping</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">source_name</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source_name</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Human-readable source name</span>
+<span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GOLD Curated Phenotypes</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">'IMG</span><span class="nv"> </span><span class="s">Phenotype</span><span class="nv"> </span><span class="s">Rule:</span><span class="nv"> </span><span class="s">Aerobe'</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">'IMG</span><span class="nv"> </span><span class="s">Phenotype</span><span class="nv"> </span><span class="s">Rule:</span><span class="nv"> </span><span class="s">Nitrogen</span><span class="nv"> </span><span class="s">Fixer'</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source_name</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitSources</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitSources</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">source_type</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source_type</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Type of source (curated, rule_based, literature, computed)</span>
+<span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curated</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Expert-curated assertions</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rule_based</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pathway-based logical rules</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">literature</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Literature-mined annotations</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">computed</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Computationally predicted</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source_type</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitSources</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitSources</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">source_database</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source_database</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Database of origin</span>
+<span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GOLD</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IMG</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PubMed</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source_database</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitSources</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitSources</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">rule_definition</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rule_definition</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">'For</span><span class="nv"> </span><span class="s">rule-based</span><span class="nv"> </span><span class="s">sources,</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">logical</span><span class="nv"> </span><span class="s">rule</span><span class="nv"> </span><span class="s">definition.</span><span class="nv"> </span><span class="s">Uses</span><span class="nv"> </span><span class="s">IMG</span><span class="nv"> </span><span class="s">pathway</span>
+<span class="w">      </span><span class="s">IDs</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">operators:</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">(OR),</span><span class="nv"> </span><span class="s">,</span><span class="nv"> </span><span class="s">(AND),</span><span class="nv"> </span><span class="s">!</span><span class="nv"> </span><span class="s">(NOT).'</span>
+<span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(768|769|770)</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aerobe = has cytochrome c oxidase pathway</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(!162)</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">His auxotroph = lacks histidine biosynthesis</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(798)</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Nitrogen fixer = has nitrogenase pathway</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rule_definition</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitSources</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitSources</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">confidence_level</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">confidence_level</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Confidence assessment of annotations from this source</span>
+<span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">high</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Expert curated</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">medium-high</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Validated rule-based</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">medium</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Computational prediction</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">confidence_level</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitSources</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitSources</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">  </span><span class="nt">coverage_count</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coverage_count</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Number of trait-taxon assignments from this source</span>
+<span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">'7113'</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GOLD curated phenotypes</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">'2059203'</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IMG rule-based predictions</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/nmdc_core</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coverage_count</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitSources</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TraitSources</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">integer</span>
 </code></pre></div>
 </details>
 </article>

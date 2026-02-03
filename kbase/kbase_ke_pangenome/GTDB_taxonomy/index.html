@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: GTDB_taxonomy - Bridge Schemas</title>
+        <title>Slot: gtdb_taxonomy - Bridge Schemas</title>
       
     
     
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: GTDB_taxonomy
+              Slot: gtdb_taxonomy
             
           </span>
         </div>
@@ -390,6 +390,34 @@
     
   
     mll BGC (M. extorquens)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../case-studies/microbial-isolates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microbial Isolates
   
 
     
@@ -1631,17 +1659,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Examples
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1711,10 +1728,10 @@
   
 
 
-<h1 id="slot-gtdb_taxonomy">Slot: GTDB_taxonomy</h1>
-<p>_Full GTDB lineage from domain to genus (species not repeated). Semicolon-separated with rank prefixes: d__, p__, c__, o__, f__, g___</p>
-<p>URI: <a href="https://w3id.org/kbase/kbase_ke_pangenome/GTDB_taxonomy">https://w3id.org/kbase/kbase_ke_pangenome/GTDB_taxonomy</a>
-Alias: GTDB_taxonomy</p>
+<h1 id="slot-gtdb_taxonomy">Slot: gtdb_taxonomy</h1>
+<p><em>Full GTDB taxonomy string</em></p>
+<p>URI: <a href="https://w3id.org/kbase/kbase_ke_pangenome/gtdb_taxonomy">https://w3id.org/kbase/kbase_ke_pangenome/gtdb_taxonomy</a>
+Alias: gtdb_taxonomy</p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -1728,8 +1745,8 @@ Alias: GTDB_taxonomy</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../GtdbSpeciesClade/">GtdbSpeciesClade</a></td>
-<td>GTDB species-level grouping with representative genome</td>
+<td><a href="../GtdbMetadata/">GtdbMetadata</a></td>
+<td>Comprehensive GTDB metadata with quality metrics, genome statistics, and NCBI...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -1738,25 +1755,6 @@ Alias: GTDB_taxonomy</p>
 <ul>
 <li>Range: <a href="../String/">String</a></li>
 </ul>
-<h2 id="examples">Examples</h2>
-<table>
-<thead>
-<tr>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>d__Bacteria;p__Pseudomonadota;c__Gammaproteobacteria;o__Enterobacterales;f__Enterobacteriaceae;g__Klebsiella</td>
-</tr>
-<tr>
-<td>d__Bacteria;p__Bacillota;c__Bacilli;o__Staphylococcales;f__Staphylococcaceae;g__Staphylococcus</td>
-</tr>
-<tr>
-<td>d__Archaea;p__Methanobacteriota_B;c__Thermococci;o__Thermococcales;f__Thermococcaceae;g__Thermococcus_A</td>
-</tr>
-</tbody>
-</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -1773,29 +1771,24 @@ Alias: GTDB_taxonomy</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>https://w3id.org/kbase/kbase_ke_pangenome/GTDB_taxonomy</td>
+<td>https://w3id.org/kbase/kbase_ke_pangenome/gtdb_taxonomy</td>
 </tr>
 <tr>
 <td>native</td>
-<td>https://w3id.org/kbase/kbase_ke_pangenome/GTDB_taxonomy</td>
+<td>https://w3id.org/kbase/kbase_ke_pangenome/gtdb_taxonomy</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GTDB_taxonomy</span>
-<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Full</span><span class="nv"> </span><span class="s">GTDB</span><span class="nv"> </span><span class="s">lineage</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">domain</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">genus</span><span class="nv"> </span><span class="s">(species</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">repeated).</span><span class="nv"> </span><span class="s">Semicolon-separated</span>
-<span class="w">  </span><span class="s">with</span><span class="nv"> </span><span class="s">rank</span><span class="nv"> </span><span class="s">prefixes:</span><span class="nv"> </span><span class="s">d__,</span><span class="nv"> </span><span class="s">p__,</span><span class="nv"> </span><span class="s">c__,</span><span class="nv"> </span><span class="s">o__,</span><span class="nv"> </span><span class="s">f__,</span><span class="nv"> </span><span class="s">g__&#39;</span>
-<span class="nt">examples</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">d__Bacteria;p__Pseudomonadota;c__Gammaproteobacteria;o__Enterobacterales;f__Enterobacteriaceae;g__Klebsiella</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">d__Bacteria;p__Bacillota;c__Bacilli;o__Staphylococcales;f__Staphylococcaceae;g__Staphylococcus</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">d__Archaea;p__Methanobacteriota_B;c__Thermococci;o__Thermococcales;f__Thermococcaceae;g__Thermococcus_A</span>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gtdb_taxonomy</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Full GTDB taxonomy string</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kbase/kbase_ke_pangenome</span>
 <span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GTDB_taxonomy</span>
-<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GtdbSpeciesClade</span>
+<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gtdb_taxonomy</span>
+<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GtdbMetadata</span>
 <span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GtdbSpeciesClade</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GtdbMetadata</span>
 <span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 </code></pre></div>
 </details>

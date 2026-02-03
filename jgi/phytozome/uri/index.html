@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: uri - Bridge Schemas</title>
+        <title>Type: Uri - Bridge Schemas</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-uri" class="md-skip">
+        <a href="#type-uri" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: uri
+              Type: Uri
             
           </span>
         </div>
@@ -390,6 +390,34 @@
     
   
     mll BGC (M. extorquens)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../case-studies/microbial-isolates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microbial Isolates
   
 
     
@@ -1609,21 +1637,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#applicable-classes" class="md-nav__link">
+  <a href="#comments" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Applicable Classes
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Properties
+        Comments
       
     </span>
   </a>
@@ -1669,17 +1686,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#linkml-source" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        LinkML Source
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1700,31 +1706,23 @@
   
 
 
-<h1 id="slot-uri">Slot: uri</h1>
-<p>URI: <a href="https://w3id.org/jgi/phytozome/uri">https://w3id.org/jgi/phytozome/uri</a>
-Alias: uri</p>
-<!-- no inheritance hierarchy -->
-
-<h2 id="applicable-classes">Applicable Classes</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-<th>Modifies Slot</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../Acquisition/">Acquisition</a></td>
-<td>Data acquisition from assay</td>
-<td>no</td>
-</tr>
-</tbody>
-</table>
-<h2 id="properties">Properties</h2>
+<h1 id="type-uri">Type: Uri</h1>
+<p><em>a complete URI</em></p>
+<p>URI: <a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a></p>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>
+<p><a href="https://w3id.org/linkml/base">base</a>: URI</p>
+</li>
+<li>
+<p><a href="https://w3id.org/linkml/uri">uri</a>: xsd:anyURI</p>
+</li>
+<li>
+<p><a href="https://w3id.org/linkml/repr">repr</a>: str</p>
+</li>
+</ul>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -1750,18 +1748,6 @@ Alias: uri</p>
 </tr>
 </tbody>
 </table>
-<h2 id="linkml-source">LinkML Source</h2>
-<details>
-<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uri</span>
-<span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/jgi/phytozome</span>
-<span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
-<span class="nt">alias</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">uri</span>
-<span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Acquisition</span>
-<span class="nt">domain_of</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Acquisition</span>
-<span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
-</code></pre></div>
-</details>
 
 
 
