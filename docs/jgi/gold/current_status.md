@@ -17,9 +17,9 @@ Alias: current_status
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DwSamples](DwSamples.md) |  |  no  |
 | [DwAnalysisProject](DwAnalysisProject.md) |  |  no  |
 | [DwSequencingProject](DwSequencingProject.md) |  |  no  |
+| [DwSamples](DwSamples.md) |  |  no  |
 
 
 

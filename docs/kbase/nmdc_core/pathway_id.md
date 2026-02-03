@@ -17,7 +17,8 @@ Alias: pathway_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [KeggPathwayTerms](KeggPathwayTerms.md) | KEGG pathway definitions |  no  |
+| [MetacycPathways](MetacycPathways.md) | MetaCyc metabolic pathways with hierarchical classification |  no  |
+| [KeggPathwayTerms](KeggPathwayTerms.md) | KEGG pathway definitions with category classification |  no  |
 
 
 
@@ -28,8 +29,6 @@ Alias: pathway_id
 
 * Range: [String](String.md)
 
-* Required: True
-
 
 
 
@@ -37,13 +36,6 @@ Alias: pathway_id
 
 
 
-
-
-
-### Schema Source
-
-
-* from schema: https://w3id.org/kbase/nmdc_core
 
 
 
@@ -63,15 +55,11 @@ Alias: pathway_id
 <details>
 ```yaml
 name: pathway_id
-from_schema: https://w3id.org/kbase/nmdc_core
-rank: 1000
-identifier: true
 alias: pathway_id
-owner: KeggPathwayTerms
 domain_of:
 - KeggPathwayTerms
+- MetacycPathways
 range: string
-required: true
 
 ```
 </details>

@@ -17,26 +17,26 @@ Alias: ko_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [KoTermCogs](KoTermCogs.md) |  |  no  |
-| [KoTermModules](KoTermModules.md) |  |  no  |
-| [Ko2tc](Ko2tc.md) |  |  no  |
-| [Ko2reaction](Ko2reaction.md) |  |  no  |
+| [KoTermPathways](KoTermPathways.md) |  |  no  |
 | [Ko2module](Ko2module.md) |  |  no  |
 | [Ko2go](Ko2go.md) |  |  no  |
-| [GeneKoEnzymes](GeneKoEnzymes.md) |  |  no  |
-| [DtKo](DtKo.md) |  |  no  |
-| [KoTerm](KoTerm.md) |  |  no  |
 | [GeneKoEnzymesNew](GeneKoEnzymesNew.md) |  |  no  |
-| [KoTermGoIds](KoTermGoIds.md) |  |  no  |
-| [KoTermClasses](KoTermClasses.md) |  |  no  |
 | [KoTermReactions](KoTermReactions.md) |  |  no  |
 | [Ko2ec](Ko2ec.md) |  |  no  |
-| [KoTermTcFamilies](KoTermTcFamilies.md) |  |  no  |
 | [Ko2pathway](Ko2pathway.md) |  |  no  |
-| [Ko2cog](Ko2cog.md) |  |  no  |
-| [KoTermPathways](KoTermPathways.md) |  |  no  |
-| [DtKoEcCogPfam](DtKoEcCogPfam.md) |  |  no  |
+| [KoTermClasses](KoTermClasses.md) |  |  no  |
 | [KoTermEnzymes](KoTermEnzymes.md) |  |  no  |
+| [KoTermCogs](KoTermCogs.md) |  |  no  |
+| [KoTerm](KoTerm.md) |  |  no  |
+| [Ko2cog](Ko2cog.md) |  |  no  |
+| [KoTermTcFamilies](KoTermTcFamilies.md) |  |  no  |
+| [Ko2tc](Ko2tc.md) |  |  no  |
+| [Ko2reaction](Ko2reaction.md) |  |  no  |
+| [DtKoEcCogPfam](DtKoEcCogPfam.md) |  |  no  |
+| [GeneKoEnzymes](GeneKoEnzymes.md) |  |  no  |
+| [KoTermGoIds](KoTermGoIds.md) |  |  no  |
+| [KoTermModules](KoTermModules.md) |  |  no  |
+| [DtKo](DtKo.md) |  |  no  |
 
 
 

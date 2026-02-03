@@ -17,9 +17,9 @@ Alias: locus_tag
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Gene](Gene.md) |  |  no  |
 | [KpPseudo](KpPseudo.md) |  |  no  |
 | [MerfsGeneMapping](MerfsGeneMapping.md) |  |  no  |
-| [Gene](Gene.md) |  |  no  |
 
 
 

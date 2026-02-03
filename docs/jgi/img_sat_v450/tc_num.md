@@ -17,10 +17,10 @@ Alias: tc_num
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TcFamilyGoTerms](TcFamilyGoTerms.md) |  |  no  |
+| [TcFamilyPfams](TcFamilyPfams.md) |  |  no  |
 | [TcFamilyTfams](TcFamilyTfams.md) |  |  no  |
 | [TcFamilyPfamsIain](TcFamilyPfamsIain.md) |  |  no  |
-| [TcFamilyPfams](TcFamilyPfams.md) |  |  no  |
+| [TcFamilyGoTerms](TcFamilyGoTerms.md) |  |  no  |
 
 
 

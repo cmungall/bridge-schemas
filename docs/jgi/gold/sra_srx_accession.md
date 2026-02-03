@@ -17,8 +17,8 @@ Alias: sra_srx_accession
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SigsView](SigsView.md) |  |  no  |
 | [Project](Project.md) |  |  no  |
+| [SigsView](SigsView.md) |  |  no  |
 
 
 

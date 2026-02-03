@@ -17,8 +17,8 @@ Alias: source
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [UniprotDbNamesDelta](UniprotDbNamesDelta.md) |  |  no  |
 | [UniprotDbIdentifiersDelta](UniprotDbIdentifiersDelta.md) |  |  no  |
+| [UniprotDbNamesDelta](UniprotDbNamesDelta.md) |  |  no  |
 
 
 

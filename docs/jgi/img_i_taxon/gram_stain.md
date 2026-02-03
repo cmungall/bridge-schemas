@@ -17,8 +17,8 @@ Alias: gram_stain
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ITaxonOriginal070323](ITaxonOriginal070323.md) |  |  no  |
 | [Taxon](Taxon.md) |  |  no  |
+| [ITaxonOriginal070323](ITaxonOriginal070323.md) |  |  no  |
 
 
 

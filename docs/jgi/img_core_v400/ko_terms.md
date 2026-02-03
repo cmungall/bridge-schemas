@@ -18,9 +18,9 @@ Alias: ko_terms
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [KmImageRoiKoTerms](KmImageRoiKoTerms.md) |  |  no  |
-| [GeneKoTerms](GeneKoTerms.md) |  |  no  |
-| [ImageRoiKoTerms](ImageRoiKoTerms.md) |  |  no  |
 | [KeggModuleKoTerms](KeggModuleKoTerms.md) |  |  no  |
+| [ImageRoiKoTerms](ImageRoiKoTerms.md) |  |  no  |
+| [GeneKoTerms](GeneKoTerms.md) |  |  no  |
 
 
 

@@ -17,10 +17,10 @@ Alias: sample
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MsProteinOld](MsProteinOld.md) |  |  no  |
-| [MsPeptide](MsPeptide.md) |  |  no  |
-| [MsPeptideOld](MsPeptideOld.md) |  |  no  |
 | [MsProtein](MsProtein.md) |  |  no  |
+| [MsPeptide](MsPeptide.md) |  |  no  |
+| [MsProteinOld](MsProteinOld.md) |  |  no  |
+| [MsPeptideOld](MsPeptideOld.md) |  |  no  |
 
 
 

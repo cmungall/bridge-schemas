@@ -3,7 +3,7 @@
 # Slot: feature_id 
 
 
-_Metabolite feature ID_
+_Metabolite feature ID (unique within file)_
 
 
 
@@ -22,7 +22,7 @@ Alias: feature_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MetabolomicsGold](MetabolomicsGold.md) | Metabolomics data linked to GOLD |  no  |
+| [MetabolomicsGold](MetabolomicsGold.md) | Metabolomics data linked to GOLD samples |  no  |
 
 
 
@@ -35,6 +35,15 @@ Alias: feature_id
 
 
 
+
+
+## Examples
+
+| Value |
+| --- |
+| 16348 |
+| 1653 |
+| 19466 |
 
 ## Identifier and Mapping Information
 
@@ -66,7 +75,11 @@ Alias: feature_id
 <details>
 ```yaml
 name: feature_id
-description: Metabolite feature ID
+description: Metabolite feature ID (unique within file)
+examples:
+- value: '16348'
+- value: '1653'
+- value: '19466'
 from_schema: https://w3id.org/kbase/nmdc_core
 rank: 1000
 alias: feature_id

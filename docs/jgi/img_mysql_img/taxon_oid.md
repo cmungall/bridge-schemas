@@ -17,10 +17,10 @@ Alias: taxon_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TaxonBodySite](TaxonBodySite.md) |  |  no  |
-| [TaxonHabitat](TaxonHabitat.md) |  |  no  |
 | [TaxonVrpr](TaxonVrpr.md) |  |  no  |
+| [TaxonHabitat](TaxonHabitat.md) |  |  no  |
 | [Taxon](Taxon.md) |  |  no  |
+| [TaxonBodySite](TaxonBodySite.md) |  |  no  |
 
 
 

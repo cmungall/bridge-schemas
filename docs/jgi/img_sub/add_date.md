@@ -17,12 +17,12 @@ Alias: add_date
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Contact](Contact.md) |  |  no  |
-| [ImgGroupNews](ImgGroupNews.md) |  |  no  |
 | [RnaseqNotify](RnaseqNotify.md) |  |  no  |
 | [ImgGroup](ImgGroup.md) |  |  no  |
-| [NotToRelease](NotToRelease.md) |  |  no  |
+| [Contact](Contact.md) |  |  no  |
+| [ImgGroupNews](ImgGroupNews.md) |  |  no  |
 | [Mygene](Mygene.md) |  |  no  |
+| [NotToRelease](NotToRelease.md) |  |  no  |
 
 
 

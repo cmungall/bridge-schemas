@@ -17,8 +17,8 @@ Alias: its_proposal_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Study](Study.md) |  |  no  |
 | [Project](Project.md) |  |  no  |
+| [Study](Study.md) |  |  no  |
 
 
 

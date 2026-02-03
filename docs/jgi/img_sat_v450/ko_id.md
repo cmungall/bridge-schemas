@@ -17,23 +17,23 @@ Alias: ko_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [KoTermGoIds](KoTermGoIds.md) |  |  no  |
+| [Ko2ec](Ko2ec.md) |  |  no  |
+| [Ko2reaction](Ko2reaction.md) |  |  no  |
+| [Ko2cog](Ko2cog.md) |  |  no  |
+| [Ko2go](Ko2go.md) |  |  no  |
+| [Ko2pathway](Ko2pathway.md) |  |  no  |
+| [Ko2tc](Ko2tc.md) |  |  no  |
 | [KoTermCogs](KoTermCogs.md) |  |  no  |
 | [KoTermEnzymes](KoTermEnzymes.md) |  |  no  |
-| [Ko2ec](Ko2ec.md) |  |  no  |
-| [Ko2tc](Ko2tc.md) |  |  no  |
-| [KoTermGoIds](KoTermGoIds.md) |  |  no  |
 | [KoTermPathways](KoTermPathways.md) |  |  no  |
+| [Ko2module](Ko2module.md) |  |  no  |
 | [KoTermReactions](KoTermReactions.md) |  |  no  |
-| [KoTermModules](KoTermModules.md) |  |  no  |
 | [KoTermTcFamilies](KoTermTcFamilies.md) |  |  no  |
-| [Ko2go](Ko2go.md) |  |  no  |
 | [DtKoEcCogPfam](DtKoEcCogPfam.md) |  |  no  |
-| [Ko2pathway](Ko2pathway.md) |  |  no  |
 | [KoTerm](KoTerm.md) |  |  no  |
 | [KoTermClasses](KoTermClasses.md) |  |  no  |
-| [Ko2cog](Ko2cog.md) |  |  no  |
-| [Ko2reaction](Ko2reaction.md) |  |  no  |
-| [Ko2module](Ko2module.md) |  |  no  |
+| [KoTermModules](KoTermModules.md) |  |  no  |
 
 
 

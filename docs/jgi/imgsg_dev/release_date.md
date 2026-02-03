@@ -18,9 +18,9 @@ Alias: release_date
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Assembly](Assembly.md) |  |  no  |
-| [ImgGroupNews](ImgGroupNews.md) |  |  no  |
-| [MasterList](MasterList.md) |  |  no  |
 | [ProjectInfoBioproject](ProjectInfoBioproject.md) |  |  no  |
+| [MasterList](MasterList.md) |  |  no  |
+| [ImgGroupNews](ImgGroupNews.md) |  |  no  |
 | [ProjectInfoBiosample](ProjectInfoBiosample.md) |  |  no  |
 
 

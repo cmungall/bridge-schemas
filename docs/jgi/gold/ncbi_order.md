@@ -17,10 +17,10 @@ Alias: ncbi_order
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [OrganismV2](OrganismV2.md) |  |  no  |
-| [SigsView](SigsView.md) |  |  no  |
-| [NcbiTaxonomy](NcbiTaxonomy.md) |  |  no  |
 | [AnalysisProject](AnalysisProject.md) |  |  no  |
+| [SigsView](SigsView.md) |  |  no  |
+| [OrganismV2](OrganismV2.md) |  |  no  |
+| [NcbiTaxonomy](NcbiTaxonomy.md) |  |  no  |
 
 
 

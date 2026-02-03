@@ -3,6 +3,11 @@
 # Slot: file_name 
 
 
+_Original CSV file name_
+
+
+
+
 
 URI: [https://w3id.org/kbase/nmdc_core/file_name](https://w3id.org/kbase/nmdc_core/file_name)
 Alias: file_name
@@ -17,7 +22,7 @@ Alias: file_name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MetabolomicsGold](MetabolomicsGold.md) | Metabolomics data linked to GOLD |  no  |
+| [MetabolomicsGold](MetabolomicsGold.md) | Metabolomics data linked to GOLD samples |  no  |
 
 
 
@@ -30,6 +35,13 @@ Alias: file_name
 
 
 
+
+
+## Examples
+
+| Value |
+| --- |
+| 4A8_2_41_pinto-63-s028-a03.csv |
 
 ## Identifier and Mapping Information
 
@@ -61,6 +73,10 @@ Alias: file_name
 <details>
 ```yaml
 name: file_name
+description: Original CSV file name
+examples:
+- value: 4A8_2_41_pinto-63-s028-a03.csv
+  description: Sample name encoded in filename
 from_schema: https://w3id.org/kbase/nmdc_core
 rank: 1000
 alias: file_name

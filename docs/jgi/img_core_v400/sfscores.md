@@ -17,8 +17,8 @@ Alias: sfscores
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GeneImgInterproHits](GeneImgInterproHits.md) |  |  no  |
 | [GeneTigrfams](GeneTigrfams.md) |  |  no  |
+| [GeneImgInterproHits](GeneImgInterproHits.md) |  |  no  |
 
 
 

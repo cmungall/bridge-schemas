@@ -17,8 +17,8 @@ Alias: release_date
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SigsView](SigsView.md) |  |  no  |
 | [Assembly](Assembly.md) |  |  no  |
+| [SigsView](SigsView.md) |  |  no  |
 
 
 

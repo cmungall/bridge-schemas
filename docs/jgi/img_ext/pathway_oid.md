@@ -18,12 +18,12 @@ Alias: pathway_oid
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [ImgPathwayHistory](ImgPathwayHistory.md) |  |  no  |
-| [ImgPathway](ImgPathway.md) |  |  no  |
-| [ImgPathwayTComponents](ImgPathwayTComponents.md) |  |  no  |
 | [ImgPathwayReactions](ImgPathwayReactions.md) |  |  no  |
 | [ImgPathwayTaxons](ImgPathwayTaxons.md) |  |  no  |
-| [ImgPathwayAssertions](ImgPathwayAssertions.md) |  |  no  |
 | [ImgPathwayCComponents](ImgPathwayCComponents.md) |  |  no  |
+| [ImgPathwayAssertions](ImgPathwayAssertions.md) |  |  no  |
+| [ImgPathwayTComponents](ImgPathwayTComponents.md) |  |  no  |
+| [ImgPathway](ImgPathway.md) |  |  no  |
 
 
 

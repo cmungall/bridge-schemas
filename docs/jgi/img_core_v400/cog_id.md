@@ -17,13 +17,13 @@ Alias: cog_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DtCog](DtCog.md) |  |  no  |
+| [CogFunctions](CogFunctions.md) |  |  no  |
 | [DtScogs](DtScogs.md) |  |  no  |
+| [DtScogGenes](DtScogGenes.md) |  |  no  |
 | [Ko2cog](Ko2cog.md) |  |  no  |
 | [Cog](Cog.md) |  |  no  |
-| [DtScogGenes](DtScogGenes.md) |  |  no  |
+| [DtCog](DtCog.md) |  |  no  |
 | [CogFamilies](CogFamilies.md) |  |  no  |
-| [CogFunctions](CogFunctions.md) |  |  no  |
 
 
 

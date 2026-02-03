@@ -17,13 +17,13 @@ Alias: definition
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [KogFunction](KogFunction.md) |  |  no  |
-| [Smart](Smart.md) |  |  no  |
-| [ImgOrfType](ImgOrfType.md) |  |  no  |
-| [GoTerm](GoTerm.md) |  |  no  |
-| [CogFunction](CogFunction.md) |  |  no  |
 | [KeggModule](KeggModule.md) |  |  no  |
 | [KoTerm](KoTerm.md) |  |  no  |
+| [Smart](Smart.md) |  |  no  |
+| [GoTerm](GoTerm.md) |  |  no  |
+| [CogFunction](CogFunction.md) |  |  no  |
+| [ImgOrfType](ImgOrfType.md) |  |  no  |
+| [KogFunction](KogFunction.md) |  |  no  |
 
 
 

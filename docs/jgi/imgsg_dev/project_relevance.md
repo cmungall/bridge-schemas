@@ -17,9 +17,9 @@ Alias: project_relevance
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ProjectInfoProjectRelevance](ProjectInfoProjectRelevance.md) |  |  no  |
-| [ProjectInfoGenbankAuthors](ProjectInfoGenbankAuthors.md) |  |  no  |
 | [ProjectInfoGenbankComments](ProjectInfoGenbankComments.md) |  |  no  |
+| [ProjectInfoGenbankAuthors](ProjectInfoGenbankAuthors.md) |  |  no  |
+| [ProjectInfoProjectRelevance](ProjectInfoProjectRelevance.md) |  |  no  |
 
 
 

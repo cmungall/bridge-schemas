@@ -17,8 +17,8 @@ Alias: gold_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RnaseqNotify](RnaseqNotify.md) |  |  no  |
 | [AnalysisProjectPermissions](AnalysisProjectPermissions.md) |  |  no  |
+| [RnaseqNotify](RnaseqNotify.md) |  |  no  |
 
 
 

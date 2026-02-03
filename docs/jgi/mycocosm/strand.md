@@ -17,8 +17,8 @@ Alias: strand
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GenemarkPrediction](GenemarkPrediction.md) | GeneMark ab initio gene prediction |  no  |
 | [FilteredModels](FilteredModels.md) | Curated/filtered gene models - the primary gene set |  no  |
+| [GenemarkPrediction](GenemarkPrediction.md) | GeneMark ab initio gene prediction |  no  |
 | [GenewisePrediction](GenewisePrediction.md) | GeneWise homology-based gene prediction |  no  |
 
 

@@ -20,8 +20,8 @@ Alias: notes
 | [MsExperiment](MsExperiment.md) |  |  no  |
 | [MsPeptide](MsPeptide.md) |  |  no  |
 | [MsProteinOld](MsProteinOld.md) |  |  no  |
-| [MsPeptideOld](MsPeptideOld.md) |  |  no  |
 | [MsProtein](MsProtein.md) |  |  no  |
+| [MsPeptideOld](MsPeptideOld.md) |  |  no  |
 
 
 

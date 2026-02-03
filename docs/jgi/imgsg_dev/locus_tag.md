@@ -17,10 +17,10 @@ Alias: locus_tag
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldAnalysisProject](GoldAnalysisProject.md) |  |  no  |
+| [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
 | [ProjectInfo04112013](ProjectInfo04112013.md) |  |  no  |
 | [ProjectInfo](ProjectInfo.md) |  |  no  |
-| [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
+| [GoldAnalysisProject](GoldAnalysisProject.md) |  |  no  |
 
 
 

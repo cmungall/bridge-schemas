@@ -17,8 +17,8 @@ Alias: compound_name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MpwPglCompound](MpwPglCompound.md) |  |  no  |
 | [Compound](Compound.md) |  |  no  |
+| [MpwPglCompound](MpwPglCompound.md) |  |  no  |
 
 
 

@@ -18,8 +18,8 @@ Alias: genes
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [ActinoCassetteGenes](ActinoCassetteGenes.md) |  |  no  |
-| [ParalogGroupGenes](ParalogGroupGenes.md) |  |  no  |
 | [PositionalClusterGenes](PositionalClusterGenes.md) |  |  no  |
+| [ParalogGroupGenes](ParalogGroupGenes.md) |  |  no  |
 
 
 

@@ -17,8 +17,8 @@ Alias: organization
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Contact](Contact.md) |  |  no  |
 | [RequestAccount](RequestAccount.md) |  |  no  |
+| [Contact](Contact.md) |  |  no  |
 
 
 

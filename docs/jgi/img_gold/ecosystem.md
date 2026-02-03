@@ -17,13 +17,13 @@ Alias: ecosystem
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldMasterStudy](GoldMasterStudy.md) |  |  no  |
-| [GoldMasterAnalysisProject](GoldMasterAnalysisProject.md) |  |  no  |
-| [GoldStudy](GoldStudy.md) |  |  no  |
-| [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
-| [GoldAnalysisProject](GoldAnalysisProject.md) |  |  no  |
-| [GoldMasterBiosample](GoldMasterBiosample.md) |  |  no  |
 | [GoldMasterOrganism](GoldMasterOrganism.md) |  |  no  |
+| [GoldStudy](GoldStudy.md) |  |  no  |
+| [GoldAnalysisProject](GoldAnalysisProject.md) |  |  no  |
+| [GoldMasterStudy](GoldMasterStudy.md) |  |  no  |
+| [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
+| [GoldMasterBiosample](GoldMasterBiosample.md) |  |  no  |
+| [GoldMasterAnalysisProject](GoldMasterAnalysisProject.md) |  |  no  |
 
 
 

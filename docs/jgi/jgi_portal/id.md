@@ -18,18 +18,18 @@ Alias: id
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [MyFavorite](MyFavorite.md) | User's favorite genomes/datasets |  no  |
-| [ImgTaxonOid](ImgTaxonOid.md) | IMG taxon OID mapping |  no  |
 | [AlignmentProgram](AlignmentProgram.md) | Alignment program (BLAST, etc |  no  |
-| [JobGroup](JobGroup.md) | Group of related jobs |  no  |
+| [CustomTrack](CustomTrack.md) | Custom genome browser track |  no  |
 | [KbasePushLog](KbasePushLog.md) | Log of data pushes to KBase |  no  |
+| [JobGroup](JobGroup.md) | Group of related jobs |  no  |
+| [GlobusIdentity](GlobusIdentity.md) | Globus user identity |  no  |
 | [AlignmentDb](AlignmentDb.md) | Alignment database configuration |  no  |
-| [DownloadRequestFile](DownloadRequestFile.md) | File in a download request |  no  |
-| [DownloadRequest](DownloadRequest.md) | User download request |  no  |
+| [GlobusDownloadRequest](GlobusDownloadRequest.md) | Globus-based download request |  no  |
 | [FungiTaxonomyInfo](FungiTaxonomyInfo.md) | Fungal taxonomy information for MycoCosm |  no  |
 | [JobType](JobType.md) | Type of computational job |  no  |
-| [CustomTrack](CustomTrack.md) | Custom genome browser track |  no  |
-| [GlobusIdentity](GlobusIdentity.md) | Globus user identity |  no  |
-| [GlobusDownloadRequest](GlobusDownloadRequest.md) | Globus-based download request |  no  |
+| [DownloadRequest](DownloadRequest.md) | User download request |  no  |
+| [ImgTaxonOid](ImgTaxonOid.md) | IMG taxon OID mapping |  no  |
+| [DownloadRequestFile](DownloadRequestFile.md) | File in a download request |  no  |
 
 
 

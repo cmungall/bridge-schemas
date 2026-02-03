@@ -17,19 +17,19 @@ Alias: description
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [CathFunfam](CathFunfam.md) |  |  no  |
-| [KeggPathway](KeggPathway.md) |  |  no  |
 | [Yesnocv](Yesnocv.md) |  |  no  |
 | [AltTranscript](AltTranscript.md) |  |  no  |
-| [Kog](Kog.md) |  |  no  |
-| [Superfamily](Superfamily.md) |  |  no  |
 | [Gene](Gene.md) |  |  no  |
-| [Smart](Smart.md) |  |  no  |
 | [GeneXrefFamilies](GeneXrefFamilies.md) |  |  no  |
+| [KeggPathway](KeggPathway.md) |  |  no  |
+| [Smart](Smart.md) |  |  no  |
 | [PfamFamily](PfamFamily.md) |  |  no  |
-| [Cog](Cog.md) |  |  no  |
 | [PfamClan](PfamClan.md) |  |  no  |
+| [CathFunfam](CathFunfam.md) |  |  no  |
+| [Cog](Cog.md) |  |  no  |
 | [GenomeProperty](GenomeProperty.md) |  |  no  |
+| [Superfamily](Superfamily.md) |  |  no  |
+| [Kog](Kog.md) |  |  no  |
 
 
 

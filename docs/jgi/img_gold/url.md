@@ -18,8 +18,8 @@ Alias: url
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [GoldSpCollaborator](GoldSpCollaborator.md) |  |  no  |
-| [GoldMasterInstitution](GoldMasterInstitution.md) |  |  no  |
 | [GoldSpSeqCenter](GoldSpSeqCenter.md) |  |  no  |
+| [GoldMasterInstitution](GoldMasterInstitution.md) |  |  no  |
 
 
 

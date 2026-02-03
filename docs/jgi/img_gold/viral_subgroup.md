@@ -17,8 +17,8 @@ Alias: viral_subgroup
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldMasterOrganism](GoldMasterOrganism.md) |  |  no  |
 | [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
+| [GoldMasterOrganism](GoldMasterOrganism.md) |  |  no  |
 
 
 

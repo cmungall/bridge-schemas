@@ -17,10 +17,10 @@ Alias: enzymes
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ImageRoiEnzymes](ImageRoiEnzymes.md) |  |  no  |
-| [ReactionEnzymes](ReactionEnzymes.md) |  |  no  |
 | [KoTermEnzymes](KoTermEnzymes.md) |  |  no  |
 | [TigrfamEnzymes](TigrfamEnzymes.md) |  |  no  |
+| [ImageRoiEnzymes](ImageRoiEnzymes.md) |  |  no  |
+| [ReactionEnzymes](ReactionEnzymes.md) |  |  no  |
 
 
 

@@ -17,8 +17,8 @@ Alias: is_update_for
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ProjectInfoBioproject](ProjectInfoBioproject.md) |  |  no  |
 | [ProjectInfoBiosample](ProjectInfoBiosample.md) |  |  no  |
+| [ProjectInfoBioproject](ProjectInfoBioproject.md) |  |  no  |
 
 
 

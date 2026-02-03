@@ -17,11 +17,11 @@ Alias: group_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ParalogGroup](ParalogGroup.md) |  |  no  |
-| [ActinoCassette](ActinoCassette.md) |  |  no  |
 | [ActinoCassetteGenes](ActinoCassetteGenes.md) |  |  no  |
-| [ParalogGroupGenes](ParalogGroupGenes.md) |  |  no  |
+| [ParalogGroup](ParalogGroup.md) |  |  no  |
 | [PositionalCluster](PositionalCluster.md) |  |  no  |
+| [ActinoCassette](ActinoCassette.md) |  |  no  |
+| [ParalogGroupGenes](ParalogGroupGenes.md) |  |  no  |
 | [PositionalClusterGenes](PositionalClusterGenes.md) |  |  no  |
 
 

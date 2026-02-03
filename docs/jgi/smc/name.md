@@ -17,11 +17,11 @@ Alias: name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [BGC](BGC.md) | Biosynthetic Gene Cluster - a genomic region encoding enzymes for secondary m... |  no  |
-| [AnalysisTool](AnalysisTool.md) | Tool used for BGC analysis (antiSMASH, etc |  no  |
 | [BGCClass](BGCClass.md) | Secondary metabolite class (NRPS, PKS, terpene, etc |  no  |
-| [Collection](Collection.md) | Collection of BGCs or genomes |  no  |
+| [AnalysisTool](AnalysisTool.md) | Tool used for BGC analysis (antiSMASH, etc |  no  |
 | [Contig](Contig.md) | Genomic contig/scaffold |  no  |
+| [BGC](BGC.md) | Biosynthetic Gene Cluster - a genomic region encoding enzymes for secondary m... |  no  |
+| [Collection](Collection.md) | Collection of BGCs or genomes |  no  |
 
 
 

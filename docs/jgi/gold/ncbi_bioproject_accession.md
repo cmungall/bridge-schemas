@@ -17,9 +17,9 @@ Alias: ncbi_bioproject_accession
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SigsView](SigsView.md) |  |  no  |
-| [Project](Project.md) |  |  no  |
 | [AnalysisProject](AnalysisProject.md) |  |  no  |
+| [Project](Project.md) |  |  no  |
+| [SigsView](SigsView.md) |  |  no  |
 
 
 

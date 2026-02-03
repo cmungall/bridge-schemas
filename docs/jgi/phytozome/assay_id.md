@@ -17,9 +17,9 @@ Alias: assay_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Assay](Assay.md) | Expression assay experiment |  no  |
 | [AssayBiomaterial](AssayBiomaterial.md) | Biomaterial used in assay |  no  |
 | [Acquisition](Acquisition.md) | Data acquisition from assay |  no  |
+| [Assay](Assay.md) | Expression assay experiment |  no  |
 
 
 

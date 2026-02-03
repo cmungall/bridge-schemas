@@ -17,9 +17,9 @@ Alias: its_proposal_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
 | [GoldMasterProject](GoldMasterProject.md) |  |  no  |
 | [GoldMasterItsProposal](GoldMasterItsProposal.md) |  |  no  |
-| [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
 
 
 

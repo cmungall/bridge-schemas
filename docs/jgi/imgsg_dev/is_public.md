@@ -17,8 +17,8 @@ Alias: is_public
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [StudyLoad](StudyLoad.md) |  |  no  |
 | [ImgGroupNews](ImgGroupNews.md) |  |  no  |
+| [StudyLoad](StudyLoad.md) |  |  no  |
 
 
 

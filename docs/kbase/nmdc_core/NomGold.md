@@ -3,7 +3,7 @@
 # Class: NomGold 
 
 
-_Natural organic matter data linked to GOLD_
+_Natural organic matter data linked to GOLD samples. NOM characterization from soil and sediment samples using high-resolution mass spectrometry._
 
 
 
@@ -89,7 +89,8 @@ annotations:
   source_table:
     tag: source_table
     value: nom_gold
-description: Natural organic matter data linked to GOLD
+description: Natural organic matter data linked to GOLD samples. NOM characterization
+  from soil and sediment samples using high-resolution mass spectrometry.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +105,8 @@ annotations:
   source_table:
     tag: source_table
     value: nom_gold
-description: Natural organic matter data linked to GOLD
+description: Natural organic matter data linked to GOLD samples. NOM characterization
+  from soil and sediment samples using high-resolution mass spectrometry.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

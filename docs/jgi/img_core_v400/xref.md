@@ -17,10 +17,10 @@ Alias: xref
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GeneGoTerms](GeneGoTerms.md) |  |  no  |
 | [GeneExtLinks](GeneExtLinks.md) |  |  no  |
-| [GenePdbXrefs](GenePdbXrefs.md) |  |  no  |
 | [GeneXrefFamilies](GeneXrefFamilies.md) |  |  no  |
+| [GeneGoTerms](GeneGoTerms.md) |  |  no  |
+| [GenePdbXrefs](GenePdbXrefs.md) |  |  no  |
 
 
 

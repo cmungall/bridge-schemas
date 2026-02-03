@@ -17,9 +17,9 @@ Alias: custom_url
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ScaffoldExtLinks](ScaffoldExtLinks.md) |  |  no  |
-| [TaxonExtLinks](TaxonExtLinks.md) |  |  no  |
 | [GeneExtLinks](GeneExtLinks.md) |  |  no  |
+| [TaxonExtLinks](TaxonExtLinks.md) |  |  no  |
+| [ScaffoldExtLinks](ScaffoldExtLinks.md) |  |  no  |
 
 
 

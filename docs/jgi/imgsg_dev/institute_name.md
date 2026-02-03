@@ -17,8 +17,8 @@ Alias: institute_name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Institutes](Institutes.md) |  |  no  |
 | [TInstitutesBak](TInstitutesBak.md) |  |  no  |
+| [Institutes](Institutes.md) |  |  no  |
 
 
 

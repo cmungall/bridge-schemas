@@ -17,9 +17,9 @@ Alias: num_lq_bins
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [EbinNotLoadedMetagenomes](EbinNotLoadedMetagenomes.md) |  |  no  |
 | [SemiEbinNotLoaded](SemiEbinNotLoaded.md) |  |  no  |
 | [NotLoadedMetagenomes](NotLoadedMetagenomes.md) |  |  no  |
-| [EbinNotLoadedMetagenomes](EbinNotLoadedMetagenomes.md) |  |  no  |
 | [SemiBinNotLoaded](SemiBinNotLoaded.md) |  |  no  |
 
 

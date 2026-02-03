@@ -3,7 +3,9 @@
 # Class: AnnotationCrossrefs 
 
 
-_Cross-references between annotation databases_
+_Cross-references between annotation databases. Maps between GO, EC, KEGG, COG, and MetaCyc identifiers._
+
+_EXAMPLE MAPPINGS: - GO <-> EC (enzyme annotations) - KO <-> EC (KEGG orthologs to enzymes) - GO <-> KEGG (function to pathway)_
 
 
 
@@ -89,7 +91,11 @@ annotations:
   source_table:
     tag: source_table
     value: annotation_crossrefs
-description: Cross-references between annotation databases
+description: 'Cross-references between annotation databases. Maps between GO, EC,
+  KEGG, COG, and MetaCyc identifiers.
+
+  EXAMPLE MAPPINGS: - GO <-> EC (enzyme annotations) - KO <-> EC (KEGG orthologs to
+  enzymes) - GO <-> KEGG (function to pathway)'
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +110,11 @@ annotations:
   source_table:
     tag: source_table
     value: annotation_crossrefs
-description: Cross-references between annotation databases
+description: 'Cross-references between annotation databases. Maps between GO, EC,
+  KEGG, COG, and MetaCyc identifiers.
+
+  EXAMPLE MAPPINGS: - GO <-> EC (enzyme annotations) - KO <-> EC (KEGG orthologs to
+  enzymes) - GO <-> KEGG (function to pathway)'
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

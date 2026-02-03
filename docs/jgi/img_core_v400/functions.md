@@ -17,9 +17,9 @@ Alias: functions
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [KogFunctions](KogFunctions.md) |  |  no  |
 | [PfamFamilyCogs](PfamFamilyCogs.md) |  |  no  |
 | [CogFunctions](CogFunctions.md) |  |  no  |
+| [KogFunctions](KogFunctions.md) |  |  no  |
 
 
 

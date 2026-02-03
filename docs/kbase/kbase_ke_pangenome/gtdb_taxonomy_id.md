@@ -17,8 +17,8 @@ Alias: gtdb_taxonomy_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GtdbTaxonomyR214v1](GtdbTaxonomyR214v1.md) | GTDB release 214 taxonomy with parsed rank assignments |  no  |
 | [Genome](Genome.md) | Individual genome assembly from NCBI RefSeq or GenBank |  no  |
+| [GtdbTaxonomyR214v1](GtdbTaxonomyR214v1.md) | GTDB release 214 taxonomy with parsed rank assignments |  no  |
 
 
 

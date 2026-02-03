@@ -17,8 +17,8 @@ Alias: value
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [CellLineProp](CellLineProp.md) | Cell line property |  no  |
 | [BiomaterialProp](BiomaterialProp.md) | Property of a biomaterial |  no  |
+| [CellLineProp](CellLineProp.md) | Cell line property |  no  |
 
 
 

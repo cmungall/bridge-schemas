@@ -17,14 +17,14 @@ Alias: name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ChromInfo](ChromInfo.md) | Chromosome/scaffold information |  no  |
+| [SMClass](SMClass.md) | Secondary metabolite class |  no  |
 | [PMAnnotator](PMAnnotator.md) | Annotator information |  no  |
 | [GeneCatalog](GeneCatalog.md) | Complete gene catalog for the genome |  no  |
+| [AllModels](AllModels.md) | All gene models (filtered + unfiltered) |  no  |
+| [ChromInfo](ChromInfo.md) | Chromosome/scaffold information |  no  |
+| [PMAnnotationGroup](PMAnnotationGroup.md) | Portal management annotation group |  no  |
 | [SMCluster](SMCluster.md) | Secondary metabolite biosynthetic cluster |  no  |
 | [FilteredModels](FilteredModels.md) | Curated/filtered gene models - the primary gene set |  no  |
-| [PMAnnotationGroup](PMAnnotationGroup.md) | Portal management annotation group |  no  |
-| [AllModels](AllModels.md) | All gene models (filtered + unfiltered) |  no  |
-| [SMClass](SMClass.md) | Secondary metabolite class |  no  |
 
 
 

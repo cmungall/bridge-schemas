@@ -17,16 +17,16 @@ Alias: name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Analysis](Analysis.md) | Analysis workflow or pipeline run |  no  |
 | [NcbiTaxon](NcbiTaxon.md) | NCBI taxonomy reference |  no  |
-| [Template](Template.md) | Generic template |  no  |
-| [Service](Service.md) | SDM service definition |  no  |
+| [DataStore](DataStore.md) | Data storage location |  no  |
 | [Query](Query.md) | Saved query |  no  |
 | [Macro](Macro.md) | Reusable macro for workflows |  no  |
-| [File](File.md) | File metadata record |  no  |
 | [AnalysisTagTemplate](AnalysisTagTemplate.md) | Tag template for analysis categorization |  no  |
+| [Service](Service.md) | SDM service definition |  no  |
 | [AnalysisTemplate](AnalysisTemplate.md) | Template defining an analysis workflow |  no  |
-| [DataStore](DataStore.md) | Data storage location |  no  |
+| [Analysis](Analysis.md) | Analysis workflow or pipeline run |  no  |
+| [File](File.md) | File metadata record |  no  |
+| [Template](Template.md) | Generic template |  no  |
 
 
 

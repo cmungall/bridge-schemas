@@ -18,9 +18,9 @@ Alias: biomaterial_id
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Biomaterial](Biomaterial.md) | Biological material (tissue, cell line, etc |  no  |
-| [BiomaterialTreatment](BiomaterialTreatment.md) | Treatment applied to biomaterial |  no  |
 | [BiomaterialProp](BiomaterialProp.md) | Property of a biomaterial |  no  |
 | [AssayBiomaterial](AssayBiomaterial.md) | Biomaterial used in assay |  no  |
+| [BiomaterialTreatment](BiomaterialTreatment.md) | Treatment applied to biomaterial |  no  |
 
 
 

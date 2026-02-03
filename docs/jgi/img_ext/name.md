@@ -19,9 +19,9 @@ Alias: name
 | --- | --- | --- |
 | [PublicSet](PublicSet.md) |  |  no  |
 | [DbSource](DbSource.md) |  |  no  |
+| [PhenotypeRule](PhenotypeRule.md) |  |  no  |
 | [NpActivityCv](NpActivityCv.md) |  |  no  |
 | [MeshDtree](MeshDtree.md) |  |  no  |
-| [PhenotypeRule](PhenotypeRule.md) |  |  no  |
 
 
 

@@ -17,9 +17,9 @@ Alias: proport_woa_nitrate
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
 | [GoldMasterOrganism](GoldMasterOrganism.md) |  |  no  |
 | [GoldMasterBiosample](GoldMasterBiosample.md) |  |  no  |
-| [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
 
 
 

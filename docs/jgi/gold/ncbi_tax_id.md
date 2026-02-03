@@ -17,9 +17,9 @@ Alias: ncbi_tax_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [NcbiTaxonomy](NcbiTaxonomy.md) |  |  no  |
-| [DwAnalysisProject](DwAnalysisProject.md) |  |  no  |
 | [AnalysisProject](AnalysisProject.md) |  |  no  |
+| [DwAnalysisProject](DwAnalysisProject.md) |  |  no  |
+| [NcbiTaxonomy](NcbiTaxonomy.md) |  |  no  |
 
 
 

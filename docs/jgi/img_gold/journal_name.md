@@ -17,8 +17,8 @@ Alias: journal_name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldSpGenomePublications](GoldSpGenomePublications.md) |  |  no  |
 | [GoldApPublications](GoldApPublications.md) |  |  no  |
+| [GoldSpGenomePublications](GoldSpGenomePublications.md) |  |  no  |
 
 
 

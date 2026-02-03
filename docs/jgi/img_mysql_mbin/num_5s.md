@@ -17,10 +17,10 @@ Alias: num_5s
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SemiEbin](SemiEbin.md) |  |  no  |
 | [Bin](Bin.md) |  |  no  |
-| [Ebin](Ebin.md) |  |  no  |
 | [SemiBin](SemiBin.md) |  |  no  |
+| [Ebin](Ebin.md) |  |  no  |
+| [SemiEbin](SemiEbin.md) |  |  no  |
 | [SemiEbinScaffolds](SemiEbinScaffolds.md) |  |  no  |
 | [EbinScaffolds](EbinScaffolds.md) |  |  no  |
 

@@ -17,10 +17,10 @@ Alias: image_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Ko2pathway](Ko2pathway.md) |  |  no  |
 | [KeggPathway](KeggPathway.md) |  |  no  |
 | [KoTermPathways](KoTermPathways.md) |  |  no  |
 | [KeggModule](KeggModule.md) |  |  no  |
-| [Ko2pathway](Ko2pathway.md) |  |  no  |
 
 
 

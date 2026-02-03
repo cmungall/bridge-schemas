@@ -3,7 +3,7 @@
 # Class: ProteomicsGold 
 
 
-_Proteomics data linked to GOLD_
+_Proteomics data linked to GOLD samples. Mass spec identification of proteins in environmental samples._
 
 
 
@@ -89,7 +89,8 @@ annotations:
   source_table:
     tag: source_table
     value: proteomics_gold
-description: Proteomics data linked to GOLD
+description: Proteomics data linked to GOLD samples. Mass spec identification of proteins
+  in environmental samples.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +105,8 @@ annotations:
   source_table:
     tag: source_table
     value: proteomics_gold
-description: Proteomics data linked to GOLD
+description: Proteomics data linked to GOLD samples. Mass spec identification of proteins
+  in environmental samples.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

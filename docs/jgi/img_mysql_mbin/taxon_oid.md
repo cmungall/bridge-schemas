@@ -17,16 +17,16 @@ Alias: taxon_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SemiEbin](SemiEbin.md) |  |  no  |
 | [Bin](Bin.md) |  |  no  |
 | [NotLoadedMetagenomes](NotLoadedMetagenomes.md) |  |  no  |
-| [SemiLq](SemiLq.md) |  |  no  |
-| [EbinNotLoadedMetagenomes](EbinNotLoadedMetagenomes.md) |  |  no  |
-| [Ebin](Ebin.md) |  |  no  |
 | [SemiBin](SemiBin.md) |  |  no  |
-| [SemiEbinNotLoaded](SemiEbinNotLoaded.md) |  |  no  |
-| [ImgUmagBinTarballs02062024](ImgUmagBinTarballs02062024.md) |  |  no  |
+| [Ebin](Ebin.md) |  |  no  |
+| [EbinNotLoadedMetagenomes](EbinNotLoadedMetagenomes.md) |  |  no  |
+| [SemiEbin](SemiEbin.md) |  |  no  |
 | [SemiBinNotLoaded](SemiBinNotLoaded.md) |  |  no  |
+| [SemiEbinNotLoaded](SemiEbinNotLoaded.md) |  |  no  |
+| [SemiLq](SemiLq.md) |  |  no  |
+| [ImgUmagBinTarballs02062024](ImgUmagBinTarballs02062024.md) |  |  no  |
 
 
 

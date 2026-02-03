@@ -17,10 +17,10 @@ Alias: protein_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MsProteinImgGenesOld](MsProteinImgGenesOld.md) |  |  no  |
-| [MsProteinOld](MsProteinOld.md) |  |  no  |
-| [MsProteinImgGenes](MsProteinImgGenes.md) |  |  no  |
 | [MsProtein](MsProtein.md) |  |  no  |
+| [MsProteinOld](MsProteinOld.md) |  |  no  |
+| [MsProteinImgGenesOld](MsProteinImgGenesOld.md) |  |  no  |
+| [MsProteinImgGenes](MsProteinImgGenes.md) |  |  no  |
 
 
 

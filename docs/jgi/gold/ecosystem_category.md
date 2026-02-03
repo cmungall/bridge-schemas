@@ -17,11 +17,11 @@ Alias: ecosystem_category
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Study](Study.md) |  |  no  |
 | [OrganismV2](OrganismV2.md) |  |  no  |
-| [SigsView](SigsView.md) |  |  no  |
-| [Biosample](Biosample.md) |  |  no  |
 | [AnalysisProject](AnalysisProject.md) |  |  no  |
+| [Biosample](Biosample.md) |  |  no  |
+| [Study](Study.md) |  |  no  |
+| [SigsView](SigsView.md) |  |  no  |
 
 
 

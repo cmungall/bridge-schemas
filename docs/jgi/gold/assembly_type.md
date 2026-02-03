@@ -17,8 +17,8 @@ Alias: assembly_type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [NcbiAssembly](NcbiAssembly.md) |  |  no  |
 | [Assembly](Assembly.md) |  |  no  |
+| [NcbiAssembly](NcbiAssembly.md) |  |  no  |
 
 
 

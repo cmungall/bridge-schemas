@@ -17,9 +17,9 @@ Alias: publication_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldMasterAnalysisProjectPublication](GoldMasterAnalysisProjectPublication.md) |  |  no  |
-| [GoldMasterPublication](GoldMasterPublication.md) |  |  no  |
 | [GoldMasterProjectGenomePublication](GoldMasterProjectGenomePublication.md) |  |  no  |
+| [GoldMasterPublication](GoldMasterPublication.md) |  |  no  |
+| [GoldMasterAnalysisProjectPublication](GoldMasterAnalysisProjectPublication.md) |  |  no  |
 
 
 

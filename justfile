@@ -98,5 +98,16 @@ clean:
     rm -rf {{DOCDIR}}/jgi/*/index.md {{DOCDIR}}/kbase/*/index.md
     rm -rf site/
 
+# Merge all OWL files into a single lakehouse ontology
+merge-owl:
+    #!/usr/bin/env bash
+    set -eu -o pipefail
+    inputs=""
+    for f in project/owl/jgi/*.owl.ttl project/owl/kbase/*.owl.ttl; do
+        inputs="$inputs --input $f"
+    done
+    robot merge $inputs --output project/owl/lakehouse.owl.ttl
+    echo "Created project/owl/lakehouse.owl.ttl"
+
 # Full rebuild: clean, install, generate docs
 rebuild: clean install gendoc

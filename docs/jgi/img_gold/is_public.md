@@ -17,11 +17,11 @@ Alias: is_public
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldMasterStudy](GoldMasterStudy.md) |  |  no  |
-| [GoldMasterAnalysisProject](GoldMasterAnalysisProject.md) |  |  no  |
-| [GoldMasterBiosample](GoldMasterBiosample.md) |  |  no  |
-| [GoldMasterProject](GoldMasterProject.md) |  |  no  |
 | [GoldMasterOrganism](GoldMasterOrganism.md) |  |  no  |
+| [GoldMasterProject](GoldMasterProject.md) |  |  no  |
+| [GoldMasterStudy](GoldMasterStudy.md) |  |  no  |
+| [GoldMasterBiosample](GoldMasterBiosample.md) |  |  no  |
+| [GoldMasterAnalysisProject](GoldMasterAnalysisProject.md) |  |  no  |
 
 
 

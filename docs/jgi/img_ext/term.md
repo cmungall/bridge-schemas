@@ -17,11 +17,11 @@ Alias: term
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [ImgTerm](ImgTerm.md) |  |  no  |
+| [ImgPartsListImgTerms](ImgPartsListImgTerms.md) |  |  no  |
+| [ImgReactionTComponents](ImgReactionTComponents.md) |  |  no  |
 | [ImgTermHistory](ImgTermHistory.md) |  |  no  |
 | [ImgPathwayTComponents](ImgPathwayTComponents.md) |  |  no  |
-| [ImgReactionTComponents](ImgReactionTComponents.md) |  |  no  |
-| [ImgPartsListImgTerms](ImgPartsListImgTerms.md) |  |  no  |
-| [ImgTerm](ImgTerm.md) |  |  no  |
 | [PathwayNetworkTComponents](PathwayNetworkTComponents.md) |  |  no  |
 
 

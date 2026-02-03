@@ -17,8 +17,8 @@ Alias: study_gold_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldAnalysisProject](GoldAnalysisProject.md) |  |  no  |
 | [GoldSpStudyGoldId](GoldSpStudyGoldId.md) |  |  no  |
+| [GoldAnalysisProject](GoldAnalysisProject.md) |  |  no  |
 
 
 

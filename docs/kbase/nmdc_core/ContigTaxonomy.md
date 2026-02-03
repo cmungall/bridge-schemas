@@ -3,7 +3,7 @@
 # Class: ContigTaxonomy 
 
 
-_Contig-level taxonomic assignments_
+_Contig-level taxonomic assignments from metagenome assemblies. Links assembled contigs to taxonomic classifications._
 
 
 
@@ -89,7 +89,8 @@ annotations:
   source_table:
     tag: source_table
     value: contig_taxonomy
-description: Contig-level taxonomic assignments
+description: Contig-level taxonomic assignments from metagenome assemblies. Links
+  assembled contigs to taxonomic classifications.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +105,8 @@ annotations:
   source_table:
     tag: source_table
     value: contig_taxonomy
-description: Contig-level taxonomic assignments
+description: Contig-level taxonomic assignments from metagenome assemblies. Links
+  assembled contigs to taxonomic classifications.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

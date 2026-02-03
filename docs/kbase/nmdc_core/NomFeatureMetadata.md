@@ -3,7 +3,7 @@
 # Class: NomFeatureMetadata 
 
 
-_NOM feature metadata_
+_NOM feature metadata including molecular formulas, exact masses, and compound classes. Characterizes organic matter composition._
 
 
 
@@ -89,7 +89,8 @@ annotations:
   source_table:
     tag: source_table
     value: nom_feature_metadata
-description: NOM feature metadata
+description: NOM feature metadata including molecular formulas, exact masses, and
+  compound classes. Characterizes organic matter composition.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +105,8 @@ annotations:
   source_table:
     tag: source_table
     value: nom_feature_metadata
-description: NOM feature metadata
+description: NOM feature metadata including molecular formulas, exact masses, and
+  compound classes. Characterizes organic matter composition.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

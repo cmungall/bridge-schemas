@@ -17,13 +17,13 @@ Alias: bin_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SemiBinScaffolds](SemiBinScaffolds.md) |  |  no  |
-| [BinCoverage](BinCoverage.md) |  |  no  |
 | [Bin](Bin.md) |  |  no  |
-| [SemiLq](SemiLq.md) |  |  no  |
 | [SemiBin](SemiBin.md) |  |  no  |
-| [SemiBinCoverage](SemiBinCoverage.md) |  |  no  |
 | [BinScaffolds](BinScaffolds.md) |  |  no  |
+| [BinCoverage](BinCoverage.md) |  |  no  |
+| [SemiBinCoverage](SemiBinCoverage.md) |  |  no  |
+| [SemiBinScaffolds](SemiBinScaffolds.md) |  |  no  |
+| [SemiLq](SemiLq.md) |  |  no  |
 
 
 

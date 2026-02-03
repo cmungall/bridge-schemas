@@ -17,8 +17,8 @@ Alias: gene_count_90
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DtPhyloTaxonStats](DtPhyloTaxonStats.md) |  |  no  |
 | [DtAllPhyloTaxonStats](DtAllPhyloTaxonStats.md) |  |  no  |
+| [DtPhyloTaxonStats](DtPhyloTaxonStats.md) |  |  no  |
 
 
 

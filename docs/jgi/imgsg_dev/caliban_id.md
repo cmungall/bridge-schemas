@@ -17,9 +17,9 @@ Alias: caliban_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Contact](Contact.md) |  |  no  |
-| [GoldAnalysisProjectUsers](GoldAnalysisProjectUsers.md) |  |  no  |
 | [GoldAnalysisProject](GoldAnalysisProject.md) |  |  no  |
+| [GoldAnalysisProjectUsers](GoldAnalysisProjectUsers.md) |  |  no  |
+| [Contact](Contact.md) |  |  no  |
 
 
 

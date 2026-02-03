@@ -18,13 +18,13 @@ Alias: name
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [KeggKoTerms](KeggKoTerms.md) | KEGG Orthology (KO) terms |  no  |
-| [GoTerms](GoTerms.md) | Gene Ontology terms |  no  |
+| [StudyTable](StudyTable.md) | NMDC research studies with ecosystem classification and investigator informat... |  no  |
+| [GoTerms](GoTerms.md) | Gene Ontology terms with full metadata |  no  |
+| [AnnotationTermsUnified](AnnotationTermsUnified.md) | Unified annotation terms across sources (GO, KEGG, EC, COG, MetaCyc) |  no  |
+| [MetabolomicsGold](MetabolomicsGold.md) | Metabolomics data linked to GOLD samples |  no  |
 | [EcTerms](EcTerms.md) | Enzyme Commission (EC) number terms |  no  |
-| [StudyTable](StudyTable.md) | NMDC research studies |  no  |
-| [MetabolomicsGold](MetabolomicsGold.md) | Metabolomics data linked to GOLD |  no  |
-| [CogCategories](CogCategories.md) | COG functional categories |  no  |
-| [KeggPathwayTerms](KeggPathwayTerms.md) | KEGG pathway definitions |  no  |
-| [AnnotationTermsUnified](AnnotationTermsUnified.md) | Unified annotation terms across sources (GO, KEGG, EC, COG, etc |  no  |
+| [KeggPathwayTerms](KeggPathwayTerms.md) | KEGG pathway definitions with category classification |  no  |
+| [MetacycPathways](MetacycPathways.md) | MetaCyc metabolic pathways with hierarchical classification |  no  |
 
 
 
@@ -68,9 +68,9 @@ domain_of:
 - EcTerms
 - KeggKoTerms
 - KeggPathwayTerms
-- CogCategories
 - StudyTable
 - MetabolomicsGold
+- MetacycPathways
 range: string
 
 ```

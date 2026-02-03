@@ -17,9 +17,9 @@ Alias: date_created
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DwSamples](DwSamples.md) |  |  no  |
 | [DwSequencingProduct](DwSequencingProduct.md) |  |  no  |
 | [DwSequencingProject](DwSequencingProject.md) |  |  no  |
+| [DwSamples](DwSamples.md) |  |  no  |
 
 
 

@@ -17,8 +17,8 @@ Alias: version
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [WorkflowStats](WorkflowStats.md) |  |  no  |
 | [SchemaMigrations](SchemaMigrations.md) |  |  no  |
+| [WorkflowStats](WorkflowStats.md) |  |  no  |
 
 
 

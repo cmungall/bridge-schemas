@@ -17,8 +17,8 @@ Alias: in_species
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [BiocycProteinInSpecies](BiocycProteinInSpecies.md) |  |  no  |
 | [BiocycPathwayInSpecies](BiocycPathwayInSpecies.md) |  |  no  |
+| [BiocycProteinInSpecies](BiocycProteinInSpecies.md) |  |  no  |
 
 
 

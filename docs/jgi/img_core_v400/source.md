@@ -17,9 +17,9 @@ Alias: source
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [KeggGeneUniprotIds](KeggGeneUniprotIds.md) |  |  no  |
-| [IsoPlasmids](IsoPlasmids.md) |  |  no  |
 | [KeggGeneNcbiGeneIds](KeggGeneNcbiGeneIds.md) |  |  no  |
+| [IsoPlasmids](IsoPlasmids.md) |  |  no  |
+| [KeggGeneUniprotIds](KeggGeneUniprotIds.md) |  |  no  |
 
 
 

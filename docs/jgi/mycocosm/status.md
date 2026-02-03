@@ -17,9 +17,9 @@ Alias: status
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [UserModel](UserModel.md) | User-submitted gene model (JAM system) |  no  |
 | [PMAnnotationStatus](PMAnnotationStatus.md) | Annotation status in portal |  no  |
 | [CEGMACompletenessDetail](CEGMACompletenessDetail.md) | Detailed CEGMA results per conserved gene |  no  |
-| [UserModel](UserModel.md) | User-submitted gene model (JAM system) |  no  |
 
 
 

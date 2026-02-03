@@ -17,9 +17,9 @@ Alias: cas_number
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [EnzymeTransferred](EnzymeTransferred.md) |  |  no  |
-| [Enzyme](Enzyme.md) |  |  no  |
 | [Compound](Compound.md) |  |  no  |
+| [Enzyme](Enzyme.md) |  |  no  |
+| [EnzymeTransferred](EnzymeTransferred.md) |  |  no  |
 
 
 

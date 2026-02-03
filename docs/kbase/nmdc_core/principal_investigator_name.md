@@ -3,6 +3,11 @@
 # Slot: principal_investigator_name 
 
 
+_PI name_
+
+
+
+
 
 URI: [https://w3id.org/kbase/nmdc_core/principal_investigator_name](https://w3id.org/kbase/nmdc_core/principal_investigator_name)
 Alias: principal_investigator_name
@@ -17,7 +22,7 @@ Alias: principal_investigator_name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [StudyTable](StudyTable.md) | NMDC research studies |  no  |
+| [StudyTable](StudyTable.md) | NMDC research studies with ecosystem classification and investigator informat... |  no  |
 
 
 
@@ -30,6 +35,16 @@ Alias: principal_investigator_name
 
 
 
+
+
+## Examples
+
+| Value |
+| --- |
+| Kelly Wrighton |
+| Christopher Schadt |
+| James Stegen |
+| Kate Thibault |
 
 ## Identifier and Mapping Information
 
@@ -61,6 +76,16 @@ Alias: principal_investigator_name
 <details>
 ```yaml
 name: principal_investigator_name
+description: PI name
+examples:
+- value: Kelly Wrighton
+  description: Colorado State University
+- value: Christopher Schadt
+  description: Oak Ridge National Lab
+- value: James Stegen
+  description: Pacific Northwest National Lab
+- value: Kate Thibault
+  description: NEON/Battelle Ecology
 from_schema: https://w3id.org/kbase/nmdc_core
 rank: 1000
 alias: principal_investigator_name

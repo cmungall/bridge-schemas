@@ -3,7 +3,7 @@
 # Slot: file_id 
 
 
-_Source file ID_
+_NMDC data object ID for source file_
 
 
 
@@ -22,7 +22,7 @@ Alias: file_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MetabolomicsGold](MetabolomicsGold.md) | Metabolomics data linked to GOLD |  no  |
+| [MetabolomicsGold](MetabolomicsGold.md) | Metabolomics data linked to GOLD samples |  no  |
 
 
 
@@ -35,6 +35,13 @@ Alias: file_id
 
 
 
+
+
+## Examples
+
+| Value |
+| --- |
+| nmdc:dobj-12-3j09wy18 |
 
 ## Identifier and Mapping Information
 
@@ -66,7 +73,10 @@ Alias: file_id
 <details>
 ```yaml
 name: file_id
-description: Source file ID
+description: NMDC data object ID for source file
+examples:
+- value: nmdc:dobj-12-3j09wy18
+  description: Metabolomics data object ID
 from_schema: https://w3id.org/kbase/nmdc_core
 rank: 1000
 alias: file_id

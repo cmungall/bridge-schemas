@@ -3,6 +3,11 @@
 # Slot: class 
 
 
+_Class name_
+
+
+
+
 
 URI: [https://w3id.org/kbase/nmdc_core/class](https://w3id.org/kbase/nmdc_core/class)
 Alias: class
@@ -17,7 +22,7 @@ Alias: class
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TaxonomyDim](TaxonomyDim.md) | Taxonomic hierarchy dimension table |  no  |
+| [TaxonomyDim](TaxonomyDim.md) | Taxonomic hierarchy dimension table using NCBI taxonomy |  no  |
 
 
 
@@ -30,6 +35,14 @@ Alias: class
 
 
 
+
+
+## Examples
+
+| Value |
+| --- |
+| Gammaproteobacteria |
+| Insecta |
 
 ## Identifier and Mapping Information
 
@@ -61,6 +74,12 @@ Alias: class
 <details>
 ```yaml
 name: class
+description: Class name
+examples:
+- value: Gammaproteobacteria
+  description: Bacterial class
+- value: Insecta
+  description: Insects
 from_schema: https://w3id.org/kbase/nmdc_core
 rank: 1000
 alias: class

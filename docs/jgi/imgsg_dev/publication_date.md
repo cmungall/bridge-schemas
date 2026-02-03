@@ -18,9 +18,9 @@ Alias: publication_date
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [GoldSpGenomePublications](GoldSpGenomePublications.md) |  |  no  |
+| [GoldApPublications](GoldApPublications.md) |  |  no  |
 | [ProjectInfo](ProjectInfo.md) |  |  no  |
 | [ProjectInfo04112013](ProjectInfo04112013.md) |  |  no  |
-| [GoldApPublications](GoldApPublications.md) |  |  no  |
 
 
 

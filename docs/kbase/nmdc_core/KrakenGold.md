@@ -3,7 +3,9 @@
 # Class: KrakenGold 
 
 
-_Kraken taxonomic classifications for GOLD samples_
+_Kraken taxonomic classifications for GOLD samples. K-mer based taxonomic classifier with high speed and accuracy._
+
+_TOOL: Kraken2 (Wood et al. 2019) - Industry standard classifier - Very fast (millions of reads/minute) - Comprehensive database options_
 
 
 
@@ -89,7 +91,11 @@ annotations:
   source_table:
     tag: source_table
     value: kraken_gold
-description: Kraken taxonomic classifications for GOLD samples
+description: 'Kraken taxonomic classifications for GOLD samples. K-mer based taxonomic
+  classifier with high speed and accuracy.
+
+  TOOL: Kraken2 (Wood et al. 2019) - Industry standard classifier - Very fast (millions
+  of reads/minute) - Comprehensive database options'
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +110,11 @@ annotations:
   source_table:
     tag: source_table
     value: kraken_gold
-description: Kraken taxonomic classifications for GOLD samples
+description: 'Kraken taxonomic classifications for GOLD samples. K-mer based taxonomic
+  classifier with high speed and accuracy.
+
+  TOOL: Kraken2 (Wood et al. 2019) - Industry standard classifier - Very fast (millions
+  of reads/minute) - Comprehensive database options'
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

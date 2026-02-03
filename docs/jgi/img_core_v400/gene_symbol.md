@@ -17,8 +17,8 @@ Alias: gene_symbol
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Tigrfam](Tigrfam.md) |  |  no  |
 | [Gene](Gene.md) |  |  no  |
+| [Tigrfam](Tigrfam.md) |  |  no  |
 
 
 

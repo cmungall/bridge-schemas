@@ -17,9 +17,9 @@ Alias: function
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [KogPathway](KogPathway.md) |  |  no  |
-| [CogPathway](CogPathway.md) |  |  no  |
 | [ImgFuncsInfo](ImgFuncsInfo.md) |  |  no  |
+| [CogPathway](CogPathway.md) |  |  no  |
+| [KogPathway](KogPathway.md) |  |  no  |
 
 
 

@@ -17,10 +17,10 @@ Alias: contig_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ContigXFeature](ContigXFeature.md) |  |  no  |
+| [ContigXEncodedFeature](ContigXEncodedFeature.md) |  |  no  |
 | [ContigXProtein](ContigXProtein.md) |  |  no  |
 | [Contig](Contig.md) |  |  no  |
-| [ContigXEncodedFeature](ContigXEncodedFeature.md) |  |  no  |
+| [ContigXFeature](ContigXFeature.md) |  |  no  |
 | [ContigXContigCollection](ContigXContigCollection.md) |  |  no  |
 
 

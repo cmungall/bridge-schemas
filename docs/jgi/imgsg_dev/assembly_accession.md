@@ -17,12 +17,12 @@ Alias: assembly_accession
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [NcbiAccessionsJbtest](NcbiAccessionsJbtest.md) |  |  no  |
 | [ProjectInfo](ProjectInfo.md) |  |  no  |
-| [GoldAnalysisProjectGenbanks](GoldAnalysisProjectGenbanks.md) |  |  no  |
-| [LoadGenbankProkData](LoadGenbankProkData.md) |  |  no  |
 | [GoldApGenbank](GoldApGenbank.md) |  |  no  |
 | [NcbiAccessions](NcbiAccessions.md) |  |  no  |
+| [GoldAnalysisProjectGenbanks](GoldAnalysisProjectGenbanks.md) |  |  no  |
+| [NcbiAccessionsJbtest](NcbiAccessionsJbtest.md) |  |  no  |
+| [LoadGenbankProkData](LoadGenbankProkData.md) |  |  no  |
 
 
 

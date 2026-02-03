@@ -3,6 +3,11 @@
 # Slot: websites 
 
 
+_JSON array of associated website URLs_
+
+
+
+
 
 URI: [https://w3id.org/kbase/nmdc_core/websites](https://w3id.org/kbase/nmdc_core/websites)
 Alias: websites
@@ -17,7 +22,7 @@ Alias: websites
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [StudyTable](StudyTable.md) | NMDC research studies |  no  |
+| [StudyTable](StudyTable.md) | NMDC research studies with ecosystem classification and investigator informat... |  no  |
 
 
 
@@ -30,6 +35,14 @@ Alias: websites
 
 
 
+
+
+## Examples
+
+| Value |
+| --- |
+| ["https://mnspruce.ornl.gov/project/overview"] |
+| ["https://www.pnnl.gov/projects/river-corridor-hydrobiogeochemistry-science-focus-area"] |
 
 ## Identifier and Mapping Information
 
@@ -61,6 +74,12 @@ Alias: websites
 <details>
 ```yaml
 name: websites
+description: JSON array of associated website URLs
+examples:
+- value: '["https://mnspruce.ornl.gov/project/overview"]'
+  description: SPRUCE project website
+- value: '["https://www.pnnl.gov/projects/river-corridor-hydrobiogeochemistry-science-focus-area"]'
+  description: PNNL project page
 from_schema: https://w3id.org/kbase/nmdc_core
 rank: 1000
 alias: websites

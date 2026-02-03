@@ -17,11 +17,11 @@ Alias: protein_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Protein](Protein.md) |  |  no  |
-| [ContigXProtein](ContigXProtein.md) |  |  no  |
 | [EncodedFeatureXProtein](EncodedFeatureXProtein.md) |  |  no  |
-| [ContigCollectionXProtein](ContigCollectionXProtein.md) |  |  no  |
 | [FeatureXProtein](FeatureXProtein.md) |  |  no  |
+| [ContigXProtein](ContigXProtein.md) |  |  no  |
+| [Protein](Protein.md) |  |  no  |
+| [ContigCollectionXProtein](ContigCollectionXProtein.md) |  |  no  |
 
 
 

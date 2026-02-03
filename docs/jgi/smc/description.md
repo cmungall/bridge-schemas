@@ -17,8 +17,8 @@ Alias: description
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Collection](Collection.md) | Collection of BGCs or genomes |  no  |
 | [BGCClass](BGCClass.md) | Secondary metabolite class (NRPS, PKS, terpene, etc |  no  |
+| [Collection](Collection.md) | Collection of BGCs or genomes |  no  |
 
 
 

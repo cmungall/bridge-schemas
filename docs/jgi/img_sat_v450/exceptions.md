@@ -17,10 +17,10 @@ Alias: exceptions
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TcFamilyTfams](TcFamilyTfams.md) |  |  no  |
-| [TcFamilyPfamsIain](TcFamilyPfamsIain.md) |  |  no  |
-| [TcFamilyCogs](TcFamilyCogs.md) |  |  no  |
 | [TcFamilyImgTerms](TcFamilyImgTerms.md) |  |  no  |
+| [TcFamilyCogs](TcFamilyCogs.md) |  |  no  |
+| [TcFamilyPfamsIain](TcFamilyPfamsIain.md) |  |  no  |
+| [TcFamilyTfams](TcFamilyTfams.md) |  |  no  |
 
 
 

@@ -17,18 +17,18 @@ Alias: comments
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [BiocycClass](BiocycClass.md) |  |  no  |
-| [PfamClan](PfamClan.md) |  |  no  |
-| [BiocycEnzrxn](BiocycEnzrxn.md) |  |  no  |
-| [PfamDead](PfamDead.md) |  |  no  |
-| [PfamFamily](PfamFamily.md) |  |  no  |
+| [Enzyme](Enzyme.md) |  |  no  |
 | [EnzymeTransferred](EnzymeTransferred.md) |  |  no  |
 | [BiocycReaction](BiocycReaction.md) |  |  no  |
-| [Enzyme](Enzyme.md) |  |  no  |
-| [BiocycComp](BiocycComp.md) |  |  no  |
-| [BiocycPathwayComments](BiocycPathwayComments.md) |  |  no  |
-| [BiocycProtein](BiocycProtein.md) |  |  no  |
+| [BiocycClass](BiocycClass.md) |  |  no  |
 | [GoTerm](GoTerm.md) |  |  no  |
+| [BiocycPathwayComments](BiocycPathwayComments.md) |  |  no  |
+| [BiocycComp](BiocycComp.md) |  |  no  |
+| [PfamDead](PfamDead.md) |  |  no  |
+| [BiocycEnzrxn](BiocycEnzrxn.md) |  |  no  |
+| [BiocycProtein](BiocycProtein.md) |  |  no  |
+| [PfamFamily](PfamFamily.md) |  |  no  |
+| [PfamClan](PfamClan.md) |  |  no  |
 | [Reaction](Reaction.md) |  |  no  |
 
 

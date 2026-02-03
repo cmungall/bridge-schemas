@@ -17,8 +17,8 @@ Alias: pmid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GenomeCitationReport](GenomeCitationReport.md) | Citation report for a genome/project |  no  |
 | [Publication](Publication.md) | Publication metadata (journal article, preprint, etc |  no  |
+| [GenomeCitationReport](GenomeCitationReport.md) | Citation report for a genome/project |  no  |
 
 
 

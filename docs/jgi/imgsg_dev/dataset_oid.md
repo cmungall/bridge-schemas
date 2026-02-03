@@ -17,8 +17,8 @@ Alias: dataset_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RnaseqNotifyPhajek](RnaseqNotifyPhajek.md) |  |  no  |
 | [ContactRnaDataPermissions](ContactRnaDataPermissions.md) |  |  no  |
+| [RnaseqNotifyPhajek](RnaseqNotifyPhajek.md) |  |  no  |
 
 
 

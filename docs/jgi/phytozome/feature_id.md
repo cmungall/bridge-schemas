@@ -18,8 +18,8 @@ Alias: feature_id
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [AnalysisFeature](AnalysisFeature.md) | Link between analysis and features it produced |  no  |
-| [Feature](Feature.md) | Genomic feature (gene, mRNA, exon, CDS, etc |  no  |
 | [CellLineFeature](CellLineFeature.md) | Feature associated with cell line |  no  |
+| [Feature](Feature.md) | Genomic feature (gene, mRNA, exon, CDS, etc |  no  |
 
 
 

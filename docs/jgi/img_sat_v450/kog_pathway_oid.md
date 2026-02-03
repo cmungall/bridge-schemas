@@ -17,8 +17,8 @@ Alias: kog_pathway_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [KogPathwayKogMembers](KogPathwayKogMembers.md) |  |  no  |
 | [KogPathway](KogPathway.md) |  |  no  |
+| [KogPathwayKogMembers](KogPathwayKogMembers.md) |  |  no  |
 
 
 

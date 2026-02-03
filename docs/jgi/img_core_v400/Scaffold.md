@@ -17,22 +17,22 @@ Alias: scaffold
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GeneCogGroups](GeneCogGroups.md) |  |  no  |
-| [GeneImgInterproHits](GeneImgInterproHits.md) |  |  no  |
-| [GeneTigrfams](GeneTigrfams.md) |  |  no  |
-| [GeneKoTerms](GeneKoTerms.md) |  |  no  |
+| [GeneKogGroups](GeneKogGroups.md) |  |  no  |
+| [GeneBiocycRxns](GeneBiocycRxns.md) |  |  no  |
 | [IsoPlasmids](IsoPlasmids.md) |  |  no  |
 | [GeneKoEnzymesNew](GeneKoEnzymesNew.md) |  |  no  |
 | [GenePfamFamilies](GenePfamFamilies.md) |  |  no  |
+| [GeneTigrfams](GeneTigrfams.md) |  |  no  |
 | [Gene](Gene.md) |  |  no  |
 | [GeneXrefFamilies](GeneXrefFamilies.md) |  |  no  |
 | [KpPseudo](KpPseudo.md) |  |  no  |
-| [GeneBiocycRxns](GeneBiocycRxns.md) |  |  no  |
-| [GeneCathfam](GeneCathfam.md) |  |  no  |
+| [GeneCogGroups](GeneCogGroups.md) |  |  no  |
 | [GeneKoEnzymes](GeneKoEnzymes.md) |  |  no  |
+| [GeneCathfam](GeneCathfam.md) |  |  no  |
+| [GeneKoTerms](GeneKoTerms.md) |  |  no  |
 | [GeneSuperfam](GeneSuperfam.md) |  |  no  |
 | [GeneSmart](GeneSmart.md) |  |  no  |
-| [GeneKogGroups](GeneKogGroups.md) |  |  no  |
+| [GeneImgInterproHits](GeneImgInterproHits.md) |  |  no  |
 
 
 

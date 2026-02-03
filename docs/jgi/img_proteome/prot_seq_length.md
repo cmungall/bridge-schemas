@@ -17,8 +17,8 @@ Alias: prot_seq_length
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MsProteinOld](MsProteinOld.md) |  |  no  |
 | [MsProtein](MsProtein.md) |  |  no  |
+| [MsProteinOld](MsProteinOld.md) |  |  no  |
 
 
 

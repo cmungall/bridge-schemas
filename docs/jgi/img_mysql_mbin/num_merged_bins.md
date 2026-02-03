@@ -17,8 +17,8 @@ Alias: num_merged_bins
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SemiEbinNotLoaded](SemiEbinNotLoaded.md) |  |  no  |
 | [EbinNotLoadedMetagenomes](EbinNotLoadedMetagenomes.md) |  |  no  |
+| [SemiEbinNotLoaded](SemiEbinNotLoaded.md) |  |  no  |
 
 
 

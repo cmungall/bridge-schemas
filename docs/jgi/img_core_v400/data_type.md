@@ -17,18 +17,18 @@ Alias: data_type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DtPhyloTaxonStats](DtPhyloTaxonStats.md) |  |  no  |
-| [TaxonScafPrefix](TaxonScafPrefix.md) |  |  no  |
-| [TaxonCogCount](TaxonCogCount.md) |  |  no  |
-| [DtAllPhyloTaxonStats](DtAllPhyloTaxonStats.md) |  |  no  |
+| [TaxonGenePrefix](TaxonGenePrefix.md) |  |  no  |
 | [TaxonPfamCount](TaxonPfamCount.md) |  |  no  |
-| [TaxonSupfamCount](TaxonSupfamCount.md) |  |  no  |
 | [TaxonTigrCount](TaxonTigrCount.md) |  |  no  |
+| [TaxonEcCount](TaxonEcCount.md) |  |  no  |
 | [TaxonSmartCount](TaxonSmartCount.md) |  |  no  |
 | [TaxonCathfunfamCount](TaxonCathfunfamCount.md) |  |  no  |
-| [TaxonGenePrefix](TaxonGenePrefix.md) |  |  no  |
+| [TaxonCogCount](TaxonCogCount.md) |  |  no  |
+| [TaxonSupfamCount](TaxonSupfamCount.md) |  |  no  |
+| [DtAllPhyloTaxonStats](DtAllPhyloTaxonStats.md) |  |  no  |
+| [TaxonScafPrefix](TaxonScafPrefix.md) |  |  no  |
 | [TaxonKoCount](TaxonKoCount.md) |  |  no  |
-| [TaxonEcCount](TaxonEcCount.md) |  |  no  |
+| [DtPhyloTaxonStats](DtPhyloTaxonStats.md) |  |  no  |
 
 
 

@@ -17,8 +17,8 @@ Alias: smiles
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Compound](Compound.md) |  |  no  |
 | [BiocycComp](BiocycComp.md) |  |  no  |
+| [Compound](Compound.md) |  |  no  |
 
 
 

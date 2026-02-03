@@ -17,9 +17,9 @@ Alias: strand
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Gene](Gene.md) |  |  no  |
 | [KpPseudo](KpPseudo.md) |  |  no  |
 | [ScaffoldNxFeature](ScaffoldNxFeature.md) |  |  no  |
-| [Gene](Gene.md) |  |  no  |
 | [AltTranscript](AltTranscript.md) |  |  no  |
 
 

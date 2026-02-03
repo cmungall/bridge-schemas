@@ -17,9 +17,9 @@ Alias: submission_date
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RnaseqNotifyPhajekDev](RnaseqNotifyPhajekDev.md) |  |  no  |
-| [RnaseqNotifyPhajek](RnaseqNotifyPhajek.md) |  |  no  |
 | [Submission](Submission.md) |  |  no  |
+| [RnaseqNotifyPhajek](RnaseqNotifyPhajek.md) |  |  no  |
+| [RnaseqNotifyPhajekDev](RnaseqNotifyPhajekDev.md) |  |  no  |
 
 
 

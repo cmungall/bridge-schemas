@@ -17,11 +17,11 @@ Alias: status
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Analysis](Analysis.md) | Analysis workflow or pipeline run |  no  |
 | [NcbiSubmission](NcbiSubmission.md) | NCBI submission record |  no  |
 | [SraSubmission](SraSubmission.md) | SRA (Sequence Read Archive) submission |  no  |
-| [FileIngest](FileIngest.md) | File ingestion record |  no  |
 | [NcbiWorker](NcbiWorker.md) | NCBI submission worker process |  no  |
+| [Analysis](Analysis.md) | Analysis workflow or pipeline run |  no  |
+| [FileIngest](FileIngest.md) | File ingestion record |  no  |
 
 
 

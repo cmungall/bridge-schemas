@@ -17,10 +17,10 @@ Alias: num_18s
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [EbinScaffolds](EbinScaffolds.md) |  |  no  |
-| [Ebin](Ebin.md) |  |  no  |
-| [SemiEbin](SemiEbin.md) |  |  no  |
 | [SemiEbinScaffolds](SemiEbinScaffolds.md) |  |  no  |
+| [EbinScaffolds](EbinScaffolds.md) |  |  no  |
+| [SemiEbin](SemiEbin.md) |  |  no  |
+| [Ebin](Ebin.md) |  |  no  |
 
 
 

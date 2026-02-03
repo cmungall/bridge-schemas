@@ -17,8 +17,8 @@ Alias: mygene_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MygeneImgGroups](MygeneImgGroups.md) |  |  no  |
 | [Mygene](Mygene.md) |  |  no  |
+| [MygeneImgGroups](MygeneImgGroups.md) |  |  no  |
 | [MygeneTerms](MygeneTerms.md) |  |  no  |
 
 

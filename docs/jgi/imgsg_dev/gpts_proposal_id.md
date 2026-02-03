@@ -17,8 +17,8 @@ Alias: gpts_proposal_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [StudyLoad](StudyLoad.md) |  |  no  |
 | [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
+| [StudyLoad](StudyLoad.md) |  |  no  |
 
 
 

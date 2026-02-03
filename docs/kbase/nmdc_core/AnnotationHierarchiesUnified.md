@@ -3,7 +3,7 @@
 # Class: AnnotationHierarchiesUnified 
 
 
-_Unified annotation hierarchies_
+_Unified annotation hierarchies across sources. Pre-computed parent-child relationships for efficient queries._
 
 
 
@@ -89,7 +89,8 @@ annotations:
   source_table:
     tag: source_table
     value: annotation_hierarchies_unified
-description: Unified annotation hierarchies
+description: Unified annotation hierarchies across sources. Pre-computed parent-child
+  relationships for efficient queries.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +105,8 @@ annotations:
   source_table:
     tag: source_table
     value: annotation_hierarchies_unified
-description: Unified annotation hierarchies
+description: Unified annotation hierarchies across sources. Pre-computed parent-child
+  relationships for efficient queries.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

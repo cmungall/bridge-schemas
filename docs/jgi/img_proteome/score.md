@@ -17,8 +17,8 @@ Alias: score
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MsProteinOld](MsProteinOld.md) |  |  no  |
 | [MsProtein](MsProtein.md) |  |  no  |
+| [MsProteinOld](MsProteinOld.md) |  |  no  |
 
 
 

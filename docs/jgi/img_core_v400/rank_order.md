@@ -17,8 +17,8 @@ Alias: rank_order
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GeneCogGroups](GeneCogGroups.md) |  |  no  |
 | [GeneKogGroups](GeneKogGroups.md) |  |  no  |
+| [GeneCogGroups](GeneCogGroups.md) |  |  no  |
 
 
 

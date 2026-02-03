@@ -17,9 +17,9 @@ Alias: is_public
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ImgGroupNews](ImgGroupNews.md) |  |  no  |
 | [Mygene](Mygene.md) |  |  no  |
 | [MyimgBioClusterNp](MyimgBioClusterNp.md) |  |  no  |
+| [ImgGroupNews](ImgGroupNews.md) |  |  no  |
 | [GeneMyimgFunctions](GeneMyimgFunctions.md) |  |  no  |
 
 

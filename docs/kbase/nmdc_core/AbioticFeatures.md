@@ -3,7 +3,7 @@
 # Class: AbioticFeatures 
 
 
-_Abiotic environmental features_
+_Abiotic environmental features for machine learning. pH, temperature, moisture, and other measurements._
 
 
 
@@ -89,7 +89,8 @@ annotations:
   source_table:
     tag: source_table
     value: abiotic_features
-description: Abiotic environmental features
+description: Abiotic environmental features for machine learning. pH, temperature,
+  moisture, and other measurements.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +105,8 @@ annotations:
   source_table:
     tag: source_table
     value: abiotic_features
-description: Abiotic environmental features
+description: Abiotic environmental features for machine learning. pH, temperature,
+  moisture, and other measurements.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

@@ -26,6 +26,7 @@ nav:
   - Case Studies:
     - Overview: case-studies/index.md
     - mll BGC (M. extorquens): case-studies/mll-bgc-methylorubrum.md
+    - Microbial Isolates: case-studies/microbial-isolates.md
   - KBase/BERDL Schemas:
     - Pangenome: kbase/kbase_ke_pangenome/index.md
     - NMDC Core: kbase/nmdc_core/index.md

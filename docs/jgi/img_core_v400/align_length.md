@@ -17,13 +17,13 @@ Alias: align_length
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [GeneKogGroups](GeneKogGroups.md) |  |  no  |
+| [GenePfamFamilies](GenePfamFamilies.md) |  |  no  |
 | [GeneCogGroups](GeneCogGroups.md) |  |  no  |
 | [GeneKoTerms](GeneKoTerms.md) |  |  no  |
-| [GenePfamFamilies](GenePfamFamilies.md) |  |  no  |
-| [GeneCathfam](GeneCathfam.md) |  |  no  |
 | [GeneSuperfam](GeneSuperfam.md) |  |  no  |
 | [GeneSmart](GeneSmart.md) |  |  no  |
-| [GeneKogGroups](GeneKogGroups.md) |  |  no  |
+| [GeneCathfam](GeneCathfam.md) |  |  no  |
 
 
 

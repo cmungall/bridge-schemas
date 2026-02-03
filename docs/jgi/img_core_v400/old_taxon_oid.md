@@ -17,10 +17,10 @@ Alias: old_taxon_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MapTaxonPairs](MapTaxonPairs.md) |  |  no  |
-| [DeleteTaxons](DeleteTaxons.md) |  |  no  |
 | [TaxonReplacements](TaxonReplacements.md) |  |  no  |
 | [TaxonReplacementsView](TaxonReplacementsView.md) |  |  no  |
+| [DeleteTaxons](DeleteTaxons.md) |  |  no  |
+| [MapTaxonPairs](MapTaxonPairs.md) |  |  no  |
 
 
 

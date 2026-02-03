@@ -17,9 +17,9 @@ Alias: tot_nitrogen
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Biosample](Biosample.md) |  |  no  |
 | [OrganismV2](OrganismV2.md) |  |  no  |
 | [PackageSoil](PackageSoil.md) |  |  no  |
-| [Biosample](Biosample.md) |  |  no  |
 
 
 

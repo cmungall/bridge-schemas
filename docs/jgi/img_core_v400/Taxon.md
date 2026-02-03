@@ -17,29 +17,29 @@ Alias: taxon
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GeneTigrfams](GeneTigrfams.md) |  |  no  |
-| [DtTaxonNodeLite](DtTaxonNodeLite.md) |  |  no  |
-| [GeneSmart](GeneSmart.md) |  |  no  |
-| [GeneCogGroups](GeneCogGroups.md) |  |  no  |
-| [GeneImgInterproHits](GeneImgInterproHits.md) |  |  no  |
-| [MerfsGeneMapping](MerfsGeneMapping.md) |  |  no  |
-| [ParalogGroup](ParalogGroup.md) |  |  no  |
-| [CogSpecies](CogSpecies.md) |  |  no  |
 | [GenePfamFamilies](GenePfamFamilies.md) |  |  no  |
 | [Scaffold](Scaffold.md) |  |  no  |
 | [GeneXrefFamilies](GeneXrefFamilies.md) |  |  no  |
-| [GeneKoEnzymes](GeneKoEnzymes.md) |  |  no  |
-| [GeneKoEnzymesNew](GeneKoEnzymesNew.md) |  |  no  |
-| [KpPseudo](KpPseudo.md) |  |  no  |
-| [GeneCathfam](GeneCathfam.md) |  |  no  |
-| [GeneSuperfam](GeneSuperfam.md) |  |  no  |
 | [TaxonNodeLite](TaxonNodeLite.md) |  |  no  |
-| [DtImgGeneProtPepSample](DtImgGeneProtPepSample.md) |  |  no  |
-| [ScaffoldStats](ScaffoldStats.md) |  |  no  |
+| [GeneCogGroups](GeneCogGroups.md) |  |  no  |
+| [MerfsGeneMapping](MerfsGeneMapping.md) |  |  no  |
 | [GeneKoTerms](GeneKoTerms.md) |  |  no  |
-| [Gene](Gene.md) |  |  no  |
+| [GeneSmart](GeneSmart.md) |  |  no  |
 | [GeneBiocycRxns](GeneBiocycRxns.md) |  |  no  |
+| [ParalogGroup](ParalogGroup.md) |  |  no  |
+| [GeneKoEnzymesNew](GeneKoEnzymesNew.md) |  |  no  |
+| [Gene](Gene.md) |  |  no  |
+| [CogSpecies](CogSpecies.md) |  |  no  |
+| [GeneSuperfam](GeneSuperfam.md) |  |  no  |
+| [GeneImgInterproHits](GeneImgInterproHits.md) |  |  no  |
+| [ScaffoldStats](ScaffoldStats.md) |  |  no  |
 | [GeneKogGroups](GeneKogGroups.md) |  |  no  |
+| [DtImgGeneProtPepSample](DtImgGeneProtPepSample.md) |  |  no  |
+| [KpPseudo](KpPseudo.md) |  |  no  |
+| [GeneKoEnzymes](GeneKoEnzymes.md) |  |  no  |
+| [GeneTigrfams](GeneTigrfams.md) |  |  no  |
+| [GeneCathfam](GeneCathfam.md) |  |  no  |
+| [DtTaxonNodeLite](DtTaxonNodeLite.md) |  |  no  |
 
 
 

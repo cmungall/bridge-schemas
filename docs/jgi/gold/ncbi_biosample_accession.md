@@ -17,8 +17,8 @@ Alias: ncbi_biosample_accession
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Project](Project.md) |  |  no  |
 | [AnalysisProject](AnalysisProject.md) |  |  no  |
+| [Project](Project.md) |  |  no  |
 
 
 

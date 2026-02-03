@@ -17,12 +17,12 @@ Alias: genbank_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldAnalysisProjectGenbanks](GoldAnalysisProjectGenbanks.md) |  |  no  |
+| [Submission](Submission.md) |  |  no  |
 | [ProjectInfoNaturalProds](ProjectInfoNaturalProds.md) |  |  no  |
+| [GoldApGenbank](GoldApGenbank.md) |  |  no  |
 | [XProjectInfoNp](XProjectInfoNp.md) |  |  no  |
 | [ProjectInfoNprodsMetadata](ProjectInfoNprodsMetadata.md) |  |  no  |
-| [GoldApGenbank](GoldApGenbank.md) |  |  no  |
-| [Submission](Submission.md) |  |  no  |
+| [GoldAnalysisProjectGenbanks](GoldAnalysisProjectGenbanks.md) |  |  no  |
 
 
 

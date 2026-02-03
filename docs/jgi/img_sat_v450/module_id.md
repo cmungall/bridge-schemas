@@ -18,10 +18,10 @@ Alias: module_id
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [KeggModuleReactions](KeggModuleReactions.md) |  |  no  |
-| [KeggModuleCompounds](KeggModuleCompounds.md) |  |  no  |
-| [KeggModuleKoTerms](KeggModuleKoTerms.md) |  |  no  |
 | [KeggModule](KeggModule.md) |  |  no  |
 | [Ko2module](Ko2module.md) |  |  no  |
+| [KeggModuleKoTerms](KeggModuleKoTerms.md) |  |  no  |
+| [KeggModuleCompounds](KeggModuleCompounds.md) |  |  no  |
 
 
 

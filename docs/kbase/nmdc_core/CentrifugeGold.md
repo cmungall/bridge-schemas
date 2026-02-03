@@ -3,7 +3,9 @@
 # Class: CentrifugeGold 
 
 
-_Centrifuge taxonomic classifications for GOLD samples_
+_Centrifuge taxonomic classifications for GOLD samples. Fast metagenomic classifier based on FM-index compression._
+
+_TOOL: Centrifuge (Kim et al. 2016) - Very fast classification - Low memory usage via FM-index - Works with large databases_
 
 
 
@@ -89,7 +91,11 @@ annotations:
   source_table:
     tag: source_table
     value: centrifuge_gold
-description: Centrifuge taxonomic classifications for GOLD samples
+description: 'Centrifuge taxonomic classifications for GOLD samples. Fast metagenomic
+  classifier based on FM-index compression.
+
+  TOOL: Centrifuge (Kim et al. 2016) - Very fast classification - Low memory usage
+  via FM-index - Works with large databases'
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +110,11 @@ annotations:
   source_table:
     tag: source_table
     value: centrifuge_gold
-description: Centrifuge taxonomic classifications for GOLD samples
+description: 'Centrifuge taxonomic classifications for GOLD samples. Fast metagenomic
+  classifier based on FM-index compression.
+
+  TOOL: Centrifuge (Kim et al. 2016) - Very fast classification - Low memory usage
+  via FM-index - Works with large databases'
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

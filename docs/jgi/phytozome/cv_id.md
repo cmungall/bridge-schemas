@@ -17,8 +17,8 @@ Alias: cv_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [CV](CV.md) | Controlled vocabulary (GO, SO, etc |  no  |
 | [CVTerm](CVTerm.md) | Term from a controlled vocabulary |  no  |
+| [CV](CV.md) | Controlled vocabulary (GO, SO, etc |  no  |
 
 
 

@@ -3,7 +3,7 @@
 # Class: MetacycPathwayReactions 
 
 
-_Reactions within MetaCyc pathways_
+_Reactions within MetaCyc pathways. Links pathways to their constituent biochemical reactions._
 
 
 
@@ -89,7 +89,8 @@ annotations:
   source_table:
     tag: source_table
     value: metacyc_pathway_reactions
-description: Reactions within MetaCyc pathways
+description: Reactions within MetaCyc pathways. Links pathways to their constituent
+  biochemical reactions.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +105,8 @@ annotations:
   source_table:
     tag: source_table
     value: metacyc_pathway_reactions
-description: Reactions within MetaCyc pathways
+description: Reactions within MetaCyc pathways. Links pathways to their constituent
+  biochemical reactions.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

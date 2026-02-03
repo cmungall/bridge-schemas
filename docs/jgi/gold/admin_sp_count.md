@@ -17,9 +17,9 @@ Alias: admin_sp_count
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [OrganismV2](OrganismV2.md) |  |  no  |
-| [Study](Study.md) |  |  no  |
 | [Biosample](Biosample.md) |  |  no  |
+| [Study](Study.md) |  |  no  |
+| [OrganismV2](OrganismV2.md) |  |  no  |
 
 
 

@@ -17,8 +17,8 @@ Alias: institution_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldMasterProjectCollaborator](GoldMasterProjectCollaborator.md) |  |  no  |
 | [GoldMasterProjectSequencingCenter](GoldMasterProjectSequencingCenter.md) |  |  no  |
+| [GoldMasterProjectCollaborator](GoldMasterProjectCollaborator.md) |  |  no  |
 
 
 

@@ -17,8 +17,8 @@ Alias: external_link
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Ebin](Ebin.md) |  |  no  |
 | [SemiEbin](SemiEbin.md) |  |  no  |
+| [Ebin](Ebin.md) |  |  no  |
 
 
 

@@ -17,10 +17,10 @@ Alias: pathway_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [KoTermPathways](KoTermPathways.md) |  |  no  |
+| [KeggPathwayRelatedPathways](KeggPathwayRelatedPathways.md) |  |  no  |
 | [KeggPathway](KeggPathway.md) |  |  no  |
 | [KeggPathwayModules](KeggPathwayModules.md) |  |  no  |
-| [KeggPathwayRelatedPathways](KeggPathwayRelatedPathways.md) |  |  no  |
-| [KoTermPathways](KoTermPathways.md) |  |  no  |
 
 
 

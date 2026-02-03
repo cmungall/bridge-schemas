@@ -17,9 +17,9 @@ Alias: sequencing_gold_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [VwGoldTaxon](VwGoldTaxon.md) |  |  no  |
 | [Taxon](Taxon.md) |  |  no  |
 | [TaxonProdVw](TaxonProdVw.md) |  |  no  |
-| [VwGoldTaxon](VwGoldTaxon.md) |  |  no  |
 
 
 

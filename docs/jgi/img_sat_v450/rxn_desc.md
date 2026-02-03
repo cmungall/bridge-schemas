@@ -17,8 +17,8 @@ Alias: rxn_desc
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [EnzymeTransferred](EnzymeTransferred.md) |  |  no  |
 | [Enzyme](Enzyme.md) |  |  no  |
+| [EnzymeTransferred](EnzymeTransferred.md) |  |  no  |
 
 
 

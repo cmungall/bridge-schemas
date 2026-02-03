@@ -18,8 +18,8 @@ Alias: entity_id
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [CrossReference](CrossReference.md) | External database cross-reference for entities |  no  |
-| [ClusterMember](ClusterMember.md) | Member of a UniRef50 cluster |  no  |
 | [Entity](Entity.md) | Protein entity in the UniRef50 database |  no  |
+| [ClusterMember](ClusterMember.md) | Member of a UniRef50 cluster |  no  |
 
 
 

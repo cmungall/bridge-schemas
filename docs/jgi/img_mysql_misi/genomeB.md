@@ -17,8 +17,8 @@ Alias: genomeB
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MashDist](MashDist.md) |  |  no  |
 | [MisiAni](MisiAni.md) |  |  no  |
+| [MashDist](MashDist.md) |  |  no  |
 
 
 

@@ -3,7 +3,7 @@
 # Class: TaxonomyEmbeddings 
 
 
-_Taxonomic embeddings_
+_Taxonomic profile embeddings - vector representation of community composition derived from taxonomic classification results._
 
 
 
@@ -89,7 +89,8 @@ annotations:
   source_table:
     tag: source_table
     value: taxonomy_embeddings
-description: Taxonomic embeddings
+description: Taxonomic profile embeddings - vector representation of community composition
+  derived from taxonomic classification results.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +105,8 @@ annotations:
   source_table:
     tag: source_table
     value: taxonomy_embeddings
-description: Taxonomic embeddings
+description: Taxonomic profile embeddings - vector representation of community composition
+  derived from taxonomic classification results.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

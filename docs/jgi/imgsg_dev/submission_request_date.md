@@ -17,8 +17,8 @@ Alias: submission_request_date
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ProjectInfoBioproject](ProjectInfoBioproject.md) |  |  no  |
 | [ProjectInfoBiosample](ProjectInfoBiosample.md) |  |  no  |
+| [ProjectInfoBioproject](ProjectInfoBioproject.md) |  |  no  |
 
 
 

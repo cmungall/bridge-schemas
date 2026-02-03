@@ -17,9 +17,9 @@ Alias: is_img_public
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RnaseqNotifyPhajekDev](RnaseqNotifyPhajekDev.md) |  |  no  |
-| [RnaseqNotifyPhajek](RnaseqNotifyPhajek.md) |  |  no  |
 | [Submission](Submission.md) |  |  no  |
+| [RnaseqNotifyPhajek](RnaseqNotifyPhajek.md) |  |  no  |
+| [RnaseqNotifyPhajekDev](RnaseqNotifyPhajekDev.md) |  |  no  |
 
 
 

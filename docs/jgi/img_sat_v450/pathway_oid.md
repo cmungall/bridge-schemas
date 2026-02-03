@@ -18,11 +18,11 @@ Alias: pathway_oid
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [MpwPglPathwayReaction](MpwPglPathwayReaction.md) |  |  no  |
-| [KoTermPathways](KoTermPathways.md) |  |  no  |
 | [KeggPathway](KeggPathway.md) |  |  no  |
-| [KeggPathwayRelatedPathways](KeggPathwayRelatedPathways.md) |  |  no  |
 | [KeggPathwayModules](KeggPathwayModules.md) |  |  no  |
+| [KoTermPathways](KoTermPathways.md) |  |  no  |
 | [MpwPglPathway](MpwPglPathway.md) |  |  no  |
+| [KeggPathwayRelatedPathways](KeggPathwayRelatedPathways.md) |  |  no  |
 
 
 

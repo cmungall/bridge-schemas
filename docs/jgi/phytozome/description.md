@@ -17,11 +17,11 @@ Alias: description
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Assay](Assay.md) | Expression assay experiment |  no  |
-| [Analysis](Analysis.md) | Computational analysis/pipeline |  no  |
 | [Contact](Contact.md) | Contact/researcher information |  no  |
-| [Biomaterial](Biomaterial.md) | Biological material (tissue, cell line, etc |  no  |
 | [AnalysisSet](AnalysisSet.md) | Set of related analyses |  no  |
+| [Biomaterial](Biomaterial.md) | Biological material (tissue, cell line, etc |  no  |
+| [Analysis](Analysis.md) | Computational analysis/pipeline |  no  |
+| [Assay](Assay.md) | Expression assay experiment |  no  |
 
 
 

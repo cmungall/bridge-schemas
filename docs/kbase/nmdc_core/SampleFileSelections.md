@@ -3,7 +3,7 @@
 # Class: SampleFileSelections 
 
 
-_User file selections per sample_
+_User-curated file selections per sample for analysis. Tracks which files are preferred for different analysis types._
 
 
 
@@ -89,7 +89,8 @@ annotations:
   source_table:
     tag: source_table
     value: sample_file_selections
-description: User file selections per sample
+description: User-curated file selections per sample for analysis. Tracks which files
+  are preferred for different analysis types.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +105,8 @@ annotations:
   source_table:
     tag: source_table
     value: sample_file_selections
-description: User file selections per sample
+description: User-curated file selections per sample for analysis. Tracks which files
+  are preferred for different analysis types.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

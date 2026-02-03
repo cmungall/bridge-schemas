@@ -17,34 +17,34 @@ Alias: gold_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldSpHabitat](GoldSpHabitat.md) |  |  no  |
-| [GoldMasterAnalysisProject](GoldMasterAnalysisProject.md) |  |  no  |
+| [GoldApGenbankAnomalousReasons](GoldApGenbankAnomalousReasons.md) |  |  no  |
 | [GoldSpStudyGoldId](GoldSpStudyGoldId.md) |  |  no  |
-| [GoldAnalysisProjectUsers](GoldAnalysisProjectUsers.md) |  |  no  |
-| [GoldSpEnergySource](GoldSpEnergySource.md) |  |  no  |
-| [GoldSpPhenotype](GoldSpPhenotype.md) |  |  no  |
+| [GoldStudy](GoldStudy.md) |  |  no  |
+| [GoldAnalysisProject](GoldAnalysisProject.md) |  |  no  |
+| [GoldMasterBiosample](GoldMasterBiosample.md) |  |  no  |
+| [GoldMasterOrganism](GoldMasterOrganism.md) |  |  no  |
+| [GoldSpGenomePublications](GoldSpGenomePublications.md) |  |  no  |
+| [GoldSpDisease](GoldSpDisease.md) |  |  no  |
+| [GoldAnalysisProjectGenbanks](GoldAnalysisProjectGenbanks.md) |  |  no  |
+| [GoldMasterProject](GoldMasterProject.md) |  |  no  |
 | [GoldMasterStudy](GoldMasterStudy.md) |  |  no  |
 | [GoldSpMetabolism](GoldSpMetabolism.md) |  |  no  |
-| [GoldSpRelevance](GoldSpRelevance.md) |  |  no  |
-| [GoldAnalysisProject](GoldAnalysisProject.md) |  |  no  |
-| [GoldSpCollaborator](GoldSpCollaborator.md) |  |  no  |
-| [GoldSpCellArrangement](GoldSpCellArrangement.md) |  |  no  |
-| [GoldSpDisease](GoldSpDisease.md) |  |  no  |
-| [GoldAnalysisProjectLookup2](GoldAnalysisProjectLookup2.md) |  |  no  |
-| [GoldAnalysisProjectJgiAwardDois](GoldAnalysisProjectJgiAwardDois.md) |  |  no  |
-| [GoldSpSeqMethod](GoldSpSeqMethod.md) |  |  no  |
-| [GoldMasterOrganism](GoldMasterOrganism.md) |  |  no  |
-| [GoldApGenbankAnomalousReasons](GoldApGenbankAnomalousReasons.md) |  |  no  |
+| [GoldMasterAnalysisProject](GoldMasterAnalysisProject.md) |  |  no  |
 | [GoldApPublications](GoldApPublications.md) |  |  no  |
 | [GoldSpSra](GoldSpSra.md) |  |  no  |
-| [GoldStudy](GoldStudy.md) |  |  no  |
-| [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
-| [GoldSpGenomePublications](GoldSpGenomePublications.md) |  |  no  |
-| [GoldAnalysisProjectGenbanks](GoldAnalysisProjectGenbanks.md) |  |  no  |
-| [GoldAnalysisProjectSraRuns](GoldAnalysisProjectSraRuns.md) |  |  no  |
-| [GoldMasterBiosample](GoldMasterBiosample.md) |  |  no  |
-| [GoldMasterProject](GoldMasterProject.md) |  |  no  |
 | [GoldSpSeqCenter](GoldSpSeqCenter.md) |  |  no  |
+| [GoldSpRelevance](GoldSpRelevance.md) |  |  no  |
+| [GoldAnalysisProjectUsers](GoldAnalysisProjectUsers.md) |  |  no  |
+| [GoldSpSeqMethod](GoldSpSeqMethod.md) |  |  no  |
+| [GoldAnalysisProjectSraRuns](GoldAnalysisProjectSraRuns.md) |  |  no  |
+| [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
+| [GoldAnalysisProjectLookup2](GoldAnalysisProjectLookup2.md) |  |  no  |
+| [GoldSpHabitat](GoldSpHabitat.md) |  |  no  |
+| [GoldSpCollaborator](GoldSpCollaborator.md) |  |  no  |
+| [GoldSpCellArrangement](GoldSpCellArrangement.md) |  |  no  |
+| [GoldSpEnergySource](GoldSpEnergySource.md) |  |  no  |
+| [GoldAnalysisProjectJgiAwardDois](GoldAnalysisProjectJgiAwardDois.md) |  |  no  |
+| [GoldSpPhenotype](GoldSpPhenotype.md) |  |  no  |
 
 
 

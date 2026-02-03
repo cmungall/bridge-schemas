@@ -17,8 +17,8 @@ Alias: amino_acid_metabolism
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DtCogStats](DtCogStats.md) |  |  no  |
 | [DtKogStats](DtKogStats.md) |  |  no  |
+| [DtCogStats](DtCogStats.md) |  |  no  |
 
 
 

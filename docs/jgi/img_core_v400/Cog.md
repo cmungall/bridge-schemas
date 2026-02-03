@@ -18,9 +18,9 @@ Alias: cog
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Cog2014](Cog2014.md) |  |  no  |
-| [PfamFamilyCogs](PfamFamilyCogs.md) |  |  no  |
-| [GeneCogGroups](GeneCogGroups.md) |  |  no  |
 | [DtKoEcCogPfam](DtKoEcCogPfam.md) |  |  no  |
+| [GeneCogGroups](GeneCogGroups.md) |  |  no  |
+| [PfamFamilyCogs](PfamFamilyCogs.md) |  |  no  |
 
 
 

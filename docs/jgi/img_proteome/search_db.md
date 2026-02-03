@@ -17,8 +17,8 @@ Alias: search_db
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MsProteinOld](MsProteinOld.md) |  |  no  |
 | [MsProtein](MsProtein.md) |  |  no  |
+| [MsProteinOld](MsProteinOld.md) |  |  no  |
 
 
 

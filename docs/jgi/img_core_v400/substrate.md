@@ -17,8 +17,8 @@ Alias: substrate
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [BiocycReactionLeftHand](BiocycReactionLeftHand.md) |  |  no  |
 | [BiocycReactionRightHand](BiocycReactionRightHand.md) |  |  no  |
+| [BiocycReactionLeftHand](BiocycReactionLeftHand.md) |  |  no  |
 
 
 

@@ -17,8 +17,8 @@ Alias: product_name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [KpPseudo](KpPseudo.md) |  |  no  |
 | [Gene](Gene.md) |  |  no  |
+| [KpPseudo](KpPseudo.md) |  |  no  |
 
 
 

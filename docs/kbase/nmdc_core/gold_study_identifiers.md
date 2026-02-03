@@ -3,6 +3,11 @@
 # Slot: gold_study_identifiers 
 
 
+_JSON array of GOLD study IDs_
+
+
+
+
 
 URI: [https://w3id.org/kbase/nmdc_core/gold_study_identifiers](https://w3id.org/kbase/nmdc_core/gold_study_identifiers)
 Alias: gold_study_identifiers
@@ -17,7 +22,7 @@ Alias: gold_study_identifiers
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [StudyTable](StudyTable.md) | NMDC research studies |  no  |
+| [StudyTable](StudyTable.md) | NMDC research studies with ecosystem classification and investigator informat... |  no  |
 
 
 
@@ -30,6 +35,14 @@ Alias: gold_study_identifiers
 
 
 
+
+
+## Examples
+
+| Value |
+| --- |
+| ["gold:Gs0114675"] |
+| ["gold:Gs0144570", "gold:Gs0161344"] |
 
 ## Identifier and Mapping Information
 
@@ -61,6 +74,12 @@ Alias: gold_study_identifiers
 <details>
 ```yaml
 name: gold_study_identifiers
+description: JSON array of GOLD study IDs
+examples:
+- value: '["gold:Gs0114675"]'
+  description: Single GOLD ID
+- value: '["gold:Gs0144570", "gold:Gs0161344"]'
+  description: Multiple GOLD IDs (NEON)
 from_schema: https://w3id.org/kbase/nmdc_core
 rank: 1000
 alias: gold_study_identifiers

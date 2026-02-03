@@ -17,9 +17,9 @@ Alias: entity_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Entity](Entity.md) | UniProt entity (protein sequence) |  no  |
-| [ClusterMember](ClusterMember.md) | Member sequence in a cluster |  no  |
 | [Crossreference](Crossreference.md) | Cross-references to external databases |  no  |
+| [ClusterMember](ClusterMember.md) | Member sequence in a cluster |  no  |
+| [Entity](Entity.md) | UniProt entity (protein sequence) |  no  |
 
 
 

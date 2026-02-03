@@ -17,8 +17,8 @@ Alias: group_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MpwPglProteinGroup](MpwPglProteinGroup.md) |  |  no  |
 | [MpwPglGeneGroup](MpwPglGeneGroup.md) |  |  no  |
+| [MpwPglProteinGroup](MpwPglProteinGroup.md) |  |  no  |
 
 
 

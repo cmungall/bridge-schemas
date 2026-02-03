@@ -17,12 +17,12 @@ Alias: enzymes
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ReactionEnzymes](ReactionEnzymes.md) |  |  no  |
-| [GeneKoEnzymesNew](GeneKoEnzymesNew.md) |  |  no  |
-| [GeneKoEnzymes](GeneKoEnzymes.md) |  |  no  |
-| [TigrfamEnzymes](TigrfamEnzymes.md) |  |  no  |
 | [KoTermEnzymes](KoTermEnzymes.md) |  |  no  |
+| [GeneKoEnzymesNew](GeneKoEnzymesNew.md) |  |  no  |
+| [ReactionEnzymes](ReactionEnzymes.md) |  |  no  |
+| [TigrfamEnzymes](TigrfamEnzymes.md) |  |  no  |
 | [ImageRoiEnzymes](ImageRoiEnzymes.md) |  |  no  |
+| [GeneKoEnzymes](GeneKoEnzymes.md) |  |  no  |
 
 
 

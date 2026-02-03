@@ -3,6 +3,11 @@
 # Slot: ec_id 
 
 
+_EC number in X.X.X.X format. Dashes (-) indicate partial classification at higher hierarchy levels._
+
+
+
+
 
 URI: [https://w3id.org/kbase/nmdc_core/ec_id](https://w3id.org/kbase/nmdc_core/ec_id)
 Alias: ec_id
@@ -30,8 +35,21 @@ Alias: ec_id
 
 * Required: True
 
+* Regex pattern: `\d+\.[-\d]+\.[-\d]+\.[-\d]+`
 
 
+
+
+
+## Examples
+
+| Value |
+| --- |
+| 1.-.-.- |
+| 1.1.-.- |
+| 1.1.1.- |
+| 1.1.1.1 |
+| 1.1.1.10 |
 
 ## Identifier and Mapping Information
 
@@ -63,6 +81,19 @@ Alias: ec_id
 <details>
 ```yaml
 name: ec_id
+description: EC number in X.X.X.X format. Dashes (-) indicate partial classification
+  at higher hierarchy levels.
+examples:
+- value: 1.-.-.-
+  description: Class 1 - Oxidoreductases (top level)
+- value: 1.1.-.-
+  description: Subclass - Acting on CH-OH group
+- value: 1.1.1.-
+  description: Sub-subclass - NAD/NADP acceptor
+- value: 1.1.1.1
+  description: Alcohol dehydrogenase (full EC number)
+- value: 1.1.1.10
+  description: L-xylulose reductase
 from_schema: https://w3id.org/kbase/nmdc_core
 rank: 1000
 identifier: true
@@ -72,6 +103,7 @@ domain_of:
 - EcTerms
 range: string
 required: true
+pattern: \d+\.[-\d]+\.[-\d]+\.[-\d]+
 
 ```
 </details>

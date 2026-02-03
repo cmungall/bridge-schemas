@@ -17,9 +17,9 @@ Alias: notes
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Announcement](Announcement.md) |  |  no  |
 | [RequestAccount](RequestAccount.md) |  |  no  |
 | [BioprojectPropagation](BioprojectPropagation.md) |  |  no  |
-| [Announcement](Announcement.md) |  |  no  |
 
 
 

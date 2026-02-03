@@ -17,8 +17,8 @@ Alias: type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldMasterGenbank](GoldMasterGenbank.md) |  |  no  |
 | [GoldAnalysisProjectGenbanks](GoldAnalysisProjectGenbanks.md) |  |  no  |
+| [GoldMasterGenbank](GoldMasterGenbank.md) |  |  no  |
 
 
 

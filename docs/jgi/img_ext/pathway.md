@@ -17,9 +17,9 @@ Alias: pathway
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [PathwayNetworkImgPathways](PathwayNetworkImgPathways.md) |  |  no  |
-| [ImgReactionAssocPaths](ImgReactionAssocPaths.md) |  |  no  |
 | [ImgPathwayHistory](ImgPathwayHistory.md) |  |  no  |
+| [ImgReactionAssocPaths](ImgReactionAssocPaths.md) |  |  no  |
+| [PathwayNetworkImgPathways](PathwayNetworkImgPathways.md) |  |  no  |
 
 
 

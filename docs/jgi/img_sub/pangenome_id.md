@@ -17,8 +17,8 @@ Alias: pangenome_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [KbasePangenome](KbasePangenome.md) |  |  no  |
 | [KbasePangenomeMembers](KbasePangenomeMembers.md) |  |  no  |
+| [KbasePangenome](KbasePangenome.md) |  |  no  |
 
 
 

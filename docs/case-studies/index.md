@@ -14,6 +14,15 @@ across multiple databases:
 - **Join points identified**: Assembly accession, BioSample, NCBI taxonomy ID
 - **Lessons learned**: Data gaps, locus tag format variations, query strategies
 
+### [Microbial Isolates Across Lakehouses](microbial-isolates.md)
+
+Survey of microbial isolate data availability across JGI, KBase, and NMDC:
+
+- **Databases surveyed**: JGI GOLD, JGI IMG, KBase, NMDC
+- **Key findings**: 518K cultured organisms in GOLD; 196K isolate genomes in IMG; NMDC focuses on metagenomes
+- **Join points identified**: NCBI taxonomy ID, GOLD IDs, biosample identifiers
+- **Practical queries**: Finding isolates by domain, culture type, and genome completeness
+
 ## Purpose
 
 These case studies demonstrate:

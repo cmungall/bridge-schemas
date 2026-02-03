@@ -17,10 +17,10 @@ Alias: encoded_feature_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [EncodedFeatureXFeature](EncodedFeatureXFeature.md) |  |  no  |
 | [EncodedFeatureXProtein](EncodedFeatureXProtein.md) |  |  no  |
-| [ContigCollectionXEncodedFeature](ContigCollectionXEncodedFeature.md) |  |  no  |
 | [ContigXEncodedFeature](ContigXEncodedFeature.md) |  |  no  |
+| [ContigCollectionXEncodedFeature](ContigCollectionXEncodedFeature.md) |  |  no  |
+| [EncodedFeatureXFeature](EncodedFeatureXFeature.md) |  |  no  |
 | [EncodedFeature](EncodedFeature.md) |  |  no  |
 
 

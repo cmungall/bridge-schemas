@@ -17,8 +17,8 @@ Alias: mrn
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldMasterBiosample](GoldMasterBiosample.md) |  |  no  |
 | [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
+| [GoldMasterBiosample](GoldMasterBiosample.md) |  |  no  |
 
 
 

@@ -17,8 +17,8 @@ Alias: pfam
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DtKoEcCogPfam](DtKoEcCogPfam.md) |  |  no  |
 | [TcFamilyPfams](TcFamilyPfams.md) |  |  no  |
+| [DtKoEcCogPfam](DtKoEcCogPfam.md) |  |  no  |
 | [TcFamilyPfamsIain](TcFamilyPfamsIain.md) |  |  no  |
 
 

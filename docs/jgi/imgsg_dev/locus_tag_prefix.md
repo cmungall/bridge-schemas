@@ -17,10 +17,10 @@ Alias: locus_tag_prefix
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [ProjectInfoBioproject](ProjectInfoBioproject.md) |  |  no  |
 | [ProjectInfoGenbank](ProjectInfoGenbank.md) |  |  no  |
 | [EnvSample](EnvSample.md) |  |  no  |
 | [PigTracks](PigTracks.md) |  |  no  |
-| [ProjectInfoBioproject](ProjectInfoBioproject.md) |  |  no  |
 | [ProjectInfoBiosample](ProjectInfoBiosample.md) |  |  no  |
 
 

@@ -17,12 +17,12 @@ Alias: go_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TcFamilyGoTerms](TcFamilyGoTerms.md) |  |  no  |
-| [Pfam2go](Pfam2go.md) |  |  no  |
 | [GoTermSynonyms](GoTermSynonyms.md) |  |  no  |
 | [Ko2go](Ko2go.md) |  |  no  |
-| [GoTermParents](GoTermParents.md) |  |  no  |
 | [GoTerm](GoTerm.md) |  |  no  |
+| [Pfam2go](Pfam2go.md) |  |  no  |
+| [GoTermParents](GoTermParents.md) |  |  no  |
+| [TcFamilyGoTerms](TcFamilyGoTerms.md) |  |  no  |
 
 
 

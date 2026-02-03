@@ -17,8 +17,8 @@ Alias: parents
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [BiocycClassParents](BiocycClassParents.md) |  |  no  |
 | [GenomePropertyParents](GenomePropertyParents.md) |  |  no  |
+| [BiocycClassParents](BiocycClassParents.md) |  |  no  |
 
 
 

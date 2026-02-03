@@ -17,8 +17,8 @@ Alias: split_number
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [AnnotationStepStats](AnnotationStepStats.md) |  |  no  |
 | [AnnotationContigsProteinsCounts](AnnotationContigsProteinsCounts.md) |  |  no  |
+| [AnnotationStepStats](AnnotationStepStats.md) |  |  no  |
 
 
 

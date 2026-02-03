@@ -17,13 +17,13 @@ Alias: cv_term
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [YesnocvSub](YesnocvSub.md) |  |  no  |
+| [Countrycv](Countrycv.md) |  |  no  |
 | [Yesnoonlycv](Yesnoonlycv.md) |  |  no  |
 | [Genecallingcv](Genecallingcv.md) |  |  no  |
 | [SubmissionStatuscv](SubmissionStatuscv.md) |  |  no  |
-| [BinMethodcv](BinMethodcv.md) |  |  no  |
-| [Countrycv](Countrycv.md) |  |  no  |
 | [SubmissionQuerycv](SubmissionQuerycv.md) |  |  no  |
+| [BinMethodcv](BinMethodcv.md) |  |  no  |
+| [YesnocvSub](YesnocvSub.md) |  |  no  |
 | [RequestStatuscv](RequestStatuscv.md) |  |  no  |
 
 

@@ -17,11 +17,11 @@ Alias: gc_percent
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TaxonStats](TaxonStats.md) |  |  no  |
-| [Gene](Gene.md) |  |  no  |
-| [TaxonStatsMerfs](TaxonStatsMerfs.md) |  |  no  |
 | [TaxonStatsProdVw](TaxonStatsProdVw.md) |  |  no  |
+| [Gene](Gene.md) |  |  no  |
 | [ScaffoldStats](ScaffoldStats.md) |  |  no  |
+| [TaxonStats](TaxonStats.md) |  |  no  |
+| [TaxonStatsMerfs](TaxonStatsMerfs.md) |  |  no  |
 
 
 

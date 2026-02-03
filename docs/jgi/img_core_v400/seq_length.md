@@ -18,10 +18,10 @@ Alias: seq_length
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [ScaffoldNxFeature](ScaffoldNxFeature.md) |  |  no  |
-| [Kog](Kog.md) |  |  no  |
-| [PfamFamily](PfamFamily.md) |  |  no  |
-| [Cog](Cog.md) |  |  no  |
 | [ScaffoldStats](ScaffoldStats.md) |  |  no  |
+| [Cog](Cog.md) |  |  no  |
+| [PfamFamily](PfamFamily.md) |  |  no  |
+| [Kog](Kog.md) |  |  no  |
 
 
 

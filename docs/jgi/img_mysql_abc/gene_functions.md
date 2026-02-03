@@ -17,9 +17,9 @@ Alias: gene_functions
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [BcgBinRegionGenes](BcgBinRegionGenes.md) |  |  no  |
-| [BcgRegionGenesNew](BcgRegionGenesNew.md) |  |  no  |
 | [BcgRegionGenes](BcgRegionGenes.md) |  |  no  |
+| [BcgRegionGenesNew](BcgRegionGenesNew.md) |  |  no  |
+| [BcgBinRegionGenes](BcgBinRegionGenes.md) |  |  no  |
 
 
 

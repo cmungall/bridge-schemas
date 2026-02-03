@@ -17,8 +17,8 @@ Alias: contact_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldStudy](GoldStudy.md) |  |  no  |
 | [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
+| [GoldStudy](GoldStudy.md) |  |  no  |
 
 
 

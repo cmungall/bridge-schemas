@@ -17,13 +17,13 @@ Alias: network_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [PathwayNetwork](PathwayNetwork.md) |  |  no  |
 | [PathwayNetworkCComponents](PathwayNetworkCComponents.md) |  |  no  |
-| [PathwayNetworkParents](PathwayNetworkParents.md) |  |  no  |
-| [PathwayNetworkImgPathways](PathwayNetworkImgPathways.md) |  |  no  |
-| [PathwayNetworkTComponents](PathwayNetworkTComponents.md) |  |  no  |
 | [PathwayNetworkPartsLists](PathwayNetworkPartsLists.md) |  |  no  |
+| [PathwayNetworkImgPathways](PathwayNetworkImgPathways.md) |  |  no  |
 | [PathwayNetworkTaxons](PathwayNetworkTaxons.md) |  |  no  |
+| [PathwayNetworkParents](PathwayNetworkParents.md) |  |  no  |
+| [PathwayNetwork](PathwayNetwork.md) |  |  no  |
+| [PathwayNetworkTComponents](PathwayNetworkTComponents.md) |  |  no  |
 
 
 

@@ -17,8 +17,8 @@ Alias: diseases
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [EnvSampleDiseases](EnvSampleDiseases.md) |  |  no  |
 | [ProjectInfoDiseases](ProjectInfoDiseases.md) |  |  no  |
+| [EnvSampleDiseases](EnvSampleDiseases.md) |  |  no  |
 
 
 

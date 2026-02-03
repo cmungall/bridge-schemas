@@ -18,8 +18,8 @@ Alias: sra_id
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Biosample](Biosample.md) |  |  no  |
-| [EnvSample](EnvSample.md) |  |  no  |
 | [Vsample](Vsample.md) |  |  no  |
+| [EnvSample](EnvSample.md) |  |  no  |
 | [GoldSpSra](GoldSpSra.md) |  |  no  |
 
 

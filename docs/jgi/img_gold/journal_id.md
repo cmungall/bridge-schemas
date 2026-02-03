@@ -17,8 +17,8 @@ Alias: journal_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldMasterJournal](GoldMasterJournal.md) |  |  no  |
 | [GoldMasterPublication](GoldMasterPublication.md) |  |  no  |
+| [GoldMasterJournal](GoldMasterJournal.md) |  |  no  |
 
 
 

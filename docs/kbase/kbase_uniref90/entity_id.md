@@ -17,9 +17,9 @@ Alias: entity_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ClusterMember](ClusterMember.md) | Member of a UniRef90 cluster |  no  |
 | [CrossReference](CrossReference.md) | External database cross-reference for entities |  no  |
 | [Entity](Entity.md) | Protein entity in the UniRef90 database |  no  |
+| [ClusterMember](ClusterMember.md) | Member of a UniRef90 cluster |  no  |
 
 
 

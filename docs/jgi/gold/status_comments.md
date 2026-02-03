@@ -17,8 +17,8 @@ Alias: status_comments
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DwSamples](DwSamples.md) |  |  no  |
 | [DwSequencingProject](DwSequencingProject.md) |  |  no  |
+| [DwSamples](DwSamples.md) |  |  no  |
 
 
 

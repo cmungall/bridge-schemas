@@ -17,9 +17,9 @@ Alias: modified_by
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Gene](Gene.md) |  |  no  |
 | [Taxon](Taxon.md) |  |  no  |
 | [TaxonProdVw](TaxonProdVw.md) |  |  no  |
-| [Gene](Gene.md) |  |  no  |
 | [ImgOrfType](ImgOrfType.md) |  |  no  |
 
 

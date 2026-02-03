@@ -17,12 +17,12 @@ Alias: evidence
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [NaturalProduct](NaturalProduct.md) |  |  no  |
 | [GeneImgFunctions](GeneImgFunctions.md) |  |  no  |
-| [ImgPathwayTaxons](ImgPathwayTaxons.md) |  |  no  |
-| [ImgPathwayAssertions](ImgPathwayAssertions.md) |  |  no  |
 | [MygeneTerms](MygeneTerms.md) |  |  no  |
 | [PathwayNetworkTaxons](PathwayNetworkTaxons.md) |  |  no  |
+| [ImgPathwayTaxons](ImgPathwayTaxons.md) |  |  no  |
+| [ImgPathwayAssertions](ImgPathwayAssertions.md) |  |  no  |
+| [NaturalProduct](NaturalProduct.md) |  |  no  |
 
 
 

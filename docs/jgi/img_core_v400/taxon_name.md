@@ -17,13 +17,13 @@ Alias: taxon_name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [KpTaxons](KpTaxons.md) |  |  no  |
-| [NewTaxonsBatch](NewTaxonsBatch.md) |  |  no  |
 | [DeleteTaxons](DeleteTaxons.md) |  |  no  |
+| [NewTaxons](NewTaxons.md) |  |  no  |
+| [NewTaxonsBatch](NewTaxonsBatch.md) |  |  no  |
+| [KpTaxons](KpTaxons.md) |  |  no  |
+| [OldTaxons](OldTaxons.md) |  |  no  |
 | [DtPhylodistNewTaxons](DtPhylodistNewTaxons.md) |  |  no  |
 | [TarballRefreshTaxons](TarballRefreshTaxons.md) |  |  no  |
-| [OldTaxons](OldTaxons.md) |  |  no  |
-| [NewTaxons](NewTaxons.md) |  |  no  |
 
 
 

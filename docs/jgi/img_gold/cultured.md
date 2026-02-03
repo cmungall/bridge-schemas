@@ -17,9 +17,9 @@ Alias: cultured
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldAnalysisProject](GoldAnalysisProject.md) |  |  no  |
-| [GoldMasterOrganism](GoldMasterOrganism.md) |  |  no  |
 | [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
+| [GoldMasterOrganism](GoldMasterOrganism.md) |  |  no  |
+| [GoldAnalysisProject](GoldAnalysisProject.md) |  |  no  |
 
 
 

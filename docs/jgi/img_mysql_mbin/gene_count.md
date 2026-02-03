@@ -18,9 +18,9 @@ Alias: gene_count
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Bin](Bin.md) |  |  no  |
+| [SemiBin](SemiBin.md) |  |  no  |
 | [BinScaffolds](BinScaffolds.md) |  |  no  |
 | [SemiBinScaffolds](SemiBinScaffolds.md) |  |  no  |
-| [SemiBin](SemiBin.md) |  |  no  |
 
 
 

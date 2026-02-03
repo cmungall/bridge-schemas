@@ -17,13 +17,13 @@ Alias: gene_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TmpGenes](TmpGenes.md) |  |  no  |
-| [BcgRegionGenesNew](BcgRegionGenesNew.md) |  |  no  |
-| [BcgBinRegionGenes](BcgBinRegionGenes.md) |  |  no  |
-| [BcgGenePfamsObs](BcgGenePfamsObs.md) |  |  no  |
-| [BcgGenePfams](BcgGenePfams.md) |  |  no  |
 | [BcgRegionGenes](BcgRegionGenes.md) |  |  no  |
+| [BcgRegionGenesNew](BcgRegionGenesNew.md) |  |  no  |
+| [BcgGenePfamsObs](BcgGenePfamsObs.md) |  |  no  |
 | [BcgBinGenePfams](BcgBinGenePfams.md) |  |  no  |
+| [TmpGenes](TmpGenes.md) |  |  no  |
+| [BcgGenePfams](BcgGenePfams.md) |  |  no  |
+| [BcgBinRegionGenes](BcgBinRegionGenes.md) |  |  no  |
 
 
 

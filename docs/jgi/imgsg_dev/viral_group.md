@@ -17,8 +17,8 @@ Alias: viral_group
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ProjectInfo](ProjectInfo.md) |  |  no  |
 | [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
+| [ProjectInfo](ProjectInfo.md) |  |  no  |
 
 
 

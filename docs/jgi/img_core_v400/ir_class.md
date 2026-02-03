@@ -18,10 +18,10 @@ Alias: ir_class
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Taxon](Taxon.md) |  |  no  |
-| [DtPhylumDistGenes](DtPhylumDistGenes.md) |  |  no  |
-| [ImgnrTaxons062123](ImgnrTaxons062123.md) |  |  no  |
 | [DtPhylumDistStats](DtPhylumDistStats.md) |  |  no  |
 | [TaxonProdVw](TaxonProdVw.md) |  |  no  |
+| [ImgnrTaxons062123](ImgnrTaxons062123.md) |  |  no  |
+| [DtPhylumDistGenes](DtPhylumDistGenes.md) |  |  no  |
 
 
 

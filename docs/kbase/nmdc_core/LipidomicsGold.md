@@ -3,7 +3,7 @@
 # Class: LipidomicsGold 
 
 
-_Lipidomics data linked to GOLD_
+_Lipidomics data linked to GOLD samples. Specialized metabolomics focused on lipid compounds._
 
 
 
@@ -89,7 +89,8 @@ annotations:
   source_table:
     tag: source_table
     value: lipidomics_gold
-description: Lipidomics data linked to GOLD
+description: Lipidomics data linked to GOLD samples. Specialized metabolomics focused
+  on lipid compounds.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +105,8 @@ annotations:
   source_table:
     tag: source_table
     value: lipidomics_gold
-description: Lipidomics data linked to GOLD
+description: Lipidomics data linked to GOLD samples. Specialized metabolomics focused
+  on lipid compounds.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

@@ -18,8 +18,8 @@ Alias: add_date
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [RnaseqSample](RnaseqSample.md) |  |  no  |
-| [RnaseqExperiment](RnaseqExperiment.md) |  |  no  |
 | [RnaseqDataset](RnaseqDataset.md) |  |  no  |
+| [RnaseqExperiment](RnaseqExperiment.md) |  |  no  |
 
 
 

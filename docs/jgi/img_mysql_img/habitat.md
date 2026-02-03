@@ -17,8 +17,8 @@ Alias: habitat
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TaxonHabitat](TaxonHabitat.md) |  |  no  |
 | [GoldSpHabitat](GoldSpHabitat.md) |  |  no  |
+| [TaxonHabitat](TaxonHabitat.md) |  |  no  |
 
 
 

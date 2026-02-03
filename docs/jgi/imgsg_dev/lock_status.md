@@ -17,8 +17,8 @@ Alias: lock_status
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [LockStatus](LockStatus.md) |  |  no  |
 | [MerSubmissionsQueue](MerSubmissionsQueue.md) |  |  no  |
+| [LockStatus](LockStatus.md) |  |  no  |
 
 
 

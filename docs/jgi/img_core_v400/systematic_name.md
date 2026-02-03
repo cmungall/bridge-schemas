@@ -18,9 +18,9 @@ Alias: systematic_name
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Enzyme](Enzyme.md) |  |  no  |
+| [BiocycProtein](BiocycProtein.md) |  |  no  |
 | [BiocycComp](BiocycComp.md) |  |  no  |
 | [EnzymeTransferred](EnzymeTransferred.md) |  |  no  |
-| [BiocycProtein](BiocycProtein.md) |  |  no  |
 
 
 

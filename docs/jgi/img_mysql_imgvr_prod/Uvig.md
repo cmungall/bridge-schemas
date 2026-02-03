@@ -17,10 +17,10 @@ Alias: uvig
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [UvigScaffolds](UvigScaffolds.md) |  |  no  |
-| [UvigPfams](UvigPfams.md) |  |  no  |
-| [UvigHosts](UvigHosts.md) |  |  no  |
 | [UvigLineage](UvigLineage.md) |  |  no  |
+| [UvigHosts](UvigHosts.md) |  |  no  |
+| [UvigPfams](UvigPfams.md) |  |  no  |
+| [UvigScaffolds](UvigScaffolds.md) |  |  no  |
 | [Uvig](Uvig.md) |  |  no  |
 | [UvigDomain](UvigDomain.md) |  |  no  |
 

@@ -18,8 +18,8 @@ Alias: sample_oid
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [MethStats](MethStats.md) |  |  no  |
-| [MethSample](MethSample.md) |  |  no  |
 | [MethFunctionCoverage](MethFunctionCoverage.md) |  |  no  |
+| [MethSample](MethSample.md) |  |  no  |
 
 
 

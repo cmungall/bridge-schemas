@@ -3,6 +3,11 @@
 # Slot: genus 
 
 
+_Genus name_
+
+
+
+
 
 URI: [https://w3id.org/kbase/nmdc_core/genus](https://w3id.org/kbase/nmdc_core/genus)
 Alias: genus
@@ -17,7 +22,7 @@ Alias: genus
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TaxonomyDim](TaxonomyDim.md) | Taxonomic hierarchy dimension table |  no  |
+| [TaxonomyDim](TaxonomyDim.md) | Taxonomic hierarchy dimension table using NCBI taxonomy |  no  |
 
 
 
@@ -30,6 +35,14 @@ Alias: genus
 
 
 
+
+
+## Examples
+
+| Value |
+| --- |
+| Escherichia |
+| Diplazon |
 
 ## Identifier and Mapping Information
 
@@ -61,6 +74,10 @@ Alias: genus
 <details>
 ```yaml
 name: genus
+description: Genus name
+examples:
+- value: Escherichia
+- value: Diplazon
 from_schema: https://w3id.org/kbase/nmdc_core
 rank: 1000
 alias: genus

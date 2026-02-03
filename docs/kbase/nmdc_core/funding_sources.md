@@ -3,6 +3,11 @@
 # Slot: funding_sources 
 
 
+_JSON array of funding sources_
+
+
+
+
 
 URI: [https://w3id.org/kbase/nmdc_core/funding_sources](https://w3id.org/kbase/nmdc_core/funding_sources)
 Alias: funding_sources
@@ -17,7 +22,7 @@ Alias: funding_sources
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [StudyTable](StudyTable.md) | NMDC research studies |  no  |
+| [StudyTable](StudyTable.md) | NMDC research studies with ecosystem classification and investigator informat... |  no  |
 
 
 
@@ -30,6 +35,14 @@ Alias: funding_sources
 
 
 
+
+
+## Examples
+
+| Value |
+| --- |
+| ["National Sciences Foundation Dimensions of Biodiversity (award no. 1342701)"] |
+| ["U.S. Department of Energy, Office of Science, Office of Biological and Environmental Research (BER)"] |
 
 ## Identifier and Mapping Information
 
@@ -61,6 +74,11 @@ Alias: funding_sources
 <details>
 ```yaml
 name: funding_sources
+description: JSON array of funding sources
+examples:
+- value: '["National Sciences Foundation Dimensions of Biodiversity (award no. 1342701)"]'
+- value: '["U.S. Department of Energy, Office of Science, Office of Biological and
+    Environmental Research (BER)"]'
 from_schema: https://w3id.org/kbase/nmdc_core
 rank: 1000
 alias: funding_sources

@@ -17,11 +17,11 @@ Alias: gold_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Study](Study.md) |  |  no  |
 | [Project](Project.md) |  |  no  |
-| [OrganismV2](OrganismV2.md) |  |  no  |
-| [Biosample](Biosample.md) |  |  no  |
 | [AnalysisProject](AnalysisProject.md) |  |  no  |
+| [Biosample](Biosample.md) |  |  no  |
+| [Study](Study.md) |  |  no  |
+| [OrganismV2](OrganismV2.md) |  |  no  |
 
 
 

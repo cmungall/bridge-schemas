@@ -17,11 +17,11 @@ Alias: bcg_type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [BcgType](BcgType.md) |  |  no  |
-| [BcgRegion](BcgRegion.md) |  |  no  |
 | [BcgRegionNew](BcgRegionNew.md) |  |  no  |
-| [BcgBinRegion](BcgBinRegion.md) |  |  no  |
 | [TaxonBcgType](TaxonBcgType.md) |  |  no  |
+| [BcgRegion](BcgRegion.md) |  |  no  |
+| [BcgType](BcgType.md) |  |  no  |
+| [BcgBinRegion](BcgBinRegion.md) |  |  no  |
 
 
 

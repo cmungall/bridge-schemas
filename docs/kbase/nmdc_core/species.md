@@ -3,6 +3,11 @@
 # Slot: species 
 
 
+_Species name (binomial or with identifier)_
+
+
+
+
 
 URI: [https://w3id.org/kbase/nmdc_core/species](https://w3id.org/kbase/nmdc_core/species)
 Alias: species
@@ -17,7 +22,7 @@ Alias: species
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TaxonomyDim](TaxonomyDim.md) | Taxonomic hierarchy dimension table |  no  |
+| [TaxonomyDim](TaxonomyDim.md) | Taxonomic hierarchy dimension table using NCBI taxonomy |  no  |
 
 
 
@@ -30,6 +35,14 @@ Alias: species
 
 
 
+
+
+## Examples
+
+| Value |
+| --- |
+| Diplazon sp. BBHYJ995-10 |
+| Escherichia coli |
 
 ## Identifier and Mapping Information
 
@@ -61,6 +74,12 @@ Alias: species
 <details>
 ```yaml
 name: species
+description: Species name (binomial or with identifier)
+examples:
+- value: Diplazon sp. BBHYJ995-10
+  description: Species with isolate ID
+- value: Escherichia coli
+  description: Standard binomial
 from_schema: https://w3id.org/kbase/nmdc_core
 rank: 1000
 alias: species

@@ -3,7 +3,7 @@
 # Class: SampleFileLookup 
 
 
-_Sample to file mapping_
+_Sample to file mapping for data retrieval. Links biosample IDs to their associated data files._
 
 
 
@@ -89,7 +89,8 @@ annotations:
   source_table:
     tag: source_table
     value: sample_file_lookup
-description: Sample to file mapping
+description: Sample to file mapping for data retrieval. Links biosample IDs to their
+  associated data files.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +105,8 @@ annotations:
   source_table:
     tag: source_table
     value: sample_file_lookup
-description: Sample to file mapping
+description: Sample to file mapping for data retrieval. Links biosample IDs to their
+  associated data files.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

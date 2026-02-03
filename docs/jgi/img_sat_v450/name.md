@@ -17,15 +17,15 @@ Alias: name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GenomeProperty](GenomeProperty.md) |  |  no  |
-| [Cog2014](Cog2014.md) |  |  no  |
-| [PfamDead](PfamDead.md) |  |  no  |
-| [PropertyStep](PropertyStep.md) |  |  no  |
-| [DbSource](DbSource.md) |  |  no  |
-| [PfamClan](PfamClan.md) |  |  no  |
-| [PfamFamily](PfamFamily.md) |  |  no  |
-| [Cogfunc2014](Cogfunc2014.md) |  |  no  |
 | [Interpro](Interpro.md) |  |  no  |
+| [DbSource](DbSource.md) |  |  no  |
+| [Cog2014](Cog2014.md) |  |  no  |
+| [PropertyStep](PropertyStep.md) |  |  no  |
+| [Cogfunc2014](Cogfunc2014.md) |  |  no  |
+| [PfamDead](PfamDead.md) |  |  no  |
+| [GenomeProperty](GenomeProperty.md) |  |  no  |
+| [PfamFamily](PfamFamily.md) |  |  no  |
+| [PfamClan](PfamClan.md) |  |  no  |
 
 
 

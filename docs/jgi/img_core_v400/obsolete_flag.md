@@ -17,11 +17,11 @@ Alias: obsolete_flag
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Taxon](Taxon.md) |  |  no  |
 | [VwTaxonSc](VwTaxonSc.md) |  |  no  |
-| [TaxonDw](TaxonDw.md) |  |  no  |
 | [Gene](Gene.md) |  |  no  |
+| [Taxon](Taxon.md) |  |  no  |
 | [TaxonProdVw](TaxonProdVw.md) |  |  no  |
+| [TaxonDw](TaxonDw.md) |  |  no  |
 
 
 

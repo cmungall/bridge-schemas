@@ -17,8 +17,8 @@ Alias: posttrans_modification
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DtCogStats](DtCogStats.md) |  |  no  |
 | [DtKogStats](DtKogStats.md) |  |  no  |
+| [DtCogStats](DtCogStats.md) |  |  no  |
 
 
 

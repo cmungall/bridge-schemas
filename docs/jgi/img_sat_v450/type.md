@@ -17,12 +17,12 @@ Alias: type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GenomeProperty](GenomeProperty.md) |  |  no  |
+| [Interpro](Interpro.md) |  |  no  |
 | [MpwPglReactionCompounds](MpwPglReactionCompounds.md) |  |  no  |
+| [GenomeProperty](GenomeProperty.md) |  |  no  |
 | [EggnogMd52id2ont](EggnogMd52id2ont.md) |  |  no  |
 | [PfamFamily](PfamFamily.md) |  |  no  |
 | [EggnogHierarchy](EggnogHierarchy.md) |  |  no  |
-| [Interpro](Interpro.md) |  |  no  |
 
 
 

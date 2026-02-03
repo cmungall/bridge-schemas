@@ -3,7 +3,7 @@
 # Slot: taxid 
 
 
-_NCBI taxonomy ID_
+_NCBI taxonomy ID (integer)_
 
 
 
@@ -22,7 +22,7 @@ Alias: taxid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TaxonomyDim](TaxonomyDim.md) | Taxonomic hierarchy dimension table |  no  |
+| [TaxonomyDim](TaxonomyDim.md) | Taxonomic hierarchy dimension table using NCBI taxonomy |  no  |
 
 
 
@@ -35,8 +35,19 @@ Alias: taxid
 
 * Required: True
 
+* Minimum Value: 1
 
 
+
+
+
+## Examples
+
+| Value |
+| --- |
+| 2327552 |
+| 562 |
+| 9606 |
 
 ## Identifier and Mapping Information
 
@@ -68,7 +79,14 @@ Alias: taxid
 <details>
 ```yaml
 name: taxid
-description: NCBI taxonomy ID
+description: NCBI taxonomy ID (integer)
+examples:
+- value: '2327552'
+  description: Example NCBI taxid
+- value: '562'
+  description: Escherichia coli
+- value: '9606'
+  description: Homo sapiens
 from_schema: https://w3id.org/kbase/nmdc_core
 rank: 1000
 identifier: true
@@ -78,6 +96,7 @@ domain_of:
 - TaxonomyDim
 range: integer
 required: true
+minimum_value: 1
 
 ```
 </details>

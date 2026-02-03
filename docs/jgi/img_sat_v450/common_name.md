@@ -17,11 +17,11 @@ Alias: common_name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [BiocycClass](BiocycClass.md) |  |  no  |
-| [BiocycEnzrxn](BiocycEnzrxn.md) |  |  no  |
-| [Compound](Compound.md) |  |  no  |
 | [BiocycReaction](BiocycReaction.md) |  |  no  |
+| [BiocycClass](BiocycClass.md) |  |  no  |
+| [Compound](Compound.md) |  |  no  |
 | [BiocycComp](BiocycComp.md) |  |  no  |
+| [BiocycEnzrxn](BiocycEnzrxn.md) |  |  no  |
 | [BiocycProtein](BiocycProtein.md) |  |  no  |
 | [BiocycPathway](BiocycPathway.md) |  |  no  |
 

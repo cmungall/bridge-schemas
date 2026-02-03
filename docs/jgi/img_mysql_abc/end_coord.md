@@ -17,10 +17,10 @@ Alias: end_coord
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [BcgRegionGenes](BcgRegionGenes.md) |  |  no  |
-| [BcgBinRegion](BcgBinRegion.md) |  |  no  |
 | [BcgRegionNew](BcgRegionNew.md) |  |  no  |
 | [BcgRegion](BcgRegion.md) |  |  no  |
+| [BcgRegionGenes](BcgRegionGenes.md) |  |  no  |
+| [BcgBinRegion](BcgBinRegion.md) |  |  no  |
 
 
 

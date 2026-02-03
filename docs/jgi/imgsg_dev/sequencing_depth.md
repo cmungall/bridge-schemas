@@ -17,8 +17,8 @@ Alias: sequencing_depth
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldAnalysisProject](GoldAnalysisProject.md) |  |  no  |
 | [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
+| [GoldAnalysisProject](GoldAnalysisProject.md) |  |  no  |
 
 
 

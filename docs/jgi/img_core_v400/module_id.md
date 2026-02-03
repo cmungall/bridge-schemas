@@ -17,12 +17,12 @@ Alias: module_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [KeggModuleReactions](KeggModuleReactions.md) |  |  no  |
-| [Ko2module](Ko2module.md) |  |  no  |
-| [KeggModuleKoTerms](KeggModuleKoTerms.md) |  |  no  |
 | [DtTaxonKmoduleMcr](DtTaxonKmoduleMcr.md) |  |  no  |
+| [KeggModuleKoTerms](KeggModuleKoTerms.md) |  |  no  |
 | [KeggModule](KeggModule.md) |  |  no  |
+| [Ko2module](Ko2module.md) |  |  no  |
 | [KeggModuleCompounds](KeggModuleCompounds.md) |  |  no  |
+| [KeggModuleReactions](KeggModuleReactions.md) |  |  no  |
 
 
 

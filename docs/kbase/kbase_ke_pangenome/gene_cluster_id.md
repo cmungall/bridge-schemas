@@ -17,8 +17,8 @@ Alias: gene_cluster_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GeneCluster](GeneCluster.md) | Ortholog cluster at species level |  no  |
 | [GeneGeneclusterJunction](GeneGeneclusterJunction.md) | Junction table linking genes to gene clusters |  no  |
+| [GeneCluster](GeneCluster.md) | Ortholog cluster at species level |  no  |
 
 
 

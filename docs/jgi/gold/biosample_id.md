@@ -18,9 +18,9 @@ Alias: biosample_id
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [BiosampleDisease](BiosampleDisease.md) |  |  no  |
+| [Biosample](Biosample.md) |  |  no  |
 | [OrganismV2](OrganismV2.md) |  |  no  |
 | [PackageSoil](PackageSoil.md) |  |  no  |
-| [Biosample](Biosample.md) |  |  no  |
 
 
 

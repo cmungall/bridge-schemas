@@ -18,11 +18,11 @@ Alias: end_coord
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [MsPeptide](MsPeptide.md) |  |  no  |
+| [MsProteinImgGenesOld](MsProteinImgGenesOld.md) |  |  no  |
 | [MsProteinOld](MsProteinOld.md) |  |  no  |
 | [MsProteinImgGenes](MsProteinImgGenes.md) |  |  no  |
-| [MsProteinImgGenesOld](MsProteinImgGenesOld.md) |  |  no  |
-| [MsPeptideOld](MsPeptideOld.md) |  |  no  |
 | [MsProtein](MsProtein.md) |  |  no  |
+| [MsPeptideOld](MsPeptideOld.md) |  |  no  |
 
 
 

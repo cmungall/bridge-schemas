@@ -18,9 +18,9 @@ Alias: type_id
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [CellLineProp](CellLineProp.md) | Cell line property |  no  |
+| [BiomaterialRelationship](BiomaterialRelationship.md) | Relationship between biomaterials |  no  |
 | [Feature](Feature.md) | Genomic feature (gene, mRNA, exon, CDS, etc |  no  |
 | [BiomaterialProp](BiomaterialProp.md) | Property of a biomaterial |  no  |
-| [BiomaterialRelationship](BiomaterialRelationship.md) | Relationship between biomaterials |  no  |
 | [ContactRelationship](ContactRelationship.md) | Relationship between contacts |  no  |
 
 

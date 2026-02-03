@@ -17,15 +17,15 @@ Alias: taxon
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GeneFunctionHistory](GeneFunctionHistory.md) |  |  no  |
-| [NaturalProduct](NaturalProduct.md) |  |  no  |
-| [GeneHistory](GeneHistory.md) |  |  no  |
 | [GeneImgFunctions](GeneImgFunctions.md) |  |  no  |
+| [GeneFunctionHistory](GeneFunctionHistory.md) |  |  no  |
+| [GeneHistory](GeneHistory.md) |  |  no  |
+| [PathwayNetworkTaxons](PathwayNetworkTaxons.md) |  |  no  |
 | [ImgPathwayTaxons](ImgPathwayTaxons.md) |  |  no  |
 | [ImgPathwayAssertions](ImgPathwayAssertions.md) |  |  no  |
 | [Mygene](Mygene.md) |  |  no  |
+| [NaturalProduct](NaturalProduct.md) |  |  no  |
 | [PhenotypeRuleTaxons](PhenotypeRuleTaxons.md) |  |  no  |
-| [PathwayNetworkTaxons](PathwayNetworkTaxons.md) |  |  no  |
 
 
 

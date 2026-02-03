@@ -17,8 +17,8 @@ Alias: insert_user_sso
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [PigRetractions](PigRetractions.md) |  |  no  |
 | [PigReruns](PigReruns.md) |  |  no  |
+| [PigRetractions](PigRetractions.md) |  |  no  |
 | [PigGenbankEmailedAccs](PigGenbankEmailedAccs.md) |  |  no  |
 
 

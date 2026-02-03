@@ -3,11 +3,6 @@
 # Slot: synonyms 
 
 
-_Term synonyms_
-
-
-
-
 
 URI: [https://w3id.org/kbase/nmdc_core/synonyms](https://w3id.org/kbase/nmdc_core/synonyms)
 Alias: synonyms
@@ -22,7 +17,9 @@ Alias: synonyms
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoTerms](GoTerms.md) | Gene Ontology terms |  no  |
+| [GoTerms](GoTerms.md) | Gene Ontology terms with full metadata |  no  |
+| [TraitUnified](TraitUnified.md) | Unified trait annotations across samples from multiple sources |  no  |
+| [EcTerms](EcTerms.md) | Enzyme Commission (EC) number terms |  no  |
 
 
 
@@ -43,13 +40,6 @@ Alias: synonyms
 
 
 
-### Schema Source
-
-
-* from schema: https://w3id.org/kbase/nmdc_core
-
-
-
 
 ## Mappings
 
@@ -66,13 +56,11 @@ Alias: synonyms
 <details>
 ```yaml
 name: synonyms
-description: Term synonyms
-from_schema: https://w3id.org/kbase/nmdc_core
-rank: 1000
 alias: synonyms
-owner: GoTerms
 domain_of:
 - GoTerms
+- EcTerms
+- TraitUnified
 range: string
 
 ```

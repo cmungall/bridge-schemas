@@ -17,10 +17,10 @@ Alias: title
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Excel](Excel.md) |  |  no  |
-| [NcbiRawSraRun](NcbiRawSraRun.md) |  |  no  |
-| [SraSampleV2](SraSampleV2.md) |  |  no  |
 | [SraExperimentV2](SraExperimentV2.md) |  |  no  |
+| [SraSampleV2](SraSampleV2.md) |  |  no  |
+| [NcbiRawSraRun](NcbiRawSraRun.md) |  |  no  |
+| [Excel](Excel.md) |  |  no  |
 
 
 

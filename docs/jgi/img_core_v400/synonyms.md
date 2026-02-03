@@ -17,12 +17,12 @@ Alias: synonyms
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [BiocycClassSynonyms](BiocycClassSynonyms.md) |  |  no  |
-| [BiocycEnzrxnSynonyms](BiocycEnzrxnSynonyms.md) |  |  no  |
-| [GoTermSynonyms](GoTermSynonyms.md) |  |  no  |
 | [BiocycReactionSynonyms](BiocycReactionSynonyms.md) |  |  no  |
-| [BiocycProteinSynonyms](BiocycProteinSynonyms.md) |  |  no  |
 | [BiocycCompSynonyms](BiocycCompSynonyms.md) |  |  no  |
+| [BiocycClassSynonyms](BiocycClassSynonyms.md) |  |  no  |
+| [GoTermSynonyms](GoTermSynonyms.md) |  |  no  |
+| [BiocycProteinSynonyms](BiocycProteinSynonyms.md) |  |  no  |
+| [BiocycEnzrxnSynonyms](BiocycEnzrxnSynonyms.md) |  |  no  |
 
 
 

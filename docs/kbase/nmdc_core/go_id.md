@@ -3,11 +3,6 @@
 # Slot: go_id 
 
 
-_GO term ID (e.g., GO:0008150)_
-
-
-
-
 
 URI: [https://w3id.org/kbase/nmdc_core/go_id](https://w3id.org/kbase/nmdc_core/go_id)
 Alias: go_id
@@ -22,7 +17,8 @@ Alias: go_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoTerms](GoTerms.md) | Gene Ontology terms |  no  |
+| [GoTerms](GoTerms.md) | Gene Ontology terms with full metadata |  no  |
+| [GoHierarchyFlat](GoHierarchyFlat.md) | Flattened GO hierarchy for efficient ancestor/descendant queries |  no  |
 
 
 
@@ -33,8 +29,6 @@ Alias: go_id
 
 * Range: [String](String.md)
 
-* Required: True
-
 
 
 
@@ -42,13 +36,6 @@ Alias: go_id
 
 
 
-
-
-
-### Schema Source
-
-
-* from schema: https://w3id.org/kbase/nmdc_core
 
 
 
@@ -68,16 +55,11 @@ Alias: go_id
 <details>
 ```yaml
 name: go_id
-description: GO term ID (e.g., GO:0008150)
-from_schema: https://w3id.org/kbase/nmdc_core
-rank: 1000
-identifier: true
 alias: go_id
-owner: GoTerms
 domain_of:
 - GoTerms
+- GoHierarchyFlat
 range: string
-required: true
 
 ```
 </details>

@@ -3,7 +3,7 @@
 # Class: TraitFeatures 
 
 
-_Trait-derived features_
+_Trait-derived features for machine learning. Functional trait presence/absence from GO annotations._
 
 
 
@@ -89,7 +89,8 @@ annotations:
   source_table:
     tag: source_table
     value: trait_features
-description: Trait-derived features
+description: Trait-derived features for machine learning. Functional trait presence/absence
+  from GO annotations.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +105,8 @@ annotations:
   source_table:
     tag: source_table
     value: trait_features
-description: Trait-derived features
+description: Trait-derived features for machine learning. Functional trait presence/absence
+  from GO annotations.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

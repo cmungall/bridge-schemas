@@ -17,10 +17,10 @@ Alias: ebin_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [EbinExtLinks](EbinExtLinks.md) |  |  no  |
-| [SemiEbin](SemiEbin.md) |  |  no  |
 | [Ebin](Ebin.md) |  |  no  |
+| [SemiEbin](SemiEbin.md) |  |  no  |
 | [SemiEbinScaffolds](SemiEbinScaffolds.md) |  |  no  |
+| [EbinExtLinks](EbinExtLinks.md) |  |  no  |
 | [EbinScaffolds](EbinScaffolds.md) |  |  no  |
 
 

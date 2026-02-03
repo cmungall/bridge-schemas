@@ -17,13 +17,13 @@ Alias: tc_family_num
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [TcFamilyPfams](TcFamilyPfams.md) |  |  no  |
+| [TcFamilyCogs](TcFamilyCogs.md) |  |  no  |
+| [TcFamily](TcFamily.md) |  |  no  |
+| [TcFamilyImgTerms](TcFamilyImgTerms.md) |  |  no  |
+| [TcFamilyPfamsIain](TcFamilyPfamsIain.md) |  |  no  |
 | [TcFamilyGoTerms](TcFamilyGoTerms.md) |  |  no  |
 | [TcFamilyTfams](TcFamilyTfams.md) |  |  no  |
-| [TcFamily](TcFamily.md) |  |  no  |
-| [TcFamilyCogs](TcFamilyCogs.md) |  |  no  |
-| [TcFamilyImgTerms](TcFamilyImgTerms.md) |  |  no  |
-| [TcFamilyPfams](TcFamilyPfams.md) |  |  no  |
-| [TcFamilyPfamsIain](TcFamilyPfamsIain.md) |  |  no  |
 
 
 

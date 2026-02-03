@@ -17,10 +17,10 @@ Alias: aa_seq_length
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [KpPseudo](KpPseudo.md) |  |  no  |
-| [KeggGene](KeggGene.md) |  |  no  |
 | [Gene](Gene.md) |  |  no  |
+| [KpPseudo](KpPseudo.md) |  |  no  |
 | [AltTranscript](AltTranscript.md) |  |  no  |
+| [KeggGene](KeggGene.md) |  |  no  |
 
 
 

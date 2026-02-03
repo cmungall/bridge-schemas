@@ -17,28 +17,28 @@ Alias: ext_accession
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GeneTigrfams](GeneTigrfams.md) |  |  no  |
-| [CompoundAliases](CompoundAliases.md) |  |  no  |
-| [TigrfamGenomeProperties](TigrfamGenomeProperties.md) |  |  no  |
-| [PfamFamilyGenomeProperties](PfamFamilyGenomeProperties.md) |  |  no  |
-| [Tigrfam](Tigrfam.md) |  |  no  |
-| [InterproGoTerms](InterproGoTerms.md) |  |  no  |
-| [Interpro](Interpro.md) |  |  no  |
-| [PfamClanPfamFamilies](PfamClanPfamFamilies.md) |  |  no  |
 | [AltTranscript](AltTranscript.md) |  |  no  |
-| [CompoundExtLinks](CompoundExtLinks.md) |  |  no  |
-| [Scaffold](Scaffold.md) |  |  no  |
-| [PfamFamilyCogs](PfamFamilyCogs.md) |  |  no  |
-| [ReactionEnzymes](ReactionEnzymes.md) |  |  no  |
-| [PfamFamily](PfamFamily.md) |  |  no  |
-| [TigrfamRoles](TigrfamRoles.md) |  |  no  |
-| [Compound](Compound.md) |  |  no  |
-| [PfamFamilyExtLinks](PfamFamilyExtLinks.md) |  |  no  |
-| [ReactionCompounds](ReactionCompounds.md) |  |  no  |
-| [PfamClan](PfamClan.md) |  |  no  |
-| [Reaction](Reaction.md) |  |  no  |
 | [TigrfamEnzymes](TigrfamEnzymes.md) |  |  no  |
+| [CompoundAliases](CompoundAliases.md) |  |  no  |
+| [PfamClanPfamFamilies](PfamClanPfamFamilies.md) |  |  no  |
+| [TigrfamRoles](TigrfamRoles.md) |  |  no  |
+| [Reaction](Reaction.md) |  |  no  |
+| [PfamFamily](PfamFamily.md) |  |  no  |
+| [Compound](Compound.md) |  |  no  |
+| [TigrfamGenomeProperties](TigrfamGenomeProperties.md) |  |  no  |
+| [Interpro](Interpro.md) |  |  no  |
+| [PfamFamilyGenomeProperties](PfamFamilyGenomeProperties.md) |  |  no  |
+| [PfamClan](PfamClan.md) |  |  no  |
 | [ReactionExtLinks](ReactionExtLinks.md) |  |  no  |
+| [PfamFamilyExtLinks](PfamFamilyExtLinks.md) |  |  no  |
+| [ReactionEnzymes](ReactionEnzymes.md) |  |  no  |
+| [PfamFamilyCogs](PfamFamilyCogs.md) |  |  no  |
+| [ReactionCompounds](ReactionCompounds.md) |  |  no  |
+| [CompoundExtLinks](CompoundExtLinks.md) |  |  no  |
+| [InterproGoTerms](InterproGoTerms.md) |  |  no  |
+| [Tigrfam](Tigrfam.md) |  |  no  |
+| [GeneTigrfams](GeneTigrfams.md) |  |  no  |
+| [Scaffold](Scaffold.md) |  |  no  |
 
 
 

@@ -17,8 +17,8 @@ Alias: bin_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [BcgBinRegionGenes](BcgBinRegionGenes.md) |  |  no  |
 | [BcgBinRegion](BcgBinRegion.md) |  |  no  |
+| [BcgBinRegionGenes](BcgBinRegionGenes.md) |  |  no  |
 
 
 

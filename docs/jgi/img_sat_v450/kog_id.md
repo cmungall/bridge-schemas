@@ -17,9 +17,9 @@ Alias: kog_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [KogFamilies](KogFamilies.md) |  |  no  |
 | [KogFunctions](KogFunctions.md) |  |  no  |
 | [Kog](Kog.md) |  |  no  |
-| [KogFamilies](KogFamilies.md) |  |  no  |
 
 
 

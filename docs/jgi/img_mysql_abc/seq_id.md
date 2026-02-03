@@ -18,8 +18,8 @@ Alias: seq_id
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [BcgRegionNew](BcgRegionNew.md) |  |  no  |
-| [BcgBinRegion](BcgBinRegion.md) |  |  no  |
 | [BcgRegion](BcgRegion.md) |  |  no  |
+| [BcgBinRegion](BcgBinRegion.md) |  |  no  |
 
 
 

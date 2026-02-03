@@ -17,12 +17,12 @@ Alias: description
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Study](Study.md) |  |  no  |
-| [SraExperimentV2](SraExperimentV2.md) |  |  no  |
-| [NcbiRawSraRun](NcbiRawSraRun.md) |  |  no  |
 | [Project](Project.md) |  |  no  |
+| [SraExperimentV2](SraExperimentV2.md) |  |  no  |
 | [DwSequencingProduct](DwSequencingProduct.md) |  |  no  |
 | [Biosample](Biosample.md) |  |  no  |
+| [Study](Study.md) |  |  no  |
+| [NcbiRawSraRun](NcbiRawSraRun.md) |  |  no  |
 
 
 

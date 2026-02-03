@@ -17,23 +17,23 @@ Alias: comments
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Taxon](Taxon.md) |  |  no  |
-| [BiocycEnzrxn](BiocycEnzrxn.md) |  |  no  |
-| [BiocycComp](BiocycComp.md) |  |  no  |
 | [BiocycClass](BiocycClass.md) |  |  no  |
 | [TaxonReplacements](TaxonReplacements.md) |  |  no  |
-| [BiocycReaction](BiocycReaction.md) |  |  no  |
-| [PfamFamily](PfamFamily.md) |  |  no  |
-| [PfamDead](PfamDead.md) |  |  no  |
-| [GeneSigPeptides](GeneSigPeptides.md) |  |  no  |
-| [PfamClan](PfamClan.md) |  |  no  |
-| [TaxonProdVw](TaxonProdVw.md) |  |  no  |
-| [Reaction](Reaction.md) |  |  no  |
-| [Enzyme](Enzyme.md) |  |  no  |
-| [GoTerm](GoTerm.md) |  |  no  |
-| [BiocycPathwayComments](BiocycPathwayComments.md) |  |  no  |
-| [EnzymeTransferred](EnzymeTransferred.md) |  |  no  |
 | [BiocycProtein](BiocycProtein.md) |  |  no  |
+| [BiocycEnzrxn](BiocycEnzrxn.md) |  |  no  |
+| [EnzymeTransferred](EnzymeTransferred.md) |  |  no  |
+| [BiocycPathwayComments](BiocycPathwayComments.md) |  |  no  |
+| [GeneSigPeptides](GeneSigPeptides.md) |  |  no  |
+| [BiocycReaction](BiocycReaction.md) |  |  no  |
+| [Taxon](Taxon.md) |  |  no  |
+| [GoTerm](GoTerm.md) |  |  no  |
+| [PfamDead](PfamDead.md) |  |  no  |
+| [Reaction](Reaction.md) |  |  no  |
+| [BiocycComp](BiocycComp.md) |  |  no  |
+| [PfamClan](PfamClan.md) |  |  no  |
+| [PfamFamily](PfamFamily.md) |  |  no  |
+| [Enzyme](Enzyme.md) |  |  no  |
+| [TaxonProdVw](TaxonProdVw.md) |  |  no  |
 
 
 

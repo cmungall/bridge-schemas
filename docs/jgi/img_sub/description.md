@@ -17,10 +17,10 @@ Alias: description
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ImgGroupNews](ImgGroupNews.md) |  |  no  |
 | [Mygene](Mygene.md) |  |  no  |
 | [NotToRelease](NotToRelease.md) |  |  no  |
 | [SubmissionProcStats](SubmissionProcStats.md) |  |  no  |
+| [ImgGroupNews](ImgGroupNews.md) |  |  no  |
 
 
 

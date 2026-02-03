@@ -17,9 +17,9 @@ Alias: metabolism
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldSpMetabolism](GoldSpMetabolism.md) |  |  no  |
 | [ProjectInfoMetabolism](ProjectInfoMetabolism.md) |  |  no  |
 | [EnvSampleMetabolism](EnvSampleMetabolism.md) |  |  no  |
+| [GoldSpMetabolism](GoldSpMetabolism.md) |  |  no  |
 
 
 

@@ -17,8 +17,8 @@ Alias: submission
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ReprocessSubmissionsPhajek](ReprocessSubmissionsPhajek.md) |  |  no  |
 | [ReprocessWithCoveragePhajek](ReprocessWithCoveragePhajek.md) |  |  no  |
+| [ReprocessSubmissionsPhajek](ReprocessSubmissionsPhajek.md) |  |  no  |
 
 
 

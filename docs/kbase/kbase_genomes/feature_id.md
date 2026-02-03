@@ -17,11 +17,11 @@ Alias: feature_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ContigXFeature](ContigXFeature.md) |  |  no  |
-| [Feature](Feature.md) |  |  no  |
-| [EncodedFeatureXFeature](EncodedFeatureXFeature.md) |  |  no  |
 | [FeatureXProtein](FeatureXProtein.md) |  |  no  |
 | [ContigCollectionXFeature](ContigCollectionXFeature.md) |  |  no  |
+| [EncodedFeatureXFeature](EncodedFeatureXFeature.md) |  |  no  |
+| [Feature](Feature.md) |  |  no  |
+| [ContigXFeature](ContigXFeature.md) |  |  no  |
 
 
 

@@ -18,9 +18,9 @@ Alias: submission_status
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [ProjectInfoGenbank](ProjectInfoGenbank.md) |  |  no  |
-| [ProjectInfoBioproject](ProjectInfoBioproject.md) |  |  no  |
-| [ProjectInfoBiosample](ProjectInfoBiosample.md) |  |  no  |
 | [PigTracks](PigTracks.md) |  |  no  |
+| [ProjectInfoBiosample](ProjectInfoBiosample.md) |  |  no  |
+| [ProjectInfoBioproject](ProjectInfoBioproject.md) |  |  no  |
 
 
 

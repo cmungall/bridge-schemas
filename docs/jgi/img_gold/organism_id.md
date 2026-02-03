@@ -17,17 +17,17 @@ Alias: organism_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldMasterOrganismHabitat](GoldMasterOrganismHabitat.md) |  |  no  |
-| [GoldMasterOrganismPhenotype](GoldMasterOrganismPhenotype.md) |  |  no  |
-| [GoldMasterOrganismEnergySource](GoldMasterOrganismEnergySource.md) |  |  no  |
-| [GoldMasterAnalysisProject](GoldMasterAnalysisProject.md) |  |  no  |
-| [GoldMasterOrganismBioticRel](GoldMasterOrganismBioticRel.md) |  |  no  |
-| [GoldMasterOrganismMetabolism](GoldMasterOrganismMetabolism.md) |  |  no  |
-| [GoldMasterProject](GoldMasterProject.md) |  |  no  |
 | [GoldMasterOrganism](GoldMasterOrganism.md) |  |  no  |
 | [GoldMasterOrganismCellArrangement](GoldMasterOrganismCellArrangement.md) |  |  no  |
-| [GoldMasterPermission](GoldMasterPermission.md) |  |  no  |
+| [GoldMasterOrganismBioticRel](GoldMasterOrganismBioticRel.md) |  |  no  |
+| [GoldMasterOrganismHabitat](GoldMasterOrganismHabitat.md) |  |  no  |
+| [GoldMasterOrganismPhenotype](GoldMasterOrganismPhenotype.md) |  |  no  |
 | [GoldMasterOrganismDisease](GoldMasterOrganismDisease.md) |  |  no  |
+| [GoldMasterProject](GoldMasterProject.md) |  |  no  |
+| [GoldMasterPermission](GoldMasterPermission.md) |  |  no  |
+| [GoldMasterOrganismMetabolism](GoldMasterOrganismMetabolism.md) |  |  no  |
+| [GoldMasterOrganismEnergySource](GoldMasterOrganismEnergySource.md) |  |  no  |
+| [GoldMasterAnalysisProject](GoldMasterAnalysisProject.md) |  |  no  |
 
 
 

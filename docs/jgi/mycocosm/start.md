@@ -17,15 +17,15 @@ Alias: start
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [UserModel](UserModel.md) | User-submitted gene model (JAM system) |  no  |
-| [SMCluster](SMCluster.md) | Secondary metabolite biosynthetic cluster |  no  |
-| [FilteredModels](FilteredModels.md) | Curated/filtered gene models - the primary gene set |  no  |
-| [TransposableElement](TransposableElement.md) | Transposable element annotation |  no  |
-| [BlatESTCluster](BlatESTCluster.md) | EST cluster from BLAT alignments |  no  |
-| [RepeatMaskerSimple](RepeatMaskerSimple.md) | Simple repeat from RepeatMasker |  no  |
-| [GenemarkPrediction](GenemarkPrediction.md) | GeneMark ab initio gene prediction |  no  |
 | [RepeatMaskerHit](RepeatMaskerHit.md) | RepeatMasker repeat element hit |  no  |
+| [RepeatMaskerSimple](RepeatMaskerSimple.md) | Simple repeat from RepeatMasker |  no  |
 | [GenewisePrediction](GenewisePrediction.md) | GeneWise homology-based gene prediction |  no  |
+| [BlatESTCluster](BlatESTCluster.md) | EST cluster from BLAT alignments |  no  |
+| [UserModel](UserModel.md) | User-submitted gene model (JAM system) |  no  |
+| [GenemarkPrediction](GenemarkPrediction.md) | GeneMark ab initio gene prediction |  no  |
+| [SMCluster](SMCluster.md) | Secondary metabolite biosynthetic cluster |  no  |
+| [TransposableElement](TransposableElement.md) | Transposable element annotation |  no  |
+| [FilteredModels](FilteredModels.md) | Curated/filtered gene models - the primary gene set |  no  |
 
 
 

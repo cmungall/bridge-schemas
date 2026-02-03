@@ -17,8 +17,8 @@ Alias: property
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [PfamFamilyGenomeProperties](PfamFamilyGenomeProperties.md) |  |  no  |
 | [TigrfamGenomeProperties](TigrfamGenomeProperties.md) |  |  no  |
+| [PfamFamilyGenomeProperties](PfamFamilyGenomeProperties.md) |  |  no  |
 
 
 

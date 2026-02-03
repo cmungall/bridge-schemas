@@ -18,13 +18,13 @@ Alias: db_source
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [KeggPathway](KeggPathway.md) |  |  no  |
+| [GoTerm](GoTerm.md) |  |  no  |
 | [BiocycComp](BiocycComp.md) |  |  no  |
+| [Cog](Cog.md) |  |  no  |
+| [PfamFamily](PfamFamily.md) |  |  no  |
+| [Compound](Compound.md) |  |  no  |
 | [Kog](Kog.md) |  |  no  |
 | [Scaffold](Scaffold.md) |  |  no  |
-| [PfamFamily](PfamFamily.md) |  |  no  |
-| [Cog](Cog.md) |  |  no  |
-| [Compound](Compound.md) |  |  no  |
-| [GoTerm](GoTerm.md) |  |  no  |
 
 
 

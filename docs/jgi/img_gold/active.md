@@ -17,10 +17,10 @@ Alias: active
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldMasterProject](GoldMasterProject.md) |  |  no  |
-| [GoldMasterOrganism](GoldMasterOrganism.md) |  |  no  |
-| [GoldMasterBiosample](GoldMasterBiosample.md) |  |  no  |
 | [GoldMasterStudy](GoldMasterStudy.md) |  |  no  |
+| [GoldMasterOrganism](GoldMasterOrganism.md) |  |  no  |
+| [GoldMasterProject](GoldMasterProject.md) |  |  no  |
+| [GoldMasterBiosample](GoldMasterBiosample.md) |  |  no  |
 
 
 

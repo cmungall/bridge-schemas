@@ -3,7 +3,7 @@
 # Class: TaxonomyFeatures 
 
 
-_Taxonomy-derived features_
+_Taxonomy-derived features for machine learning. Taxon abundances or presence/absence vectors._
 
 
 
@@ -89,7 +89,8 @@ annotations:
   source_table:
     tag: source_table
     value: taxonomy_features
-description: Taxonomy-derived features
+description: Taxonomy-derived features for machine learning. Taxon abundances or presence/absence
+  vectors.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +105,8 @@ annotations:
   source_table:
     tag: source_table
     value: taxonomy_features
-description: Taxonomy-derived features
+description: Taxonomy-derived features for machine learning. Taxon abundances or presence/absence
+  vectors.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

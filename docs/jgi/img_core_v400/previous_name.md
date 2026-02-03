@@ -17,8 +17,8 @@ Alias: previous_name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [PfamClan](PfamClan.md) |  |  no  |
 | [PfamFamily](PfamFamily.md) |  |  no  |
+| [PfamClan](PfamClan.md) |  |  no  |
 
 
 

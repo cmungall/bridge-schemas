@@ -17,8 +17,8 @@ Alias: go_term
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Pfam2go](Pfam2go.md) |  |  no  |
 | [GoTerm](GoTerm.md) |  |  no  |
+| [Pfam2go](Pfam2go.md) |  |  no  |
 
 
 

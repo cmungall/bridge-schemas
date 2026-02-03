@@ -17,11 +17,11 @@ Alias: exp_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RnaseqExperimentPubs](RnaseqExperimentPubs.md) |  |  no  |
-| [RnaseqExperiment](RnaseqExperiment.md) |  |  no  |
 | [RnaseqExperimentSop](RnaseqExperimentSop.md) |  |  no  |
-| [RnaseqExperimentStats](RnaseqExperimentStats.md) |  |  no  |
+| [RnaseqExperiment](RnaseqExperiment.md) |  |  no  |
 | [RnaseqExperimentExtLinks](RnaseqExperimentExtLinks.md) |  |  no  |
+| [RnaseqExperimentStats](RnaseqExperimentStats.md) |  |  no  |
+| [RnaseqExperimentPubs](RnaseqExperimentPubs.md) |  |  no  |
 
 
 

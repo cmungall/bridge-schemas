@@ -17,8 +17,8 @@ Alias: homolog_taxon
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DtPhyloTaxonStats](DtPhyloTaxonStats.md) |  |  no  |
 | [DtAllPhyloTaxonStats](DtAllPhyloTaxonStats.md) |  |  no  |
+| [DtPhyloTaxonStats](DtPhyloTaxonStats.md) |  |  no  |
 
 
 

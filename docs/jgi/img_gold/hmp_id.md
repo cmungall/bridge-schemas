@@ -17,8 +17,8 @@ Alias: hmp_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldMasterHmpProject](GoldMasterHmpProject.md) |  |  no  |
 | [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
+| [GoldMasterHmpProject](GoldMasterHmpProject.md) |  |  no  |
 
 
 

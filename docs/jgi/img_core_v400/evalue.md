@@ -17,15 +17,15 @@ Alias: evalue
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GeneCogGroups](GeneCogGroups.md) |  |  no  |
-| [GeneTigrfams](GeneTigrfams.md) |  |  no  |
+| [GeneKogGroups](GeneKogGroups.md) |  |  no  |
 | [GeneKoTerms](GeneKoTerms.md) |  |  no  |
 | [GenePfamFamilies](GenePfamFamilies.md) |  |  no  |
-| [GeneCathfam](GeneCathfam.md) |  |  no  |
-| [GeneSuperfam](GeneSuperfam.md) |  |  no  |
+| [GeneTigrfams](GeneTigrfams.md) |  |  no  |
+| [GeneCogGroups](GeneCogGroups.md) |  |  no  |
 | [GeneParalogs](GeneParalogs.md) |  |  no  |
+| [GeneSuperfam](GeneSuperfam.md) |  |  no  |
 | [GeneSmart](GeneSmart.md) |  |  no  |
-| [GeneKogGroups](GeneKogGroups.md) |  |  no  |
+| [GeneCathfam](GeneCathfam.md) |  |  no  |
 
 
 

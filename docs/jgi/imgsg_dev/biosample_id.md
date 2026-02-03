@@ -18,8 +18,8 @@ Alias: biosample_id
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [ProjectInfoGenbank](ProjectInfoGenbank.md) |  |  no  |
-| [Biosample](Biosample.md) |  |  no  |
 | [PigTracks](PigTracks.md) |  |  no  |
+| [Biosample](Biosample.md) |  |  no  |
 
 
 

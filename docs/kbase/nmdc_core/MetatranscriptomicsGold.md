@@ -3,7 +3,7 @@
 # Class: MetatranscriptomicsGold 
 
 
-_Metatranscriptomics data linked to GOLD_
+_Metatranscriptomics expression data linked to GOLD samples. Contains gene expression levels from community RNA-seq._
 
 
 
@@ -89,7 +89,8 @@ annotations:
   source_table:
     tag: source_table
     value: metatranscriptomics_gold
-description: Metatranscriptomics data linked to GOLD
+description: Metatranscriptomics expression data linked to GOLD samples. Contains
+  gene expression levels from community RNA-seq.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +105,8 @@ annotations:
   source_table:
     tag: source_table
     value: metatranscriptomics_gold
-description: Metatranscriptomics data linked to GOLD
+description: Metatranscriptomics expression data linked to GOLD samples. Contains
+  gene expression levels from community RNA-seq.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

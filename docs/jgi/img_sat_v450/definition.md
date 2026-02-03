@@ -17,11 +17,11 @@ Alias: definition
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [KogFunction](KogFunction.md) |  |  no  |
-| [CogFunction](CogFunction.md) |  |  no  |
-| [KoTerm](KoTerm.md) |  |  no  |
 | [GoTerm](GoTerm.md) |  |  no  |
 | [KeggModule](KeggModule.md) |  |  no  |
+| [KoTerm](KoTerm.md) |  |  no  |
+| [CogFunction](CogFunction.md) |  |  no  |
+| [KogFunction](KogFunction.md) |  |  no  |
 
 
 

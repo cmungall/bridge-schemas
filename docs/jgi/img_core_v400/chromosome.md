@@ -17,8 +17,8 @@ Alias: chromosome
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Scaffold](Scaffold.md) |  |  no  |
 | [Gene](Gene.md) |  |  no  |
+| [Scaffold](Scaffold.md) |  |  no  |
 
 
 

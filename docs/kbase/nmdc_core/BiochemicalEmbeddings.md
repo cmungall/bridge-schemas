@@ -3,7 +3,7 @@
 # Class: BiochemicalEmbeddings 
 
 
-_Biochemical feature embeddings_
+_Biochemical feature embeddings from metabolomics data. Represents chemical composition of samples._
 
 
 
@@ -89,7 +89,8 @@ annotations:
   source_table:
     tag: source_table
     value: biochemical_embeddings
-description: Biochemical feature embeddings
+description: Biochemical feature embeddings from metabolomics data. Represents chemical
+  composition of samples.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +105,8 @@ annotations:
   source_table:
     tag: source_table
     value: biochemical_embeddings
-description: Biochemical feature embeddings
+description: Biochemical feature embeddings from metabolomics data. Represents chemical
+  composition of samples.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

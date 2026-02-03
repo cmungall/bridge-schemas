@@ -17,8 +17,8 @@ Alias: class
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [KoTermClasses](KoTermClasses.md) |  |  no  |
 | [Compound](Compound.md) |  |  no  |
+| [KoTermClasses](KoTermClasses.md) |  |  no  |
 
 
 

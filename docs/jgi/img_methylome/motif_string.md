@@ -17,9 +17,9 @@ Alias: motif_string
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [MethModification](MethModification.md) |  |  no  |
 | [MethMotif](MethMotif.md) |  |  no  |
 | [MethMotifSummary](MethMotifSummary.md) |  |  no  |
-| [MethModification](MethModification.md) |  |  no  |
 
 
 

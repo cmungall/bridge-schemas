@@ -20,10 +20,10 @@ Alias: roi_id
 | [ImageRoiReactions](ImageRoiReactions.md) |  |  no  |
 | [ImageRoiKoTerms](ImageRoiKoTerms.md) |  |  no  |
 | [ImageRoi](ImageRoi.md) |  |  no  |
-| [ImageRoiEnzymes](ImageRoiEnzymes.md) |  |  no  |
-| [KmImageRoiKoTerms](KmImageRoiKoTerms.md) |  |  no  |
 | [KmImageRoi](KmImageRoi.md) |  |  no  |
 | [ImageRoiCompounds](ImageRoiCompounds.md) |  |  no  |
+| [ImageRoiEnzymes](ImageRoiEnzymes.md) |  |  no  |
+| [KmImageRoiKoTerms](KmImageRoiKoTerms.md) |  |  no  |
 
 
 

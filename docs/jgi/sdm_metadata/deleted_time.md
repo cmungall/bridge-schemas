@@ -17,8 +17,8 @@ Alias: deleted_time
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DeletedFile](DeletedFile.md) | Record of deleted files |  no  |
 | [DeletedAnalysis](DeletedAnalysis.md) | Record of deleted analyses |  no  |
+| [DeletedFile](DeletedFile.md) | Record of deleted files |  no  |
 
 
 

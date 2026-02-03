@@ -17,8 +17,8 @@ Alias: scaf_num_trna
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [BinScaffolds](BinScaffolds.md) |  |  no  |
 | [SemiBinScaffolds](SemiBinScaffolds.md) |  |  no  |
+| [BinScaffolds](BinScaffolds.md) |  |  no  |
 
 
 

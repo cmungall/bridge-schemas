@@ -17,15 +17,15 @@ Alias: ec_number
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [EnzymeExtLinks](EnzymeExtLinks.md) |  |  no  |
 | [Ko2ec](Ko2ec.md) |  |  no  |
+| [EnzymeExtLinks](EnzymeExtLinks.md) |  |  no  |
+| [Enzyme](Enzyme.md) |  |  no  |
 | [EnzymeTransferred](EnzymeTransferred.md) |  |  no  |
 | [BiocycReaction](BiocycReaction.md) |  |  no  |
-| [BiocycProteinCatalyzes](BiocycProteinCatalyzes.md) |  |  no  |
-| [Enzyme](Enzyme.md) |  |  no  |
-| [EnzymeSubstrates](EnzymeSubstrates.md) |  |  no  |
-| [EnzymeProducts](EnzymeProducts.md) |  |  no  |
 | [EnzymeEnzAliases](EnzymeEnzAliases.md) |  |  no  |
+| [EnzymeProducts](EnzymeProducts.md) |  |  no  |
+| [EnzymeSubstrates](EnzymeSubstrates.md) |  |  no  |
+| [BiocycProteinCatalyzes](BiocycProteinCatalyzes.md) |  |  no  |
 
 
 

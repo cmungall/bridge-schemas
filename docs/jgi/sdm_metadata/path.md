@@ -17,8 +17,8 @@ Alias: path
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DataStore](DataStore.md) | Data storage location |  no  |
 | [File](File.md) | File metadata record |  no  |
+| [DataStore](DataStore.md) | Data storage location |  no  |
 
 
 

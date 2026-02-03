@@ -17,9 +17,9 @@ Alias: dataset_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RnaseqSample](RnaseqSample.md) |  |  no  |
 | [RnaseqDatasetStats](RnaseqDatasetStats.md) |  |  no  |
 | [RnaseqDataset](RnaseqDataset.md) |  |  no  |
+| [RnaseqSample](RnaseqSample.md) |  |  no  |
 
 
 

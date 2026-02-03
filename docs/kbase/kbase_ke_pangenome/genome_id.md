@@ -17,11 +17,11 @@ Alias: genome_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Sample](Sample.md) | Links genomes to NCBI BioProject and BioSample accessions |  no  |
-| [Gene](Gene.md) | Gene/CDS within a genome |  no  |
+| [GapmindPathways](GapmindPathways.md) | GapMind metabolic pathway completeness scores |  no  |
 | [GtdbTaxonomyR214v1](GtdbTaxonomyR214v1.md) | GTDB release 214 taxonomy with parsed rank assignments |  no  |
 | [Genome](Genome.md) | Individual genome assembly from NCBI RefSeq or GenBank |  no  |
-| [GapmindPathways](GapmindPathways.md) | GapMind metabolic pathway completeness scores |  no  |
+| [Gene](Gene.md) | Gene/CDS within a genome |  no  |
+| [Sample](Sample.md) | Links genomes to NCBI BioProject and BioSample accessions |  no  |
 
 
 

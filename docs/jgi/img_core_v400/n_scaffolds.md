@@ -18,9 +18,9 @@ Alias: n_scaffolds
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [TaxonStats](TaxonStats.md) |  |  no  |
+| [TaxonSmcStats](TaxonSmcStats.md) |  |  no  |
 | [TaxonStatsMerfs](TaxonStatsMerfs.md) |  |  no  |
 | [TaxonStatsProdVw](TaxonStatsProdVw.md) |  |  no  |
-| [TaxonSmcStats](TaxonSmcStats.md) |  |  no  |
 
 
 

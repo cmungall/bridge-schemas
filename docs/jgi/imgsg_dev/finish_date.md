@@ -17,8 +17,8 @@ Alias: finish_date
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Batch](Batch.md) |  |  no  |
 | [MerSubmissionsQueue](MerSubmissionsQueue.md) |  |  no  |
+| [Batch](Batch.md) |  |  no  |
 
 
 

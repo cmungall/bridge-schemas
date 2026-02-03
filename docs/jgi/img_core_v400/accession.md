@@ -17,8 +17,8 @@ Alias: accession
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [CathFunfam](CathFunfam.md) |  |  no  |
 | [Superfamily](Superfamily.md) |  |  no  |
+| [CathFunfam](CathFunfam.md) |  |  no  |
 | [Smart](Smart.md) |  |  no  |
 
 

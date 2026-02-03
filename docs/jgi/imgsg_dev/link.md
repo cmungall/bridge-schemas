@@ -18,9 +18,9 @@ Alias: link
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [SeqCentercv](SeqCentercv.md) |  |  no  |
+| [ProjectInfoBiosample](ProjectInfoBiosample.md) |  |  no  |
 | [Collaboratorcv](Collaboratorcv.md) |  |  no  |
 | [ProjectInfoBioproject](ProjectInfoBioproject.md) |  |  no  |
-| [ProjectInfoBiosample](ProjectInfoBiosample.md) |  |  no  |
 
 
 

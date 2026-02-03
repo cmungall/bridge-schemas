@@ -17,8 +17,8 @@ Alias: ec
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DtKoEcCogPfam](DtKoEcCogPfam.md) |  |  no  |
 | [MpwPglReaction](MpwPglReaction.md) |  |  no  |
+| [DtKoEcCogPfam](DtKoEcCogPfam.md) |  |  no  |
 
 
 

@@ -17,8 +17,8 @@ Alias: term_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SubmissionQuerycv](SubmissionQuerycv.md) |  |  no  |
 | [SubmissionStatuscv](SubmissionStatuscv.md) |  |  no  |
+| [SubmissionQuerycv](SubmissionQuerycv.md) |  |  no  |
 
 
 

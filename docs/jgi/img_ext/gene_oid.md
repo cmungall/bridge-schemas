@@ -17,10 +17,10 @@ Alias: gene_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GeneFunctionHistory](GeneFunctionHistory.md) |  |  no  |
 | [GeneMyimgFunctions](GeneMyimgFunctions.md) |  |  no  |
-| [GeneHistory](GeneHistory.md) |  |  no  |
 | [GeneImgFunctions](GeneImgFunctions.md) |  |  no  |
+| [GeneFunctionHistory](GeneFunctionHistory.md) |  |  no  |
+| [GeneHistory](GeneHistory.md) |  |  no  |
 | [GeneMyimgGroups](GeneMyimgGroups.md) |  |  no  |
 
 

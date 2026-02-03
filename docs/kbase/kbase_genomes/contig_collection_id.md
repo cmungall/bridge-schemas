@@ -17,11 +17,11 @@ Alias: contig_collection_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ContigCollection](ContigCollection.md) |  |  no  |
-| [ContigCollectionXProtein](ContigCollectionXProtein.md) |  |  no  |
-| [ContigCollectionXEncodedFeature](ContigCollectionXEncodedFeature.md) |  |  no  |
-| [ContigXContigCollection](ContigXContigCollection.md) |  |  no  |
 | [ContigCollectionXFeature](ContigCollectionXFeature.md) |  |  no  |
+| [ContigCollection](ContigCollection.md) |  |  no  |
+| [ContigCollectionXEncodedFeature](ContigCollectionXEncodedFeature.md) |  |  no  |
+| [ContigCollectionXProtein](ContigCollectionXProtein.md) |  |  no  |
+| [ContigXContigCollection](ContigXContigCollection.md) |  |  no  |
 
 
 

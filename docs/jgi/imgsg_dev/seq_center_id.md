@@ -17,8 +17,8 @@ Alias: seq_center_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [LuseqCenter](LuseqCenter.md) |  |  no  |
 | [SeqCentercv](SeqCentercv.md) |  |  no  |
+| [LuseqCenter](LuseqCenter.md) |  |  no  |
 
 
 

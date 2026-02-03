@@ -17,9 +17,9 @@ Alias: user_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MyFavorite](MyFavorite.md) | User's favorite genomes/datasets |  no  |
 | [CustomTrack](CustomTrack.md) | Custom genome browser track |  no  |
 | [DownloadRequest](DownloadRequest.md) | User download request |  no  |
+| [MyFavorite](MyFavorite.md) | User's favorite genomes/datasets |  no  |
 
 
 

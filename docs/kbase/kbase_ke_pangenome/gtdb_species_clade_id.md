@@ -17,10 +17,10 @@ Alias: gtdb_species_clade_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GtdbSpeciesClade](GtdbSpeciesClade.md) | GTDB species-level grouping with representative genome |  no  |
-| [GeneCluster](GeneCluster.md) | Ortholog cluster at species level |  no  |
 | [Genome](Genome.md) | Individual genome assembly from NCBI RefSeq or GenBank |  no  |
+| [GtdbSpeciesClade](GtdbSpeciesClade.md) | GTDB species-level grouping with representative genome |  no  |
 | [Pangenome](Pangenome.md) | Summary statistics for a species pangenome |  no  |
+| [GeneCluster](GeneCluster.md) | Ortholog cluster at species level |  no  |
 
 
 

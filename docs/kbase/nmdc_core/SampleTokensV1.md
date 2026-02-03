@@ -3,7 +3,9 @@
 # Class: SampleTokensV1 
 
 
-_Sample-level token assignments_
+_Sample-level token assignments from vocabulary. Sparse representation of sample features for ML models._
+
+_USAGE: Each row represents a token-sample-modality combination with an associated value. Use to reconstruct sample feature vectors or train models on tokenized representations._
 
 
 
@@ -40,10 +42,10 @@ URI: [https://w3id.org/kbase/nmdc_core/SampleTokensV1](https://w3id.org/kbase/nm
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [sample_id](sample_id.md) | 0..1 <br/> [String](String.md) | Sample identifier | direct |
-| [token_id](token_id.md) | 0..1 <br/> [Integer](Integer.md) | Vocabulary token ID | direct |
-| [modality_id](modality_id.md) | 0..1 <br/> [String](String.md) | Data modality | direct |
-| [value](value.md) | 0..1 <br/> [Float](Float.md) |  | direct |
+| [sample_id](sample_id.md) | 1 <br/> [String](String.md) | Sample identifier | direct |
+| [token_id](token_id.md) | 1 <br/> [Integer](Integer.md) | Vocabulary token ID from vocab_registry_v1 | direct |
+| [modality_id](modality_id.md) | 0..1 <br/> [String](String.md) | Data modality (taxonomy, trait, abiotic, biochemical) | direct |
+| [value](value.md) | 0..1 <br/> [Float](Float.md) | Token value/weight (e | direct |
 
 
 
@@ -101,33 +103,52 @@ annotations:
   source_table:
     tag: source_table
     value: sample_tokens_v1
-description: Sample-level token assignments
+description: 'Sample-level token assignments from vocabulary. Sparse representation
+  of sample features for ML models.
+
+  USAGE: Each row represents a token-sample-modality combination with an associated
+  value. Use to reconstruct sample feature vectors or train models on tokenized representations.'
 from_schema: https://w3id.org/kbase/nmdc_core
 attributes:
   sample_id:
     name: sample_id
     description: Sample identifier
+    examples:
+    - value: nmdc:bsm-11-3a6fv767
     from_schema: https://w3id.org/kbase/nmdc_core
     rank: 1000
     domain_of:
     - SampleTokensV1
+    range: string
+    required: true
   token_id:
     name: token_id
-    description: Vocabulary token ID
+    description: Vocabulary token ID from vocab_registry_v1
+    comments:
+    - Foreign key to VocabRegistryV1.token_id
     from_schema: https://w3id.org/kbase/nmdc_core
-    rank: 1000
     domain_of:
+    - VocabRegistryV1
     - SampleTokensV1
     range: integer
+    required: true
+    minimum_value: 0
   modality_id:
     name: modality_id
-    description: Data modality
+    description: Data modality (taxonomy, trait, abiotic, biochemical)
+    examples:
+    - value: taxonomy
+    - value: trait
+    - value: biochemical
+    - value: abiotic
     from_schema: https://w3id.org/kbase/nmdc_core
     rank: 1000
     domain_of:
     - SampleTokensV1
+    range: string
   value:
     name: value
+    description: Token value/weight (e.g., abundance, presence score)
     from_schema: https://w3id.org/kbase/nmdc_core
     rank: 1000
     domain_of:
@@ -146,12 +167,18 @@ annotations:
   source_table:
     tag: source_table
     value: sample_tokens_v1
-description: Sample-level token assignments
+description: 'Sample-level token assignments from vocabulary. Sparse representation
+  of sample features for ML models.
+
+  USAGE: Each row represents a token-sample-modality combination with an associated
+  value. Use to reconstruct sample feature vectors or train models on tokenized representations.'
 from_schema: https://w3id.org/kbase/nmdc_core
 attributes:
   sample_id:
     name: sample_id
     description: Sample identifier
+    examples:
+    - value: nmdc:bsm-11-3a6fv767
     from_schema: https://w3id.org/kbase/nmdc_core
     rank: 1000
     alias: sample_id
@@ -159,19 +186,29 @@ attributes:
     domain_of:
     - SampleTokensV1
     range: string
+    required: true
   token_id:
     name: token_id
-    description: Vocabulary token ID
+    description: Vocabulary token ID from vocab_registry_v1
+    comments:
+    - Foreign key to VocabRegistryV1.token_id
     from_schema: https://w3id.org/kbase/nmdc_core
-    rank: 1000
     alias: token_id
     owner: SampleTokensV1
     domain_of:
+    - VocabRegistryV1
     - SampleTokensV1
     range: integer
+    required: true
+    minimum_value: 0
   modality_id:
     name: modality_id
-    description: Data modality
+    description: Data modality (taxonomy, trait, abiotic, biochemical)
+    examples:
+    - value: taxonomy
+    - value: trait
+    - value: biochemical
+    - value: abiotic
     from_schema: https://w3id.org/kbase/nmdc_core
     rank: 1000
     alias: modality_id
@@ -181,6 +218,7 @@ attributes:
     range: string
   value:
     name: value
+    description: Token value/weight (e.g., abundance, presence score)
     from_schema: https://w3id.org/kbase/nmdc_core
     rank: 1000
     alias: value

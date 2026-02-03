@@ -17,13 +17,13 @@ Alias: db_source
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Kog](Kog.md) |  |  no  |
 | [Cog](Cog.md) |  |  no  |
-| [PfamFamily](PfamFamily.md) |  |  no  |
 | [Compound](Compound.md) |  |  no  |
 | [KeggPathway](KeggPathway.md) |  |  no  |
-| [BiocycComp](BiocycComp.md) |  |  no  |
 | [GoTerm](GoTerm.md) |  |  no  |
+| [BiocycComp](BiocycComp.md) |  |  no  |
+| [Kog](Kog.md) |  |  no  |
+| [PfamFamily](PfamFamily.md) |  |  no  |
 
 
 

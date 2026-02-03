@@ -17,9 +17,9 @@ Alias: np_type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [ProjectInfoNprodsMetadata](ProjectInfoNprodsMetadata.md) |  |  no  |
 | [CvnaturalProds](CvnaturalProds.md) |  |  no  |
 | [XProjectInfoNp](XProjectInfoNp.md) |  |  no  |
-| [ProjectInfoNprodsMetadata](ProjectInfoNprodsMetadata.md) |  |  no  |
 
 
 

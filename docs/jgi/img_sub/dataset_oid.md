@@ -17,8 +17,8 @@ Alias: dataset_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RnaseqNotify](RnaseqNotify.md) |  |  no  |
 | [ContactRnaDataPermissions](ContactRnaDataPermissions.md) |  |  no  |
+| [RnaseqNotify](RnaseqNotify.md) |  |  no  |
 
 
 

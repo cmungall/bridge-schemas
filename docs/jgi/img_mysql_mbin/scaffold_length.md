@@ -17,10 +17,10 @@ Alias: scaffold_length
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [BinScaffolds](BinScaffolds.md) |  |  no  |
-| [EbinScaffolds](EbinScaffolds.md) |  |  no  |
 | [SemiBinScaffolds](SemiBinScaffolds.md) |  |  no  |
 | [SemiEbinScaffolds](SemiEbinScaffolds.md) |  |  no  |
+| [BinScaffolds](BinScaffolds.md) |  |  no  |
+| [EbinScaffolds](EbinScaffolds.md) |  |  no  |
 
 
 

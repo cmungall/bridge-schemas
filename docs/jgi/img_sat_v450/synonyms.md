@@ -19,10 +19,10 @@ Alias: synonyms
 | --- | --- | --- |
 | [GoTermSynonyms](GoTermSynonyms.md) |  |  no  |
 | [BiocycProteinSynonyms](BiocycProteinSynonyms.md) |  |  no  |
-| [BiocycReactionSynonyms](BiocycReactionSynonyms.md) |  |  no  |
+| [BiocycClassSynonyms](BiocycClassSynonyms.md) |  |  no  |
 | [BiocycEnzrxnSynonyms](BiocycEnzrxnSynonyms.md) |  |  no  |
 | [BiocycCompSynonyms](BiocycCompSynonyms.md) |  |  no  |
-| [BiocycClassSynonyms](BiocycClassSynonyms.md) |  |  no  |
+| [BiocycReactionSynonyms](BiocycReactionSynonyms.md) |  |  no  |
 
 
 

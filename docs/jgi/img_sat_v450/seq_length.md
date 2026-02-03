@@ -17,9 +17,9 @@ Alias: seq_length
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Kog](Kog.md) |  |  no  |
 | [Cog](Cog.md) |  |  no  |
 | [PfamFamily](PfamFamily.md) |  |  no  |
+| [Kog](Kog.md) |  |  no  |
 
 
 

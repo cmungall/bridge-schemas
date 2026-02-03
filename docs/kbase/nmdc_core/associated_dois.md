@@ -3,6 +3,11 @@
 # Slot: associated_dois 
 
 
+_JSON array of DOI objects with doi_value, doi_category (dataset_doi, award_doi, publication_doi), and doi_provider (jgi, emsl, etc.)_
+
+
+
+
 
 URI: [https://w3id.org/kbase/nmdc_core/associated_dois](https://w3id.org/kbase/nmdc_core/associated_dois)
 Alias: associated_dois
@@ -17,7 +22,7 @@ Alias: associated_dois
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [StudyTable](StudyTable.md) | NMDC research studies |  no  |
+| [StudyTable](StudyTable.md) | NMDC research studies with ecosystem classification and investigator informat... |  no  |
 
 
 
@@ -30,6 +35,14 @@ Alias: associated_dois
 
 
 
+
+
+## Examples
+
+| Value |
+| --- |
+| [{"doi_value": "doi:10.25585/1487763", "doi_category": "dataset_doi", "doi_provider": "jgi"}] |
+| [{"doi_value": "doi:10.1371/journal.pone.0228165", "doi_category": "publication_doi"}] |
 
 ## Identifier and Mapping Information
 
@@ -61,6 +74,13 @@ Alias: associated_dois
 <details>
 ```yaml
 name: associated_dois
+description: JSON array of DOI objects with doi_value, doi_category (dataset_doi,
+  award_doi, publication_doi), and doi_provider (jgi, emsl, etc.)
+examples:
+- value: '[{"doi_value": "doi:10.25585/1487763", "doi_category": "dataset_doi", "doi_provider":
+    "jgi"}]'
+- value: '[{"doi_value": "doi:10.1371/journal.pone.0228165", "doi_category": "publication_doi"}]'
+  description: Publication DOI
 from_schema: https://w3id.org/kbase/nmdc_core
 rank: 1000
 alias: associated_dois

@@ -17,12 +17,12 @@ Alias: term_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [MygeneTerms](MygeneTerms.md) |  |  no  |
+| [ImgTermSynonyms](ImgTermSynonyms.md) |  |  no  |
 | [ImgTermChildren](ImgTermChildren.md) |  |  no  |
+| [ImgTerm](ImgTerm.md) |  |  no  |
 | [ImgTermEnzymes](ImgTermEnzymes.md) |  |  no  |
 | [ImgTermHistory](ImgTermHistory.md) |  |  no  |
-| [ImgTerm](ImgTerm.md) |  |  no  |
-| [ImgTermSynonyms](ImgTermSynonyms.md) |  |  no  |
-| [MygeneTerms](MygeneTerms.md) |  |  no  |
 
 
 

@@ -17,10 +17,10 @@ Alias: entity_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [UniprotDbEntitiesDelta](UniprotDbEntitiesDelta.md) |  |  no  |
-| [UniprotDbNamesDelta](UniprotDbNamesDelta.md) |  |  no  |
-| [UniprotDbPublicationsDelta](UniprotDbPublicationsDelta.md) |  |  no  |
 | [UniprotDbIdentifiersDelta](UniprotDbIdentifiersDelta.md) |  |  no  |
+| [UniprotDbPublicationsDelta](UniprotDbPublicationsDelta.md) |  |  no  |
+| [UniprotDbNamesDelta](UniprotDbNamesDelta.md) |  |  no  |
+| [UniprotDbEntitiesDelta](UniprotDbEntitiesDelta.md) |  |  no  |
 
 
 

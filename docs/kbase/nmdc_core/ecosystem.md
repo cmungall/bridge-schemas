@@ -1,37 +1,30 @@
-
-
-# Slot: ecosystem 
-
-
-_Ecosystem type_
+# Enum: Ecosystem 
 
 
 
 
-
-URI: [https://w3id.org/kbase/nmdc_core/ecosystem](https://w3id.org/kbase/nmdc_core/ecosystem)
-Alias: ecosystem
-
-<!-- no inheritance hierarchy -->
+_Top-level ecosystem classification from GOLD. Distinguishes between free-living environmental samples and host-associated microbiomes._
 
 
 
+URI: [https://w3id.org/kbase/nmdc_core/Ecosystem](https://w3id.org/kbase/nmdc_core/Ecosystem)
 
+## Permissible Values
 
-## Applicable Classes
-
-| Name | Description | Modifies Slot |
+| Value | Meaning | Description |
 | --- | --- | --- |
-| [StudyTable](StudyTable.md) | NMDC research studies |  no  |
+| Environmental | None | Environmental/free-living samples from natural habitats including soil, water... |
+| Host-associated | None | Host-associated microbiomes from humans, animals, and plants |
 
 
 
 
+## Slots
 
+| Name | Description |
+| ---  | --- |
+| [ecosystem](ecosystem.md) | Top-level ecosystem classification |
 
-## Properties
-
-* Range: [String](String.md)
 
 
 
@@ -51,29 +44,27 @@ Alias: ecosystem
 
 
 
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | https://w3id.org/kbase/nmdc_core/ecosystem |
-| native | https://w3id.org/kbase/nmdc_core/ecosystem |
-
-
 
 
 ## LinkML Source
 
 <details>
 ```yaml
-name: ecosystem
-description: Ecosystem type
+name: Ecosystem
+description: Top-level ecosystem classification from GOLD. Distinguishes between free-living
+  environmental samples and host-associated microbiomes.
 from_schema: https://w3id.org/kbase/nmdc_core
 rank: 1000
-alias: ecosystem
-owner: StudyTable
-domain_of:
-- StudyTable
-range: string
+permissible_values:
+  Environmental:
+    text: Environmental
+    description: Environmental/free-living samples from natural habitats including
+      soil, water, sediment, and subsurface environments. Most common ecosystem type
+      in NMDC with studies spanning terrestrial and aquatic environments.
+  Host-associated:
+    text: Host-associated
+    description: Host-associated microbiomes from humans, animals, and plants. Includes
+      gut microbiomes, plant root associations, and other symbiotic communities.
 
 ```
 </details>

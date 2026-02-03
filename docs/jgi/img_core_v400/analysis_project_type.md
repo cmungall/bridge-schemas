@@ -17,9 +17,9 @@ Alias: analysis_project_type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [VwGoldTaxon](VwGoldTaxon.md) |  |  no  |
 | [Taxon](Taxon.md) |  |  no  |
 | [TaxonProdVw](TaxonProdVw.md) |  |  no  |
-| [VwGoldTaxon](VwGoldTaxon.md) |  |  no  |
 
 
 

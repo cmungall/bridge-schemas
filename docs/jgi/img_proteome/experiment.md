@@ -20,8 +20,8 @@ Alias: experiment
 | [MsPeptide](MsPeptide.md) |  |  no  |
 | [MsProteinOld](MsProteinOld.md) |  |  no  |
 | [MsSample](MsSample.md) |  |  no  |
-| [MsPeptideOld](MsPeptideOld.md) |  |  no  |
 | [MsProtein](MsProtein.md) |  |  no  |
+| [MsPeptideOld](MsPeptideOld.md) |  |  no  |
 
 
 

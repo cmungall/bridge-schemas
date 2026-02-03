@@ -17,8 +17,8 @@ Alias: sequencing_status
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [PigRetractions](PigRetractions.md) |  |  no  |
 | [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
+| [PigRetractions](PigRetractions.md) |  |  no  |
 
 
 

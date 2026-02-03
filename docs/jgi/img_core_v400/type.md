@@ -17,10 +17,10 @@ Alias: type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [PfamFamily](PfamFamily.md) |  |  no  |
+| [AccessionTypes](AccessionTypes.md) |  |  no  |
 | [ScaffoldRepeats](ScaffoldRepeats.md) |  |  no  |
 | [Interpro](Interpro.md) |  |  no  |
-| [AccessionTypes](AccessionTypes.md) |  |  no  |
+| [PfamFamily](PfamFamily.md) |  |  no  |
 | [GenomeProperty](GenomeProperty.md) |  |  no  |
 
 

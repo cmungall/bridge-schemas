@@ -3,7 +3,7 @@
 # Class: UnifiedEmbeddings 
 
 
-_Unified multi-modal embeddings_
+_Unified multi-modal embeddings combining taxonomy, traits, abiotic factors, and biochemical features into single vector space. Primary embedding table for sample similarity analysis._
 
 
 
@@ -89,7 +89,9 @@ annotations:
   source_table:
     tag: source_table
     value: unified_embeddings
-description: Unified multi-modal embeddings
+description: Unified multi-modal embeddings combining taxonomy, traits, abiotic factors,
+  and biochemical features into single vector space. Primary embedding table for sample
+  similarity analysis.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +106,9 @@ annotations:
   source_table:
     tag: source_table
     value: unified_embeddings
-description: Unified multi-modal embeddings
+description: Unified multi-modal embeddings combining taxonomy, traits, abiotic factors,
+  and biochemical features into single vector space. Primary embedding table for sample
+  similarity analysis.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

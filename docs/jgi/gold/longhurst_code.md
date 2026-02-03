@@ -17,8 +17,8 @@ Alias: longhurst_code
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [OrganismV2](OrganismV2.md) |  |  no  |
 | [Biosample](Biosample.md) |  |  no  |
+| [OrganismV2](OrganismV2.md) |  |  no  |
 
 
 

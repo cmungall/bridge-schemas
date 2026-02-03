@@ -17,8 +17,8 @@ Alias: release_now
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ProjectInfoGenbank](ProjectInfoGenbank.md) |  |  no  |
 | [PigTracks](PigTracks.md) |  |  no  |
+| [ProjectInfoGenbank](ProjectInfoGenbank.md) |  |  no  |
 
 
 

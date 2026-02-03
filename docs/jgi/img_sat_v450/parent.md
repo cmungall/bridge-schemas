@@ -17,8 +17,8 @@ Alias: parent
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoTermParents](GoTermParents.md) |  |  no  |
 | [Compound](Compound.md) |  |  no  |
+| [GoTermParents](GoTermParents.md) |  |  no  |
 
 
 

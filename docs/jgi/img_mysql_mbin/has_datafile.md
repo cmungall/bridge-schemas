@@ -17,8 +17,8 @@ Alias: has_datafile
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SemiEbin](SemiEbin.md) |  |  no  |
 | [SemiBin](SemiBin.md) |  |  no  |
+| [SemiEbin](SemiEbin.md) |  |  no  |
 
 
 

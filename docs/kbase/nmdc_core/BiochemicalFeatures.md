@@ -3,7 +3,7 @@
 # Class: BiochemicalFeatures 
 
 
-_Biochemical features_
+_Biochemical features from metabolomics for machine learning. Compound intensities or presence/absence._
 
 
 
@@ -89,7 +89,8 @@ annotations:
   source_table:
     tag: source_table
     value: biochemical_features
-description: Biochemical features
+description: Biochemical features from metabolomics for machine learning. Compound
+  intensities or presence/absence.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +105,8 @@ annotations:
   source_table:
     tag: source_table
     value: biochemical_features
-description: Biochemical features
+description: Biochemical features from metabolomics for machine learning. Compound
+  intensities or presence/absence.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

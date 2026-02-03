@@ -18,10 +18,10 @@ Alias: name
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [GoldMasterInstitution](GoldMasterInstitution.md) |  |  no  |
-| [GoldAnalysisProjectUsers](GoldAnalysisProjectUsers.md) |  |  no  |
 | [GoldSpCollaborator](GoldSpCollaborator.md) |  |  no  |
-| [GoldMasterContact](GoldMasterContact.md) |  |  no  |
 | [GoldSpSeqCenter](GoldSpSeqCenter.md) |  |  no  |
+| [GoldMasterContact](GoldMasterContact.md) |  |  no  |
+| [GoldAnalysisProjectUsers](GoldAnalysisProjectUsers.md) |  |  no  |
 
 
 

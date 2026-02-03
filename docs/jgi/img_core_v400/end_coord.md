@@ -18,14 +18,14 @@ Alias: end_coord
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [ScaffoldNxFeature](ScaffoldNxFeature.md) |  |  no  |
-| [DtIntergenic](DtIntergenic.md) |  |  no  |
-| [AltTranscript](AltTranscript.md) |  |  no  |
-| [Gene](Gene.md) |  |  no  |
-| [KpPseudo](KpPseudo.md) |  |  no  |
-| [TaxonCrisprSummary](TaxonCrisprSummary.md) |  |  no  |
-| [GeneSigPeptides](GeneSigPeptides.md) |  |  no  |
 | [ScaffoldRepeats](ScaffoldRepeats.md) |  |  no  |
+| [AltTranscript](AltTranscript.md) |  |  no  |
 | [GeneFragCoords](GeneFragCoords.md) |  |  no  |
+| [Gene](Gene.md) |  |  no  |
+| [GeneSigPeptides](GeneSigPeptides.md) |  |  no  |
+| [KpPseudo](KpPseudo.md) |  |  no  |
+| [DtIntergenic](DtIntergenic.md) |  |  no  |
+| [TaxonCrisprSummary](TaxonCrisprSummary.md) |  |  no  |
 
 
 

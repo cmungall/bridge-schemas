@@ -17,7 +17,8 @@ Alias: category
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [KeggPathwayTerms](KeggPathwayTerms.md) | KEGG pathway definitions |  no  |
+| [KeggKoTerms](KeggKoTerms.md) | KEGG Orthology (KO) terms |  no  |
+| [KeggPathwayTerms](KeggPathwayTerms.md) | KEGG pathway definitions with category classification |  no  |
 
 
 
@@ -38,13 +39,6 @@ Alias: category
 
 
 
-### Schema Source
-
-
-* from schema: https://w3id.org/kbase/nmdc_core
-
-
-
 
 ## Mappings
 
@@ -61,11 +55,9 @@ Alias: category
 <details>
 ```yaml
 name: category
-from_schema: https://w3id.org/kbase/nmdc_core
-rank: 1000
 alias: category
-owner: KeggPathwayTerms
 domain_of:
+- KeggKoTerms
 - KeggPathwayTerms
 range: string
 

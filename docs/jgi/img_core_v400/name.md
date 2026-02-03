@@ -17,23 +17,23 @@ Alias: name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [AltTranscript](AltTranscript.md) |  |  no  |
-| [DtCog](DtCog.md) |  |  no  |
-| [Superfamily](Superfamily.md) |  |  no  |
-| [DtTfam](DtTfam.md) |  |  no  |
-| [PropertyStep](PropertyStep.md) |  |  no  |
-| [DbSource](DbSource.md) |  |  no  |
 | [Cog2014](Cog2014.md) |  |  no  |
 | [Cogfunc2014](Cogfunc2014.md) |  |  no  |
-| [ExcludeFunc](ExcludeFunc.md) |  |  no  |
-| [PfamFamily](PfamFamily.md) |  |  no  |
-| [PfamClan](PfamClan.md) |  |  no  |
+| [AltTranscript](AltTranscript.md) |  |  no  |
 | [DtPfam](DtPfam.md) |  |  no  |
-| [DtImgTerm](DtImgTerm.md) |  |  no  |
-| [DtKo](DtKo.md) |  |  no  |
+| [DtTfam](DtTfam.md) |  |  no  |
 | [Interpro](Interpro.md) |  |  no  |
+| [PropertyStep](PropertyStep.md) |  |  no  |
+| [Superfamily](Superfamily.md) |  |  no  |
+| [DbSource](DbSource.md) |  |  no  |
+| [DtImgTerm](DtImgTerm.md) |  |  no  |
 | [PfamDead](PfamDead.md) |  |  no  |
+| [PfamClan](PfamClan.md) |  |  no  |
+| [PfamFamily](PfamFamily.md) |  |  no  |
+| [DtCog](DtCog.md) |  |  no  |
+| [ExcludeFunc](ExcludeFunc.md) |  |  no  |
 | [GenomeProperty](GenomeProperty.md) |  |  no  |
+| [DtKo](DtKo.md) |  |  no  |
 
 
 

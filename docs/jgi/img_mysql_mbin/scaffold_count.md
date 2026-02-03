@@ -18,9 +18,9 @@ Alias: scaffold_count
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Bin](Bin.md) |  |  no  |
+| [SemiBin](SemiBin.md) |  |  no  |
 | [SemiEbin](SemiEbin.md) |  |  no  |
 | [Ebin](Ebin.md) |  |  no  |
-| [SemiBin](SemiBin.md) |  |  no  |
 
 
 

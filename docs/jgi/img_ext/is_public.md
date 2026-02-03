@@ -17,10 +17,10 @@ Alias: is_public
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [GeneMyimgFunctions](GeneMyimgFunctions.md) |  |  no  |
 | [MyimgJob](MyimgJob.md) |  |  no  |
 | [MyimgBioClusterNp](MyimgBioClusterNp.md) |  |  no  |
 | [Mygene](Mygene.md) |  |  no  |
-| [GeneMyimgFunctions](GeneMyimgFunctions.md) |  |  no  |
 
 
 

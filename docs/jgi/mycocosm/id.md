@@ -17,30 +17,30 @@ Alias: id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [PMAnnotationStatus](PMAnnotationStatus.md) | Annotation status in portal |  no  |
-| [SMCluster](SMCluster.md) | Secondary metabolite biosynthetic cluster |  no  |
-| [TransposableElement](TransposableElement.md) | Transposable element annotation |  no  |
-| [BlatESTCluster](BlatESTCluster.md) | EST cluster from BLAT alignments |  no  |
-| [RepeatMaskerHit](RepeatMaskerHit.md) | RepeatMasker repeat element hit |  no  |
-| [CEGMACompletenessDetail](CEGMACompletenessDetail.md) | Detailed CEGMA results per conserved gene |  no  |
-| [SMClusterMember](SMClusterMember.md) | Gene member of an SM cluster |  no  |
-| [AnnotationPriority](AnnotationPriority.md) | Annotation priority settings |  no  |
-| [UserModel](UserModel.md) | User-submitted gene model (JAM system) |  no  |
-| [FilteredModels](FilteredModels.md) | Curated/filtered gene models - the primary gene set |  no  |
 | [BlastpHit](BlastpHit.md) | BLASTP similarity search hit |  no  |
-| [GenemarkPrediction](GenemarkPrediction.md) | GeneMark ab initio gene prediction |  no  |
-| [GenewisePrediction](GenewisePrediction.md) | GeneWise homology-based gene prediction |  no  |
-| [AllModels](AllModels.md) | All gene models (filtered + unfiltered) |  no  |
-| [SMClass](SMClass.md) | Secondary metabolite class |  no  |
 | [ChromInfo](ChromInfo.md) | Chromosome/scaffold information |  no  |
+| [RepeatMaskerSimple](RepeatMaskerSimple.md) | Simple repeat from RepeatMasker |  no  |
+| [FilteredModelsBase](FilteredModelsBase.md) | Base information for filtered models |  no  |
+| [SMClusterMember](SMClusterMember.md) | Gene member of an SM cluster |  no  |
+| [SMCluster](SMCluster.md) | Secondary metabolite biosynthetic cluster |  no  |
+| [SMClass](SMClass.md) | Secondary metabolite class |  no  |
+| [CEGMACompleteness](CEGMACompleteness.md) | CEGMA genome completeness assessment |  no  |
+| [PMAnnotationStatus](PMAnnotationStatus.md) | Annotation status in portal |  no  |
+| [GenemarkPrediction](GenemarkPrediction.md) | GeneMark ab initio gene prediction |  no  |
+| [AnnotationPriority](AnnotationPriority.md) | Annotation priority settings |  no  |
+| [RepeatMaskerHit](RepeatMaskerHit.md) | RepeatMasker repeat element hit |  no  |
 | [PMAnnotator](PMAnnotator.md) | Annotator information |  no  |
 | [GeneCatalog](GeneCatalog.md) | Complete gene catalog for the genome |  no  |
+| [AllModels](AllModels.md) | All gene models (filtered + unfiltered) |  no  |
+| [BlatESTCluster](BlatESTCluster.md) | EST cluster from BLAT alignments |  no  |
+| [UserModel](UserModel.md) | User-submitted gene model (JAM system) |  no  |
 | [PMAnnotationGroup](PMAnnotationGroup.md) | Portal management annotation group |  no  |
-| [FilteredModelsBase](FilteredModelsBase.md) | Base information for filtered models |  no  |
-| [CEGMACompleteness](CEGMACompleteness.md) | CEGMA genome completeness assessment |  no  |
-| [AnnotationState](AnnotationState.md) | Current annotation state/version |  no  |
+| [CEGMACompletenessDetail](CEGMACompletenessDetail.md) | Detailed CEGMA results per conserved gene |  no  |
+| [GenewisePrediction](GenewisePrediction.md) | GeneWise homology-based gene prediction |  no  |
 | [BlatESTClusterHit](BlatESTClusterHit.md) | Individual EST hit within a cluster |  no  |
-| [RepeatMaskerSimple](RepeatMaskerSimple.md) | Simple repeat from RepeatMasker |  no  |
+| [AnnotationState](AnnotationState.md) | Current annotation state/version |  no  |
+| [TransposableElement](TransposableElement.md) | Transposable element annotation |  no  |
+| [FilteredModels](FilteredModels.md) | Curated/filtered gene models - the primary gene set |  no  |
 
 
 

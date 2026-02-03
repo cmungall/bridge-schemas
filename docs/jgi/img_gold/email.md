@@ -17,8 +17,8 @@ Alias: email
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldMasterContact](GoldMasterContact.md) |  |  no  |
 | [GoldAnalysisProjectUsers](GoldAnalysisProjectUsers.md) |  |  no  |
+| [GoldMasterContact](GoldMasterContact.md) |  |  no  |
 
 
 

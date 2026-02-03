@@ -17,8 +17,8 @@ Alias: title
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Publication](Publication.md) | Publication metadata (journal article, preprint, etc |  no  |
 | [Document](Document.md) | Document/publication record |  no  |
+| [Publication](Publication.md) | Publication metadata (journal article, preprint, etc |  no  |
 
 
 

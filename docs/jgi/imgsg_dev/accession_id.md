@@ -17,8 +17,8 @@ Alias: accession_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [NcbiAccessions](NcbiAccessions.md) |  |  no  |
 | [NcbiAccessionsJbtest](NcbiAccessionsJbtest.md) |  |  no  |
+| [NcbiAccessions](NcbiAccessions.md) |  |  no  |
 
 
 

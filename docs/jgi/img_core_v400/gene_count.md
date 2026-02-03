@@ -17,15 +17,15 @@ Alias: gene_count
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TaxonCogCount](TaxonCogCount.md) |  |  no  |
 | [TaxonPfamCount](TaxonPfamCount.md) |  |  no  |
-| [TaxonSupfamCount](TaxonSupfamCount.md) |  |  no  |
 | [TaxonTigrCount](TaxonTigrCount.md) |  |  no  |
-| [TaxonSmartCount](TaxonSmartCount.md) |  |  no  |
-| [TaxonCathfunfamCount](TaxonCathfunfamCount.md) |  |  no  |
-| [TaxonKoCount](TaxonKoCount.md) |  |  no  |
 | [TaxonEcCount](TaxonEcCount.md) |  |  no  |
+| [TaxonSmartCount](TaxonSmartCount.md) |  |  no  |
 | [DtPhylumDistStats](DtPhylumDistStats.md) |  |  no  |
+| [TaxonCathfunfamCount](TaxonCathfunfamCount.md) |  |  no  |
+| [TaxonCogCount](TaxonCogCount.md) |  |  no  |
+| [TaxonSupfamCount](TaxonSupfamCount.md) |  |  no  |
+| [TaxonKoCount](TaxonKoCount.md) |  |  no  |
 
 
 

@@ -3,7 +3,9 @@
 # Class: GottchaGold 
 
 
-_GOTTCHA taxonomic classifications for GOLD samples_
+_GOTTCHA taxonomic classifications for GOLD samples. Gene-independent taxonomic classifier using unique signature k-mers._
+
+_TOOL: GOTTCHA (Freitas et al. 2015) - Uses unique k-mers per taxon - High specificity - Good for strain-level identification_
 
 
 
@@ -89,7 +91,11 @@ annotations:
   source_table:
     tag: source_table
     value: gottcha_gold
-description: GOTTCHA taxonomic classifications for GOLD samples
+description: 'GOTTCHA taxonomic classifications for GOLD samples. Gene-independent
+  taxonomic classifier using unique signature k-mers.
+
+  TOOL: GOTTCHA (Freitas et al. 2015) - Uses unique k-mers per taxon - High specificity
+  - Good for strain-level identification'
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +110,11 @@ annotations:
   source_table:
     tag: source_table
     value: gottcha_gold
-description: GOTTCHA taxonomic classifications for GOLD samples
+description: 'GOTTCHA taxonomic classifications for GOLD samples. Gene-independent
+  taxonomic classifier using unique signature k-mers.
+
+  TOOL: GOTTCHA (Freitas et al. 2015) - Uses unique k-mers per taxon - High specificity
+  - Good for strain-level identification'
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

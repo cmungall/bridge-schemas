@@ -1436,26 +1436,295 @@ classes:
       source_table: abiotic_features
 
   # Trait Tables
+  # NOTE: These tables are PLANNED but not yet implemented. They will unify
+  # trait data from multiple sources including GOLD phenotypes, IMG phenotype
+  # rules, and literature-derived traits.
+
   TraitUnified:
     description: >-
       Unified trait annotations across samples from multiple sources.
       Provides consistent trait vocabulary across studies.
+
+      STATUS: PLANNED - Not yet implemented in NMDC database.
+
+      INTENDED SOURCES:
+      - GOLD organism_phenotype (7,113 curated organism-phenotype mappings)
+      - IMG phenotype_rule_taxons (2M+ predicted trait-taxon mappings)
+      - Literature-derived trait annotations
+
+      INTENDED TRAIT CATEGORIES (from available sources):
+      - Phenotype: Acidophile, Alkaliphile, Pathogen, Symbiont, Biofilm, etc. (159 terms)
+      - Metabolism: Denitrifying, Nitrogen fixation, Methanogen, Sulfate reducer, etc. (157 terms)
+      - Energy source: Autotroph, Heterotroph, Phototroph, Chemolithotroph, etc. (31 terms)
+      - Oxygen requirement: Aerobe, Anaerobe, Facultative, Microaerophilic (7 terms)
+      - Cell shape: Rod-shaped, Coccus-shaped, Spiral-shaped, Filament-shaped, etc. (18 terms)
+      - Motility: Motile, Nonmotile (2 terms)
+      - Sporulation: Sporulating, Nonsporulating (2 terms)
+
+      EXAMPLE TRAITS (from GOLD cvphenotype):
+      | ID | Term                  | Usage Count |
+      |----|----------------------|-------------|
+      | 122| Pathogen             | 3,132       |
+      | 104| Non-Pathogen         | 576         |
+      | 35 | Catalase negative    | 520         |
+      | 36 | Catalase positive    | 414         |
+      | 116| Opportunistic Pathogen| 279        |
+      | 4  | Acidophile           | 143         |
+      | 134| Probiotic            | 106         |
+      | 138| Radiation resistant  | 49          |
+      | 88 | Magnetotactic        | (rare)      |
+      | 27 | Bioluminescent       | (rare)      |
     annotations:
       source_table: trait_unified
+      status: planned
+    attributes:
+      trait_id:
+        identifier: true
+        range: string
+        description: Unified trait identifier
+        examples:
+          - value: "TRAIT:0000122"
+            description: Pathogen trait
+          - value: "TRAIT:0000004"
+            description: Acidophile trait
+      trait_name:
+        range: string
+        description: Human-readable trait name
+        examples:
+          - value: "Pathogen"
+          - value: "Acidophile"
+          - value: "Nitrogen fixation"
+          - value: "Aerobe"
+      trait_category:
+        range: string
+        description: >-
+          Category of trait (phenotype, metabolism, energy_source, oxygen_req,
+          cell_shape, motility, sporulation)
+        examples:
+          - value: "phenotype"
+          - value: "metabolism"
+          - value: "energy_source"
+          - value: "oxygen_req"
+      definition:
+        range: string
+        description: Formal definition of the trait
+      synonyms:
+        range: string
+        description: Semicolon-separated alternative names
 
   TraitSources:
     description: >-
       Sources for trait data (databases, literature, predictions).
       Provenance information for trait assignments.
+
+      STATUS: PLANNED - Not yet implemented in NMDC database.
+
+      This table will track where trait annotations come from, distinguishing
+      between curated assertions, rule-based predictions, and literature mining.
+
+      INTENDED SOURCE TYPES:
+
+      1. GOLD Curated Phenotypes (gold_curated)
+         - Source: GOLD database cvphenotype + organism_phenotype tables
+         - Method: Manual curation by GOLD annotators
+         - Coverage: 7,113 organism-phenotype mappings across 159 phenotype terms
+         - Confidence: High (expert-curated)
+         - Example: Picrophilus torridus -> Acidophile (curator-assigned)
+
+      2. IMG Phenotype Rules (img_rules)
+         - Source: IMG phenotype_rule + phenotype_rule_taxons tables
+         - Method: Pathway-based logical inference (65 rules)
+         - Coverage: 2,059,203 taxon-trait predictions
+         - Confidence: Medium-High (rule-based)
+         - Rule example: "L-histidine auxotroph" = absence of pathway 162
+         - Top predictions: L-histidine auxotroph (74,695 taxa),
+           L-glutamate prototroph (73,791 taxa)
+
+      3. Literature Mining (literature)
+         - Source: PubMed abstracts, full-text papers
+         - Method: NLP extraction
+         - Confidence: Variable (requires validation)
+
+      4. Computational Prediction (computed)
+         - Source: Genome-based prediction tools
+         - Method: ML models, homology-based inference
+         - Confidence: Requires benchmarking
+
+      IMG PHENOTYPE RULE EXAMPLES:
+      | rule_id | name                          | rule                           | taxa_count |
+      |---------|-------------------------------|--------------------------------|------------|
+      | 22      | L-histidine auxotroph         | !pathway(162)                  | 74,695     |
+      | 2       | Aerobe                        | pathway(768|769|770)           | 45,956     |
+      | 4       | Denitrifier                   | pathway(764) AND (765) AND...  | 1,653      |
+      | 53      | Nitrogen fixer                | pathway(798)                   | (variable) |
+      | 52      | Dissimilatory sulfate reducer | pathway(870) AND (864) AND...  | 626        |
+      | 6       | Carbon fixation               | pathway(527|335|285|...)       | 483        |
     annotations:
       source_table: trait_sources
+      status: planned
+    attributes:
+      source_id:
+        identifier: true
+        range: string
+        description: Unique identifier for the trait source
+        examples:
+          - value: "gold_curated"
+            description: GOLD curator-assigned phenotypes
+          - value: "img_rule_2"
+            description: IMG aerobe prediction rule
+          - value: "img_rule_53"
+            description: IMG nitrogen fixer prediction rule
+          - value: "pubmed_nlp"
+            description: PubMed literature mining
+      source_name:
+        range: string
+        description: Human-readable source name
+        examples:
+          - value: "GOLD Curated Phenotypes"
+          - value: "IMG Phenotype Rule: Aerobe"
+          - value: "IMG Phenotype Rule: Nitrogen Fixer"
+      source_type:
+        range: string
+        description: Type of source (curated, rule_based, literature, computed)
+        examples:
+          - value: "curated"
+            description: Expert-curated assertions
+          - value: "rule_based"
+            description: Pathway-based logical rules
+          - value: "literature"
+            description: Literature-mined annotations
+          - value: "computed"
+            description: Computationally predicted
+      source_database:
+        range: string
+        description: Database of origin
+        examples:
+          - value: "GOLD"
+          - value: "IMG"
+          - value: "PubMed"
+      rule_definition:
+        range: string
+        description: >-
+          For rule-based sources, the logical rule definition. Uses IMG pathway
+          IDs with operators: | (OR), , (AND), ! (NOT).
+        examples:
+          - value: "(768|769|770)"
+            description: "Aerobe = has cytochrome c oxidase pathway"
+          - value: "(!162)"
+            description: "His auxotroph = lacks histidine biosynthesis"
+          - value: "(798)"
+            description: "Nitrogen fixer = has nitrogenase pathway"
+      confidence_level:
+        range: string
+        description: Confidence assessment of annotations from this source
+        examples:
+          - value: "high"
+            description: Expert curated
+          - value: "medium-high"
+            description: Validated rule-based
+          - value: "medium"
+            description: Computational prediction
+      coverage_count:
+        range: integer
+        description: Number of trait-taxon assignments from this source
+        examples:
+          - value: 7113
+            description: GOLD curated phenotypes
+          - value: 2059203
+            description: IMG rule-based predictions
 
   TraitTaxonomyMapping:
     description: >-
       Mapping between traits and taxonomic groups.
       Which taxa have which traits based on known biology.
+
+      STATUS: PLANNED - Not yet implemented in NMDC database.
+
+      This table will unify trait-to-taxon mappings from multiple sources,
+      enabling trait-based queries across the NMDC ecosystem.
+
+      INTENDED DATA SOURCES:
+
+      1. GOLD organism_phenotype
+         - 7,113 curated organism-phenotype mappings
+         - Links GOLD organism_id to phenotype terms
+         - High confidence, expert-curated
+
+      2. IMG phenotype_rule_taxons
+         - 2,059,203 predicted taxon-trait mappings
+         - Derived from pathway presence/absence using 65 rules
+         - Medium-high confidence for well-validated rules
+
+      EXAMPLE MAPPINGS (from GOLD):
+      | organism_id | organism_name                              | taxid   | trait         |
+      |-------------|-------------------------------------------|---------|---------------|
+      | 574         | Picrophilus torridus DSM 9790             | 263820  | Acidophile    |
+      | 778         | Archaeoglobus fulgidus VC-16, DSM 4304    | 224325  | Piezophile    |
+      | 134         | Methanobrevibacter smithii PS, ATCC 35061 | 420247  | Symbiotic     |
+      | 44          | Deinococcus radiodurans R1                | 243230  | Radiation resistant |
+
+      EXAMPLE MAPPINGS (from IMG rules):
+      | taxon_oid   | trait_prediction    | rule                    |
+      |-------------|---------------------|-------------------------|
+      | 637000007   | L-histidine prototroph | Has pathway 162       |
+      | 637000019   | Aerobe              | Has pathway 768|769|770 |
+      | (many)      | Nitrogen fixer      | Has pathway 798         |
+
+      USAGE: Join with taxonomy_dim to get full taxonomic lineages,
+      then aggregate traits by phylum, class, or other ranks.
     annotations:
       source_table: trait_taxonomy_mapping
+      status: planned
+    attributes:
+      mapping_id:
+        identifier: true
+        range: string
+        description: Unique identifier for this trait-taxon mapping
+      taxon_id:
+        range: integer
+        description: NCBI taxonomy ID or IMG taxon_oid
+        examples:
+          - value: 263820
+            description: Picrophilus torridus DSM 9790
+          - value: 224325
+            description: Archaeoglobus fulgidus
+          - value: 243230
+            description: Deinococcus radiodurans
+      trait_id:
+        range: string
+        description: Reference to TraitUnified.trait_id
+        examples:
+          - value: "TRAIT:acidophile"
+          - value: "TRAIT:aerobe"
+          - value: "TRAIT:nitrogen_fixer"
+      source_id:
+        range: string
+        description: Reference to TraitSources.source_id indicating provenance
+        examples:
+          - value: "gold_curated"
+          - value: "img_rule_2"
+      organism_name:
+        range: string
+        description: Organism name from source database
+        examples:
+          - value: "Picrophilus torridus DSM 9790"
+          - value: "Deinococcus radiodurans R1"
+      confidence_score:
+        range: float
+        description: Confidence score for this mapping (0-1)
+        examples:
+          - value: 1.0
+            description: Expert-curated, high confidence
+          - value: 0.85
+            description: Rule-based prediction
+      evidence_type:
+        range: string
+        description: Type of evidence supporting this mapping
+        examples:
+          - value: "curated"
+            description: GOLD curator assignment
+          - value: "pathway_rule"
+            description: IMG pathway presence/absence rule
 
   # File/Sample Management
   OmicsFilesTable:

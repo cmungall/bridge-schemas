@@ -17,9 +17,9 @@ Alias: notified
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RnaseqNotifyPhajekDev](RnaseqNotifyPhajekDev.md) |  |  no  |
-| [RnaseqNotifyPhajek](RnaseqNotifyPhajek.md) |  |  no  |
 | [MerSubmissionsQueue](MerSubmissionsQueue.md) |  |  no  |
+| [RnaseqNotifyPhajek](RnaseqNotifyPhajek.md) |  |  no  |
+| [RnaseqNotifyPhajekDev](RnaseqNotifyPhajekDev.md) |  |  no  |
 
 
 

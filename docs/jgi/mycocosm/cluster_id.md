@@ -17,8 +17,8 @@ Alias: cluster_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SMClusterMember](SMClusterMember.md) | Gene member of an SM cluster |  no  |
 | [BlatESTCluster](BlatESTCluster.md) | EST cluster from BLAT alignments |  no  |
+| [SMClusterMember](SMClusterMember.md) | Gene member of an SM cluster |  no  |
 | [BlatESTClusterHit](BlatESTClusterHit.md) | Individual EST hit within a cluster |  no  |
 
 

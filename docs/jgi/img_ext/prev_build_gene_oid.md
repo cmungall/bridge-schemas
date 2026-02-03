@@ -17,8 +17,8 @@ Alias: prev_build_gene_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GeneFunctionHistory](GeneFunctionHistory.md) |  |  no  |
 | [GeneHistory](GeneHistory.md) |  |  no  |
+| [GeneFunctionHistory](GeneFunctionHistory.md) |  |  no  |
 
 
 

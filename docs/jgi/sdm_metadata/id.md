@@ -17,35 +17,35 @@ Alias: id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Analysis](Analysis.md) | Analysis workflow or pipeline run |  no  |
-| [Subscription](Subscription.md) | Data subscription |  no  |
-| [Service](Service.md) | SDM service definition |  no  |
-| [User](User.md) | SDM user |  no  |
-| [DeletedFile](DeletedFile.md) | Record of deleted files |  no  |
-| [Query](Query.md) | Saved query |  no  |
-| [File](File.md) | File metadata record |  no  |
-| [NcbiWorker](NcbiWorker.md) | NCBI submission worker process |  no  |
-| [AnalysisTemplate](AnalysisTemplate.md) | Template defining an analysis workflow |  no  |
-| [Metadata](Metadata.md) | Generic metadata record |  no  |
-| [Template](Template.md) | Generic template |  no  |
 | [NcbiSubmission](NcbiSubmission.md) | NCBI submission record |  no  |
-| [MetadataRefresh](MetadataRefresh.md) | Metadata refresh/update record |  no  |
-| [ProcessService](ProcessService.md) | Process service configuration |  no  |
 | [SubscriptionJira](SubscriptionJira.md) | Jira ticket linked to subscription |  no  |
-| [AnalysisMacro](AnalysisMacro.md) | Macro definitions for analysis workflows |  no  |
-| [NcbiTaxon](NcbiTaxon.md) | NCBI taxonomy reference |  no  |
-| [FileIngest](FileIngest.md) | File ingestion record |  no  |
+| [DeletedFile](DeletedFile.md) | Record of deleted files |  no  |
+| [Subscription](Subscription.md) | Data subscription |  no  |
 | [AnalysisTagTemplate](AnalysisTagTemplate.md) | Tag template for analysis categorization |  no  |
-| [DataStore](DataStore.md) | Data storage location |  no  |
-| [AnalysisPlocations](AnalysisPlocations.md) | Physical locations for analysis data |  no  |
-| [Email](Email.md) | Email notification record |  no  |
-| [AnalysisCallerWarnings](AnalysisCallerWarnings.md) | Warnings from analysis callers/tools |  no  |
-| [Macro](Macro.md) | Reusable macro for workflows |  no  |
-| [SraSubmission](SraSubmission.md) | SRA (Sequence Read Archive) submission |  no  |
-| [Publication](Publication.md) | Publication linked to data |  no  |
-| [DeletedAnalysis](DeletedAnalysis.md) | Record of deleted analyses |  no  |
 | [AnalysisPublishingFlags](AnalysisPublishingFlags.md) | Publishing status flags for analyses |  no  |
+| [Analysis](Analysis.md) | Analysis workflow or pipeline run |  no  |
+| [NcbiTaxon](NcbiTaxon.md) | NCBI taxonomy reference |  no  |
+| [Publication](Publication.md) | Publication linked to data |  no  |
+| [FileIngest](FileIngest.md) | File ingestion record |  no  |
+| [Email](Email.md) | Email notification record |  no  |
+| [DeletedAnalysis](DeletedAnalysis.md) | Record of deleted analyses |  no  |
+| [DataStore](DataStore.md) | Data storage location |  no  |
 | [SraUnsubmittable](SraUnsubmittable.md) | Records that cannot be submitted to SRA |  no  |
+| [Macro](Macro.md) | Reusable macro for workflows |  no  |
+| [Query](Query.md) | Saved query |  no  |
+| [SraSubmission](SraSubmission.md) | SRA (Sequence Read Archive) submission |  no  |
+| [ProcessService](ProcessService.md) | Process service configuration |  no  |
+| [AnalysisPlocations](AnalysisPlocations.md) | Physical locations for analysis data |  no  |
+| [Metadata](Metadata.md) | Generic metadata record |  no  |
+| [AnalysisTemplate](AnalysisTemplate.md) | Template defining an analysis workflow |  no  |
+| [NcbiWorker](NcbiWorker.md) | NCBI submission worker process |  no  |
+| [AnalysisCallerWarnings](AnalysisCallerWarnings.md) | Warnings from analysis callers/tools |  no  |
+| [Template](Template.md) | Generic template |  no  |
+| [MetadataRefresh](MetadataRefresh.md) | Metadata refresh/update record |  no  |
+| [AnalysisMacro](AnalysisMacro.md) | Macro definitions for analysis workflows |  no  |
+| [Service](Service.md) | SDM service definition |  no  |
+| [File](File.md) | File metadata record |  no  |
+| [User](User.md) | SDM user |  no  |
 
 
 

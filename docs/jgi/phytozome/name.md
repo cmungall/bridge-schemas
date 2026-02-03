@@ -17,18 +17,18 @@ Alias: name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Assay](Assay.md) | Expression assay experiment |  no  |
-| [CVTerm](CVTerm.md) | Term from a controlled vocabulary |  no  |
-| [Feature](Feature.md) | Genomic feature (gene, mRNA, exon, CDS, etc |  no  |
-| [Analysis](Analysis.md) | Computational analysis/pipeline |  no  |
-| [ArrayDesign](ArrayDesign.md) | Microarray or expression platform design |  no  |
-| [Acquisition](Acquisition.md) | Data acquisition from assay |  no  |
 | [Contact](Contact.md) | Contact/researcher information |  no  |
+| [AnalysisSet](AnalysisSet.md) | Set of related analyses |  no  |
+| [Acquisition](Acquisition.md) | Data acquisition from assay |  no  |
+| [ArrayDesign](ArrayDesign.md) | Microarray or expression platform design |  no  |
+| [AnalysisGrp](AnalysisGrp.md) | Group of analyses |  no  |
 | [CV](CV.md) | Controlled vocabulary (GO, SO, etc |  no  |
 | [Biomaterial](Biomaterial.md) | Biological material (tissue, cell line, etc |  no  |
+| [CVTerm](CVTerm.md) | Term from a controlled vocabulary |  no  |
+| [Analysis](Analysis.md) | Computational analysis/pipeline |  no  |
 | [CellLine](CellLine.md) | Cell line information |  no  |
-| [AnalysisSet](AnalysisSet.md) | Set of related analyses |  no  |
-| [AnalysisGrp](AnalysisGrp.md) | Group of analyses |  no  |
+| [Feature](Feature.md) | Genomic feature (gene, mRNA, exon, CDS, etc |  no  |
+| [Assay](Assay.md) | Expression assay experiment |  no  |
 
 
 

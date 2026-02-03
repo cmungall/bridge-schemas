@@ -17,9 +17,9 @@ Alias: assembly_accession
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldMasterGenbank](GoldMasterGenbank.md) |  |  no  |
 | [GoldAnalysisProjectGenbanks](GoldAnalysisProjectGenbanks.md) |  |  no  |
 | [GoldApGenbank](GoldApGenbank.md) |  |  no  |
+| [GoldMasterGenbank](GoldMasterGenbank.md) |  |  no  |
 
 
 

@@ -18,8 +18,8 @@ Alias: reaction_oid
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [MpwPglPathwayReaction](MpwPglPathwayReaction.md) |  |  no  |
-| [MpwPglReactionCompounds](MpwPglReactionCompounds.md) |  |  no  |
 | [MpwPglReaction](MpwPglReaction.md) |  |  no  |
+| [MpwPglReactionCompounds](MpwPglReactionCompounds.md) |  |  no  |
 
 
 

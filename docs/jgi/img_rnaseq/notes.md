@@ -18,8 +18,8 @@ Alias: notes
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [RnaseqSample](RnaseqSample.md) |  |  no  |
-| [RnaseqExperiment](RnaseqExperiment.md) |  |  no  |
 | [RnaseqDataset](RnaseqDataset.md) |  |  no  |
+| [RnaseqExperiment](RnaseqExperiment.md) |  |  no  |
 
 
 

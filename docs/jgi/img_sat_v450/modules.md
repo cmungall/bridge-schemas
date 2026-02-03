@@ -17,8 +17,8 @@ Alias: modules
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [KoTermModules](KoTermModules.md) |  |  no  |
 | [KeggPathwayModules](KeggPathwayModules.md) |  |  no  |
+| [KoTermModules](KoTermModules.md) |  |  no  |
 
 
 

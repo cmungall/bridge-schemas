@@ -17,13 +17,13 @@ Alias: description
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Kog](Kog.md) |  |  no  |
 | [Cog](Cog.md) |  |  no  |
-| [GenomeProperty](GenomeProperty.md) |  |  no  |
 | [Yesnocv](Yesnocv.md) |  |  no  |
 | [KeggPathway](KeggPathway.md) |  |  no  |
-| [PfamClan](PfamClan.md) |  |  no  |
+| [Kog](Kog.md) |  |  no  |
+| [GenomeProperty](GenomeProperty.md) |  |  no  |
 | [PfamFamily](PfamFamily.md) |  |  no  |
+| [PfamClan](PfamClan.md) |  |  no  |
 
 
 

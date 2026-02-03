@@ -17,8 +17,8 @@ Alias: database
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RnaseqNotify](RnaseqNotify.md) |  |  no  |
 | [Batch](Batch.md) |  |  no  |
+| [RnaseqNotify](RnaseqNotify.md) |  |  no  |
 | [Submission](Submission.md) |  |  no  |
 
 

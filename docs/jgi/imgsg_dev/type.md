@@ -17,11 +17,11 @@ Alias: type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Announcement](Announcement.md) |  |  no  |
+| [NcbiAccessions](NcbiAccessions.md) |  |  no  |
+| [GoldAnalysisProjectGenbanks](GoldAnalysisProjectGenbanks.md) |  |  no  |
 | [NcbiAccessionsJbtest](NcbiAccessionsJbtest.md) |  |  no  |
 | [WorkflowStats](WorkflowStats.md) |  |  no  |
-| [GoldAnalysisProjectGenbanks](GoldAnalysisProjectGenbanks.md) |  |  no  |
-| [NcbiAccessions](NcbiAccessions.md) |  |  no  |
-| [Announcement](Announcement.md) |  |  no  |
 
 
 

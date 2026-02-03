@@ -18,8 +18,8 @@ Alias: cell_arrangement
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [ProjectInfoCellArrangement](ProjectInfoCellArrangement.md) |  |  no  |
-| [GoldSpCellArrangement](GoldSpCellArrangement.md) |  |  no  |
 | [ProjInfoCellArrange042014](ProjInfoCellArrange042014.md) |  |  no  |
+| [GoldSpCellArrangement](GoldSpCellArrangement.md) |  |  no  |
 
 
 

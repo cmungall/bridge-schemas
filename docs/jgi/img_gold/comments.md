@@ -17,9 +17,9 @@ Alias: comments
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
 | [GoldAnalysisProject](GoldAnalysisProject.md) |  |  no  |
 | [GoldMasterAnalysisProject](GoldMasterAnalysisProject.md) |  |  no  |
-| [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
 
 
 

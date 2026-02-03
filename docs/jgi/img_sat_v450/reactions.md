@@ -17,9 +17,9 @@ Alias: reactions
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [KeggModuleReactions](KeggModuleReactions.md) |  |  no  |
 | [KoTermReactions](KoTermReactions.md) |  |  no  |
 | [ImageRoiReactions](ImageRoiReactions.md) |  |  no  |
-| [KeggModuleReactions](KeggModuleReactions.md) |  |  no  |
 
 
 

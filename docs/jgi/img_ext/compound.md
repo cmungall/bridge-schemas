@@ -17,10 +17,10 @@ Alias: compound
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ImgPathwayCComponents](ImgPathwayCComponents.md) |  |  no  |
-| [PathwayNetworkCComponents](PathwayNetworkCComponents.md) |  |  no  |
 | [ImgReactionCComponents](ImgReactionCComponents.md) |  |  no  |
 | [ImgCompoundKeggCompounds](ImgCompoundKeggCompounds.md) |  |  no  |
+| [ImgPathwayCComponents](ImgPathwayCComponents.md) |  |  no  |
+| [PathwayNetworkCComponents](PathwayNetworkCComponents.md) |  |  no  |
 
 
 

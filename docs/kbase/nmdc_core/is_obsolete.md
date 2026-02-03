@@ -17,8 +17,10 @@ Alias: is_obsolete
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoTerms](GoTerms.md) | Gene Ontology terms |  no  |
-| [AnnotationTermsUnified](AnnotationTermsUnified.md) | Unified annotation terms across sources (GO, KEGG, EC, COG, etc |  no  |
+| [GoTerms](GoTerms.md) | Gene Ontology terms with full metadata |  no  |
+| [AnnotationTermsUnified](AnnotationTermsUnified.md) | Unified annotation terms across sources (GO, KEGG, EC, COG, MetaCyc) |  no  |
+| [EcTerms](EcTerms.md) | Enzyme Commission (EC) number terms |  no  |
+| [GoHierarchyFlat](GoHierarchyFlat.md) | Flattened GO hierarchy for efficient ancestor/descendant queries |  no  |
 
 
 
@@ -59,6 +61,8 @@ alias: is_obsolete
 domain_of:
 - AnnotationTermsUnified
 - GoTerms
+- GoHierarchyFlat
+- EcTerms
 range: string
 
 ```

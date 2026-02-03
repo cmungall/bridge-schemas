@@ -17,8 +17,9 @@ Alias: definition
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [GoTerms](GoTerms.md) | Gene Ontology terms with full metadata |  no  |
+| [TraitUnified](TraitUnified.md) | Unified trait annotations across samples from multiple sources |  no  |
 | [KeggKoTerms](KeggKoTerms.md) | KEGG Orthology (KO) terms |  no  |
-| [GoTerms](GoTerms.md) | Gene Ontology terms |  no  |
 
 
 
@@ -59,6 +60,7 @@ alias: definition
 domain_of:
 - GoTerms
 - KeggKoTerms
+- TraitUnified
 range: string
 
 ```

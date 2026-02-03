@@ -17,8 +17,9 @@ Alias: namespace
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoTerms](GoTerms.md) | Gene Ontology terms |  no  |
-| [AnnotationTermsUnified](AnnotationTermsUnified.md) | Unified annotation terms across sources (GO, KEGG, EC, COG, etc |  no  |
+| [GoTerms](GoTerms.md) | Gene Ontology terms with full metadata |  no  |
+| [AnnotationTermsUnified](AnnotationTermsUnified.md) | Unified annotation terms across sources (GO, KEGG, EC, COG, MetaCyc) |  no  |
+| [GoHierarchyFlat](GoHierarchyFlat.md) | Flattened GO hierarchy for efficient ancestor/descendant queries |  no  |
 
 
 
@@ -59,6 +60,7 @@ alias: namespace
 domain_of:
 - AnnotationTermsUnified
 - GoTerms
+- GoHierarchyFlat
 range: string
 
 ```

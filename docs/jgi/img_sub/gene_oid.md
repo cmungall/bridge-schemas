@@ -17,8 +17,8 @@ Alias: gene_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GeneMyimgGroups](GeneMyimgGroups.md) |  |  no  |
 | [GeneMyimgFunctions](GeneMyimgFunctions.md) |  |  no  |
+| [GeneMyimgGroups](GeneMyimgGroups.md) |  |  no  |
 | [GeneMyimgEnzymes](GeneMyimgEnzymes.md) |  |  no  |
 
 

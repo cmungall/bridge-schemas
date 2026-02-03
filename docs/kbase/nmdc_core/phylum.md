@@ -3,6 +3,11 @@
 # Slot: phylum 
 
 
+_Phylum name_
+
+
+
+
 
 URI: [https://w3id.org/kbase/nmdc_core/phylum](https://w3id.org/kbase/nmdc_core/phylum)
 Alias: phylum
@@ -17,7 +22,7 @@ Alias: phylum
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TaxonomyDim](TaxonomyDim.md) | Taxonomic hierarchy dimension table |  no  |
+| [TaxonomyDim](TaxonomyDim.md) | Taxonomic hierarchy dimension table using NCBI taxonomy |  no  |
 
 
 
@@ -30,6 +35,15 @@ Alias: phylum
 
 
 
+
+
+## Examples
+
+| Value |
+| --- |
+| Proteobacteria |
+| Arthropoda |
+| Firmicutes |
 
 ## Identifier and Mapping Information
 
@@ -61,6 +75,14 @@ Alias: phylum
 <details>
 ```yaml
 name: phylum
+description: Phylum name
+examples:
+- value: Proteobacteria
+  description: Major bacterial phylum
+- value: Arthropoda
+  description: Insects, crustaceans, etc.
+- value: Firmicutes
+  description: Gram-positive bacteria
 from_schema: https://w3id.org/kbase/nmdc_core
 rank: 1000
 alias: phylum

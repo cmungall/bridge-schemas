@@ -17,18 +17,18 @@ Alias: taxon_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [BcgRegionNew](BcgRegionNew.md) |  |  no  |
+| [BcgRegionGenes](BcgRegionGenes.md) |  |  no  |
+| [TaxonBcgType](TaxonBcgType.md) |  |  no  |
+| [BcgRegionExtLinks](BcgRegionExtLinks.md) |  |  no  |
+| [BcgRegion](BcgRegion.md) |  |  no  |
+| [BcgBinGenePfams](BcgBinGenePfams.md) |  |  no  |
+| [BcgRegionSms](BcgRegionSms.md) |  |  no  |
 | [TmpGenes](TmpGenes.md) |  |  no  |
 | [Asv5Taxons](Asv5Taxons.md) |  |  no  |
-| [BcgBinRegion](BcgBinRegion.md) |  |  no  |
 | [BcgRegionGenesNew](BcgRegionGenesNew.md) |  |  no  |
+| [BcgBinRegion](BcgBinRegion.md) |  |  no  |
 | [BcgBinRegionGenes](BcgBinRegionGenes.md) |  |  no  |
-| [BcgRegionExtLinks](BcgRegionExtLinks.md) |  |  no  |
-| [BcgRegionSms](BcgRegionSms.md) |  |  no  |
-| [BcgRegion](BcgRegion.md) |  |  no  |
-| [BcgRegionGenes](BcgRegionGenes.md) |  |  no  |
-| [BcgBinGenePfams](BcgBinGenePfams.md) |  |  no  |
-| [BcgRegionNew](BcgRegionNew.md) |  |  no  |
-| [TaxonBcgType](TaxonBcgType.md) |  |  no  |
 
 
 

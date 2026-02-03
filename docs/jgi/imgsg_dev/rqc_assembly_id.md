@@ -17,8 +17,8 @@ Alias: rqc_assembly_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Assembly](Assembly.md) |  |  no  |
 | [Submission](Submission.md) |  |  no  |
+| [Assembly](Assembly.md) |  |  no  |
 
 
 

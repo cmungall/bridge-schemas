@@ -18,8 +18,8 @@ Alias: contact_id
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [GoldMasterStudy](GoldMasterStudy.md) |  |  no  |
-| [GoldMasterContact](GoldMasterContact.md) |  |  no  |
 | [GoldMasterPermission](GoldMasterPermission.md) |  |  no  |
+| [GoldMasterContact](GoldMasterContact.md) |  |  no  |
 
 
 

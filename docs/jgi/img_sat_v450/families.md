@@ -17,8 +17,8 @@ Alias: families
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [CogFamilies](CogFamilies.md) |  |  no  |
 | [KogFamilies](KogFamilies.md) |  |  no  |
+| [CogFamilies](CogFamilies.md) |  |  no  |
 
 
 

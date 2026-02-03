@@ -17,9 +17,9 @@ Alias: title
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Contact](Contact.md) |  |  no  |
 | [ImgGroupNews](ImgGroupNews.md) |  |  no  |
 | [RequestAccount](RequestAccount.md) |  |  no  |
-| [Contact](Contact.md) |  |  no  |
 
 
 

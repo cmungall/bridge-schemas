@@ -17,8 +17,8 @@ Alias: description
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Protein](Protein.md) |  |  no  |
 | [Name](Name.md) |  |  no  |
+| [Protein](Protein.md) |  |  no  |
 
 
 

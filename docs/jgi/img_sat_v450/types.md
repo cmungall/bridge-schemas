@@ -17,11 +17,11 @@ Alias: types
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [BiocycClassTypes](BiocycClassTypes.md) |  |  no  |
 | [BiocycProteinTypes](BiocycProteinTypes.md) |  |  no  |
+| [BiocycClassTypes](BiocycClassTypes.md) |  |  no  |
+| [BiocycReactionTypes](BiocycReactionTypes.md) |  |  no  |
 | [BiocycCompTypes](BiocycCompTypes.md) |  |  no  |
 | [BiocycPathwayTypes](BiocycPathwayTypes.md) |  |  no  |
-| [BiocycReactionTypes](BiocycReactionTypes.md) |  |  no  |
 
 
 

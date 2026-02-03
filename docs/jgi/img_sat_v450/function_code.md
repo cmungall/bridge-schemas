@@ -17,8 +17,8 @@ Alias: function_code
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [CogFunction](CogFunction.md) |  |  no  |
 | [KogFunction](KogFunction.md) |  |  no  |
+| [CogFunction](CogFunction.md) |  |  no  |
 
 
 

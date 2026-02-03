@@ -17,11 +17,11 @@ Alias: hash
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Protein](Protein.md) |  |  no  |
-| [Contig](Contig.md) |  |  no  |
 | [ContigCollection](ContigCollection.md) |  |  no  |
-| [EncodedFeature](EncodedFeature.md) |  |  no  |
+| [Contig](Contig.md) |  |  no  |
+| [Protein](Protein.md) |  |  no  |
 | [Feature](Feature.md) |  |  no  |
+| [EncodedFeature](EncodedFeature.md) |  |  no  |
 
 
 

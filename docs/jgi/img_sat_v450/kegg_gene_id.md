@@ -17,9 +17,9 @@ Alias: kegg_gene_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [KeggGeneKoTerms](KeggGeneKoTerms.md) |  |  no  |
 | [KeggGene](KeggGene.md) |  |  no  |
 | [KeggGeneUniprotIds](KeggGeneUniprotIds.md) |  |  no  |
-| [KeggGeneKoTerms](KeggGeneKoTerms.md) |  |  no  |
 | [KeggGeneNcbiGeneIds](KeggGeneNcbiGeneIds.md) |  |  no  |
 
 

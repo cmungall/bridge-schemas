@@ -17,10 +17,10 @@ Alias: title
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldMasterJournal](GoldMasterJournal.md) |  |  no  |
 | [GoldApPublications](GoldApPublications.md) |  |  no  |
-| [GoldSpGenomePublications](GoldSpGenomePublications.md) |  |  no  |
 | [GoldMasterPublication](GoldMasterPublication.md) |  |  no  |
+| [GoldSpGenomePublications](GoldSpGenomePublications.md) |  |  no  |
+| [GoldMasterJournal](GoldMasterJournal.md) |  |  no  |
 
 
 

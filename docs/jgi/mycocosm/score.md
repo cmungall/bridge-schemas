@@ -17,8 +17,8 @@ Alias: score
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GenemarkPrediction](GenemarkPrediction.md) | GeneMark ab initio gene prediction |  no  |
 | [RepeatMaskerHit](RepeatMaskerHit.md) | RepeatMasker repeat element hit |  no  |
+| [GenemarkPrediction](GenemarkPrediction.md) | GeneMark ab initio gene prediction |  no  |
 | [GenewisePrediction](GenewisePrediction.md) | GeneWise homology-based gene prediction |  no  |
 
 

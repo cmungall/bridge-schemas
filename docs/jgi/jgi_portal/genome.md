@@ -17,8 +17,8 @@ Alias: genome
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [KbasePushLog](KbasePushLog.md) | Log of data pushes to KBase |  no  |
 | [CustomTrack](CustomTrack.md) | Custom genome browser track |  no  |
+| [KbasePushLog](KbasePushLog.md) | Log of data pushes to KBase |  no  |
 
 
 

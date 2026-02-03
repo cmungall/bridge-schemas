@@ -17,8 +17,8 @@ Alias: value
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RnaseqExperimentSop](RnaseqExperimentSop.md) |  |  no  |
 | [RnaseqSampleSop](RnaseqSampleSop.md) |  |  no  |
+| [RnaseqExperimentSop](RnaseqExperimentSop.md) |  |  no  |
 
 
 

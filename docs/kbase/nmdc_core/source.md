@@ -3,7 +3,7 @@
 # Slot: source 
 
 
-_Source ontology/database (GO, KEGG, EC, etc.)_
+_Source ontology/database for this term. Determines ID format and available metadata._
 
 
 
@@ -22,7 +22,7 @@ Alias: source
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [AnnotationTermsUnified](AnnotationTermsUnified.md) | Unified annotation terms across sources (GO, KEGG, EC, COG, etc |  no  |
+| [AnnotationTermsUnified](AnnotationTermsUnified.md) | Unified annotation terms across sources (GO, KEGG, EC, COG, MetaCyc) |  no  |
 
 
 
@@ -31,10 +31,22 @@ Alias: source
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [AnnotationSource](AnnotationSource.md)
+
+* Required: True
 
 
 
+
+
+## Examples
+
+| Value |
+| --- |
+| go |
+| ec |
+| kegg_ko |
+| cog |
 
 ## Identifier and Mapping Information
 
@@ -66,14 +78,25 @@ Alias: source
 <details>
 ```yaml
 name: source
-description: Source ontology/database (GO, KEGG, EC, etc.)
+description: Source ontology/database for this term. Determines ID format and available
+  metadata.
+examples:
+- value: go
+  description: Gene Ontology - largest source with 48K+ terms
+- value: ec
+  description: Enzyme Commission - 8,813 enzyme classifications
+- value: kegg_ko
+  description: KEGG Orthology - 8,104 functional orthologs
+- value: cog
+  description: COG categories - 26 broad functional groups
 from_schema: https://w3id.org/kbase/nmdc_core
 rank: 1000
 alias: source
 owner: AnnotationTermsUnified
 domain_of:
 - AnnotationTermsUnified
-range: string
+range: AnnotationSource
+required: true
 
 ```
 </details>

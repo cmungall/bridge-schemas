@@ -3,6 +3,11 @@
 # Slot: ecosystem_category 
 
 
+_Ecosystem category (second level)_
+
+
+
+
 
 URI: [https://w3id.org/kbase/nmdc_core/ecosystem_category](https://w3id.org/kbase/nmdc_core/ecosystem_category)
 Alias: ecosystem_category
@@ -17,7 +22,7 @@ Alias: ecosystem_category
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [StudyTable](StudyTable.md) | NMDC research studies |  no  |
+| [StudyTable](StudyTable.md) | NMDC research studies with ecosystem classification and investigator informat... |  no  |
 
 
 
@@ -26,10 +31,19 @@ Alias: ecosystem_category
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [EcosystemCategory](EcosystemCategory.md)
 
 
 
+
+
+## Examples
+
+| Value |
+| --- |
+| Terrestrial |
+| Aquatic |
+| Plants |
 
 ## Identifier and Mapping Information
 
@@ -61,13 +75,21 @@ Alias: ecosystem_category
 <details>
 ```yaml
 name: ecosystem_category
+description: Ecosystem category (second level)
+examples:
+- value: Terrestrial
+  description: Land-based environments
+- value: Aquatic
+  description: Water environments
+- value: Plants
+  description: Plant-associated
 from_schema: https://w3id.org/kbase/nmdc_core
 rank: 1000
 alias: ecosystem_category
 owner: StudyTable
 domain_of:
 - StudyTable
-range: string
+range: EcosystemCategory
 
 ```
 </details>

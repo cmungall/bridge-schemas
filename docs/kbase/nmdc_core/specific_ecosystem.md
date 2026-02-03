@@ -3,6 +3,11 @@
 # Slot: specific_ecosystem 
 
 
+_Most specific ecosystem classification_
+
+
+
+
 
 URI: [https://w3id.org/kbase/nmdc_core/specific_ecosystem](https://w3id.org/kbase/nmdc_core/specific_ecosystem)
 Alias: specific_ecosystem
@@ -17,7 +22,7 @@ Alias: specific_ecosystem
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [StudyTable](StudyTable.md) | NMDC research studies |  no  |
+| [StudyTable](StudyTable.md) | NMDC research studies with ecosystem classification and investigator informat... |  no  |
 
 
 
@@ -30,6 +35,15 @@ Alias: specific_ecosystem
 
 
 
+
+
+## Examples
+
+| Value |
+| --- |
+| Sediment |
+| Forest Soil |
+| Unclassified |
 
 ## Identifier and Mapping Information
 
@@ -61,6 +75,13 @@ Alias: specific_ecosystem
 <details>
 ```yaml
 name: specific_ecosystem
+description: Most specific ecosystem classification
+examples:
+- value: Sediment
+  description: River or lake sediments
+- value: Forest Soil
+  description: Forest soil microbiomes
+- value: Unclassified
 from_schema: https://w3id.org/kbase/nmdc_core
 rank: 1000
 alias: specific_ecosystem

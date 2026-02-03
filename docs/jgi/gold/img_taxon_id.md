@@ -17,8 +17,8 @@ Alias: img_taxon_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SigsView](SigsView.md) |  |  no  |
 | [AnalysisProject](AnalysisProject.md) |  |  no  |
+| [SigsView](SigsView.md) |  |  no  |
 
 
 

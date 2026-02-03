@@ -18,10 +18,10 @@ Alias: go_id
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [GoTermParents](GoTermParents.md) |  |  no  |
-| [Ko2go](Ko2go.md) |  |  no  |
-| [Pfam2go](Pfam2go.md) |  |  no  |
 | [GoTermSynonyms](GoTermSynonyms.md) |  |  no  |
+| [Ko2go](Ko2go.md) |  |  no  |
 | [GoTerm](GoTerm.md) |  |  no  |
+| [Pfam2go](Pfam2go.md) |  |  no  |
 | [GeneGoTerms](GeneGoTerms.md) |  |  no  |
 
 

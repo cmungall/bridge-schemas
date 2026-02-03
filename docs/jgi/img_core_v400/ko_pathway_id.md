@@ -17,9 +17,9 @@ Alias: ko_pathway_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [KoTermClasses](KoTermClasses.md) |  |  no  |
 | [KeggPathway](KeggPathway.md) |  |  no  |
 | [KeggModule](KeggModule.md) |  |  no  |
-| [KoTermClasses](KoTermClasses.md) |  |  no  |
 
 
 

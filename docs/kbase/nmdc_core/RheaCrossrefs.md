@@ -3,7 +3,7 @@
 # Class: RheaCrossrefs 
 
 
-_Rhea cross-references_
+_Cross-references from Rhea reactions to other databases. Links Rhea reactions to EC numbers, KEGG reactions, MetaCyc._
 
 
 
@@ -89,7 +89,8 @@ annotations:
   source_table:
     tag: source_table
     value: rhea_crossrefs
-description: Rhea cross-references
+description: Cross-references from Rhea reactions to other databases. Links Rhea reactions
+  to EC numbers, KEGG reactions, MetaCyc.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +105,8 @@ annotations:
   source_table:
     tag: source_table
     value: rhea_crossrefs
-description: Rhea cross-references
+description: Cross-references from Rhea reactions to other databases. Links Rhea reactions
+  to EC numbers, KEGG reactions, MetaCyc.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

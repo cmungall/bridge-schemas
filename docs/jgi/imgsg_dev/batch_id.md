@@ -17,8 +17,8 @@ Alias: batch_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Batch](Batch.md) |  |  no  |
 | [Submission](Submission.md) |  |  no  |
+| [Batch](Batch.md) |  |  no  |
 
 
 

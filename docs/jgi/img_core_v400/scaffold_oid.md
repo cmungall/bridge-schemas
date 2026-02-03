@@ -18,12 +18,12 @@ Alias: scaffold_oid
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [ScaffoldNxFeature](ScaffoldNxFeature.md) |  |  no  |
-| [DtIntergenic](DtIntergenic.md) |  |  no  |
-| [DeleteScaffolds](DeleteScaffolds.md) |  |  no  |
-| [Scaffold](Scaffold.md) |  |  no  |
 | [ScaffoldRepeats](ScaffoldRepeats.md) |  |  no  |
-| [ScaffoldExtLinks](ScaffoldExtLinks.md) |  |  no  |
+| [DeleteScaffolds](DeleteScaffolds.md) |  |  no  |
 | [ScaffoldStats](ScaffoldStats.md) |  |  no  |
+| [DtIntergenic](DtIntergenic.md) |  |  no  |
+| [ScaffoldExtLinks](ScaffoldExtLinks.md) |  |  no  |
+| [Scaffold](Scaffold.md) |  |  no  |
 
 
 

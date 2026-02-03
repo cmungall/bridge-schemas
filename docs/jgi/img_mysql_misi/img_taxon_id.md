@@ -17,8 +17,8 @@ Alias: img_taxon_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MisiClusters](MisiClusters.md) |  |  no  |
 | [TaxonInfo](TaxonInfo.md) |  |  no  |
+| [MisiClusters](MisiClusters.md) |  |  no  |
 
 
 

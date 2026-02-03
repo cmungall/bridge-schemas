@@ -17,9 +17,9 @@ Alias: sample_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RnaseqSample](RnaseqSample.md) |  |  no  |
-| [RnaseqSampleSop](RnaseqSampleSop.md) |  |  no  |
 | [RnaseqSampleExtLinks](RnaseqSampleExtLinks.md) |  |  no  |
+| [RnaseqSampleSop](RnaseqSampleSop.md) |  |  no  |
+| [RnaseqSample](RnaseqSample.md) |  |  no  |
 | [RnaseqDataset](RnaseqDataset.md) |  |  no  |
 
 

@@ -17,9 +17,9 @@ Alias: exp_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MsExperimentPublications](MsExperimentPublications.md) |  |  no  |
-| [MsExperiment](MsExperiment.md) |  |  no  |
 | [MsExperimentExtLinks](MsExperimentExtLinks.md) |  |  no  |
+| [MsExperiment](MsExperiment.md) |  |  no  |
+| [MsExperimentPublications](MsExperimentPublications.md) |  |  no  |
 | [MsExperimentSop](MsExperimentSop.md) |  |  no  |
 
 

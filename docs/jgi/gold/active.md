@@ -17,11 +17,11 @@ Alias: active
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Study](Study.md) |  |  no  |
 | [Project](Project.md) |  |  no  |
 | [DwSequencingProduct](DwSequencingProduct.md) |  |  no  |
-| [OrganismV2](OrganismV2.md) |  |  no  |
 | [Biosample](Biosample.md) |  |  no  |
+| [Study](Study.md) |  |  no  |
+| [OrganismV2](OrganismV2.md) |  |  no  |
 
 
 

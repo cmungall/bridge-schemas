@@ -18,13 +18,13 @@ Alias: func_id
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [TaxonPfamCount](TaxonPfamCount.md) |  |  no  |
-| [TaxonCogCount](TaxonCogCount.md) |  |  no  |
-| [TaxonSupfamCount](TaxonSupfamCount.md) |  |  no  |
 | [TaxonTigrCount](TaxonTigrCount.md) |  |  no  |
+| [TaxonEcCount](TaxonEcCount.md) |  |  no  |
 | [TaxonSmartCount](TaxonSmartCount.md) |  |  no  |
 | [TaxonCathfunfamCount](TaxonCathfunfamCount.md) |  |  no  |
+| [TaxonCogCount](TaxonCogCount.md) |  |  no  |
+| [TaxonSupfamCount](TaxonSupfamCount.md) |  |  no  |
 | [TaxonKoCount](TaxonKoCount.md) |  |  no  |
-| [TaxonEcCount](TaxonEcCount.md) |  |  no  |
 
 
 

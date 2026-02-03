@@ -17,9 +17,9 @@ Alias: function_group
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [EggnogHierarchy](EggnogHierarchy.md) |  |  no  |
 | [KogFunction](KogFunction.md) |  |  no  |
 | [CogFunction](CogFunction.md) |  |  no  |
-| [EggnogHierarchy](EggnogHierarchy.md) |  |  no  |
 
 
 

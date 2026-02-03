@@ -17,9 +17,9 @@ Alias: issue
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldSpGenomePublications](GoldSpGenomePublications.md) |  |  no  |
 | [GoldApPublications](GoldApPublications.md) |  |  no  |
 | [GoldMasterPublication](GoldMasterPublication.md) |  |  no  |
+| [GoldSpGenomePublications](GoldSpGenomePublications.md) |  |  no  |
 
 
 

@@ -3,7 +3,7 @@
 # Class: OmicsFilesTable 
 
 
-_Omics data file inventory_
+_Inventory of omics data files with metadata and URLs. Includes file sizes, checksums, and download locations._
 
 
 
@@ -89,7 +89,8 @@ annotations:
   source_table:
     tag: source_table
     value: omics_files_table
-description: Omics data file inventory
+description: Inventory of omics data files with metadata and URLs. Includes file sizes,
+  checksums, and download locations.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +105,8 @@ annotations:
   source_table:
     tag: source_table
     value: omics_files_table
-description: Omics data file inventory
+description: Inventory of omics data files with metadata and URLs. Includes file sizes,
+  checksums, and download locations.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

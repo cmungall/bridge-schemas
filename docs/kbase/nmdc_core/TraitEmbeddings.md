@@ -3,7 +3,7 @@
 # Class: TraitEmbeddings 
 
 
-_Trait-based embeddings_
+_Trait-based embeddings derived from functional annotations. Represents functional potential of samples._
 
 
 
@@ -89,7 +89,8 @@ annotations:
   source_table:
     tag: source_table
     value: trait_embeddings
-description: Trait-based embeddings
+description: Trait-based embeddings derived from functional annotations. Represents
+  functional potential of samples.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +105,8 @@ annotations:
   source_table:
     tag: source_table
     value: trait_embeddings
-description: Trait-based embeddings
+description: Trait-based embeddings derived from functional annotations. Represents
+  functional potential of samples.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

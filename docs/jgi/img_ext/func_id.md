@@ -17,14 +17,14 @@ Alias: func_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TaxonSupfamCount](TaxonSupfamCount.md) |  |  no  |
-| [TaxonKoCount](TaxonKoCount.md) |  |  no  |
-| [TaxonCathfunfamCount](TaxonCathfunfamCount.md) |  |  no  |
-| [TaxonPfamCount](TaxonPfamCount.md) |  |  no  |
-| [TaxonEcCount](TaxonEcCount.md) |  |  no  |
 | [TaxonTigrCount](TaxonTigrCount.md) |  |  no  |
-| [TaxonCogCount](TaxonCogCount.md) |  |  no  |
+| [TaxonKoCount](TaxonKoCount.md) |  |  no  |
+| [TaxonPfamCount](TaxonPfamCount.md) |  |  no  |
 | [TaxonSmartCount](TaxonSmartCount.md) |  |  no  |
+| [TaxonEcCount](TaxonEcCount.md) |  |  no  |
+| [TaxonCogCount](TaxonCogCount.md) |  |  no  |
+| [TaxonCathfunfamCount](TaxonCathfunfamCount.md) |  |  no  |
+| [TaxonSupfamCount](TaxonSupfamCount.md) |  |  no  |
 
 
 

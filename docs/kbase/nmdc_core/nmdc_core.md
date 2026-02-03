@@ -1,5 +1,11 @@
 # nmdc_core 
 
-National Microbiome Data Collaborative (NMDC) core data including samples, studies, omics data, annotations, and embeddings. Contains data from GOLD, metabolomics, metagenomics, and other microbiome sources.
+National Microbiome Data Collaborative (NMDC) core data including samples, studies, omics data, annotations, and embeddings. Contains data from GOLD, metabolomics, metagenomics, and other microbiome sources. Supports multi-modal analysis through unified embeddings and tokenization.
+DATABASE STATISTICS (as of 2024): - 48 research studies with comprehensive metadata - 3,129,061+ metabolomics feature records - 48,196 annotation terms (GO, EC, KEGG, COG, MetaCyc) - 39,354 non-obsolete GO terms - 256-dimensional unified embeddings per biosample
+ANNOTATION TERM COUNTS BY SOURCE: | Source       | Terms  | Description                        | |--------------|--------|-------------------------------------| | GO           | 48,196 | Gene Ontology terms                | | EC           | 8,813  | Enzyme Commission numbers          | | KEGG KO      | 8,104  | KEGG Orthology functional orthologs| | MetaCyc      | 1,538  | MetaCyc metabolic pathways         | | KEGG Module  | 370    | KEGG functional modules            | | KEGG Pathway | 306    | KEGG metabolic pathways            | | COG          | 26     | Clusters of Orthologous Groups     |
+GO TERM DISTRIBUTION BY NAMESPACE: | Namespace          | Count  | Fraction | |--------------------|--------|----------| | biological_process | 30,817 | 64%      | | molecular_function | 12,805 | 27%      | | cellular_component | 4,573  | 9%       |
+ECOSYSTEM COVERAGE (studies with ecosystem data): - Environmental/Terrestrial/Soil (3 studies) - Environmental/Aquatic/Freshwater (3 studies) - Environmental/Terrestrial/Deep subsurface (1 study) - Host-associated/Plants (1 study)
+KEY FEATURES: - Multi-modal embeddings for similarity search across samples - Unified annotation vocabulary across GO, KEGG, EC, COG, MetaCyc - Pre-computed GO hierarchy for efficient ancestor queries - Mass spectrometry metabolomics with compound identification - Taxonomic classification from multiple tools (Kraken, GOTTCHA, Centrifuge)
+USAGE: For functional analysis, start with annotation_terms_unified. For metabolomics, use metabolomics_gold. For similarity search, use embeddings_v1. For GO-based enrichment, use go_hierarchy_flat for closure queries.
 
 URI: https://w3id.org/kbase/nmdc_core

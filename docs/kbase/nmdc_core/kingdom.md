@@ -3,6 +3,11 @@
 # Slot: kingdom 
 
 
+_Kingdom/superkingdom name_
+
+
+
+
 
 URI: [https://w3id.org/kbase/nmdc_core/kingdom](https://w3id.org/kbase/nmdc_core/kingdom)
 Alias: kingdom
@@ -17,7 +22,7 @@ Alias: kingdom
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TaxonomyDim](TaxonomyDim.md) | Taxonomic hierarchy dimension table |  no  |
+| [TaxonomyDim](TaxonomyDim.md) | Taxonomic hierarchy dimension table using NCBI taxonomy |  no  |
 
 
 
@@ -30,6 +35,15 @@ Alias: kingdom
 
 
 
+
+
+## Examples
+
+| Value |
+| --- |
+| Bacteria |
+| Archaea |
+| Metazoa |
 
 ## Identifier and Mapping Information
 
@@ -61,6 +75,14 @@ Alias: kingdom
 <details>
 ```yaml
 name: kingdom
+description: Kingdom/superkingdom name
+examples:
+- value: Bacteria
+  description: Bacterial domain
+- value: Archaea
+  description: Archaeal domain
+- value: Metazoa
+  description: Animals
 from_schema: https://w3id.org/kbase/nmdc_core
 rank: 1000
 alias: kingdom

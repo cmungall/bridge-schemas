@@ -3,7 +3,7 @@
 # Class: NomMatrixOptimized 
 
 
-_Optimized NOM feature matrix_
+_Optimized NOM feature matrix for efficient queries. Sparse matrix format for sample x feature abundance data._
 
 
 
@@ -89,7 +89,8 @@ annotations:
   source_table:
     tag: source_table
     value: nom_matrix_optimized
-description: Optimized NOM feature matrix
+description: Optimized NOM feature matrix for efficient queries. Sparse matrix format
+  for sample x feature abundance data.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +105,8 @@ annotations:
   source_table:
     tag: source_table
     value: nom_matrix_optimized
-description: Optimized NOM feature matrix
+description: Optimized NOM feature matrix for efficient queries. Sparse matrix format
+  for sample x feature abundance data.
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

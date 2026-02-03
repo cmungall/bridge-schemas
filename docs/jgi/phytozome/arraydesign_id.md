@@ -17,8 +17,8 @@ Alias: arraydesign_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Assay](Assay.md) | Expression assay experiment |  no  |
 | [ArrayDesign](ArrayDesign.md) | Microarray or expression platform design |  no  |
+| [Assay](Assay.md) | Expression assay experiment |  no  |
 
 
 

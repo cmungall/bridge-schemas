@@ -17,8 +17,8 @@ Alias: contig_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TaxonCrisprSummary](TaxonCrisprSummary.md) |  |  no  |
 | [TaxonCrisprDetails](TaxonCrisprDetails.md) |  |  no  |
+| [TaxonCrisprSummary](TaxonCrisprSummary.md) |  |  no  |
 
 
 

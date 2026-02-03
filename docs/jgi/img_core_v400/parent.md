@@ -17,9 +17,9 @@ Alias: parent
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [GoTermParents](GoTermParents.md) |  |  no  |
 | [TaxonNodeLite](TaxonNodeLite.md) |  |  no  |
 | [Compound](Compound.md) |  |  no  |
-| [GoTermParents](GoTermParents.md) |  |  no  |
 | [DtTaxonNodeLite](DtTaxonNodeLite.md) |  |  no  |
 
 

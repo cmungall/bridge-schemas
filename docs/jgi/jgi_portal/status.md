@@ -18,8 +18,8 @@ Alias: status
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [KbasePushLog](KbasePushLog.md) | Log of data pushes to KBase |  no  |
-| [Job](Job.md) | Computational job (BLAST, alignment, etc |  no  |
 | [DownloadRequest](DownloadRequest.md) | User download request |  no  |
+| [Job](Job.md) | Computational job (BLAST, alignment, etc |  no  |
 
 
 

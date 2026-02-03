@@ -17,9 +17,9 @@ Alias: pi_name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
 | [GoldAnalysisProject](GoldAnalysisProject.md) |  |  no  |
 | [V5ApImperfectView](V5ApImperfectView.md) |  |  no  |
-| [GoldSequencingProject](GoldSequencingProject.md) |  |  no  |
 
 
 

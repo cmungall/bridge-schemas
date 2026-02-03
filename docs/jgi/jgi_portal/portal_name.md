@@ -17,8 +17,8 @@ Alias: portal_name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ImgTaxonOid](ImgTaxonOid.md) | IMG taxon OID mapping |  no  |
 | [FungiTaxonomyInfo](FungiTaxonomyInfo.md) | Fungal taxonomy information for MycoCosm |  no  |
+| [ImgTaxonOid](ImgTaxonOid.md) | IMG taxon OID mapping |  no  |
 
 
 

@@ -18,9 +18,9 @@ Alias: add_date
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [BcgRegionNew](BcgRegionNew.md) |  |  no  |
-| [BcgBinRegion](BcgBinRegion.md) |  |  no  |
-| [MyBcg](MyBcg.md) |  |  no  |
 | [BcgRegion](BcgRegion.md) |  |  no  |
+| [MyBcg](MyBcg.md) |  |  no  |
+| [BcgBinRegion](BcgBinRegion.md) |  |  no  |
 
 
 

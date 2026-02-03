@@ -17,10 +17,10 @@ Alias: img_taxon_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [MethModification](MethModification.md) |  |  no  |
+| [MethSample](MethSample.md) |  |  no  |
 | [MethMotif](MethMotif.md) |  |  no  |
 | [MethMotifSummary](MethMotifSummary.md) |  |  no  |
-| [MethSample](MethSample.md) |  |  no  |
-| [MethModification](MethModification.md) |  |  no  |
 
 
 

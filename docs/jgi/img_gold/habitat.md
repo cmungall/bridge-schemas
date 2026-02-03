@@ -17,8 +17,8 @@ Alias: habitat
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldSpHabitat](GoldSpHabitat.md) |  |  no  |
 | [GoldMasterBiosample](GoldMasterBiosample.md) |  |  no  |
+| [GoldSpHabitat](GoldSpHabitat.md) |  |  no  |
 
 
 

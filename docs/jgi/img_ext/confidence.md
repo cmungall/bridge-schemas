@@ -17,8 +17,8 @@ Alias: confidence
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GeneImgFunctions](GeneImgFunctions.md) |  |  no  |
 | [ImgPathwayTaxons](ImgPathwayTaxons.md) |  |  no  |
+| [GeneImgFunctions](GeneImgFunctions.md) |  |  no  |
 | [PathwayNetworkTaxons](PathwayNetworkTaxons.md) |  |  no  |
 
 

@@ -17,10 +17,10 @@ Alias: parents
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [PhenotypecvParents](PhenotypecvParents.md) |  |  no  |
-| [RelevancecvParents](RelevancecvParents.md) |  |  no  |
 | [DiseasecvParents](DiseasecvParents.md) |  |  no  |
 | [HabitatcvParents](HabitatcvParents.md) |  |  no  |
+| [RelevancecvParents](RelevancecvParents.md) |  |  no  |
+| [PhenotypecvParents](PhenotypecvParents.md) |  |  no  |
 
 
 

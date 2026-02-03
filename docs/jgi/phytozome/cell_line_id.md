@@ -17,9 +17,9 @@ Alias: cell_line_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [CellLineProp](CellLineProp.md) | Cell line property |  no  |
 | [CellLine](CellLine.md) | Cell line information |  no  |
 | [CellLineFeature](CellLineFeature.md) | Feature associated with cell line |  no  |
+| [CellLineProp](CellLineProp.md) | Cell line property |  no  |
 
 
 

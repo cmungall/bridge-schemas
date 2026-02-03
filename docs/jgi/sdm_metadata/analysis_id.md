@@ -17,10 +17,10 @@ Alias: analysis_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [AnalysisPublishingFlags](AnalysisPublishingFlags.md) | Publishing status flags for analyses |  no  |
+| [NcbiSubmission](NcbiSubmission.md) | NCBI submission record |  no  |
 | [AnalysisCallerWarnings](AnalysisCallerWarnings.md) | Warnings from analysis callers/tools |  no  |
 | [AnalysisPlocations](AnalysisPlocations.md) | Physical locations for analysis data |  no  |
-| [NcbiSubmission](NcbiSubmission.md) | NCBI submission record |  no  |
-| [AnalysisPublishingFlags](AnalysisPublishingFlags.md) | Publishing status flags for analyses |  no  |
 
 
 

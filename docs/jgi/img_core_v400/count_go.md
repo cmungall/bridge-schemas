@@ -17,8 +17,8 @@ Alias: count_go
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TaxonStats](TaxonStats.md) |  |  no  |
 | [ScaffoldStats](ScaffoldStats.md) |  |  no  |
+| [TaxonStats](TaxonStats.md) |  |  no  |
 
 
 

@@ -17,8 +17,8 @@ Alias: prop_accession
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GenomePropertyParents](GenomePropertyParents.md) |  |  no  |
 | [GenomeProperty](GenomeProperty.md) |  |  no  |
+| [GenomePropertyParents](GenomePropertyParents.md) |  |  no  |
 
 
 

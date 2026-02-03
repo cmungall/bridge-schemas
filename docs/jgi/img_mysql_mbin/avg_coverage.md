@@ -17,12 +17,12 @@ Alias: avg_coverage
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SemiEbin](SemiEbin.md) |  |  no  |
-| [BinCoverage](BinCoverage.md) |  |  no  |
 | [Bin](Bin.md) |  |  no  |
-| [Ebin](Ebin.md) |  |  no  |
 | [SemiBin](SemiBin.md) |  |  no  |
+| [Ebin](Ebin.md) |  |  no  |
+| [BinCoverage](BinCoverage.md) |  |  no  |
 | [SemiBinCoverage](SemiBinCoverage.md) |  |  no  |
+| [SemiEbin](SemiEbin.md) |  |  no  |
 
 
 

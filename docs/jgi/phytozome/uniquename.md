@@ -17,8 +17,8 @@ Alias: uniquename
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Feature](Feature.md) | Genomic feature (gene, mRNA, exon, CDS, etc |  no  |
 | [CellLine](CellLine.md) | Cell line information |  no  |
+| [Feature](Feature.md) | Genomic feature (gene, mRNA, exon, CDS, etc |  no  |
 
 
 

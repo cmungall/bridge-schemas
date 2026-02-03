@@ -17,8 +17,8 @@ Alias: entity_type
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Cluster](Cluster.md) | UniRef90 protein sequence cluster |  no  |
 | [Entity](Entity.md) | Protein entity in the UniRef90 database |  no  |
+| [Cluster](Cluster.md) | UniRef90 protein sequence cluster |  no  |
 
 
 

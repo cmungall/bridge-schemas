@@ -17,10 +17,11 @@ Alias: description
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [CogCategories](CogCategories.md) | COG functional categories |  no  |
-| [StudyTable](StudyTable.md) | NMDC research studies |  no  |
-| [AnnotationTermsUnified](AnnotationTermsUnified.md) | Unified annotation terms across sources (GO, KEGG, EC, COG, etc |  no  |
+| [StudyTable](StudyTable.md) | NMDC research studies with ecosystem classification and investigator informat... |  no  |
+| [AnnotationTermsUnified](AnnotationTermsUnified.md) | Unified annotation terms across sources (GO, KEGG, EC, COG, MetaCyc) |  no  |
 | [EcTerms](EcTerms.md) | Enzyme Commission (EC) number terms |  no  |
+| [MetacycPathways](MetacycPathways.md) | MetaCyc metabolic pathways with hierarchical classification |  no  |
+| [CogCategories](CogCategories.md) | COG functional categories with descriptions and colors |  no  |
 
 
 
@@ -63,6 +64,7 @@ domain_of:
 - EcTerms
 - CogCategories
 - StudyTable
+- MetacycPathways
 range: string
 
 ```

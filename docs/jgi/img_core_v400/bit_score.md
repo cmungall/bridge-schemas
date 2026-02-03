@@ -17,16 +17,16 @@ Alias: bit_score
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GeneCogGroups](GeneCogGroups.md) |  |  no  |
-| [GeneTigrfams](GeneTigrfams.md) |  |  no  |
-| [GeneKoTerms](GeneKoTerms.md) |  |  no  |
-| [DtPhylumDistGenes](DtPhylumDistGenes.md) |  |  no  |
-| [GenePfamFamilies](GenePfamFamilies.md) |  |  no  |
-| [GeneCathfam](GeneCathfam.md) |  |  no  |
-| [GeneSuperfam](GeneSuperfam.md) |  |  no  |
-| [GeneParalogs](GeneParalogs.md) |  |  no  |
-| [GeneSmart](GeneSmart.md) |  |  no  |
 | [GeneKogGroups](GeneKogGroups.md) |  |  no  |
+| [GenePfamFamilies](GenePfamFamilies.md) |  |  no  |
+| [GeneTigrfams](GeneTigrfams.md) |  |  no  |
+| [GeneCogGroups](GeneCogGroups.md) |  |  no  |
+| [GeneParalogs](GeneParalogs.md) |  |  no  |
+| [GeneKoTerms](GeneKoTerms.md) |  |  no  |
+| [GeneSuperfam](GeneSuperfam.md) |  |  no  |
+| [GeneSmart](GeneSmart.md) |  |  no  |
+| [GeneCathfam](GeneCathfam.md) |  |  no  |
+| [DtPhylumDistGenes](DtPhylumDistGenes.md) |  |  no  |
 
 
 

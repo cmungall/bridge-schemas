@@ -3,6 +3,11 @@
 # Slot: family 
 
 
+_Family name_
+
+
+
+
 
 URI: [https://w3id.org/kbase/nmdc_core/family](https://w3id.org/kbase/nmdc_core/family)
 Alias: family
@@ -17,7 +22,7 @@ Alias: family
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TaxonomyDim](TaxonomyDim.md) | Taxonomic hierarchy dimension table |  no  |
+| [TaxonomyDim](TaxonomyDim.md) | Taxonomic hierarchy dimension table using NCBI taxonomy |  no  |
 
 
 
@@ -30,6 +35,14 @@ Alias: family
 
 
 
+
+
+## Examples
+
+| Value |
+| --- |
+| Enterobacteriaceae |
+| Ichneumonidae |
 
 ## Identifier and Mapping Information
 
@@ -61,6 +74,12 @@ Alias: family
 <details>
 ```yaml
 name: family
+description: Family name
+examples:
+- value: Enterobacteriaceae
+  description: Enteric bacteria family
+- value: Ichneumonidae
+  description: Parasitoid wasps
 from_schema: https://w3id.org/kbase/nmdc_core
 rank: 1000
 alias: family

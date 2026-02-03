@@ -17,9 +17,9 @@ Alias: public_dap_count
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Study](Study.md) |  |  no  |
 | [Project](Project.md) |  |  no  |
 | [Biosample](Biosample.md) |  |  no  |
+| [Study](Study.md) |  |  no  |
 
 
 

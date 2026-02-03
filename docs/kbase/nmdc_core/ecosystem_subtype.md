@@ -3,6 +3,11 @@
 # Slot: ecosystem_subtype 
 
 
+_Ecosystem subtype for further classification_
+
+
+
+
 
 URI: [https://w3id.org/kbase/nmdc_core/ecosystem_subtype](https://w3id.org/kbase/nmdc_core/ecosystem_subtype)
 Alias: ecosystem_subtype
@@ -17,7 +22,7 @@ Alias: ecosystem_subtype
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [StudyTable](StudyTable.md) | NMDC research studies |  no  |
+| [StudyTable](StudyTable.md) | NMDC research studies with ecosystem classification and investigator informat... |  no  |
 
 
 
@@ -30,6 +35,15 @@ Alias: ecosystem_subtype
 
 
 
+
+
+## Examples
+
+| Value |
+| --- |
+| Wetlands |
+| River |
+| Unclassified |
 
 ## Identifier and Mapping Information
 
@@ -61,6 +75,14 @@ Alias: ecosystem_subtype
 <details>
 ```yaml
 name: ecosystem_subtype
+description: Ecosystem subtype for further classification
+examples:
+- value: Wetlands
+  description: Peatlands, marshes
+- value: River
+  description: River sediments
+- value: Unclassified
+  description: Not further classified
 from_schema: https://w3id.org/kbase/nmdc_core
 rank: 1000
 alias: ecosystem_subtype

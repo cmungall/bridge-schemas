@@ -17,8 +17,8 @@ Alias: pathogenicity
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [DwSamples](DwSamples.md) |  |  no  |
 | [OrganismV2](OrganismV2.md) |  |  no  |
+| [DwSamples](DwSamples.md) |  |  no  |
 
 
 

@@ -18,8 +18,8 @@ Alias: bin_methods
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [Bin](Bin.md) |  |  no  |
-| [NotLoadedMetagenomes](NotLoadedMetagenomes.md) |  |  no  |
 | [SemiBin](SemiBin.md) |  |  no  |
+| [NotLoadedMetagenomes](NotLoadedMetagenomes.md) |  |  no  |
 | [SemiBinNotLoaded](SemiBinNotLoaded.md) |  |  no  |
 
 

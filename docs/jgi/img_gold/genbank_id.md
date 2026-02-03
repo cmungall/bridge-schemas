@@ -17,9 +17,9 @@ Alias: genbank_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldMasterGenbank](GoldMasterGenbank.md) |  |  no  |
 | [GoldAnalysisProjectGenbanks](GoldAnalysisProjectGenbanks.md) |  |  no  |
 | [GoldApGenbank](GoldApGenbank.md) |  |  no  |
+| [GoldMasterGenbank](GoldMasterGenbank.md) |  |  no  |
 
 
 

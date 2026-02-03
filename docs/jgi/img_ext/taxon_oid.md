@@ -17,19 +17,19 @@ Alias: taxon_oid
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [TaxonSupfamCount](TaxonSupfamCount.md) |  |  no  |
-| [DtPhyloTaxonStats](DtPhyloTaxonStats.md) |  |  no  |
-| [MyimgBioClusterNp](MyimgBioClusterNp.md) |  |  no  |
-| [TaxonKoCount](TaxonKoCount.md) |  |  no  |
-| [TaxonCathfunfamCount](TaxonCathfunfamCount.md) |  |  no  |
-| [TaxonPfamCount](TaxonPfamCount.md) |  |  no  |
-| [TaxonUpdateRequest](TaxonUpdateRequest.md) |  |  no  |
-| [TaxonEcCount](TaxonEcCount.md) |  |  no  |
-| [NpBiosynthesisSource](NpBiosynthesisSource.md) |  |  no  |
-| [TaxonTigrCount](TaxonTigrCount.md) |  |  no  |
 | [DtAllPhyloTaxonStats](DtAllPhyloTaxonStats.md) |  |  no  |
-| [TaxonCogCount](TaxonCogCount.md) |  |  no  |
+| [TaxonTigrCount](TaxonTigrCount.md) |  |  no  |
+| [TaxonUpdateRequest](TaxonUpdateRequest.md) |  |  no  |
+| [TaxonKoCount](TaxonKoCount.md) |  |  no  |
+| [TaxonPfamCount](TaxonPfamCount.md) |  |  no  |
 | [TaxonSmartCount](TaxonSmartCount.md) |  |  no  |
+| [DtPhyloTaxonStats](DtPhyloTaxonStats.md) |  |  no  |
+| [TaxonEcCount](TaxonEcCount.md) |  |  no  |
+| [TaxonCogCount](TaxonCogCount.md) |  |  no  |
+| [MyimgBioClusterNp](MyimgBioClusterNp.md) |  |  no  |
+| [TaxonCathfunfamCount](TaxonCathfunfamCount.md) |  |  no  |
+| [TaxonSupfamCount](TaxonSupfamCount.md) |  |  no  |
+| [NpBiosynthesisSource](NpBiosynthesisSource.md) |  |  no  |
 
 
 

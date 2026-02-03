@@ -17,9 +17,9 @@ Alias: organism_name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Assembly](Assembly.md) |  |  no  |
 | [OrganismV2](OrganismV2.md) |  |  no  |
 | [NcbiAssembly](NcbiAssembly.md) |  |  no  |
-| [Assembly](Assembly.md) |  |  no  |
 
 
 

@@ -17,10 +17,10 @@ Alias: is_draft
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [OrganismV2](OrganismV2.md) |  |  no  |
 | [Project](Project.md) |  |  no  |
-| [Study](Study.md) |  |  no  |
 | [Biosample](Biosample.md) |  |  no  |
+| [Study](Study.md) |  |  no  |
+| [OrganismV2](OrganismV2.md) |  |  no  |
 
 
 

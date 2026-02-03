@@ -18,8 +18,8 @@ Alias: query_start
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [BcgGenePfamsObs](BcgGenePfamsObs.md) |  |  no  |
-| [BcgBinGenePfams](BcgBinGenePfams.md) |  |  no  |
 | [BcgGenePfams](BcgGenePfams.md) |  |  no  |
+| [BcgBinGenePfams](BcgBinGenePfams.md) |  |  no  |
 
 
 

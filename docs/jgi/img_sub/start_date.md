@@ -17,8 +17,8 @@ Alias: start_date
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MerfsAggregateFileSize](MerfsAggregateFileSize.md) |  |  no  |
 | [Batch](Batch.md) |  |  no  |
+| [MerfsAggregateFileSize](MerfsAggregateFileSize.md) |  |  no  |
 
 
 

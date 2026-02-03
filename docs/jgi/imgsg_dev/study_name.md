@@ -18,9 +18,9 @@ Alias: study_name
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [GoldStudy](GoldStudy.md) |  |  no  |
-| [StudyLoad](StudyLoad.md) |  |  no  |
 | [Goldv5View](Goldv5View.md) | snapshot table for snapshot IMGSG_DEV |  no  |
 | [Study](Study.md) |  |  no  |
+| [StudyLoad](StudyLoad.md) |  |  no  |
 
 
 

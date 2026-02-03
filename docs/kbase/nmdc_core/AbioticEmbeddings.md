@@ -3,7 +3,7 @@
 # Class: AbioticEmbeddings 
 
 
-_Abiotic factor embeddings_
+_Abiotic factor embeddings from environmental measurements (pH, temperature, moisture, etc.)._
 
 
 
@@ -89,7 +89,8 @@ annotations:
   source_table:
     tag: source_table
     value: abiotic_embeddings
-description: Abiotic factor embeddings
+description: Abiotic factor embeddings from environmental measurements (pH, temperature,
+  moisture, etc.).
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```
@@ -104,7 +105,8 @@ annotations:
   source_table:
     tag: source_table
     value: abiotic_embeddings
-description: Abiotic factor embeddings
+description: Abiotic factor embeddings from environmental measurements (pH, temperature,
+  moisture, etc.).
 from_schema: https://w3id.org/kbase/nmdc_core
 
 ```

@@ -17,8 +17,8 @@ Alias: notes
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GeneFeatureTags](GeneFeatureTags.md) |  |  no  |
 | [GeneNotes](GeneNotes.md) |  |  no  |
+| [GeneFeatureTags](GeneFeatureTags.md) |  |  no  |
 
 
 

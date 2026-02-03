@@ -18,8 +18,8 @@ Alias: study_id
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [GoldMasterStudy](GoldMasterStudy.md) |  |  no  |
-| [GoldMasterAnalysisProject](GoldMasterAnalysisProject.md) |  |  no  |
 | [GoldStudy](GoldStudy.md) |  |  no  |
+| [GoldMasterAnalysisProject](GoldMasterAnalysisProject.md) |  |  no  |
 | [GoldMasterPermission](GoldMasterPermission.md) |  |  no  |
 
 

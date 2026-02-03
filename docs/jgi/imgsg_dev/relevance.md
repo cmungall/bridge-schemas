@@ -17,8 +17,8 @@ Alias: relevance
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [GoldSpRelevance](GoldSpRelevance.md) |  |  no  |
 | [BioprojectRelevancecv](BioprojectRelevancecv.md) |  |  no  |
+| [GoldSpRelevance](GoldSpRelevance.md) |  |  no  |
 | [ProjectInfoBioproject](ProjectInfoBioproject.md) |  |  no  |
 
 
