@@ -1,0 +1,3793 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LinkML schemas for JGI and KBase genomics lakehouses">
+      
+      
+      
+      
+        <link rel="prev" href="../existing-schemas/">
+      
+      
+        <link rel="next" href="../functional-annotation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Microbial Traits - Bridge Schemas</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#microbial-traits-across-databases" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Bridge Schemas" class="md-header__button md-logo" aria-label="Bridge Schemas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bridge Schemas
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Microbial Traits
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cmungall/bridge-schemas" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Bridge Schemas" class="md-nav__button md-logo" aria-label="Bridge Schemas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bridge Schemas
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cmungall/bridge-schemas" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cross-database-joins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Database Joins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linkages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Linkages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explanations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Explanations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../existing-schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Existing Schemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microbial Traits
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microbial Traits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gold-curated-phenotypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GOLD: Curated Phenotypes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GOLD: Curated Phenotypes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controlled-vocabulary-cvphenotype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Controlled Vocabulary (cvphenotype)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-phenotypes-by-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Phenotypes by Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related-gold-trait-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related GOLD Trait Tables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#img-pathway-based-phenotype-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMG: Pathway-Based Phenotype Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IMG: Pathway-Based Phenotype Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phenotype-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phenotype Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rule-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rule Syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-lysine-auxotroph-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Lysine Auxotroph Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-pathways-are-defined" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Pathways Are Defined
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gene-annotation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gene Annotation Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phenotype-rule-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phenotype Rule Coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gapmind-pathway-completeness-scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GapMind: Pathway Completeness Scoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GapMind: Pathway Completeness Scoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pathway-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pathway Categories
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scoring System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Query
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-pathways-by-assessment-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Pathways by Assessment Count
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gapmind-vs-img-phenotype-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GapMind vs IMG Phenotype Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-validation-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Validation Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nmdc-unified-trait-model-planned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NMDC: Unified Trait Model (Planned)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NMDC: Unified Trait Model (Planned)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#planned-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planned Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intended-data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intended Data Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparing-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparing Approaches
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-database-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Database Queries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cross-Database Queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find-organisms-with-both-gold-and-img-phenotype-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Find organisms with both GOLD and IMG phenotype data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validate-img-rules-against-gold-curation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validate IMG rules against GOLD curation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-tables-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Tables Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Tables Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gold-gold-db-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GOLD (gold-db-2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#img-img-db-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMG (img-db-2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gapmind-kbase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GapMind (KBase)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommendations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-availability-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Availability Note
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functional-annotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Annotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../taxonomic-coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomic Coverage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Studies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Case Studies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../case-studies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../case-studies/mll-bgc-methylorubrum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mll BGC (M. extorquens)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../case-studies/microbial-isolates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microbial Isolates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KBase/BERDL Schemas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    KBase/BERDL Schemas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_ke_pangenome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pangenome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/nmdc_core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NMDC Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_genomes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Genomes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/gapmind_pathways/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GapMind Pathways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/enigma_coral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENIGMA CoRAL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/phagefoundry_genome_browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PhageFoundry Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/phagefoundry_strain_modelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PhageFoundry Modelling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_uniprot_archaea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniProt Archaea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_uniprot_bacteria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniProt Bacteria
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_uniref50/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniRef50
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_uniref90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniRef90
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_uniref100/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniRef100
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_phenotype/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phenotype
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_msd_biochemistry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSD Biochemistry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_ontology_source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ontology Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_refseq_taxon_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RefSeq Taxon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JGI Lakehouse Schemas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    JGI Lakehouse Schemas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/gold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOLD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_core_v400/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Extended
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_gold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG GOLD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_sat_v450/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Satellite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_sub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Submission
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/imgsg_dev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_i_taxon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_methylome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Methylome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_proteome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Proteome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_rnaseq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG RNAseq
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_mysql_abc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL ABC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_mysql_img/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_mysql_imgvr_prod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG/VR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_mysql_mbin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL MBin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/img_mysql_misi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL MISI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/phytozome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phytozome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/mycocosm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MycoCosm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/gcs_citation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citation Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/jgi_portal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JGI Portal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/sdm_metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDM Metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jgi/smc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SMC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gold-curated-phenotypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GOLD: Curated Phenotypes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GOLD: Curated Phenotypes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controlled-vocabulary-cvphenotype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Controlled Vocabulary (cvphenotype)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-phenotypes-by-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Phenotypes by Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related-gold-trait-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related GOLD Trait Tables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#img-pathway-based-phenotype-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMG: Pathway-Based Phenotype Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IMG: Pathway-Based Phenotype Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phenotype-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phenotype Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rule-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rule Syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-lysine-auxotroph-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Lysine Auxotroph Rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-pathways-are-defined" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Pathways Are Defined
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gene-annotation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gene Annotation Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phenotype-rule-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phenotype Rule Coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gapmind-pathway-completeness-scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GapMind: Pathway Completeness Scoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GapMind: Pathway Completeness Scoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pathway-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pathway Categories
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scoring System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Query
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-pathways-by-assessment-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Pathways by Assessment Count
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gapmind-vs-img-phenotype-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GapMind vs IMG Phenotype Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-validation-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Validation Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nmdc-unified-trait-model-planned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NMDC: Unified Trait Model (Planned)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NMDC: Unified Trait Model (Planned)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#planned-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planned Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intended-data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intended Data Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparing-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparing Approaches
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-database-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Database Queries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cross-Database Queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find-organisms-with-both-gold-and-img-phenotype-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Find organisms with both GOLD and IMG phenotype data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validate-img-rules-against-gold-curation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validate IMG rules against GOLD curation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-tables-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Tables Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Tables Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gold-gold-db-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GOLD (gold-db-2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#img-img-db-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMG (img-db-2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gapmind-kbase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GapMind (KBase)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommendations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-availability-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Availability Note
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="microbial-traits-across-databases">Microbial Traits Across Databases</h1>
+<p>This document explains how microbial traits (phenotypes, metabolic capabilities) are modeled
+across different databases in the JGI and KBase lakehouses.</p>
+<h2 id="overview">Overview</h2>
+<p>Trait data exists in multiple databases with different modeling approaches:</p>
+<table>
+<thead>
+<tr>
+<th>Database</th>
+<th>Approach</th>
+<th>Tables</th>
+<th>Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GOLD</strong></td>
+<td>Curated phenotypes</td>
+<td><code>cvphenotype</code>, <code>organism_phenotype</code></td>
+<td>7,113 mappings</td>
+</tr>
+<tr>
+<td><strong>IMG</strong></td>
+<td>Pathway-based rules</td>
+<td><code>phenotype_rule</code>, <code>phenotype_rule_taxons</code></td>
+<td>2M+ predictions</td>
+</tr>
+<tr>
+<td><strong>GapMind</strong></td>
+<td>Pathway completeness</td>
+<td><code>gapmind_pathways</code></td>
+<td>463M assessments</td>
+</tr>
+<tr>
+<td><strong>NMDC</strong></td>
+<td>Unified (planned)</td>
+<td><code>trait_unified</code>, <code>trait_sources</code></td>
+<td>Not yet implemented</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Not Available:</strong> MicroTraits database is not currently integrated into these lakehouses.</p>
+<h2 id="gold-curated-phenotypes">GOLD: Curated Phenotypes</h2>
+<p>GOLD stores manually curated phenotype annotations assigned by experts during genome registration.</p>
+<h3 id="schema">Schema</h3>
+<div class="highlight"><pre><span></span><code>cvphenotype (159 terms)
+    │
+    │ phenotype_id
+    ▼
+organism_phenotype (7,113 mappings)
+    │
+    │ organism_id
+    ▼
+organism_v2 (organism metadata)
+</code></pre></div>
+<h3 id="controlled-vocabulary-cvphenotype">Controlled Vocabulary (cvphenotype)</h3>
+<p>159 phenotype terms organized into functional categories:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Example Terms</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pathogenicity</td>
+<td>Pathogen, Non-Pathogen, Opportunistic Pathogen</td>
+<td>~10</td>
+</tr>
+<tr>
+<td>Extremophiles</td>
+<td>Acidophile, Alkaliphile, Thermoacidophile, Piezophile</td>
+<td>~8</td>
+</tr>
+<tr>
+<td>Metabolism</td>
+<td>Nitrogen cycle, Sulfur cycle, Carbon sequestration</td>
+<td>~5</td>
+</tr>
+<tr>
+<td>Biochemical</td>
+<td>Catalase positive, Catalase negative, Beta-hemolytic</td>
+<td>~15</td>
+</tr>
+<tr>
+<td>Ecological</td>
+<td>Symbiont, Probiotic, Biofilm, Bioluminescent</td>
+<td>~20</td>
+</tr>
+</tbody>
+</table>
+<h3 id="top-phenotypes-by-usage">Top Phenotypes by Usage</h3>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">term</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">organism_count</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;gold-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">organism_phenotype</span><span class="w"> </span><span class="n">op</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;gold-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">cvphenotype</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">op</span><span class="p">.</span><span class="n">phenotype_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">term</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">organism_count</span><span class="w"> </span><span class="k">DESC</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Phenotype</th>
+<th>Organisms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pathogen</td>
+<td>3,132</td>
+</tr>
+<tr>
+<td>Non-Pathogen</td>
+<td>576</td>
+</tr>
+<tr>
+<td>Catalase negative</td>
+<td>520</td>
+</tr>
+<tr>
+<td>Catalase positive</td>
+<td>414</td>
+</tr>
+<tr>
+<td>Opportunistic Pathogen</td>
+<td>279</td>
+</tr>
+<tr>
+<td>Beta-hemolytic</td>
+<td>236</td>
+</tr>
+<tr>
+<td>Parasite</td>
+<td>146</td>
+</tr>
+<tr>
+<td>Acidophile</td>
+<td>143</td>
+</tr>
+<tr>
+<td>Intracellular pathogen</td>
+<td>123</td>
+</tr>
+<tr>
+<td>Probiotic</td>
+<td>106</td>
+</tr>
+</tbody>
+</table>
+<h3 id="related-gold-trait-tables">Related GOLD Trait Tables</h3>
+<p>GOLD uses the same pattern for other organism characteristics:</p>
+<table>
+<thead>
+<tr>
+<th>CV Table</th>
+<th>Terms</th>
+<th>Mapping Table</th>
+<th>Assignments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cvphenotype</code></td>
+<td>159</td>
+<td><code>organism_phenotype</code></td>
+<td>7,113</td>
+</tr>
+<tr>
+<td><code>cvmetabolism</code></td>
+<td>157</td>
+<td><code>organism_metabolism</code></td>
+<td>2,423</td>
+</tr>
+<tr>
+<td><code>cvhabitat</code></td>
+<td>957</td>
+<td><code>organism_habitat</code></td>
+<td>46,296</td>
+</tr>
+<tr>
+<td><code>cvenergy_source</code></td>
+<td>31</td>
+<td><code>organism_energy_source</code></td>
+<td>8,316</td>
+</tr>
+<tr>
+<td><code>cvbiotic_relationship</code></td>
+<td>3</td>
+<td><code>organism_biotic_rel</code></td>
+<td>9,434</td>
+</tr>
+<tr>
+<td><code>cvdisease</code></td>
+<td>434</td>
+<td><code>organism_disease</code></td>
+<td>12,520</td>
+</tr>
+</tbody>
+</table>
+<h2 id="img-pathway-based-phenotype-rules">IMG: Pathway-Based Phenotype Rules</h2>
+<p>IMG predicts phenotypes computationally based on pathway presence/absence in genomes.</p>
+<h3 id="schema_1">Schema</h3>
+<div class="highlight"><pre><span></span><code>img_pathway (pathway definitions)
+    │
+    │ pathway_oid
+    ▼
+img_pathway_reactions (ordered reaction steps)
+    │
+    │ rxn_oid
+    ▼
+img_reaction → img_reaction_catalysts → img_term (enzyme definitions)
+    │
+    │ term_oid
+    ▼
+gene_img_functions (gene → enzyme annotations)
+    │
+    │ gene_oid
+    ▼
+gene (individual genes in genomes)
+</code></pre></div>
+<h3 id="phenotype-rules">Phenotype Rules</h3>
+<p>65 logical rules that predict traits from pathway presence:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">rule_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">cv_type</span><span class="p">,</span><span class="w"> </span><span class="n">cv_value</span><span class="p">,</span><span class="w"> </span><span class="k">rule</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_ext</span><span class="p">.</span><span class="n">phenotype_rule</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>rule_id</th>
+<th>name</th>
+<th>cv_type</th>
+<th>cv_value</th>
+<th>rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>Aerobe</td>
+<td>oxygen_req</td>
+<td>Aerobe</td>
+<td><code>(768\|769\|770)</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Denitrifier</td>
+<td>metabolism</td>
+<td>Denitrifying</td>
+<td><code>(764),(765),(766),(767)</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Carbon fixation</td>
+<td>metabolism</td>
+<td>Carbon fixation</td>
+<td><code>(527\|335\|285\|...)</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td>L-lysine auxotroph</td>
+<td>metabolism</td>
+<td>Auxotroph</td>
+<td><code>(!170),(!169),(!199),...</code></td>
+</tr>
+<tr>
+<td>22</td>
+<td>L-histidine auxotroph</td>
+<td>metabolism</td>
+<td>Auxotroph</td>
+<td><code>(!162)</code></td>
+</tr>
+<tr>
+<td>52</td>
+<td>Dissimilatory sulfate reduction</td>
+<td>metabolism</td>
+<td>Sulfate reducer</td>
+<td><code>(870),(864),(871)</code></td>
+</tr>
+<tr>
+<td>53</td>
+<td>Nitrogen fixer</td>
+<td>metabolism</td>
+<td>Nitrogen fixation</td>
+<td><code>(798)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="rule-syntax">Rule Syntax</h3>
+<p>Rules use IMG pathway IDs with logical operators:</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(N)</code></td>
+<td>Pathway N present</td>
+<td><code>(798)</code> = has nitrogenase</td>
+</tr>
+<tr>
+<td><code>(!N)</code></td>
+<td>Pathway N absent</td>
+<td><code>(!162)</code> = lacks histidine synthesis</td>
+</tr>
+<tr>
+<td><code>\|</code></td>
+<td>OR (within group)</td>
+<td><code>(768\|769\|770)</code> = has ANY quinol oxidase</td>
+</tr>
+<tr>
+<td><code>,</code></td>
+<td>AND (between groups)</td>
+<td><code>(764),(765)</code> = has BOTH pathways</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-lysine-auxotroph-rule">Example: Lysine Auxotroph Rule</h3>
+<p>The rule <code>(!170),(!169),(!199),(!333),(!465),(!171)</code> means "lacks ALL lysine biosynthesis pathways":</p>
+<table>
+<thead>
+<tr>
+<th>Pathway</th>
+<th>Name</th>
+<th>If Absent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>170</td>
+<td>L-lysine synthesis (acetylated intermediates)</td>
+<td>Missing DAP-acetyl route</td>
+</tr>
+<tr>
+<td>169</td>
+<td>L-lysine synthesis (succinylated intermediates)</td>
+<td>Missing DAP-succinyl route</td>
+</tr>
+<tr>
+<td>199</td>
+<td>L-lysine synthesis by fungal aminoadipate</td>
+<td>Missing fungal route</td>
+</tr>
+<tr>
+<td>333</td>
+<td>L-lysine synthesis by prokaryotic aminoadipate</td>
+<td>Missing bacterial AAA route</td>
+</tr>
+<tr>
+<td>465</td>
+<td>L-lysine synthesis with DAP aminotransferase</td>
+<td>Missing DAP-AT route</td>
+</tr>
+<tr>
+<td>171</td>
+<td>L-lysine synthesis with DAP dehydrogenase</td>
+<td>Missing DAP-DH route</td>
+</tr>
+</tbody>
+</table>
+<p>An organism is predicted as <strong>L-lysine auxotroph</strong> if it lacks ALL six pathways.</p>
+<h3 id="how-pathways-are-defined">How Pathways Are Defined</h3>
+<p>Each pathway is defined as ordered reactions with required enzymes:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Pathway 170: L-lysine synthesis (acetylated intermediates)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">pr</span><span class="p">.</span><span class="n">rxn_order</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">rxn_name</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">term</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">enzyme</span><span class="p">,</span><span class="w"> </span><span class="n">te</span><span class="p">.</span><span class="n">enzymes</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">ec_number</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_ext</span><span class="p">.</span><span class="n">img_pathway_reactions</span><span class="w"> </span><span class="n">pr</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_ext</span><span class="p">.</span><span class="n">img_reaction</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">pr</span><span class="p">.</span><span class="n">rxn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">rxn_oid</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_ext</span><span class="p">.</span><span class="n">img_reaction_catalysts</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">rxn_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rc</span><span class="p">.</span><span class="n">rxn_oid</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_ext</span><span class="p">.</span><span class="n">img_term</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">rc</span><span class="p">.</span><span class="n">catalysts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">term_oid</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_ext</span><span class="p">.</span><span class="n">img_term_enzymes</span><span class="w"> </span><span class="n">te</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">term_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">te</span><span class="p">.</span><span class="n">term_oid</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">pr</span><span class="p">.</span><span class="n">pathway_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">170</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">pr</span><span class="p">.</span><span class="n">rxn_order</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Enzyme</th>
+<th>EC Number</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Aspartate kinase</td>
+<td>EC:2.7.2.4</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Aspartate semialdehyde dehydrogenase</td>
+<td>EC:1.2.1.11</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Dihydrodipicolinate synthase</td>
+<td>EC:4.2.1.52</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Dihydrodipicolinate reductase</td>
+<td>EC:1.3.1.26</td>
+</tr>
+<tr>
+<td>5</td>
+<td>THDP N-acetyltransferase</td>
+<td>EC:2.3.1.89</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Acetyldiaminopimelate aminotransferase</td>
+<td>EC:2.6.1.-</td>
+</tr>
+<tr>
+<td>7</td>
+<td>N-acetyl-DAP deacetylase</td>
+<td>EC:3.5.1.47</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Diaminopimelate epimerase</td>
+<td>EC:5.1.1.7</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Diaminopimelate decarboxylase</td>
+<td>EC:4.1.1.20</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gene-annotation-pipeline">Gene Annotation Pipeline</h3>
+<p>Genes are annotated to enzymes via multiple evidence types:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">gif</span><span class="p">.</span><span class="n">evidence</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">gene_count</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_ext</span><span class="p">.</span><span class="n">gene_img_functions</span><span class="w"> </span><span class="n">gif</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">gif</span><span class="p">.</span><span class="n">evidence</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Evidence</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BLAST</td>
+<td>Sequence similarity to characterized proteins</td>
+</tr>
+<tr>
+<td>Inferred</td>
+<td>Transferred from ortholog annotations</td>
+</tr>
+<tr>
+<td>HMM</td>
+<td>Hidden Markov Model profile matches</td>
+</tr>
+</tbody>
+</table>
+<h3 id="phenotype-rule-coverage">Phenotype Rule Coverage</h3>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">pr</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">prt</span><span class="p">.</span><span class="n">taxon</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">taxon_count</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_ext</span><span class="p">.</span><span class="n">phenotype_rule</span><span class="w"> </span><span class="n">pr</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_ext</span><span class="p">.</span><span class="n">phenotype_rule_taxons</span><span class="w"> </span><span class="n">prt</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">pr</span><span class="p">.</span><span class="n">rule_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prt</span><span class="p">.</span><span class="n">rule_id</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">pr</span><span class="p">.</span><span class="n">name</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">taxon_count</span><span class="w"> </span><span class="k">DESC</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Phenotype Rule</th>
+<th>Taxa Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L-histidine auxotroph</td>
+<td>74,695</td>
+</tr>
+<tr>
+<td>L-glutamate prototroph</td>
+<td>73,791</td>
+</tr>
+<tr>
+<td>L-phenylalanine auxotroph</td>
+<td>72,742</td>
+</tr>
+<tr>
+<td>L-tyrosine auxotroph</td>
+<td>72,589</td>
+</tr>
+<tr>
+<td>Non-biotin synthesizer</td>
+<td>71,742</td>
+</tr>
+<tr>
+<td>L-lysine auxotroph</td>
+<td>69,651</td>
+</tr>
+<tr>
+<td>Non-selenocysteine synthesizer</td>
+<td>67,786</td>
+</tr>
+<tr>
+<td>Glycine prototroph</td>
+<td>66,760</td>
+</tr>
+<tr>
+<td>L-leucine auxotroph</td>
+<td>63,982</td>
+</tr>
+<tr>
+<td>Aerobe</td>
+<td>45,956</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gapmind-pathway-completeness-scoring">GapMind: Pathway Completeness Scoring</h2>
+<p>GapMind (Price et al. 2020) assesses metabolic pathway completeness by searching for
+characterized enzymes and transporters in genome sequences.</p>
+<h3 id="schema_2">Schema</h3>
+<div class="highlight"><pre><span></span><code>gapmind_pathways (463M assessments)
+    │
+    │ genome_id
+    ▼
+kbase_ke_pangenome.genome (293K genomes)
+</code></pre></div>
+<h3 id="pathway-categories">Pathway Categories</h3>
+<p>80 metabolic pathways organized into three categories:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Description</th>
+<th>Example Pathways</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>aa</code></td>
+<td>Amino acid biosynthesis</td>
+<td>arg, asn, cys, gln, his, ile, leu, lys, met, phe, pro, ser, thr, trp, tyr, val</td>
+</tr>
+<tr>
+<td><code>carbon</code></td>
+<td>Carbon source utilization</td>
+<td>sucrose, lactose, maltose, trehalose, cellobiose, glucose</td>
+</tr>
+<tr>
+<td><code>aromatic</code></td>
+<td>Aromatic compound metabolism</td>
+<td>4-hydroxybenzoate, phenylacetate</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scoring-system">Scoring System</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nHi</code></td>
+<td>High-confidence gene hits (strong matches)</td>
+</tr>
+<tr>
+<td><code>nMed</code></td>
+<td>Medium-confidence gene hits</td>
+</tr>
+<tr>
+<td><code>nLo</code></td>
+<td>Low-confidence gene hits (weak matches)</td>
+</tr>
+<tr>
+<td><code>score</code></td>
+<td>Overall score (positive = complete, negative = incomplete)</td>
+</tr>
+<tr>
+<td><code>score_category</code></td>
+<td><code>present</code>, <code>partial</code>, or <code>not_present</code></td>
+</tr>
+<tr>
+<td><code>score_simplified</code></td>
+<td>1.0 (present), 0.5 (partial), 0.0 (not_present)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-query">Example Query</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Find genomes that can synthesize all amino acids</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">genome_id</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">complete_pathways</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">globalusers_gapmind_pathways</span><span class="p">.</span><span class="n">gapmind_pathways</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">metabolic_category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;aa&#39;</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">score_category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;present&#39;</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">genome_id</span>
+<span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">20</span>
+</code></pre></div>
+<h3 id="top-pathways-by-assessment-count">Top Pathways by Assessment Count</h3>
+<table>
+<thead>
+<tr>
+<th>Pathway</th>
+<th>Assessments</th>
+<th>Category</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>phenylalanine</td>
+<td>18,603,662</td>
+<td>aa</td>
+</tr>
+<tr>
+<td>arginine</td>
+<td>15,945,996</td>
+<td>aa</td>
+</tr>
+<tr>
+<td>citrulline</td>
+<td>14,617,163</td>
+<td>aa</td>
+</tr>
+<tr>
+<td>4-hydroxybenzoate</td>
+<td>14,617,163</td>
+<td>aromatic</td>
+</tr>
+<tr>
+<td>threonine</td>
+<td>14,617,163</td>
+<td>aa</td>
+</tr>
+<tr>
+<td>sucrose</td>
+<td>13,288,330</td>
+<td>carbon</td>
+</tr>
+<tr>
+<td>lactose</td>
+<td>13,288,330</td>
+<td>carbon</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gapmind-vs-img-phenotype-rules">GapMind vs IMG Phenotype Rules</h3>
+<p>Both predict auxotrophy/prototrophy but differ in approach:</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>GapMind</th>
+<th>IMG Rules</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Method</strong></td>
+<td>Score-based pathway completeness</td>
+<td>Boolean pathway presence</td>
+</tr>
+<tr>
+<td><strong>Output</strong></td>
+<td>present/partial/not_present</td>
+<td>auxotroph/prototroph</td>
+</tr>
+<tr>
+<td><strong>Granularity</strong></td>
+<td>Individual pathways with scores</td>
+<td>Binary predictions</td>
+</tr>
+<tr>
+<td><strong>Coverage</strong></td>
+<td>463M assessments, 80 pathways</td>
+<td>2M taxon mappings, 65 rules</td>
+</tr>
+<tr>
+<td><strong>Reference</strong></td>
+<td>Price et al. 2020</td>
+<td>IMG internal</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cross-validation-example">Cross-Validation Example</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Compare GapMind lysine scores with IMG lysine auxotroph predictions</span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="k">g</span><span class="p">.</span><span class="n">genome_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">gm</span><span class="p">.</span><span class="n">score_category</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">gapmind_lys</span><span class="p">,</span>
+<span class="w">    </span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">prt</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;auxotroph&#39;</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;prototroph&#39;</span><span class="w"> </span><span class="k">END</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">img_lys</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">kbase_ke_pangenome</span><span class="p">.</span><span class="n">genome</span><span class="w"> </span><span class="k">g</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">globalusers_gapmind_pathways</span><span class="p">.</span><span class="n">gapmind_pathways</span><span class="w"> </span><span class="n">gm</span>
+<span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">genome_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gm</span><span class="p">.</span><span class="n">genome_id</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">gm</span><span class="p">.</span><span class="n">pathway</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;lys&#39;</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_ext</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="n">t</span>
+<span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="k">SUBSTRING</span><span class="p">(</span><span class="k">g</span><span class="p">.</span><span class="n">genome_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">ncbi_assembly_accession</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_ext</span><span class="p">.</span><span class="n">phenotype_rule_taxons</span><span class="w"> </span><span class="n">prt</span>
+<span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">taxon_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prt</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">prt</span><span class="p">.</span><span class="n">rule_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="w">  </span><span class="c1">-- L-lysine auxotroph rule</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">100</span>
+</code></pre></div>
+<h2 id="nmdc-unified-trait-model-planned">NMDC: Unified Trait Model (Planned)</h2>
+<p>NMDC aims to unify trait data from multiple sources with provenance tracking.</p>
+<h3 id="planned-schema">Planned Schema</h3>
+<div class="highlight"><pre><span></span><code>trait_sources (provenance)
+    │
+    │ source_id
+    ▼
+trait_taxonomy_mapping (trait-taxon assignments)
+    │
+    │ trait_id
+    ▼
+trait_unified (unified vocabulary)
+</code></pre></div>
+<h3 id="intended-data-flow">Intended Data Flow</h3>
+<div class="highlight"><pre><span></span><code>GOLD cvphenotype ─────┐
+     (159 terms)      │
+                      ├──► trait_unified (combined vocabulary)
+IMG phenotype_rule ───┤         │
+     (65 rules)       │         ▼
+                      │    trait_taxonomy_mapping
+Literature mining ────┘         │
+                               ▼
+                        trait_sources (provenance)
+</code></pre></div>
+<h3 id="source-types">Source Types</h3>
+<table>
+<thead>
+<tr>
+<th>Source Type</th>
+<th>Origin</th>
+<th>Confidence</th>
+<th>Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gold_curated</code></td>
+<td>GOLD organism_phenotype</td>
+<td>High</td>
+<td>7,113</td>
+</tr>
+<tr>
+<td><code>img_rule_based</code></td>
+<td>IMG phenotype_rule_taxons</td>
+<td>Medium-High</td>
+<td>2,059,203</td>
+</tr>
+<tr>
+<td><code>literature</code></td>
+<td>PubMed NLP extraction</td>
+<td>Variable</td>
+<td>TBD</td>
+</tr>
+<tr>
+<td><code>computed</code></td>
+<td>ML predictions</td>
+<td>Requires validation</td>
+<td>TBD</td>
+</tr>
+</tbody>
+</table>
+<h2 id="comparing-approaches">Comparing Approaches</h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>GOLD</th>
+<th>IMG Rules</th>
+<th>GapMind</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Method</strong></td>
+<td>Manual curation</td>
+<td>Boolean pathway rules</td>
+<td>Scored pathway completeness</td>
+</tr>
+<tr>
+<td><strong>Confidence</strong></td>
+<td>High (expert)</td>
+<td>Medium-high</td>
+<td>Medium-high</td>
+</tr>
+<tr>
+<td><strong>Coverage</strong></td>
+<td>Limited (7K)</td>
+<td>Broad (2M+)</td>
+<td>Very broad (463M)</td>
+</tr>
+<tr>
+<td><strong>Granularity</strong></td>
+<td>Organism-level</td>
+<td>Genome-level</td>
+<td>Genome × pathway</td>
+</tr>
+<tr>
+<td><strong>Output</strong></td>
+<td>Categorical traits</td>
+<td>Binary predictions</td>
+<td>Scores + categories</td>
+</tr>
+<tr>
+<td><strong>Update frequency</strong></td>
+<td>Slow (manual)</td>
+<td>Automatic</td>
+<td>Automatic</td>
+</tr>
+<tr>
+<td><strong>Best for</strong></td>
+<td>Pathogenicity, extremophiles</td>
+<td>Auxotrophy/prototrophy</td>
+<td>Metabolic potential</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cross-database-queries">Cross-Database Queries</h2>
+<h3 id="find-organisms-with-both-gold-and-img-phenotype-data">Find organisms with both GOLD and IMG phenotype data</h3>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
+<span class="w">    </span><span class="k">g</span><span class="p">.</span><span class="n">organism_name</span><span class="p">,</span>
+<span class="w">    </span><span class="n">gp</span><span class="p">.</span><span class="n">term</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">gold_phenotype</span><span class="p">,</span>
+<span class="w">    </span><span class="n">pr</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">img_predicted_trait</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;gold-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">organism_v2</span><span class="w"> </span><span class="k">g</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;gold-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">organism_phenotype</span><span class="w"> </span><span class="n">op</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">organism_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">op</span><span class="p">.</span><span class="n">organism_id</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;gold-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">cvphenotype</span><span class="w"> </span><span class="n">gp</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">op</span><span class="p">.</span><span class="n">phenotype_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gp</span><span class="p">.</span><span class="n">id</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_ext</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">ncbi_taxon_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">ncbi_taxon_id</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_ext</span><span class="p">.</span><span class="n">phenotype_rule_taxons</span><span class="w"> </span><span class="n">prt</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">taxon_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prt</span><span class="p">.</span><span class="n">taxon</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_ext</span><span class="p">.</span><span class="n">phenotype_rule</span><span class="w"> </span><span class="n">pr</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">prt</span><span class="p">.</span><span class="n">rule_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pr</span><span class="p">.</span><span class="n">rule_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">gp</span><span class="p">.</span><span class="n">term</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Nitrogen fixation&#39;</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">pr</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Nitrogen fixer&#39;</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div>
+<h3 id="validate-img-rules-against-gold-curation">Validate IMG rules against GOLD curation</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Find genomes where IMG predicts auxotrophy but GOLD says prototrophic</span>
+<span class="c1">-- (potential false positives or annotation errors)</span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="k">g</span><span class="p">.</span><span class="n">organism_name</span><span class="p">,</span>
+<span class="w">    </span><span class="n">pr</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">img_prediction</span><span class="p">,</span>
+<span class="w">    </span><span class="n">gp</span><span class="p">.</span><span class="n">term</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">gold_annotation</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;gold-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">organism_v2</span><span class="w"> </span><span class="k">g</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_ext</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">ncbi_taxon_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">ncbi_taxon_id</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_ext</span><span class="p">.</span><span class="n">phenotype_rule_taxons</span><span class="w"> </span><span class="n">prt</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">taxon_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prt</span><span class="p">.</span><span class="n">taxon</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_ext</span><span class="p">.</span><span class="n">phenotype_rule</span><span class="w"> </span><span class="n">pr</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">prt</span><span class="p">.</span><span class="n">rule_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pr</span><span class="p">.</span><span class="n">rule_id</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;gold-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">organism_phenotype</span><span class="w"> </span><span class="n">op</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">organism_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">op</span><span class="p">.</span><span class="n">organism_id</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;gold-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">cvphenotype</span><span class="w"> </span><span class="n">gp</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">op</span><span class="p">.</span><span class="n">phenotype_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gp</span><span class="p">.</span><span class="n">id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">pr</span><span class="p">.</span><span class="n">cv_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Auxotroph&#39;</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">gp</span><span class="p">.</span><span class="n">term</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%prototroph%&#39;</span>
+</code></pre></div>
+<h2 id="key-tables-reference">Key Tables Reference</h2>
+<h3 id="gold-gold-db-2">GOLD (gold-db-2)</h3>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Description</th>
+<th>Rows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cvphenotype</code></td>
+<td>Phenotype vocabulary</td>
+<td>159</td>
+</tr>
+<tr>
+<td><code>organism_phenotype</code></td>
+<td>Organism-phenotype mappings</td>
+<td>7,113</td>
+</tr>
+<tr>
+<td><code>cvmetabolism</code></td>
+<td>Metabolism vocabulary</td>
+<td>157</td>
+</tr>
+<tr>
+<td><code>organism_metabolism</code></td>
+<td>Organism-metabolism mappings</td>
+<td>2,423</td>
+</tr>
+<tr>
+<td><code>cvenergy_source</code></td>
+<td>Energy source vocabulary</td>
+<td>31</td>
+</tr>
+</tbody>
+</table>
+<h3 id="img-img-db-2">IMG (img-db-2)</h3>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Schema</th>
+<th>Description</th>
+<th>Rows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>phenotype_rule</code></td>
+<td>img_ext</td>
+<td>Rule definitions</td>
+<td>65</td>
+</tr>
+<tr>
+<td><code>phenotype_rule_taxons</code></td>
+<td>img_ext</td>
+<td>Rule-taxon mappings</td>
+<td>2,059,203</td>
+</tr>
+<tr>
+<td><code>img_pathway</code></td>
+<td>img_ext</td>
+<td>Pathway definitions</td>
+<td>~1,000</td>
+</tr>
+<tr>
+<td><code>img_pathway_reactions</code></td>
+<td>img_ext</td>
+<td>Pathway-reaction links</td>
+<td>~10,000</td>
+</tr>
+<tr>
+<td><code>img_term</code></td>
+<td>img_ext</td>
+<td>Enzyme term definitions</td>
+<td>~10,000</td>
+</tr>
+<tr>
+<td><code>gene_img_functions</code></td>
+<td>img_ext</td>
+<td>Gene-enzyme annotations</td>
+<td>Millions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gapmind-kbase">GapMind (KBase)</h3>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Description</th>
+<th>Rows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gapmind_pathways</code></td>
+<td>Pathway completeness assessments</td>
+<td>463,729,001</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Reference:</strong> Price et al. 2020 "GapMind: Automated Annotation of Amino Acid Biosynthesis" mSystems 5:e00291-20</p>
+<h2 id="recommendations">Recommendations</h2>
+<ol>
+<li><strong>For curated, high-confidence traits</strong>: Use GOLD <code>organism_phenotype</code></li>
+<li><strong>For broad coverage predictions</strong>: Use IMG <code>phenotype_rule_taxons</code></li>
+<li><strong>For amino acid auxotrophy/prototrophy</strong>: Both IMG rules and GapMind are comprehensive</li>
+<li><strong>For pathway completeness with scores</strong>: Use GapMind <code>gapmind_pathways</code></li>
+<li><strong>For pathogenicity</strong>: GOLD curation is more reliable</li>
+<li><strong>For cross-validation</strong>: Join sources on NCBI taxonomy ID or assembly accession</li>
+</ol>
+<h2 id="data-availability-note">Data Availability Note</h2>
+<p><strong>MicroTraits</strong> database is not currently integrated into the JGI or KBase lakehouses.
+If you need MicroTraits data, you may need to access it from its original source.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

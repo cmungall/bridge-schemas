@@ -1,0 +1,3121 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LinkML schemas for JGI and KBase genomics lakehouses">
+      
+      
+      
+      
+        <link rel="prev" href="../cross-database-joins/">
+      
+      
+        <link rel="next" href="../explanation/existing-schemas/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Database Linkages - Bridge Schemas</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cross-database-linkages-in-jgi-lakehouse" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Bridge Schemas" class="md-header__button md-logo" aria-label="Bridge Schemas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bridge Schemas
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Database Linkages
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cmungall/bridge-schemas" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Bridge Schemas" class="md-nav__button md-logo" aria-label="Bridge Schemas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bridge Schemas
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cmungall/bridge-schemas" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cross-database-joins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Database Joins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Linkages
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Linkages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#database-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linkage-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linkage Diagram
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primary-linkages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Linkages
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Primary Linkages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-smc-img-core-direct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. SMC ↔ IMG Core (Direct)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-smc-img-core-via-taxon_smc_stats-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. SMC ↔ IMG Core (via taxon_smc_stats bridge)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-img-core-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. IMG Core ↔ GOLD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-img-abc-bcg-mibig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. IMG ABC (BCG) ↔ MIBiG
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-database-cross-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Database Cross-References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="External Database Cross-References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smc-external-accessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SMC External Accessions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gold-external-accessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GOLD External Accessions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ncbi-taxonomy-as-universal-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NCBI Taxonomy as Universal Bridge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-join-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Join Strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Join Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-smc-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For SMC Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-bgc-comparative-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For BGC Comparative Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-hop-example-smc-img-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Hop Example: SMC → IMG → GOLD
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kbase-jgi-linkages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KBase ↔ JGI Linkages
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="KBase ↔ JGI Linkages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kbase-pangenome-goldimg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KBase Pangenome ↔ GOLD/IMG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nmdc-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NMDC ↔ GOLD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kbase-gene-level-linkages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KBase Gene-Level Linkages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-kbase-jgi-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended KBase → JGI Paths
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kbase-jgi-coverage-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KBase-JGI Coverage Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coverage-summary-all-linkages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coverage Summary (All Linkages)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gold-id-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GOLD ID Patterns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explanations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Explanations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explanation/existing-schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Existing Schemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explanation/traits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microbial Traits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explanation/functional-annotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Annotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explanation/taxonomic-coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomic Coverage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Studies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Case Studies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-studies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-studies/mll-bgc-methylorubrum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mll BGC (M. extorquens)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-studies/microbial-isolates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microbial Isolates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KBase/BERDL Schemas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    KBase/BERDL Schemas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_ke_pangenome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pangenome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/nmdc_core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NMDC Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_genomes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Genomes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/gapmind_pathways/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GapMind Pathways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/enigma_coral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENIGMA CoRAL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/phagefoundry_genome_browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PhageFoundry Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/phagefoundry_strain_modelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PhageFoundry Modelling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_uniprot_archaea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniProt Archaea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_uniprot_bacteria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniProt Bacteria
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_uniref50/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniRef50
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_uniref90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniRef90
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_uniref100/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniRef100
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_phenotype/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phenotype
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_msd_biochemistry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSD Biochemistry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_ontology_source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ontology Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_refseq_taxon_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RefSeq Taxon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JGI Lakehouse Schemas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    JGI Lakehouse Schemas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/gold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOLD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_core_v400/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Extended
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_gold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG GOLD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_sat_v450/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Satellite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_sub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Submission
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/imgsg_dev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_i_taxon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_methylome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Methylome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_proteome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Proteome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_rnaseq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG RNAseq
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_mysql_abc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL ABC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_mysql_img/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_mysql_imgvr_prod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG/VR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_mysql_mbin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL MBin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_mysql_misi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL MISI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/phytozome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phytozome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/mycocosm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MycoCosm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/gcs_citation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citation Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/jgi_portal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JGI Portal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/sdm_metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDM Metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/smc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SMC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#database-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linkage-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linkage Diagram
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primary-linkages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Linkages
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Primary Linkages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-smc-img-core-direct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. SMC ↔ IMG Core (Direct)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-smc-img-core-via-taxon_smc_stats-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. SMC ↔ IMG Core (via taxon_smc_stats bridge)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-img-core-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. IMG Core ↔ GOLD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-img-abc-bcg-mibig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. IMG ABC (BCG) ↔ MIBiG
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-database-cross-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Database Cross-References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="External Database Cross-References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smc-external-accessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SMC External Accessions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gold-external-accessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GOLD External Accessions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ncbi-taxonomy-as-universal-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NCBI Taxonomy as Universal Bridge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-join-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Join Strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Join Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-smc-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For SMC Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-bgc-comparative-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For BGC Comparative Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-hop-example-smc-img-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Hop Example: SMC → IMG → GOLD
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kbase-jgi-linkages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KBase ↔ JGI Linkages
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="KBase ↔ JGI Linkages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kbase-pangenome-goldimg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KBase Pangenome ↔ GOLD/IMG
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nmdc-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NMDC ↔ GOLD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kbase-gene-level-linkages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KBase Gene-Level Linkages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-kbase-jgi-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended KBase → JGI Paths
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kbase-jgi-coverage-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KBase-JGI Coverage Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coverage-summary-all-linkages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coverage Summary (All Linkages)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gold-id-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GOLD ID Patterns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="cross-database-linkages-in-jgi-lakehouse">Cross-Database Linkages in JGI Lakehouse</h1>
+<p>This document maps the identifier relationships across JGI lakehouse databases,
+enabling cross-database queries and data integration.</p>
+<h2 id="database-overview">Database Overview</h2>
+<table>
+<thead>
+<tr>
+<th>Database</th>
+<th>Schema Path</th>
+<th>Records</th>
+<th>Primary ID</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SMC</strong></td>
+<td><code>smc-db postgresql.public</code></td>
+<td>13.2M BGCs</td>
+<td><code>bgc_id</code>, <code>smc_id</code></td>
+<td>Secondary Metabolite Clusters</td>
+</tr>
+<tr>
+<td><strong>IMG Core</strong></td>
+<td><code>img-db-2 postgresql.img_core_v400</code></td>
+<td>287K taxons</td>
+<td><code>taxon_oid</code></td>
+<td>Integrated Microbial Genomes</td>
+</tr>
+<tr>
+<td><strong>IMG ABC</strong></td>
+<td><code>img-db-1 mysql.abc</code></td>
+<td>489K regions</td>
+<td><code>region_id</code></td>
+<td>Biosynthetic Gene Clusters in IMG</td>
+</tr>
+<tr>
+<td><strong>GOLD</strong></td>
+<td><code>gold-db-2 postgresql.gold</code></td>
+<td>705K projects</td>
+<td><code>gold_id</code></td>
+<td>Genomes OnLine Database</td>
+</tr>
+<tr>
+<td><strong>KBase</strong></td>
+<td>via MCP REST API</td>
+<td>varies</td>
+<td>varies</td>
+<td>DOE KBase databases</td>
+</tr>
+</tbody>
+</table>
+<h2 id="linkage-diagram">Linkage Diagram</h2>
+<div class="highlight"><pre><span></span><code>┌─────────────────┐                              ┌─────────────────┐
+│  KBase/NMDC     │                              │   MIBiG         │
+│  Pangenome      │                              │ (BGC0000xxx)    │
+│  (293K genomes) │                              └────────┬────────┘
+└────────┬────────┘                                       │ id
+         │                                                ▼
+         │ genome_id (GCA_*/GCF_*)            ┌─────────────────┐
+         │ gold_study_identifiers (NMDC)      │   IMG ABC       │
+         │                                    │  bcg_region_    │
+         ▼                                    │  ext_links      │
+┌─────────────────┐                           │  (1.3K MIBiG)   │
+│ GOLD            │                           └────────┬────────┘
+│ ncbi_assembly   │                                    │ taxon_oid
+│ (3.1M rows)     │                                    │
+└────────┬────────┘                                    ▼
+         │                          ┌─────────────────────────────────┐
+         │ taxid                    │          IMG Core               │
+         ▼                          │           taxon                 │
+┌─────────────────┐                 │        (287K rows)              │
+│      SMC        │ img_accession   │                                 │
+│  source_data    │────────────────►│  ◄── taxon_smc_stats (22.5K) ──►│
+│  (1.36M rows)   │   (52K)         │                                 │
+└────────┬────────┘                 │  ◄── kbase_pangenome (27.7K) ──►│
+         │                          └────────────────┬────────────────┘
+         │ refseq/genbank                            │
+         │ accession (1.3M)          sequencing_gold_id (284K)
+         │                           study_gold_id
+         ▼                                           │
+    ┌─────────┐                                      ▼
+    │  NCBI   │                         ┌─────────────────┐
+    │ RefSeq/ │                         │  GOLD project   │◄──► GOLD study
+    │ GenBank │                         │  (705K rows)    │     (70K rows)
+    └─────────┘                         └────────┬────────┘
+                                                 │ img_taxon_id
+                                                 ▼
+                                        ┌─────────────────┐
+                                        │ GOLD analysis_  │
+                                        │    project      │
+                                        │  (620K rows)    │
+                                        └─────────────────┘
+</code></pre></div>
+<h2 id="primary-linkages">Primary Linkages</h2>
+<h3 id="1-smc-img-core-direct">1. SMC ↔ IMG Core (Direct)</h3>
+<p><strong>Path</strong>: <code>source_data.img_accession_id</code> → <code>taxon.taxon_oid</code></p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Field</th>
+<th>Target</th>
+<th>Field</th>
+<th>Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SMC source_data</td>
+<td><code>img_accession_id</code></td>
+<td>IMG taxon</td>
+<td><code>taxon_oid</code></td>
+<td>52,226 (3.8%)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="c1">-- SMC to IMG via img_accession_id</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">smc_id</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">tax_name</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">taxon_display_name</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">sequencing_gold_id</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;smc-db postgresql&quot;</span><span class="p">.</span><span class="k">public</span><span class="p">.</span><span class="n">source_data</span><span class="w"> </span><span class="n">s</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="n">t</span>
+<span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">img_accession_id</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">BIGINT</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">taxon_oid</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">img_accession_id</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="s1">&#39;&#39;</span>
+</code></pre></div>
+<h3 id="2-smc-img-core-via-taxon_smc_stats-bridge">2. SMC ↔ IMG Core (via taxon_smc_stats bridge)</h3>
+<p><strong>Path</strong>: <code>taxon_smc_stats.smc_id</code> ↔ <code>taxon_smc_stats.taxon_oid</code></p>
+<p>The <code>taxon_smc_stats</code> table in IMG Core provides a direct bridge:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Links To</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>taxon_oid</code></td>
+<td>BIGINT</td>
+<td>IMG taxon.taxon_oid</td>
+</tr>
+<tr>
+<td><code>smc_id</code></td>
+<td>INTEGER</td>
+<td>SMC source_data.smc_id</td>
+</tr>
+<tr>
+<td><code>bgc_count</code></td>
+<td>INTEGER</td>
+<td>Number of BGCs</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="c1">-- IMG to SMC via bridge table</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">taxon_display_name</span><span class="p">,</span><span class="w"> </span><span class="n">ts</span><span class="p">.</span><span class="n">bgc_count</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">tax_genus</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="n">t</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">taxon_smc_stats</span><span class="w"> </span><span class="n">ts</span>
+<span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">taxon_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ts</span><span class="p">.</span><span class="n">taxon_oid</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;smc-db postgresql&quot;</span><span class="p">.</span><span class="k">public</span><span class="p">.</span><span class="n">source_data</span><span class="w"> </span><span class="n">s</span>
+<span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="n">ts</span><span class="p">.</span><span class="n">smc_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">smc_id</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div>
+<p><strong>Coverage</strong>: 22,534 IMG taxons linked to SMC</p>
+<h3 id="3-img-core-gold">3. IMG Core ↔ GOLD</h3>
+<p>Multiple linkage paths exist:</p>
+<table>
+<thead>
+<tr>
+<th>IMG Field</th>
+<th>GOLD Table</th>
+<th>GOLD Field</th>
+<th>Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>taxon.sequencing_gold_id</code></td>
+<td>project</td>
+<td><code>gold_id</code></td>
+<td>283,727</td>
+</tr>
+<tr>
+<td><code>taxon.study_gold_id</code></td>
+<td>study</td>
+<td><code>gold_id</code></td>
+<td>~200K</td>
+</tr>
+<tr>
+<td><code>taxon.sample_gold_id</code></td>
+<td>biosample</td>
+<td><code>gold_id</code></td>
+<td>varies</td>
+</tr>
+<tr>
+<td><code>taxon.taxon_oid</code></td>
+<td>analysis_project</td>
+<td><code>img_taxon_id</code></td>
+<td>278,063</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="c1">-- IMG to GOLD via sequencing_gold_id</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">taxon_oid</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">taxon_display_name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">project_name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">ncbi_bioproject_accession</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="n">t</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;gold-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">project</span><span class="w"> </span><span class="n">p</span>
+<span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">sequencing_gold_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gold_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">sequencing_gold_id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div>
+<h3 id="4-img-abc-bcg-mibig">4. IMG ABC (BCG) ↔ MIBiG</h3>
+<p>The <code>bcg_region_ext_links</code> table provides links to external databases:</p>
+<table>
+<thead>
+<tr>
+<th>db_name</th>
+<th>Count</th>
+<th>Example ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MIBiG</td>
+<td>1,325</td>
+<td>BGC0000772</td>
+</tr>
+<tr>
+<td>Genbank</td>
+<td>1,332</td>
+<td>AF047478</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="c1">-- IMG BCG regions linked to MIBiG</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">region_id</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">bcg_type</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">mibig_id</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">comments</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-1 mysql&quot;</span><span class="p">.</span><span class="n">abc</span><span class="p">.</span><span class="n">bcg_region</span><span class="w"> </span><span class="n">r</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-1 mysql&quot;</span><span class="p">.</span><span class="n">abc</span><span class="p">.</span><span class="n">bcg_region_ext_links</span><span class="w"> </span><span class="n">e</span>
+<span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">region_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">region_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">db_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;MIBiG&#39;</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div>
+<h2 id="external-database-cross-references">External Database Cross-References</h2>
+<h3 id="smc-external-accessions">SMC External Accessions</h3>
+<p>The SMC <code>source_data</code> table contains cross-references to external databases:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>img_accession_id</code></td>
+<td>IMG taxon_oid</td>
+<td>52,226</td>
+</tr>
+<tr>
+<td><code>refseq_accession_id</code></td>
+<td>NCBI RefSeq (GCF_*)</td>
+<td>213,897</td>
+</tr>
+<tr>
+<td><code>genbank_accession_id</code></td>
+<td>NCBI GenBank (GCA_*)</td>
+<td>1,116,356</td>
+</tr>
+<tr>
+<td><code>mibig_accession_id</code></td>
+<td>MIBiG BGC IDs</td>
+<td>0 (not populated)</td>
+</tr>
+<tr>
+<td><code>taxonomy_id</code></td>
+<td>NCBI Taxonomy ID</td>
+<td>~1.3M</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gold-external-accessions">GOLD External Accessions</h3>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Field</th>
+<th>External DB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>project</td>
+<td><code>ncbi_bioproject_accession</code></td>
+<td>NCBI BioProject</td>
+</tr>
+<tr>
+<td>project</td>
+<td><code>ncbi_biosample_accession</code></td>
+<td>NCBI BioSample</td>
+</tr>
+<tr>
+<td>project</td>
+<td><code>assembly_accession</code></td>
+<td>NCBI Assembly</td>
+</tr>
+<tr>
+<td>project</td>
+<td><code>ncbi_sra_id</code></td>
+<td>NCBI SRA</td>
+</tr>
+<tr>
+<td>ncbi_assembly</td>
+<td><code>assembly_accession</code></td>
+<td>RefSeq/GenBank</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ncbi-taxonomy-as-universal-bridge">NCBI Taxonomy as Universal Bridge</h2>
+<p>NCBI Taxonomy ID serves as a universal linker across all databases:</p>
+<div class="highlight"><pre><span></span><code>SMC source_data.taxonomy_id ────┐
+                                │
+IMG taxon.ncbi_taxon_id ────────┼──► NCBI Taxonomy
+                                │
+GOLD ncbi_taxonomy.ncbi_tax_id ─┘
+</code></pre></div>
+<p><strong>Caution</strong>: Taxonomy-based joins may produce many-to-many relationships
+(multiple genomes per species). Use for broad aggregation, not precise matching.</p>
+<h2 id="recommended-join-strategies">Recommended Join Strategies</h2>
+<h3 id="for-smc-analysis">For SMC Analysis</h3>
+<ol>
+<li><strong>SMC → IMG</strong>: Use <code>img_accession_id</code> when available, otherwise use <code>taxon_smc_stats</code> bridge</li>
+<li><strong>SMC → GOLD</strong>: Chain through IMG (<code>smc_id</code> → <code>taxon_oid</code> → <code>sequencing_gold_id</code>)</li>
+<li><strong>SMC → External</strong>: Use <code>refseq_accession_id</code> or <code>genbank_accession_id</code> directly</li>
+</ol>
+<h3 id="for-bgc-comparative-analysis">For BGC Comparative Analysis</h3>
+<ol>
+<li><strong>SMC BGCs</strong>: Query <code>smc-db postgresql.public.bgc</code> for antiSMASH/emeraldBGC predictions</li>
+<li><strong>IMG BGCs</strong>: Query <code>img-db-1 mysql.abc.bcg_region</code> for IMG-native BCG annotations</li>
+<li><strong>MIBiG reference</strong>: Join IMG BCG via <code>bcg_region_ext_links</code></li>
+</ol>
+<h3 id="multi-hop-example-smc-img-gold">Multi-Hop Example: SMC → IMG → GOLD</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Full chain: SMC source → IMG taxon → GOLD project</span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">smc_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">tax_name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">smc_organism</span><span class="p">,</span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">bgc_count</span><span class="p">,</span>
+<span class="w">    </span><span class="n">t</span><span class="p">.</span><span class="n">taxon_oid</span><span class="p">,</span>
+<span class="w">    </span><span class="n">p</span><span class="p">.</span><span class="n">gold_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">p</span><span class="p">.</span><span class="n">project_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;smc-db postgresql&quot;</span><span class="p">.</span><span class="k">public</span><span class="p">.</span><span class="n">source_data</span><span class="w"> </span><span class="n">s</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">taxon_smc_stats</span><span class="w"> </span><span class="n">ts</span>
+<span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">smc_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ts</span><span class="p">.</span><span class="n">smc_id</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="n">t</span>
+<span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="n">ts</span><span class="p">.</span><span class="n">taxon_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">taxon_oid</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;gold-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">project</span><span class="w"> </span><span class="n">p</span>
+<span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">sequencing_gold_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gold_id</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div>
+<h2 id="kbase-jgi-linkages">KBase ↔ JGI Linkages</h2>
+<p>KBase databases connect to JGI primarily through NCBI assembly accessions and GOLD study IDs.</p>
+<h3 id="kbase-pangenome-goldimg">KBase Pangenome ↔ GOLD/IMG</h3>
+<p><strong>Primary linkage</strong>: NCBI assembly accession (GCA_<em>/GCF_</em>)</p>
+<div class="highlight"><pre><span></span><code>KBase genome.genome_id: &quot;RS_GCF_011881725.1&quot;
+                              ↓ strip RS_/GB_ prefix
+GOLD ncbi_assembly.assembly_accession: &quot;GCF_011881725.1&quot;
+                              ↓ via ncbi_assembly.taxid
+IMG taxon.ncbi_taxon_id
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Field</th>
+<th>Target</th>
+<th>Field</th>
+<th>Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KBase pangenome</td>
+<td><code>pangenome_id</code></td>
+<td>GOLD ncbi_assembly</td>
+<td><code>assembly_accession</code></td>
+<td>17,202 (62%)</td>
+</tr>
+<tr>
+<td>KBase members</td>
+<td><code>member_id</code></td>
+<td>GOLD ncbi_assembly</td>
+<td><code>assembly_accession</code></td>
+<td>89,290 (30%)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>IMG has a KBase mirror table</strong> in <code>img_sub</code> schema:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- IMG&#39;s copy of KBase pangenome data</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">pangenome_id</span><span class="p">,</span><span class="w"> </span><span class="n">gtdb_species</span><span class="p">,</span><span class="w"> </span><span class="n">gtdb_phylum</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_sub</span><span class="p">.</span><span class="n">kbase_pangenome</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+<span class="c1">-- 27,701 pangenomes, 293,089 members</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">-- KBase pangenome to GOLD lookup</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">pangenome_id</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">gtdb_species</span><span class="p">,</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">organism_name</span><span class="p">,</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">taxid</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_sub</span><span class="p">.</span><span class="n">kbase_pangenome</span><span class="w"> </span><span class="n">k</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;gold-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">ncbi_assembly</span><span class="w"> </span><span class="k">g</span>
+<span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">pangenome_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">assembly_accession</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div>
+<h3 id="nmdc-gold">NMDC ↔ GOLD</h3>
+<p>NMDC links to GOLD via study identifiers in the <code>studies</code> table:</p>
+<table>
+<thead>
+<tr>
+<th>NMDC Table</th>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>studies</code></td>
+<td><code>gold_study_identifiers</code></td>
+<td>JSON array of GOLD study IDs (e.g., <code>["gold:Gs0114675"]</code>)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="c1">-- NMDC study to GOLD linkage (conceptual - via KBase MCP)</span>
+<span class="c1">-- studies.gold_study_identifiers contains: [&quot;gold:Gs0114675&quot;]</span>
+<span class="c1">-- Extract Gs* ID and join to GOLD study table</span>
+</code></pre></div>
+<p><strong>Note on <code>*_gold</code> table naming</strong>: Tables like <code>metabolomics_gold</code>, <code>proteomics_gold</code>,
+<code>lipidomics_gold</code> are <strong>not cross-reference tables</strong>. The <code>_gold</code> suffix indicates
+these contain omics data <strong>derived from GOLD-registered samples</strong>, not linkages to GOLD.
+They contain actual measurement data (m/z ratios, expression values, etc.).</p>
+<h3 id="kbase-gene-level-linkages">KBase Gene-Level Linkages</h3>
+<p>Gene-level joins are complex due to different ID systems:</p>
+<table>
+<thead>
+<tr>
+<th>Database</th>
+<th>Gene ID Format</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KBase</td>
+<td><code>{nucleotide_accession}_{CDS_number}</code></td>
+<td><code>NZ_JAATUR010000001.1_1</code></td>
+</tr>
+<tr>
+<td>IMG</td>
+<td><code>gene_oid</code> (integer) + <code>locus_tag</code></td>
+<td><code>2500001234</code> / <code>ECOLI_0001</code></td>
+</tr>
+</tbody>
+</table>
+<p>The nucleotide accession prefix indicates source:
+- <code>NC_</code>: RefSeq complete genomic molecules
+- <code>NZ_</code>: RefSeq annotated genomic sequences (WGS)</p>
+<p><strong>Strategy</strong>: Extract nucleotide accession from KBase gene_id, match to IMG scaffold,
+then locate gene by position.</p>
+<h3 id="recommended-kbase-jgi-paths">Recommended KBase → JGI Paths</h3>
+<ol>
+<li><strong>KBase Pangenome → GOLD</strong>: Strip RS_/GB_ prefix from <code>genome_id</code>, join to <code>ncbi_assembly.assembly_accession</code></li>
+<li><strong>KBase Pangenome → IMG</strong>: Use IMG's <code>kbase_pangenome</code> mirror table, or chain through GOLD</li>
+<li><strong>NMDC → GOLD</strong>: Extract GOLD study IDs from <code>gold_study_identifiers</code> JSON field</li>
+<li><strong>KBase → SMC</strong>: Chain: KBase → GOLD ncbi_assembly → IMG taxon → SMC source_data</li>
+</ol>
+<h3 id="kbase-jgi-coverage-summary">KBase-JGI Coverage Summary</h3>
+<table>
+<thead>
+<tr>
+<th>Linkage</th>
+<th>Records</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KBase pangenome → GOLD</td>
+<td>17,202</td>
+<td>62% of pangenomes have GOLD match</td>
+</tr>
+<tr>
+<td>KBase members → GOLD</td>
+<td>89,290</td>
+<td>30% of member genomes</td>
+</tr>
+<tr>
+<td>NMDC studies → GOLD</td>
+<td>~48</td>
+<td>Via <code>gold_study_identifiers</code> JSON field</td>
+</tr>
+<tr>
+<td>IMG kbase_pangenome mirror</td>
+<td>27,701</td>
+<td>Full KBase pangenome copy in IMG</td>
+</tr>
+</tbody>
+</table>
+<h2 id="coverage-summary-all-linkages">Coverage Summary (All Linkages)</h2>
+<table>
+<thead>
+<tr>
+<th>Linkage</th>
+<th>Records Linked</th>
+<th>% of Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SMC → IMG (direct)</td>
+<td>52,226</td>
+<td>3.8% of SMC</td>
+</tr>
+<tr>
+<td>SMC → IMG (bridge)</td>
+<td>22,534</td>
+<td>1.7% of SMC</td>
+</tr>
+<tr>
+<td>IMG → GOLD (project)</td>
+<td>283,727</td>
+<td>99% of IMG</td>
+</tr>
+<tr>
+<td>IMG → GOLD (analysis)</td>
+<td>278,063</td>
+<td>97% of IMG</td>
+</tr>
+<tr>
+<td>IMG BCG → MIBiG</td>
+<td>1,325</td>
+<td>0.3% of BCG regions</td>
+</tr>
+<tr>
+<td>KBase → GOLD</td>
+<td>17,202</td>
+<td>62% of KBase pangenomes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gold-id-patterns">GOLD ID Patterns</h2>
+<table>
+<thead>
+<tr>
+<th>Prefix</th>
+<th>Entity</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Gp</code></td>
+<td>Project (sequencing)</td>
+<td>Gp0295815</td>
+</tr>
+<tr>
+<td><code>Gs</code></td>
+<td>Study</td>
+<td>Gs0133538</td>
+</tr>
+<tr>
+<td><code>Ga</code></td>
+<td>Analysis project</td>
+<td>Ga0262978</td>
+</tr>
+<tr>
+<td><code>Go</code></td>
+<td>Organism</td>
+<td>Go0000001</td>
+</tr>
+<tr>
+<td><code>Gb</code></td>
+<td>Biosample</td>
+<td>Gb0000001</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="../cross-database-joins/">Cross-Database Joins: IMG ↔ KBase</a> - KBase-specific joins</li>
+<li><a href="jgi/">JGI Schema Documentation</a> - Individual schema details</li>
+<li><a href="jgi/smc.md">SMC Schema</a> - Secondary Metabolite Clusters schema</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
