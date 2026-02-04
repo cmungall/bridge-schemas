@@ -258,22 +258,22 @@ LIMIT 10
 
 ### NMDC ↔ GOLD
 
-NMDC contains explicit GOLD linkages across multiple tables:
+NMDC links to GOLD via study identifiers in the `studies` table:
 
-| NMDC Table | GOLD Link | Description |
-|------------|-----------|-------------|
+| NMDC Table | Field | Description |
+|------------|-------|-------------|
 | `studies` | `gold_study_identifiers` | JSON array of GOLD study IDs (e.g., `["gold:Gs0114675"]`) |
-| `metabolomics_gold` | Sample-level | Metabolomics linked to GOLD samples |
-| `metatranscriptomics_gold` | Sample-level | Expression data linked to GOLD |
-| `lipidomics_gold` | Sample-level | Lipidomics linked to GOLD |
-| `proteomics_gold` | Sample-level | Proteomics linked to GOLD |
-| `kraken_gold`, `gottcha_gold`, `centrifuge_gold` | Sample-level | Taxonomic classifications |
 
 ```sql
 -- NMDC study to GOLD linkage (conceptual - via KBase MCP)
 -- studies.gold_study_identifiers contains: ["gold:Gs0114675"]
 -- Extract Gs* ID and join to GOLD study table
 ```
+
+**Note on `*_gold` table naming**: Tables like `metabolomics_gold`, `proteomics_gold`,
+`lipidomics_gold` are **not cross-reference tables**. The `_gold` suffix indicates
+these contain omics data **derived from GOLD-registered samples**, not linkages to GOLD.
+They contain actual measurement data (m/z ratios, expression values, etc.).
 
 ### KBase Gene-Level Linkages
 
@@ -304,7 +304,7 @@ then locate gene by position.
 |---------|---------|-------|
 | KBase pangenome → GOLD | 17,202 | 62% of pangenomes have GOLD match |
 | KBase members → GOLD | 89,290 | 30% of member genomes |
-| NMDC studies → GOLD | ~48 | Via gold_study_identifiers |
+| NMDC studies → GOLD | ~48 | Via `gold_study_identifiers` JSON field |
 | IMG kbase_pangenome mirror | 27,701 | Full KBase pangenome copy in IMG |
 
 ## Coverage Summary (All Linkages)
