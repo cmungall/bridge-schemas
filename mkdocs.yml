@@ -23,6 +23,10 @@ nav:
   - Home: index.md
   - Methods: methods/index.md
   - Cross-Database Joins: cross-database-joins.md
+  - Database Linkages: linkages.md
+  - Explanations:
+    - Microbial Traits: explanation/traits.md
+    - Functional Annotation: explanation/functional-annotation.md
   - Case Studies:
     - Overview: case-studies/index.md
     - mll BGC (M. extorquens): case-studies/mll-bgc-methylorubrum.md

@@ -3,106 +3,307 @@ name: smc
 title: JGI Secondary Metabolite Clusters Database
 description: >-
   Secondary Metabolite Clusters (SMC) database for JGI.
-  Contains biosynthetic gene clusters (BGCs), annotations,
-  and secondary metabolite predictions.
+  Contains biosynthetic gene clusters (BGCs) predicted by antiSMASH and emeraldBGC,
+  with taxonomic and genomic metadata.
 
   DATABASE: smc-db postgresql.public
-  TABLES: 124
+  TABLES: 124 (including 99 partitioned gene tables)
+
+  STATISTICS (as of 2024):
+  - 13.2 million BGCs
+  - 1.36 million source genomes/metagenomes
+  - 86 BGC classes across 7 categories
 
   KEY FUNCTIONALITY:
-  - Biosynthetic gene cluster (BGC) identification
-  - Secondary metabolite class annotation
-  - Gene and contig mapping
-  - Analysis tool results
-  - Collection and blog management
+  - Biosynthetic gene cluster (BGC) identification and coordinates
+  - Secondary metabolite class annotation (RiPP, NRP, PKS, terpene, etc.)
+  - Cross-references to IMG, RefSeq, GenBank, MIBiG
+  - Full taxonomic lineage for source organisms
+  - Gene-level annotations within BGCs
+
+  ANALYSIS TOOLS:
+  - antiSMASH 7.0 - comprehensive BGC detection
+  - emeraldBGC 0.2.4 - machine learning-based BGC prediction
 
 prefixes:
   linkml: https://w3id.org/linkml/
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  SO: http://purl.obolibrary.org/obo/SO_
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
 
 default_range: string
 imports:
   - linkml:types
 
+enums:
+  BGCCategoryEnum:
+    description: >-
+      High-level categories of biosynthetic gene clusters based on
+      the chemical class of secondary metabolites they produce.
+    permissible_values:
+      Alkaloid:
+        description: Nitrogen-containing organic compounds
+      NRP:
+        description: Non-ribosomal peptides synthesized by NRPS enzymes
+      Other:
+        description: Miscellaneous secondary metabolite classes
+      Polyketide:
+        description: Compounds synthesized by polyketide synthases (PKS)
+      RiPP:
+        description: Ribosomally synthesized and post-translationally modified peptides
+      Saccharide:
+        description: Sugar-based secondary metabolites
+      Terpene:
+        description: Compounds derived from isoprene units
+
+  SourceDataTypeEnum:
+    description: Type of genomic source data analyzed for BGCs.
+    permissible_values:
+      WHOLE_GENOME_SEQUENCE:
+        description: Complete or draft whole genome sequence
+      METAGENOME:
+        description: Metagenomic sequence data
+      CONTIG_OR_FRAGMENT:
+        description: Individual contig or sequence fragment
+      METAGENOME_ASSEMBLED_GENOME:
+        description: Genome assembled from metagenomic data (MAG)
+      OTHER:
+        description: Other sequence types
+
 classes:
+  SourceData:
+    description: >-
+      Source genomic data (genome, metagenome, or MAG) analyzed for BGCs.
+      Central table linking BGCs to taxonomic and genomic metadata.
+      Contains cross-references to IMG, RefSeq, GenBank, and MIBiG.
+    annotations:
+      source_table: source_data
+      row_count: "1359747"
+    attributes:
+      smc_id:
+        identifier: true
+        range: integer
+        description: Primary identifier for source data record
+      dt_created:
+        range: datetime
+        description: Record creation timestamp
+      dt_modified:
+        range: datetime
+        description: Record modification timestamp
+      size_bp:
+        range: integer
+        description: Total sequence length in base pairs
+      gc_count:
+        range: decimal
+        description: GC content percentage
+      source_data_type_id:
+        range: integer
+        description: Foreign key to SourceDataType
+      dna_sequence_file_id:
+        range: integer
+        description: Reference to DNA sequence file
+      gff_file_id:
+        range: integer
+        description: Reference to GFF annotation file
+      taxonomy_id:
+        range: integer
+        description: NCBI taxonomy ID
+      accession_id:
+        range: string
+        description: Primary accession identifier
+      data_source_description:
+        range: string
+        description: Source database (RefSeq, GenBank, IMG, etc.)
+      project_description:
+        range: string
+        description: Project or study description
+      bgc_count:
+        range: integer
+        description: Number of BGCs identified in this source
+      owner_id:
+        range: integer
+      dna_sequence_md5:
+        range: string
+        description: MD5 checksum of DNA sequence
+      n_scaffolds:
+        range: integer
+        description: Number of scaffolds/contigs
+      status:
+        range: string
+        description: Processing status (e.g., IMPORT_COMPLETE)
+      # Taxonomic lineage
+      tax_superkingdom:
+        range: string
+        description: Superkingdom (Bacteria, Archaea, Eukaryota)
+      tax_kingdom:
+        range: string
+        description: Kingdom
+      tax_phylum:
+        range: string
+        description: Phylum
+      tax_class:
+        range: string
+        description: Class
+      tax_order:
+        range: string
+        description: Order
+      tax_family:
+        range: string
+        description: Family
+      tax_genus:
+        range: string
+        description: Genus
+      tax_species:
+        range: string
+        description: Species
+      tax_strain:
+        range: string
+        description: Strain designation
+      tax_name:
+        range: string
+        description: Full taxonomic name
+      tax_domain:
+        range: string
+        description: Domain
+      # Cross-references
+      img_accession_id:
+        range: string
+        description: IMG genome accession
+      refseq_accession_id:
+        range: string
+        description: NCBI RefSeq accession (e.g., GCF_*)
+      genbank_accession_id:
+        range: string
+        description: NCBI GenBank accession (e.g., GCA_*)
+      mibig_accession_id:
+        range: string
+        description: MIBiG accession for known BGCs
+
+  SourceDataType:
+    description: >-
+      Type classification for source genomic data.
+    annotations:
+      source_table: source_data_type
+    attributes:
+      source_data_type_id:
+        identifier: true
+        range: integer
+      data_name:
+        range: string
+        description: Human-readable name
+      data_type:
+        range: SourceDataTypeEnum
+        description: Enumerated type code
+      owner_id:
+        range: integer
+
   BGC:
     description: >-
-      Biosynthetic Gene Cluster - a genomic region encoding
-      enzymes for secondary metabolite production.
+      Biosynthetic Gene Cluster - a contiguous genomic region encoding
+      the enzymatic machinery for secondary metabolite biosynthesis.
+      Predicted by antiSMASH or emeraldBGC analysis tools.
     annotations:
       source_table: bgc
+      row_count: "13162471"
+    class_uri: SO:0001026
     attributes:
-      id:
+      bgc_id:
         identifier: true
         range: integer
         description: BGC identifier
-      name:
+      dt_created:
+        range: datetime
+      dt_modified:
+        range: datetime
+      smc_id:
+        range: integer
+        description: Foreign key to SourceData - links BGC to source genome/metagenome
+      chemical_product_name:
         range: string
-      contig_id:
+        description: Predicted chemical product name (if known)
+      contig_name:
+        range: string
+        description: Name of the contig containing this BGC
+      start_nt:
         range: integer
-        comments:
-          - "Foreign key to Contig.id"
-      start:
+        description: Start coordinate (nucleotide position)
+      end_nt:
         range: integer
-        description: Start coordinate
-      end:
-        range: integer
-        description: End coordinate
-      strand:
+        description: End coordinate (nucleotide position)
+      attributes:
+        range: string
+        description: JSON attributes including BGC index, class, and annotation tool
+      owner_id:
         range: integer
 
   BGCClass:
     description: >-
-      Secondary metabolite class (NRPS, PKS, terpene, etc.).
+      Classification of biosynthetic gene clusters by the type of
+      secondary metabolite they produce. Includes both specific types
+      (e.g., lanthipeptide-class-i) and broader categories (e.g., RiPP).
     annotations:
       source_table: bgc_class
     attributes:
-      id:
+      bgc_class_id:
         identifier: true
         range: integer
-      name:
+      class_name:
         range: string
-        description: Class name (e.g., NRPS, PKS-T1, terpene)
-      description:
+        description: Short identifier (e.g., t1pks, lanthipeptide-class-i)
+      full_name:
         range: string
+        description: Human-readable name (e.g., Type I PKS, Class I lanthipeptide)
+      bgc_category:
+        range: BGCCategoryEnum
+        description: High-level category (RiPP, NRP, Polyketide, Terpene, etc.)
+      owner_id:
+        range: integer
 
   BGCToBGCClass:
     description: >-
-      Many-to-many link between BGCs and their classes.
+      Many-to-many association between BGCs and their predicted classes.
+      A single BGC may belong to multiple classes (hybrid clusters).
     annotations:
       source_table: bgc_to_bgc_class
     attributes:
       bgc_id:
         range: integer
-        comments:
-          - "Foreign key to BGC.id"
+        description: Foreign key to BGC
       bgc_class_id:
         range: integer
-        comments:
-          - "Foreign key to BGCClass.id"
+        description: Foreign key to BGCClass
 
   BGCAnalysis:
     description: >-
-      Analysis result for a BGC.
+      Record of a BGC analysis run linking source data to analysis tool and results.
     annotations:
       source_table: bgc_analysis
     attributes:
       id:
         identifier: true
         range: integer
-      bgc_id:
+      created:
+        range: datetime
+      modified:
+        range: datetime
+      is_system_owner:
+        range: boolean
+      source_data_id:
         range: integer
-        comments:
-          - "Foreign key to BGC.id"
+        description: Foreign key to SourceData
+      analysis_file_id:
+        range: integer
+        description: Reference to analysis output file
       analysis_tool_id:
         range: integer
-        comments:
-          - "Foreign key to AnalysisTool.id"
-      result:
-        range: string
+        description: Foreign key to AnalysisTool
+      owner_id:
+        range: integer
 
   BGCAnalysisToSecmetFile:
     description: >-
-      Link between BGC analysis and secondary metabolite files.
+      Link between BGC analysis and secondary metabolite output files.
     annotations:
       source_table: bgc_analysis_to_secmet_file
     attributes:
@@ -116,40 +317,61 @@ classes:
 
   BGCAnnotation:
     description: >-
-      Annotation for a BGC.
+      Annotation record for a BGC from a specific analysis tool.
     annotations:
       source_table: bgc_annotation
     attributes:
-      id:
+      bgc_annotation_id:
         identifier: true
         range: integer
+      dt_created:
+        range: datetime
+      dt_modified:
+        range: datetime
       bgc_id:
         range: integer
-        comments:
-          - "Foreign key to BGC.id"
-      annotation_type:
+        description: Foreign key to BGC
+      annotator_tool:
         range: string
-      value:
-        range: string
+        description: Tool that generated this annotation
+      owner_id:
+        range: integer
+      rank:
+        range: integer
+        description: Ranking/priority of this annotation
 
   AnalysisTool:
     description: >-
-      Tool used for BGC analysis (antiSMASH, etc.).
+      BGC prediction tool used for analysis.
+      Currently includes antiSMASH 7.0 and emeraldBGC 0.2.4.
     annotations:
       source_table: analysis_tool
     attributes:
-      id:
+      analysis_tool_id:
         identifier: true
         range: integer
-      name:
+      dt_created:
+        range: datetime
+      dt_modified:
+        range: datetime
+      tool_name:
         range: string
-        description: Tool name (e.g., antiSMASH, PRISM)
+        description: Tool name (antiSMASH, emeraldBGC)
       version:
         range: string
+        description: Tool version
+      alias:
+        range: string
+        description: Display alias (e.g., antiSMASH 7.0.0beta1-67b538a9)
+      url:
+        range: uri
+        description: Tool homepage URL
+      owner_id:
+        range: integer
 
   Contig:
     description: >-
-      Genomic contig/scaffold.
+      Genomic contig or scaffold sequence.
     annotations:
       source_table: contigs
     attributes:
@@ -165,32 +387,79 @@ classes:
 
   Gene:
     description: >-
-      Gene record. Note: Multiple gene_N tables exist for partitioning.
+      Gene record within a BGC annotation. Contains genomic coordinates,
+      functional annotations, and protein translations.
+      Note: Data is partitioned across gene_1 through gene_99 tables.
     annotations:
       source_table: gene
+      partitioned: "true"
+      partition_tables: "gene_1 through gene_99"
+    class_uri: SO:0000704
     attributes:
-      id:
+      gene_id:
         identifier: true
         range: integer
-      locus_tag:
+      dt_created:
+        range: datetime
+      dt_modified:
+        range: datetime
+      bgc_annotation_id:
+        range: integer
+        description: Foreign key to BGCAnnotation
+      contig_name:
         range: string
-      contig_id:
+        description: Contig containing this gene
+      start_nt:
         range: integer
-        comments:
-          - "Foreign key to Contig.id"
-      start:
+        description: Start coordinate
+      end_nt:
         range: integer
-      end:
-        range: integer
+        description: End coordinate
       strand:
-        range: integer
-      product:
         range: string
-        description: Gene product annotation
+        description: Strand orientation (+/-)
+      gene_name:
+        range: string
+        description: Gene name/symbol
+      gene_type:
+        range: string
+        description: Feature type (CDS, gene, etc.)
+      source:
+        range: string
+        description: Annotation source
+      description:
+        range: string
+        description: Functional description
+      domain_flag:
+        range: boolean
+        description: Whether gene contains biosynthetic domains
+      score:
+        range: string
+        description: Prediction score
+      attributes:
+        range: string
+        description: JSON attributes from GFF
+      translation:
+        range: string
+        description: Protein sequence translation
+      translate_table:
+        range: integer
+        description: Genetic code table used for translation
+      phase:
+        range: string
+        description: Reading frame phase
+      attr_id:
+        range: string
+        description: GFF ID attribute
+      parent_id:
+        range: string
+        description: GFF Parent attribute
+      owner_id:
+        range: integer
 
   Collection:
     description: >-
-      Collection of BGCs or genomes.
+      User-defined collection of BGCs or genomes for analysis.
     annotations:
       source_table: collection
     attributes:
@@ -206,7 +475,7 @@ classes:
 
   CollectionMember:
     description: >-
-      Member of a collection.
+      Member of a user collection.
     annotations:
       source_table: collection_members
     attributes:
@@ -215,8 +484,7 @@ classes:
         range: integer
       collection_id:
         range: integer
-        comments:
-          - "Foreign key to Collection.id"
+        description: Foreign key to Collection
       item_type:
         range: string
         description: Type of item (bgc, genome, etc.)
