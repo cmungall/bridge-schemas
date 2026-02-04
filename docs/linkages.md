@@ -16,43 +16,46 @@ enabling cross-database queries and data integration.
 ## Linkage Diagram
 
 ```
-                                    ┌─────────────────┐
-                                    │   MIBiG         │
-                                    │ (BGC0000xxx)    │
-                                    └────────┬────────┘
-                                             │ id
-                                             ▼
-┌─────────────────┐                 ┌─────────────────┐
-│      SMC        │                 │   IMG ABC       │
-│  source_data    │                 │  bcg_region_    │
-│  (1.36M rows)   │                 │  ext_links      │
-└────────┬────────┘                 │  (1.3K MIBiG)   │
-         │                          └────────┬────────┘
-         │ img_accession_id                  │ taxon_oid
-         │ (52K linked)                      │
-         ▼                                   ▼
-┌─────────────────┐  taxon_smc_stats  ┌─────────────────┐
-│   IMG Core      │◄─────────────────►│   IMG ABC       │
-│    taxon        │   (22.5K rows)    │  bcg_region     │
-│  (287K rows)    │                   │  (489K rows)    │
-└────────┬────────┘                   └─────────────────┘
-         │
-         │ sequencing_gold_id (284K)
-         │ study_gold_id
-         │ sample_gold_id
-         ▼
-┌─────────────────┐                 ┌─────────────────┐
-│  GOLD project   │◄───────────────►│  GOLD study     │
-│  (705K rows)    │  master_study_id │  (70K rows)     │
-└────────┬────────┘                 └─────────────────┘
-         │
-         │ img_taxon_id
-         ▼
-┌─────────────────┐
-│ GOLD analysis_  │
-│    project      │
-│  (620K rows)    │
-└─────────────────┘
+┌─────────────────┐                              ┌─────────────────┐
+│  KBase/NMDC     │                              │   MIBiG         │
+│  Pangenome      │                              │ (BGC0000xxx)    │
+│  (293K genomes) │                              └────────┬────────┘
+└────────┬────────┘                                       │ id
+         │                                                ▼
+         │ genome_id (GCA_*/GCF_*)            ┌─────────────────┐
+         │ gold_study_identifiers (NMDC)      │   IMG ABC       │
+         │                                    │  bcg_region_    │
+         ▼                                    │  ext_links      │
+┌─────────────────┐                           │  (1.3K MIBiG)   │
+│ GOLD            │                           └────────┬────────┘
+│ ncbi_assembly   │                                    │ taxon_oid
+│ (3.1M rows)     │                                    │
+└────────┬────────┘                                    ▼
+         │                          ┌─────────────────────────────────┐
+         │ taxid                    │          IMG Core               │
+         ▼                          │           taxon                 │
+┌─────────────────┐                 │        (287K rows)              │
+│      SMC        │ img_accession   │                                 │
+│  source_data    │────────────────►│  ◄── taxon_smc_stats (22.5K) ──►│
+│  (1.36M rows)   │   (52K)         │                                 │
+└────────┬────────┘                 │  ◄── kbase_pangenome (27.7K) ──►│
+         │                          └────────────────┬────────────────┘
+         │ refseq/genbank                            │
+         │ accession (1.3M)          sequencing_gold_id (284K)
+         │                           study_gold_id
+         ▼                                           │
+    ┌─────────┐                                      ▼
+    │  NCBI   │                         ┌─────────────────┐
+    │ RefSeq/ │                         │  GOLD project   │◄──► GOLD study
+    │ GenBank │                         │  (705K rows)    │     (70K rows)
+    └─────────┘                         └────────┬────────┘
+                                                 │ img_taxon_id
+                                                 ▼
+                                        ┌─────────────────┐
+                                        │ GOLD analysis_  │
+                                        │    project      │
+                                        │  (620K rows)    │
+                                        └─────────────────┘
 ```
 
 ## Primary Linkages
@@ -213,7 +216,98 @@ JOIN "gold-db-2 postgresql".gold.project p
 LIMIT 10
 ```
 
-## Coverage Summary
+## KBase ↔ JGI Linkages
+
+KBase databases connect to JGI primarily through NCBI assembly accessions and GOLD study IDs.
+
+### KBase Pangenome ↔ GOLD/IMG
+
+**Primary linkage**: NCBI assembly accession (GCA_*/GCF_*)
+
+```
+KBase genome.genome_id: "RS_GCF_011881725.1"
+                              ↓ strip RS_/GB_ prefix
+GOLD ncbi_assembly.assembly_accession: "GCF_011881725.1"
+                              ↓ via ncbi_assembly.taxid
+IMG taxon.ncbi_taxon_id
+```
+
+| Source | Field | Target | Field | Coverage |
+|--------|-------|--------|-------|----------|
+| KBase pangenome | `pangenome_id` | GOLD ncbi_assembly | `assembly_accession` | 17,202 (62%) |
+| KBase members | `member_id` | GOLD ncbi_assembly | `assembly_accession` | 89,290 (30%) |
+
+**IMG has a KBase mirror table** in `img_sub` schema:
+
+```sql
+-- IMG's copy of KBase pangenome data
+SELECT pangenome_id, gtdb_species, gtdb_phylum
+FROM "img-db-2 postgresql".img_sub.kbase_pangenome
+LIMIT 10
+-- 27,701 pangenomes, 293,089 members
+```
+
+```sql
+-- KBase pangenome to GOLD lookup
+SELECT k.pangenome_id, k.gtdb_species, g.organism_name, g.taxid
+FROM "img-db-2 postgresql".img_sub.kbase_pangenome k
+JOIN "gold-db-2 postgresql".gold.ncbi_assembly g
+  ON k.pangenome_id = g.assembly_accession
+LIMIT 10
+```
+
+### NMDC ↔ GOLD
+
+NMDC contains explicit GOLD linkages across multiple tables:
+
+| NMDC Table | GOLD Link | Description |
+|------------|-----------|-------------|
+| `studies` | `gold_study_identifiers` | JSON array of GOLD study IDs (e.g., `["gold:Gs0114675"]`) |
+| `metabolomics_gold` | Sample-level | Metabolomics linked to GOLD samples |
+| `metatranscriptomics_gold` | Sample-level | Expression data linked to GOLD |
+| `lipidomics_gold` | Sample-level | Lipidomics linked to GOLD |
+| `proteomics_gold` | Sample-level | Proteomics linked to GOLD |
+| `kraken_gold`, `gottcha_gold`, `centrifuge_gold` | Sample-level | Taxonomic classifications |
+
+```sql
+-- NMDC study to GOLD linkage (conceptual - via KBase MCP)
+-- studies.gold_study_identifiers contains: ["gold:Gs0114675"]
+-- Extract Gs* ID and join to GOLD study table
+```
+
+### KBase Gene-Level Linkages
+
+Gene-level joins are complex due to different ID systems:
+
+| Database | Gene ID Format | Example |
+|----------|----------------|---------|
+| KBase | `{nucleotide_accession}_{CDS_number}` | `NZ_JAATUR010000001.1_1` |
+| IMG | `gene_oid` (integer) + `locus_tag` | `2500001234` / `ECOLI_0001` |
+
+The nucleotide accession prefix indicates source:
+- `NC_`: RefSeq complete genomic molecules
+- `NZ_`: RefSeq annotated genomic sequences (WGS)
+
+**Strategy**: Extract nucleotide accession from KBase gene_id, match to IMG scaffold,
+then locate gene by position.
+
+### Recommended KBase → JGI Paths
+
+1. **KBase Pangenome → GOLD**: Strip RS_/GB_ prefix from `genome_id`, join to `ncbi_assembly.assembly_accession`
+2. **KBase Pangenome → IMG**: Use IMG's `kbase_pangenome` mirror table, or chain through GOLD
+3. **NMDC → GOLD**: Extract GOLD study IDs from `gold_study_identifiers` JSON field
+4. **KBase → SMC**: Chain: KBase → GOLD ncbi_assembly → IMG taxon → SMC source_data
+
+### KBase-JGI Coverage Summary
+
+| Linkage | Records | Notes |
+|---------|---------|-------|
+| KBase pangenome → GOLD | 17,202 | 62% of pangenomes have GOLD match |
+| KBase members → GOLD | 89,290 | 30% of member genomes |
+| NMDC studies → GOLD | ~48 | Via gold_study_identifiers |
+| IMG kbase_pangenome mirror | 27,701 | Full KBase pangenome copy in IMG |
+
+## Coverage Summary (All Linkages)
 
 | Linkage | Records Linked | % of Source |
 |---------|----------------|-------------|
@@ -222,6 +316,7 @@ LIMIT 10
 | IMG → GOLD (project) | 283,727 | 99% of IMG |
 | IMG → GOLD (analysis) | 278,063 | 97% of IMG |
 | IMG BCG → MIBiG | 1,325 | 0.3% of BCG regions |
+| KBase → GOLD | 17,202 | 62% of KBase pangenomes |
 
 ## GOLD ID Patterns
 
