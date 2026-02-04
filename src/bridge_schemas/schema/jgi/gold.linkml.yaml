@@ -1,15 +1,15 @@
-name: gold
-id: https://w3id.org/jgi/gold
+name: test-schema
+id: http://example.org/test-schema
 imports:
 - linkml:types
 prefixes:
   linkml:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
-  gold:
-    prefix_prefix: gold
-    prefix_reference: https://w3id.org/jgi/gold/
-default_prefix: gold
+  test_schema:
+    prefix_prefix: test_schema
+    prefix_reference: http://example.org/test-schema/
+default_prefix: test_schema
 default_range: string
 classes:
   analysis_project:
@@ -774,7 +774,8 @@ classes:
         required: false
       isolation_publication_id:
         name: isolation_publication_id
-        range: float
+        description: Foreign key to publication
+        range: publication
         required: false
       isolation_pubmed_id:
         name: isolation_pubmed_id
@@ -1380,6 +1381,21 @@ classes:
         name: sequence
         range: float
         required: false
+  cvbiotic_relationship:
+    name: cvbiotic_relationship
+    attributes:
+      id:
+        name: id
+        range: float
+        required: false
+      term:
+        name: term
+        range: string
+        required: false
+      sequence:
+        name: sequence
+        range: float
+        required: false
   cvcolor:
     name: cvcolor
     attributes:
@@ -1425,8 +1441,38 @@ classes:
         name: sequence
         range: float
         required: false
+  cvenergy_source:
+    name: cvenergy_source
+    attributes:
+      id:
+        name: id
+        range: float
+        required: false
+      term:
+        name: term
+        range: string
+        required: false
+      sequence:
+        name: sequence
+        range: float
+        required: false
   cvhabitat:
     name: cvhabitat
+    attributes:
+      id:
+        name: id
+        range: float
+        required: false
+      term:
+        name: term
+        range: string
+        required: false
+      sequence:
+        name: sequence
+        range: float
+        required: false
+  cvmetabolism:
+    name: cvmetabolism
     attributes:
       id:
         name: id
@@ -1457,6 +1503,21 @@ classes:
         required: false
   cvorganism_type:
     name: cvorganism_type
+    attributes:
+      id:
+        name: id
+        range: float
+        required: false
+      term:
+        name: term
+        range: string
+        required: false
+      sequence:
+        name: sequence
+        range: float
+        required: false
+  cvphenotype:
+    name: cvphenotype
     attributes:
       id:
         name: id
@@ -1965,6 +2026,315 @@ classes:
         name: file1
         range: string
         required: false
+  gold_master_cvphenotype:
+    name: gold_master_cvphenotype
+    attributes:
+      id:
+        name: id
+        range: float
+        required: false
+      term:
+        name: term
+        range: string
+        required: false
+  gold_master_organism:
+    name: gold_master_organism
+    attributes:
+      organism_id:
+        name: organism_id
+        range: float
+        required: false
+      gold_id:
+        name: gold_id
+        range: string
+        required: false
+      active:
+        name: active
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+      ncbi_taxonomy_id:
+        name: ncbi_taxonomy_id
+        range: float
+        required: false
+      domain:
+        name: domain
+        range: string
+        required: false
+      ncbi_superkingdom:
+        name: ncbi_superkingdom
+        range: string
+        required: false
+      ncbi_kingdom:
+        name: ncbi_kingdom
+        range: string
+        required: false
+      ncbi_phylum:
+        name: ncbi_phylum
+        range: string
+        required: false
+      ncbi_class:
+        name: ncbi_class
+        range: string
+        required: false
+      ncbi_order:
+        name: ncbi_order
+        range: string
+        required: false
+      ncbi_family:
+        name: ncbi_family
+        range: string
+        required: false
+      ncbi_genus:
+        name: ncbi_genus
+        range: string
+        required: false
+      ncbi_species:
+        name: ncbi_species
+        range: string
+        required: false
+      cultured:
+        name: cultured
+        range: string
+        required: false
+      strain:
+        name: strain
+        range: string
+        required: false
+      genus:
+        name: genus
+        range: string
+        required: false
+      species:
+        name: species
+        range: string
+        required: false
+      gold_phylogeny:
+        name: gold_phylogeny
+        range: string
+        required: false
+      uncultured_type:
+        name: uncultured_type
+        range: string
+        required: false
+      culture_type:
+        name: culture_type
+        range: string
+        required: false
+      latitude:
+        name: latitude
+        range: float
+        required: false
+      longitude:
+        name: longitude
+        range: float
+        required: false
+      altitude:
+        name: altitude
+        range: float
+        required: false
+      altitude2:
+        name: altitude2
+        range: float
+        required: false
+      depth:
+        name: depth
+        range: float
+        required: false
+      depth2:
+        name: depth2
+        range: float
+        required: false
+      elevation:
+        name: elevation
+        range: float
+        required: false
+      elevation2:
+        name: elevation2
+        range: float
+        required: false
+      subsurface_depth1:
+        name: subsurface_depth1
+        range: float
+        required: false
+      subsurface_depth2:
+        name: subsurface_depth2
+        range: float
+        required: false
+      clade:
+        name: clade
+        range: string
+        required: false
+      sample_collection_site:
+        name: sample_collection_site
+        range: string
+        required: false
+      oxygen_concentration:
+        name: oxygen_concentration
+        range: string
+        required: false
+      oxygen_requirement:
+        name: oxygen_requirement
+        range: string
+        required: false
+      cell_shape:
+        name: cell_shape
+        range: string
+        required: false
+      motility:
+        name: motility
+        range: string
+        required: false
+      sporulation:
+        name: sporulation
+        range: string
+        required: false
+      temperature_range:
+        name: temperature_range
+        range: string
+        required: false
+      salinity:
+        name: salinity
+        range: string
+        required: false
+      sample_isolation_country_id:
+        name: sample_isolation_country_id
+        range: float
+        required: false
+      geographic_location:
+        name: geographic_location
+        range: string
+        required: false
+      gram_stain:
+        name: gram_stain
+        range: string
+        required: false
+      host_name:
+        name: host_name
+        range: string
+        required: false
+      type_strain:
+        name: type_strain
+        range: string
+        required: false
+      ecosystem:
+        name: ecosystem
+        range: string
+        required: false
+      ecosystem_category:
+        name: ecosystem_category
+        range: string
+        required: false
+      ecosystem_type:
+        name: ecosystem_type
+        range: string
+        required: false
+      ecosystem_subtype:
+        name: ecosystem_subtype
+        range: string
+        required: false
+      specific_ecosystem:
+        name: specific_ecosystem
+        range: string
+        required: false
+      host_body_site:
+        name: host_body_site
+        range: string
+        required: false
+      host_body_subsite:
+        name: host_body_subsite
+        range: string
+        required: false
+      ecotype:
+        name: ecotype
+        range: string
+        required: false
+      proport_ocean:
+        name: proport_ocean
+        range: string
+        required: false
+      proport_isolation:
+        name: proport_isolation
+        range: string
+        required: false
+      proport_station:
+        name: proport_station
+        range: string
+        required: false
+      proport_woa_temperature:
+        name: proport_woa_temperature
+        range: float
+        required: false
+      proport_woa_salinity:
+        name: proport_woa_salinity
+        range: float
+        required: false
+      proport_woa_dissolved_oxygen:
+        name: proport_woa_dissolved_oxygen
+        range: float
+        required: false
+      proport_woa_silicate:
+        name: proport_woa_silicate
+        range: float
+        required: false
+      proport_woa_phosphate:
+        name: proport_woa_phosphate
+        range: float
+        required: false
+      proport_woa_nitrate:
+        name: proport_woa_nitrate
+        range: float
+        required: false
+      viral_group:
+        name: viral_group
+        range: string
+        required: false
+      viral_subgroup:
+        name: viral_subgroup
+        range: string
+        required: false
+      sample_collection_temperature:
+        name: sample_collection_temperature
+        range: float
+        required: false
+      pressure:
+        name: pressure
+        range: string
+        required: false
+      chlorophyll_concentration:
+        name: chlorophyll_concentration
+        range: string
+        required: false
+      salinity_concentration:
+        name: salinity_concentration
+        range: string
+        required: false
+      nitrate_concentration:
+        name: nitrate_concentration
+        range: string
+        required: false
+      ph1:
+        name: ph1
+        range: float
+        required: false
+      ph2:
+        name: ph2
+        range: float
+        required: false
+  gold_master_organism_phenotype:
+    name: gold_master_organism_phenotype
+    attributes:
+      organism_id:
+        name: organism_id
+        range: float
+        required: false
+      phenotype_id:
+        name: phenotype_id
+        range: float
+        required: false
   gold_master_sequencing_method:
     name: gold_master_sequencing_method
     attributes:
@@ -1974,6 +2344,41 @@ classes:
         required: false
       term:
         name: term
+        range: string
+        required: false
+  img_taxon:
+    name: img_taxon
+    attributes:
+      taxon_oid:
+        name: taxon_oid
+        range: integer
+        required: false
+      submission_id:
+        name: submission_id
+        range: integer
+        required: false
+      analysis_project_id:
+        name: analysis_project_id
+        range: string
+        required: false
+      is_public:
+        name: is_public
+        range: string
+        required: false
+      obsolete_flag:
+        name: obsolete_flag
+        range: string
+        required: false
+      add_date:
+        name: add_date
+        range: datetime
+        required: false
+      mod_date:
+        name: mod_date
+        range: datetime
+        required: false
+      img_version:
+        name: img_version
         range: string
         required: false
   ncbi_assembly:
@@ -2321,6 +2726,19 @@ classes:
         name: lineage_with_ranks
         range: string
         required: false
+  organism_biotic_rel:
+    name: organism_biotic_rel
+    attributes:
+      organism_id:
+        name: organism_id
+        description: Foreign key to organism_v2
+        range: organism_v2
+        required: false
+      biotic_relationship_id:
+        name: biotic_relationship_id
+        description: Foreign key to cvbiotic_relationship
+        range: cvbiotic_relationship
+        required: false
   organism_cell_arrangement:
     name: organism_cell_arrangement
     attributes:
@@ -2333,6 +2751,45 @@ classes:
         name: cell_arrangement_id
         range: float
         required: false
+  organism_disease:
+    name: organism_disease
+    attributes:
+      organism_id:
+        name: organism_id
+        description: Foreign key to organism_v2
+        range: organism_v2
+        required: false
+      disease_id:
+        name: disease_id
+        description: Foreign key to cvdisease
+        range: cvdisease
+        required: false
+  organism_energy_source:
+    name: organism_energy_source
+    attributes:
+      organism_id:
+        name: organism_id
+        description: Foreign key to organism_v2
+        range: organism_v2
+        required: false
+      energy_source_id:
+        name: energy_source_id
+        description: Foreign key to cvenergy_source
+        range: cvenergy_source
+        required: false
+  organism_habitat:
+    name: organism_habitat
+    attributes:
+      organism_id:
+        name: organism_id
+        description: Foreign key to organism_v2
+        range: organism_v2
+        required: false
+      habitat_id:
+        name: habitat_id
+        description: Foreign key to cvhabitat
+        range: cvhabitat
+        required: false
   organism_metabolism:
     name: organism_metabolism
     attributes:
@@ -2343,7 +2800,21 @@ classes:
         required: false
       metabolism_id:
         name: metabolism_id
-        range: float
+        description: Foreign key to cvmetabolism
+        range: cvmetabolism
+        required: false
+  organism_phenotype:
+    name: organism_phenotype
+    attributes:
+      organism_id:
+        name: organism_id
+        description: Foreign key to organism_v2
+        range: organism_v2
+        required: false
+      phenotype_id:
+        name: phenotype_id
+        description: Foreign key to cvphenotype
+        range: cvphenotype
         required: false
   organism_v2:
     name: organism_v2
@@ -2540,7 +3011,8 @@ classes:
         required: false
       isolation_publication_id:
         name: isolation_publication_id
-        range: float
+        description: Foreign key to publication
+        range: publication
         required: false
       isolation_pubmed_id:
         name: isolation_pubmed_id
@@ -3841,7 +4313,8 @@ classes:
         required: false
       isolation_publication_id:
         name: isolation_publication_id
-        range: float
+        description: Foreign key to publication
+        range: publication
         required: false
       legacy_gold_id:
         name: legacy_gold_id
@@ -3871,6 +4344,65 @@ classes:
         name: analysis_project_id
         description: Foreign key to analysis_project
         range: analysis_project
+        required: false
+  publication:
+    name: publication
+    attributes:
+      publication_id:
+        name: publication_id
+        range: float
+        required: false
+      doi:
+        name: doi
+        range: string
+        required: false
+      pubmed_id:
+        name: pubmed_id
+        range: float
+        required: false
+      journal_id:
+        name: journal_id
+        range: float
+        required: false
+      pubmodel:
+        name: pubmodel
+        range: string
+        required: false
+      volume:
+        name: volume
+        range: string
+        required: false
+      issue:
+        name: issue
+        range: string
+        required: false
+      page:
+        name: page
+        range: string
+        required: false
+      publication_date:
+        name: publication_date
+        range: datetime
+        required: false
+      abstract:
+        name: abstract
+        range: string
+        required: false
+      affiliation:
+        name: affiliation
+        range: string
+        required: false
+      title:
+        name: title
+        range: string
+        required: false
+      last_author_id:
+        name: last_author_id
+        range: float
+        required: false
+      first_author_id:
+        name: first_author_id
+        range: float
         required: false
   ror:
     name: ror
@@ -4360,4 +4892,15 @@ classes:
       gold_study_name:
         name: gold_study_name
         range: string
+        required: false
+  table_row_count:
+    name: table_row_count
+    attributes:
+      table_name:
+        name: table_name
+        range: string
+        required: false
+      row_count:
+        name: row_count
+        range: integer
         required: false

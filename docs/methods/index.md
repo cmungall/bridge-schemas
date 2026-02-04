@@ -116,6 +116,40 @@ make gen-owl
 make docs
 ```
 
+## Known Limitations
+
+### Dremio INFORMATION_SCHEMA Incompleteness
+
+**Issue:** Dremio's `INFORMATION_SCHEMA.COLUMNS` does not return column metadata for all tables,
+even when those tables are queryable and contain data.
+
+**Impact:** For GOLD, `INFORMATION_SCHEMA.TABLES` reports 374 tables, but `INFORMATION_SCHEMA.COLUMNS`
+only has metadata for ~57 tables. The generated schema is therefore incomplete.
+
+**Example of missing tables:**
+- `contact` (17,505 rows) - not in COLUMNS
+- `cvbiological_status` (7 rows) - not in COLUMNS
+- `cvphenotype` (159 rows) - IS in COLUMNS ✓
+
+**Diagnostic queries:**
+
+```sql
+-- Tables visible
+SELECT COUNT(*) FROM INFORMATION_SCHEMA."TABLES"
+WHERE TABLE_SCHEMA = 'gold-db-2 postgresql.gold'
+-- Returns: 374
+
+-- Tables with column metadata
+SELECT COUNT(DISTINCT TABLE_NAME) FROM INFORMATION_SCHEMA."COLUMNS"
+WHERE TABLE_SCHEMA = 'gold-db-2 postgresql.gold'
+-- Returns: 57
+```
+
+**Workaround:** Tables missing from INFORMATION_SCHEMA can still be queried directly
+with `SELECT * FROM table LIMIT 0` to get column info, but this is slow for many tables.
+
+**Status:** Reported to JGI Dremio administrators (Feb 2026).
+
 ## Manual Curation
 
 Some schemas require manual curation because:

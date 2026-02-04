@@ -25,8 +25,10 @@ nav:
   - Cross-Database Joins: cross-database-joins.md
   - Database Linkages: linkages.md
   - Explanations:
+    - Existing Schemas: explanation/existing-schemas.md
     - Microbial Traits: explanation/traits.md
     - Functional Annotation: explanation/functional-annotation.md
+    - Taxonomic Coverage: explanation/taxonomic-coverage.md
   - Case Studies:
     - Overview: case-studies/index.md
     - mll BGC (M. extorquens): case-studies/mll-bgc-methylorubrum.md

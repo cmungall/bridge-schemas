@@ -1,0 +1,225 @@
+# Existing Canonical Schemas vs Bridge-Schemas
+
+This document clarifies the relationship between canonical LinkML schemas maintained
+by upstream projects and the introspected schemas in this repository.
+
+## The Core Problem
+
+This repository generates LinkML schemas through **database introspection**—querying
+APIs or `pg_catalog` to discover tables, columns, and constraints. This approach:
+
+- Works across any database we can connect to
+- Captures the actual deployed schema
+- **Loses semantic information** not present in the database itself:
+  - Rich descriptions and definitions
+  - Logical relationships not expressed as foreign keys
+  - Validation rules and enumerations
+  - Inheritance and class hierarchies
+
+**Upstream projects often maintain canonical LinkML schemas** with this rich semantic
+information—but we're not using them.
+
+## Canonical Schema Sources
+
+### KBase CDM Schema
+
+**Repository**: [github.com/kbase/cdm-schema](https://github.com/kbase/cdm-schema)
+
+The KBase Common Data Model (CDM) schema is the authoritative LinkML specification
+for KBase's data structures. It defines ~80 classes including:
+
+| Module | Classes | Purpose |
+|--------|---------|---------|
+| `cdm_bioentity.yaml` | Entity, Sequence, Feature, Protein | Core biological entities |
+| `cdm_protocol.yaml` | Protocol, ProtocolExecution, Measurement | Experimental workflows |
+| `cdm_ontology.yaml` | Prefix, Statement, EntailedEdge | Ontology/vocabulary support |
+| `cdm_components.yaml` | Sample, Contig, Cluster | Reusable components |
+| `cdm_credit.yaml` | Contributor, FundingReference, License | Attribution |
+| `cdm_join_tables.yaml` | Various `*_x_*` tables | Many-to-many relationships |
+
+**Current gap**: We introspect KBase tables via the BERDL REST API, which returns
+only column names and types. The CDM schema contains descriptions, relationships,
+and constraints we're not capturing.
+
+### NMDC Schema
+
+**Repository**: [github.com/microbiomedata/nmdc-schema](https://github.com/microbiomedata/nmdc-schema)
+
+The National Microbiome Data Collaborative (NMDC) schema is the authoritative LinkML
+specification for NMDC's MongoDB backend. Core classes include:
+
+| Class | Purpose |
+|-------|---------|
+| `Study` | Research project container |
+| `Biosample` | Biological material collected from environment |
+| `ProcessedSample` | Derived from biosamples via extraction/preparation |
+| `DataGeneration` | Sequencing or analytical processes |
+| `WorkflowExecution` | Computational analysis runs |
+| `DataObject` | Actual data files and results |
+| `FieldResearchSite` | Physical collection locations |
+
+The NMDC schema is comprehensive, with rich descriptions, slot constraints,
+enumerations for environmental metadata (MIxS, GOLD ecosystem classification),
+and extensive cross-references.
+
+## The NMDC Confusion
+
+**This is the key source of confusion**: The `nmdc_core` tables in KBase/BERDL
+are **NOT the same as** the classes in `nmdc-schema`.
+
+### What `nmdc-schema` Defines
+
+The canonical NMDC schema (`github.com/microbiomedata/nmdc-schema`) defines the
+data model for NMDC's **MongoDB backend**. When NMDC stores a study or biosample,
+it uses these class definitions.
+
+```
+nmdc-schema defines:
+  Study, Biosample, DataObject, WorkflowExecution, ...
+     ↓
+  Stored in NMDC MongoDB collections:
+    biosample_set, study_set, data_object_set, ...
+```
+
+### What `nmdc_core` in BERDL Contains
+
+The tables in `bridge_schemas/schema/kbase/nmdc_core.linkml.yaml` represent a
+**2nd-order ingest** of NMDC data into the KBase/BERDL data lake. These are
+**derived/computed tables**, not the raw NMDC entities:
+
+```
+NMDC MongoDB                    BERDL Data Lake
+┌────────────────┐              ┌─────────────────────────────┐
+│ biosample_set  │              │ annotation_terms_unified    │
+│ study_set      │  ─── ETL ──► │ go_terms                    │
+│ data_object_set│              │ metabolomics_gold           │
+│ workflow_exec  │              │ embeddings_v1               │
+└────────────────┘              │ go_hierarchy_flat           │
+                                └─────────────────────────────┘
+```
+
+The BERDL tables are:
+- **Aggregated**: Terms unified across studies
+- **Pre-computed**: GO hierarchy flattened for efficient queries
+- **Enhanced**: Embeddings computed from raw data
+- **Restructured**: Optimized for analytical queries, not storage
+
+### Table Name Confusion
+
+| BERDL Table | What It Contains | NOT the same as |
+|-------------|------------------|-----------------|
+| `annotation_terms_unified` | Merged GO/KEGG/EC terms across all NMDC samples | Any single NMDC class |
+| `metabolomics_gold` | Mass spec features from GOLD-registered samples | `DataObject` or `WorkflowExecution` |
+| `go_hierarchy_flat` | Pre-computed GO ancestor closure | `OntologyClass` |
+| `embeddings_v1` | 256-dim sample embeddings for similarity | No equivalent |
+| `studies` | Study metadata with GOLD linkages | `Study` (partial overlap) |
+
+The `_gold` suffix on tables like `metabolomics_gold` indicates the data comes
+from **GOLD-registered samples**, not that they link to the GOLD database.
+
+## Consequences of Schema Introspection
+
+### What We Capture (via BERDL API)
+
+```yaml
+# Introspected schema (impoverished)
+classes:
+  AnnotationTermsUnified:
+    attributes:
+      source:
+        range: string
+      term_id:
+        range: string
+      name:
+        range: string
+```
+
+### What Canonical Schemas Provide
+
+```yaml
+# Canonical schema (rich)
+classes:
+  AnnotationTermsUnified:
+    description: >-
+      Unified annotation terms across sources (GO, KEGG, EC, COG, MetaCyc).
+      Provides a single interface for querying functional annotations...
+
+      TOTAL TERMS: 67,353 across all sources
+    attributes:
+      source:
+        range: AnnotationSource  # Enum, not string!
+        required: true
+        description: >-
+          Source ontology/database for this term. Determines ID format...
+      term_id:
+        identifier: true
+        range: string
+        required: true
+        pattern: "^(GO:\\d{7}|K\\d{5}|\\d+\\.\\d+\\.\\d+\\.\\d+|...)$"
+```
+
+### Information Lost
+
+| Aspect | Introspected | Canonical |
+|--------|-------------|-----------|
+| Descriptions | None or minimal | Rich, contextual |
+| Enumerations | All strings | Defined value sets |
+| Patterns | None | Regex validation |
+| Required fields | Sometimes | Explicit |
+| Identifiers | Guessed | Declared |
+| Foreign keys | API-dependent | Logical relationships |
+| Inheritance | None | Class hierarchies |
+
+## Current Mitigation: Manual Curation
+
+For critical schemas, we manually curate descriptions after initial introspection:
+
+- `kbase_ke_pangenome.linkml.yaml` - 38 curated descriptions
+- `nmdc_core.linkml.yaml` - 79 curated descriptions
+
+**Warning**: Do not regenerate these schemas—curation will be lost.
+
+## Recommended Path Forward
+
+### Short-term: Document the Gap
+
+This document serves to clarify:
+1. Canonical schemas exist but are not being used
+2. BERDL tables ≠ NMDC schema classes
+3. The "2nd order ingest" nature of NMDC data in BERDL
+
+### Medium-term: Schema Alignment
+
+Potential improvements:
+
+1. **Import canonical enums**: Use AnnotationSource, GoNamespace, etc. from
+   upstream schemas instead of regenerating as strings
+
+2. **Link to canonical docs**: Reference `nmdc-schema` and `cdm-schema`
+   documentation for authoritative definitions
+
+3. **Distinguish derived tables**: Clearly mark which tables are derived/computed
+   vs. direct representations of upstream entities
+
+### Long-term: Hybrid Approach
+
+Combine introspection with canonical schemas:
+
+```yaml
+# Import canonical definitions
+imports:
+  - https://w3id.org/nmdc/nmdc-schema  # Enums, base types
+
+# Extend with BERDL-specific tables
+classes:
+  EmbeddingsV1:
+    description: BERDL-computed embeddings (not in nmdc-schema)
+    ...
+```
+
+## See Also
+
+- [Schema Generation Methods](../methods/index.md) - How introspection works
+- [Cross-Database Linkages](../linkages.md) - How NMDC links to GOLD
+- [KBase CDM Schema](https://github.com/kbase/cdm-schema) - Canonical KBase schema
+- [NMDC Schema](https://github.com/microbiomedata/nmdc-schema) - Canonical NMDC schema
