@@ -217,6 +217,92 @@ classes:
     ...
 ```
 
+## Data Catalog Alternatives
+
+Could enterprise data catalog tools help bridge the gap between introspected and
+canonical schemas? Here's an assessment of the major open-source options:
+
+### Tool Comparison
+
+| Tool | Schema Format | Semantic Enrichment | Complexity |
+|------|---------------|---------------------|------------|
+| [OpenMetadata](https://open-metadata.org/) | JSON Schema | Collaborative curation, glossary | Medium |
+| [DataHub](https://datahubproject.io/) | Graph-based | Tags, terms, domains, lineage | High |
+| [Amundsen](https://www.amundsen.io/) | Neo4j | Owners, tags, badges | Low |
+| [LinkML Registry](https://linkml.io/linkml-registry/) | LinkML native | Discovery only | Low |
+
+### How Data Catalogs Could Help
+
+A data catalog like OpenMetadata or DataHub could serve as a **semantic overlay**:
+
+```
+BERDL Tables        Data Catalog           Bridge-Schemas
+┌──────────────┐    ┌──────────────────┐   ┌──────────────┐
+│ Introspected │───►│ + descriptions   │──►│ Enriched     │
+│ columns      │    │ + glossary terms │   │ LinkML       │
+│ + types      │    │ + lineage        │   │ schemas      │
+└──────────────┘    │ + ownership      │   └──────────────┘
+                    └──────────────────┘
+```
+
+**Potential benefits**:
+- Collaborative curation (data producers add business context)
+- Column-level lineage (track NMDC MongoDB → BERDL ETL transformations)
+- Business glossary (define terms like "GOLD ecosystem", "MIxS package")
+- Data quality alerts and deprecation notices
+
+**Limitations for our use case**:
+- Additional infrastructure to deploy and maintain
+- JSON Schema based, not LinkML (translation layer needed)
+- No awareness of canonical upstream schemas (cdm-schema, nmdc-schema)
+- Designed for enterprise data governance, not scientific schema alignment
+
+### DataHub vs OpenMetadata
+
+**DataHub** offers stronger governance features:
+- Fine-grained column-level lineage
+- dbt semantic layer integration
+- Hierarchical business glossary
+- But: more complex to operate
+
+**OpenMetadata** is simpler to deploy:
+- 100+ data source connectors
+- Collaborative annotation workflows
+- Built-in data quality framework
+- But: less mature lineage tracking
+
+### Recommendation for Bridge-Schemas
+
+Given that canonical LinkML schemas already exist, **direct schema integration
+is more appropriate than adopting a data catalog**:
+
+1. **Skip data catalogs** for this specific problem—they add complexity without
+   solving the core issue (canonical schemas exist but aren't used)
+
+2. **Import canonical schemas** where they exist (nmdc-schema, cdm-schema)
+
+3. **Create explicit mappings** between BERDL tables and canonical classes:
+
+```yaml
+# mappings/berdl-to-canonical.yaml
+berdl_tables:
+  nmdc_core.studies:
+    canonical_class: nmdc:Study
+    notes: "Subset of fields, adds gold_study_identifiers linkage"
+
+  nmdc_core.annotation_terms_unified:
+    canonical_class: null  # Derived table, no canonical equivalent
+    derived_from:
+      - nmdc:FunctionalAnnotation
+      - nmdc:GeneProduct
+
+  nmdc_core.embeddings_v1:
+    canonical_class: null  # BERDL-computed, no upstream equivalent
+```
+
+4. **Consider data catalogs later** if collaborative curation becomes important
+   across multiple teams or if lineage tracking for ETL pipelines is needed
+
 ## See Also
 
 - [Schema Generation Methods](../methods/index.md) - How introspection works

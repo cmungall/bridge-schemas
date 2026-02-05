@@ -1,0 +1,12 @@
+cog_id,cog_name,description,db_source,add_date,seq_length
+COG0138,AICAR transformylase/IMP cyclohydrolase PurH,AICAR transformylase/IMP cyclohydrolase PurH,COG,2015-02-19 19:56:00.000,515
+COG0139,Phosphoribosyl-AMP cyclohydrolase,Phosphoribosyl-AMP cyclohydrolase,COG,2015-02-19 19:56:00.000,111
+COG0140,Phosphoribosyl-ATP pyrophosphohydrolase,Phosphoribosyl-ATP pyrophosphohydrolase,COG,2015-02-19 19:56:00.000,92
+COG0141,Histidinol dehydrogenase,Histidinol dehydrogenase,COG,2015-02-19 19:56:00.000,425
+COG0142,Geranylgeranyl pyrophosphate synthase,Geranylgeranyl pyrophosphate synthase,COG,2015-02-19 19:56:00.000,322
+COG0143,Methionyl-tRNA synthetase,Methionyl-tRNA synthetase,COG,2015-02-19 19:56:00.000,558
+COG0144,"16S rRNA C967 or C1407 C5-methylase, RsmB/RsmF family","16S rRNA C967 or C1407 C5-methylase, RsmB/RsmF family",COG,2015-02-19 19:56:00.000,355
+COG0145,"N-methylhydantoinase A/oxoprolinase/acetone carboxylase, beta subunit","N-methylhydantoinase A/oxoprolinase/acetone carboxylase, beta subunit",COG,2015-02-19 19:56:00.000,674
+COG0146,"N-methylhydantoinase B/oxoprolinase/acetone carboxylase, alpha subunit","N-methylhydantoinase B/oxoprolinase/acetone carboxylase, alpha subunit",COG,2015-02-19 19:56:00.000,563
+COG0147,Anthranilate/para-aminobenzoate synthases component I,Anthranilate/para-aminobenzoate synthases component I,COG,2015-02-19 19:56:00.000,462
+

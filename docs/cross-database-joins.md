@@ -8,8 +8,9 @@ databases and the KBase Pangenome database.
 | Database | Genome Identifier | Gene Identifier | Key Bridge Tables |
 |----------|-------------------|-----------------|-------------------|
 | **KBase Pangenome** | `RS_GCF_011881725.1` | `NZ_JAATUR010000001.1_1` | `genome`, `gene` |
-| **GOLD** | `GCF_011881725.1` | N/A | `ncbi_assembly`, `organism_v2` |
+| **GOLD** | `GCF_011881725.1` | N/A | `ncbi_assembly`, `organism_v2`, `study` |
 | **IMG Core** | `taxon_oid` (integer) | `gene_oid` (integer) | `taxon`, `gene` |
+| **IMG/VR** | `IMGVR_UViG_*` | N/A | `uvig` → IMG `taxon_oid` |
 
 ## Primary Join Keys
 
@@ -153,12 +154,54 @@ ORDER BY 2 DESC
 - `gene` - Gene annotations (`gene_oid`, `locus_tag`)
 - `scaffold` - Contig/scaffold info
 
+## IMG/VR (Viral) Cross-Database Joins
+
+IMG/VR contains 15.7M viral sequences that can be linked to other databases.
+
+### Join Path
+
+```
+IMG/VR (uvig)
+    │
+    └── taxon_oid ──► IMG Core (taxon)
+                          │
+                          ├── study_gold_id ──► GOLD (study)
+                          ├── sample_gold_id ──► GOLD (project)
+                          ├── ncbi_taxon_id ──► NCBI Taxonomy
+                          └── host_ncbi_taxon_id ──► NCBI (isolate hosts)
+```
+
+### Example: Viral sequences with GOLD ecosystem metadata
+
+```sql
+SELECT v.uvig, v.source, l.realm, l.family,
+       t.taxon_display_name, s.ecosystem, s.ecosystem_category
+FROM "img-db-1 mysql".imgvr_prod.uvig v
+JOIN "img-db-1 mysql".imgvr_prod.uvig_lineage l ON v.uvig = l.uvig
+JOIN "img-db-2 postgresql".img_core_v400.taxon t ON v.taxon_oid = t.taxon_oid
+JOIN "gold-db-2 postgresql".gold.study s ON t.study_gold_id = s.gold_id
+WHERE v.high_confidence = 'YES'
+LIMIT 10
+```
+
+### Example: Count viruses by GOLD ecosystem
+
+```sql
+SELECT s.ecosystem_category, COUNT(DISTINCT v.uvig) as viral_count
+FROM "img-db-1 mysql".imgvr_prod.uvig v
+JOIN "img-db-2 postgresql".img_core_v400.taxon t ON v.taxon_oid = t.taxon_oid
+JOIN "gold-db-2 postgresql".gold.study s ON t.study_gold_id = s.gold_id
+GROUP BY s.ecosystem_category
+ORDER BY viral_count DESC
+```
+
 ## Limitations
 
 1. **ID Format Differences**: KBase uses composite string IDs; IMG uses integer OIDs
 2. **Gene-Level Mapping**: No direct gene ID correspondence; requires scaffold-level mapping
 3. **Coverage Gaps**: Not all IMG genomes have NCBI assembly accessions
 4. **Version Mismatches**: Assembly versions may differ between databases
+5. **IMG/VR Scope**: Only viral sequences, not full microbial genomes
 
 ## Recommendations
 

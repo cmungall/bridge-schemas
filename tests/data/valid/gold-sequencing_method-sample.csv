@@ -1,0 +1,12 @@
+id,term,sequence,is_curated
+33.0,Illumina NextSeq-HO,,Yes
+2.0,454 Roche GS Junior,,No
+3.0,454-GS-FLX,,No
+4.0,454-GS-FLX-Titanium,,No
+5.0,454-GS-FLX-Titanium Plus,,No
+6.0,454-GS20,,No
+7.0,ABI 3130,,Yes
+8.0,ABI 3730,,Yes
+9.0,BAC clones,,No
+10.0,Clone-based,,No
+

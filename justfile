@@ -109,5 +109,15 @@ merge-owl:
     robot merge $inputs --output project/owl/lakehouse.owl.ttl
     echo "Created project/owl/lakehouse.owl.ttl"
 
+# Extract test data samples from JGI databases
+extract-test-data:
+    @echo "Extracting test data from JGI databases..."
+    @bash scripts/extract_test_data.sh tests/data/valid 10
+
+# Extract test data samples from KBase databases (requires KBASE_TOKEN)
+extract-kbase-test-data:
+    @echo "Extracting test data from KBase databases..."
+    @bash scripts/extract_kbase_test_data.sh tests/data/valid 10
+
 # Full rebuild: clean, install, generate docs
 rebuild: clean install gendoc

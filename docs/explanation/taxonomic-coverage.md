@@ -301,15 +301,41 @@ Unlike MycoCosm (schema-per-genome), Phytozome uses a unified Chado schema:
 
 ## IMG/VR: Viral Genomes
 
-Viral sequences from isolates and metagenomes.
+**Database:** `img-db-1 mysql.imgvr_prod`
+
+**Total UViGs:** 15.7 million viral sequences
 
 ### Sources
 
-| Source | Description |
-|--------|-------------|
-| Isolate viruses | Cultured phages and viruses |
-| Metagenomic viral sequences | Predicted from metagenomes |
-| Single-virus genomics | Sorted viral particles |
+| Source | Count | Description |
+|--------|-------|-------------|
+| Metagenome | 14.2M (90.6%) | Predicted from metagenomes |
+| Metatranscriptome | 1.2M (7.3%) | RNA viruses from metatranscriptomes |
+| Isolate | 294K (1.9%) | Cultured phages and viruses |
+| RefSeq | 14K | Curated reference sequences |
+| MAG | 13.5K | From metagenome-assembled genomes |
+| SAG | 1.6K | Single amplified genomes |
+
+### Viral Realm Distribution
+
+| Realm | Count | Description |
+|-------|-------|-------------|
+| Duplodnaviria | 13.5M (86%) | dsDNA viruses (mostly bacteriophages) |
+| Varidnaviria | 1.0M (6.7%) | Large/giant DNA viruses |
+| Riboviria | 531K (3.4%) | RNA viruses |
+| Unclassified | 521K (3.3%) | No realm assigned |
+| Monodnaviria | 72K (0.5%) | ssDNA viruses |
+| Adnaviria | 3.7K | Archaeal filamentous viruses |
+
+### Key Tables
+
+| Table | Rows | Description |
+|-------|------|-------------|
+| `uvig` | 15.7M | Main viral sequences |
+| `uvig_lineage` | 15.7M | ICTV taxonomy |
+| `uvig_hosts` | 1.1M | Predicted hosts |
+| `uvig_domain` | 118.7M | Protein domains |
+| `uvig_pfams` | 50.4M | PFAM annotations |
 
 ## Cross-Database Organism Lookup
 

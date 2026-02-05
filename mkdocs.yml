@@ -22,11 +22,13 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Methods: methods/index.md
+  - Querying Genes: genes.md
   - Cross-Database Joins: cross-database-joins.md
   - Database Linkages: linkages.md
   - Explanations:
     - Existing Schemas: explanation/existing-schemas.md
     - Microbial Traits: explanation/traits.md
+    - Perturbation Experiments: explanation/perturbation-experiments.md
     - Functional Annotation: explanation/functional-annotation.md
     - Taxonomic Coverage: explanation/taxonomic-coverage.md
   - Case Studies:
@@ -64,7 +66,7 @@ nav:
     - IMG RNAseq: jgi/img_rnaseq/index.md
     - IMG MySQL ABC: jgi/img_mysql_abc/index.md
     - IMG MySQL Core: jgi/img_mysql_img/index.md
-    - IMG/VR: jgi/img_mysql_imgvr_prod/index.md
+    - IMG/VR: jgi/imgvr/index.md
     - IMG MySQL MBin: jgi/img_mysql_mbin/index.md
     - IMG MySQL MISI: jgi/img_mysql_misi/index.md
     - Phytozome: jgi/phytozome/index.md
