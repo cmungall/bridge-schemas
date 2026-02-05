@@ -1,0 +1,2221 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="LinkML schemas for JGI and KBase genomics lakehouses" name="description"/>
+<link href="../traits/" rel="prev"/>
+<link href="../functional-annotation/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.1" name="generator"/>
+<title>Perturbation Experiments - Bridge Schemas</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="cyan" data-md-color-primary="teal" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#perturbation-and-phenotype-experiments">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Bridge Schemas" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Bridge Schemas">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Bridge Schemas
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Perturbation Experiments
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/cmungall/bridge-schemas" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Bridge Schemas" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Bridge Schemas">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Bridge Schemas
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/cmungall/bridge-schemas" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../methods/">
+<span class="md-ellipsis">
+    
+  
+    Methods
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../genes/">
+<span class="md-ellipsis">
+    
+  
+    Querying Genes
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cross-database-joins/">
+<span class="md-ellipsis">
+    
+  
+    Cross-Database Joins
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../linkages/">
+<span class="md-ellipsis">
+    
+  
+    Database Linkages
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Explanations
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Explanations
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../existing-schemas/">
+<span class="md-ellipsis">
+    
+  
+    Existing Schemas
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../traits/">
+<span class="md-ellipsis">
+    
+  
+    Microbial Traits
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Perturbation Experiments
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Perturbation Experiments
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#img-rna-seq-experiments">
+<span class="md-ellipsis">
+      
+        IMG RNA-seq Experiments
+      
+    </span>
+</a>
+<nav aria-label="IMG RNA-seq Experiments" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema">
+<span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-tables">
+<span class="md-ellipsis">
+      
+        Key Tables
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-perturbation-experiments">
+<span class="md-ellipsis">
+      
+        Example Perturbation Experiments
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sample-level-conditions">
+<span class="md-ellipsis">
+      
+        Sample-Level Conditions
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#organisms-with-rna-seq-data">
+<span class="md-ellipsis">
+      
+        Organisms with RNA-seq Data
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#img-proteomics-experiments">
+<span class="md-ellipsis">
+      
+        IMG Proteomics Experiments
+      
+    </span>
+</a>
+<nav aria-label="IMG Proteomics Experiments" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema_1">
+<span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-experiments">
+<span class="md-ellipsis">
+      
+        Example Experiments
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gold-organism-phenotypes">
+<span class="md-ellipsis">
+      
+        GOLD Organism Phenotypes
+      
+    </span>
+</a>
+<nav aria-label="GOLD Organism Phenotypes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema_2">
+<span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#phenotype-categories">
+<span class="md-ellipsis">
+      
+        Phenotype Categories
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#query-example">
+<span class="md-ellipsis">
+      
+        Query Example
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gold-studies-with-perturbation-experiments">
+<span class="md-ellipsis">
+      
+        GOLD Studies with Perturbation Experiments
+      
+    </span>
+</a>
+<nav aria-label="GOLD Studies with Perturbation Experiments" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tnseq-transposon-mutagenesis-studies">
+<span class="md-ellipsis">
+      
+        TnSeq / Transposon Mutagenesis Studies
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#stress-and-expression-studies">
+<span class="md-ellipsis">
+      
+        Stress and Expression Studies
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mycocosm-fungal-data">
+<span class="md-ellipsis">
+      
+        MycoCosm Fungal Data
+      
+    </span>
+</a>
+<nav aria-label="MycoCosm Fungal Data" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#expression-data">
+<span class="md-ellipsis">
+      
+        Expression Data
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#proteomics-data">
+<span class="md-ellipsis">
+      
+        Proteomics Data
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metabolomics-data">
+<span class="md-ellipsis">
+      
+        Metabolomics Data
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#transposoninsertion-data">
+<span class="md-ellipsis">
+      
+        Transposon/Insertion Data
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kbase-phenotype-database">
+<span class="md-ellipsis">
+      
+        KBase Phenotype Database
+      
+    </span>
+</a>
+<nav aria-label="KBase Phenotype Database" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema_3">
+<span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema-diagram">
+<span class="md-ellipsis">
+      
+        Schema Diagram
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#enigma-coral-database">
+<span class="md-ellipsis">
+      
+        ENIGMA CoRAL Database
+      
+    </span>
+</a>
+<nav aria-label="ENIGMA CoRAL Database" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema_4">
+<span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sample-metadata">
+<span class="md-ellipsis">
+      
+        Sample Metadata
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cross-database-query-patterns">
+<span class="md-ellipsis">
+      
+        Cross-Database Query Patterns
+      
+    </span>
+</a>
+<nav aria-label="Cross-Database Query Patterns" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#find-organisms-with-both-phenotypes-and-expression-data">
+<span class="md-ellipsis">
+      
+        Find Organisms with Both Phenotypes and Expression Data
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#find-studies-with-specific-perturbation-types">
+<span class="md-ellipsis">
+      
+        Find Studies with Specific Perturbation Types
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#find-stress-related-rna-seq-experiments">
+<span class="md-ellipsis">
+      
+        Find Stress-Related RNA-seq Experiments
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-gaps-and-limitations">
+<span class="md-ellipsis">
+      
+        Data Gaps and Limitations
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recommendations">
+<span class="md-ellipsis">
+      
+        Recommendations
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../functional-annotation/">
+<span class="md-ellipsis">
+    
+  
+    Functional Annotation
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../taxonomic-coverage/">
+<span class="md-ellipsis">
+    
+  
+    Taxonomic Coverage
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Case Studies
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Case Studies
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../case-studies/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../case-studies/mll-bgc-methylorubrum/">
+<span class="md-ellipsis">
+    
+  
+    mll BGC (M. extorquens)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../case-studies/microbial-isolates/">
+<span class="md-ellipsis">
+    
+  
+    Microbial Isolates
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    KBase/BERDL Schemas
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    KBase/BERDL Schemas
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../kbase/kbase_ke_pangenome/">
+<span class="md-ellipsis">
+    
+  
+    Pangenome
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../kbase/nmdc_core/">
+<span class="md-ellipsis">
+    
+  
+    NMDC Core
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../kbase/kbase_genomes/">
+<span class="md-ellipsis">
+    
+  
+    Genomes
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../kbase/gapmind_pathways/">
+<span class="md-ellipsis">
+    
+  
+    GapMind Pathways
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../kbase/enigma_coral/">
+<span class="md-ellipsis">
+    
+  
+    ENIGMA CoRAL
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../kbase/phagefoundry_genome_browser/">
+<span class="md-ellipsis">
+    
+  
+    PhageFoundry Browser
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../kbase/phagefoundry_strain_modelling/">
+<span class="md-ellipsis">
+    
+  
+    PhageFoundry Modelling
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../kbase/kbase_uniprot_archaea/">
+<span class="md-ellipsis">
+    
+  
+    UniProt Archaea
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../kbase/kbase_uniprot_bacteria/">
+<span class="md-ellipsis">
+    
+  
+    UniProt Bacteria
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../kbase/kbase_uniref50/">
+<span class="md-ellipsis">
+    
+  
+    UniRef50
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../kbase/kbase_uniref90/">
+<span class="md-ellipsis">
+    
+  
+    UniRef90
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../kbase/kbase_uniref100/">
+<span class="md-ellipsis">
+    
+  
+    UniRef100
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../kbase/kbase_phenotype/">
+<span class="md-ellipsis">
+    
+  
+    Phenotype
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../kbase/kbase_msd_biochemistry/">
+<span class="md-ellipsis">
+    
+  
+    MSD Biochemistry
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../kbase/kbase_ontology_source/">
+<span class="md-ellipsis">
+    
+  
+    Ontology Source
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../kbase/kbase_refseq_taxon_api/">
+<span class="md-ellipsis">
+    
+  
+    RefSeq Taxon
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    JGI Lakehouse Schemas
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    JGI Lakehouse Schemas
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/gold/">
+<span class="md-ellipsis">
+    
+  
+    GOLD
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/img_core_v400/">
+<span class="md-ellipsis">
+    
+  
+    IMG Core
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/img_ext/">
+<span class="md-ellipsis">
+    
+  
+    IMG Extended
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/img_gold/">
+<span class="md-ellipsis">
+    
+  
+    IMG GOLD
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/img_sat_v450/">
+<span class="md-ellipsis">
+    
+  
+    IMG Satellite
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/img_sub/">
+<span class="md-ellipsis">
+    
+  
+    IMG Submission
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/imgsg_dev/">
+<span class="md-ellipsis">
+    
+  
+    IMG Development
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/img_i_taxon/">
+<span class="md-ellipsis">
+    
+  
+    IMG Taxonomy
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/img_methylome/">
+<span class="md-ellipsis">
+    
+  
+    IMG Methylome
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/img_proteome/">
+<span class="md-ellipsis">
+    
+  
+    IMG Proteome
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/img_rnaseq/">
+<span class="md-ellipsis">
+    
+  
+    IMG RNAseq
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/img_mysql_abc/">
+<span class="md-ellipsis">
+    
+  
+    IMG MySQL ABC
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/img_mysql_img/">
+<span class="md-ellipsis">
+    
+  
+    IMG MySQL Core
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/imgvr/">
+<span class="md-ellipsis">
+    
+  
+    IMG/VR
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/img_mysql_mbin/">
+<span class="md-ellipsis">
+    
+  
+    IMG MySQL MBin
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/img_mysql_misi/">
+<span class="md-ellipsis">
+    
+  
+    IMG MySQL MISI
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/phytozome/">
+<span class="md-ellipsis">
+    
+  
+    Phytozome
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/mycocosm/">
+<span class="md-ellipsis">
+    
+  
+    MycoCosm
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/gcs_citation/">
+<span class="md-ellipsis">
+    
+  
+    Citation Service
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/jgi_portal/">
+<span class="md-ellipsis">
+    
+  
+    JGI Portal
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/sdm_metadata/">
+<span class="md-ellipsis">
+    
+  
+    SDM Metadata
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../jgi/smc/">
+<span class="md-ellipsis">
+    
+  
+    SMC
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#img-rna-seq-experiments">
+<span class="md-ellipsis">
+      
+        IMG RNA-seq Experiments
+      
+    </span>
+</a>
+<nav aria-label="IMG RNA-seq Experiments" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema">
+<span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-tables">
+<span class="md-ellipsis">
+      
+        Key Tables
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-perturbation-experiments">
+<span class="md-ellipsis">
+      
+        Example Perturbation Experiments
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sample-level-conditions">
+<span class="md-ellipsis">
+      
+        Sample-Level Conditions
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#organisms-with-rna-seq-data">
+<span class="md-ellipsis">
+      
+        Organisms with RNA-seq Data
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#img-proteomics-experiments">
+<span class="md-ellipsis">
+      
+        IMG Proteomics Experiments
+      
+    </span>
+</a>
+<nav aria-label="IMG Proteomics Experiments" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema_1">
+<span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-experiments">
+<span class="md-ellipsis">
+      
+        Example Experiments
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gold-organism-phenotypes">
+<span class="md-ellipsis">
+      
+        GOLD Organism Phenotypes
+      
+    </span>
+</a>
+<nav aria-label="GOLD Organism Phenotypes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema_2">
+<span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#phenotype-categories">
+<span class="md-ellipsis">
+      
+        Phenotype Categories
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#query-example">
+<span class="md-ellipsis">
+      
+        Query Example
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gold-studies-with-perturbation-experiments">
+<span class="md-ellipsis">
+      
+        GOLD Studies with Perturbation Experiments
+      
+    </span>
+</a>
+<nav aria-label="GOLD Studies with Perturbation Experiments" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tnseq-transposon-mutagenesis-studies">
+<span class="md-ellipsis">
+      
+        TnSeq / Transposon Mutagenesis Studies
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#stress-and-expression-studies">
+<span class="md-ellipsis">
+      
+        Stress and Expression Studies
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mycocosm-fungal-data">
+<span class="md-ellipsis">
+      
+        MycoCosm Fungal Data
+      
+    </span>
+</a>
+<nav aria-label="MycoCosm Fungal Data" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#expression-data">
+<span class="md-ellipsis">
+      
+        Expression Data
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#proteomics-data">
+<span class="md-ellipsis">
+      
+        Proteomics Data
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metabolomics-data">
+<span class="md-ellipsis">
+      
+        Metabolomics Data
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#transposoninsertion-data">
+<span class="md-ellipsis">
+      
+        Transposon/Insertion Data
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kbase-phenotype-database">
+<span class="md-ellipsis">
+      
+        KBase Phenotype Database
+      
+    </span>
+</a>
+<nav aria-label="KBase Phenotype Database" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema_3">
+<span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema-diagram">
+<span class="md-ellipsis">
+      
+        Schema Diagram
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#enigma-coral-database">
+<span class="md-ellipsis">
+      
+        ENIGMA CoRAL Database
+      
+    </span>
+</a>
+<nav aria-label="ENIGMA CoRAL Database" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema_4">
+<span class="md-ellipsis">
+      
+        Schema
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sample-metadata">
+<span class="md-ellipsis">
+      
+        Sample Metadata
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cross-database-query-patterns">
+<span class="md-ellipsis">
+      
+        Cross-Database Query Patterns
+      
+    </span>
+</a>
+<nav aria-label="Cross-Database Query Patterns" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#find-organisms-with-both-phenotypes-and-expression-data">
+<span class="md-ellipsis">
+      
+        Find Organisms with Both Phenotypes and Expression Data
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#find-studies-with-specific-perturbation-types">
+<span class="md-ellipsis">
+      
+        Find Studies with Specific Perturbation Types
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#find-stress-related-rna-seq-experiments">
+<span class="md-ellipsis">
+      
+        Find Stress-Related RNA-seq Experiments
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-gaps-and-limitations">
+<span class="md-ellipsis">
+      
+        Data Gaps and Limitations
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recommendations">
+<span class="md-ellipsis">
+      
+        Recommendations
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="perturbation-and-phenotype-experiments">Perturbation and Phenotype Experiments</h1>
+<p>This document catalogs experimental data involving perturbations, treatments, and phenotype
+measurements across the JGI and KBase lakehouses.</p>
+<h2 id="overview">Overview</h2>
+<p>Perturbation experiments (TnSeq, knockouts, stress treatments, expression profiling) are
+distributed across multiple databases with different levels of metadata richness:</p>
+<table>
+<thead>
+<tr>
+<th>Database</th>
+<th>Data Types</th>
+<th>Scale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IMG RNAseq</strong></td>
+<td>Transcriptomics under conditions</td>
+<td>110 experiments, 312 samples</td>
+</tr>
+<tr>
+<td><strong>IMG Proteome</strong></td>
+<td>Proteomics with treatments</td>
+<td>5 experiments</td>
+</tr>
+<tr>
+<td><strong>GOLD Phenotypes</strong></td>
+<td>Organism trait annotations</td>
+<td>7,113 mappings (159 terms)</td>
+</tr>
+<tr>
+<td><strong>GOLD Studies</strong></td>
+<td>Study-level experiment descriptions</td>
+<td>TnSeq, mutagenesis, stress studies</td>
+</tr>
+<tr>
+<td><strong>MycoCosm</strong></td>
+<td>Fungal expression, proteomics, metabolomics</td>
+<td>Per-organism tables</td>
+</tr>
+<tr>
+<td><strong>KBase Phenotype</strong></td>
+<td>Experimental conditions and measurements</td>
+<td>Structured schema</td>
+</tr>
+<tr>
+<td><strong>ENIGMA CoRAL</strong></td>
+<td>Groundwater microbiome conditions</td>
+<td>Environmental samples</td>
+</tr>
+</tbody>
+</table>
+<h2 id="img-rna-seq-experiments">IMG RNA-seq Experiments</h2>
+<p>The IMG RNAseq database contains transcriptomics experiments with condition/treatment metadata.</p>
+<h3 id="schema">Schema</h3>
+<div class="highlight"><pre><span></span><code>rnaseq_experiment (110 experiments)
+    │
+    │ exp_oid
+    ▼
+rnaseq_sample (312 samples)
+    │
+    │ experiment
+    ▼
+rnaseq_dataset (expression data)
+</code></pre></div>
+<p><strong>Location:</strong> <code>"img-db-2 postgresql".img_rnaseq</code></p>
+<h3 id="key-tables">Key Tables</h3>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rnaseq_experiment</code></td>
+<td>Experiment metadata (name, description, contact, method)</td>
+</tr>
+<tr>
+<td><code>rnaseq_sample</code></td>
+<td>Sample conditions, organism, notes</td>
+</tr>
+<tr>
+<td><code>rnaseq_dataset</code></td>
+<td>Expression measurements</td>
+</tr>
+<tr>
+<td><code>rnaseq_experiment_pubs</code></td>
+<td>Associated publications</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-perturbation-experiments">Example Perturbation Experiments</h3>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">exp_name</span><span class="p">,</span><span class="w"> </span><span class="n">description</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">"img-db-2 postgresql"</span><span class="p">.</span><span class="n">img_rnaseq</span><span class="p">.</span><span class="n">rnaseq_experiment</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">5</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>P. syringae</em> B728a mutant</td>
+<td>WT vs NUDIX hydrolase deletion at 20°C/30°C temperature treatments</td>
+</tr>
+<tr>
+<td><em>Synechococcus</em> PCC 7942</td>
+<td>Six stress and nutrient conditions, two timepoints</td>
+</tr>
+<tr>
+<td><em>Synechocystis</em> PCC 6803</td>
+<td>Six stress and nutrient conditions, two timepoints</td>
+</tr>
+<tr>
+<td><em>Synechococcus</em> PCC 7002</td>
+<td>11 samples under different conditions</td>
+</tr>
+<tr>
+<td>Lake Vida brine</td>
+<td>Extreme cold microbial community transcriptomics</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sample-level-conditions">Sample-Level Conditions</h3>
+<p>Samples include detailed treatment notes:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">sample_oid</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="p">,</span><span class="w"> </span><span class="n">notes</span><span class="p">,</span><span class="w"> </span><span class="n">organism_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">"img-db-2 postgresql"</span><span class="p">.</span><span class="n">img_rnaseq</span><span class="p">.</span><span class="n">rnaseq_sample</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">experiment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Sample</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KH001</td>
+<td>WT 30°C, R1</td>
+<td><em>Pss</em> B728a incubated for 6-8 hours on KB at 30°C</td>
+</tr>
+<tr>
+<td>KH002</td>
+<td>WT 20°C, R1</td>
+<td><em>Pss</em> B728a incubated for 6-8 hours on KB at 20°C</td>
+</tr>
+<tr>
+<td>KH003</td>
+<td>Nudix 30°C, R1</td>
+<td>Deletion mutant at 30°C</td>
+</tr>
+<tr>
+<td>KH004</td>
+<td>Nudix 20°C, R1</td>
+<td>Deletion mutant at 20°C</td>
+</tr>
+</tbody>
+</table>
+<h3 id="organisms-with-rna-seq-data">Organisms with RNA-seq Data</h3>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">samples</span><span class="p">,</span><span class="w"> </span><span class="n">organism_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">"img-db-2 postgresql"</span><span class="p">.</span><span class="n">img_rnaseq</span><span class="p">.</span><span class="n">rnaseq_sample</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">organism_name</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">samples</span><span class="w"> </span><span class="k">DESC</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Samples</th>
+<th>Organism</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>17</td>
+<td><em>Isoptericola variabilis</em> 225</td>
+</tr>
+<tr>
+<td>15</td>
+<td><em>Synechococcus</em> sp. PCC 7942</td>
+</tr>
+<tr>
+<td>15</td>
+<td><em>Synechocystis</em> sp. PCC 6803</td>
+</tr>
+<tr>
+<td>12</td>
+<td><em>Arthrobacter chlorophenolicus</em> A6</td>
+</tr>
+<tr>
+<td>12</td>
+<td><em>Pseudomonas syringae</em> pv. syringae B728a</td>
+</tr>
+<tr>
+<td>11</td>
+<td><em>Synechococcus</em> sp. PCC 7002</td>
+</tr>
+</tbody>
+</table>
+<h2 id="img-proteomics-experiments">IMG Proteomics Experiments</h2>
+<p>Mass spectrometry-based proteomics with condition comparisons.</p>
+<h3 id="schema_1">Schema</h3>
+<div class="highlight"><pre><span></span><code>ms_experiment (5 experiments)
+    │
+    │ exp_oid
+    ▼
+ms_sample (sample metadata)
+    │
+    │ sample_oid
+    ▼
+ms_protein / ms_peptide (identifications)
+</code></pre></div>
+<p><strong>Location:</strong> <code>"img-db-2 postgresql".img_proteome</code></p>
+<h3 id="example-experiments">Example Experiments</h3>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">exp_name</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="p">,</span><span class="w"> </span><span class="n">protein_count</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">"img-db-2 postgresql"</span><span class="p">.</span><span class="n">img_proteome</span><span class="p">.</span><span class="n">ms_experiment</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Description</th>
+<th>Proteins</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Arthrobacter chlorophenolicus</em></td>
+<td>4-chlorophenol vs 4-nitrophenol vs phenol at 5°C/28°C (WT vs mutant)</td>
+<td>44,248</td>
+</tr>
+<tr>
+<td><em>Cryptobacterium curtum</em></td>
+<td>Baseline proteome</td>
+<td>1,030</td>
+</tr>
+<tr>
+<td><em>Brachybacterium faecium</em></td>
+<td>Baseline proteome</td>
+<td>1,803</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gold-organism-phenotypes">GOLD Organism Phenotypes</h2>
+<p>Curated phenotype annotations for organisms registered in GOLD.</p>
+<h3 id="schema_2">Schema</h3>
+<div class="highlight"><pre><span></span><code>cvphenotype (159 controlled terms)
+    │
+    │ phenotype_id
+    ▼
+organism_phenotype (7,113 annotations)
+    │
+    │ organism_id
+    ▼
+organism_v2 (organism metadata)
+</code></pre></div>
+<p><strong>Location:</strong> <code>"gold-db-2 postgresql".gold</code></p>
+<h3 id="phenotype-categories">Phenotype Categories</h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Example Terms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pathogenicity</strong></td>
+<td>Pathogen (3,132), Non-Pathogen (576), Opportunistic Pathogen (279)</td>
+</tr>
+<tr>
+<td><strong>Stress Tolerance</strong></td>
+<td>Acidophile (143), Radiation resistant (49), Alkaliphile (44)</td>
+</tr>
+<tr>
+<td><strong>Antimicrobial Resistance</strong></td>
+<td>Meticillin resistant (59), Antibiotic resistant</td>
+</tr>
+<tr>
+<td><strong>Metabolic</strong></td>
+<td>Catalase positive (414), Catalase negative (520), Beta-hemolytic (236)</td>
+</tr>
+<tr>
+<td><strong>Ecological</strong></td>
+<td>Symbiont (34), Probiotic (106), Biofilm (47), Parasitic</td>
+</tr>
+</tbody>
+</table>
+<h3 id="query-example">Query Example</h3>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">cv</span><span class="p">.</span><span class="n">term</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">phenotype</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">organisms</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">"gold-db-2 postgresql"</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">organism_phenotype</span><span class="w"> </span><span class="n">op</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">"gold-db-2 postgresql"</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">cvphenotype</span><span class="w"> </span><span class="n">cv</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">op</span><span class="p">.</span><span class="n">phenotype_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cv</span><span class="p">.</span><span class="n">id</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">cv</span><span class="p">.</span><span class="n">term</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">organisms</span><span class="w"> </span><span class="k">DESC</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div>
+<h2 id="gold-studies-with-perturbation-experiments">GOLD Studies with Perturbation Experiments</h2>
+<p>Many GOLD studies describe TnSeq, mutagenesis, and stress experiments in their descriptions.</p>
+<h3 id="tnseq-transposon-mutagenesis-studies">TnSeq / Transposon Mutagenesis Studies</h3>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">study_name</span><span class="p">,</span><span class="w"> </span><span class="n">description</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">"gold-db-2 postgresql"</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">study</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">description</span><span class="p">)</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%tnseq%'</span>
+<span class="w">   </span><span class="k">OR</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">description</span><span class="p">)</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%transposon%'</span>
+<span class="w">   </span><span class="k">OR</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">description</span><span class="p">)</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%mutagenesis%'</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Study</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Ruegeria pomeroyi</em> DSS-3</td>
+<td>HITS (high-throughput insertion tracking) for DOM cycling genes</td>
+</tr>
+<tr>
+<td><em>Staphylococcus aureus</em> LAC</td>
+<td>TnSeq library for virulence studies</td>
+</tr>
+<tr>
+<td><em>Streptomyces lividans</em> TK23</td>
+<td>Natural mutagenesis study</td>
+</tr>
+<tr>
+<td>Fungal Tn-seq</td>
+<td>Pioneering fungal mutagenesis using Tn-seq</td>
+</tr>
+<tr>
+<td><em>Mycobacterium marinum</em></td>
+<td>TraDIS for host-specific virulence factors</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stress-and-expression-studies">Stress and Expression Studies</h3>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">study_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">"gold-db-2 postgresql"</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">study</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">description</span><span class="p">)</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%stress%'</span>
+<span class="w">   </span><span class="k">OR</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">description</span><span class="p">)</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%expression%'</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Study</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Transcriptome analysis under abiotic stress in sorghum</td>
+</tr>
+<tr>
+<td><em>Naganishia friedmannii</em> freeze-thaw stress transcriptomics</td>
+</tr>
+<tr>
+<td><em>Mimulus laciniatus</em> drought stress microbiome</td>
+</tr>
+<tr>
+<td><em>Cellulomonas gilvus</em> aerobic/anaerobic expression</td>
+</tr>
+<tr>
+<td>Freshwater pond carbon perturbation study</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mycocosm-fungal-data">MycoCosm Fungal Data</h2>
+<p>Fungal genome portals contain organism-specific expression, proteomics, and metabolomics tables.</p>
+<h3 id="expression-data">Expression Data</h3>
+<table>
+<thead>
+<tr>
+<th>Schema Pattern</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ESTexpression</code></td>
+<td>EST-based expression</td>
+</tr>
+<tr>
+<td><code>conditional_ESTexpression</code></td>
+<td>Condition-specific expression</td>
+</tr>
+<tr>
+<td><code>*_transcriptome</code></td>
+<td>Assembled transcriptomes</td>
+</tr>
+<tr>
+<td><code>microarray*</code></td>
+<td>Microarray experiments</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example organisms with expression data:</strong>
+- <em>Emiliania huxleyi</em> (conditional, diploid/haploid)
+- <em>Chlamydomonas</em> (microarray, mutants)
+- <em>Trichoderma virens</em> (Before/During/After Contact microarray)</p>
+<h3 id="proteomics-data">Proteomics Data</h3>
+<p>Tables matching pattern <code>proteomics_PXD*</code> or <code>Proteomics_*</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Organism</th>
+<th>Table</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Aspergillus niger</em> NRRL3</td>
+<td><code>proteomics_PXD010431</code></td>
+</tr>
+<tr>
+<td><em>Chlamydomonas</em></td>
+<td><code>PXD010794_proteomics</code></td>
+</tr>
+<tr>
+<td><em>Neurospora crassa</em></td>
+<td><code>PXD009682_proteomics</code></td>
+</tr>
+<tr>
+<td><em>Mycosphaerella graminicola</em></td>
+<td><code>Proteomics_1D_Kema_lab</code>, <code>Proteomics_2D_Kema_lab</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="metabolomics-data">Metabolomics Data</h3>
+<p><em>Poronia crucua</em> (<code>myco-db-1 mysql.Porcrue1</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mo_metabolome_experiment_description</code></td>
+<td>Experiment metadata</td>
+</tr>
+<tr>
+<td><code>mo_metabolome_condition_description</code></td>
+<td>Condition definitions</td>
+</tr>
+<tr>
+<td><code>mo_metabolome_combination</code></td>
+<td>Metabolite combinations</td>
+</tr>
+<tr>
+<td><code>mo_metabolome_project</code></td>
+<td>Project metadata</td>
+</tr>
+</tbody>
+</table>
+<h3 id="transposoninsertion-data">Transposon/Insertion Data</h3>
+<p>Many fungal genomes have <code>TransposonRelatedModels</code> tables for tracking mobile elements and
+insertions, useful for genetic studies.</p>
+<h2 id="kbase-phenotype-database">KBase Phenotype Database</h2>
+<p>Structured experimental phenotype measurements.</p>
+<h3 id="schema_3">Schema</h3>
+<p><strong>Location:</strong> <code>kbase_phenotype</code> database</p>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Experiment</code></td>
+<td>Experiment ID, name, description, protocol</td>
+</tr>
+<tr>
+<td><code>ExperimentalVariable</code></td>
+<td>Variable definitions (name, units, type)</td>
+</tr>
+<tr>
+<td><code>ExperimentalContext</code></td>
+<td>Variable values for experiments</td>
+</tr>
+<tr>
+<td><code>ConditionSet</code></td>
+<td>Grouped experimental conditions</td>
+</tr>
+<tr>
+<td><code>Measurement</code></td>
+<td>Quantitative measurements</td>
+</tr>
+<tr>
+<td><code>Protocol</code></td>
+<td>Experimental protocols</td>
+</tr>
+</tbody>
+</table>
+<h3 id="schema-diagram">Schema Diagram</h3>
+<div class="mermaid">erDiagram
+    Experiment ||--o{ ExperimentalContext : has
+    Experiment ||--o{ ExperimentXMeasurement : produces
+    ExperimentalVariable ||--o{ ExperimentalContext : defines
+    ConditionSet ||--o{ Measurement : groups
+    Measurement ||--o{ ExperimentXMeasurement : contains
+    Protocol ||--o{ Experiment : describes
+</div>
+<h2 id="enigma-coral-database">ENIGMA CoRAL Database</h2>
+<p>Groundwater microbiome data with environmental conditions.</p>
+<h3 id="schema_4">Schema</h3>
+<p><strong>Location:</strong> <code>enigma_coral</code> database</p>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sdt_sample</code></td>
+<td>Environmental samples with location, depth, date</td>
+</tr>
+<tr>
+<td><code>sdt_condition</code></td>
+<td>Experimental/environmental conditions</td>
+</tr>
+<tr>
+<td><code>sdt_strain</code></td>
+<td>Cultured isolates</td>
+</tr>
+<tr>
+<td><code>sdt_taxon</code></td>
+<td>Taxonomic identifications (linked to NCBI)</td>
+</tr>
+<tr>
+<td><code>sdt_asv</code></td>
+<td>16S amplicon sequence variants</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sample-metadata">Sample Metadata</h3>
+<p>Samples include ENVO ontology terms for material type and MIxS environmental packages:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">sdt_sample_name</span><span class="p">,</span><span class="w"> </span><span class="n">depth_meter</span><span class="p">,</span><span class="w"> </span><span class="n">material_sys_oterm_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">enigma_coral</span><span class="p">.</span><span class="n">sdt_sample</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">5</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Sample</th>
+<th>Depth (m)</th>
+<th>Material</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EU02-D01</td>
+<td>5.4</td>
+<td>ground water</td>
+</tr>
+<tr>
+<td>EU03-D01</td>
+<td>4.6</td>
+<td>ground water</td>
+</tr>
+<tr>
+<td>ED04-D01</td>
+<td>4.8</td>
+<td>ground water</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cross-database-query-patterns">Cross-Database Query Patterns</h2>
+<h3 id="find-organisms-with-both-phenotypes-and-expression-data">Find Organisms with Both Phenotypes and Expression Data</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Get organisms with phenotypes that also have RNA-seq</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">op</span><span class="p">.</span><span class="n">organism_id</span><span class="p">,</span><span class="w"> </span><span class="n">cv</span><span class="p">.</span><span class="n">term</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">"gold-db-2 postgresql"</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">organism_phenotype</span><span class="w"> </span><span class="n">op</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">"gold-db-2 postgresql"</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">cvphenotype</span><span class="w"> </span><span class="n">cv</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">op</span><span class="p">.</span><span class="n">phenotype_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cv</span><span class="p">.</span><span class="n">id</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">"gold-db-2 postgresql"</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">organism_v2</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">op</span><span class="p">.</span><span class="n">organism_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">organism_id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">ncbi_taxon_id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">ncbi_taxon_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="ss">"img-db-2 postgresql"</span><span class="p">.</span><span class="n">img_rnaseq</span><span class="p">.</span><span class="n">rnaseq_sample</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ncbi_taxon_id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="find-studies-with-specific-perturbation-types">Find Studies with Specific Perturbation Types</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Find all TnSeq/fitness studies</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">study_id</span><span class="p">,</span><span class="w"> </span><span class="n">study_name</span><span class="p">,</span><span class="w"> </span><span class="n">description</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">"gold-db-2 postgresql"</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">study</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">description</span><span class="p">)</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%fitness%'</span>
+<span class="w">   </span><span class="k">OR</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">description</span><span class="p">)</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%tnseq%'</span>
+<span class="w">   </span><span class="k">OR</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">description</span><span class="p">)</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%knockout%'</span>
+<span class="w">   </span><span class="k">OR</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">study_name</span><span class="p">)</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%fitness%'</span>
+</code></pre></div>
+<h3 id="find-stress-related-rna-seq-experiments">Find Stress-Related RNA-seq Experiments</h3>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">exp_oid</span><span class="p">,</span><span class="w"> </span><span class="n">exp_name</span><span class="p">,</span><span class="w"> </span><span class="n">description</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">"img-db-2 postgresql"</span><span class="p">.</span><span class="n">img_rnaseq</span><span class="p">.</span><span class="n">rnaseq_experiment</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">description</span><span class="p">)</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%stress%'</span>
+<span class="w">   </span><span class="k">OR</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">description</span><span class="p">)</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%mutant%'</span>
+<span class="w">   </span><span class="k">OR</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">description</span><span class="p">)</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%condition%'</span>
+</code></pre></div>
+<h2 id="data-gaps-and-limitations">Data Gaps and Limitations</h2>
+<table>
+<thead>
+<tr>
+<th>Gap</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>No centralized FEBA/RB-TnSeq</strong></td>
+<td>Fitness browser data not directly queryable in lakehouses</td>
+</tr>
+<tr>
+<td><strong>Limited proteomics</strong></td>
+<td>Only 5 experiments in IMG proteome</td>
+</tr>
+<tr>
+<td><strong>Sparse condition standardization</strong></td>
+<td>Conditions described in free text, not ontology terms</td>
+</tr>
+<tr>
+<td><strong>Plant phenotype tables empty</strong></td>
+<td>Phytozome phenotype tables exist but currently unpopulated</td>
+</tr>
+<tr>
+<td><strong>No microarray expression values</strong></td>
+<td>Microarray tables contain mappings, not expression matrices</td>
+</tr>
+</tbody>
+</table>
+<h2 id="recommendations">Recommendations</h2>
+<ol>
+<li><strong>For RNA-seq experiments</strong>: Start with <code>img_rnaseq.rnaseq_experiment</code> and filter by description</li>
+<li><strong>For organism phenotypes</strong>: Use GOLD <code>organism_phenotype</code> joined with <code>cvphenotype</code></li>
+<li><strong>For TnSeq/mutagenesis</strong>: Search GOLD <code>study.description</code> for keywords</li>
+<li><strong>For fungal data</strong>: Query MycoCosm organism-specific tables</li>
+<li><strong>For condition metadata</strong>: Check <code>rnaseq_sample.notes</code> and <code>description</code> fields</li>
+</ol>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>

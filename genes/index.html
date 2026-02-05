@@ -1,0 +1,3160 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LinkML schemas for JGI and KBase genomics lakehouses">
+      
+      
+      
+      
+        <link rel="prev" href="../methods/">
+      
+      
+        <link rel="next" href="../cross-database-joins/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Querying Genes - Bridge Schemas</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#querying-genes-across-lakehouse-tables" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Bridge Schemas" class="md-header__button md-logo" aria-label="Bridge Schemas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bridge Schemas
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Querying Genes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cmungall/bridge-schemas" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Bridge Schemas" class="md-nav__button md-logo" aria-label="Bridge Schemas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bridge Schemas
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cmungall/bridge-schemas" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Querying Genes
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Querying Genes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jgi-img-core-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JGI IMG Core Database
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JGI IMG Core Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-gene-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Gene Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searching-by-gene-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Searching by Gene Name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searching-by-gene-symbol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Searching by Gene Symbol
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gene-annotation-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gene Annotation Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gene Annotation Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kegg-orthologs-ko" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KEGG Orthologs (KO)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cog-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COG Groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pfam-families" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pfam Families
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#go-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GO Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-database-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Database Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linking-genes-to-taxonomy-and-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linking Genes to Taxonomy and GOLD
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#img-vr-viral-genomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMG VR (Viral Genomes)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nmdc-gene-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NMDC Gene Annotations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NMDC Gene Annotations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-nmdc-mcp-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using NMDC MCP Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annotation-id-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotation ID Formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gff-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GFF Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-gene-query-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Gene Query Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complete Gene Query Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-search-by-namedescription" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Search by Name/Description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-search-by-orthologfamily" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Search by Ortholog/Family
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-search-by-external-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Search by External ID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-cross-database-joins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Cross-Database Joins
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all-gene-related-tables-img-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        All Gene-Related Tables (IMG Core)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-limitation-full-table-scans-on-gene-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Limitation: Full Table Scans on Gene Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Critical Limitation: Full Table Scans on Gene Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-size-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table Size Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workarounds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workarounds
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-reference-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Reference Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cross-database-joins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Database Joins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linkages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Linkages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explanations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Explanations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explanation/existing-schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Existing Schemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explanation/traits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microbial Traits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explanation/perturbation-experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Perturbation Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explanation/functional-annotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Annotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explanation/taxonomic-coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomic Coverage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Studies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Case Studies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-studies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-studies/mll-bgc-methylorubrum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mll BGC (M. extorquens)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-studies/microbial-isolates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microbial Isolates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KBase/BERDL Schemas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    KBase/BERDL Schemas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_ke_pangenome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pangenome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/nmdc_core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NMDC Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_genomes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Genomes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/gapmind_pathways/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GapMind Pathways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/enigma_coral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENIGMA CoRAL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/phagefoundry_genome_browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PhageFoundry Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/phagefoundry_strain_modelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PhageFoundry Modelling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_uniprot_archaea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniProt Archaea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_uniprot_bacteria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniProt Bacteria
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_uniref50/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniRef50
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_uniref90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniRef90
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_uniref100/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniRef100
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_phenotype/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phenotype
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_msd_biochemistry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSD Biochemistry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_ontology_source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ontology Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kbase/kbase_refseq_taxon_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RefSeq Taxon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JGI Lakehouse Schemas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    JGI Lakehouse Schemas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/gold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOLD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_core_v400/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Extended
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_gold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG GOLD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_sat_v450/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Satellite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_sub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Submission
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/imgsg_dev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_i_taxon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_methylome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Methylome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_proteome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Proteome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_rnaseq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG RNAseq
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_mysql_abc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL ABC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_mysql_img/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/imgvr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG/VR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_mysql_mbin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL MBin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/img_mysql_misi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL MISI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/phytozome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phytozome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/mycocosm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MycoCosm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/gcs_citation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citation Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/jgi_portal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JGI Portal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/sdm_metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDM Metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi/smc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SMC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jgi-img-core-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JGI IMG Core Database
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JGI IMG Core Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-gene-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Gene Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searching-by-gene-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Searching by Gene Name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searching-by-gene-symbol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Searching by Gene Symbol
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gene-annotation-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gene Annotation Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gene Annotation Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kegg-orthologs-ko" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KEGG Orthologs (KO)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cog-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COG Groups
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pfam-families" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pfam Families
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#go-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GO Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-database-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Database Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linking-genes-to-taxonomy-and-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linking Genes to Taxonomy and GOLD
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#img-vr-viral-genomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMG VR (Viral Genomes)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nmdc-gene-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NMDC Gene Annotations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NMDC Gene Annotations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-nmdc-mcp-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using NMDC MCP Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annotation-id-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotation ID Formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gff-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GFF Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-gene-query-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Gene Query Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complete Gene Query Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-search-by-namedescription" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Search by Name/Description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-search-by-orthologfamily" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Search by Ortholog/Family
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-search-by-external-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Search by External ID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-cross-database-joins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Cross-Database Joins
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all-gene-related-tables-img-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        All Gene-Related Tables (IMG Core)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-limitation-full-table-scans-on-gene-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Limitation: Full Table Scans on Gene Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Critical Limitation: Full Table Scans on Gene Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-size-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table Size Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workarounds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workarounds
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-reference-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Reference Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="querying-genes-across-lakehouse-tables">Querying Genes Across Lakehouse Tables</h1>
+<p>This document describes how to query for genes across all available lakehouse tables in the JGI, KBase, and NMDC data ecosystems.</p>
+<h2 id="overview">Overview</h2>
+<p>Gene data is distributed across multiple databases with different schemas, identifiers, and levels of detail:</p>
+<table>
+<thead>
+<tr>
+<th>Database</th>
+<th>Location</th>
+<th>Primary Gene Table</th>
+<th>Gene Count</th>
+<th>Key Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IMG Core</strong></td>
+<td>JGI Dremio</td>
+<td><code>img_core_v400.gene</code></td>
+<td>~billions</td>
+<td>Main microbial gene database</td>
+</tr>
+<tr>
+<td><strong>IMG VR</strong></td>
+<td>JGI Dremio</td>
+<td><code>imgvr_prod.uvig</code></td>
+<td>millions</td>
+<td>Viral sequences</td>
+</tr>
+<tr>
+<td><strong>NMDC</strong></td>
+<td>NMDC API</td>
+<td><code>functional_annotation_set</code></td>
+<td>varies</td>
+<td>Metagenome annotations</td>
+</tr>
+<tr>
+<td><strong>KBase</strong></td>
+<td>KBase API</td>
+<td><code>kbase_ke_pangenome.gene</code></td>
+<td>varies</td>
+<td>Pangenomic analyses</td>
+</tr>
+</tbody>
+</table>
+<h2 id="jgi-img-core-database">JGI IMG Core Database</h2>
+<p>The IMG (Integrated Microbial Genomes) database is the primary source for microbial gene data.</p>
+<h3 id="main-gene-table">Main Gene Table</h3>
+<p><strong>Schema:</strong> <code>"img-db-2 postgresql".img_core_v400.gene</code></p>
+<p>Key columns:
+- <code>gene_oid</code> (BIGINT) - Primary identifier
+- <code>gene_symbol</code> - Standard gene symbol (e.g., "tauC", "leuC2")
+- <code>gene_display_name</code> - Full gene name/description
+- <code>product_name</code> - Protein product name
+- <code>locus_tag</code> - Genome-specific locus identifier
+- <code>taxon</code> - Foreign key to taxon table
+- <code>scaffold</code> - Scaffold location
+- <code>start_coord</code>, <code>end_coord</code>, <code>strand</code> - Genomic coordinates</p>
+<h3 id="searching-by-gene-name">Searching by Gene Name</h3>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">gene_oid</span><span class="p">,</span><span class="w"> </span><span class="n">gene_symbol</span><span class="p">,</span><span class="w"> </span><span class="n">gene_display_name</span><span class="p">,</span><span class="w"> </span><span class="n">locus_tag</span><span class="p">,</span><span class="w"> </span><span class="n">taxon</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">gene_display_name</span><span class="p">)</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%kinase%&#39;</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">100</span>
+</code></pre></div>
+<h3 id="searching-by-gene-symbol">Searching by Gene Symbol</h3>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">gene_oid</span><span class="p">,</span><span class="w"> </span><span class="n">gene_symbol</span><span class="p">,</span><span class="w"> </span><span class="n">gene_display_name</span><span class="p">,</span><span class="w"> </span><span class="n">locus_tag</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">gene_symbol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;tauC&#39;</span>
+</code></pre></div>
+<h2 id="gene-annotation-tables">Gene Annotation Tables</h2>
+<p>IMG provides extensive annotation linkages through separate tables:</p>
+<h3 id="kegg-orthologs-ko">KEGG Orthologs (KO)</h3>
+<p><strong>Table:</strong> <code>img_core_v400.gene_ko_terms</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span><span class="p">,</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_display_name</span><span class="p">,</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">locus_tag</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">ko_terms</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">percent_identity</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene</span><span class="w"> </span><span class="k">g</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene_ko_terms</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">gene_oid</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">ko_terms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;KO:K00001&#39;</span><span class="w">  </span><span class="c1">-- alcohol dehydrogenase</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">100</span>
+</code></pre></div>
+<h3 id="cog-groups">COG Groups</h3>
+<p><strong>Table:</strong> <code>img_core_v400.gene_cog_groups</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span><span class="p">,</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_display_name</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">cog</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">percent_identity</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene</span><span class="w"> </span><span class="k">g</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene_cog_groups</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">gene_oid</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">cog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;COG0001&#39;</span><span class="w">  </span><span class="c1">-- glutamate-1-semialdehyde aminomutase</span>
+</code></pre></div>
+<h3 id="pfam-families">Pfam Families</h3>
+<p><strong>Table:</strong> <code>img_core_v400.gene_pfam_families</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span><span class="p">,</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_display_name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">pfam_family</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">percent_identity</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene</span><span class="w"> </span><span class="k">g</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene_pfam_families</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gene_oid</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">pfam_family</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;pfam00106&#39;</span>
+</code></pre></div>
+<h3 id="go-terms">GO Terms</h3>
+<p><strong>Table:</strong> <code>img_core_v400.gene_go_terms</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span><span class="p">,</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_display_name</span><span class="p">,</span><span class="w"> </span><span class="k">go</span><span class="p">.</span><span class="n">go_id</span><span class="p">,</span><span class="w"> </span><span class="k">go</span><span class="p">.</span><span class="n">go_type</span><span class="p">,</span><span class="w"> </span><span class="k">go</span><span class="p">.</span><span class="n">go_evidence</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene</span><span class="w"> </span><span class="k">g</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene_go_terms</span><span class="w"> </span><span class="k">go</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">go</span><span class="p">.</span><span class="n">gene_oid</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">go</span><span class="p">.</span><span class="n">go_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;GO:0003824&#39;</span><span class="w">  </span><span class="c1">-- catalytic activity</span>
+</code></pre></div>
+<h2 id="external-database-links">External Database Links</h2>
+<p><strong>Table:</strong> <code>img_core_v400.gene_ext_links</code></p>
+<p>Links genes to external databases including:
+- UniProtKB, UniProtKB/Swiss-Prot, UniProtKB/TrEMBL
+- GeneID (NCBI)
+- PDB
+- InterPro
+- MGI, RGD, ZFIN (model organisms)
+- KEGG
+- And 70+ other databases</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Find genes by UniProt ID</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span><span class="p">,</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_display_name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">db_name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">id</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene</span><span class="w"> </span><span class="k">g</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene_ext_links</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">gene_oid</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">db_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;UniProtKB&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Q62D23&#39;</span>
+
+<span class="c1">-- Count genes by external database</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">db_name</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">gene_count</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene_ext_links</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">db_name</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">gene_count</span><span class="w"> </span><span class="k">DESC</span>
+</code></pre></div>
+<h2 id="linking-genes-to-taxonomy-and-gold">Linking Genes to Taxonomy and GOLD</h2>
+<p>Genes link to taxonomic/genome information via the <code>taxon</code> column:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
+<span class="w">    </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span><span class="p">,</span>
+<span class="w">    </span><span class="k">g</span><span class="p">.</span><span class="n">gene_display_name</span><span class="p">,</span>
+<span class="w">    </span><span class="k">g</span><span class="p">.</span><span class="n">locus_tag</span><span class="p">,</span>
+<span class="w">    </span><span class="n">t</span><span class="p">.</span><span class="n">taxon_display_name</span><span class="p">,</span>
+<span class="w">    </span><span class="n">t</span><span class="p">.</span><span class="n">ncbi_taxon_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">t</span><span class="p">.</span><span class="n">sample_gold_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">t</span><span class="p">.</span><span class="n">study_gold_id</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene</span><span class="w"> </span><span class="k">g</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">taxon_oid</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_symbol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;dnaA&#39;</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div>
+<h2 id="img-vr-viral-genomes">IMG VR (Viral Genomes)</h2>
+<p><strong>Schema:</strong> <code>"img-db-1 mysql".imgvr_prod</code></p>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uvig</code></td>
+<td>Uncultivated viral genomes</td>
+</tr>
+<tr>
+<td><code>uvig_pfams</code></td>
+<td>Pfam annotations for viral genes</td>
+</tr>
+<tr>
+<td><code>uvig_hosts</code></td>
+<td>Predicted viral hosts</td>
+</tr>
+<tr>
+<td><code>uvig_lineage</code></td>
+<td>Viral taxonomy</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">uvig</span><span class="p">,</span><span class="w"> </span><span class="n">taxon_oid</span><span class="p">,</span><span class="w"> </span><span class="n">viral_otus</span><span class="p">,</span><span class="w"> </span><span class="n">uvig_length</span><span class="p">,</span><span class="w"> </span><span class="n">estimated_completeness</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-1 mysql&quot;</span><span class="p">.</span><span class="n">imgvr_prod</span><span class="p">.</span><span class="n">uvig</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">high_confidence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;YES&#39;</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div>
+<h2 id="nmdc-gene-annotations">NMDC Gene Annotations</h2>
+<p>NMDC stores gene annotations in metagenome workflow outputs. Query via the NMDC API:</p>
+<h3 id="using-nmdc-mcp-tools">Using NMDC MCP Tools</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Find samples with specific functional annotations</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nmdc_mcp</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_samples_by_annotation</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">get_samples_by_annotation</span><span class="p">(</span>
+    <span class="n">gene_function_ids</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;KEGG.ORTHOLOGY:K00001&quot;</span><span class="p">],</span>  <span class="c1"># alcohol dehydrogenase</span>
+    <span class="n">max_records</span><span class="o">=</span><span class="mi">10</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="annotation-id-formats">Annotation ID Formats</h3>
+<ul>
+<li><strong>PFAM:</strong> <code>PFAM:PF04183</code></li>
+<li><strong>KEGG Orthology:</strong> <code>KEGG.ORTHOLOGY:K00001</code></li>
+<li><strong>COG:</strong> <code>COG:COG0001</code></li>
+<li><strong>GO:</strong> <code>GO:GO0000001</code></li>
+</ul>
+<h3 id="gff-files">GFF Files</h3>
+<p>NMDC metagenome annotations are stored in GFF3 format files:
+- <code>*_functional_annotation.gff</code> - Full functional annotations
+- <code>*_ko.tsv</code> - KEGG Orthology annotations
+- <code>*_cog.gff</code> - COG annotations
+- <code>*_pfam.gff</code> - Pfam annotations</p>
+<h2 id="complete-gene-query-strategy">Complete Gene Query Strategy</h2>
+<p>To comprehensively search for a gene across all lakehouses:</p>
+<h3 id="1-search-by-namedescription">1. Search by Name/Description</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- IMG Core</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">gene_oid</span><span class="p">,</span><span class="w"> </span><span class="n">gene_display_name</span><span class="p">,</span><span class="w"> </span><span class="n">taxon</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">gene_display_name</span><span class="p">)</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%your_gene%&#39;</span>
+</code></pre></div>
+<h3 id="2-search-by-orthologfamily">2. Search by Ortholog/Family</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- By KEGG Ortholog</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span><span class="p">,</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_display_name</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">taxon_display_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene</span><span class="w"> </span><span class="k">g</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene_ko_terms</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">gene_oid</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">taxon_oid</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">ko_terms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;KO:KXXXXX&#39;</span>
+</code></pre></div>
+<h3 id="3-search-by-external-id">3. Search by External ID</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- By UniProt</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">db_name</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">id</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene</span><span class="w"> </span><span class="k">g</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene_ext_links</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">gene_oid</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;YOUR_UNIPROT_ID&#39;</span>
+</code></pre></div>
+<h3 id="4-cross-database-joins">4. Cross-Database Joins</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Gene with all annotations</span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span><span class="p">,</span>
+<span class="w">    </span><span class="k">g</span><span class="p">.</span><span class="n">gene_display_name</span><span class="p">,</span>
+<span class="w">    </span><span class="k">g</span><span class="p">.</span><span class="n">locus_tag</span><span class="p">,</span>
+<span class="w">    </span><span class="n">k</span><span class="p">.</span><span class="n">ko_terms</span><span class="p">,</span>
+<span class="w">    </span><span class="k">c</span><span class="p">.</span><span class="n">cog</span><span class="p">,</span>
+<span class="w">    </span><span class="n">p</span><span class="p">.</span><span class="n">pfam_family</span><span class="p">,</span>
+<span class="w">    </span><span class="n">t</span><span class="p">.</span><span class="n">taxon_display_name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene</span><span class="w"> </span><span class="k">g</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene_ko_terms</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">gene_oid</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene_cog_groups</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">gene_oid</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene_pfam_families</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">gene_oid</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">taxon_oid</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gene_symbol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;dnaA&#39;</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">100</span>
+</code></pre></div>
+<h2 id="all-gene-related-tables-img-core">All Gene-Related Tables (IMG Core)</h2>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gene</code></td>
+<td>Main gene table</td>
+</tr>
+<tr>
+<td><code>gene_aliases</code></td>
+<td>Alternative gene names</td>
+</tr>
+<tr>
+<td><code>gene_biocyc_rxns</code></td>
+<td>BioCyc reactions</td>
+</tr>
+<tr>
+<td><code>gene_cathfam</code></td>
+<td>CATH protein families</td>
+</tr>
+<tr>
+<td><code>gene_cog_groups</code></td>
+<td>COG assignments</td>
+</tr>
+<tr>
+<td><code>gene_essential_genes</code></td>
+<td>Essential gene annotations</td>
+</tr>
+<tr>
+<td><code>gene_ext_links</code></td>
+<td>External database links</td>
+</tr>
+<tr>
+<td><code>gene_go_terms</code></td>
+<td>GO annotations</td>
+</tr>
+<tr>
+<td><code>gene_img_interpro_hits</code></td>
+<td>InterPro matches</td>
+</tr>
+<tr>
+<td><code>gene_ko_terms</code></td>
+<td>KEGG Ortholog assignments</td>
+</tr>
+<tr>
+<td><code>gene_kog_groups</code></td>
+<td>KOG (eukaryotic) assignments</td>
+</tr>
+<tr>
+<td><code>gene_paralogs</code></td>
+<td>Paralog relationships</td>
+</tr>
+<tr>
+<td><code>gene_pdb_xrefs</code></td>
+<td>PDB structure links</td>
+</tr>
+<tr>
+<td><code>gene_pfam_families</code></td>
+<td>Pfam assignments</td>
+</tr>
+<tr>
+<td><code>gene_sig_peptides</code></td>
+<td>Signal peptide predictions</td>
+</tr>
+<tr>
+<td><code>gene_smart</code></td>
+<td>SMART domain assignments</td>
+</tr>
+<tr>
+<td><code>gene_superfam</code></td>
+<td>SUPERFAMILY assignments</td>
+</tr>
+<tr>
+<td><code>gene_tigrfams</code></td>
+<td>TIGRfam assignments</td>
+</tr>
+<tr>
+<td><code>kegg_gene</code></td>
+<td>KEGG gene reference data</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cli-commands">CLI Commands</h2>
+<p>Using <code>linkml-store</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Direct SQL query</span>
+linkml-store<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;dremio-rest://lakehouse.jgi.lbl.gov&quot;</span><span class="w"> </span>query<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--sql<span class="w"> </span><span class="s1">&#39;SELECT * FROM &quot;img-db-2 postgresql&quot;.img_core_v400.gene WHERE gene_symbol = &#39;</span><span class="se">\&#39;</span><span class="s1">&#39;dnaA&#39;</span><span class="se">\&#39;</span><span class="s1">&#39; LIMIT 10&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-O<span class="w"> </span>yaml
+
+<span class="c1"># List all gene tables</span>
+linkml-store<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;dremio-rest://lakehouse.jgi.lbl.gov&quot;</span><span class="w"> </span>query<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--sql<span class="w"> </span><span class="s1">&#39;SELECT TABLE_NAME FROM INFORMATION_SCHEMA.&quot;TABLES&quot; WHERE TABLE_SCHEMA LIKE &#39;</span><span class="se">\&#39;</span><span class="s1">&#39;%img_core%&#39;</span><span class="se">\&#39;</span><span class="s1">&#39; AND TABLE_NAME LIKE &#39;</span><span class="se">\&#39;</span><span class="s1">&#39;%gene%&#39;</span><span class="se">\&#39;</span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-O<span class="w"> </span>csv
+</code></pre></div>
+<h2 id="performance-tips">Performance Tips</h2>
+<ol>
+<li><strong>Always use LIMIT</strong> - Gene tables are massive (billions of rows)</li>
+<li><strong>Index on gene_oid</strong> - Primary key lookups are fastest</li>
+<li><strong>Filter early</strong> - Apply WHERE clauses before JOINs when possible</li>
+<li><strong>Use specific schemas</strong> - Avoid wildcard schema searches</li>
+<li><strong>Cache taxon lookups</strong> - Taxon table is relatively small</li>
+</ol>
+<h2 id="critical-limitation-full-table-scans-on-gene-tables">Critical Limitation: Full Table Scans on Gene Tables</h2>
+<p><strong>Dremio cannot use indexes on federated PostgreSQL tables.</strong> For massive tables like <code>gene</code>, this means:</p>
+<ul>
+<li><code>COUNT(*)</code> will timeout</li>
+<li><code>DISTINCT column</code> requires a full table scan, even for 3-value columns like <code>strand</code></li>
+<li><code>GROUP BY</code> aggregations require scanning all rows</li>
+</ul>
+<h3 id="table-size-reference">Table Size Reference</h3>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Row Count</th>
+<th>Aggregations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gold.study</code></td>
+<td>70K</td>
+<td>✅ Fast</td>
+</tr>
+<tr>
+<td><code>gold.biosample</code></td>
+<td>273K</td>
+<td>✅ Fast</td>
+</tr>
+<tr>
+<td><code>img_core.taxon</code></td>
+<td>287K</td>
+<td>✅ Fast</td>
+</tr>
+<tr>
+<td><code>gold.project</code></td>
+<td>705K</td>
+<td>✅ Fast</td>
+</tr>
+<tr>
+<td><code>img_core.gene</code></td>
+<td><strong>billions</strong></td>
+<td>❌ Timeout</td>
+</tr>
+<tr>
+<td><code>img_core.gene_*</code> (annotation tables)</td>
+<td><strong>billions</strong></td>
+<td>❌ Timeout</td>
+</tr>
+</tbody>
+</table>
+<h3 id="examples">Examples</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- THIS WILL TIMEOUT (full table scan of billions of rows):</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">strand</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene</span>
+
+<span class="c1">-- THIS WORKS - filter to a specific taxon first:</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">strand</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">gene</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">taxon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">637000057</span>
+
+<span class="c1">-- GOLD tables work fine for aggregations:</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">ecosystem</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;gold-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">study</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ecosystem</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">DESC</span>
+</code></pre></div>
+<h3 id="workarounds">Workarounds</h3>
+<ol>
+<li><strong>Filter first</strong> - Always filter by <code>taxon</code>, <code>scaffold</code>, or <code>gene_oid</code> range before aggregating</li>
+<li><strong>Use taxon table</strong> - Aggregate at the taxon level (287K rows) instead of gene level</li>
+<li><strong>Sample with LIMIT</strong> - Use <code>LIMIT</code> to sample before aggregating</li>
+<li><strong>Pre-computed stats</strong> - Check for statistics tables if available</li>
+</ol>
+<h2 id="cross-reference-summary">Cross-Reference Summary</h2>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────┐
+│                     Gene Identifier Types                    │
+├─────────────────────────────────────────────────────────────┤
+│ IMG gene_oid ──────┬──→ taxon_oid ──→ GOLD IDs              │
+│                    ├──→ KO terms                             │
+│                    ├──→ COG groups                           │
+│                    ├──→ Pfam families                        │
+│                    ├──→ GO terms                             │
+│                    └──→ External links (UniProt, NCBI, etc.) │
+├─────────────────────────────────────────────────────────────┤
+│ NMDC annotations ──────→ KEGG.ORTHOLOGY, PFAM, COG, GO      │
+├─────────────────────────────────────────────────────────────┤
+│ IMG VR uvig ───────────→ taxon_oid ──→ Pfam domains         │
+└─────────────────────────────────────────────────────────────┘
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

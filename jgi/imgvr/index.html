@@ -1,0 +1,3216 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LinkML schemas for JGI and KBase genomics lakehouses">
+      
+      
+      
+      
+        <link rel="prev" href="../img_mysql_img/">
+      
+      
+        <link rel="next" href="../img_mysql_mbin/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>IMG/VR - Bridge Schemas</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#imgvr-viral-sequences-database" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Bridge Schemas" class="md-header__button md-logo" aria-label="Bridge Schemas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bridge Schemas
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              IMG/VR
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cmungall/bridge-schemas" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Bridge Schemas" class="md-nav__button md-logo" aria-label="Bridge Schemas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bridge Schemas
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cmungall/bridge-schemas" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../genes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Querying Genes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cross-database-joins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Database Joins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linkages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Linkages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explanations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Explanations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explanation/existing-schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Existing Schemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explanation/traits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microbial Traits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explanation/perturbation-experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Perturbation Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explanation/functional-annotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Annotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explanation/taxonomic-coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomic Coverage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Studies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Case Studies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../case-studies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../case-studies/mll-bgc-methylorubrum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mll BGC (M. extorquens)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../case-studies/microbial-isolates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Microbial Isolates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KBase/BERDL Schemas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    KBase/BERDL Schemas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_ke_pangenome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pangenome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/nmdc_core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NMDC Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_genomes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Genomes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/gapmind_pathways/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GapMind Pathways
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/enigma_coral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ENIGMA CoRAL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/phagefoundry_genome_browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PhageFoundry Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/phagefoundry_strain_modelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PhageFoundry Modelling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_uniprot_archaea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniProt Archaea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_uniprot_bacteria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniProt Bacteria
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_uniref50/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniRef50
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_uniref90/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniRef90
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_uniref100/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UniRef100
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_phenotype/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phenotype
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_msd_biochemistry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MSD Biochemistry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_ontology_source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ontology Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kbase/kbase_refseq_taxon_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RefSeq Taxon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JGI Lakehouse Schemas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    JGI Lakehouse Schemas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GOLD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_core_v400/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Extended
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_gold/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG GOLD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_sat_v450/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Satellite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_sub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Submission
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../imgsg_dev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_i_taxon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_methylome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Methylome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_proteome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG Proteome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_rnaseq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG RNAseq
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_mysql_abc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL ABC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_mysql_img/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG/VR
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG/VR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Sources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uvig-157m-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uvig (15.7M rows)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uvig_lineage-157m-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uvig_lineage (15.7M rows)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viral-realm-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viral Realm Distribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uvig_hosts-11m-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uvig_hosts (1.1M rows)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uvig_domain-1187m-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uvig_domain (118.7M rows)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uvig_pfams-504m-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uvig_pfams (50.4M rows)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uvig_scaffolds-159m-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uvig_scaffolds (15.9M rows)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viral_spacer-0-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        viral_spacer (0 rows)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Concepts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uvig-identifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UViG Identifiers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viral-otus-votus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viral OTUs (vOTUs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confidence-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confidence Tiers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Queries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#count-viruses-by-host-phylum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Count viruses by host phylum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-high-confidence-complete-phages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Find high-confidence complete phages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-pfam-summary-for-a-viral-family" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get PFAM summary for a viral family
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-database-joins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Database Joins
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cross-Database Joins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-join-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Join Key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#join-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Join Paths
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-imgvr-img-core-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: IMG/VR → IMG Core → GOLD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-viral-hosts-to-ncbi-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Viral hosts to NCBI taxonomy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-join-columns-in-img-core-taxon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Join Columns in IMG Core taxon
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Databases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_mysql_mbin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL MBin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../img_mysql_misi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IMG MySQL MISI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phytozome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phytozome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mycocosm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MycoCosm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gcs_citation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citation Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jgi_portal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JGI Portal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdm_metadata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDM Metadata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SMC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Sources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uvig-157m-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uvig (15.7M rows)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uvig_lineage-157m-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uvig_lineage (15.7M rows)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viral-realm-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viral Realm Distribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uvig_hosts-11m-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uvig_hosts (1.1M rows)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uvig_domain-1187m-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uvig_domain (118.7M rows)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uvig_pfams-504m-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uvig_pfams (50.4M rows)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uvig_scaffolds-159m-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uvig_scaffolds (15.9M rows)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viral_spacer-0-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        viral_spacer (0 rows)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Concepts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uvig-identifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UViG Identifiers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viral-otus-votus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viral OTUs (vOTUs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confidence-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confidence Tiers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Queries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#count-viruses-by-host-phylum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Count viruses by host phylum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-high-confidence-complete-phages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Find high-confidence complete phages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-pfam-summary-for-a-viral-family" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get PFAM summary for a viral family
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-database-joins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Database Joins
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cross-Database Joins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-join-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Join Key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#join-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Join Paths
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-imgvr-img-core-gold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: IMG/VR → IMG Core → GOLD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-viral-hosts-to-ncbi-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Viral hosts to NCBI taxonomy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-join-columns-in-img-core-taxon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Join Columns in IMG Core taxon
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Databases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="imgvr-viral-sequences-database">IMG/VR: Viral Sequences Database</h1>
+<p>IMG/VR (Integrated Microbial Genomes/Virus) is JGI's database of viral sequences
+from isolates, metagenomes, and metatranscriptomes.</p>
+<p><strong>Database:</strong> <code>img-db-1 mysql.imgvr_prod</code></p>
+<h2 id="overview">Overview</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Total UViGs</strong></td>
+<td>15.7M</td>
+</tr>
+<tr>
+<td><strong>Viral OTUs (vOTUs)</strong></td>
+<td>Clustered at 95% ANI</td>
+</tr>
+<tr>
+<td><strong>Host predictions</strong></td>
+<td>1.1M</td>
+</tr>
+<tr>
+<td><strong>Protein domains</strong></td>
+<td>118.7M</td>
+</tr>
+<tr>
+<td><strong>PFAM annotations</strong></td>
+<td>50.4M</td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-sources">Data Sources</h2>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Count</th>
+<th>Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metagenome</td>
+<td>14.2M</td>
+<td>90.6%</td>
+</tr>
+<tr>
+<td>Metatranscriptome</td>
+<td>1.2M</td>
+<td>7.3%</td>
+</tr>
+<tr>
+<td>Isolate</td>
+<td>294K</td>
+<td>1.9%</td>
+</tr>
+<tr>
+<td>RefSeq</td>
+<td>14K</td>
+<td>0.1%</td>
+</tr>
+<tr>
+<td>MAG</td>
+<td>13.5K</td>
+<td>0.1%</td>
+</tr>
+<tr>
+<td>SAG</td>
+<td>1.6K</td>
+<td>&lt;0.1%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tables">Tables</h2>
+<h3 id="uvig-157m-rows">uvig (15.7M rows)</h3>
+<p>Main table of Uncultivated Viral Genomes (UViGs).</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uvig</code></td>
+<td>string</td>
+<td>Primary ID (e.g., <code>IMGVR_UViG_2504643025_000001</code>)</td>
+</tr>
+<tr>
+<td><code>taxon_oid</code></td>
+<td>integer</td>
+<td>Link to IMG taxon</td>
+</tr>
+<tr>
+<td><code>genomad_score</code></td>
+<td>float</td>
+<td>geNomad classification score</td>
+</tr>
+<tr>
+<td><code>viral_otus</code></td>
+<td>string</td>
+<td>Viral OTU cluster ID</td>
+</tr>
+<tr>
+<td><code>uvig_length</code></td>
+<td>integer</td>
+<td>Sequence length (bp)</td>
+</tr>
+<tr>
+<td><code>uvig_total_gene_count</code></td>
+<td>integer</td>
+<td>Total genes</td>
+</tr>
+<tr>
+<td><code>uvig_cds_gene_count</code></td>
+<td>integer</td>
+<td>Protein-coding genes</td>
+</tr>
+<tr>
+<td><code>uvig_trna_gene_count</code></td>
+<td>integer</td>
+<td>tRNA genes</td>
+</tr>
+<tr>
+<td><code>estimated_completeness</code></td>
+<td>float</td>
+<td>CheckV completeness (%)</td>
+</tr>
+<tr>
+<td><code>estimated_contamination</code></td>
+<td>float</td>
+<td>CheckV contamination (%)</td>
+</tr>
+<tr>
+<td><code>uvig_topology</code></td>
+<td>string</td>
+<td>Provirus, Linear, Circular</td>
+</tr>
+<tr>
+<td><code>uvig_discovery</code></td>
+<td>string</td>
+<td>Discovery method/study</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td>string</td>
+<td>Metagenome, Isolate, etc.</td>
+</tr>
+<tr>
+<td><code>confidence_tier</code></td>
+<td>string</td>
+<td>High, Medium, Low</td>
+</tr>
+<tr>
+<td><code>high_confidence</code></td>
+<td>string</td>
+<td>YES/NO</td>
+</tr>
+<tr>
+<td><code>genetic_code</code></td>
+<td>integer</td>
+<td>Translation table (usually 11)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="uvig_lineage-157m-rows">uvig_lineage (15.7M rows)</h3>
+<p>Viral taxonomy using ICTV ranks.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uvig</code></td>
+<td>string</td>
+<td>Foreign key to uvig</td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td>string</td>
+<td>Classification method (geNomad)</td>
+</tr>
+<tr>
+<td><code>realm</code></td>
+<td>string</td>
+<td>Viral realm (e.g., r__Duplodnaviria)</td>
+</tr>
+<tr>
+<td><code>domain</code></td>
+<td>string</td>
+<td>Viral domain/kingdom</td>
+</tr>
+<tr>
+<td><code>phylum</code></td>
+<td>string</td>
+<td>Viral phylum</td>
+</tr>
+<tr>
+<td><code>ir_class</code></td>
+<td>string</td>
+<td>Viral class</td>
+</tr>
+<tr>
+<td><code>ir_order</code></td>
+<td>string</td>
+<td>Viral order</td>
+</tr>
+<tr>
+<td><code>family</code></td>
+<td>string</td>
+<td>Viral family</td>
+</tr>
+<tr>
+<td><code>genus</code></td>
+<td>string</td>
+<td>Viral genus</td>
+</tr>
+<tr>
+<td><code>species</code></td>
+<td>string</td>
+<td>Viral species</td>
+</tr>
+</tbody>
+</table>
+<h3 id="viral-realm-distribution">Viral Realm Distribution</h3>
+<table>
+<thead>
+<tr>
+<th>Realm</th>
+<th>Count</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Duplodnaviria</td>
+<td>13.5M</td>
+<td>dsDNA viruses (mostly phages)</td>
+</tr>
+<tr>
+<td>Varidnaviria</td>
+<td>1.0M</td>
+<td>Large DNA viruses</td>
+</tr>
+<tr>
+<td>Riboviria</td>
+<td>531K</td>
+<td>RNA viruses</td>
+</tr>
+<tr>
+<td>Unclassified</td>
+<td>521K</td>
+<td>No realm assigned</td>
+</tr>
+<tr>
+<td>Monodnaviria</td>
+<td>72K</td>
+<td>ssDNA viruses</td>
+</tr>
+<tr>
+<td>Adnaviria</td>
+<td>3.7K</td>
+<td>Filamentous phages</td>
+</tr>
+<tr>
+<td>Ribozyviria</td>
+<td>2</td>
+<td>HDV-like ribozymes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="uvig_hosts-11m-rows">uvig_hosts (1.1M rows)</h3>
+<p>Predicted viral hosts.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uvig</code></td>
+<td>string</td>
+<td>Foreign key to uvig</td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td>string</td>
+<td>Host prediction method</td>
+</tr>
+<tr>
+<td><code>host_domain</code></td>
+<td>string</td>
+<td>Host domain (e.g., d__Bacteria)</td>
+</tr>
+<tr>
+<td><code>host_phylum</code></td>
+<td>string</td>
+<td>Host phylum</td>
+</tr>
+<tr>
+<td><code>host_class</code></td>
+<td>string</td>
+<td>Host class</td>
+</tr>
+<tr>
+<td><code>host_order</code></td>
+<td>string</td>
+<td>Host order</td>
+</tr>
+<tr>
+<td><code>host_family</code></td>
+<td>string</td>
+<td>Host family</td>
+</tr>
+<tr>
+<td><code>host_genus</code></td>
+<td>string</td>
+<td>Host genus</td>
+</tr>
+<tr>
+<td><code>host_species</code></td>
+<td>string</td>
+<td>Host species</td>
+</tr>
+</tbody>
+</table>
+<p>Host prediction methods include:
+- Isolate taxonomy (from host genome)
+- CRISPR spacer matching
+- Sequence homology
+- Gene content similarity</p>
+<h3 id="uvig_domain-1187m-rows">uvig_domain (118.7M rows)</h3>
+<p>Protein domain annotations.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uvig</code></td>
+<td>string</td>
+<td>Foreign key to uvig</td>
+</tr>
+<tr>
+<td><code>db</code></td>
+<td>string</td>
+<td>Domain database (geNomad)</td>
+</tr>
+<tr>
+<td><code>domain</code></td>
+<td>string</td>
+<td>Domain ID (e.g., GENOMAD.215157.VP)</td>
+</tr>
+<tr>
+<td><code>gene</code></td>
+<td>string</td>
+<td>Gene ID</td>
+</tr>
+</tbody>
+</table>
+<p>Domain suffixes:
+- <code>.VP</code> - Viral protein
+- <code>.VV</code> - Viral-viral homolog</p>
+<h3 id="uvig_pfams-504m-rows">uvig_pfams (50.4M rows)</h3>
+<p>PFAM domain annotations.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uvig</code></td>
+<td>string</td>
+<td>Foreign key to uvig</td>
+</tr>
+<tr>
+<td><code>pfam</code></td>
+<td>string</td>
+<td>PFAM accession (e.g., pfam05155)</td>
+</tr>
+<tr>
+<td><code>pfam_count</code></td>
+<td>integer</td>
+<td>Count of this domain</td>
+</tr>
+</tbody>
+</table>
+<h3 id="uvig_scaffolds-159m-rows">uvig_scaffolds (15.9M rows)</h3>
+<p>Scaffold-level metadata for each UViG.</p>
+<h3 id="viral_spacer-0-rows">viral_spacer (0 rows)</h3>
+<p>CRISPR spacer matches (currently empty).</p>
+<h2 id="key-concepts">Key Concepts</h2>
+<h3 id="uvig-identifiers">UViG Identifiers</h3>
+<p>Format: <code>IMGVR_UViG_{taxon_oid}_{sequence_number}</code></p>
+<p>Example: <code>IMGVR_UViG_2504643025_000001</code>
+- <code>2504643025</code> = IMG taxon OID (source genome/metagenome)
+- <code>000001</code> = sequence number within that taxon</p>
+<h3 id="viral-otus-votus">Viral OTUs (vOTUs)</h3>
+<p>Viruses are clustered into vOTUs at 95% average nucleotide identity (ANI)
+over 85% of the shorter sequence length. Each <code>viral_otus</code> value represents
+a species-level cluster.</p>
+<h3 id="confidence-tiers">Confidence Tiers</h3>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High</td>
+<td>geNomad score ≥ 0.9, CheckV completeness ≥ 90%</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>geNomad score ≥ 0.7, CheckV completeness ≥ 50%</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>Other viral predictions</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-queries">Example Queries</h2>
+<h3 id="count-viruses-by-host-phylum">Count viruses by host phylum</h3>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">host_phylum</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">cnt</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-1 mysql&quot;</span><span class="p">.</span><span class="n">imgvr_prod</span><span class="p">.</span><span class="n">uvig_hosts</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">host_phylum</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">cnt</span><span class="w"> </span><span class="k">DESC</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div>
+<h3 id="find-high-confidence-complete-phages">Find high-confidence complete phages</h3>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">uvig</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">uvig_length</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">family</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">host_genus</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-1 mysql&quot;</span><span class="p">.</span><span class="n">imgvr_prod</span><span class="p">.</span><span class="n">uvig</span><span class="w"> </span><span class="n">u</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-1 mysql&quot;</span><span class="p">.</span><span class="n">imgvr_prod</span><span class="p">.</span><span class="n">uvig_lineage</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">uvig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">uvig</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-1 mysql&quot;</span><span class="p">.</span><span class="n">imgvr_prod</span><span class="p">.</span><span class="n">uvig_hosts</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">uvig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">uvig</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">high_confidence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;YES&#39;</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">estimated_completeness</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">90</span>
+<span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;r__Duplodnaviria&#39;</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div>
+<h3 id="get-pfam-summary-for-a-viral-family">Get PFAM summary for a viral family</h3>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">pfam</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">cnt</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-1 mysql&quot;</span><span class="p">.</span><span class="n">imgvr_prod</span><span class="p">.</span><span class="n">uvig_pfams</span><span class="w"> </span><span class="n">p</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-1 mysql&quot;</span><span class="p">.</span><span class="n">imgvr_prod</span><span class="p">.</span><span class="n">uvig_lineage</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">uvig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">uvig</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">family</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;f__Inoviridae&#39;</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">pfam</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">cnt</span><span class="w"> </span><span class="k">DESC</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">20</span>
+</code></pre></div>
+<h2 id="cross-database-joins">Cross-Database Joins</h2>
+<h3 id="primary-join-key">Primary Join Key</h3>
+<p><code>taxon_oid</code> links IMG/VR to the source genome/metagenome in IMG Core.</p>
+<h3 id="join-paths">Join Paths</h3>
+<div class="highlight"><pre><span></span><code>IMG/VR (uvig)
+    │
+    └── taxon_oid ──► IMG Core (taxon)
+                          │
+                          ├── study_gold_id ──► GOLD (study)
+                          ├── sample_gold_id ──► GOLD (project)
+                          ├── ncbi_taxon_id ──► NCBI Taxonomy
+                          └── host_ncbi_taxon_id ──► NCBI (for isolate hosts)
+</code></pre></div>
+<h3 id="example-imgvr-img-core-gold">Example: IMG/VR → IMG Core → GOLD</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Get viral sequences with GOLD study metadata</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">uvig</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="k">source</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">taxon_display_name</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">study_name</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">ecosystem</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-1 mysql&quot;</span><span class="p">.</span><span class="n">imgvr_prod</span><span class="p">.</span><span class="n">uvig</span><span class="w"> </span><span class="n">v</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">taxon_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">taxon_oid</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;gold-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">study</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">study_gold_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">gold_id</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div>
+<h3 id="example-viral-hosts-to-ncbi-taxonomy">Example: Viral hosts to NCBI taxonomy</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Get detailed host taxonomy for isolate viruses</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">uvig</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">host_genus</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">host_species</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">ncbi_taxon_id</span>
+<span class="k">FROM</span><span class="w"> </span><span class="ss">&quot;img-db-1 mysql&quot;</span><span class="p">.</span><span class="n">imgvr_prod</span><span class="p">.</span><span class="n">uvig</span><span class="w"> </span><span class="n">v</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-1 mysql&quot;</span><span class="p">.</span><span class="n">imgvr_prod</span><span class="p">.</span><span class="n">uvig_hosts</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">uvig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h</span><span class="p">.</span><span class="n">uvig</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_core_v400</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">taxon_oid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">taxon_oid</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="k">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Isolate&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">ncbi_taxon_id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div>
+<h3 id="key-join-columns-in-img-core-taxon">Key Join Columns in IMG Core taxon</h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Links To</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>taxon_oid</code></td>
+<td>IMG/VR <code>uvig.taxon_oid</code></td>
+<td>Primary key</td>
+</tr>
+<tr>
+<td><code>study_gold_id</code></td>
+<td>GOLD <code>study.gold_id</code></td>
+<td>Study metadata</td>
+</tr>
+<tr>
+<td><code>sample_gold_id</code></td>
+<td>GOLD <code>project.gold_id</code></td>
+<td>Sample/project metadata</td>
+</tr>
+<tr>
+<td><code>sequencing_gold_id</code></td>
+<td>GOLD <code>project.gold_id</code></td>
+<td>Sequencing project</td>
+</tr>
+<tr>
+<td><code>ncbi_taxon_id</code></td>
+<td>NCBI Taxonomy</td>
+<td>Source organism taxonomy</td>
+</tr>
+<tr>
+<td><code>host_ncbi_taxon_id</code></td>
+<td>NCBI Taxonomy</td>
+<td>Host organism (for isolates)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-databases">Related Databases</h2>
+<ul>
+<li><strong>IMG Core</strong> (<code>img_core_v400</code>) - Source genomes/metagenomes (via <code>taxon_oid</code>)</li>
+<li><strong>GOLD</strong> - Project/study metadata (via <code>study_gold_id</code>, <code>sample_gold_id</code>)</li>
+<li><strong>NCBI Taxonomy</strong> - Organism classification (via <code>ncbi_taxon_id</code>)</li>
+<li><strong>RefSeq Viral</strong> - Curated reference sequences</li>
+</ul>
+<h2 id="external-resources">External Resources</h2>
+<ul>
+<li><a href="https://img.jgi.doe.gov/vr/">IMG/VR Portal</a></li>
+<li><a href="https://doi.org/10.1093/nar/gkac1037">IMG/VR Paper</a></li>
+<li><a href="https://github.com/apcamargo/genomad">geNomad</a> - Viral classification tool</li>
+<li><a href="https://bitbucket.org/berkeleylab/checkv">CheckV</a> - Viral completeness estimation</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
