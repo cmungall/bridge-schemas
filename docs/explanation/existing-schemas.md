@@ -62,6 +62,44 @@ The NMDC schema is comprehensive, with rich descriptions, slot constraints,
 enumerations for environmental metadata (MIxS, GOLD ecosystem classification),
 and extensive cross-references.
 
+### CORAL/ENIGMA Schema
+
+**Repository**: [github.com/realmarcin/linkml-coral](https://github.com/realmarcin/linkml-coral)
+
+The CORAL (Common Ontology-based Resource for Annotation and Linking) schema is a LinkML implementation of the ENIGMA Common Data Model (CDM) for environmental molecular science data. It defines ~12 core classes for environmental sampling, sequencing, and microbial genomics:
+
+| Class | Purpose |
+|-------|---------|
+| `Location` | Geographic sampling locations with coordinates and environmental context |
+| `Sample` | Environmental samples with depth, material, date, and environmental package |
+| `Community` | Microbial community samples (isolates, enrichments, assemblages) |
+| `Reads` | Sequencing read data with read counts and technology metadata |
+| `Assembly` | Genome assemblies with contig statistics |
+| `Genome` | Annotated genomes with feature counts |
+| `Gene` | Gene predictions with functional annotations |
+| `OTU` (ASV) | 16S amplicon sequence variants for community profiling |
+| `Process` | Provenance tracking for experimental workflows |
+
+**Key features**:
+
+- **Semantic annotations**: 69 microtype annotations (ME: terms) from `context_measurement_ontology.obo`
+- **Ontology integration**: ENVO, UO, DA, and ME prefixes for standardized terms
+- **23 enumerated types**: Auto-generated from OBO including ReadType, SequencingTechnology, Strand
+- **Provenance tracking**: Complete lineage from samples through sequencing to analysis
+- **Foreign key validation**: Explicit relationships between entities
+- **Enhanced validation**: Regex patterns, range constraints, required fields
+
+**Schema location**: [src/linkml_coral/schema/linkml_coral.yaml](https://github.com/realmarcin/linkml-coral/blob/main/src/linkml_coral/schema/linkml_coral.yaml)
+
+**CDM naming variant**: Also available as [linkml_coral_cdm.yaml](https://github.com/realmarcin/linkml-coral/blob/main/src/linkml_coral/schema/cdm/linkml_coral_cdm.yaml) with BERDL naming conventions (`sdt_*`, `sys_*`, `ddt_*`)
+
+**Data sources**:
+- CORAL typedef JSON (git submodule at `CORAL/`)
+- KBase ENIGMA CDM parquet exports (~500MB, 44 tables)
+- Supports loading into DuckDB via linkml-store
+
+The CORAL schema bridges ENIGMA's original JSON-based type definitions with modern LinkML semantics, providing comprehensive metadata management for environmental microbiology datasets.
+
 ## The NMDC Confusion
 
 **This is the key source of confusion**: The `nmdc_core` tables in KBase/BERDL
@@ -309,3 +347,4 @@ berdl_tables:
 - [Cross-Database Linkages](../linkages.md) - How NMDC links to GOLD
 - [KBase CDM Schema](https://github.com/kbase/cdm-schema) - Canonical KBase schema
 - [NMDC Schema](https://github.com/microbiomedata/nmdc-schema) - Canonical NMDC schema
+- [CORAL/ENIGMA Schema](https://github.com/realmarcin/linkml-coral) - ENIGMA environmental microbiology data model
