@@ -13,13 +13,9 @@ description: >-
   Research Center (ORFRC) in Tennessee.
 
   DATABASE STRUCTURE:
-  - sdt_sample: Environmental samples with location and depth
-  - sdt_location: Sampling sites/wells
-  - sdt_taxon: Taxonomic identifications (linked to NCBI taxonomy)
-  - sdt_asv: Amplicon sequence variants from 16S sequencing
-  - sdt_condition: Experimental conditions
-  - sdt_strain: Cultured isolates
-  - ddt_brick*: Data bricks (array data storage)
+  - sdt_*: Scientific data tables (samples, taxa, strains, etc.)
+  - ddt_brick*: Data bricks (n-dimensional array storage)
+  - ddt_ndarray: Array metadata registry
   - sys_*: System/ontology tables
 
   ONTOLOGY INTEGRATION:
@@ -32,21 +28,45 @@ prefixes:
   ENVO: http://purl.obolibrary.org/obo/ENVO_
   MIxS: https://w3id.org/mixs/
   NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  UO: http://purl.obolibrary.org/obo/UO_
 
 default_range: string
 imports:
   - linkml:types
 
+enums:
+  BrickDataType:
+    description: Types of data stored in brick tables
+    permissible_values:
+      ChemicalMeasurement:
+        description: Chemical/geochemical measurements (concentrations, etc.)
+        meaning: DA:0000005
+      TaxonomicAbundance:
+        description: Microbial taxonomic abundance counts
+        meaning: DA:0000028
+      MicrobialSequence:
+        description: DNA/RNA sequence data (16S, etc.)
+        meaning: DA:0000064
+      TaxonomicAssignment:
+        description: Taxonomic classification assignments
+        meaning: DA:0000067
+      MicrobialAbundance:
+        description: Microbial abundance metrics
+        meaning: DA:0000018
+      Map:
+        description: Key-value mapping data
+        meaning: DA:0000033
+
 classes:
+  # =============================================================================
+  # SCIENTIFIC DATA TABLES (sdt_*)
+  # =============================================================================
+
   Sample:
     description: >-
       Environmental sample from groundwater monitoring wells.
       Contains location, depth, and material type using ontology terms.
-
-      EXAMPLE SAMPLES:
-      - EU02-D01: Groundwater from well EU02 at 5.4m depth
-      - EU03-D01: Groundwater from well EU03 at 4.6m depth
-      - ED04-D01: Groundwater from well ED04 at 4.8m depth
     annotations:
       source_table: sdt_sample
     attributes:
@@ -56,98 +76,49 @@ classes:
         required: true
         description: Unique sample identifier
         pattern: "Sample\\d{7}"
-        examples:
-          - value: "Sample0000001"
-          - value: "Sample0000002"
-          - value: "Sample0000003"
-
       sdt_sample_name:
         range: string
         description: Human-readable sample name (well-date format)
-        examples:
-          - value: "EU02-D01"
-            description: Well EU02, sampling day 01
-          - value: "EU03-D01"
-          - value: "ED04-D01"
-
       sdt_location_name:
         range: string
-        description: Sampling location/well identifier
-        comments:
-          - "Foreign key to Location.sdt_location_name"
-        examples:
-          - value: "EU02"
-          - value: "EU03"
-          - value: "ED04"
-
+        description: Sampling location/well identifier (FK to Location)
       depth_meter:
         range: float
         description: Sample depth in meters below ground surface
-        minimum_value: 0.0
-        examples:
-          - value: 5.401056
-          - value: 4.605528
-          - value: 4.7625
-
+        unit:
+          ucum_code: m
       elevation_meter:
         range: float
-        description: Elevation in meters (above sea level)
-
+        description: Elevation in meters above sea level
+        unit:
+          ucum_code: m
       date:
         range: date
-        description: Sampling date (YYYY-MM-DD)
-        examples:
-          - value: "2019-07-29"
-
+        description: Sampling date
       time:
         range: string
         description: Sampling time (HH:MM format)
-        examples:
-          - value: "6:59"
-          - value: "8:09"
-          - value: "8:58"
-
       timezone:
         range: string
         description: Timezone offset
-        examples:
-          - value: "UTC-04"
-
       material_sys_oterm_id:
         range: string
         description: ENVO ontology term ID for sample material type
-        examples:
-          - value: "ENVO:00002041"
-            description: Ground water
-
       material_sys_oterm_name:
         range: string
         description: Human-readable material type name
-        examples:
-          - value: "ground water"
-
       env_package_sys_oterm_id:
         range: string
         description: MIxS environmental package term ID
-        examples:
-          - value: "MIxS:0000017"
-            description: Water package
-
       env_package_sys_oterm_name:
         range: string
         description: MIxS environmental package name
-        examples:
-          - value: "water"
-
       sdt_sample_description:
         range: string
         description: Free-text sample description
-        examples:
-          - value: "1 L purged"
 
   Location:
-    description: >-
-      Sampling location (groundwater monitoring well).
+    description: Sampling location (groundwater monitoring well).
     annotations:
       source_table: sdt_location
     attributes:
@@ -156,9 +127,6 @@ classes:
         range: string
         required: true
         description: Location/well identifier
-        examples:
-          - value: "EU02"
-          - value: "EU03"
 
   Taxon:
     description: >-
@@ -173,33 +141,13 @@ classes:
         required: true
         description: Internal taxon identifier
         pattern: "Taxon\\d{7}"
-        examples:
-          - value: "Taxon0000842"
-          - value: "Taxon0000843"
-          - value: "Taxon0000844"
-
       sdt_taxon_name:
         range: string
         description: Taxonomic name (any rank)
-        examples:
-          - value: "Cytophagales"
-            description: Order level
-          - value: "Cytophaga"
-            description: Genus level
-          - value: "Cytophagia"
-            description: Class level
-
       ncbi_taxid:
         range: string
         description: NCBI Taxonomy ID with NCBITaxon prefix
         pattern: "NCBITaxon:\\d+"
-        examples:
-          - value: "NCBITaxon:768507"
-            description: Cytophagales
-          - value: "NCBITaxon:978"
-            description: Cytophaga
-          - value: "NCBITaxon:768503"
-            description: Cytophagia
 
   ASV:
     description: >-
@@ -212,10 +160,12 @@ classes:
         identifier: true
         range: string
         description: ASV identifier
+      sdt_asv_name:
+        range: string
+        description: ASV name/hash
 
   Condition:
-    description: >-
-      Experimental or environmental condition metadata.
+    description: Experimental or environmental condition metadata.
     annotations:
       source_table: sdt_condition
     attributes:
@@ -223,10 +173,12 @@ classes:
         identifier: true
         range: string
         description: Condition identifier
+      sdt_condition_name:
+        range: string
+        description: Condition name
 
   Strain:
-    description: >-
-      Cultured microbial strain/isolate.
+    description: Cultured microbial strain/isolate.
     annotations:
       source_table: sdt_strain
     attributes:
@@ -234,10 +186,42 @@ classes:
         identifier: true
         range: string
         description: Strain identifier
+      sdt_strain_name:
+        range: string
+        description: Strain name
+
+  Community:
+    description: Microbial community sample for amplicon sequencing.
+    annotations:
+      source_table: sdt_community
+    attributes:
+      sdt_community_id:
+        identifier: true
+        range: string
+        description: Community identifier
+      sdt_community_name:
+        range: string
+        description: Community name
+
+  Genome:
+    description: Genome assembly for an isolate strain.
+    annotations:
+      source_table: sdt_genome
+    attributes:
+      sdt_genome_id:
+        identifier: true
+        range: string
+        description: Genome identifier
+      sdt_genome_name:
+        range: string
+        description: Genome name
+
+  # =============================================================================
+  # SYSTEM TABLES (sys_*)
+  # =============================================================================
 
   OntologyTerm:
-    description: >-
-      System ontology term (ENVO, MIxS, etc.) for standardized annotations.
+    description: System ontology term (ENVO, MIxS, CHEBI, etc.) for standardized annotations.
     annotations:
       source_table: sys_oterm
     attributes:
@@ -245,13 +229,12 @@ classes:
         identifier: true
         range: string
         description: Ontology term ID (CURIE format)
-        examples:
-          - value: "ENVO:00002041"
-          - value: "MIxS:0000017"
+      sys_oterm_name:
+        range: string
+        description: Ontology term name
 
   Process:
-    description: >-
-      Data processing workflow or analysis process.
+    description: Data processing workflow or analysis process.
     annotations:
       source_table: sys_process
     attributes:
@@ -260,37 +243,636 @@ classes:
         range: string
         description: Process identifier
 
-  DataBrick:
-    description: >-
-      Data brick for array/matrix data storage (ddt_brick* tables).
-      Used for efficient storage of multi-dimensional data like
-      abundance matrices.
-    annotations:
-      source_table: ddt_brick*
-    attributes:
-      brick_id:
-        identifier: true
-        range: string
-        description: Data brick identifier
+  # =============================================================================
+  # ARRAY METADATA (ddt_ndarray, sys_ddt_typedef)
+  # =============================================================================
 
   NDArray:
     description: >-
-      N-dimensional array metadata and type definitions.
+      N-dimensional array metadata registry. Each entry describes a data brick
+      including its shape, dimensions, and semantic types.
     annotations:
       source_table: ddt_ndarray
     attributes:
-      ndarray_id:
+      ddt_ndarray_id:
         identifier: true
         range: string
-        description: Array identifier
+        description: Array/brick identifier (e.g., Brick0000010)
+      ddt_ndarray_name:
+        range: string
+        description: Array name (filename)
+      ddt_ndarray_description:
+        range: string
+        description: Human-readable description
+      ddt_ndarray_type_sys_oterm_id:
+        range: string
+        description: Data type ontology term ID
+      ddt_ndarray_type_sys_oterm_name:
+        range: string
+        description: Data type name (e.g., Chemical Measurement)
+      ddt_ndarray_shape:
+        range: string
+        description: Array shape as JSON list (e.g., [209, 52, 3, 3])
+      ddt_ndarray_metadata:
+        range: string
+        description: Additional metadata as JSON
 
   TypeDefinition:
     description: >-
-      System type definitions for data bricks.
+      Column/variable definitions for data bricks. Defines the schema
+      for each brick table including foreign keys, units, and semantics.
     annotations:
       source_table: sys_ddt_typedef
     attributes:
-      typedef_id:
-        identifier: true
+      ddt_ndarray_id:
         range: string
-        description: Type definition identifier
+        description: Parent brick identifier
+      berdl_column_name:
+        range: string
+        description: Column name in the brick table
+      berdl_column_data_type:
+        range: string
+        description: Column role (variable, dimension_variable)
+      scalar_type:
+        range: string
+        description: Data type (float, int, string, object_ref, oterm_ref)
+      foreign_key:
+        range: string
+        description: Foreign key reference (table.column)
+      comment:
+        range: string
+        description: Column description
+      unit_sys_oterm_id:
+        range: string
+        description: Unit ontology term ID
+      unit_sys_oterm_name:
+        range: string
+        description: Unit name
+      dimension_number:
+        range: integer
+        description: Dimension index (1-based)
+      variable_number:
+        range: integer
+        description: Variable index within dimension
+
+  # =============================================================================
+  # DATA BRICK TABLES (ddt_brick*)
+  # Chemical Measurement Bricks
+  # =============================================================================
+
+  Brick0000010:
+    description: >-
+      Adams Lab Metals Measurements for 100 Well Survey.
+      4D array: samples × molecules × physiochemical states × replicates.
+      Contains metal concentrations in groundwater samples.
+    annotations:
+      source_table: ddt_brick0000010
+      brick_type: ChemicalMeasurement
+    attributes:
+      sdt_sample_name:
+        range: string
+        description: Environmental sample ID (FK to Sample)
+      molecule_from_list_sys_oterm_id:
+        range: string
+        description: Molecule ontology term ID (CHEBI)
+      molecule_from_list_sys_oterm_name:
+        range: string
+        description: Molecule name (e.g., uranium atom, nitrate)
+      molecule_molecular_weight_dalton:
+        range: float
+        description: Molecular weight in daltons
+        unit:
+          ucum_code: Da
+      molecule_algorithm_parameter:
+        range: string
+        description: Analysis algorithm parameter
+      molecule_detection_limit_micromolar:
+        range: float
+        description: Detection limit in micromolar
+        unit:
+          ucum_code: umol/L
+      physiochemical_state:
+        range: string
+        description: Sample state (Suspension, Pellet, Supernatant)
+      replicate_series_count_unit:
+        range: integer
+        description: Replicate number
+      concentration_micromolar:
+        range: float
+        description: Measured concentration in micromolar
+        unit:
+          ucum_code: umol/L
+
+  Brick0000072:
+    description: >-
+      Adams Lab Metals Measurements from Core Pilot (271 samples).
+      Contains metal concentrations with statistics.
+    annotations:
+      source_table: ddt_brick0000072
+      brick_type: ChemicalMeasurement
+    attributes:
+      sdt_sample_name:
+        range: string
+        description: Environmental sample ID (FK to Sample)
+      molecule_from_list_sys_oterm_id:
+        range: string
+        description: Molecule ontology term ID (CHEBI)
+      molecule_from_list_sys_oterm_name:
+        range: string
+        description: Molecule name
+      molecule_molecular_weight_dalton:
+        range: float
+        description: Molecular weight in daltons
+      molecule_presence_molecule_from_list_helium_0:
+        range: boolean
+        description: Presence flag for helium collision mode
+      physiochemical_state:
+        range: string
+        description: Sample state
+      statistic_sys_oterm_id:
+        range: string
+        description: Statistic type ontology term ID
+      statistic_sys_oterm_name:
+        range: string
+        description: Statistic type name
+      concentration_milligram_per_kilogram:
+        range: float
+        description: Concentration in mg/kg
+        unit:
+          ucum_code: mg/kg
+
+  Brick0000073:
+    description: >-
+      Adams Lab Metals Measurements from Core Pilot (106 samples).
+      Contains metal concentrations with statistics.
+    annotations:
+      source_table: ddt_brick0000073
+      brick_type: ChemicalMeasurement
+    attributes:
+      sdt_sample_name:
+        range: string
+        description: Environmental sample ID (FK to Sample)
+      molecule_from_list_sys_oterm_id:
+        range: string
+        description: Molecule ontology term ID (CHEBI)
+      molecule_from_list_sys_oterm_name:
+        range: string
+        description: Molecule name
+      molecule_molecular_weight_dalton:
+        range: float
+        description: Molecular weight in daltons
+      molecule_presence_molecule_from_list_helium_0:
+        range: boolean
+        description: Presence flag for helium collision mode
+      physiochemical_state:
+        range: string
+        description: Sample state
+      statistic_sys_oterm_id:
+        range: string
+        description: Statistic type ontology term ID
+      statistic_sys_oterm_name:
+        range: string
+        description: Statistic type name
+      concentration_milligram_per_kilogram:
+        range: float
+        description: Concentration in mg/kg
+
+  Brick0000080:
+    description: >-
+      Adams Lab Metals Measurements from 27 Well Survey.
+      Contains averaged concentrations with standard deviations in ppb.
+    annotations:
+      source_table: ddt_brick0000080
+      brick_type: ChemicalMeasurement
+    attributes:
+      sdt_sample_name:
+        range: string
+        description: Environmental sample ID (FK to Sample)
+      molecule_from_list_sys_oterm_id:
+        range: string
+        description: Molecule ontology term ID (CHEBI)
+      molecule_from_list_sys_oterm_name:
+        range: string
+        description: Molecule name
+      molecule_molecular_weight_dalton:
+        range: float
+        description: Molecular weight in daltons
+      molecule_presence_molecule_from_list_helium_0:
+        range: boolean
+        description: Presence flag for helium collision mode
+      concentration_statistic_average_parts_per_billion:
+        range: float
+        description: Average concentration in ppb
+        unit:
+          ucum_code: "[ppb]"
+      concentration_statistic_standard_deviation_parts_per_billion:
+        range: float
+        description: Standard deviation of concentration in ppb
+      detection_limit_parts_per_billion:
+        range: float
+        description: Detection limit in ppb
+
+  # =============================================================================
+  # ASV 16S Sequence Bricks (Microbial Sequence)
+  # =============================================================================
+
+  Brick0000452:
+    description: >-
+      Zhou Lab 100WS Spring19 CorePilot 27WS CPT ASV 16S Sequences.
+      Contains 113,741 unique ASV sequences.
+    annotations:
+      source_table: ddt_brick0000452
+      brick_type: MicrobialSequence
+    attributes:
+      sdt_asv_name:
+        range: string
+        description: ASV identifier (FK to ASV)
+      sequence_sequence_type_16s_sequence:
+        range: string
+        description: 16S rRNA gene sequence
+
+  Brick0000457:
+    description: >-
+      Zhou Lab SSO Sediment ASV 16S Sequences.
+      Contains 23,458 unique ASV sequences from sediment samples.
+    annotations:
+      source_table: ddt_brick0000457
+      brick_type: MicrobialSequence
+    attributes:
+      sdt_asv_name:
+        range: string
+        description: ASV identifier (FK to ASV)
+      sequence_sequence_type_16s_sequence:
+        range: string
+        description: 16S rRNA gene sequence
+
+  Brick0000460:
+    description: >-
+      Zhou Lab SSO Pump Test ASV 16S Sequences.
+      Contains 9,432 unique ASV sequences from pump test.
+    annotations:
+      source_table: ddt_brick0000460
+      brick_type: MicrobialSequence
+    attributes:
+      sdt_asv_name:
+        range: string
+        description: ASV identifier (FK to ASV)
+      sequence_sequence_type_16s_sequence:
+        range: string
+        description: 16S rRNA gene sequence
+
+  Brick0000477:
+    description: >-
+      Zhou Lab SSO Pilot Time Series ASV 16S Sequences.
+      Contains ASV sequences from time series experiment.
+    annotations:
+      source_table: ddt_brick0000477
+      brick_type: MicrobialSequence
+    attributes:
+      sdt_asv_name:
+        range: string
+        description: ASV identifier (FK to ASV)
+      sequence_sequence_type_16s_sequence:
+        range: string
+        description: 16S rRNA gene sequence
+
+  Brick0000520:
+    description: >-
+      Isolate 16S Sequences from Sanger sequencing (as of 2026-01-21).
+      Contains 16S sequences for cultured isolate strains.
+    annotations:
+      source_table: ddt_brick0000520
+      brick_type: MicrobialSequence
+    attributes:
+      sdt_strain_name:
+        range: string
+        description: Strain identifier (FK to Strain)
+      sequence_type_sys_oterm_id:
+        range: string
+        description: Sequence type ontology term ID
+      sequence_type_sys_oterm_name:
+        range: string
+        description: Sequence type name
+      strand_sys_oterm_id:
+        range: string
+        description: Strand ontology term ID
+      strand_sys_oterm_name:
+        range: string
+        description: Strand name (forward/reverse)
+      sequence:
+        range: string
+        description: DNA sequence
+
+  # =============================================================================
+  # ASV Taxonomy Assignment Bricks
+  # =============================================================================
+
+  Brick0000454:
+    description: >-
+      Zhou Lab 100WS Spring19 CorePilot 27WS CPT ASV Taxonomy.
+      Taxonomic assignments using SILVA-138 classifier.
+    annotations:
+      source_table: ddt_brick0000454
+      brick_type: TaxonomicAssignment
+    attributes:
+      sdt_asv_name:
+        range: string
+        description: ASV identifier (FK to ASV)
+      taxonomic_level_sys_oterm_id:
+        range: string
+        description: Taxonomic level ontology term ID
+      taxonomic_level_sys_oterm_name:
+        range: string
+        description: Taxonomic level (phylum, class, order, etc.)
+      sdt_taxon_name:
+        range: string
+        description: Assigned taxon name (FK to Taxon)
+
+  Brick0000458:
+    description: >-
+      Zhou Lab SSO Sediment ASV Taxonomy.
+      Taxonomic assignments using SILVA-138.1 classifier.
+    annotations:
+      source_table: ddt_brick0000458
+      brick_type: TaxonomicAssignment
+    attributes:
+      sdt_asv_name:
+        range: string
+        description: ASV identifier (FK to ASV)
+      taxonomic_level_sys_oterm_id:
+        range: string
+        description: Taxonomic level ontology term ID
+      taxonomic_level_sys_oterm_name:
+        range: string
+        description: Taxonomic level
+      sdt_taxon_name:
+        range: string
+        description: Assigned taxon name (FK to Taxon)
+
+  Brick0000461:
+    description: >-
+      Zhou Lab SSO Pump Test ASV Taxonomy.
+      Taxonomic assignments with confidence scores using SILVA-138.1.
+    annotations:
+      source_table: ddt_brick0000461
+      brick_type: TaxonomicAssignment
+    attributes:
+      sdt_asv_name:
+        range: string
+        description: ASV identifier (FK to ASV)
+      taxonomic_level_sys_oterm_id:
+        range: string
+        description: Taxonomic level ontology term ID
+      taxonomic_level_sys_oterm_name:
+        range: string
+        description: Taxonomic level
+      sdt_taxon_name:
+        range: string
+        description: Assigned taxon name (FK to Taxon)
+      confidence_confidence_unit:
+        range: float
+        description: Classification confidence score (0-1)
+
+  Brick0000478:
+    description: >-
+      Zhou Lab SSO Pilot Time Series ASV Taxonomy.
+      Taxonomic assignments with confidence scores using SILVA-138.1.
+    annotations:
+      source_table: ddt_brick0000478
+      brick_type: TaxonomicAssignment
+    attributes:
+      sdt_asv_name:
+        range: string
+        description: ASV identifier (FK to ASV)
+      taxonomic_level_sys_oterm_id:
+        range: string
+        description: Taxonomic level ontology term ID
+      taxonomic_level_sys_oterm_name:
+        range: string
+        description: Taxonomic level
+      sdt_taxon_name:
+        range: string
+        description: Assigned taxon name (FK to Taxon)
+      confidence_confidence_unit:
+        range: float
+        description: Classification confidence score (0-1)
+
+  Brick0000522:
+    description: >-
+      GTDB-Tk classification of ENIGMA isolate strains (as of 2026-01-29).
+      Taxonomic assignments at multiple ranks with evolutionary divergence.
+    annotations:
+      source_table: ddt_brick0000522
+      brick_type: TaxonomicAssignment
+    attributes:
+      sdt_strain_name:
+        range: string
+        description: Strain identifier (FK to Strain)
+      taxonomic_level_sys_oterm_id:
+        range: string
+        description: Taxonomic level ontology term ID
+      taxonomic_level_sys_oterm_name:
+        range: string
+        description: Taxonomic level
+      sdt_taxon_name:
+        range: string
+        description: Assigned taxon name (FK to Taxon)
+      strain_relative_evolutionary_divergence_dimensionless_unit:
+        range: float
+        description: Relative evolutionary divergence from reference
+
+  # =============================================================================
+  # ASV Count/Abundance Bricks (Taxonomic Abundance)
+  # =============================================================================
+
+  Brick0000459:
+    description: >-
+      Zhou Lab SSO Sediment ASV Counts.
+      2D matrix: 23,458 ASVs × 37 communities.
+    annotations:
+      source_table: ddt_brick0000459
+      brick_type: TaxonomicAbundance
+    attributes:
+      sdt_asv_name:
+        range: string
+        description: ASV identifier (FK to ASV)
+      sdt_community_name:
+        range: string
+        description: Community identifier (FK to Community)
+      count_count_unit:
+        range: integer
+        description: Read count for this ASV in this community
+
+  Brick0000462:
+    description: >-
+      Zhou Lab SSO Pump Test ASV Counts.
+      ASV abundance matrix for pump test samples.
+    annotations:
+      source_table: ddt_brick0000462
+      brick_type: TaxonomicAbundance
+    attributes:
+      sdt_asv_name:
+        range: string
+        description: ASV identifier (FK to ASV)
+      sdt_community_name:
+        range: string
+        description: Community identifier (FK to Community)
+      count_count_unit:
+        range: integer
+        description: Read count for this ASV in this community
+
+  Brick0000476:
+    description: >-
+      Zhou Lab 100WS Spring19 CorePilot 27WS CPT unnormalized ASV Counts.
+      Raw (unnormalized) ASV abundance counts with replicates.
+    annotations:
+      source_table: ddt_brick0000476
+      brick_type: TaxonomicAbundance
+    attributes:
+      sdt_asv_name:
+        range: string
+        description: ASV identifier (FK to ASV)
+      sdt_community_name:
+        range: string
+        description: Community identifier (FK to Community)
+      replicate_series_count_unit:
+        range: integer
+        description: Replicate number
+      count_count_unit:
+        range: integer
+        description: Read count for this ASV in this community
+
+  Brick0000479:
+    description: >-
+      Zhou Lab SSO Pilot Time Series ASV Counts.
+      ASV abundance matrix for time series experiment.
+    annotations:
+      source_table: ddt_brick0000479
+      brick_type: TaxonomicAbundance
+    attributes:
+      sdt_asv_name:
+        range: string
+        description: ASV identifier (FK to ASV)
+      sdt_community_name:
+        range: string
+        description: Community identifier (FK to Community)
+      count_count_unit:
+        range: integer
+        description: Read count for this ASV in this community
+
+  # =============================================================================
+  # Isolate/Strain Mapping Bricks
+  # =============================================================================
+
+  Brick0000510:
+    description: >-
+      Isolation conditions for each ENIGMA isolate strain (as of 2025-11-12).
+      Maps strains to their isolation conditions, samples, and locations.
+    annotations:
+      source_table: ddt_brick0000510
+      brick_type: Map
+    attributes:
+      sdt_strain_name:
+        range: string
+        description: Strain identifier (FK to Strain)
+      sdt_condition_name:
+        range: string
+        description: Isolation condition (FK to Condition)
+      description_comment_original_condition_description:
+        range: string
+        description: Original condition description text
+      sdt_sample_name:
+        range: string
+        description: Source sample (FK to Sample)
+      date_comment_sampling_date:
+        range: string
+        description: Sampling date
+      sdt_location_name:
+        range: string
+        description: Sampling location (FK to Location)
+      enigma_campaign_sys_oterm_id:
+        range: string
+        description: ENIGMA campaign ontology term ID
+      enigma_campaign_sys_oterm_name:
+        range: string
+        description: ENIGMA campaign name
+      enigma_labs_and_personnel_comment_contact_person_or_lab_sys_oterm_id:
+        range: string
+        description: Contact lab/person ontology term ID
+      enigma_labs_and_personnel_comment_contact_person_or_lab_sys_oterm_name:
+        range: string
+        description: Contact lab/person name
+
+  Brick0000517:
+    description: >-
+      ENIGMA isolate strains mapped to Shotgun Metagenomic Samples (as of 2026-01-08).
+      Contains read coverage and identity metrics for strain detection in metagenomes.
+    annotations:
+      source_table: ddt_brick0000517
+      brick_type: MicrobialAbundance
+    attributes:
+      sdt_strain_name:
+        range: string
+        description: Strain identifier (FK to Strain)
+      sdt_sample_name:
+        range: string
+        description: Metagenomic sample (FK to Sample)
+      sdt_genome_name:
+        range: string
+        description: Reference genome (FK to Genome)
+      read_coverage_statistic_average_comment_cov80_average_coverage_after_trimming_highest_and_lowest_10_percent_count_unit:
+        range: float
+        description: Average read coverage (cov80 trimmed)
+      sequence_identity_statistic_average_comment_average_percent_identity_of_aligned_reads_percent:
+        range: float
+        description: Average percent identity of aligned reads
+        unit:
+          ucum_code: "%"
+      read_coverage_comment_percent_of_1kb_chunks_of_genome_covered_by_at_least_one_read_percent:
+        range: float
+        description: Percent of genome covered by at least one read
+        unit:
+          ucum_code: "%"
+
+  Brick0000521:
+    description: >-
+      Links to ENIGMA isolate sequence data and quality assessment (as of 2026-01-29).
+      Contains genome quality metrics and links to sequence data on Arkin Lab servers.
+    annotations:
+      source_table: ddt_brick0000521
+      brick_type: MicrobialSequence
+    attributes:
+      sdt_strain_name:
+        range: string
+        description: Strain identifier (FK to Strain)
+      link_context_read_set:
+        range: string
+        description: URL to read set data
+      link_context_genome:
+        range: string
+        description: URL to genome assembly
+      count_context_contig_count_unit:
+        range: integer
+        description: Number of contigs in assembly
+      count_context_gene_count_unit:
+        range: integer
+        description: Number of predicted genes
+      genome_completeness_method_checkm_percent:
+        range: float
+        description: Genome completeness (CheckM) in percent
+        unit:
+          ucum_code: "%"
+      genome_contamination_method_checkm_percent:
+        range: float
+        description: Genome contamination (CheckM) in percent
+        unit:
+          ucum_code: "%"
+      genome_n50_method_checkm_count_unit:
+        range: integer
+        description: Assembly N50 value
+      read_coverage_statistic_average_count_unit:
+        range: float
+        description: Average read coverage
+      jukes_cantor_distance_comment_between_sanger_16s_and_genomic_16s_substitutions_per_site:
+        range: float
+        description: Jukes-Cantor distance between Sanger and genomic 16S

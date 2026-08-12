@@ -307,6 +307,67 @@ then locate gene by position.
 | NMDC studies → GOLD | ~48 | Via `gold_study_identifiers` JSON field |
 | IMG kbase_pangenome mirror | 27,701 | Full KBase pangenome copy in IMG |
 
+## GapMind ↔ KBase Pangenome
+
+GapMind pathway completeness data lives in `globalusers_gapmind_pathways.gapmind_pathways`
+and links to the KBase pangenome tables, but the identifier formats differ.
+
+### genome_id format mismatch
+
+| Database | Field | Format | Example |
+|----------|-------|--------|---------|
+| GapMind | `genome_id` | Bare NCBI accession | `GCF_019211765.1` |
+| KBase pangenome | `genome.genome_id` | Prefixed accession | `RS_GCF_019211765.1` |
+
+The KBase pangenome adds an `RS_` (RefSeq) or `GB_` (GenBank) prefix. To join,
+strip the prefix:
+
+```sql
+SELECT g.genome_id, g.gtdb_species_clade_id,
+       p.pathway, p.score_category
+FROM kbase_ke_pangenome.genome g
+JOIN globalusers_gapmind_pathways.gapmind_pathways p
+  ON SUBSTRING(g.genome_id FROM 4) = p.genome_id
+LIMIT 10
+```
+
+### clade_name ↔ gtdb_species_clade_id
+
+GapMind's `clade_name` uses the same format as `gtdb_species_clade.gtdb_species_clade_id`
+(`s__Genus_species--RS_GCF_XXXXXXXXX.X`), so these can be joined directly:
+
+```sql
+SELECT c.gtdb_species_clade_id, p.pathway, p.score_category
+FROM kbase_ke_pangenome.gtdb_species_clade c
+JOIN globalusers_gapmind_pathways.gapmind_pathways p
+  ON c.gtdb_species_clade_id = p.clade_name
+LIMIT 10
+```
+
+However, other systems may use different species name formats. For example,
+GTDB species names in some tools use spaces (`s__Genus species`) rather than
+underscores, and omit the representative genome suffix. When linking across
+systems with different species ID conventions, join through the `genome` table
+on `genome_id` rather than trying to match clade/species name strings directly.
+
+### Recommended join path
+
+```
+GapMind gapmind_pathways
+    │
+    │ genome_id (GCF_*)
+    │   ↓ SUBSTRING(genome.genome_id FROM 4)
+    ▼
+KBase genome (RS_GCF_*)
+    │
+    │ gtdb_species_clade_id
+    ▼
+KBase gtdb_species_clade
+```
+
+Joining through `genome` avoids species name format mismatches and gives access
+to all genome metadata (BioSample, taxonomy, quality metrics) in a single hop.
+
 ## Coverage Summary (All Linkages)
 
 | Linkage | Records Linked | % of Source |
@@ -317,6 +378,7 @@ then locate gene by position.
 | IMG → GOLD (analysis) | 278,063 | 97% of IMG |
 | IMG BCG → MIBiG | 1,325 | 0.3% of BCG regions |
 | KBase → GOLD | 17,202 | 62% of KBase pangenomes |
+| GapMind → KBase genome | ~293K | Via SUBSTRING prefix strip on genome_id |
 
 ## GOLD ID Patterns
 

@@ -28,6 +28,7 @@ nav:
   - Explanations:
     - Existing Schemas: explanation/existing-schemas.md
     - Microbial Traits: explanation/traits.md
+    - GapMind Pathway Completeness: explanation/gapmind-pathway-completeness.md
     - Perturbation Experiments: explanation/perturbation-experiments.md
     - Functional Annotation: explanation/functional-annotation.md
     - Taxonomic Coverage: explanation/taxonomic-coverage.md

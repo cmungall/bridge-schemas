@@ -16,17 +16,20 @@ JGI_SCHEMAS = $(wildcard $(SCHEMA_DIR)/jgi/*.linkml.yaml)
 KBASE_SCHEMAS = $(wildcard $(SCHEMA_DIR)/kbase/*.linkml.yaml)
 ALL_SCHEMAS = $(JGI_SCHEMAS) $(KBASE_SCHEMAS)
 
-.PHONY: all clean help install test docs serve deploy
+.PHONY: all clean help install test docs serve deploy refresh-gold-cv
 
 help:
 	@echo "bridge-schemas - LinkML schemas for JGI and KBase lakehouses"
 	@echo ""
-	@echo "make install    - Install dependencies"
-	@echo "make test       - Validate all schemas"
-	@echo "make docs       - Generate documentation"
-	@echo "make serve      - Serve docs locally"
-	@echo "make list       - List all schemas"
-	@echo "make clean      - Clean generated files"
+	@echo "make install         - Install dependencies"
+	@echo "make test            - Validate all schemas"
+	@echo "make docs            - Generate documentation"
+	@echo "make serve           - Serve docs locally"
+	@echo "make list            - List all schemas"
+	@echo "make clean           - Clean generated files"
+	@echo ""
+	@echo "GOLD CV generation:"
+	@echo "make refresh-gold-cv - Add CV enums and bindings to gold.linkml.yaml"
 	@echo ""
 
 install:
@@ -85,6 +88,11 @@ serve:
 
 deploy:
 	$(RUN) mkdocs gh-deploy
+
+# GOLD CV enum and bindings generation
+refresh-gold-cv:
+	@echo "Augmenting gold.linkml.yaml with CV enums and bindings..."
+	python scripts/augment_gold_with_cv_enums.py
 
 clean:
 	rm -rf $(DEST)

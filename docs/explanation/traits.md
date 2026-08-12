@@ -305,7 +305,7 @@ SELECT
     CASE WHEN prt.taxon IS NOT NULL THEN 'auxotroph' ELSE 'prototroph' END as img_lys
 FROM kbase_ke_pangenome.genome g
 LEFT JOIN globalusers_gapmind_pathways.gapmind_pathways gm
-    ON g.genome_id = gm.genome_id AND gm.pathway = 'lys'
+    ON SUBSTRING(g.genome_id FROM 4) = gm.genome_id AND gm.pathway = 'lys'
 LEFT JOIN "img-db-2 postgresql".img_ext.taxon t
     ON SUBSTRING(g.genome_id FROM 4) = t.ncbi_assembly_accession
 LEFT JOIN "img-db-2 postgresql".img_ext.phenotype_rule_taxons prt

@@ -110,7 +110,7 @@ classes:
       SELECT g.*, p.genome_id, p.pathway, p.score_category
       FROM kbase_ke_pangenome.genome g
       JOIN globalusers_gapmind_pathways.gapmind_pathways p
-        ON g.genome_id = p.genome_id
+        ON SUBSTRING(g.genome_id FROM 4) = p.genome_id
       WHERE p.score_category = 'present'
       ```
     annotations:
@@ -121,9 +121,11 @@ classes:
         required: true
         description: >-
           RefSeq/GenBank genome assembly accession (GCF_*/GCA_*).
-          Links to kbase_ke_pangenome.genome.genome_id.
+          Note: this is the bare NCBI accession without the RS_/GB_ prefix
+          used in kbase_ke_pangenome.genome.genome_id. To join, strip the
+          prefix: SUBSTRING(genome.genome_id FROM 4) = gapmind.genome_id.
         comments:
-          - "Foreign key to kbase_ke_pangenome.genome.genome_id"
+          - "Join to kbase_ke_pangenome.genome via SUBSTRING(genome_id FROM 4)"
         pattern: "GC[FA]_\\d+\\.\\d+"
         examples:
           - value: "GCF_019211765.1"

@@ -12,7 +12,8 @@ in the JGI and KBase lakehouses.
 | **KBase Pangenome** | Bacteria/Archaea | 293K | GTDB-classified prokaryotes |
 | **MycoCosm** | Fungi | ~2,500 | Fungal comparative genomics |
 | **Phytozome** | Plants | ~250 | Plant comparative genomics |
-| **IMG/VR** | Viruses | 22K+ | Viral sequences |
+| **IMG/VR** | Viruses | 15.7M | Viral sequences from metagenomes |
+| **Phage Foundry** | Phage-host | ~2,200 | Phage therapy target pathogens |
 
 ## Data Types
 
@@ -337,6 +338,148 @@ Unlike MycoCosm (schema-per-genome), Phytozome uses a unified Chado schema:
 | `uvig_domain` | 118.7M | Protein domains |
 | `uvig_pfams` | 50.4M | PFAM annotations |
 
+## Phage Foundry: Phage-Host Interaction Data
+
+The Phage Foundry is a DOE BRaVE (Biopreparedness Research Virtual Environment) initiative
+led by Vivek Mutalik at Lawrence Berkeley National Laboratory. It focuses on high-throughput
+characterization of phage-host interactions for phage therapy development against
+antibiotic-resistant pathogens.
+
+### Project Context
+
+| Attribute | Value |
+|-----------|-------|
+| **Funding** | DOE BRaVE ($3.6M/year, 2023-2026) |
+| **Lead Institution** | Lawrence Berkeley National Laboratory |
+| **PI** | Vivek Mutalik |
+| **Focus** | Phage therapy for AMR pathogens |
+
+**Key Publications:**
+- [High-throughput mapping of the phage resistance landscape in E. coli](https://doi.org/10.1371/journal.pbio.3000877) (PLoS Biology, 2020)
+- BioProject: [PRJNA645443](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA645443) (357 samples, 359 Gbases)
+
+### KBase Databases
+
+#### Strain Modelling Database
+
+**Database:** `phagefoundry_strain_modelling` (18 tables)
+
+| Content | Count | Description |
+|---------|-------|-------------|
+| Organisms | 284 | E. coli strains for phage interaction studies |
+| Tables | 18 | Experiments, interactions, features, metrics |
+
+**Key Tables:**
+
+| Table | Description |
+|-------|-------------|
+| `strainmodelling_organism` | Bacterial strains (primarily E. coli) |
+| `strainmodelling_genome` | Genome assemblies |
+| `strainmodelling_gene` | Gene annotations with coordinates |
+| `strainmodelling_experiment` | Phage-host interaction experiments |
+| `strainmodelling_interaction` | Phage-host interaction outcomes |
+| `strainmodelling_feature` | Genomic/phenotypic features (receptors, defense systems) |
+| `strainmodelling_protein_family` | Protein family groupings |
+
+**E. coli Phage Resistance Landscape Study:**
+
+This database contains data from the landmark study mapping host genetic determinants
+of phage resistance using 14 diverse dsDNA phages:
+
+| Phage | Family | Known Receptor |
+|-------|--------|----------------|
+| T2 | Myoviridae | FadL |
+| T4 | Myoviridae | OmpC |
+| T5 | Siphoviridae | FhuA |
+| T6 | Myoviridae | Tsx |
+| T7 | Podoviridae | LPS core |
+| λ | Siphoviridae | LamB |
+| N4 | Podoviridae | NfrA/NfrB |
+| P1vir | Myoviridae | LPS core |
+
+**Experimental Approaches:**
+- **RB-TnSeq**: Random barcode transposon mutagenesis (152K insertions)
+- **CRISPRi**: dCas9 transcriptional repression (542 genes screened)
+- **Dub-seq**: Dual-barcoded shotgun expression library (GOF screening)
+
+#### Genome Browser Databases
+
+**Schema:** `phagefoundry_genome_browser` (30 tables per organism)
+
+Comparative genome browsers for clinically-relevant bacterial pathogens targeted
+for phage therapy development:
+
+| Database | Organism | Genomes | Clinical Relevance |
+|----------|----------|---------|-------------------|
+| `phagefoundry_acinetobacter_genome_browser` | *A. baumannii* | 891 | Nosocomial infections, carbapenem-resistant |
+| `phagefoundry_klebsiella_genome_browser_genomedepot` | *K. pneumoniae* | 220 | Carbapenem-resistant Enterobacteriaceae |
+| `phagefoundry_paeruginosa_genome_browser` | *P. aeruginosa* | 535 | Cystic fibrosis, burn wounds |
+| `phagefoundry_pviridiflava_genome_browser` | *P. viridiflava* | 259 | Plant pathogen (bioenergy crops) |
+
+**Total: ~1,905 pathogen genomes**
+
+**Key Tables (per database):**
+
+| Table | Description |
+|-------|-------------|
+| `browser_genome` | Genome assemblies with NCBI links |
+| `browser_contig` | Contigs with GC content |
+| `browser_gene` | Gene coordinates and types |
+| `browser_protein` | Protein sequences with MD5 hashes |
+| `browser_go_term` | GO functional annotations |
+| `browser_kegg_ortholog` | KEGG pathway mapping |
+| `browser_cog_class` | COG functional categories |
+| `browser_cazy_family` | Carbohydrate-active enzymes |
+| `browser_operon` | Predicted operons |
+| `browser_regulon` | Regulatory networks |
+
+**Functional Annotation Coverage:**
+- Gene Ontology (GO)
+- KEGG Orthologs and Pathways
+- COG functional classes
+- CAZy carbohydrate-active enzymes
+- EC enzyme numbers
+- eggNOG ortholog descriptions
+- Transporter Classification (TC)
+
+### Cross-References
+
+| External Resource | Link Type |
+|-------------------|-----------|
+| NCBI BioProject | PRJNA645443 |
+| Figshare | RB-TnSeq, CRISPRi, Dub-seq data |
+| NCBI Nucleotide | Genome accessions via `external_id` |
+| IMG/VR | Viral genomes (complementary) |
+
+### Example Queries
+
+```sql
+-- Find E. coli strains with phage interaction data
+SELECT o.name, o.full_name, COUNT(i.id) as interactions
+FROM phagefoundry_strain_modelling.strainmodelling_organism o
+LEFT JOIN phagefoundry_strain_modelling.strainmodelling_interaction i
+  ON o.id = i.host_id
+GROUP BY o.id, o.name, o.full_name
+ORDER BY interactions DESC
+LIMIT 10;
+
+-- Get genome statistics for Acinetobacter
+SELECT name, contigs, size, genes
+FROM phagefoundry_acinetobacter_genome_browser.browser_genome
+ORDER BY genes DESC
+LIMIT 10;
+
+-- Find proteins with specific GO terms (membrane transport)
+SELECT p.name, g.go_id, g.name as go_name
+FROM phagefoundry_paeruginosa_genome_browser.browser_protein p
+JOIN phagefoundry_paeruginosa_genome_browser.browser_protein_go_terms pg
+  ON p.id = pg.protein_id
+JOIN phagefoundry_paeruginosa_genome_browser.browser_go_term g
+  ON pg.go_term_id = g.id
+WHERE g.go_id LIKE 'GO:0055085%'  -- transmembrane transport
+LIMIT 20;
+```
+
 ## Cross-Database Organism Lookup
 
 ### By NCBI Taxonomy ID
@@ -403,8 +546,9 @@ JOIN "gold-db-2 postgresql".gold.ncbi_assembly gold
 2. **For metagenome context**: Use GOLD ecosystem classification
 3. **For fungi**: Use MycoCosm (clade-specific annotations)
 4. **For plants**: Use Phytozome (clade-specific annotations)
-5. **For viruses**: Use IMG/VR
-6. **For cross-database queries**: Join on NCBI taxonomy ID or assembly accession
+5. **For viruses/phages**: Use IMG/VR for metagenomic viral sequences
+6. **For phage-host interactions**: Use Phage Foundry databases (E. coli resistance, AMR pathogens)
+7. **For cross-database queries**: Join on NCBI taxonomy ID or assembly accession
 
 ## Key Tables
 
@@ -430,3 +574,14 @@ JOIN "gold-db-2 postgresql".gold.ncbi_assembly gold
 |-------|-------------|
 | `genome` | GTDB-classified genomes |
 | `gtdb_species_clade` | Species-level groupings |
+
+### Phage Foundry
+
+| Table | Database | Description |
+|-------|----------|-------------|
+| `strainmodelling_organism` | strain_modelling | E. coli strains (284) |
+| `strainmodelling_interaction` | strain_modelling | Phage-host interaction data |
+| `strainmodelling_experiment` | strain_modelling | Experimental conditions/metrics |
+| `browser_genome` | genome_browser | Pathogen genomes (~1,905) |
+| `browser_protein` | genome_browser | Annotated proteins |
+| `browser_go_term` | genome_browser | GO functional annotations |
