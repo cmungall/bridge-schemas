@@ -653,6 +653,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gapmind-kbase-pangenome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GapMind ↔ KBase Pangenome
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GapMind ↔ KBase Pangenome">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#genome_id-format-mismatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        genome_id format mismatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clade_name-gtdb_species_clade_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clade_name ↔ gtdb_species_clade_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-join-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended join path
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#coverage-summary-all-linkages" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -783,6 +833,34 @@
     
   
     Microbial Traits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../explanation/gapmind-pathway-completeness.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GapMind Pathway Completeness
   
 
     
@@ -2479,6 +2557,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gapmind-kbase-pangenome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GapMind ↔ KBase Pangenome
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GapMind ↔ KBase Pangenome">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#genome_id-format-mismatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        genome_id format mismatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clade_name-gtdb_species_clade_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clade_name ↔ gtdb_species_clade_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-join-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended join path
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#coverage-summary-all-linkages" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3032,6 +3160,71 @@ then locate gene by position.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="gapmind-kbase-pangenome">GapMind ↔ KBase Pangenome</h2>
+<p>GapMind pathway completeness data lives in <code>globalusers_gapmind_pathways.gapmind_pathways</code>
+and links to the KBase pangenome tables, but the identifier formats differ.</p>
+<h3 id="genome_id-format-mismatch">genome_id format mismatch</h3>
+<table>
+<thead>
+<tr>
+<th>Database</th>
+<th>Field</th>
+<th>Format</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GapMind</td>
+<td><code>genome_id</code></td>
+<td>Bare NCBI accession</td>
+<td><code>GCF_019211765.1</code></td>
+</tr>
+<tr>
+<td>KBase pangenome</td>
+<td><code>genome.genome_id</code></td>
+<td>Prefixed accession</td>
+<td><code>RS_GCF_019211765.1</code></td>
+</tr>
+</tbody>
+</table>
+<p>The KBase pangenome adds an <code>RS_</code> (RefSeq) or <code>GB_</code> (GenBank) prefix. To join,
+strip the prefix:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">genome_id</span><span class="p">,</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">gtdb_species_clade_id</span><span class="p">,</span>
+<span class="w">       </span><span class="n">p</span><span class="p">.</span><span class="n">pathway</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">score_category</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">kbase_ke_pangenome</span><span class="p">.</span><span class="n">genome</span><span class="w"> </span><span class="k">g</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">globalusers_gapmind_pathways</span><span class="p">.</span><span class="n">gapmind_pathways</span><span class="w"> </span><span class="n">p</span>
+<span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="k">SUBSTRING</span><span class="p">(</span><span class="k">g</span><span class="p">.</span><span class="n">genome_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">genome_id</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div>
+<h3 id="clade_name-gtdb_species_clade_id">clade_name ↔ gtdb_species_clade_id</h3>
+<p>GapMind's <code>clade_name</code> uses the same format as <code>gtdb_species_clade.gtdb_species_clade_id</code>
+(<code>s__Genus_species--RS_GCF_XXXXXXXXX.X</code>), so these can be joined directly:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">gtdb_species_clade_id</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">pathway</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">score_category</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">kbase_ke_pangenome</span><span class="p">.</span><span class="n">gtdb_species_clade</span><span class="w"> </span><span class="k">c</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">globalusers_gapmind_pathways</span><span class="p">.</span><span class="n">gapmind_pathways</span><span class="w"> </span><span class="n">p</span>
+<span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">gtdb_species_clade_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">clade_name</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div>
+<p>However, other systems may use different species name formats. For example,
+GTDB species names in some tools use spaces (<code>s__Genus species</code>) rather than
+underscores, and omit the representative genome suffix. When linking across
+systems with different species ID conventions, join through the <code>genome</code> table
+on <code>genome_id</code> rather than trying to match clade/species name strings directly.</p>
+<h3 id="recommended-join-path">Recommended join path</h3>
+<div class="highlight"><pre><span></span><code>GapMind gapmind_pathways
+    │
+    │ genome_id (GCF_*)
+    │   ↓ SUBSTRING(genome.genome_id FROM 4)
+    ▼
+KBase genome (RS_GCF_*)
+    │
+    │ gtdb_species_clade_id
+    ▼
+KBase gtdb_species_clade
+</code></pre></div>
+<p>Joining through <code>genome</code> avoids species name format mismatches and gives access
+to all genome metadata (BioSample, taxonomy, quality metrics) in a single hop.</p>
 <h2 id="coverage-summary-all-linkages">Coverage Summary (All Linkages)</h2>
 <table>
 <thead>
@@ -3071,6 +3264,11 @@ then locate gene by position.</p>
 <td>KBase → GOLD</td>
 <td>17,202</td>
 <td>62% of KBase pangenomes</td>
+</tr>
+<tr>
+<td>GapMind → KBase genome</td>
+<td>~293K</td>
+<td>Via SUBSTRING prefix strip on genome_id</td>
 </tr>
 </tbody>
 </table>

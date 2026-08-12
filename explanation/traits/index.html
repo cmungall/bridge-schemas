@@ -949,6 +949,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../gapmind-pathway-completeness.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GapMind Pathway Completeness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../perturbation-experiments/" class="md-nav__link">
         
   
@@ -3517,7 +3545,7 @@ kbase_ke_pangenome.genome (293K genomes)
 <span class="w">    </span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">prt</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;auxotroph&#39;</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;prototroph&#39;</span><span class="w"> </span><span class="k">END</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">img_lys</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">kbase_ke_pangenome</span><span class="p">.</span><span class="n">genome</span><span class="w"> </span><span class="k">g</span>
 <span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">globalusers_gapmind_pathways</span><span class="p">.</span><span class="n">gapmind_pathways</span><span class="w"> </span><span class="n">gm</span>
-<span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">genome_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gm</span><span class="p">.</span><span class="n">genome_id</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">gm</span><span class="p">.</span><span class="n">pathway</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;lys&#39;</span>
+<span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="k">SUBSTRING</span><span class="p">(</span><span class="k">g</span><span class="p">.</span><span class="n">genome_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gm</span><span class="p">.</span><span class="n">genome_id</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">gm</span><span class="p">.</span><span class="n">pathway</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;lys&#39;</span>
 <span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_ext</span><span class="p">.</span><span class="n">taxon</span><span class="w"> </span><span class="n">t</span>
 <span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="k">SUBSTRING</span><span class="p">(</span><span class="k">g</span><span class="p">.</span><span class="n">genome_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">ncbi_assembly_accession</span>
 <span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="ss">&quot;img-db-2 postgresql&quot;</span><span class="p">.</span><span class="n">img_ext</span><span class="p">.</span><span class="n">phenotype_rule_taxons</span><span class="w"> </span><span class="n">prt</span>
